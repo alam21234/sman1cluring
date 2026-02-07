@@ -1,29 +1,284 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<title>Profil | SMAN 1 Cluring</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Sekolah | SMAN 1 Cluring</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0d47a1;
+      --secondary: #1565c0;
+      --light: #f4f6f8;
+      --dark: #1a1a1a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+    }
+
+    /* ===== NAVBAR (SAMA DENGAN INDEX) ===== */
+    header {
+      background: var(--primary);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* ===== PAGE HEADER ===== */
+    .page-header {
+      background: linear-gradient(rgba(13,71,161,0.8), rgba(13,71,161,0.8)),
+        url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f') center/cover;
+      color: #fff;
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    .page-header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .breadcrumb {
+      font-size: 14px;
+    }
+
+    .breadcrumb a {
+      color: #ffeb3b;
+      text-decoration: none;
+    }
+
+    /* ===== CONTENT ===== */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    .section {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+    }
+
+    .section h2 {
+      color: var(--primary);
+      margin-bottom: 15px;
+      border-left: 5px solid var(--secondary);
+      padding-left: 12px;
+    }
+
+    .section p {
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .list {
+      padding-left: 20px;
+    }
+
+    .list li {
+      margin-bottom: 8px;
+    }
+
+    /* ===== BACK HOME ===== */
+    .back-home {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .back-home a {
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .back-home a:hover {
+      background: var(--secondary);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 25px 20px;
+      font-size: 14px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      nav ul {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        background: var(--primary);
+        width: 100%;
+        flex-direction: column;
+        display: none;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      nav ul li {
+        padding: 15px;
+        text-align: center;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .page-header h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header><h1>Profil Sekolah</h1></header>
 <!-- NAVBAR -->
+<header>
+  <div class="nav-container">
+    <div class="logo">SMAN 1 CLURING</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav>
+      <ul id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="akademik.html">Akademik</a></li>
+        <li><a href="kesiswaan.html">Kesiswaan</a></li>
+        <li><a href="humas.html">Humas</a></li>
+        <li><a href="alumni.html">Alumni</a></li>
+        <li><a href="artikel.html">Artikel</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-<div class="container">
-<h2 id="sejarah">Sejarah</h2>
-<p>Sejarah singkat berdirinya SMAN 1 Cluring.</p>
+<!-- HEADER PAGE -->
+<section class="page-header">
+  <h1>Profil Sekolah</h1>
+  <div class="breadcrumb">
+    <a href="index.html">Beranda</a> / Profil Sekolah
+  </div>
+</section>
 
-<h2 id="visimisi">Visi & Misi</h2>
-<p>Visi dan misi sekolah sesuai standar Kemendikbud.</p>
+<!-- CONTENT -->
+<section class="container">
 
-<h2 id="struktur">Struktur Organisasi</h2>
-<p>Kepala Sekolah, Wakasek, TU, Guru.</p>
+  <div class="section" id="sejarah">
+    <h2>Sejarah Sekolah</h2>
+    <p>
+      SMAN 1 Cluring didirikan sebagai lembaga pendidikan menengah atas yang
+      berkomitmen mencetak generasi berprestasi, berkarakter, dan berdaya saing,
+      serta berkontribusi bagi pembangunan daerah dan nasional.
+    </p>
+  </div>
 
-<h2 id="sarpras">Sarana & Prasarana</h2>
-<p>Ruang kelas, laboratorium, perpustakaan.</p>
-</div>
+  <div class="section" id="visimisi">
+    <h2>Visi dan Misi</h2>
+    <p><strong>Visi:</strong></p>
+    <p>
+      Terwujudnya peserta didik yang beriman, berakhlak mulia, berprestasi,
+      dan berwawasan global.
+    </p>
+    <p><strong>Misi:</strong></p>
+    <ul class="list">
+      <li>Menyelenggarakan pembelajaran berkualitas.</li>
+      <li>Mengembangkan karakter Profil Pelajar Pancasila.</li>
+      <li>Mendorong prestasi akademik dan nonakademik.</li>
+    </ul>
+  </div>
 
-<footer>© SMAN 1 Cluring</footer>
+  <div class="section" id="struktur">
+    <h2>Struktur Organisasi</h2>
+    <p>
+      Struktur organisasi SMAN 1 Cluring terdiri dari Kepala Sekolah, Wakil Kepala
+      Sekolah, Kepala Tata Usaha, pendidik, dan tenaga kependidikan.
+    </p>
+  </div>
+
+  <div class="section" id="sarpras">
+    <h2>Sarana dan Prasarana</h2>
+    <p>
+      Sekolah didukung oleh fasilitas yang memadai seperti ruang kelas,
+      laboratorium, perpustakaan, ruang multimedia, dan sarana pendukung lainnya.
+    </p>
+  </div>
+
+  <div class="back-home">
+    <a href="index.html">← Kembali ke Beranda</a>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 SMAN 1 Cluring | Website Resmi Sekolah
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("active");
+  }
+</script>
+
 </body>
 </html>
