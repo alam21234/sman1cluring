@@ -1,155 +1,485 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SMAN 1 Cluring | Website Resmi</title>
 
   <!-- SEO -->
-  <meta name="description" content="Website Resmi SMAN 1 Cluring Banyuwangi sebagai pusat informasi akademik dan layanan publik sekolah.">
-  <meta name="author" content="SMAN 1 Cluring">
+  <meta name="description" content="Website Resmi SMAN 1 Cluring Banyuwangi sebagai pusat informasi akademik dan layanan publik sekolah." />
+  <meta name="author" content="SMAN 1 Cluring" />
+  <meta name="keywords" content="SMAN 1 Cluring, Banyuwangi, sekolah, PPDB, prestasi, OSIS, Blambangan" />
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="SMAN 1 Cluring | Website Resmi" />
+  <meta property="og:description" content="Pusat informasi akademik dan kegiatan kesiswaan SMAN 1 Cluring Banyuwangi." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sman1cluring.sch.id" />
+  <meta property="og:image" content="/assets/images/hero-bg.jpg" />
+
+  <!-- Font Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
     :root {
-      --primary:#0d47a1;
-      --secondary:#1565c0;
-      --light:#f4f6f8;
-      --dark:#1a1a1a;
+      /* Light Mode */
+      --primary: #0d47a1;
+      --secondary: #1565c0;
+      --accent: #29b6f6;
+      --cultural-accent: #c53030; /* Merah tenun Osing */
+      --ijen-green: #2f855a;
+      --light: #f8fafc;
+      --dark: #1e293b;
+      --gray: #64748b;
+      --white: #ffffff;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+      --border-radius: 12px;
     }
 
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-    body{background:var(--light);color:var(--dark)}
+    .dark-mode {
+      --primary: #3b82f6;
+      --secondary: #2563eb;
+      --accent: #0ea5e9;
+      --light: #1e293b;
+      --dark: #f1f5f9;
+      --gray: #94a3b8;
+      --white: #0f172a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
     /* ===== HEADER ===== */
-    header{
-      background:var(--primary);
-      position:sticky;
-      top:0;
-      z-index:1000;
+    header {
+      background-color: var(--primary);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
     }
-    .nav-container{
-      max-width:1200px;
-      margin:auto;
-      padding:15px 20px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      color:#fff;
-      font-weight:700;
-      font-size:18px;
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 20px;
+      text-decoration: none;
     }
-    .brand img{width:40px}
-    nav ul{list-style:none;display:flex;gap:25px}
-    nav ul li a{color:#fff;text-decoration:none;font-weight:500}
-    nav ul li a:hover{text-decoration:underline}
-    .menu-toggle{display:none;font-size:26px;color:#fff;cursor:pointer}
+
+    .brand img {
+      width: 44px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      transition: var(--transition);
+      padding: 6px 0;
+    }
+
+    nav ul li a:hover {
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    /* Dark Mode Toggle */
+    .dark-mode-toggle {
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      color: var(--white);
+      font-size: 18px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dark-mode-toggle:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: rotate(30deg);
+    }
+
+    .dark-mode .dark-mode-toggle i {
+      display: none;
+    }
+
+    .dark-mode .dark-mode-toggle i.sun {
+      display: block;
+    }
 
     /* ===== HERO ===== */
-    .hero{
-      background:linear-gradient(rgba(13,71,161,.75),rgba(13,71,161,.75)),
-      url('https://images.unsplash.com/photo-1588072432836-e10032774350') center/cover;
-      color:#fff;
-      text-align:center;
-      padding:120px 20px;
+    .hero {
+      background: linear-gradient(rgba(13, 71, 161, 0.85), rgba(13, 71, 161, 0.85)),
+                  url('https://images.unsplash.com/photo-1588072432836-e10032774350') center/cover no-repeat;
+      color: var(--white);
+      text-align: center;
+      padding: 140px 20px 100px;
     }
-    .hero h1{font-size:42px;margin-bottom:15px}
-    .hero p{max-width:800px;margin:auto;font-size:18px;line-height:1.7}
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
 
     /* ===== SECTION ===== */
-    .section{
-      max-width:1200px;
-      margin:auto;
-      padding:70px 20px;
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 20px;
     }
-    .section h2{
-      text-align:center;
-      color:var(--primary);
-      margin-bottom:40px;
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .section-header h2 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      font-weight: 700;
+      position: relative;
+    }
+
+    .section-header h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--secondary);
+      margin: 12px 0 0 0;
+      border-radius: 2px;
+    }
+
+    .view-all {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: var(--transition);
+    }
+
+    .view-all:hover {
+      color: var(--cultural-accent);
+      text-decoration: underline;
     }
 
     /* ===== SAMBUTAN ===== */
-    .sambutan{
-      display:flex;
-      gap:40px;
-      align-items:center;
-      flex-wrap:wrap;
+    .sambutan {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      flex-wrap: wrap;
     }
-    .sambutan img{
-      width:260px;
-      border-radius:10px;
-      box-shadow:0 4px 12px rgba(0,0,0,.15);
-    }
-    .sambutan p{line-height:1.8;margin-bottom:15px}
 
-    /* ===== NEWS ===== */
-    .news-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:25px;
+    .sambutan img {
+      width: 260px;
+      height: auto;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      object-fit: cover;
+      transition: transform 0.3s ease;
     }
-    .news-card{
-      background:#fff;
-      border-radius:10px;
-      overflow:hidden;
-      box-shadow:0 4px 10px rgba(0,0,0,.08);
-      text-decoration:none;
-      color:inherit;
-    }
-    .news-card img{width:100%;height:180px;object-fit:cover}
-    .news-card div{padding:20px}
-    .news-card h3{color:var(--secondary);margin-bottom:10px}
 
-    /* ===== INFO ===== */
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:25px;
+    .sambutan img:hover {
+      transform: scale(1.02);
     }
-    .card{
-      background:#fff;
-      padding:30px;
-      text-align:center;
-      border-radius:10px;
-      box-shadow:0 4px 10px rgba(0,0,0,.08);
+
+    .sambutan-content {
+      flex: 1;
+      min-width: 280px;
     }
-    .card h3{color:var(--secondary);margin-bottom:10px}
+
+    .sambutan p {
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+      color: var(--dark);
+    }
+
+    .sambutan strong {
+      display: block;
+      margin-top: 20px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    /* ===== NEWS & ACTIVITY GRID ===== */
+    .news-grid,
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .news-card,
+    .activity-card {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    .news-card:hover,
+    .activity-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .news-card img,
+    .activity-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .news-card div,
+    .activity-card div {
+      padding: 24px;
+    }
+
+    .news-card h3,
+    .activity-card h3 {
+      color: var(--secondary);
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+    }
+
+    .news-card p,
+    .activity-card p {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    /* ===== INFO CARDS ===== */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 32px 24px;
+      text-align: center;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 14px;
+      font-size: 1.4rem;
+    }
+
+    .card p {
+      color: var(--gray);
+      font-size: 1rem;
+    }
+
+    /* ===== CULTURAL DIVIDER ===== */
+    .cultural-divider {
+      height: 3px;
+      background: linear-gradient(90deg, 
+        var(--primary) 0%, 
+        var(--cultural-accent) 25%, 
+        var(--ijen-green) 50%, 
+        var(--cultural-accent) 75%, 
+        var(--primary) 100%);
+      margin: 60px auto;
+      border-radius: 2px;
+      max-width: 1200px;
+    }
 
     /* ===== FOOTER ===== */
-    footer{
-      background:var(--primary);
-      color:#fff;
-      text-align:center;
-      padding:30px 20px;
-      font-size:14px;
-      line-height:1.7;
+    footer {
+      background: var(--primary);
+      color: var(--white);
+      text-align: center;
+      padding: 40px 20px 30px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      font-size: 18px;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
     }
 
     /* ===== RESPONSIVE ===== */
-    @media(max-width:768px){
-      nav ul{
-        position:absolute;
-        top:70px;
-        right:0;
-        background:var(--primary);
-        width:100%;
-        flex-direction:column;
-        display:none;
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
       }
-      nav ul.active{display:flex}
-      nav ul li{text-align:center;padding:15px}
-      .menu-toggle{display:block}
-      .hero h1{font-size:28px}
-      .hero p{font-size:16px}
-      .sambutan{text-align:center}
-      .sambutan img{margin:auto}
+
+      nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--primary);
+        flex-direction: column;
+        padding: 16px 0;
+        display: none;
+        z-index: 100;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      nav ul li {
+        text-align: center;
+        padding: 12px 0;
+      }
+
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .sambutan {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .sambutan img {
+        margin: 0 auto;
+      }
+
+      .section {
+        padding: 60px 20px;
+      }
+
+      .section-header h2 {
+        font-size: 1.8rem;
+      }
+
+      .view-all {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 100px 16px 70px;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .nav-container {
+        flex-wrap: wrap;
+      }
+
+      .dark-mode-toggle {
+        width: 42px;
+        height: 42px;
+        font-size: 16px;
+      }
     }
   </style>
 </head>
@@ -159,22 +489,32 @@
 <!-- HEADER -->
 <header>
   <div class="nav-container">
-    <div class="brand">
-      <img src="https://i.ibb.co.com/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring">
+    <a href="index.html" class="brand">
+      <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring" />
       SMAN 1 CLURING
-    </div>
+    </a>
+    
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <nav>
-      <ul id="navMenu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="profil.html">Profil</a></li>
-        <li><a href="akademik.html">Akademik</a></li>
-        <li><a href="kesiswaan.html">Kesiswaan</a></li>
-        <li><a href="humas.html">Humas</a></li>
-        <li><a href="alumni.html">Alumni</a></li>
-        <li><a href="artikel.html">Artikel</a></li>
-      </ul>
-    </nav>
+    
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <nav>
+        <ul id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="akademik.html">Akademik</a></li>
+          <li><a href="kesiswaan.html">Kesiswaan</a></li>
+          <li><a href="humas.html">Humas</a></li>
+          <li><a href="alumni.html">Alumni</a></li>
+          <li><a href="artikel.html">Artikel</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+      
+      <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun sun"></i>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -182,8 +522,7 @@
 <section class="hero">
   <h1>Selamat Datang di Website Resmi<br>SMAN 1 Cluring</h1>
   <p>
-    Media informasi resmi SMAN 1 Cluring Banyuwangi dalam mendukung
-    layanan pendidikan yang transparan dan berkualitas.
+    Menginspirasi Generasi Pancasila dari Bumi Blambangan — Pusat informasi akademik, kegiatan, dan layanan publik sekolah.
   </p>
 </section>
 
@@ -191,45 +530,89 @@
 <section class="section">
   <h2>Sambutan Kepala Satuan Pendidikan</h2>
   <div class="sambutan">
-    <img src="https://i.ibb.co.com/LDSSCYrF/1-Helmi-S-Pd-M-Si-Penanggung-Jawab-Umum.jpg" alt="Kepala Satuan Pendidikan">
-    <div>
+    <img src="https://i.ibb.co/LDSSCYrF/1-Helmi-S-Pd-M-Si-Penanggung-Jawab-Umum.jpg" alt="Kepala Satuan Pendidikan" />
+    <div class="sambutan-content">
       <p>Assalamu’alaikum warahmatullahi wabarakatuh.</p>
       <p>
-        Website ini menjadi sarana informasi dan komunikasi antara sekolah
-        dengan peserta didik, orang tua, alumni, dan masyarakat luas.
+        Website ini menjadi sarana informasi dan komunikasi antara sekolah dengan peserta didik, orang tua, alumni, dan masyarakat luas.
       </p>
       <p>
-        Kami berkomitmen untuk meningkatkan mutu pendidikan serta membentuk
-        peserta didik sesuai Profil Pelajar Pancasila.
+        Kami berkomitmen untuk meningkatkan mutu pendidikan serta membentuk peserta didik sesuai Profil Pelajar Pancasila.
       </p>
       <strong>Kepala Satuan Pendidikan<br>SMAN 1 Cluring</strong>
     </div>
   </div>
 </section>
 
-<!-- BERITA -->
+<div class="cultural-divider"></div>
+
+<!-- BERITA TERKINI -->
 <section class="section">
-  <h2>Berita Terbaru</h2>
+  <div class="section-header">
+    <h2>Berita Terbaru</h2>
+    <a href="artikel.html" class="view-all">Lihat Semua →</a>
+  </div>
   <div class="news-grid">
-    <a href="artikel.html" class="news-card">
-      <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1">
+    <a href="articles/ppdb-2026.html" class="news-card">
+      <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1" alt="PPDB 2026" />
       <div>
         <h3>PPDB Tahun Ajaran 2026/2027</h3>
         <p>Pendaftaran Peserta Didik Baru SMAN 1 Cluring telah dibuka.</p>
       </div>
     </a>
 
-    <a href="artikel.html" class="news-card">
-      <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7">
+    <a href="articles/prestasi-robotik.html" class="news-card">
+      <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7" alt="Prestasi Siswa" />
       <div>
         <h3>Prestasi Siswa</h3>
-        <p>Siswa SMAN 1 Cluring meraih prestasi tingkat kabupaten.</p>
+        <p>Siswa SMAN 1 Cluring meraih juara lomba robotik tingkat provinsi.</p>
+      </div>
+    </a>
+
+    <a href="articles/upacara-bendera.html" class="news-card">
+      <img src="https://images.unsplash.com/photo-1589998059171-988d887df646" alt="Upacara Bendera" />
+      <div>
+        <h3>Upacara Peringatan Hari Pendidikan</h3>
+        <p>Upacara khidmat dalam rangka Hardiknas 2026.</p>
       </div>
     </a>
   </div>
 </section>
 
-<!-- INFO -->
+<!-- KEGIATAN KESISWAAN -->
+<section class="section">
+  <div class="section-header">
+    <h2>Kegiatan Kesiswaan</h2>
+    <a href="kesiswaan.html" class="view-all">Lihat Semua →</a>
+  </div>
+  <div class="activity-grid">
+    <a href="kesiswaan/osis.html" class="activity-card">
+      <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644" alt="OSIS" />
+      <div>
+        <h3>Program Kerja OSIS 2026</h3>
+        <p>Rapat pleno pengurus OSIS membahas program tahunan.</p>
+      </div>
+    </a>
+
+    <a href="kesiswaan/ekstrakurikuler.html" class="activity-card">
+      <img src="https://images.unsplash.com/photo-1546403194-88fa49ecfd5c" alt="Ekstrakurikuler" />
+      <div>
+        <h3>Ekstrakurikuler Unggulan</h3>
+        <p>Pramuka, PMR, dan Tari Gandrung sebagai ciri khas sekolah.</p>
+      </div>
+    </a>
+
+    <a href="articles/lomba-tari.html" class="activity-card">
+      <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d" alt="Tari Gandrung" />
+      <div>
+        <h3>Lomba Tari Gandrung</h3>
+        <p>Siswa tampil memukau dalam festival budaya Banyuwangi.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- INFORMASI UTAMA -->
 <section class="section">
   <h2>Informasi Utama</h2>
   <div class="cards">
@@ -250,15 +633,66 @@
 
 <!-- FOOTER -->
 <footer>
-  © 2026 SMAN 1 Cluring<br>
-  Jl. Huzaini, Benculuk, Cluring, Banyuwangi, Jawa Timur<br>
-  Telp: 0823-1971-2420
+  <div class="footer-content">
+    <p>© 2026 SMAN 1 Cluring</p>
+    <p>Jl. Huzaini, Benculuk, Cluring, Banyuwangi, Jawa Timur</p>
+    <p>Telp: <a href="tel:+6282319712420">0823-1971-2420</a></p>
+    
+    <div class="social-links">
+      <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+    
+    <p style="margin-top: 15px; font-size: 0.85rem; opacity: 0.8;">
+      Menginspirasi Generasi Pancasila dari Bumi Blambangan
+    </p>
+  </div>
 </footer>
 
 <script>
-function toggleMenu(){
-  document.getElementById("navMenu").classList.toggle("active");
-}
+  // Dark Mode Toggle
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const body = document.body;
+  
+  // Load saved preference
+  const isDarkMode = localStorage.getItem('darkMode') === 'true';
+  if (isDarkMode) {
+    body.classList.add('dark-mode');
+  }
+  
+  darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+  });
+  
+  // Mobile Menu Toggle
+  function toggleMenu() {
+    const menu = document.getElementById("navMenu");
+    menu.classList.toggle("active");
+  }
+  
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href !== '#') {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          
+          // Close mobile menu if open
+          const menu = document.getElementById("navMenu");
+          menu.classList.remove("active");
+        }
+      }
+    });
+  });
 </script>
 
 </body>
