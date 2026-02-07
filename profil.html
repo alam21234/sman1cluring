@@ -28,7 +28,7 @@
       color: var(--dark);
     }
 
-    /* ===== NAVBAR (SAMA DENGAN INDEX) ===== */
+    /* ===== NAVBAR ===== */
     header {
       background: var(--primary);
       color: #fff;
@@ -119,8 +119,9 @@
     }
 
     .section p {
-      line-height: 1.7;
+      line-height: 1.8;
       font-size: 16px;
+      margin-bottom: 10px;
     }
 
     .list {
@@ -129,6 +130,26 @@
 
     .list li {
       margin-bottom: 8px;
+    }
+
+    /* Sambutan Kepsek */
+    .kepsek-box {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .kepsek-box img {
+      width: 180px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .kepsek-name {
+      margin-top: 15px;
+      font-weight: 600;
+      color: var(--primary);
     }
 
     /* ===== BACK HOME ===== */
@@ -187,6 +208,11 @@
       .page-header h1 {
         font-size: 26px;
       }
+
+      .kepsek-box {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -212,7 +238,7 @@
   </div>
 </header>
 
-<!-- HEADER PAGE -->
+<!-- PAGE HEADER -->
 <section class="page-header">
   <h1>Profil Sekolah</h1>
   <div class="breadcrumb">
@@ -223,12 +249,37 @@
 <!-- CONTENT -->
 <section class="container">
 
+  <!-- SAMBUTAN KEPALA SEKOLAH -->
+  <div class="section" id="sambutan">
+    <h2>Sambutan Kepala Sekolah</h2>
+    <div class="kepsek-box">
+      <img src="img/kepsek.jpg" alt="Kepala Sekolah SMAN 1 Cluring">
+      <div>
+        <p>
+          Assalamu’alaikum warahmatullahi wabarakatuh.
+        </p>
+        <p>
+          Selamat datang di website resmi SMAN 1 Cluring. Website ini kami hadirkan
+          sebagai sarana informasi, komunikasi, dan publikasi berbagai kegiatan
+          sekolah kepada peserta didik, orang tua, alumni, dan masyarakat luas.
+        </p>
+        <p>
+          Kami berkomitmen untuk terus meningkatkan mutu pendidikan, membentuk
+          karakter peserta didik sesuai Profil Pelajar Pancasila, serta
+          mempersiapkan generasi yang unggul, berdaya saing, dan berakhlak mulia.
+        </p>
+        <p class="kepsek-name">
+          Kepala SMAN 1 Cluring
+        </p>
+      </div>
+    </div>
+  </div>
+
   <div class="section" id="sejarah">
     <h2>Sejarah Sekolah</h2>
     <p>
       SMAN 1 Cluring didirikan sebagai lembaga pendidikan menengah atas yang
-      berkomitmen mencetak generasi berprestasi, berkarakter, dan berdaya saing,
-      serta berkontribusi bagi pembangunan daerah dan nasional.
+      berkomitmen mencetak generasi berprestasi, berkarakter, dan berdaya saing.
     </p>
   </div>
 
@@ -250,16 +301,16 @@
   <div class="section" id="struktur">
     <h2>Struktur Organisasi</h2>
     <p>
-      Struktur organisasi SMAN 1 Cluring terdiri dari Kepala Sekolah, Wakil Kepala
-      Sekolah, Kepala Tata Usaha, pendidik, dan tenaga kependidikan.
+      Struktur organisasi terdiri dari Kepala Sekolah, Wakil Kepala Sekolah,
+      Kepala Tata Usaha, guru, dan tenaga kependidikan.
     </p>
   </div>
 
   <div class="section" id="sarpras">
     <h2>Sarana dan Prasarana</h2>
     <p>
-      Sekolah didukung oleh fasilitas yang memadai seperti ruang kelas,
-      laboratorium, perpustakaan, ruang multimedia, dan sarana pendukung lainnya.
+      Fasilitas sekolah meliputi ruang kelas, laboratorium, perpustakaan,
+      ruang multimedia, serta sarana pendukung pembelajaran lainnya.
     </p>
   </div>
 
@@ -269,7 +320,6 @@
 
 </section>
 
-<!-- FOOTER -->
 <footer>
   © 2026 SMAN 1 Cluring | Website Resmi Sekolah
 </footer>
