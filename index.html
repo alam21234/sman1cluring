@@ -6,8 +6,7 @@
   <title>SMAN 1 Cluring | Website Resmi</title>
 
   <!-- SEO -->
-  <meta name="description" content="Website resmi SMAN 1 Cluring Banyuwangi. Informasi akademik, kesiswaan, humas, dan layanan sekolah.">
-  <meta name="keywords" content="SMAN 1 Cluring, sekolah, Banyuwangi, website sekolah">
+  <meta name="description" content="Website Resmi SMAN 1 Cluring Banyuwangi sebagai pusat informasi akademik dan layanan publik sekolah.">
   <meta name="author" content="SMAN 1 Cluring">
 
   <!-- Font -->
@@ -15,237 +14,252 @@
 
   <style>
     :root {
-      --primary: #0d47a1;
-      --secondary: #1565c0;
-      --light: #f4f6f8;
-      --dark: #1a1a1a;
+      --primary:#0d47a1;
+      --secondary:#1565c0;
+      --light:#f4f6f8;
+      --dark:#1a1a1a;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background: var(--light);
-      color: var(--dark);
-    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+    body{background:var(--light);color:var(--dark)}
 
     /* ===== HEADER ===== */
-    header {
-      background: var(--primary);
-      color: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+    header{
+      background:var(--primary);
+      position:sticky;
+      top:0;
+      z-index:1000;
     }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .nav-container{
+      max-width:1200px;
+      margin:auto;
+      padding:15px 20px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
-
-    .logo {
-      font-size: 20px;
-      font-weight: 700;
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      color:#fff;
+      font-weight:700;
+      font-size:18px;
     }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-    }
-
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    nav ul li a:hover {
-      text-decoration: underline;
-    }
-
-    /* Hamburger */
-    .menu-toggle {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-    }
+    .brand img{width:40px}
+    nav ul{list-style:none;display:flex;gap:25px}
+    nav ul li a{color:#fff;text-decoration:none;font-weight:500}
+    nav ul li a:hover{text-decoration:underline}
+    .menu-toggle{display:none;font-size:26px;color:#fff;cursor:pointer}
 
     /* ===== HERO ===== */
-    .hero {
-      background: linear-gradient(rgba(13,71,161,0.7), rgba(13,71,161,0.7)),
-        url('https://images.unsplash.com/photo-1588072432836-e10032774350') center/cover;
-      color: #fff;
-      text-align: center;
-      padding: 120px 20px;
+    .hero{
+      background:linear-gradient(rgba(13,71,161,.75),rgba(13,71,161,.75)),
+      url('https://images.unsplash.com/photo-1588072432836-e10032774350') center/cover;
+      color:#fff;
+      text-align:center;
+      padding:120px 20px;
     }
-
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
-      font-weight: 700;
-    }
-
-    .hero p {
-      font-size: 18px;
-      max-width: 800px;
-      margin: auto;
-      line-height: 1.6;
-    }
+    .hero h1{font-size:42px;margin-bottom:15px}
+    .hero p{max-width:800px;margin:auto;font-size:18px;line-height:1.7}
 
     /* ===== SECTION ===== */
-    .section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 60px 20px;
+    .section{
+      max-width:1200px;
+      margin:auto;
+      padding:70px 20px;
+    }
+    .section h2{
+      text-align:center;
+      color:var(--primary);
+      margin-bottom:40px;
     }
 
-    .section h2 {
-      text-align: center;
-      color: var(--primary);
-      margin-bottom: 40px;
+    /* ===== SAMBUTAN ===== */
+    .sambutan{
+      display:flex;
+      gap:40px;
+      align-items:center;
+      flex-wrap:wrap;
     }
+    .sambutan img{
+      width:260px;
+      border-radius:10px;
+      box-shadow:0 4px 12px rgba(0,0,0,.15);
+    }
+    .sambutan p{line-height:1.8;margin-bottom:15px}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
+    /* ===== NEWS ===== */
+    .news-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
     }
+    .news-card{
+      background:#fff;
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow:0 4px 10px rgba(0,0,0,.08);
+      text-decoration:none;
+      color:inherit;
+    }
+    .news-card img{width:100%;height:180px;object-fit:cover}
+    .news-card div{padding:20px}
+    .news-card h3{color:var(--secondary);margin-bottom:10px}
 
-    .card {
-      background: #fff;
-      padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      text-align: center;
+    /* ===== INFO ===== */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
     }
-
-    .card h3 {
-      margin-bottom: 10px;
-      color: var(--secondary);
+    .card{
+      background:#fff;
+      padding:30px;
+      text-align:center;
+      border-radius:10px;
+      box-shadow:0 4px 10px rgba(0,0,0,.08);
     }
+    .card h3{color:var(--secondary);margin-bottom:10px}
 
     /* ===== FOOTER ===== */
-    footer {
-      background: var(--primary);
-      color: #fff;
-      padding: 30px 20px;
-      text-align: center;
-    }
-
-    footer p {
-      font-size: 14px;
-      line-height: 1.6;
+    footer{
+      background:var(--primary);
+      color:#fff;
+      text-align:center;
+      padding:30px 20px;
+      font-size:14px;
+      line-height:1.7;
     }
 
     /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      nav ul {
-        position: absolute;
-        top: 65px;
-        right: 0;
-        background: var(--primary);
-        width: 100%;
-        flex-direction: column;
-        display: none;
+    @media(max-width:768px){
+      nav ul{
+        position:absolute;
+        top:70px;
+        right:0;
+        background:var(--primary);
+        width:100%;
+        flex-direction:column;
+        display:none;
       }
-
-      nav ul.active {
-        display: flex;
-      }
-
-      nav ul li {
-        padding: 15px;
-        text-align: center;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .hero h1 {
-        font-size: 28px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
+      nav ul.active{display:flex}
+      nav ul li{text-align:center;padding:15px}
+      .menu-toggle{display:block}
+      .hero h1{font-size:28px}
+      .hero p{font-size:16px}
+      .sambutan{text-align:center}
+      .sambutan img{margin:auto}
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="nav-container">
-      <div class="logo">SMAN 1 CLURING</div>
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-      <nav>
-        <ul id="navMenu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="profil.html">Profil</a></li>
-          <li><a href="akademik.html">Akademik</a></li>
-          <li><a href="kesiswaan.html">Kesiswaan</a></li>
-          <li><a href="humas.html">Humas</a></li>
-          <li><a href="alumni.html">Alumni</a></li>
-          <li><a href="artikel.html">Artikel</a></li>
-        </ul>
-      </nav>
+<!-- HEADER -->
+<header>
+  <div class="nav-container">
+    <div class="brand">
+      <img src="img/logo.png" alt="Logo SMAN 1 Cluring">
+      SMAN 1 CLURING
     </div>
-  </header>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav>
+      <ul id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="akademik.html">Akademik</a></li>
+        <li><a href="kesiswaan.html">Kesiswaan</a></li>
+        <li><a href="humas.html">Humas</a></li>
+        <li><a href="alumni.html">Alumni</a></li>
+        <li><a href="artikel.html">Artikel</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Selamat Datang di Website Resmi<br>SMAN 1 Cluring</h1>
-    <p>
-      Website resmi SMAN 1 Cluring sebagai pusat informasi akademik, kesiswaan,
-      dan layanan publik sekolah.
-    </p>
-  </section>
+<!-- HERO -->
+<section class="hero">
+  <h1>Selamat Datang di Website Resmi<br>SMAN 1 Cluring</h1>
+  <p>
+    Media informasi resmi SMAN 1 Cluring Banyuwangi dalam mendukung
+    layanan pendidikan yang transparan dan berkualitas.
+  </p>
+</section>
 
-  <!-- SECTION -->
-  <section class="section">
-    <h2>Informasi Utama</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Akademik</h3>
-        <p>Informasi kurikulum, jadwal, dan kegiatan pembelajaran.</p>
-      </div>
-      <div class="card">
-        <h3>Kesiswaan</h3>
-        <p>Kegiatan OSIS, ekstrakurikuler, dan prestasi siswa.</p>
-      </div>
-      <div class="card">
-        <h3>Humas</h3>
-        <p>Informasi publik, kerja sama, dan pengumuman resmi.</p>
-      </div>
+<!-- SAMBUTAN -->
+<section class="section">
+  <h2>Sambutan Kepala Satuan Pendidikan</h2>
+  <div class="sambutan">
+    <img src="img/kepsek.jpg" alt="Kepala Satuan Pendidikan">
+    <div>
+      <p>Assalamu’alaikum warahmatullahi wabarakatuh.</p>
+      <p>
+        Website ini menjadi sarana informasi dan komunikasi antara sekolah
+        dengan peserta didik, orang tua, alumni, dan masyarakat luas.
+      </p>
+      <p>
+        Kami berkomitmen untuk meningkatkan mutu pendidikan serta membentuk
+        peserta didik sesuai Profil Pelajar Pancasila.
+      </p>
+      <strong>Kepala Satuan Pendidikan<br>SMAN 1 Cluring</strong>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>
-      © 2026 SMAN 1 Cluring<br>
-      Jl. Huzaini, Benculuk, Cluring, Banyuwangi, Jawa Timur<br>
-      Telp: 0823-1971-2420
-    </p>
-  </footer>
+<!-- BERITA -->
+<section class="section">
+  <h2>Berita Terbaru</h2>
+  <div class="news-grid">
+    <a href="artikel.html" class="news-card">
+      <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1">
+      <div>
+        <h3>PPDB Tahun Ajaran 2026/2027</h3>
+        <p>Pendaftaran Peserta Didik Baru SMAN 1 Cluring telah dibuka.</p>
+      </div>
+    </a>
 
-  <!-- SCRIPT -->
-  <script>
-    function toggleMenu() {
-      document.getElementById("navMenu").classList.toggle("active");
-    }
-  </script>
+    <a href="artikel.html" class="news-card">
+      <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7">
+      <div>
+        <h3>Prestasi Siswa</h3>
+        <p>Siswa SMAN 1 Cluring meraih prestasi tingkat kabupaten.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- INFO -->
+<section class="section">
+  <h2>Informasi Utama</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Akademik</h3>
+      <p>Kurikulum Merdeka dan kegiatan pembelajaran.</p>
+    </div>
+    <div class="card">
+      <h3>Kesiswaan</h3>
+      <p>OSIS, ekstrakurikuler, dan prestasi.</p>
+    </div>
+    <div class="card">
+      <h3>Humas</h3>
+      <p>Informasi publik dan pengumuman resmi.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 SMAN 1 Cluring<br>
+  Jl. Huzaini, Benculuk, Cluring, Banyuwangi, Jawa Timur<br>
+  Telp: 0823-1971-2420
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("navMenu").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
