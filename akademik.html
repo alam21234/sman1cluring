@@ -1,8 +1,233 @@
-<h2 id="kurikulum">Kurikulum</h2>
-<p>Kurikulum Merdeka.</p>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Sekolah | SMAN 1 Cluring</title>
 
-<h2 id="program">Program Unggulan</h2>
-<p>Kelas riset, literasi, numerasi.</p>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<h2 id="prestasi">Prestasi Akademik</h2>
-<p>Olimpiade & lomba.</p>
+  <style>
+    :root {
+      --primary: #0d47a1;
+      --secondary: #1565c0;
+      --light: #f4f6f8;
+      --dark: #1a1a1a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== PAGE HEADER ===== */
+    .page-header {
+      background: linear-gradient(rgba(13,71,161,0.8), rgba(13,71,161,0.8)),
+        url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f') center/cover;
+      color: #fff;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .breadcrumb {
+      font-size: 14px;
+    }
+
+    .breadcrumb a {
+      color: #ffeb3b;
+      text-decoration: none;
+    }
+
+    /* ===== CONTENT ===== */
+    .content {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    .section {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+    }
+
+    .section h2 {
+      color: var(--primary);
+      margin-bottom: 15px;
+      border-left: 5px solid var(--secondary);
+      padding-left: 12px;
+    }
+
+    .section p {
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .list {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    .list li {
+      margin-bottom: 8px;
+    }
+
+    /* ===== BACK BUTTON ===== */
+    .back-home {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .back-home a {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .back-home a:hover {
+      background: var(--secondary);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--primary);
+      color: #fff;
+      padding: 25px 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .page-header h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">SMAN 1 CLURING</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="akademik.html">Akademik</a></li>
+          <li><a href="kesiswaan.html">Kesiswaan</a></li>
+          <li><a href="humas.html">Humas</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <h1>Profil Sekolah</h1>
+    <div class="breadcrumb">
+      <a href="index.html">Beranda</a> / Profil Sekolah
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="content">
+
+    <div class="section" id="kurikulum">
+      <h2>Kurikulum</h2>
+      <p>
+        SMAN 1 Cluring menerapkan <strong>Kurikulum Merdeka</strong> sebagai upaya
+        meningkatkan kualitas pembelajaran yang berpusat pada peserta didik,
+        penguatan karakter, serta pengembangan kompetensi abad ke-21.
+      </p>
+    </div>
+
+    <div class="section" id="program">
+      <h2>Program Unggulan</h2>
+      <ul class="list">
+        <li><strong>Kelas Riset</strong> – Mengembangkan kemampuan berpikir kritis dan ilmiah siswa.</li>
+        <li><strong>Literasi</strong> – Penguatan budaya baca dan menulis.</li>
+        <li><strong>Numerasi</strong> – Peningkatan kemampuan berpikir logis dan pemecahan masalah.</li>
+      </ul>
+    </div>
+
+    <div class="section" id="prestasi">
+      <h2>Prestasi Akademik</h2>
+      <p>
+        Peserta didik SMAN 1 Cluring secara aktif mengikuti dan meraih prestasi
+        dalam berbagai ajang <strong>olimpiade sains</strong> dan
+        <strong>kompetisi akademik</strong> di tingkat kabupaten, provinsi,
+        hingga nasional.
+      </p>
+    </div>
+
+    <!-- BACK TO HOME -->
+    <div class="back-home">
+      <a href="index.html">← Kembali ke Beranda</a>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 SMAN 1 Cluring | Website Resmi Sekolah
+  </footer>
+
+</body>
+</html>
