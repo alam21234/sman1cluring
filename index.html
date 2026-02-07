@@ -1,123 +1,251 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SMAN 1 Cluring | Website Resmi</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMAN 1 Cluring | Website Resmi</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Website resmi SMAN 1 Cluring Banyuwangi. Informasi akademik, kesiswaan, humas, dan layanan sekolah.">
+  <meta name="keywords" content="SMAN 1 Cluring, sekolah, Banyuwangi, website sekolah">
+  <meta name="author" content="SMAN 1 Cluring">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0d47a1;
+      --secondary: #1565c0;
+      --light: #f4f6f8;
+      --dark: #1a1a1a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: var(--primary);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hamburger */
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(rgba(13,71,161,0.7), rgba(13,71,161,0.7)),
+        url('https://images.unsplash.com/photo-1588072432836-e10032774350') center/cover;
+      color: #fff;
+      text-align: center;
+      padding: 120px 20px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    /* ===== SECTION ===== */
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    .section h2 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 40px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: var(--secondary);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--primary);
+      color: #fff;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      nav ul {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        background: var(--primary);
+        width: 100%;
+        flex-direction: column;
+        display: none;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      nav ul li {
+        padding: 15px;
+        text-align: center;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <h1>SMAN 1 CLURING</h1>
-    <p>Unggul dalam Prestasi • Berkarakter • Berwawasan Global</p>
-</header>
-
-<nav>
-<ul>
-    <li><a href="index.html">Home</a></li>
-
-    <li>
-        <a href="profil.html">Profil ▾</a>
-        <ul>
-            <li><a href="profil.html#sejarah">Sejarah</a></li>
-            <li><a href="profil.html#visimisi">Visi & Misi</a></li>
-            <li><a href="profil.html#struktur">Struktur Organisasi</a></li>
-            <li><a href="profil.html#sarpras">Sarana Prasarana</a></li>
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">SMAN 1 CLURING</div>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <nav>
+        <ul id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="akademik.html">Akademik</a></li>
+          <li><a href="kesiswaan.html">Kesiswaan</a></li>
+          <li><a href="humas.html">Humas</a></li>
+          <li><a href="alumni.html">Alumni</a></li>
+          <li><a href="artikel.html">Artikel</a></li>
         </ul>
-    </li>
+      </nav>
+    </div>
+  </header>
 
-    <li>
-        <a href="akademik.html">Akademik ▾</a>
-        <ul>
-            <li><a href="akademik.html#kurikulum">Kurikulum</a></li>
-            <li><a href="akademik.html#program">Program Unggulan</a></li>
-            <li><a href="akademik.html#prestasi">Prestasi</a></li>
-        </ul>
-    </li>
-
-    <li>
-        <a href="kesiswaan.html">Kesiswaan ▾</a>
-        <ul>
-            <li><a href="kesiswaan.html#osis">OSIS & MPK</a></li>
-            <li><a href="kesiswaan.html#ekskul">Ekstrakurikuler</a></li>
-            <li><a href="kesiswaan.html#tatib">Tata Tertib</a></li>
-        </ul>
-    </li>
-
-    <li><a href="humas.html">Humas</a></li>
-    <li><a href="alumni.html">Alumni</a></li>
-    <li><a href="artikel.html">Artikel</a></li>
-</ul>
-</nav>
-
-<!-- HERO SECTION -->
-<section style="
-background:linear-gradient(rgba(13,71,161,.85),rgba(13,71,161,.85)),
-url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f') center/cover;
-color:#fff;
-padding:90px 20px;
-text-align:center;
-">
-    <h2 style="font-size:32px;margin-bottom:15px;">
-        Selamat Datang di Website Resmi
-    </h2>
-    <p style="max-width:750px;margin:auto;font-size:18px;">
-        SMAN 1 Cluring merupakan sekolah menengah atas negeri
-        yang berkomitmen memberikan layanan pendidikan berkualitas
-        untuk membentuk generasi berprestasi dan berkarakter Pancasila.
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Selamat Datang di Website Resmi<br>SMAN 1 Cluring</h1>
+    <p>
+      Website resmi SMAN 1 Cluring sebagai pusat informasi akademik, kesiswaan,
+      dan layanan publik sekolah.
     </p>
-</section>
+  </section>
 
-<div class="container">
+  <!-- SECTION -->
+  <section class="section">
+    <h2>Informasi Utama</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Akademik</h3>
+        <p>Informasi kurikulum, jadwal, dan kegiatan pembelajaran.</p>
+      </div>
+      <div class="card">
+        <h3>Kesiswaan</h3>
+        <p>Kegiatan OSIS, ekstrakurikuler, dan prestasi siswa.</p>
+      </div>
+      <div class="card">
+        <h3>Humas</h3>
+        <p>Informasi publik, kerja sama, dan pengumuman resmi.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- SAMBUTAN -->
-    <section>
-        <h2>Sambutan Singkat</h2>
-        <p>
-            Selamat datang di website resmi SMAN 1 Cluring.
-            Website ini menjadi pusat informasi akademik, kesiswaan,
-            serta media komunikasi sekolah dengan masyarakat.
-        </p>
-    </section>
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © 2026 SMAN 1 Cluring<br>
+      Jl. Huzaini, Benculuk, Cluring, Banyuwangi, Jawa Timur<br>
+      Telp: 0823-1971-2420
+    </p>
+  </footer>
 
-    <!-- INFORMASI CEPAT -->
-    <section>
-        <h2>Informasi Sekolah</h2>
-        <p><strong>Nama Sekolah:</strong> SMAN 1 Cluring</p>
-        <p><strong>Alamat:</strong> Jl. Huzaini, Benculuk, Cluring, Banyuwangi, Jawa Timur</p>
-        <p><strong>Telepon:</strong> 0823-1971-2420</p>
-    </section>
-
-    <!-- LAYANAN UTAMA -->
-    <section>
-        <h2>Layanan Utama</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;">
-            <div style="background:#f4f6f9;padding:20px;border-radius:6px;">
-                <strong>Akademik</strong>
-                <p>Informasi kurikulum, program unggulan, dan prestasi.</p>
-            </div>
-            <div style="background:#f4f6f9;padding:20px;border-radius:6px;">
-                <strong>Kesiswaan</strong>
-                <p>OSIS, ekstrakurikuler, dan pembinaan karakter.</p>
-            </div>
-            <div style="background:#f4f6f9;padding:20px;border-radius:6px;">
-                <strong>Humas</strong>
-                <p>Publikasi kegiatan dan kerja sama sekolah.</p>
-            </div>
-            <div style="background:#f4f6f9;padding:20px;border-radius:6px;">
-                <strong>Alumni</strong>
-                <p>Jejaring alumni sebagai mitra pengembangan sekolah.</p>
-            </div>
-        </div>
-    </section>
-
-</div>
-
-<footer>
-    <p>© 2026 SMAN 1 Cluring | Banyuwangi, Jawa Timur</p>
-</footer>
+  <!-- SCRIPT -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("active");
+    }
+  </script>
 
 </body>
 </html>
