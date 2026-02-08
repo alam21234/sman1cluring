@@ -218,6 +218,15 @@
       border-radius: 3px;
     }
 
+    .section h3 {
+      color: var(--secondary);
+      margin: 25px 0 15px;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
     .section p {
       line-height: 1.8;
       font-size: 16px;
@@ -237,6 +246,113 @@
     .list li {
       margin-bottom: 10px;
       line-height: 1.7;
+    }
+
+    /* ===== SCHOOL IMAGE ===== */
+    .school-image {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 25px 0;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .school-image:hover {
+      transform: scale(1.02);
+    }
+
+    /* ===== VISION BOX ===== */
+    .vision-box {
+      background: linear-gradient(135deg, rgba(13,71,161,0.1) 0%, rgba(21,101,192,0.05) 100%);
+      border-left: 5px solid var(--primary);
+      padding: 25px;
+      border-radius: 0 10px 10px 0;
+      margin: 25px 0;
+      font-weight: 600;
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: var(--primary);
+    }
+
+    /* ===== MISSION CARD ===== */
+    .mission-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .mission-card {
+      background: var(--white);
+      border: 2px solid var(--secondary);
+      border-radius: 10px;
+      padding: 25px;
+      transition: var(--transition);
+    }
+
+    .mission-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .mission-card h4 {
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .mission-card ul {
+      padding-left: 25px;
+      margin-top: 10px;
+    }
+
+    .mission-card li {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    /* ===== STRUCTURE TABLE ===== */
+    .structure-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: var(--white);
+    }
+
+    .structure-table th {
+      background: var(--primary);
+      color: var(--white);
+      padding: 15px;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .structure-table td {
+      padding: 12px 15px;
+      border-bottom: 1px solid var(--light);
+    }
+
+    .structure-table tr:nth-child(even) {
+      background: rgba(13,71,161,0.03);
+    }
+
+    .structure-table tr:hover {
+      background: rgba(13,71,161,0.08);
+    }
+
+    .structure-category {
+      background: var(--secondary);
+      color: var(--white);
+      font-weight: 600;
+      padding: 10px 15px;
+      margin-top: 15px;
+      border-radius: 8px;
     }
 
     /* ===== BACK HOME ===== */
@@ -338,6 +454,14 @@
       .section h2 {
         font-size: 1.5rem;
       }
+
+      .mission-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .school-image {
+        max-height: 300px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -360,6 +484,10 @@
 
       .section {
         padding: 25px 15px;
+      }
+
+      .school-image {
+        max-height: 250px;
       }
     }
   </style>
@@ -422,6 +550,9 @@
     <p>
       Berlokasi strategis di Jalan Huzaini, Benculuk, Cluring, sekolah ini memiliki akses yang mudah dan lingkungan yang kondusif untuk kegiatan belajar mengajar. Dengan dukungan fasilitas yang memadai dan tenaga pendidik yang profesional, SMAN 1 Cluring siap melahirkan lulusan-lulusan terbaik untuk kemajuan bangsa.
     </p>
+
+    <!-- GAMBAR SEKOLAH -->
+    <img src="https://i.ibb.co/Jw9sgcpD/foto-sekolah.png" alt="Foto Sekolah SMAN 1 Cluring" class="school-image">
   </div>
 
   <div class="cultural-divider"></div>
@@ -430,23 +561,76 @@
   <div class="section" id="visimisi">
     <h2><i class="fas fa-bullseye"></i> Visi dan Misi</h2>
     
-    <h3 style="color: var(--secondary); margin: 25px 0 15px; font-size: 1.3rem;">
-      <i class="fas fa-eye"></i> Visi
-    </h3>
-    <p style="background: rgba(13,71,161,0.05); padding: 15px; border-left: 4px solid var(--primary); border-radius: 0 8px 8px 0; font-weight: 600;">
-      Terwujudnya peserta didik yang beriman, berakhlak mulia, berprestasi, berwawasan lingkungan, dan berdaya saing global sesuai Profil Pelajar Pancasila.
+    <h3><i class="fas fa-eye"></i> Visi Satuan Pendidikan</h3>
+    <div class="vision-box">
+      "Mewujudkan peserta didik yang berprestasi, berkarakter, berlandaskan IMTAQ dan berwawasan lingkungan."
+    </div>
+
+    <h3><i class="fas fa-flag"></i> Misi Satuan Pendidikan</h3>
+    <p>
+      Untuk mewujudkan visi tersebut, sekolah melaksanakan langkah-langkah strategis melalui misi berikut:
     </p>
 
-    <h3 style="color: var(--secondary); margin: 25px 0 15px; font-size: 1.3rem;">
-      <i class="fas fa-flag"></i> Misi
-    </h3>
-    <ul class="list">
-      <li><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 8px;"></i> Menyelenggarakan pembelajaran yang berkualitas, inovatif, dan berbasis teknologi.</li>
-      <li><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 8px;"></i> Mengembangkan karakter peserta didik sesuai nilai-nilai Pancasila dan budaya lokal Banyuwangi.</li>
-      <li><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 8px;"></i> Mendorong prestasi akademik dan non-akademik melalui kegiatan ekstrakurikuler yang beragam.</li>
-      <li><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 8px;"></i> Menciptakan lingkungan sekolah yang aman, nyaman, dan inspiratif bagi seluruh warga sekolah.</li>
-      <li><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 8px;"></i> Menjalin kerjasama yang sinergis dengan orang tua, masyarakat, dan stakeholder pendidikan.</li>
-    </ul>
+    <div class="mission-cards">
+      <!-- MISI 1 -->
+      <div class="mission-card">
+        <h4><i class="fas fa-mosque"></i> 1. Mewujudkan Peserta Didik yang Ber-IMTAQ</h4>
+        <ul class="list">
+          <li>Mengawali dan mengakhiri kegiatan pembelajaran dengan senyum, salam, dan doa.</li>
+          <li>Melaksanakan pembiasaan ibadah sesuai agama dan kepercayaan masing-masing.</li>
+          <li>Menyelenggarakan peringatan hari besar keagamaan.</li>
+          <li>Menjalankan program Siswa Asuh Sebaya (SAS).</li>
+          <li>Membiasakan siswa untuk bersedekah (<em>bersodaqoh</em>).</li>
+          <li>Menyelenggarakan salat Jumat di masjid sekolah.</li>
+          <li>Melaksanakan salat Dhuha bersama terjadwal.</li>
+          <li>Salat Dzuhur dan Ashar berjamaah.</li>
+          <li>Ibadah puasa dan Pondok Ramadhan tertib & khusyuk.</li>
+        </ul>
+      </div>
+
+      <!-- MISI 2 -->
+      <div class="mission-card">
+        <h4><i class="fas fa-trophy"></i> 2. Mewujudkan Prestasi Akademik dan Nonakademik</h4>
+        <ul class="list">
+          <li>Menerapkan pembelajaran berdiferensiasi.</li>
+          <li>Melaksanakan PAIKEM, STEAM, HOTS.</li>
+          <li>Try Out & latihan soal USP, PSAJ, BKS, TOBK.</li>
+          <li>Mengikutsertakan siswa lomba kabupaten s.d. nasional.</li>
+          <li>Pembinaan ekstrakurikuler efektif & kreatif.</li>
+          <li>Pengelompokan siswa bakat, minat, rencana karir.</li>
+          <li>Pembimbingan Karya Tulis Ilmiah (KTI).</li>
+        </ul>
+      </div>
+
+      <!-- MISI 3 -->
+      <div class="mission-card">
+        <h4><i class="fas fa-heart"></i> 3. Mewujudkan Karakter Positif dalam Sikap dan Perilaku</h4>
+        <ul class="list">
+          <li>Mengembangkan PPK (Penguatan Pendidikan Karakter).</li>
+          <li>Penyambutan siswa di gerbang sekolah.</li>
+          <li>Pelaksanaan PSE (Pembelajaran Sosial & Emosional).</li>
+          <li>Membiasakan 5S: Salam, Senyum, Sapa, Sopan, Santun.</li>
+          <li>Membaca Asmaul Husna sebelum KBM.</li>
+          <li>Menyanyikan Indonesia Raya, Mars Smaring, lagu nasional/daerah.</li>
+          <li>Literasi: Smaring Gemar Membaca (SGM).</li>
+          <li>Peduli lingkungan: membuang sampah di tempatnya.</li>
+          <li>Program Jumat Bersih rutin.</li>
+          <li>Bakti sosial ke masyarakat sekitar.</li>
+        </ul>
+      </div>
+
+      <!-- MISI 4 -->
+      <div class="mission-card">
+        <h4><i class="fas fa-leaf"></i> 4. Mewujudkan Wawasan dan Kepedulian terhadap Lingkungan</h4>
+        <ul class="list">
+          <li>Sekolah peduli, berbudaya, dan berwawasan lingkungan.</li>
+          <li>Membangun lingkungan berkelanjutan.</li>
+          <li>Mengurangi emisi karbon:</li>
+          <li style="margin-left: 20px;">• Mematikan mesin kendaraan di lingkungan sekolah.</li>
+          <li style="margin-left: 20px;">• Penghijauan lingkungan sekolah.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <div class="cultural-divider"></div>
@@ -457,41 +641,68 @@
     <p>
       Struktur organisasi SMAN 1 Cluring dirancang untuk mendukung efektivitas dan efisiensi penyelenggaraan pendidikan. Setiap posisi memiliki peran dan tanggung jawab yang jelas dalam mencapai tujuan sekolah.
     </p>
-    
-    <div style="margin-top: 30px; background: rgba(21,101,192,0.05); padding: 25px; border-radius: 10px;">
-      <h3 style="color: var(--secondary); margin-bottom: 20px; font-size: 1.2rem;">
-        <i class="fas fa-user-tie"></i> Kepemimpinan
-      </h3>
-      <ul class="list">
-        <li><strong>Kepala Sekolah:</strong> Helmi, S.Pd, M.Si</li>
-        <li><strong>Wakil Kepala Sekolah Bidang Kurikulum:</strong> -</li>
-        <li><strong>Wakil Kepala Sekolah Bidang Kesiswaan:</strong> -</li>
-        <li><strong>Wakil Kepala Sekolah Bidang Sarana Prasarana:</strong> -</li>
-        <li><strong>Wakil Kepala Sekolah Bidang Humas:</strong> -</li>
-      </ul>
-    </div>
 
-    <div style="margin-top: 20px; background: rgba(41,182,246,0.05); padding: 25px; border-radius: 10px;">
-      <h3 style="color: var(--secondary); margin-bottom: 20px; font-size: 1.2rem;">
-        <i class="fas fa-users"></i> Tenaga Kependidikan
-      </h3>
-      <ul class="list">
-        <li><strong>Kepala Tata Usaha:</strong> -</li>
-        <li><strong>Staf Administrasi:</strong> -</li>
-        <li><strong>Pustakawan:</strong> -</li>
-        <li><strong>Teknisi Laboratorium:</strong> -</li>
-        <li><strong>Tenaga Kebersihan dan Keamanan:</strong> -</li>
-      </ul>
+    <!-- KEPEMIMPINAN -->
+    <div class="structure-category">
+      <i class="fas fa-user-tie"></i> Kepemimpinan
     </div>
+    <table class="structure-table">
+      <tr>
+        <td><strong>Kepala Sekolah</strong></td>
+        <td>Helmi, S.Pd, M.Si</td>
+      </tr>
+      <tr>
+        <td><strong>Wakil Kepala Sekolah Bidang Kurikulum</strong></td>
+        <td>SISWO HARININGSIH, S.Pd.</td>
+      </tr>
+      <tr>
+        <td><strong>Wakil Kepala Sekolah Bidang Kesiswaan</strong></td>
+        <td>Drs. MAKHRUS</td>
+      </tr>
+      <tr>
+        <td><strong>Wakil Kepala Sekolah Bidang Sarana Prasarana</strong></td>
+        <td>ALI MUTHOHAR, S.Pd.</td>
+      </tr>
+      <tr>
+        <td><strong>Wakil Kepala Sekolah Bidang Humas</strong></td>
+        <td>MOH. SUHARSO, S.Pd.</td>
+      </tr>
+    </table>
 
-    <div style="margin-top: 20px; background: rgba(197,48,48,0.05); padding: 25px; border-radius: 10px;">
-      <h3 style="color: var(--secondary); margin-bottom: 20px; font-size: 1.2rem;">
-        <i class="fas fa-chalkboard-teacher"></i> Dewan Guru
-      </h3>
-      <p>
-        Terdiri dari guru-guru profesional yang kompeten di bidangnya masing-masing, dengan latar belakang pendidikan S1 dan S2 dari berbagai universitas ternama di Indonesia.
-      </p>
+    <!-- TENAGA KEPENDIDIKAN -->
+    <div class="structure-category" style="margin-top: 30px;">
+      <i class="fas fa-users"></i> Tenaga Kependidikan
     </div>
+    <table class="structure-table">
+      <tr>
+        <td><strong>Kepala Tata Usaha</strong></td>
+        <td>ADISTI RUSMITA</td>
+      </tr>
+      <tr>
+        <td><strong>Staf Administrasi</strong></td>
+        <td>ERLINA NOVITASARI, S.Pd.</td>
+      </tr>
+      <tr>
+        <td><strong>Pustakawan</strong></td>
+        <td>MUKHLISIN</td>
+      </tr>
+      <tr>
+        <td><strong>Teknisi Laboratorium</strong></td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td><strong>Tenaga Kebersihan dan Keamanan</strong></td>
+        <td>SUROTO</td>
+      </tr>
+    </table>
+
+    <!-- DEWAN GURU -->
+    <div class="structure-category" style="margin-top: 30px;">
+      <i class="fas fa-chalkboard-teacher"></i> Dewan Guru
+    </div>
+    <p style="margin-top: 15px;">
+      Terdiri dari guru-guru profesional yang kompeten di bidangnya masing-masing, dengan latar belakang pendidikan S1 dan S2 dari berbagai universitas ternama di Indonesia.
+    </p>
   </div>
 
   <div class="cultural-divider"></div>
