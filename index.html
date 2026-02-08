@@ -17,10 +17,10 @@
   <meta property="og:url" content="https://sman1cluring.sch.id" />
   <meta property="og:image" content="/assets/images/hero-bg.jpg" />
 
-  <!-- Font Google (FIXED: removed extra space) -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   
-  <!-- Icons -->
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
@@ -241,7 +241,6 @@
       flex-wrap: wrap;
     }
 
-    /* Avatar styling - ELEGANT CIRCLE */
     .avatar-container {
       display: flex;
       justify-content: center;
@@ -403,39 +402,87 @@
     footer {
       background: var(--primary);
       color: var(--white);
-      text-align: center;
-      padding: 40px 20px 30px;
+      padding: 50px 20px 30px;
       font-size: 0.95rem;
       line-height: 1.7;
     }
 
     .footer-content {
-      max-width: 800px;
+      max-width: 1200px;
       margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
     }
 
-    footer a {
-      color: var(--accent);
+    .footer-section h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    .footer-section h3::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: var(--accent);
+      margin-top: 6px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-section a {
+      color: rgba(255, 255, 255, 0.85);
       text-decoration: none;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-section a:hover {
+      color: var(--accent);
+      padding-left: 4px;
+    }
+
+    .footer-section a i {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 0.9rem;
+      opacity: 0.8;
     }
 
     .social-links {
       display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin: 20px 0;
+      gap: 15px;
+      margin-top: 15px;
     }
 
     .social-links a {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.15);
       color: var(--white);
-      font-size: 18px;
+      font-size: 16px;
       transition: var(--transition);
     }
 
@@ -747,20 +794,46 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-content">
-    <p>© 2026 SMAN 1 Cluring</p>
-    <p>Jl. Huzaini, Benculuk, Cluring, Banyuwangi, Jawa Timur</p>
-    <p>Telp: <a href="tel:+6282319712420">0823-1971-2420</a></p>
-    
-    <div class="social-links">
-      <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+    <div class="footer-section">
+      <h3><i class="fas fa-map-marker-alt"></i> Kontak</h3>
+      <p>Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, Jawa Timur</p>
+      <p><i class="fas fa-phone"></i> <a href="tel:+6282319712420">0823-1971-2420</a></p>
     </div>
-    
-    <p style="margin-top: 15px; font-size: 0.85rem; opacity: 0.8;">
-      Menginspirasi Generasi Pancasila dari Bumi Blambangan
-    </p>
+
+    <div class="footer-section">
+      <h3><i class="fas fa-link"></i> Link Penting</h3>
+      <ul>
+        <li><a href="https://sma.kemendikdasmen.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
+        <li><a href="https://dindik.jatimprov.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
+        <li><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas Banyuwangi</a></li>
+        <li><a href="https://alam21234.github.io/Smaring-interactive-learning-comunity" target="_blank"><i class="fas fa-external-link-alt"></i> Smaring Learning Community</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3><i class="fas fa-flask"></i> Lab Virtual</h3>
+      <ul>
+        <li><a href="https://quran.nu.or.id" target="_blank"><i class="fas fa-book-quran"></i> Al-Qur'an Digital</a></li>
+        <li><a href="https://virtualbiologylab.org" target="_blank"><i class="fas fa-dna"></i> Virtual Biology Lab</a></li>
+        <li><a href="https://www.myphysicslab.com" target="_blank"><i class="fas fa-atom"></i> MyPhysicsLab</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3><i class="fas fa-share-alt"></i> Media Sosial</h3>
+      <div class="social-links">
+        <a href="https://www.facebook.com/Sman1Cluring" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/sman1_cluring" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+      <p style="margin-top: 15px; font-size: 0.9rem;">
+        Ikuti kami untuk update terkini!
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
   </div>
 </footer>
 
@@ -769,7 +842,6 @@
   const darkModeToggle = document.getElementById('darkModeToggle');
   const body = document.body;
   
-  // Load saved preference
   const isDarkMode = localStorage.getItem('darkMode') === 'true';
   if (isDarkMode) {
     body.classList.add('dark-mode');
@@ -798,10 +870,7 @@
             behavior: 'smooth',
             block: 'start'
           });
-          
-          // Close mobile menu if open
-          const menu = document.getElementById("navMenu");
-          menu.classList.remove("active");
+          document.getElementById("navMenu").classList.remove("active");
         }
       }
     });
