@@ -204,6 +204,7 @@
       font-size: 1.8rem;
       position: relative;
       padding-left: 15px;
+      text-align: center;
     }
 
     .section h2::before {
@@ -249,14 +250,21 @@
     }
 
     /* ===== SCHOOL IMAGE ===== */
+    .school-image-container {
+      text-align: center;
+      margin: 20px auto 30px;
+      max-width: 100%;
+    }
+    
     .school-image {
-      width: 80%;
-      max-height: 100px;
-      object-fit: cover;
+      max-width: 100%;
+      height: auto;
       border-radius: 12px;
-      margin: 25px 0;
       box-shadow: var(--shadow);
       transition: var(--transition);
+      display: inline-block;
+      max-height: 250px;
+      width: auto;
     }
 
     .school-image:hover {
@@ -460,7 +468,7 @@
       }
 
       .school-image {
-        max-height: 300px;
+        max-height: 200px;
       }
     }
 
@@ -487,7 +495,11 @@
       }
 
       .school-image {
-        max-height: 250px;
+        max-height: 180px;
+      }
+      
+      .section h2 {
+        font-size: 1.4rem;
       }
     }
   </style>
@@ -528,7 +540,7 @@
 <!-- INTERNAL NAVIGATION -->
 <nav class="internal-nav">
   <ul>
-    <li><a href="#sejarah" class="nav-link">Sejarah Sekolah</a></li>
+    <li><a href="#sejarah" class="nav-link active">Sejarah Sekolah</a></li>
     <li><a href="#visimisi" class="nav-link">Visi dan Misi</a></li>
     <li><a href="#struktur" class="nav-link">Struktur Organisasi</a></li>
     <li><a href="#sarpras" class="nav-link">Sarana Prasarana</a></li>
@@ -541,6 +553,12 @@
   <!-- SEJARAH SEKOLAH -->
   <div class="section" id="sejarah">
     <h2><i class="fas fa-history"></i> Sejarah Sekolah</h2>
+    
+    <!-- GAMBAR SEKOLAH - DIPINDAH KE ATAS DAN DIPERKECIL -->
+    <div class="school-image-container">
+      <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Foto Sekolah SMAN 1 Cluring" class="school-image">
+    </div>
+    
     <p>
       SMAN 1 Cluring merupakan lembaga pendidikan menengah atas yang berdiri di Kecamatan Cluring, Kabupaten Banyuwangi, Jawa Timur. Sekolah ini didirikan dengan tujuan mencetak generasi muda yang berprestasi, berkarakter, dan siap bersaing di era global.
     </p>
@@ -550,9 +568,6 @@
     <p>
       Berlokasi strategis di Jalan Huzaini, Benculuk, Cluring, sekolah ini memiliki akses yang mudah dan lingkungan yang kondusif untuk kegiatan belajar mengajar. Dengan dukungan fasilitas yang memadai dan tenaga pendidik yang profesional, SMAN 1 Cluring siap melahirkan lulusan-lulusan terbaik untuk kemajuan bangsa.
     </p>
-
-    <!-- GAMBAR SEKOLAH -->
-    <img src="https://i.ibb.co.com/xKfZBy7w/SMAN1-Cluring-emblem.png" alt="Foto Sekolah SMAN 1 Cluring" class="school-image">
   </div>
 
   <div class="cultural-divider"></div>
@@ -850,7 +865,7 @@
   });
 
   // Initialize first link as active
-  document.querySelector('.nav-link').classList.add('active');
+  document.querySelector('.nav-link[href="#sejarah"]').classList.add('active');
 </script>
 
 </body>
