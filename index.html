@@ -17,7 +17,7 @@
   <meta property="og:url" content="https://sman1cluring.sch.id" />
   <meta property="og:image" content="/assets/images/hero-bg.jpg" />
 
-  <!-- Font Google -->
+  <!-- Font Google (FIXED: removed extra space) -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   
   <!-- Icons -->
@@ -225,6 +225,15 @@
     }
 
     /* ===== SAMBUTAN ===== */
+    .sambutan-container {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      padding: 40px;
+      box-shadow: var(--shadow);
+      max-width: 1100px;
+      margin: auto;
+    }
+
     .sambutan {
       display: flex;
       gap: 40px;
@@ -232,17 +241,26 @@
       flex-wrap: wrap;
     }
 
-    .sambutan img {
-      width: 260px;
-      height: auto;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      object-fit: cover;
-      transition: transform 0.3s ease;
+    /* Avatar styling - ELEGANT CIRCLE */
+    .avatar-container {
+      display: flex;
+      justify-content: center;
+      flex-shrink: 0;
     }
 
-    .sambutan img:hover {
-      transform: scale(1.02);
+    .avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--primary);
+      box-shadow: 0 6px 15px rgba(13, 71, 161, 0.25);
+      transition: var(--transition);
+    }
+
+    .avatar:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(13, 71, 161, 0.35);
     }
 
     .sambutan-content {
@@ -250,17 +268,38 @@
       min-width: 280px;
     }
 
-    .sambutan p {
-      margin-bottom: 16px;
+    .sambutan-content p {
+      margin-bottom: 18px;
       font-size: 1.05rem;
+      line-height: 1.8;
       color: var(--dark);
+      text-align: justify;
     }
 
-    .sambutan strong {
-      display: block;
-      margin-top: 20px;
+    .sambutan-content p:first-child {
+      font-style: italic;
+      color: var(--secondary);
+      font-weight: 500;
+    }
+
+    .sambutan-content .vision {
+      background: rgba(13, 71, 161, 0.05);
+      border-left: 4px solid var(--primary);
+      padding: 18px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 25px 0;
       font-weight: 600;
       color: var(--primary);
+      font-size: 1.1rem;
+    }
+
+    .signature {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 2px dashed var(--gray);
+      font-weight: 600;
+      color: var(--primary);
+      line-height: 1.6;
     }
 
     /* ===== NEWS & ACTIVITY GRID ===== */
@@ -405,7 +444,35 @@
       transform: translateY(-3px);
     }
 
+    /* ===== DARK MODE ADJUSTMENTS ===== */
+    .dark-mode .sambutan-container {
+      background: var(--light);
+      color: var(--dark);
+    }
+
+    .dark-mode .avatar {
+      border-color: var(--secondary);
+      box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+    }
+
+    .dark-mode .sambutan-content .vision {
+      background: rgba(37, 99, 235, 0.15);
+      border-left-color: var(--secondary);
+      color: var(--accent);
+    }
+
     /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .sambutan-container {
+        padding: 30px 25px;
+      }
+      
+      .avatar {
+        width: 160px;
+        height: 160px;
+      }
+    }
+
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
@@ -445,8 +512,13 @@
         text-align: center;
       }
 
-      .sambutan img {
-        margin: 0 auto;
+      .avatar-container {
+        width: 100%;
+      }
+
+      .avatar {
+        width: 150px;
+        height: 150px;
       }
 
       .section {
@@ -479,6 +551,23 @@
         width: 42px;
         height: 42px;
         font-size: 16px;
+      }
+      
+      .sambutan-container {
+        padding: 25px 20px;
+      }
+      
+      .avatar {
+        width: 140px;
+        height: 140px;
+      }
+      
+      .sambutan-content p {
+        font-size: 1rem;
+      }
+      
+      .signature {
+        font-size: 1.05rem;
       }
     }
   </style>
@@ -529,17 +618,41 @@
 <!-- SAMBUTAN -->
 <section class="section">
   <h2>Sambutan Kepala Satuan Pendidikan</h2>
-  <div class="sambutan">
-    <img src="https://i.ibb.co/LDSSCYrF/1-Helmi-S-Pd-M-Si-Penanggung-Jawab-Umum.jpg" alt="Kepala Satuan Pendidikan" />
-    <div class="sambutan-content">
-      <p>Assalamu’alaikum warahmatullahi wabarakatuh.</p>
-      <p>
-        Website ini menjadi sarana informasi dan komunikasi antara sekolah dengan peserta didik, orang tua, alumni, dan masyarakat luas.
-      </p>
-      <p>
-        Kami berkomitmen untuk meningkatkan mutu pendidikan serta membentuk peserta didik sesuai Profil Pelajar Pancasila.
-      </p>
-      <strong>Kepala Satuan Pendidikan<br>SMAN 1 Cluring</strong>
+  <div class="sambutan-container">
+    <div class="sambutan">
+      <div class="avatar-container">
+        <img src="https://i.ibb.co/LDSSCYrF/1-Helmi-S-Pd-M-Si-Penanggung-Jawab-Umum.jpg" alt="Helmi, S.Pd, M.Si - Kepala SMAN 1 Cluring" class="avatar">
+      </div>
+      <div class="sambutan-content">
+        <p>
+          Assalamu'alaikum warahmatullahi wabarakatuh,<br>
+          Om swastyastu, Namo buddhaya, Salam kebajikan.
+        </p>
+        <p>
+          Puji syukur kita panjatkan ke hadirat Tuhan Yang Maha Esa atas limpahan rahmat-Nya sehingga kita dapat terus berkontribusi dalam dunia pendidikan.
+        </p>
+        <p>
+          Sebagai Kepala SMAN 1 Cluring, saya bangga dapat membersamai generasi penerus bangsa yang penuh potensi. Sekolah ini adalah rumah kedua bagi seluruh siswa — tempat belajar, membangun karakter, serta menanamkan nilai-nilai kebangsaan.
+        </p>
+        <div class="vision">
+          "Mewujudkan peserta didik yang berprestasi, berkarakter, beriman dan bertakwa, serta berwawasan lingkungan."
+        </div>
+        <p>
+          Dukungan dari dewan guru, orang tua, peserta didik, dan masyarakat sangat penting dalam menciptakan lingkungan belajar yang aman, nyaman, dan inspiratif. Kami mengembangkan pembelajaran aktif, kreatif, dan memanfaatkan teknologi untuk meningkatkan mutu pendidikan.
+        </p>
+        <p>
+          Mari kita terus bersinergi demi kemajuan SMAN 1 Cluring — menjadikannya pusat pembinaan generasi muda yang cerdas, santun, berakhlak mulia, dan berintegritas.
+        </p>
+        <p>
+          Terima kasih atas dukungan semua pihak. Semoga ikhtiar kita membawa manfaat nyata bagi kemajuan pendidikan di sekolah tercinta.
+        </p>
+        <div class="signature">
+          Wassalamu'alaikum warahmatullahi wabarakatuh,<br>
+          Om santih santih santih om.<br><br>
+          Helmi, S.Pd, M.Si<br>
+          Kepala SMAN 1 Cluring
+        </div>
+      </div>
     </div>
   </div>
 </section>
