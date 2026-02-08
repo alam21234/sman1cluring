@@ -23,6 +23,9 @@
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
   <style>
     :root {
       /* Light Mode */
@@ -62,6 +65,42 @@
       color: var(--dark);
       line-height: 1.6;
       transition: background-color 0.3s ease, color 0.3s ease;
+      overflow-x: hidden;
+    }
+
+    /* ===== PRELOADER ===== */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--primary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    #preloader.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-top: 4px solid var(--white);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     /* ===== HEADER ===== */
@@ -322,8 +361,8 @@
 
     .news-card:hover,
     .activity-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
     }
 
     .news-card img,
@@ -369,8 +408,8 @@
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     }
 
     .card h3 {
@@ -458,15 +497,6 @@
       opacity: 0.8;
     }
 
-    .footer-bottom {
-      text-align: center;
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-
     .social-links {
       display: flex;
       gap: 15px;
@@ -489,6 +519,15 @@
     .social-links a:hover {
       background: var(--accent);
       transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 0.9rem;
+      opacity: 0.8;
     }
 
     /* ===== DARK MODE ADJUSTMENTS ===== */
@@ -622,8 +661,13 @@
 
 <body>
 
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="spinner"></div>
+</div>
+
 <!-- HEADER -->
-<header>
+<header data-aos="fade-down">
   <div class="nav-container">
     <a href="index.html" class="brand">
       <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring" />
@@ -655,7 +699,7 @@
 </header>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" data-aos="zoom-in" data-aos-delay="200">
   <h1>Selamat Datang di Website Resmi<br>SMAN 1 Cluring</h1>
   <p>
     Menginspirasi Generasi Pancasila dari Bumi Blambangan — Pusat informasi akademik, kegiatan, dan layanan publik sekolah.
@@ -664,8 +708,8 @@
 
 <!-- SAMBUTAN -->
 <section class="section">
-  <h2>Sambutan Kepala Satuan Pendidikan</h2>
-  <div class="sambutan-container">
+  <h2 class="section-header-title" data-aos="fade-right">Sambutan Kepala Satuan Pendidikan</h2>
+  <div class="sambutan-container" data-aos="fade-up" data-aos-delay="100">
     <div class="sambutan">
       <div class="avatar-container">
         <img src="https://i.ibb.co/LDSSCYrF/1-Helmi-S-Pd-M-Si-Penanggung-Jawab-Umum.jpg" alt="Helmi, S.Pd, M.Si - Kepala SMAN 1 Cluring" class="avatar">
@@ -704,16 +748,16 @@
   </div>
 </section>
 
-<div class="cultural-divider"></div>
+<div class="cultural-divider" data-aos="fade-in"></div>
 
 <!-- BERITA TERKINI -->
 <section class="section">
   <div class="section-header">
-    <h2>Berita Terbaru</h2>
-    <a href="artikel.html" class="view-all">Lihat Semua →</a>
+    <h2 data-aos="fade-right">Berita Terbaru</h2>
+    <a href="artikel.html" class="view-all" data-aos="fade-left">Lihat Semua →</a>
   </div>
   <div class="news-grid">
-    <a href="articles/Program SIKAP.html" class="news-card">
+    <a href="articles/Program SIKAP.html" class="news-card" data-aos="flip-up" data-aos-delay="100">
       <img src="https://i.ibb.co.com/zHSfC2Qz/JENIS-TANAMAN.jpg" alt="Program SIKAP 2026" />
       <div>
         <h3>SMAN 1 Cluring Perkuat Ketahanan Pangan melalui Program SIKAP</h3>
@@ -721,7 +765,7 @@
       </div>
     </a>
 
-    <a href="articles/Smaring Expo 2026.html" class="news-card">
+    <a href="articles/Smaring Expo 2026.html" class="news-card" data-aos="flip-up" data-aos-delay="200">
       <img src="https://i.ibb.co.com/TBfc9QcK/KS-LAUNCING-EXSPO.jpg" alt="Smaring Expo 2026" />
       <div>
         <h3>Smaring Expo Campus dan Talkshow 2026</h3>
@@ -729,7 +773,7 @@
       </div>
     </a>
 
-    <a href="articles/Hari Kesaktian Pancasila.html" class="news-card">
+    <a href="articles/Hari Kesaktian Pancasila.html" class="news-card" data-aos="flip-up" data-aos-delay="300">
       <img src="https://i.ibb.co.com/Kz2SXCCz/pembawa-acara-upacara.jpg" alt="Upacara Bendera Hari Kesaktian Pancasila" />
       <div>
         <h3>SMAN 1 Cluring Gelar Upacara Peringatan Hari Kesaktian Pancasila 2025</h3>
@@ -742,11 +786,11 @@
 <!-- KEGIATAN KESISWAAN -->
 <section class="section">
   <div class="section-header">
-    <h2>Kegiatan Kesiswaan</h2>
-    <a href="kesiswaan.html" class="view-all">Lihat Semua →</a>
+    <h2 data-aos="fade-right">Kegiatan Kesiswaan</h2>
+    <a href="kesiswaan.html" class="view-all" data-aos="fade-left">Lihat Semua →</a>
   </div>
   <div class="activity-grid">
-    <a href="kesiswaan/osis.html" class="activity-card">
+    <a href="kesiswaan/osis.html" class="activity-card" data-aos="zoom-in" data-aos-delay="100">
       <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644" alt="OSIS" />
       <div>
         <h3>Program Kerja OSIS 2026</h3>
@@ -754,7 +798,7 @@
       </div>
     </a>
 
-    <a href="kesiswaan/ekstrakurikuler.html" class="activity-card">
+    <a href="kesiswaan/ekstrakurikuler.html" class="activity-card" data-aos="zoom-in" data-aos-delay="200">
       <img src="https://images.unsplash.com/photo-1546403194-88fa49ecfd5c" alt="Ekstrakurikuler" />
       <div>
         <h3>Ekstrakurikuler Unggulan</h3>
@@ -762,7 +806,7 @@
       </div>
     </a>
 
-    <a href="articles/lomba-tari.html" class="activity-card">
+    <a href="articles/lomba-tari.html" class="activity-card" data-aos="zoom-in" data-aos-delay="300">
       <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d" alt="Tari Gandrung" />
       <div>
         <h3>Lomba Tari Gandrung</h3>
@@ -774,17 +818,17 @@
 
 <!-- INFORMASI UTAMA -->
 <section class="section">
-  <h2>Informasi Utama</h2>
+  <h2 data-aos="fade-up">Informasi Utama</h2>
   <div class="cards">
-    <div class="card">
+    <div class="card" data-aos="fade-up" data-aos-delay="100">
       <h3>Akademik</h3>
       <p>Kurikulum Merdeka dan kegiatan pembelajaran.</p>
     </div>
-    <div class="card">
+    <div class="card" data-aos="fade-up" data-aos-delay="200">
       <h3>Kesiswaan</h3>
       <p>OSIS, ekstrakurikuler, dan prestasi.</p>
     </div>
-    <div class="card">
+    <div class="card" data-aos="fade-up" data-aos-delay="300">
       <h3>Humas</h3>
       <p>Informasi publik dan pengumuman resmi.</p>
     </div>
@@ -792,7 +836,7 @@
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer data-aos="fade-up">
   <div class="footer-content">
     <div class="footer-section">
       <h3><i class="fas fa-map-marker-alt"></i> Kontak</h3>
@@ -837,7 +881,24 @@
   </div>
 </footer>
 
+<!-- AOS & Custom JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
+  // Initialize AOS
+  AOS.init({
+    duration: 800,
+    once: true, // animate only once on scroll
+    easing: 'ease-out-cubic'
+  });
+
+  // Preloader
+  window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    setTimeout(() => {
+      preloader.classList.add('fade-out');
+    }, 800);
+  });
+
   // Dark Mode Toggle
   const darkModeToggle = document.getElementById('darkModeToggle');
   const body = document.body;
