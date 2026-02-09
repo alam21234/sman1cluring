@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pergantian Kepengurusan Takmir Masjid Baitul Muttaqin SMAN 1 Cluring</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Pergantian Kepengurusan Takmir Masjid Baitul Muttaqin SMAN 1 Cluring - Kegiatan keagamaan untuk pembinaan karakter peserta didik." />
+  <meta name="author" content="SMAN 1 Cluring" />
+  <meta name="keywords" content="Takmir Masjid, Baitul Muttaqin, SMAN 1 Cluring, keagamaan, regenerasi, kepemimpinan" />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Pergantian Kepengurusan Takmir Masjid Baitul Muttaqin SMAN 1 Cluring" />
+  <meta property="og:description" content="SMAN 1 Cluring menyelenggarakan pergantian kepengurusan Takmir Masjid Baitul Muttaqin sebagai bentuk regenerasi kepemimpinan keagamaan." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://sman1cluring.sch.id/articles/Pergantian-Kepengurusan-Takmir-Masjid-Baitul-Muttaqin-SMAN-1-Cluring.html" />
+  <meta property="og:image" content="https://i.ibb.co/Fk521mwR/takmir-1.jpg" />
+  <meta property="og:site_name" content="SMAN 1 Cluring" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0d47a1;
+      --secondary: #1565c0;
+      --accent: #29b6f6;
+      --cultural-accent: #c53030;
+      --ijen-green: #2f855a;
+      --light: #f8fafc;
+      --dark: #1e293b;
+      --gray: #64748b;
+      --white: #ffffff;
+      --shadow: 0 4px 12px rgba(0,0,0,0.1);
+      --transition: all 0.3s ease;
+      --border-radius: 12px;
+    }
+
+    .dark-mode {
+      --primary: #3b82f6;
+      --secondary: #2563eb;
+      --accent: #0ea5e9;
+      --light: #1e293b;
+      --dark: #f1f5f9;
+      --gray: #94a3b8;
+      --white: #0f172a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ===== PRELOADER ===== */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--primary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    #preloader.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-top: 4px solid var(--white);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: var(--primary);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 36px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      transition: var(--transition);
+      padding: 6px 0;
+    }
+
+    nav ul li a:hover {
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* Dark Mode Toggle */
+    .dark-mode-toggle {
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      color: var(--white);
+      font-size: 18px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dark-mode-toggle:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: rotate(30deg);
+    }
+
+    .dark-mode .dark-mode-toggle i {
+      display: none;
+    }
+
+    .dark-mode .dark-mode-toggle i.sun {
+      display: block;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .article-hero {
+      background: linear-gradient(rgba(13,71,161,0.9), rgba(13,71,161,0.9)),
+        url('https://i.ibb.co/Fk521mwR/takmir-1.jpg') center/cover;
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px 70px;
+      position: relative;
+    }
+
+    .article-hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .article-meta {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .article-meta span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .breadcrumb {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    .breadcrumb a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== ARTICLE CONTENT ===== */
+    .article-container {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .article-content {
+      background: var(--white);
+      padding: 50px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 30px;
+    }
+
+    .article-content h2 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      position: relative;
+      padding-left: 15px;
+    }
+
+    .article-content h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 5px;
+      height: 28px;
+      background: var(--secondary);
+      border-radius: 3px;
+    }
+
+    .article-content p {
+      line-height: 1.8;
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+
+    .article-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .gallery-item {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-item figcaption {
+      padding: 12px;
+      background: var(--white);
+      font-size: 0.85rem;
+      color: var(--gray);
+      text-align: center;
+    }
+
+    /* ===== QUOTE BOX ===== */
+    .quote-box {
+      background: linear-gradient(135deg, rgba(13,71,161,0.1) 0%, rgba(21,101,192,0.05) 100%);
+      border-left: 5px solid var(--primary);
+      padding: 25px;
+      border-radius: 0 10px 10px 0;
+      margin: 30px 0;
+      font-weight: 600;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--primary);
+      position: relative;
+    }
+
+    .quote-box::before {
+      content: '"';
+      position: absolute;
+      top: -15px;
+      left: 10px;
+      font-size: 4rem;
+      color: rgba(13,71,161,0.1);
+      font-family: Georgia, serif;
+    }
+
+    /* ===== BACK TO ARTICLES ===== */
+    .back-to-articles {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .back-to-articles a {
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .back-to-articles a:hover {
+      background: var(--secondary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(13,71,161,0.3);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--primary);
+      color: var(--white);
+      padding: 50px 20px 30px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .footer-section h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    .footer-section h3::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: var(--accent);
+      margin-top: 6px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-section a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-section a:hover {
+      color: var(--accent);
+      padding-left: 4px;
+    }
+
+    .footer-section a i {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--white);
+      font-size: 16px;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      nav ul {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        background: var(--primary);
+        width: 100%;
+        flex-direction: column;
+        display: none;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      nav ul li {
+        padding: 12px 0;
+        text-align: center;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .article-hero h1 {
+        font-size: 1.6rem;
+      }
+
+      .article-content {
+        padding: 30px 20px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .back-to-articles a {
+        padding: 10px 24px;
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .article-hero {
+        padding: 70px 16px 50px;
+      }
+
+      .article-hero h1 {
+        font-size: 1.4rem;
+      }
+
+      .article-content {
+        padding: 25px 15px;
+      }
+
+      .article-meta {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .gallery-item img {
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="spinner"></div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring">
+      SMAN 1 CLURING
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <nav>
+        <ul id="navMenu">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../profil.html">Profil</a></li>
+          <li><a href="../akademik.html">Akademik</a></li>
+          <li><a href="../kesiswaan.html">Kesiswaan</a></li>
+          <li><a href="../humas.html">Humas</a></li>
+          <li><a href="../alumni.html">Alumni</a></li>
+          <li><a href="../artikel.html">Artikel</a></li>
+        </ul>
+      </nav>
+      
+      <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun sun"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="article-hero" data-aos="zoom-in">
+  <h1 data-aos="fade-up">Pergantian Kepengurusan Takmir Masjid Baitul Muttaqin SMAN 1 Cluring</h1>
+  <div class="article-meta" data-aos="fade-up" data-aos-delay="100">
+    <span><i class="fas fa-calendar"></i> 19 Oktober 2025</span>
+    <span><i class="fas fa-user"></i> SMAN 1 Cluring</span>
+    <span><i class="fas fa-tag"></i> Kegiatan Keagamaan</span>
+  </div>
+  <div class="breadcrumb" data-aos="fade-up" data-aos-delay="200">
+    <a href="../index.html">Beranda</a> / <a href="../artikel.html">Artikel</a> / Pergantian Kepengurusan Takmir
+  </div>
+</section>
+
+<!-- ARTICLE CONTENT -->
+<section class="article-container">
+  <article class="article-content" data-aos="fade-up">
+    <p data-aos="fade-up" data-aos-delay="100">
+      Pada hari Minggu, 19 Oktober 2025, SMAN 1 Cluring menyelenggarakan kegiatan Pergantian Kepengurusan Takmir Masjid Baitul Muttaqin. Kegiatan ini berlangsung dengan khidmat di Masjid Baitul Muttaqin yang berada di lingkungan sekolah, dihadiri oleh dewan guru, perwakilan siswa, serta pembina keagamaan.
+    </p>
+
+    <!-- GALLERY -->
+    <div class="gallery" data-aos="fade-up" data-aos-delay="200">
+      <figure class="gallery-item">
+        <img src="https://i.ibb.co/Fk521mwR/takmir-1.jpg" alt="Foto 1 - Pergantian Kepengurusan Takmir" />
+        <figcaption>Foto 1: Suasana acara pergantian kepengurusan</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="https://i.ibb.co/R13MhFt/takmir-3.jpg" alt="Foto 2 - Serah Terima Jabatan" />
+        <figcaption>Foto 2: Prosesi serah terima jabatan</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="https://i.ibb.co/LD5wygXs/takmir-4.jpg" alt="Foto 3 - Pengurus Baru Takmir" />
+        <figcaption>Foto 3: Pengurus baru Takmir Masjid Baitul Muttaqin</figcaption>
+      </figure>
+    </div>
+
+    <p data-aos="fade-up" data-aos-delay="300">
+      Acara diawali dengan pembacaan ayat suci Al-Qur'an, dilanjutkan dengan laporan kegiatan dari pengurus lama yang menyampaikan berbagai program keagamaan yang telah terlaksana selama masa baktinya. Setelah itu, dilakukan prosesi serah terima jabatan antara pengurus lama dan pengurus baru sebagai simbol regenerasi kepemimpinan dalam pengelolaan kegiatan keagamaan sekolah.
+    </p>
+
+    <div class="quote-box" data-aos="fade-left" data-aos-delay="400">
+      Regenerasi kepemimpinan dalam kegiatan keagamaan merupakan bagian penting dari pembinaan karakter peserta didik di SMAN 1 Cluring.
+    </div>
+
+    <p data-aos="fade-up" data-aos-delay="500">
+      Dalam sambutannya, Kepala SMAN 1 Cluring, Ibu Helmi, S.Pd., M.Si., melalui Pembina Takmir Masjid Baitul Muttaqin, Bapak Drs. Sy. Hadi, menyampaikan apresiasi yang tinggi kepada pengurus sebelumnya atas dedikasi mereka dalam menjaga kegiatan spiritual di lingkungan sekolah. Beliau juga berpesan agar pengurus baru dapat melanjutkan tradisi baik serta menumbuhkan semangat kebersamaan, kedisiplinan, dan tanggung jawab dalam mengelola kegiatan masjid.
+    </p>
+
+    <p data-aos="fade-up" data-aos-delay="600">
+      Sementara itu, pengurus baru Takmir Masjid Baitul Muttaqin menyatakan komitmennya untuk terus meningkatkan partisipasi siswa dalam kegiatan keagamaan, seperti tadarus, kajian rutin, serta kegiatan sosial berbasis keislaman. Diharapkan, regenerasi ini mampu memperkuat peran masjid sebagai pusat pembinaan akhlak dan karakter peserta didik di SMAN 1 Cluring.
+    </p>
+
+    <div style="margin-top: 30px; padding: 20px; background: rgba(13,71,161,0.05); border-radius: 10px; border-left: 4px solid var(--primary);" data-aos="fade-up" data-aos-delay="700">
+      <p style="font-style: italic; color: var(--primary); font-weight: 500;">
+        <i class="fas fa-info-circle" style="margin-right: 8px;"></i>
+        Kegiatan keagamaan di SMAN 1 Cluring merupakan bagian integral dari program Penguatan Pendidikan Karakter (PPK) yang bertujuan membentuk generasi yang beriman, bertakwa, dan berakhlak mulia.
+      </p>
+    </div>
+  </article>
+
+  <div class="back-to-articles" data-aos="fade-up">
+    <a href="../artikel.html">
+      <i class="fas fa-arrow-left"></i> Kembali ke Daftar Artikel
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer data-aos="fade-up">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3><i class="fas fa-map-marker-alt"></i> Kontak</h3>
+      <p>Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, Jawa Timur</p>
+      <p><i class="fas fa-phone"></i> <a href="tel:+6282319712420">0823-1971-2420</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:sman1cluring@sch.id">sman1cluring@sch.id</a></p>
+    </div>
+
+    <div class="footer-section">
+      <h3><i class="fas fa-link"></i> Link Penting</h3>
+      <ul>
+        <li><a href="https://sma.kemendikdasmen.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
+        <li><a href="https://dindik.jatimprov.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
+        <li><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas Banyuwangi</a></li>
+        <li><a href="https://alam21234.github.io/Smaring-interactive-learning-comunity" target="_blank"><i class="fas fa-external-link-alt"></i> Smaring Learning Community</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3><i class="fas fa-flask"></i> Lab Virtual</h3>
+      <ul>
+        <li><a href="https://quran.nu.or.id" target="_blank"><i class="fas fa-book-quran"></i> Al-Qur'an Digital</a></li>
+        <li><a href="https://virtualbiologylab.org" target="_blank"><i class="fas fa-dna"></i> Virtual Biology Lab</a></li>
+        <li><a href="https://www.myphysicslab.com" target="_blank"><i class="fas fa-atom"></i> MyPhysicsLab</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3><i class="fas fa-share-alt"></i> Media Sosial</h3>
+      <div class="social-links">
+        <a href="https://www.facebook.com/Sman1Cluring" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/sman1_cluring" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+      <p style="margin-top: 15px; font-size: 0.9rem;">
+        Ikuti kami untuk update terkini!
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
+    <p style="margin-top: 8px; font-size: 0.9rem; opacity: 0.8;">
+      Website Resmi SMAN 1 Cluring Banyuwangi
+    </p>
+  </div>
+</footer>
+
+<!-- AOS & Custom JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  // Initialize AOS
+  AOS.init({
+    duration: 800,
+    once: true,
+    easing: 'ease-out-cubic'
+  });
+
+  // Preloader
+  window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    setTimeout(() => {
+      preloader.classList.add('fade-out');
+    }, 800);
+  });
+
+  // Dark Mode Toggle
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const body = document.body;
+  
+  const isDarkMode = localStorage.getItem('darkMode') === 'true';
+  if (isDarkMode) {
+    body.classList.add('dark-mode');
+  }
+  
+  darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+  });
+
+  // Mobile Menu Toggle
+  function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("active");
+  }
+</script>
+
+</body>
+</html>
