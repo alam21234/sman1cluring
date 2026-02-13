@@ -122,15 +122,13 @@
       100% { transform: rotate(360deg); }
     }
 
-    /* ===== HEADER - SUPER PREMIUM ===== */
+    /* ===== HEADER - CLEAN & PREMIUM ===== */
     header {
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
       position: sticky;
       top: 0;
       z-index: 1000;
       box-shadow: var(--shadow-md);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
     }
 
     .nav-container {
@@ -152,7 +150,6 @@
       font-size: 1.5rem;
       text-decoration: none;
       letter-spacing: -0.5px;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     .brand img {
@@ -162,10 +159,18 @@
       box-shadow: var(--shadow-sm);
     }
 
+    /* === MENU NAVIGATION + DARK MODE TOGGLE (BERGABUNG) === */
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
     nav ul {
       list-style: none;
       display: flex;
       gap: 32px;
+      align-items: center;
     }
 
     nav ul li a {
@@ -177,6 +182,7 @@
       padding: 8px 0;
       position: relative;
       opacity: 0.9;
+      white-space: nowrap;
     }
 
     nav ul li a::after {
@@ -192,35 +198,28 @@
 
     nav ul li a:hover {
       opacity: 1;
-      color: var(--white);
     }
 
     nav ul li a:hover::after {
       width: 100%;
     }
 
-    .menu-toggle {
-      display: none;
-      font-size: 28px;
-      color: var(--white);
-      cursor: pointer;
-    }
-
-    /* Dark Mode Toggle - Premium */
+    /* Dark Mode Toggle - Sekarang di dalam menu */
     .dark-mode-toggle {
       background: var(--glass);
       border: 1px solid var(--glass-border);
-      width: 52px;
-      height: 52px;
+      width: 44px;
+      height: 44px;
       border-radius: 60px;
       color: var(--white);
-      font-size: 20px;
+      font-size: 1.2rem;
       cursor: pointer;
       transition: var(--transition);
       display: flex;
       align-items: center;
       justify-content: center;
       backdrop-filter: blur(8px);
+      margin-left: 8px;
     }
 
     .dark-mode-toggle:hover {
@@ -237,71 +236,11 @@
       display: block;
     }
 
-    /* ===== REALTIME CLOCK & VISITOR - TATA ULANG LAYOUT PREMIUM ===== */
-    .info-panel {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      margin-left: 20px;
-      background: var(--glass);
-      padding: 8px 20px 8px 24px;
-      border-radius: 60px;
-      border: 1px solid var(--glass-border);
-      backdrop-filter: blur(10px);
-    }
-
-    .clock-container {
-      display: flex;
-      align-items: center;
-      gap: 20px;
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
       color: var(--white);
-    }
-
-    .time-block {
-      display: flex;
-      align-items: baseline;
-      gap: 6px;
-    }
-
-    .clock-time {
-      font-size: 1.4rem;
-      font-weight: 700;
-      font-family: 'Plus Jakarta Sans', monospace;
-      letter-spacing: 1px;
-      background: rgba(0,0,0,0.2);
-      padding: 4px 12px;
-      border-radius: 40px;
-    }
-
-    .clock-date {
-      font-size: 0.9rem;
-      opacity: 0.8;
-      font-weight: 400;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .clock-date i {
-      font-size: 0.8rem;
-    }
-
-    .visitor-counter {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--secondary);
-      color: var(--primary-dark);
-      padding: 6px 16px;
-      border-radius: 40px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      white-space: nowrap;
-    }
-
-    .visitor-counter i {
-      font-size: 0.9rem;
+      cursor: pointer;
     }
 
     /* ===== HERO - PREMIUM OVERLAY ===== */
@@ -525,7 +464,7 @@
     .news-grid,
     .activity-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 40px;
     }
 
@@ -631,7 +570,7 @@
       opacity: 0.6;
     }
 
-    /* ===== FOOTER ===== */
+    /* ===== FOOTER - DENGAN CLOCK & VISITOR ===== */
     footer {
       background: linear-gradient(145deg, var(--primary-dark) 0%, var(--primary) 100%);
       color: var(--white);
@@ -716,9 +655,67 @@
       color: var(--primary-dark);
     }
 
+    /* Info Panel di Footer (Clock & Visitor) */
+    .footer-info-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 20px 30px;
+      border-radius: 60px;
+      margin: 40px auto 20px;
+      max-width: 1000px;
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
+    }
+
+    .footer-clock {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--white);
+    }
+
+    .footer-time {
+      font-size: 2rem;
+      font-weight: 700;
+      font-family: 'Plus Jakarta Sans', monospace;
+      background: rgba(0,0,0,0.3);
+      padding: 6px 18px;
+      border-radius: 50px;
+      letter-spacing: 2px;
+    }
+
+    .footer-date {
+      font-size: 1rem;
+      opacity: 0.9;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-visitor {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--secondary);
+      color: var(--primary-dark);
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+    }
+
+    .footer-visitor i {
+      font-size: 1.2rem;
+    }
+
     .footer-bottom {
       text-align: center;
-      margin-top: 60px;
+      margin-top: 30px;
       padding-top: 30px;
       border-top: 1px solid rgba(255,255,255,0.1);
       font-size: 0.95rem;
@@ -743,45 +740,62 @@
       border-color: rgba(255,255,255,0.05);
     }
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 1100px) {
-      .info-panel {
-        gap: 16px;
-        padding: 8px 16px;
-      }
-      .clock-time { font-size: 1.2rem; }
+    .dark-mode .footer-info-panel {
+      background: rgba(0, 0, 0, 0.4);
     }
 
-    @media (max-width: 900px) {
-      .info-panel {
-        flex-wrap: wrap;
-        border-radius: 30px;
-        margin-left: 0;
-      }
-      .sambutan-container { padding: 40px; }
+    /* ===== RESPONSIVE MAKSIMAL ===== */
+    @media (max-width: 1024px) {
+      nav ul { gap: 20px; }
+      .nav-container { padding: 12px 20px; }
     }
 
-    @media (max-width: 768px) {
-      .menu-toggle { display: block; }
+    @media (max-width: 880px) {
+      .menu-toggle {
+        display: block;
+        order: 3;
+      }
+
+      .nav-right {
+        order: 2;
+      }
+
       nav ul {
         position: absolute;
-        top: 80px;
+        top: 76px;
         left: 0;
         right: 0;
         background: var(--primary);
         flex-direction: column;
-        padding: 20px 0;
+        padding: 25px 0;
         display: none;
         z-index: 100;
         border-top: 1px solid rgba(255,255,255,0.1);
         backdrop-filter: blur(12px);
+        gap: 16px;
       }
-      nav ul.active { display: flex; }
-      nav ul li { text-align: center; padding: 12px 0; }
 
-      .hero h1 { font-size: 2.4rem; }
+      nav ul.active {
+        display: flex;
+      }
+
+      nav ul li {
+        text-align: center;
+      }
+
+      nav ul li a {
+        font-size: 1.1rem;
+      }
+
+      .dark-mode-toggle {
+        margin: 0 auto;
+      }
+
+      .hero h1 { font-size: 2.5rem; }
       .hero { padding: 100px 16px; min-height: 500px; }
+    }
 
+    @media (max-width: 768px) {
       .sambutan { flex-direction: column; text-align: center; }
       .avatar-container::before { left: 50%; transform: translateX(-50%); width: 220px; height: 220px; }
       .avatar { width: 180px; height: 180px; }
@@ -790,17 +804,24 @@
       .section-header h2 { font-size: 2.2rem; }
       .view-all { font-size: 1rem; }
 
-      .info-panel { width: 100%; justify-content: center; }
+      .footer-info-panel { flex-direction: column; text-align: center; border-radius: 40px; }
+      .footer-clock { flex-direction: column; gap: 8px; }
     }
 
     @media (max-width: 480px) {
       .brand span { display: none; }
       .brand img { width: 44px; }
       .hero h1 { font-size: 1.9rem; }
-      .clock-time { font-size: 1rem; padding: 4px 8px; }
-      .visitor-counter { padding: 4px 12px; font-size: 0.8rem; }
-      .clock-date { font-size: 0.75rem; }
-      .info-panel { flex-wrap: wrap; gap: 8px; padding: 8px; }
+      .hero-content { padding: 20px; }
+
+      .footer-time { font-size: 1.5rem; }
+      .footer-visitor { padding: 8px 16px; font-size: 0.9rem; }
+      .footer-info-panel { padding: 20px; }
+    }
+
+    @media (max-width: 360px) {
+      .nav-container { padding: 10px 12px; }
+      .dark-mode-toggle { width: 38px; height: 38px; }
     }
   </style>
 </head>
@@ -812,7 +833,7 @@
   <div class="spinner"></div>
 </div>
 
-<!-- HEADER PREMIUM -->
+<!-- HEADER CLEAN - TANPA CLOCK & VISITOR -->
 <header data-aos="fade-down">
   <div class="nav-container">
     <a href="index.html" class="brand">
@@ -822,7 +843,7 @@
     
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     
-    <div style="display: flex; align-items: center; gap: 20px;">
+    <div class="nav-right">
       <nav>
         <ul id="navMenu">
           <li><a href="index.html">Home</a></li>
@@ -833,31 +854,15 @@
           <li><a href="alumni.html">Alumni</a></li>
           <li><a href="artikel.html">Artikel</a></li>
           <li><a href="#kontak">Kontak</a></li>
+          <!-- DARK MODE TOGGLE DI DALAM MENU (DESKTOP) -->
+          <li style="display: flex; align-items: center;">
+            <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+              <i class="fas fa-moon"></i>
+              <i class="fas fa-sun sun"></i>
+            </button>
+          </li>
         </ul>
       </nav>
-      
-      <!-- PREMIUM INFO PANEL - TATA ULANG LAYOUT -->
-      <div class="info-panel">
-        <div class="clock-container">
-          <div class="time-block">
-            <span class="clock-time" id="time">00:00:00</span>
-          </div>
-          <div class="clock-date">
-            <i class="far fa-calendar-alt"></i>
-            <span id="date">Sabtu, 1 Januari 2026</span>
-          </div>
-        </div>
-        
-        <div class="visitor-counter">
-          <i class="fas fa-eye"></i>
-          <span id="visitorCount">Loading...</span>
-        </div>
-      </div>
-      
-      <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
-        <i class="fas fa-moon"></i>
-        <i class="fas fa-sun sun"></i>
-      </button>
     </div>
   </div>
 </header>
@@ -1014,7 +1019,7 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER dengan CLOCK & VISITOR -->
 <footer data-aos="fade-up">
   <div class="footer-content">
     <div class="footer-section">
@@ -1049,9 +1054,18 @@
         <a href="https://www.instagram.com/sman1_cluring" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
       </div>
-      <p style="margin-top: 20px; font-size: 1rem; opacity: 0.8;">
-        Ikuti kami untuk update terkini!
-      </p>
+    </div>
+  </div>
+
+  <!-- CLOCK & VISITOR PANEL DI FOOTER -->
+  <div class="footer-info-panel">
+    <div class="footer-clock">
+      <span class="footer-time" id="footerTime">00:00:00</span>
+      <span class="footer-date" id="footerDate">Sabtu, 1 Januari 2026</span>
+    </div>
+    <div class="footer-visitor">
+      <i class="fas fa-eye"></i>
+      <span id="footerVisitorCount">Loading...</span>
     </div>
   </div>
 
@@ -1078,7 +1092,7 @@
     }, 800);
   });
 
-  // Dark Mode Toggle
+  // Dark Mode Toggle (tetap berfungsi)
   const darkModeToggle = document.getElementById('darkModeToggle');
   const body = document.body;
   
@@ -1116,14 +1130,14 @@
     });
   });
 
-  // Realtime Clock
+  // Realtime Clock untuk Header (sekarang di footer)
   function updateClock() {
     const now = new Date();
     
     const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');
     const seconds = String(now.getSeconds()).padStart(2, '0');
-    document.getElementById('time').textContent = `${hours}:${minutes}:${seconds}`;
+    const timeString = `${hours}:${minutes}:${seconds}`;
     
     const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
     const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 
@@ -1133,14 +1147,17 @@
     const day = now.getDate();
     const monthName = months[now.getMonth()];
     const year = now.getFullYear();
+    const dateString = `${dayName}, ${day} ${monthName} ${year}`;
     
-    document.getElementById('date').textContent = `${dayName}, ${day} ${monthName} ${year}`;
+    // Update elemen di footer
+    document.getElementById('footerTime').textContent = timeString;
+    document.getElementById('footerDate').textContent = dateString;
   }
   
   setInterval(updateClock, 1000);
   updateClock();
 
-  // Visitor Counter (Simple Local Storage Counter)
+  // Visitor Counter (disimpan di footer)
   function updateVisitorCounter() {
     const visitorKey = 'sman1cluring_visitor_count';
     let count = localStorage.getItem(visitorKey);
@@ -1158,7 +1175,7 @@
     }
     
     const formattedCount = count.toLocaleString('id-ID');
-    document.getElementById('visitorCount').textContent = `${formattedCount} Pengunjung`;
+    document.getElementById('footerVisitorCount').textContent = `${formattedCount} Pengunjung`;
   }
   
   updateVisitorCounter();
