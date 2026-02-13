@@ -373,20 +373,21 @@
       border-color: var(--secondary);
     }
 
-    /* ===== SAMBUTAN - PREMIUM CARD ===== */
+    /* ===== SAMBUTAN - PERBAIKAN LEBAR & TATA LETAK ===== */
     .sambutan-container {
       background: var(--white);
       border-radius: var(--border-radius);
-      padding: 60px;
+      padding: 50px;
       box-shadow: var(--shadow-md);
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;
       border: 1px solid rgba(158, 123, 75, 0.2);
+      overflow: hidden; /* Mencegah konten keluar */
     }
 
     .sambutan {
       display: flex;
-      gap: 50px;
+      gap: 40px;
       align-items: flex-start;
       flex-wrap: wrap;
     }
@@ -396,13 +397,15 @@
       justify-content: center;
       flex-shrink: 0;
       position: relative;
+      width: 220px; /* Tetapkan lebar tetap */
     }
 
     .avatar-container::before {
       content: '';
       position: absolute;
       top: -10px;
-      left: -10px;
+      left: 50%;
+      transform: translateX(-50%);
       width: 200px;
       height: 200px;
       border: 2px dashed var(--secondary);
@@ -411,8 +414,8 @@
     }
 
     .avatar {
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid var(--white);
@@ -430,30 +433,36 @@
     .sambutan-content {
       flex: 1;
       min-width: 300px;
+      max-width: 750px; /* Batasi lebar maksimal */
+      overflow-wrap: break-word; /* Pemenggalan kata */
+      word-wrap: break-word;
+      hyphens: auto; /* Tanda hubung otomatis */
     }
 
     .sambutan-content p {
       margin-bottom: 20px;
-      font-size: 1.1rem;
-      line-height: 1.8;
+      font-size: 1.05rem;
+      line-height: 1.7;
       color: var(--dark);
+      text-align: justify; /* Rata kanan-kiri untuk tampilan rapi */
     }
 
     .sambutan-content .vision {
       background: linear-gradient(145deg, rgba(158,123,75,0.08) 0%, rgba(199,168,84,0.02) 100%);
       border-left: 6px solid var(--secondary);
-      padding: 24px 28px;
+      padding: 20px 24px;
       border-radius: 0 20px 20px 0;
-      margin: 30px 0;
+      margin: 25px 0;
       font-weight: 600;
       color: var(--primary);
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-style: italic;
+      line-height: 1.6;
     }
 
     .signature {
-      margin-top: 40px;
-      padding-top: 25px;
+      margin-top: 35px;
+      padding-top: 20px;
       border-top: 2px solid rgba(158,123,75,0.3);
       font-weight: 600;
       color: var(--secondary);
@@ -676,6 +685,7 @@
       align-items: center;
       gap: 20px;
       color: var(--white);
+      flex-wrap: wrap;
     }
 
     .footer-time {
@@ -748,6 +758,7 @@
     @media (max-width: 1024px) {
       nav ul { gap: 20px; }
       .nav-container { padding: 12px 20px; }
+      .sambutan-content { max-width: 100%; }
     }
 
     @media (max-width: 880px) {
@@ -785,6 +796,7 @@
 
       nav ul li a {
         font-size: 1.1rem;
+        white-space: normal;
       }
 
       .dark-mode-toggle {
@@ -796,16 +808,65 @@
     }
 
     @media (max-width: 768px) {
-      .sambutan { flex-direction: column; text-align: center; }
-      .avatar-container::before { left: 50%; transform: translateX(-50%); width: 220px; height: 220px; }
-      .avatar { width: 180px; height: 180px; }
+      .sambutan-container {
+        padding: 30px 20px;
+      }
+      
+      .sambutan {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+      }
+      
+      .avatar-container {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      
+      .avatar-container::before {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 190px;
+        height: 190px;
+      }
+      
+      .avatar {
+        width: 170px;
+        height: 170px;
+      }
+      
+      .sambutan-content p {
+        text-align: left; /* Di mobile lebih enak rata kiri */
+        font-size: 1rem;
+      }
+      
+      .sambutan-content .vision {
+        padding: 18px;
+        font-size: 1.1rem;
+        text-align: left;
+      }
 
       .section { padding: 70px 20px; }
       .section-header h2 { font-size: 2.2rem; }
       .view-all { font-size: 1rem; }
 
-      .footer-info-panel { flex-direction: column; text-align: center; border-radius: 40px; }
-      .footer-clock { flex-direction: column; gap: 8px; }
+      .footer-info-panel { 
+        flex-direction: column; 
+        text-align: center; 
+        border-radius: 40px; 
+        padding: 20px;
+      }
+      
+      .footer-clock { 
+        flex-direction: column; 
+        gap: 12px; 
+        width: 100%;
+      }
+      
+      .footer-time { 
+        font-size: 1.8rem; 
+        width: 100%;
+      }
     }
 
     @media (max-width: 480px) {
@@ -814,9 +875,33 @@
       .hero h1 { font-size: 1.9rem; }
       .hero-content { padding: 20px; }
 
+      .sambutan-container {
+        padding: 25px 16px;
+      }
+      
+      .avatar {
+        width: 150px;
+        height: 150px;
+      }
+      
+      .avatar-container::before {
+        width: 170px;
+        height: 170px;
+      }
+      
+      .sambutan-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+      
+      .sambutan-content .vision {
+        font-size: 1rem;
+        padding: 16px;
+      }
+
       .footer-time { font-size: 1.5rem; }
       .footer-visitor { padding: 8px 16px; font-size: 0.9rem; }
-      .footer-info-panel { padding: 20px; }
+      .footer-info-panel { padding: 20px 15px; }
     }
 
     @media (max-width: 360px) {
@@ -886,7 +971,7 @@
   </div>
 </section>
 
-<!-- SAMBUTAN -->
+<!-- SAMBUTAN - DENGAN PERBAIKAN TATA LETAK TEKS -->
 <section class="section">
   <div class="section-header" data-aos="fade-right">
     <h2><span>Sambutan</span>Kepala Satuan Pendidikan</h2>
@@ -1130,7 +1215,7 @@
     });
   });
 
-  // Realtime Clock untuk Header (sekarang di footer)
+  // Realtime Clock untuk Footer
   function updateClock() {
     const now = new Date();
     
