@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kesiswaan | SMAN 1 Cluring</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Informasi kegiatan kesiswaan, organisasi, ekstrakurikuler, dan prestasi siswa di SMAN 1 Cluring Banyuwangi." />
+  <meta name="author" content="SMAN 1 Cluring" />
+  <meta name="keywords" content="Kesiswaan, OSIS, ekstrakurikuler, prestasi, SMAN 1 Cluring, Banyuwangi" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Kesiswaan | SMAN 1 Cluring" />
+  <meta property="og:description" content="Pusat informasi kegiatan siswa, organisasi intra sekolah, dan prestasi di SMAN 1 Cluring." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sman1cluring.sch.id/kesiswaan.html" />
+  <meta property="og:image" content="https://i.ibb.co.com/8nyH2Bbd/da3.jpg" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #0a2a5e;
+      --primary-light: #1e3a7a;
+      --secondary: #9e7b4b;
+      --accent: #c7a854;
+      --light: #f5f7fa;
+      --dark: #1e2b37;
+      --gray: #4b5c6b;
+      --white: #ffffff;
+      --shadow-md: 0 8px 30px rgba(0, 20, 50, 0.12);
+      --border-radius: 24px;
+      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    }
+
+    .dark-mode {
+      --primary: #1e3a8a;
+      --light: #0f1825;
+      --dark: #edf2f7;
+      --gray: #a0b3c6;
+      --white: #1a2533;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      transition: background-color 0.4s ease, color 0.4s ease;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+    }
+
+    /* ===== PRELOADER ===== */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--primary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 0.6s ease;
+    }
+    #preloader.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid rgba(255,255,255,0.2);
+      border-top: 4px solid var(--secondary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .nav-container {
+      max-width: 1400px;
+      margin: auto;
+      padding: 12px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+    .brand img {
+      width: 52px;
+      border-radius: 12px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.3s;
+    }
+    nav ul li a:hover {
+      opacity: 0.9;
+    }
+    .dark-mode-toggle {
+      background: rgba(255,255,255,0.1);
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, rgba(10,42,94,0.85) 0%, rgba(5,26,59,0.9) 100%), url('https://i.ibb.co.com/8nyH2Bbd/da3.jpg') center/cover;
+      color: white;
+      text-align: center;
+      padding: 120px 20px 80px;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    .hero p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    /* ===== SECTION ===== */
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 32px;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .section-header h2 {
+      color: var(--primary);
+      font-size: 2.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    .section-header h2::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 5px;
+      background: var(--secondary);
+      margin: 12px auto 0;
+      border-radius: 3px;
+    }
+
+    /* ===== ORGANISASI & EKSKUL ===== */
+    .org-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .org-card {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      padding: 30px;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      text-align: center;
+      border: 1px solid rgba(158,123,75,0.1);
+    }
+    .org-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+    .org-card i {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    .org-card h3 {
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+    .org-card p {
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* ===== PRESTASI ===== */
+    .prestasi-list {
+      background: var(--white);
+      padding: 40px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-md);
+      margin-top: 30px;
+    }
+    .prestasi-item {
+      padding: 15px 0;
+      border-bottom: 1px dashed #eee;
+    }
+    .prestasi-item:last-child {
+      border-bottom: none;
+    }
+    .prestasi-item h4 {
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .prestasi-item .date {
+      color: var(--secondary);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* ===== FOOTER (SINGKAT) ===== */
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 80px;
+    }
+    footer a {
+      color: #c7a854;
+      text-decoration: none;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      nav ul { display: none; }
+      .section { padding: 60px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Preloader -->
+<div id="preloader">
+  <div class="spinner"></div>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="nav-container">
+    <a href="index.html" class="brand">
+      <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring">
+      SMAN 1 CLURING
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="akademik.html">Akademik</a></li>
+        <li><a href="kesiswaan.html">Kesiswaan</a></li>
+        <li><a href="humas.html">Humas</a></li>
+        <li><a href="alumni.html">Alumni</a></li>
+        <li><a href="artikel.html">Artikel</a></li>
+      </ul>
+    </nav>
+    <button class="dark-mode-toggle" id="darkModeToggle">
+      <i class="fas fa-moon"></i>
+    </button>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" data-aos="fade-in">
+  <h1 data-aos="fade-up">Bidang Kesiswaan</h1>
+  <p data-aos="fade-up" data-aos-delay="100">
+    Mengembangkan potensi siswa melalui organisasi, ekstrakurikuler, dan kegiatan pembentukan karakter.
+  </p>
+</section>
+
+<!-- Konten Utama -->
+<section class="section">
+  <div class="section-header" data-aos="fade-up">
+    <h2>Organisasi & Ekstrakurikuler</h2>
+  </div>
+
+  <div class="org-grid">
+    <div class="org-card" data-aos="zoom-in">
+      <i class="fas fa-users"></i>
+      <h3>OSIS</h3>
+      <p>Organisasi Siswa Intra Sekolah sebagai wadah kepemimpinan dan pelatihan manajemen siswa.</p>
+    </div>
+    <div class="org-card" data-aos="zoom-in" data-aos-delay="100">
+      <i class="fas fa-shield-alt"></i>
+      <h3>Pramuka</h3>
+      <p>Membentuk karakter disiplin, tangguh, dan cinta alam melalui kegiatan kepramukaan.</p>
+    </div>
+    <div class="org-card" data-aos="zoom-in" data-aos-delay="200">
+      <i class="fas fa-heartbeat"></i>
+      <h3>PMR</h3>
+      <p>Palang Merah Remaja: pelatihan pertolongan pertama dan kemanusiaan.</p>
+    </div>
+    <div class="org-card" data-aos="zoom-in" data-aos-delay="300">
+      <i class="fas fa-futbol"></i>
+      <h3>Olahraga</h3>
+      <p>Basket, Futsal, Atletik, dan Voli untuk menumbuhkan sportivitas dan prestasi.</p>
+    </div>
+    <div class="org-card" data-aos="zoom-in" data-aos-delay="400">
+      <i class="fas fa-music"></i>
+      <h3>Seni & Budaya</h3>
+      <p>Tari, Musik, Teater, dan Batik sebagai pelestarian budaya Blambangan.</p>
+    </div>
+    <div class="org-card" data-aos="zoom-in" data-aos-delay="500">
+      <i class="fas fa-robot"></i>
+      <h3>TI & Kewirausahaan</h3>
+      <p>Klub Coding, Desain Grafis, dan Bisnis Siswa untuk kesiapan masa depan.</p>
+    </div>
+  </div>
+
+  <div class="section-header" style="margin-top: 80px;">
+    <h2>Prestasi Terbaru</h2>
+  </div>
+  <div class="prestasi-list">
+    <div class="prestasi-item" data-aos="fade-right">
+      <div class="date">Februari 2026</div>
+      <h4>Juara 1 Lomba Tari Tradisional Tingkat Kabupaten</h4>
+    </div>
+    <div class="prestasi-item" data-aos="fade-right" data-aos-delay="100">
+      <div class="date">Januari 2026</div>
+      <h4>Finalis Olimpiade Sains Nasional (OSN) Bidang Biologi</h4>
+    </div>
+    <div class="prestasi-item" data-aos="fade-right" data-aos-delay="200">
+      <div class="date">Desember 2025</div>
+      <h4>Juara 3 Kompetisi Debat Bahasa Inggris Se-Jawa Timur</h4>
+    </div>
+    <div class="prestasi-item" data-aos="fade-right" data-aos-delay="300">
+      <div class="date">Oktober 2025</div>
+      <h4>Tim Basket Putra Juara 2 Turnamen Antar SMA se-Banyuwangi</h4>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
+  <p><a href="index.html">Kembali ke Beranda</a></p>
+</footer>
+
+<!-- AOS & JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true });
+  window.addEventListener('load', () => {
+    setTimeout(() => document.getElementById('preloader').classList.add('fade-out'), 600);
+  });
+
+  // Dark mode toggle
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const body = document.body;
+  if (localStorage.getItem('darkMode') === 'true') body.classList.add('dark-mode');
+  darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+  });
+</script>
+
+</body>
+</html>
