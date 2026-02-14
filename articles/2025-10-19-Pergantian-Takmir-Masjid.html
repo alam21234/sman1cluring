@@ -29,9 +29,9 @@
 
   <style>
     :root {
-      --primary: #0d47a1;
-      --secondary: #1565c0;
-      --accent: #29b6f6;
+      --primary: #0d5c33; /* Hijau Islami */
+      --secondary: #147a42;
+      --accent: #2ecc71; /* Hijau muda segar */
       --cultural-accent: #c53030;
       --ijen-green: #2f855a;
       --light: #f8fafc;
@@ -44,10 +44,10 @@
     }
 
     .dark-mode {
-      --primary: #3b82f6;
-      --secondary: #2563eb;
-      --accent: #0ea5e9;
-      --light: #1e293b;
+      --primary: #10b981;
+      --secondary: #059669;
+      --accent: #34d399;
+      --light: #0f172a;
       --dark: #f1f5f9;
       --gray: #94a3b8;
       --white: #0f172a;
@@ -163,7 +163,6 @@
       cursor: pointer;
     }
 
-    /* Dark Mode Toggle */
     .dark-mode-toggle {
       background: rgba(255, 255, 255, 0.15);
       border: none;
@@ -194,8 +193,9 @@
 
     /* ===== HERO SECTION ===== */
     .article-hero {
-      background: linear-gradient(rgba(13,71,161,0.9), rgba(13,71,161,0.9)),
-        url('https://i.ibb.co/Fk521mwR/takmir-1.jpg') center/cover;
+      background: 
+        linear-gradient(rgba(13, 92, 51, 0.85), rgba(13, 92, 51, 0.85)),
+        url('https://i.ibb.co/Fk521mwR/takmir-1.jpg') center/cover no-repeat;
       color: #fff;
       text-align: center;
       padding: 100px 20px 70px;
@@ -327,7 +327,7 @@
 
     /* ===== QUOTE BOX ===== */
     .quote-box {
-      background: linear-gradient(135deg, rgba(13,71,161,0.1) 0%, rgba(21,101,192,0.05) 100%);
+      background: linear-gradient(135deg, rgba(13,92,51,0.1) 0%, rgba(20,122,66,0.05) 100%);
       border-left: 5px solid var(--primary);
       padding: 25px;
       border-radius: 0 10px 10px 0;
@@ -345,7 +345,7 @@
       top: -15px;
       left: 10px;
       font-size: 4rem;
-      color: rgba(13,71,161,0.1);
+      color: rgba(13,92,51,0.1);
       font-family: Georgia, serif;
     }
 
@@ -372,7 +372,7 @@
     .back-to-articles a:hover {
       background: var(--secondary);
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(13,71,161,0.3);
+      box-shadow: 0 4px 12px rgba(13,92,51,0.3);
     }
 
     /* ===== FOOTER ===== */
@@ -574,7 +574,7 @@
 
 <!-- HERO SECTION -->
 <section class="article-hero" data-aos="zoom-in">
-  <h1 data-aos="fade-up">Pergantian Takmir Masjid Baitul Muttaqin</h1>
+  <h1 data-aos="fade-up"><i class="fas fa-mosque" style="margin-right: 8px;"></i>Pergantian Takmir Masjid Baitul Muttaqin</h1>
   <div class="article-meta" data-aos="fade-up" data-aos-delay="100">
     <span><i class="fas fa-calendar"></i> 19 Oktober 2025</span>
     <span><i class="fas fa-user"></i> SMAN 1 Cluring</span>
@@ -592,7 +592,7 @@
       Pada hari Minggu, 19 Oktober 2025, SMAN 1 Cluring menyelenggarakan kegiatan Pergantian Kepengurusan Takmir Masjid Baitul Muttaqin. Kegiatan ini berlangsung dengan khidmat di Masjid Baitul Muttaqin yang berada di lingkungan sekolah, dihadiri oleh dewan guru, perwakilan siswa, serta pembina keagamaan.
     </p>
 
-    <!-- GALLERY -->
+    <!-- GALLERY (Foto 3 dihapus) -->
     <div class="gallery" data-aos="fade-up" data-aos-delay="200">
       <figure class="gallery-item">
         <img src="https://i.ibb.co/Fk521mwR/takmir-1.jpg" alt="Foto 1 - Pergantian Kepengurusan Takmir" />
@@ -602,10 +602,7 @@
         <img src="https://i.ibb.co/R13MhFt/takmir-3.jpg" alt="Foto 2 - Serah Terima Jabatan" />
         <figcaption>Foto 2: Prosesi serah terima jabatan</figcaption>
       </figure>
-      <figure class="gallery-item">
-        <img src="https://i.ibb.co/LD5wygXs/takmir-4.jpg" alt="Foto 3 - Pengurus Baru Takmir" />
-        <figcaption>Foto 3: Pengurus baru Takmir Masjid Baitul Muttaqin</figcaption>
-      </figure>
+      <!-- Foto 3 dihapus sesuai permintaan -->
     </div>
 
     <p data-aos="fade-up" data-aos-delay="300">
@@ -613,7 +610,7 @@
     </p>
 
     <div class="quote-box" data-aos="fade-left" data-aos-delay="400">
-      Regenerasi kepemimpinan dalam kegiatan keagamaan merupakan bagian penting dari pembinaan karakter peserta didik di SMAN 1 Cluring.
+      <i class="fas fa-quran" style="margin-right: 8px;"></i>Regenerasi kepemimpinan dalam kegiatan keagamaan merupakan bagian penting dari pembinaan karakter peserta didik di SMAN 1 Cluring.
     </div>
 
     <p data-aos="fade-up" data-aos-delay="500">
@@ -624,7 +621,7 @@
       Sementara itu, pengurus baru Takmir Masjid Baitul Muttaqin menyatakan komitmennya untuk terus meningkatkan partisipasi siswa dalam kegiatan keagamaan, seperti tadarus, kajian rutin, serta kegiatan sosial berbasis keislaman. Diharapkan, regenerasi ini mampu memperkuat peran masjid sebagai pusat pembinaan akhlak dan karakter peserta didik di SMAN 1 Cluring.
     </p>
 
-    <div style="margin-top: 30px; padding: 20px; background: rgba(13,71,161,0.05); border-radius: 10px; border-left: 4px solid var(--primary);" data-aos="fade-up" data-aos-delay="700">
+    <div style="margin-top: 30px; padding: 20px; background: rgba(13,92,51,0.05); border-radius: 10px; border-left: 4px solid var(--primary);" data-aos="fade-up" data-aos-delay="700">
       <p style="font-style: italic; color: var(--primary); font-weight: 500;">
         <i class="fas fa-info-circle" style="margin-right: 8px;"></i>
         Kegiatan keagamaan di SMAN 1 Cluring merupakan bagian integral dari program Penguatan Pendidikan Karakter (PPK) yang bertujuan membentuk generasi yang beriman, bertakwa, dan berakhlak mulia.
