@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mitra Pendidikan | SMAN 1 Cluring</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Daftar mitra pendidikan SMAN 1 Cluring Banyuwangi - Kolaborasi strategis dengan instansi pemerintah, universitas, dan dunia usaha/industri." />
+  <meta name="author" content="SMAN 1 Cluring" />
+  <meta name="keywords" content="Mitra Pendidikan, partnership, kolaborasi, SMAN 1 Cluring, Banyuwangi, dunia usaha industri" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mitra Pendidikan | SMAN 1 Cluring" />
+  <meta property="og:description" content="Kolaborasi strategis untuk pengembangan pendidikan berkualitas di SMAN 1 Cluring Banyuwangi." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sman1cluring.sch.id/mitra.html" />
+  <meta property="og:image" content="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      /* Light Mode - Premium Palette */
+      --primary: #0a2a5e;
+      --primary-light: #1e3a7a;
+      --primary-dark: #051a3b;
+      --secondary: #9e7b4b;
+      --secondary-light: #c1a06e;
+      --accent: #c7a854;
+      --cultural-accent: #b13e3e;
+      --ijen-green: #2d6a4f;
+      --light: #f5f7fa;
+      --dark: #1e2b37;
+      --gray: #4b5c6b;
+      --white: #ffffff;
+      --glass: rgba(255, 255, 255, 0.1);
+      --glass-border: rgba(255, 255, 255, 0.2);
+      --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 8px 30px rgba(0, 20, 50, 0.12);
+      --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+      --border-radius: 24px;
+      --border-radius-sm: 16px;
+    }
+
+    .dark-mode {
+      --primary: #1e3a8a;
+      --primary-light: #3b5ba5;
+      --secondary: #d4af37;
+      --light: #0f1825;
+      --dark: #edf2f7;
+      --gray: #a0b3c6;
+      --white: #1a2533;
+      --glass: rgba(0, 0, 0, 0.25);
+      --glass-border: rgba(255, 255, 255, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      transition: background-color 0.4s ease, color 0.4s ease;
+      overflow-x: hidden;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* ===== PRELOADER ===== */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--primary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 0.6s ease;
+    }
+    #preloader.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      border-top: 4px solid var(--secondary);
+      border-right: 4px solid var(--secondary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow-md);
+    }
+    .nav-container {
+      max-width: 1400px;
+      margin: auto;
+      padding: 12px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--white);
+      font-weight: 800;
+      font-size: 1.5rem;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .brand img {
+      width: 52px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+    nav ul li a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: var(--transition);
+      padding: 8px 0;
+      position: relative;
+      opacity: 0.9;
+      white-space: nowrap;
+    }
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: width 0.3s ease;
+    }
+    nav ul li a:hover {
+      opacity: 1;
+    }
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+    .dark-mode-toggle {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      width: 44px;
+      height: 44px;
+      border-radius: 60px;
+      color: var(--white);
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(8px);
+      margin-left: 8px;
+    }
+    .dark-mode-toggle:hover {
+      background: var(--secondary);
+      border-color: var(--secondary);
+      transform: rotate(30deg) scale(1.05);
+    }
+    .dark-mode .dark-mode-toggle i {
+      display: none;
+    }
+    .dark-mode .dark-mode-toggle i.sun {
+      display: block;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      color: var(--white);
+      text-align: center;
+      padding: 120px 20px 80px;
+      min-height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(145deg, rgba(10,42,94,0.8) 0%, rgba(5,26,59,0.9) 100%), url('https://i.ibb.co.com/8nyH2Bbd/da3.jpg') center/cover;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      font-weight: 800;
+      line-height: 1.2;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    .hero p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* ===== SECTION ===== */
+    .section {
+      max-width: 1300px;
+      margin: auto;
+      padding: 100px 32px;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .section-header h2 {
+      color: var(--primary);
+      font-size: 2.5rem;
+      font-weight: 800;
+      position: relative;
+      display: inline-block;
+    }
+    .section-header h2::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 5px;
+      background: linear-gradient(90deg, var(--secondary) 0%, var(--accent) 100%);
+      margin: 16px auto 0;
+      border-radius: 4px;
+    }
+
+    /* ===== MITRA CARDS ===== */
+    .mitra-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+    .mitra-card {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      border: 1px solid rgba(158,123,75,0.1);
+    }
+    .mitra-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--secondary);
+    }
+    .mitra-logo {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, rgba(158,123,75,0.1) 0%, rgba(199,168,84,0.05) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      font-size: 3rem;
+      color: var(--primary);
+      border: 2px solid var(--secondary);
+    }
+    .mitra-card h3 {
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-size: 1.6rem;
+    }
+    .mitra-card p {
+      color: var(--gray);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    /* ===== COLLABORATION SECTION ===== */
+    .collaboration-section {
+      background: linear-gradient(135deg, rgba(10,42,94,0.05) 0%, rgba(158,123,75,0.03) 100%);
+      padding: 80px 32px;
+      border-radius: var(--border-radius);
+      margin: 60px 0;
+    }
+    .collaboration-content {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--white);
+      padding: 50px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-md);
+      border-left: 6px solid var(--secondary);
+    }
+    .collaboration-content h3 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+    .collaboration-content ul {
+      padding-left: 30px;
+      color: var(--gray);
+      line-height: 1.8;
+      margin: 20px 0;
+    }
+    .collaboration-content ul li {
+      margin-bottom: 12px;
+    }
+
+    /* ===== CONTACT SECTION ===== */
+    .contact-section {
+      background: var(--white);
+      padding: 60px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-md);
+      margin-top: 40px;
+      text-align: center;
+    }
+    .contact-section h3 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+    .contact-item i {
+      font-size: 2.5rem;
+      color: var(--primary);
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, rgba(158,123,75,0.1) 0%, rgba(199,168,84,0.05) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--secondary);
+    }
+    .contact-item p {
+      color: var(--gray);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .contact-item a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    .contact-item a:hover {
+      color: var(--primary);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: linear-gradient(145deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: var(--white);
+      padding: 70px 32px 30px;
+      font-size: 1rem;
+      position: relative;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--secondary), var(--accent), var(--secondary));
+    }
+    .footer-content {
+      max-width: 1300px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 50px;
+    }
+    .footer-section h3 {
+      font-size: 1.4rem;
+      margin-bottom: 25px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--secondary);
+    }
+    .footer-section ul {
+      list-style: none;
+    }
+    .footer-section ul li {
+      margin-bottom: 14px;
+    }
+    .footer-section a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-section a:hover {
+      color: var(--secondary);
+      transform: translateX(6px);
+    }
+    .social-links {
+      display: flex;
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 60px;
+      background: var(--glass);
+      color: var(--white);
+      font-size: 1.2rem;
+      transition: var(--transition);
+      border: 1px solid var(--glass-border);
+    }
+    .social-links a:hover {
+      background: var(--secondary);
+      transform: translateY(-6px) scale(1.1);
+      color: var(--primary-dark);
+    }
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 880px) {
+      .menu-toggle {
+        display: block;
+        order: 3;
+      }
+      .nav-right {
+        order: 2;
+      }
+      nav ul {
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: var(--primary);
+        flex-direction: column;
+        padding: 25px 0;
+        display: none;
+        z-index: 100;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        backdrop-filter: blur(12px);
+        gap: 16px;
+      }
+      nav ul.active {
+        display: flex;
+      }
+      nav ul li {
+        text-align: center;
+      }
+      nav ul li a {
+        font-size: 1.1rem;
+        white-space: normal;
+      }
+      .hero h1 { font-size: 2.2rem; }
+      .mitra-grid { grid-template-columns: 1fr; }
+      .contact-info { flex-direction: column; gap: 20px; }
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 80px 20px 60px; min-height: 400px; }
+      .hero h1 { font-size: 2rem; }
+      .section { padding: 60px 20px; }
+      .section-header h2 { font-size: 2rem; }
+      .contact-section { padding: 40px 20px; }
+    }
+
+    @media (max-width: 480px) {
+      .brand span { display: none; }
+      .brand img { width: 44px; }
+      .hero h1 { font-size: 1.8rem; }
+      .mitra-card { padding: 30px 20px; }
+      .mitra-logo { width: 80px; height: 80px; font-size: 2.5rem; }
+      .contact-item i { width: 60px; height: 60px; font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Preloader -->
+<div id="preloader">
+  <div class="spinner"></div>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="nav-container">
+    <a href="index.html" class="brand">
+      <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring">
+      <span>SMAN 1 CLURING</span>
+    </a>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="nav-right">
+      <nav>
+        <ul id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="sarpras.html">Sarpras</a></li>
+          <li><a href="akademik.html">Akademik</a></li>
+          <li><a href="kesiswaan.html">Kesiswaan</a></li>
+          <li><a href="humas.html">Humas</a></li>
+          <li><a href="mitra.html">Mitra</a></li>
+          <li><a href="alumni.html">Alumni</a></li>
+          <li><a href="artikel.html">Artikel</a></li>
+          <li style="display: flex; align-items: center;">
+            <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+              <i class="fas fa-moon"></i>
+              <i class="fas fa-sun sun"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" data-aos="fade-in">
+  <h1 data-aos="fade-up"><i class="fas fa-handshake"></i> Mitra Pendidikan</h1>
+  <p data-aos="fade-up" data-aos-delay="100">
+    Kolaborasi strategis untuk pengembangan pendidikan berkualitas di SMAN 1 Cluring
+  </p>
+</section>
+
+<!-- Profil Mitra -->
+<section class="section">
+  <div class="section-header" data-aos="fade-up">
+    <h2><i class="fas fa-users"></i> Profil Mitra</h2>
+  </div>
+
+  <div class="collaboration-section">
+    <div class="collaboration-content" data-aos="fade-up">
+      <h3><i class="fas fa-bullseye"></i> Visi & Tujuan</h3>
+      <p>
+        SMAN 1 Cluring menjalin kemitraan strategis dengan berbagai instansi pemerintah, perguruan tinggi, dunia usaha, dan industri untuk mendukung pengembangan pendidikan yang berkualitas, relevan, dan berkelanjutan.
+      </p>
+      <p>
+        <strong>Tujuan Kemitraan:</strong>
+      </p>
+      <ul>
+        <li>Memperkuat link and match antara pendidikan dan dunia kerja</li>
+        <li>Meningkatkan kompetensi guru melalui program magang dan pelatihan</li>
+        <li>Memberikan pengalaman praktik kerja lapangan bagi siswa</li>
+        <li>Mengembangkan program inovasi pendidikan berbasis kolaborasi</li>
+        <li>Mendukung program Merdeka Belajar dan Kurikulum Merdeka</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Mitra Strategis -->
+<section class="section">
+  <div class="section-header" data-aos="fade-up">
+    <h2><i class="fas fa-building-columns"></i> Mitra Strategis</h2>
+  </div>
+
+  <div class="mitra-grid">
+    <div class="mitra-card" data-aos="zoom-in">
+      <div class="mitra-logo">
+        <i class="fas fa-graduation-cap"></i>
+      </div>
+      <h3>Kementerian Pendidikan</h3>
+      <p>Program BOS, Merdeka Belajar, dan pendanaan pendidikan nasional.</p>
+    </div>
+
+    <div class="mitra-card" data-aos="zoom-in" data-aos-delay="100">
+      <div class="mitra-logo">
+        <i class="fas fa-university"></i>
+      </div>
+      <h3>Universitas Brawijaya</h3>
+      <p>Magang guru, riset kolaboratif, dan program pengabdian masyarakat.</p>
+    </div>
+
+    <div class="mitra-card" data-aos="zoom-in" data-aos-delay="200">
+      <div class="mitra-logo">
+        <i class="fas fa-industry"></i>
+      </div>
+      <h3>PT. Pindad (Persero)</h3>
+      <p>Kunjungan industri, magang siswa, dan program vokasi.</p>
+    </div>
+
+    <div class="mitra-card" data-aos="zoom-in" data-aos-delay="300">
+      <div class="mitra-logo">
+        <i class="fas fa-hospital"></i>
+      </div>
+      <h3>RSUD Blambangan</h3>
+      <p>Praktik kerja lapangan jurusan kesehatan dan program UKS.</p>
+    </div>
+
+    <div class="mitra-card" data-aos="zoom-in" data-aos-delay="400">
+      <div class="mitra-logo">
+        <i class="fas fa-leaf"></i>
+      </div>
+      <h3>Dinas Lingkungan Hidup</h3>
+      <p>Program Adiwiyata, pengelolaan sampah, dan konservasi lingkungan.</p>
+    </div>
+
+    <div class="mitra-card" data-aos="zoom-in" data-aos-delay="500">
+      <div class="mitra-logo">
+        <i class="fas fa-landmark"></i>
+      </div>
+      <h3>Pemkab Banyuwangi</h3>
+      <p>Dukungan program daerah, infrastruktur, dan kegiatan kemasyarakatan.</p>
+    </div>
+
+    <div class="mitra-card" data-aos="zoom-in" data-aos-delay="600">
+      <div class="mitra-logo">
+        <i class="fas fa-microchip"></i>
+      </div>
+      <h3>Telkom Indonesia</h3>
+      <p>Infrastruktur internet, digitalisasi sekolah, dan pelatihan IT.</p>
+    </div>
+
+    <div class="mitra-card" data-aos="zoom-in" data-aos-delay="700">
+      <div class="mitra-logo">
+        <i class="fas fa-utensils"></i>
+      </div>
+      <h3>Hotel Ketapang Indah</h3>
+      <p>Magang siswa jurusan pariwisata dan hospitality.</p>
+    </div>
+
+    <div class="mitra-card" data-aos="zoom-in" data-aos-delay="800">
+      <div class="mitra-logo">
+        <i class="fas fa-book"></i>
+      </div>
+      <h3>Gramedia Banyuwangi</h3>
+      <p>Donasi buku, program literasi, dan pengembangan perpustakaan.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Peluang Kolaborasi -->
+<section class="section">
+  <div class="section-header" data-aos="fade-up">
+    <h2><i class="fas fa-lightbulb"></i> Peluang Kolaborasi</h2>
+  </div>
+
+  <div class="collaboration-section">
+    <div class="collaboration-content" data-aos="fade-up">
+      <h3><i class="fas fa-hand-holding-heart"></i> Bergabung Bersama Kami</h3>
+      <p>
+        Kami terbuka untuk menjalin kemitraan dengan berbagai pihak yang memiliki visi yang sama dalam pengembangan pendidikan. Beberapa bentuk kolaborasi yang dapat dilakukan:
+      </p>
+      <ul>
+        <li><strong>Program Magang Siswa:</strong> Memberikan kesempatan siswa untuk belajar langsung di dunia kerja</li>
+        <li><strong>Pelatihan Guru:</strong> Peningkatan kompetensi guru melalui workshop dan magang</li>
+        <li><strong>Donasi & CSR:</strong> Dukungan sarana prasarana, beasiswa, atau program pendidikan</li>
+        <li><strong>Penelitian & Pengembangan:</strong> Riset bersama untuk inovasi pendidikan</li>
+        <li><strong>Event & Kompetisi:</strong> Penyelenggaraan lomba, seminar, atau kegiatan edukatif</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Kontak -->
+<section class="section">
+  <div class="section-header" data-aos="fade-up">
+    <h2><i class="fas fa-address-book"></i> Kontak Mitra</h2>
+  </div>
+
+  <div class="contact-section" data-aos="fade-up">
+    <h3><i class="fas fa-comments"></i> Hubungi Kami untuk Informasi Lebih Lanjut</h3>
+    <p style="color: var(--gray); margin-bottom: 30px; font-size: 1.1rem;">
+      Siap menjalin kemitraan strategis untuk kemajuan pendidikan
+    </p>
+
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-user-tie"></i>
+        <p><strong>Koordinator Humas</strong></p>
+        <p>Drs. Sy. Hadi</p>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <p><strong>Telepon</strong></p>
+        <a href="tel:+6282319712420">0823-1971-2420</a>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <p><strong>Email</strong></p>
+        <a href="mailto:humas@sman1cluring.sch.id">humas@sman1cluring.sch.id</a>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-whatsapp"></i>
+        <p><strong>WhatsApp</strong></p>
+        <a href="https://wa.me/6282319712420" target="_blank">Chat Sekarang</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3><i class="fas fa-map-marker-alt"></i> Kontak</h3>
+      <p>Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, Jawa Timur</p>
+      <p><i class="fas fa-phone"></i> <a href="tel:+6282319712420">0823-1971-2420</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:sman1cluring@sch.id">sman1cluring@sch.id</a></p>
+    </div>
+
+    <div class="footer-section">
+      <h3><i class="fas fa-link"></i> Link Penting</h3>
+      <ul>
+        <li><a href="https://sma.kemendikdasmen.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
+        <li><a href="https://dindik.jatimprov.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
+        <li><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas Banyuwangi</a></li>
+        <li><a href="https://alam21234.github.io/Smaring-interactive-learning-comunity" target="_blank"><i class="fas fa-external-link-alt"></i> Smaring Learning Community</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3><i class="fas fa-flask"></i> Lab Virtual</h3>
+      <ul>
+        <li><a href="https://quran.nu.or.id" target="_blank"><i class="fas fa-book-quran"></i> Al-Qur'an Digital</a></li>
+        <li><a href="https://virtualbiologylab.org" target="_blank"><i class="fas fa-dna"></i> Virtual Biology Lab</a></li>
+        <li><a href="https://www.myphysicslab.com" target="_blank"><i class="fas fa-atom"></i> MyPhysicsLab</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3><i class="fas fa-share-alt"></i> Media Sosial</h3>
+      <div class="social-links">
+        <a href="https://www.facebook.com/Sman1Cluring" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/sman1_cluring" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
+    <p style="margin-top: 8px; font-size: 0.9rem; opacity: 0.8;">
+      Website Resmi SMAN 1 Cluring Banyuwangi
+    </p>
+  </div>
+</footer>
+
+<!-- AOS & Custom JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  // Initialize AOS
+  AOS.init({
+    duration: 800,
+    once: true,
+    easing: 'ease-out-cubic'
+  });
+
+  // Preloader
+  window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    setTimeout(() => {
+      preloader.classList.add('fade-out');
+    }, 600);
+  });
+
+  // Dark Mode Toggle
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const body = document.body;
+  
+  const isDarkMode = localStorage.getItem('darkMode') === 'true';
+  if (isDarkMode) {
+    body.classList.add('dark-mode');
+  }
+  
+  darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+  });
+
+  // Mobile Menu Toggle
+  function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("active");
+  }
+</script>
+
+</body>
+</html>
