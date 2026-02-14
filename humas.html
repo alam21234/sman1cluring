@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Humas | SMAN 1 Cluring</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Hubungan Masyarakat SMAN 1 Cluring - Pusat informasi publik, pengumuman resmi, dan layanan komunikasi sekolah." />
+  <meta name="author" content="SMAN 1 Cluring" />
+  <meta name="keywords" content="Humas, Hubungan Masyarakat, pengumuman, publikasi, SMAN 1 Cluring, Banyuwangi" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Humas | SMAN 1 Cluring" />
+  <meta property="og:description" content="Pusat informasi publik dan layanan komunikasi SMAN 1 Cluring." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sman1cluring.sch.id/humas.html" />
+  <meta property="og:image" content="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #0a2a5e;
+      --primary-light: #1e3a7a;
+      --primary-dark: #051a3b;
+      --secondary: #9e7b4b;
+      --secondary-light: #c1a06e;
+      --accent: #c7a854;
+      --light: #f5f7fa;
+      --dark: #1e2b37;
+      --gray: #4b5c6b;
+      --white: #ffffff;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 8px 30px rgba(0, 20, 50, 0.12);
+      --border-radius: 24px;
+      --transition: all 0.4s ease;
+    }
+
+    .dark-mode {
+      --primary: #1e3a8a;
+      --primary-light: #3b5ba5;
+      --secondary: #d4af37;
+      --light: #0f1825;
+      --dark: #edf2f7;
+      --gray: #a0b3c6;
+      --white: #1a2533;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      transition: background-color 0.4s ease, color 0.4s ease;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+    }
+
+    /* ===== PRELOADER ===== */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--primary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 0.6s ease;
+    }
+    #preloader.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      border-top: 4px solid var(--secondary);
+      border-right: 4px solid var(--secondary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .nav-container {
+      max-width: 1400px;
+      margin: auto;
+      padding: 12px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.5rem;
+    }
+    .brand img {
+      width: 52px;
+      border-radius: 12px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+    nav ul li a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.3s;
+    }
+    nav ul li a:hover {
+      opacity: 0.9;
+    }
+    .dark-mode-toggle {
+      background: rgba(255,255,255,0.1);
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, rgba(10,42,94,0.85) 0%, rgba(5,26,59,0.9) 100%), url('https://i.ibb.co.com/8nyH2Bbd/da3.jpg') center/cover;
+      color: var(--white);
+      text-align: center;
+      padding: 120px 20px 80px;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    .hero p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    /* ===== SECTION ===== */
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 32px;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .section-header h2 {
+      color: var(--primary);
+      font-size: 2.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    .section-header h2::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 5px;
+      background: linear-gradient(90deg, var(--secondary) 0%, var(--accent) 100%);
+      margin: 16px auto 0;
+      border-radius: 4px;
+    }
+
+    /* ===== INFO CARD ===== */
+    .info-card {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+      margin-bottom: 40px;
+      border-left: 6px solid var(--secondary);
+    }
+    .info-card h3 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+    .info-card p {
+      color: var(--gray);
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    /* ===== ANNOUNCEMENT ===== */
+    .announcement {
+      background: linear-gradient(135deg, rgba(158,123,75,0.05) 0%, rgba(199,168,84,0.02) 100%);
+      border-left: 6px solid var(--secondary);
+      padding: 25px;
+      border-radius: 0 16px 16px 0;
+      margin: 25px 0;
+    }
+    .announcement h4 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+    .announcement p {
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* ===== DOWNLOAD LIST ===== */
+    .download-list {
+      background: var(--white);
+      padding: 30px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      margin: 30px 0;
+    }
+    .download-item {
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .download-item:last-child {
+      border-bottom: none;
+    }
+    .download-item i {
+      color: var(--primary);
+      font-size: 1.5rem;
+    }
+    .download-item a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    .download-item a:hover {
+      color: var(--secondary);
+      text-decoration: underline;
+    }
+
+    /* ===== CONTACT INFO ===== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .contact-card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: var(--transition);
+      border: 1px solid rgba(158,123,75,0.1);
+    }
+    .contact-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--secondary);
+    }
+    .contact-card i {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    .contact-card h3 {
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+    .contact-card p {
+      color: var(--gray);
+      line-height: 1.7;
+    }
+    .contact-card a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      display: block;
+      margin-top: 10px;
+    }
+    .contact-card a:hover {
+      color: var(--primary);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: linear-gradient(145deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: var(--white);
+      padding: 70px 32px 30px;
+      font-size: 1rem;
+      position: relative;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--secondary), var(--accent), var(--secondary));
+    }
+    .footer-content {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 50px;
+    }
+    .footer-section h3 {
+      font-size: 1.4rem;
+      margin-bottom: 25px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--secondary);
+    }
+    .footer-section ul {
+      list-style: none;
+    }
+    .footer-section ul li {
+      margin-bottom: 14px;
+    }
+    .footer-section a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-section a:hover {
+      color: var(--secondary);
+      transform: translateX(6px);
+    }
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      nav ul { display: none; }
+      .section { padding: 60px 20px; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Preloader -->
+<div id="preloader">
+  <div class="spinner"></div>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="nav-container">
+    <a href="index.html" class="brand">
+      <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring">
+      SMAN 1 CLURING
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="akademik.html">Akademik</a></li>
+        <li><a href="kesiswaan.html">Kesiswaan</a></li>
+        <li><a href="humas.html">Humas</a></li>
+        <li><a href="alumni.html">Alumni</a></li>
+        <li><a href="artikel.html">Artikel</a></li>
+      </ul>
+    </nav>
+    <button class="dark-mode-toggle" id="darkModeToggle">
+      <i class="fas fa-moon"></i>
+    </button>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" data-aos="fade-in">
+  <h1 data-aos="fade-up"><i class="fas fa-bullhorn" style="margin-right: 10px;"></i>Hubungan Masyarakat</h1>
+  <p data-aos="fade-up" data-aos-delay="100">
+    Pusat informasi publik, pengumuman resmi, dan layanan komunikasi SMAN 1 Cluring Banyuwangi
+  </p>
+</section>
+
+<!-- Konten Utama -->
+<section class="section">
+  <div class="section-header" data-aos="fade-up">
+    <h2>Profil Humas</h2>
+  </div>
+
+  <div class="info-card" data-aos="fade-up">
+    <h3><i class="fas fa-info-circle" style="margin-right: 10px;"></i>Visi & Misi</h3>
+    <p>
+      <strong>Visi:</strong> Menjadi pusat informasi yang transparan, akuntabel, dan responsif dalam menjembatani komunikasi antara sekolah dengan masyarakat.
+    </p>
+    <p>
+      <strong>Misi:</strong>
+    </p>
+    <ul style="padding-left: 25px; color: var(--gray);">
+      <li>Menyediakan informasi publik yang akurat dan terkini</li>
+      <li>Memfasilitasi komunikasi dua arah antara sekolah dan stakeholders</li>
+      <li>Mengelola publikasi dan dokumentasi kegiatan sekolah</li>
+      <li>Meningkatkan citra positif SMAN 1 Cluring di masyarakat</li>
+    </ul>
+  </div>
+
+  <div class="section-header" data-aos="fade-up">
+    <h2>Pengumuman Resmi</h2>
+  </div>
+
+  <div class="announcement" data-aos="fade-up">
+    <h4><i class="fas fa-bell" style="margin-right: 8px;"></i>PPDB Tahun Ajaran 2026/2027</h4>
+    <p>
+      Pendaftaran Peserta Didik Baru (PPDB) SMAN 1 Cluring Tahun Ajaran 2026/2027 akan dibuka pada tanggal 15 Mei 2026 s.d. 15 Juni 2026. Informasi selengkapnya dapat diakses melalui menu PPDB atau menghubungi panitia di nomor 0823-1971-2420.
+    </p>
+  </div>
+
+  <div class="announcement" data-aos="fade-up" data-aos-delay="100">
+    <h4><i class="fas fa-calendar-alt" style="margin-right: 8px;"></i>Jadwal Libur Semester Genap 2025/2026</h4>
+    <p>
+      Libur semester genap tahun ajaran 2025/2026 akan berlangsung mulai tanggal 20 Juni 2026 s.d. 12 Juli 2026. Kegiatan Pembelajaran Semester Ganjil 2026/2027 dimulai pada tanggal 13 Juli 2026.
+    </p>
+  </div>
+
+  <div class="announcement" data-aos="fade-up" data-aos-delay="200">
+    <h4><i class="fas fa-trophy" style="margin-right: 8px;"></i>Penghargaan IGA 2025</h4>
+    <p>
+      SMAN 1 Cluring berhasil meraih Innovative Government Award (IGA) 2025 atas inovasi program BUKIT BATARI (Budaya Kita Batik dan Tari). Selamat kepada seluruh civitas akademika!
+    </p>
+  </div>
+
+  <div class="section-header" data-aos="fade-up">
+    <h2>Dokumen Publik</h2>
+  </div>
+
+  <div class="download-list" data-aos="fade-up">
+    <div class="download-item">
+      <i class="fas fa-file-pdf"></i>
+      <a href="#" target="_blank">📄 Kurikulum Merdeka SMAN 1 Cluring 2025/2026</a>
+    </div>
+    <div class="download-item">
+      <i class="fas fa-file-pdf"></i>
+      <a href="#" target="_blank">📄 Tata Tertib Siswa SMAN 1 Cluring</a>
+    </div>
+    <div class="download-item">
+      <i class="fas fa-file-pdf"></i>
+      <a href="#" target="_blank">📄 Kalender Pendidikan 2025/2026</a>
+    </div>
+    <div class="download-item">
+      <i class="fas fa-file-pdf"></i>
+      <a href="#" target="_blank">📄 SOP Pelayanan Publik SMAN 1 Cluring</a>
+    </div>
+    <div class="download-item">
+      <i class="fas fa-file-pdf"></i>
+      <a href="#" target="_blank">📄 Laporan Tahunan 2025</a>
+    </div>
+  </div>
+
+  <div class="section-header" data-aos="fade-up">
+    <h2>Kontak Humas</h2>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-card" data-aos="zoom-in">
+      <i class="fas fa-user-tie"></i>
+      <h3>Koordinator Humas</h3>
+      <p><strong>Drs. Sy. Hadi</strong></p>
+      <p>Pembina Takmir Masjid Baitul Muttaqin</p>
+      <a href="tel:+6282319712420"><i class="fas fa-phone"></i> 0823-1971-2420</a>
+    </div>
+    <div class="contact-card" data-aos="zoom-in" data-aos-delay="100">
+      <i class="fas fa-envelope"></i>
+      <h3>Email Resmi</h3>
+      <p>humas@sman1cluring.sch.id</p>
+      <p>info@sman1cluring.sch.id</p>
+      <a href="mailto:humas@sman1cluring.sch.id"><i class="fas fa-paper-plane"></i> Kirim Email</a>
+    </div>
+    <div class="contact-card" data-aos="zoom-in" data-aos-delay="200">
+      <i class="fab fa-whatsapp"></i>
+      <h3>WhatsApp Admin</h3>
+      <p>Hubungi admin untuk informasi lebih lanjut</p>
+      <a href="https://wa.me/6282319712420" target="_blank"><i class="fab fa-whatsapp"></i> Chat Sekarang</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3><i class="fas fa-map-marker-alt"></i> Kontak</h3>
+      <p>Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, Jawa Timur</p>
+      <p><i class="fas fa-phone"></i> <a href="tel:+6282319712420">0823-1971-2420</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:sman1cluring@sch.id">sman1cluring@sch.id</a></p>
+    </div>
+
+    <div class="footer-section">
+      <h3><i class="fas fa-link"></i> Link Penting</h3>
+      <ul>
+        <li><a href="https://sma.kemendikdasmen.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
+        <li><a href="https://dindik.jatimprov.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
+        <li><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas Banyuwangi</a></li>
+        <li><a href="https://alam21234.github.io/Smaring-interactive-learning-comunity" target="_blank"><i class="fas fa-external-link-alt"></i> Smaring Learning Community</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3><i class="fas fa-flask"></i> Lab Virtual</h3>
+      <ul>
+        <li><a href="https://quran.nu.or.id" target="_blank"><i class="fas fa-book-quran"></i> Al-Qur'an Digital</a></li>
+        <li><a href="https://virtualbiologylab.org" target="_blank"><i class="fas fa-dna"></i> Virtual Biology Lab</a></li>
+        <li><a href="https://www.myphysicslab.com" target="_blank"><i class="fas fa-atom"></i> MyPhysicsLab</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3><i class="fas fa-share-alt"></i> Media Sosial</h3>
+      <div style="display: flex; gap: 15px; margin-top: 15px;">
+        <a href="https://www.facebook.com/Sman1Cluring" target="_blank" style="color: white; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/sman1_cluring" target="_blank" style="color: white; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank" style="color: white; font-size: 1.5rem;"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
+    <p style="margin-top: 8px; font-size: 0.9rem; opacity: 0.8;">
+      Website Resmi SMAN 1 Cluring Banyuwangi
+    </p>
+  </div>
+</footer>
+
+<!-- AOS & JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true });
+  
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('preloader').classList.add('fade-out');
+    }, 600);
+  });
+
+  // Dark mode toggle
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const body = document.body;
+  if (localStorage.getItem('darkMode') === 'true') {
+    body.classList.add('dark-mode');
+  }
+  darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+  });
+</script>
+
+</body>
+</html>
