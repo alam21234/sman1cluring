@@ -3,158 +3,1030 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profil Sekolah | SMAN 1 Cluring</title>
+  <title>Akademik | SMAN 1 Cluring</title>
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- SEO -->
+  <meta name="description" content="Informasi akademik SMAN 1 Cluring Banyuwangi - Kurikulum Merdeka, Program Unggulan, Kalender Akademik, dan Prestasi." />
+  <meta name="author" content="SMAN 1 Cluring" />
+  <meta name="keywords" content="akademik SMAN 1 Cluring, kurikulum merdeka, program unggulan, kalender akademik, prestasi akademik, Banyuwangi" />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Akademik | SMAN 1 Cluring" />
+  <meta property="og:description" content="Informasi lengkap program akademik SMAN 1 Cluring Banyuwangi." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sman1cluring.sch.id/akademik.html" />
+  <meta property="og:image" content="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
     :root {
-      --primary: #0d47a1;
-      --secondary: #1565c0;
-      --light: #f4f6f8;
-      --dark: #1a1a1a;
+      /* Light Mode - Premium Palette */
+      --primary: #0a2a5e;
+      --primary-light: #1e3a7a;
+      --primary-dark: #051a3b;
+      --secondary: #9e7b4b;
+      --secondary-light: #c1a06e;
+      --accent: #c7a854;
+      --cultural-accent: #b13e3e;
+      --ijen-green: #2d6a4f;
+      --light: #f5f7fa;
+      --dark: #1e2b37;
+      --gray: #4b5c6b;
+      --white: #ffffff;
+      --glass: rgba(255, 255, 255, 0.1);
+      --glass-border: rgba(255, 255, 255, 0.2);
+      --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 8px 30px rgba(0, 20, 50, 0.12);
+      --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+      --border-radius: 24px;
+      --border-radius-sm: 16px;
+      --whatsapp: #25D366;
+      --whatsapp-dark: #128C7E;
+      --chat-primary: #0a2a5e;
+      --chat-secondary: #9e7b4b;
+      --chat-user: #e3f2fd;
+      --chat-bot: #f5f5f5;
+    }
+
+    .dark-mode {
+      --primary: #1e3a8a;
+      --primary-light: #3b5ba5;
+      --secondary: #d4af37;
+      --light: #0f1825;
+      --dark: #edf2f7;
+      --gray: #a0b3c6;
+      --white: #1a2533;
+      --glass: rgba(0, 0, 0, 0.25);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --chat-user: #1e3a8a;
+      --chat-bot: #2d3748;
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
     }
 
     body {
+      font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      transition: background-color 0.4s ease, color 0.4s ease;
+      overflow-x: hidden;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* ===== PRELOADER ===== */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--primary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    #preloader.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      border-top: 4px solid var(--secondary);
+      border-right: 4px solid var(--secondary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* ===== WHATSAPP FLOAT BUTTON ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      background: linear-gradient(135deg, var(--whatsapp) 0%, var(--whatsapp-dark) 100%);
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 28px;
+      border-radius: 60px;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+      z-index: 998;
+      transition: var(--transition);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-weight: 600;
+    }
+    .whatsapp-float i {
+      font-size: 28px;
+      animation: pulse 2s infinite;
+    }
+    .whatsapp-float span {
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+    }
+    .whatsapp-float:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 20px 35px rgba(37, 211, 102, 0.4);
+      background: linear-gradient(135deg, var(--whatsapp-dark) 0%, var(--whatsapp) 100%);
+    }
+    .whatsapp-float::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 60px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      animation: ripple 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    @keyframes ripple {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.3); opacity: 0; }
+    }
+
+    /* ===== CHAT BUTTON & BOX ===== */
+    .chat-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, var(--chat-primary) 0%, var(--primary-light) 100%);
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+      box-shadow: var(--shadow-lg);
+      z-index: 999;
+      transition: var(--transition);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    .chat-button:hover {
+      transform: scale(1.1) rotate(10deg);
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+    }
+    .chat-button .notification-badge {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background: var(--cultural-accent);
+      color: white;
+      font-size: 12px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border: 2px solid white;
+    }
+    .chat-box {
+      position: fixed;
+      bottom: 110px;
+      right: 30px;
+      width: 380px;
+      height: 500px;
+      background: var(--white);
+      border-radius: 24px;
+      box-shadow: var(--shadow-lg);
+      display: none;
+      z-index: 1000;
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(10px);
+      flex-direction: column;
+    }
+    .chat-box.active {
+      display: flex;
+    }
+    .chat-header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 2px solid var(--secondary);
+    }
+    .chat-header-avatar {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: white;
+      border: 2px solid white;
+    }
+    .chat-header-info {
+      flex: 1;
+    }
+    .chat-header-info h4 {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+    .chat-header-info p {
+      font-size: 0.8rem;
+      opacity: 0.9;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .chat-header-info p i {
+      font-size: 0.6rem;
+      color: #4caf50;
+    }
+    .chat-close {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .chat-close:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: rotate(90deg);
+    }
+    .chat-messages {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      background: var(--light);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .message {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      max-width: 80%;
+    }
+    .message.bot {
+      align-self: flex-start;
+    }
+    .message.user {
+      align-self: flex-end;
+      flex-direction: row-reverse;
+    }
+    .message-avatar {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .message.user .message-avatar {
+      background: var(--primary);
+    }
+    .message-content {
+      background: var(--chat-bot);
+      padding: 12px 16px;
+      border-radius: 18px;
+      border-top-left-radius: 4px;
+      color: var(--dark);
+      font-size: 0.95rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .message.user .message-content {
+      background: var(--chat-user);
+      color: var(--dark);
+      border-top-left-radius: 18px;
+      border-top-right-radius: 4px;
+    }
+    .message-time {
+      font-size: 0.7rem;
+      opacity: 0.6;
+      margin-top: 4px;
+      text-align: right;
+    }
+    .chat-input-area {
+      padding: 20px;
+      background: var(--white);
+      border-top: 1px solid var(--glass-border);
+      display: flex;
+      gap: 10px;
+    }
+    .chat-input {
+      flex: 1;
+      padding: 12px 18px;
+      border: 1px solid var(--glass-border);
+      border-radius: 30px;
+      font-family: inherit;
+      font-size: 0.95rem;
       background: var(--light);
       color: var(--dark);
+      outline: none;
+      transition: var(--transition);
+    }
+    .chat-input:focus {
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(158, 123, 75, 0.2);
+    }
+    .chat-send {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+    .chat-send:hover {
+      transform: scale(1.1);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    }
+    .chat-send:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .quick-replies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 10px 20px 0;
+      background: var(--white);
+    }
+    .quick-reply {
+      background: var(--light);
+      border: 1px solid var(--secondary);
+      color: var(--secondary);
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .quick-reply:hover {
+      background: var(--secondary);
+      color: white;
     }
 
     /* ===== HEADER ===== */
     header {
-      background: var(--primary);
-      color: #fff;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow-md);
     }
-
     .nav-container {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: auto;
-      padding: 15px 20px;
+      padding: 12px 32px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
     }
-
-    .logo {
-      font-size: 20px;
-      font-weight: 700;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--white);
+      font-weight: 800;
+      font-size: 1.5rem;
+      text-decoration: none;
+      letter-spacing: -0.5px;
     }
-
+    .brand img {
+      width: 52px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
     nav ul {
       list-style: none;
       display: flex;
-      gap: 25px;
+      gap: 32px;
+      align-items: center;
     }
-
     nav ul li a {
-      color: #fff;
+      color: var(--white);
       text-decoration: none;
       font-weight: 500;
+      font-size: 1rem;
+      transition: var(--transition);
+      padding: 8px 0;
+      position: relative;
+      opacity: 0.9;
+      white-space: nowrap;
     }
-
-    nav ul li a:hover {
-      text-decoration: underline;
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: width 0.3s ease;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      opacity: 1;
+    }
+    nav ul li a:hover::after,
+    nav ul li a.active::after {
+      width: 100%;
+    }
+    .dark-mode-toggle {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      width: 44px;
+      height: 44px;
+      border-radius: 60px;
+      color: var(--white);
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(8px);
+      margin-left: 8px;
+    }
+    .dark-mode-toggle:hover {
+      background: var(--secondary);
+      border-color: var(--secondary);
+      transform: rotate(30deg) scale(1.05);
+    }
+    .dark-mode .dark-mode-toggle i {
+      display: none;
+    }
+    .dark-mode .dark-mode-toggle i.sun {
+      display: block;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: var(--white);
+      cursor: pointer;
     }
 
     /* ===== PAGE HEADER ===== */
     .page-header {
-      background: linear-gradient(rgba(13,71,161,0.8), rgba(13,71,161,0.8)),
-        url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f') center/cover;
-      color: #fff;
-      padding: 80px 20px;
+      background: linear-gradient(145deg, rgba(10,42,94,0.8) 0%, rgba(5,26,59,0.9) 100%), url('https://i.ibb.co.com/8nyH2Bbd/da3.jpg') center/cover;
+      color: var(--white);
+      text-align: center;
+      padding: 120px 20px 80px;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .page-header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      font-weight: 800;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    .breadcrumb {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    .breadcrumb a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== INTERNAL NAVIGATION ===== */
+    .internal-nav {
+      max-width: 1300px;
+      margin: -40px auto 0;
+      background: var(--white);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-md);
+      padding: 15px;
+      position: sticky;
+      top: 70px;
+      z-index: 900;
+    }
+    .internal-nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .internal-nav li {
+      list-style: none;
+    }
+    .internal-nav a {
+      display: inline-block;
+      padding: 12px 24px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 50px;
+      transition: var(--transition);
       text-align: center;
     }
-
-    .page-header h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-
-    .breadcrumb {
-      font-size: 14px;
-    }
-
-    .breadcrumb a {
-      color: #ffeb3b;
-      text-decoration: none;
+    .internal-nav a:hover,
+    .internal-nav a.active {
+      background: var(--primary);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(10,42,94,0.2);
     }
 
     /* ===== CONTENT ===== */
-    .content {
-      max-width: 1100px;
-      margin: auto;
-      padding: 60px 20px;
+    .container {
+      max-width: 1300px;
+      margin: 50px auto;
+      padding: 0 32px;
     }
-
     .section {
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      margin-bottom: 30px;
+      background: var(--white);
+      padding: 50px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 40px;
+      scroll-margin-top: 120px;
+      transition: var(--transition);
+      border: 1px solid rgba(158,123,75,0.1);
     }
-
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--secondary);
+    }
     .section h2 {
       color: var(--primary);
-      margin-bottom: 15px;
-      border-left: 5px solid var(--secondary);
-      padding-left: 12px;
+      margin-bottom: 25px;
+      font-size: 2.2rem;
+      position: relative;
+      text-align: center;
     }
-
+    .section h2::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 5px;
+      background: linear-gradient(90deg, var(--secondary) 0%, var(--accent) 100%);
+      margin: 16px auto 0;
+      border-radius: 4px;
+    }
+    .section h3 {
+      color: var(--primary);
+      margin: 30px 0 20px;
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
     .section p {
-      line-height: 1.7;
-      font-size: 16px;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      margin-bottom: 18px;
+      color: var(--gray);
     }
-
+    .section p:last-child {
+      margin-bottom: 0;
+    }
     .list {
-      margin-top: 10px;
-      padding-left: 20px;
+      padding-left: 30px;
+      margin-top: 15px;
+      color: var(--gray);
     }
-
     .list li {
-      margin-bottom: 8px;
+      margin-bottom: 12px;
+      line-height: 1.7;
     }
 
-    /* ===== BACK BUTTON ===== */
+    /* ===== PROGRAM CARDS ===== */
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .program-card {
+      background: var(--white);
+      border: 2px solid var(--secondary);
+      border-radius: var(--border-radius);
+      padding: 30px;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+    .program-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+    .program-card h4 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .program-card ul {
+      padding-left: 28px;
+      margin-top: 12px;
+      color: var(--gray);
+    }
+    .program-card li {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    .program-card i {
+      font-size: 2rem;
+      color: var(--secondary);
+    }
+
+    /* ===== INFO BOX ===== */
+    .info-box {
+      margin-top: 30px;
+      padding: 25px;
+      background: rgba(10,42,94,0.05);
+      border-radius: var(--border-radius);
+      border-left: 6px solid var(--primary);
+    }
+    .info-box p {
+      font-style: italic;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    /* ===== CULTURAL DIVIDER ===== */
+    .cultural-divider {
+      height: 4px;
+      background: linear-gradient(90deg,
+        var(--primary) 0%,
+        var(--secondary) 30%,
+        var(--cultural-accent) 50%,
+        var(--secondary) 70%,
+        var(--primary) 100%);
+      margin: 60px auto;
+      border-radius: 4px;
+      max-width: 1300px;
+      opacity: 0.6;
+    }
+
+    /* ===== BACK HOME ===== */
     .back-home {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 50px;
     }
-
     .back-home a {
-      display: inline-block;
-      background: var(--primary);
-      color: #fff;
-      padding: 12px 25px;
-      border-radius: 6px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: var(--white);
+      padding: 14px 40px;
+      border-radius: 60px;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: var(--shadow-md);
     }
-
     .back-home a:hover {
-      background: var(--secondary);
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(158,123,75,0.3);
     }
 
     /* ===== FOOTER ===== */
     footer {
-      background: var(--primary);
-      color: #fff;
-      padding: 25px 20px;
+      background: linear-gradient(145deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: var(--white);
+      padding: 70px 32px 30px;
+      font-size: 1rem;
+      position: relative;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--secondary), var(--accent), var(--secondary));
+    }
+    .footer-content {
+      max-width: 1300px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 50px;
+    }
+    .footer-section h3 {
+      font-size: 1.4rem;
+      margin-bottom: 25px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--secondary);
+    }
+    .footer-section ul {
+      list-style: none;
+    }
+    .footer-section ul li {
+      margin-bottom: 14px;
+    }
+    .footer-section a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-section a:hover {
+      color: var(--secondary);
+      transform: translateX(6px);
+    }
+    .social-links {
+      display: flex;
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 60px;
+      background: var(--glass);
+      color: var(--white);
+      font-size: 1.2rem;
+      transition: var(--transition);
+      border: 1px solid var(--glass-border);
+    }
+    .social-links a:hover {
+      background: var(--secondary);
+      transform: translateY(-6px) scale(1.1);
+      color: var(--primary-dark);
+    }
+    .footer-info-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 20px 30px;
+      border-radius: 60px;
+      margin: 40px auto 20px;
+      max-width: 1000px;
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
+    }
+    .footer-clock {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--white);
+      flex-wrap: wrap;
+    }
+    .footer-time {
+      font-size: 2rem;
+      font-weight: 700;
+      font-family: 'Plus Jakarta Sans', monospace;
+      background: rgba(0,0,0,0.3);
+      padding: 6px 18px;
+      border-radius: 50px;
+      letter-spacing: 2px;
+    }
+    .footer-date {
+      font-size: 1rem;
+      opacity: 0.9;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-visitor {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--secondary);
+      color: var(--primary-dark);
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+    }
+    .footer-bottom {
       text-align: center;
-      font-size: 14px;
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+
+    /* ===== DARK MODE ADJUSTMENTS ===== */
+    .dark-mode .section,
+    .dark-mode .program-card,
+    .dark-mode .internal-nav {
+      background: var(--light);
+      border-color: rgba(255,255,255,0.08);
+    }
+    .dark-mode .info-box {
+      background: rgba(212,175,55,0.1);
+      border-left-color: var(--secondary);
+    }
+    .dark-mode .footer-info-panel {
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .dark-mode .chat-box {
+      background: var(--light);
+    }
+    .dark-mode .message-content {
+      background: var(--white);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 880px) {
+      .menu-toggle {
+        display: block;
+        order: 3;
+      }
+      .nav-right {
+        order: 2;
+      }
+      nav ul {
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: var(--primary);
+        flex-direction: column;
+        padding: 25px 0;
+        display: none;
+        z-index: 100;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        backdrop-filter: blur(12px);
+        gap: 16px;
+      }
+      nav ul.active {
+        display: flex;
+      }
+      nav ul li {
+        text-align: center;
+      }
+      nav ul li a {
+        font-size: 1.1rem;
+        white-space: normal;
+      }
+      .page-header h1 { font-size: 2.2rem; }
+      .internal-nav a {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+      }
+      .program-grid { grid-template-columns: 1fr; }
+      .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+      }
+      .whatsapp-float span { display: none; }
+      .whatsapp-float i { font-size: 32px; }
+      .chat-button {
+        bottom: 100px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+        font-size: 24px;
+      }
+      .chat-box {
+        width: 320px;
+        height: 450px;
+        right: 20px;
+        bottom: 170px;
+      }
     }
 
     @media (max-width: 768px) {
-      .page-header h1 {
-        font-size: 26px;
+      .page-header { padding: 80px 20px 60px; min-height: 300px; }
+      .page-header h1 { font-size: 2rem; }
+      .container { padding: 0 20px; }
+      .section { padding: 35px 25px; }
+      .section h2 { font-size: 1.8rem; }
+      .footer-info-panel {
+        flex-direction: column;
+        text-align: center;
+        border-radius: 40px;
+        padding: 20px;
+      }
+      .footer-clock {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+      }
+      .footer-time {
+        font-size: 1.8rem;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand span { display: none; }
+      .brand img { width: 44px; }
+      .page-header h1 { font-size: 1.8rem; }
+      .internal-nav { padding: 10px; }
+      .internal-nav ul { flex-direction: column; gap: 8px; }
+      .internal-nav a { width: 100%; padding: 10px; }
+      .section { padding: 30px 20px; }
+      .section h2 { font-size: 1.6rem; }
+      .whatsapp-float {
+        bottom: 15px;
+        right: 15px;
+        padding: 8px;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        justify-content: center;
+      }
+      .whatsapp-float i { font-size: 24px; }
+      .chat-button {
+        bottom: 80px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+      }
+      .chat-box {
+        width: 300px;
+        height: 400px;
+        right: 15px;
+        bottom: 140px;
       }
     }
   </style>
@@ -162,72 +1034,603 @@
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="nav-container">
-      <div class="logo">SMAN 1 CLURING</div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Beranda</a></li>
-          <li><a href="profil.html">Profil</a></li>
-          <li><a href="akademik.html">Akademik</a></li>
-          <li><a href="kesiswaan.html">Kesiswaan</a></li>
-          <li><a href="humas.html">Humas</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="spinner"></div>
+</div>
 
-  <!-- PAGE HEADER -->
-  <section class="page-header">
-    <h1>Profil Sekolah</h1>
-    <div class="breadcrumb">
-      <a href="index.html">Beranda</a> / Profil Sekolah
-    </div>
-  </section>
+<!-- WHATSAPP FLOAT BUTTON -->
+<a href="https://wa.me/6282319712420?text=Halo%20saya%20ingin%20bertanya%20tentang%20akademik%20SMAN%201%20Cluring"
+class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+<i class="fab fa-whatsapp"></i>
+<span>Chat Admin</span>
+</a>
 
-  <!-- CONTENT -->
-  <section class="content">
+<!-- CHAT BUTTON & BOX -->
+<div class="chat-button" id="chatButton">
+<i class="fas fa-comment-dots"></i>
+<span class="notification-badge">1</span>
+</div>
+<div class="chat-box" id="chatBox">
+<div class="chat-header">
+<div class="chat-header-avatar">
+<i class="fas fa-robot"></i>
+</div>
+<div class="chat-header-info">
+<h4>Asisten Virtual SMAN 1 Cluring</h4>
+<p><i class="fas fa-circle"></i> Online - Siap membantu</p>
+</div>
+<div class="chat-close" id="chatClose">
+<i class="fas fa-times"></i>
+</div>
+</div>
+<div class="quick-replies">
+<span class="quick-reply" data-message="Info Kurikulum">📚 Kurikulum</span>
+<span class="quick-reply" data-message="Jadwal Pelajaran">📅 Jadwal</span>
+<span class="quick-reply" data-message="Program Unggulan">🏆 Program</span>
+<span class="quick-reply" data-message="Kalender Akademik">📆 Kalender</span>
+</div>
+<div class="chat-messages" id="chatMessages">
+<div class="message bot">
+<div class="message-avatar">
+<i class="fas fa-robot"></i>
+</div>
+<div class="message-content">
+<p>Halo! Selamat datang di layanan bantuan akademik SMAN 1 Cluring. Ada yang bisa saya bantu?</p>
+<div class="message-time">Baru saja</div>
+</div>
+</div>
+</div>
+<div class="chat-input-area">
+<input type="text" class="chat-input" id="chatInput" placeholder="Ketik pesan..." />
+<button class="chat-send" id="chatSend">
+<i class="fas fa-paper-plane"></i>
+</button>
+</div>
+</div>
 
-    <div class="section" id="kurikulum">
-      <h2>Kurikulum</h2>
-      <p>
-        SMAN 1 Cluring menerapkan <strong>Kurikulum Merdeka</strong> sebagai upaya
-        meningkatkan kualitas pembelajaran yang berpusat pada peserta didik,
-        penguatan karakter, serta pengembangan kompetensi abad ke-21.
-      </p>
-    </div>
+<!-- HEADER -->
+<header data-aos="fade-down">
+<div class="nav-container">
+<a href="index.html" class="brand">
+<img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring">
+<span>SMAN 1 CLURING</span>
+</a>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<div class="nav-right">
+<nav>
+<ul id="navMenu">
+<li><a href="index.html">Home</a></li>
+<li><a href="profil.html">Profil</a></li>
+<li><a href="sarpras.html">Sarpras</a></li>
+<li><a href="akademik.html" class="active">Akademik</a></li>
+<li><a href="kesiswaan.html">Kesiswaan</a></li>
+<li><a href="humas.html">Humas</a></li>
+<li><a href="mitra.html">Mitra</a></li>
+<li><a href="alumni.html">Alumni</a></li>
+<li><a href="artikel.html">Artikel</a></li>
+<li style="display: flex; align-items: center;">
+<button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+<i class="fas fa-moon"></i>
+<i class="fas fa-sun sun"></i>
+</button>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</header>
 
-    <div class="section" id="program">
-      <h2>Program Unggulan</h2>
-      <ul class="list">
-        <li><strong>Kelas Riset</strong> – Mengembangkan kemampuan berpikir kritis dan ilmiah siswa.</li>
-        <li><strong>Literasi</strong> – Penguatan budaya baca dan menulis.</li>
-        <li><strong>Numerasi</strong> – Peningkatan kemampuan berpikir logis dan pemecahan masalah.</li>
-      </ul>
-    </div>
+<!-- PAGE HEADER -->
+<section class="page-header" data-aos="zoom-in">
+<h1 data-aos="fade-up">Informasi Akademik</h1>
+<div class="breadcrumb" data-aos="fade-up" data-aos-delay="100">
+<a href="index.html">Beranda</a> / Akademik
+</div>
+</section>
 
-    <div class="section" id="prestasi">
-      <h2>Prestasi Akademik</h2>
-      <p>
-        Peserta didik SMAN 1 Cluring secara aktif mengikuti dan meraih prestasi
-        dalam berbagai ajang <strong>olimpiade sains</strong> dan
-        <strong>kompetisi akademik</strong> di tingkat kabupaten, provinsi,
-        hingga nasional.
-      </p>
-    </div>
+<!-- INTERNAL NAVIGATION -->
+<nav class="internal-nav" data-aos="fade-down">
+<ul>
+<li><a href="#kurikulum" class="nav-link active" data-aos="fade-up" data-aos-delay="100">Kurikulum</a></li>
+<li><a href="#program" class="nav-link" data-aos="fade-up" data-aos-delay="200">Program Unggulan</a></li>
+<li><a href="#kalender" class="nav-link" data-aos="fade-up" data-aos-delay="300">Kalender Akademik</a></li>
+<li><a href="#prestasi" class="nav-link" data-aos="fade-up" data-aos-delay="400">Prestasi</a></li>
+</ul>
+</nav>
 
-    <!-- BACK TO HOME -->
-    <div class="back-home">
-      <a href="index.html">← Kembali ke Beranda</a>
-    </div>
+<!-- CONTENT -->
+<section class="container">
 
-  </section>
+<!-- KURIKULUM -->
+<div class="section" id="kurikulum" data-aos="fade-up">
+<h2><i class="fas fa-book-open"></i> Kurikulum Merdeka</h2>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 SMAN 1 Cluring | Website Resmi Sekolah
-  </footer>
+<p data-aos="fade-right">
+SMAN 1 Cluring menerapkan <strong>Kurikulum Merdeka</strong> sebagai upaya meningkatkan kualitas pembelajaran yang berpusat pada peserta didik, penguatan karakter, serta pengembangan kompetensi abad ke-21.
+</p>
+
+<p data-aos="fade-left">
+Kurikulum ini memberikan fleksibilitas bagi guru untuk menyesuaikan pembelajaran dengan kebutuhan dan minat siswa, serta mendorong pembelajaran yang lebih mendalam dan bermakna.
+</p>
+
+<div class="info-box" data-aos="fade-up">
+<p>
+<i class="fas fa-info-circle" style="margin-right: 10px;"></i>
+Kurikulum Merdeka menekankan pada pengembangan soft skills, karakter Pancasila, dan pembelajaran berbasis proyek (P5).
+</p>
+</div>
+</div>
+
+<div class="cultural-divider" data-aos="fade-in"></div>
+
+<!-- PROGRAM UNGGULAN -->
+<div class="section" id="program" data-aos="fade-up">
+<h2><i class="fas fa-trophy"></i> Program Unggulan</h2>
+
+<div class="program-grid">
+<div class="program-card" data-aos="flip-up" data-aos-delay="100">
+<h4><i class="fas fa-flask"></i> Kelas Riset</h4>
+<ul class="list">
+<li>Mengembangkan kemampuan berpikir kritis dan ilmiah siswa</li>
+<li>Pembimbingan penelitian ilmiah sejak dini</li>
+<li>Partisipasi dalam kompetisi karya ilmiah</li>
+<li>Kolaborasi dengan universitas dan lembaga penelitian</li>
+</ul>
+</div>
+
+<div class="program-card" data-aos="flip-up" data-aos-delay="200">
+<h4><i class="fas fa-book"></i> Literasi</h4>
+<ul class="list">
+<li>Penguatan budaya baca dan menulis</li>
+<li>Program Smaring Gemar Membaca (SGM)</li>
+<li>Pojok baca di setiap kelas</li>
+<li>Lomba karya tulis dan jurnal siswa</li>
+</ul>
+</div>
+
+<div class="program-card" data-aos="flip-up" data-aos-delay="300">
+<h4><i class="fas fa-calculator"></i> Numerasi</h4>
+<ul class="list">
+<li>Peningkatan kemampuan berpikir logis</li>
+<li>Pemecahan masalah matematika terapan</li>
+<li>Olimpiade matematika rutin</li>
+<li>Pembelajaran berbasis STEAM</li>
+</ul>
+</div>
+
+<div class="program-card" data-aos="flip-up" data-aos-delay="400">
+<h4><i class="fas fa-language"></i> Bahasa</h4>
+<ul class="list">
+<li>Penguatan Bahasa Indonesia, Inggris, dan Arab</li>
+<li>Program bilingual class</li>
+<li>Debat dan public speaking</li>
+<li>Exchange program dan partnership</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="cultural-divider" data-aos="fade-in"></div>
+
+<!-- KALENDER AKADEMIK -->
+<div class="section" id="kalender" data-aos="fade-up">
+<h2><i class="fas fa-calendar-alt"></i> Kalender Akademik</h2>
+
+<p data-aos="fade-right">
+Kalender akademik SMAN 1 Cluring disusun untuk memastikan kelancaran proses pembelajaran sepanjang tahun ajaran. Berikut adalah jadwal kegiatan akademik utama:
+</p>
+
+<table class="structure-table" data-aos="fade-up" style="width: 100%; border-collapse: collapse; margin-top: 25px; background: var(--white);">
+<thead>
+<tr style="background: var(--primary); color: var(--white);">
+<th style="padding: 16px; text-align: left; font-weight: 700;">Kegiatan</th>
+<th style="padding: 16px; text-align: left; font-weight: 700;">Waktu</th>
+<th style="padding: 16px; text-align: left; font-weight: 700;">Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr data-aos="fade-up" style="border-bottom: 1px solid rgba(0,0,0,0.05);">
+<td style="padding: 14px 16px; color: var(--gray);"><strong>Penerimaan Peserta Didik Baru (PPDB)</strong></td>
+<td style="padding: 14px 16px; color: var(--gray);">Mei - Juni 2026</td>
+<td style="padding: 14px 16px; color: var(--gray);">Pendaftaran online & verifikasi</td>
+</tr>
+<tr data-aos="fade-up" style="border-bottom: 1px solid rgba(0,0,0,0.05); background: rgba(10,42,94,0.02);">
+<td style="padding: 14px 16px; color: var(--gray);"><strong>Masa Pengenalan Lingkungan Sekolah (MPLS)</strong></td>
+<td style="padding: 14px 16px; color: var(--gray);">Juli 2026</td>
+<td style="padding: 14px 16px; color: var(--gray);">Kegiatan orientasi siswa baru</td>
+</tr>
+<tr data-aos="fade-up" style="border-bottom: 1px solid rgba(0,0,0,0.05);">
+<td style="padding: 14px 16px; color: var(--gray);"><strong>Penilaian Tengah Semester (PTS)</strong></td>
+<td style="padding: 14px 16px; color: var(--gray);">September 2026</td>
+<td style="padding: 14px 16px; color: var(--gray);">Evaluasi pembelajaran semester 1</td>
+</tr>
+<tr data-aos="fade-up" style="border-bottom: 1px solid rgba(0,0,0,0.05); background: rgba(10,42,94,0.02);">
+<td style="padding: 14px 16px; color: var(--gray);"><strong>Penilaian Akhir Semester (PAS)</strong></td>
+<td style="padding: 14px 16px; color: var(--gray);">Desember 2026</td>
+<td style="padding: 14px 16px; color: var(--gray);">Ujian akhir semester ganjil</td>
+</tr>
+<tr data-aos="fade-up" style="border-bottom: 1px solid rgba(0,0,0,0.05);">
+<td style="padding: 14px 16px; color: var(--gray);"><strong>Penilaian Tengah Semester (PTS)</strong></td>
+<td style="padding: 14px 16px; color: var(--gray);">Maret 2027</td>
+<td style="padding: 14px 16px; color: var(--gray);">Evaluasi pembelajaran semester 2</td>
+</tr>
+<tr data-aos="fade-up" style="border-bottom: 1px solid rgba(0,0,0,0.05); background: rgba(10,42,94,0.02);">
+<td style="padding: 14px 16px; color: var(--gray);"><strong>Penilaian Akhir Tahun (PAT)</strong></td>
+<td style="padding: 14px 16px; color: var(--gray);">Juni 2027</td>
+<td style="padding: 14px 16px; color: var(--gray);">Ujian akhir tahun ajaran</td>
+</tr>
+</tbody>
+</table>
+
+<div class="info-box" data-aos="fade-up">
+<p>
+<i class="fas fa-download" style="margin-right: 10px;"></i>
+Kalender akademik lengkap dapat diunduh melalui portal siswa atau hubungi bagian kurikulum untuk informasi lebih detail.
+</p>
+</div>
+</div>
+
+<div class="cultural-divider" data-aos="fade-in"></div>
+
+<!-- PRESTASI AKADEMIK -->
+<div class="section" id="prestasi" data-aos="fade-up">
+<h2><i class="fas fa-medal"></i> Prestasi Akademik</h2>
+
+<p data-aos="fade-right">
+Peserta didik SMAN 1 Cluring secara aktif mengikuti dan meraih prestasi dalam berbagai ajang <strong>olimpiade sains</strong> dan <strong>kompetisi akademik</strong> di tingkat kabupaten, provinsi, hingga nasional.
+</p>
+
+<div class="program-grid">
+<div class="program-card" data-aos="zoom-in" data-aos-delay="100">
+<h4><i class="fas fa-atom"></i> Olimpiade Sains</h4>
+<ul class="list">
+<li>OSN Matematika - Tingkat Provinsi</li>
+<li>OSN Fisika - Tingkat Nasional</li>
+<li>OSN Biologi - Tingkat Kabupaten</li>
+<li>OSN Kimia - Tingkat Provinsi</li>
+</ul>
+</div>
+
+<div class="program-card" data-aos="zoom-in" data-aos-delay="200">
+<h4><i class="fas fa-robot"></i> Kompetisi Teknologi</h4>
+<ul class="list">
+<li>Lomba Karya Ilmiah Remaja (LKIR)</li>
+<li>Kompetisi Robotik Nasional</li>
+<li>Hackathon Pendidikan</li>
+<li>Inovasi Teknologi Tepat Guna</li>
+</ul>
+</div>
+
+<div class="program-card" data-aos="zoom-in" data-aos-delay="300">
+<h4><i class="fas fa-pen-fancy"></i> Lomba Bahasa</h4>
+<ul class="list">
+<li>Olimpiade Bahasa Indonesia</li>
+<li>English Speech Contest</li>
+<li>Lomba Debat Bahasa Arab</li>
+<li>Writing Competition</li>
+</ul>
+</div>
+</div>
+
+<div class="info-box" data-aos="fade-up">
+<p>
+<i class="fas fa-star" style="margin-right: 10px;"></i>
+Prestasi terbaru: SMAN 1 Cluring meraih <strong>Innovative Government Award (IGA) 2025</strong> untuk inovasi BUKIT BATARI – Budaya Kita Batik dan Tari.
+</p>
+</div>
+</div>
+
+<!-- BACK HOME -->
+<div class="back-home" data-aos="fade-up">
+<a href="index.html">
+<i class="fas fa-arrow-left"></i> Kembali ke Beranda
+</a>
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer data-aos="fade-up" id="kontak">
+<div class="footer-content">
+<div class="footer-section">
+<h3><i class="fas fa-map-marker-alt"></i> Kontak</h3>
+<p>Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, Jawa Timur</p>
+<p><i class="fas fa-phone"></i> <a href="tel:+6282319712420">0823-1971-2420</a></p>
+<p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6282319712420" target="_blank">0823-1971-2420 (WA)</a></p>
+</div>
+
+<div class="footer-section">
+<h3><i class="fas fa-link"></i> Link Penting</h3>
+<ul>
+<li><a href="https://sma.kemendikdasmen.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
+<li><a href="https://dindik.jatimprov.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
+<li><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas Banyuwangi</a></li>
+<li><a href="https://alam21234.github.io/Smaring-interactive-learning-comunity" target="_blank"><i class="fas fa-external-link-alt"></i> Smaring Learning Community</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h3><i class="fas fa-flask"></i> Lab Virtual</h3>
+<ul>
+<li><a href="https://quran.nu.or.id" target="_blank"><i class="fas fa-book-quran"></i> Al-Qur'an Digital</a></li>
+<li><a href="https://virtualbiologylab.org" target="_blank"><i class="fas fa-dna"></i> Virtual Biology Lab</a></li>
+<li><a href="https://www.myphysicslab.com" target="_blank"><i class="fas fa-atom"></i> MyPhysicsLab</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h3><i class="fas fa-share-alt"></i> Media Sosial</h3>
+<div class="social-links">
+<a href="https://www.facebook.com/Sman1Cluring" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+<a href="https://www.instagram.com/sman1_cluring" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+<a href="https://wa.me/6282319712420" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+</div>
+</div>
+
+<!-- CLOCK & VISITOR PANEL -->
+<div class="footer-info-panel">
+<div class="footer-clock">
+<span class="footer-time" id="footerTime">00:00:00</span>
+<span class="footer-date" id="footerDate">Sabtu, 1 Januari 2026</span>
+</div>
+<div class="footer-visitor">
+<i class="fas fa-eye"></i>
+<span id="footerVisitorCount">Loading...</span>
+</div>
+</div>
+
+<div class="footer-bottom">
+<p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
+</div>
+</footer>
+
+<!-- AOS & Custom JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+// Initialize AOS
+AOS.init({
+duration: 800,
+once: true,
+easing: 'ease-out-cubic'
+});
+
+// Preloader
+window.addEventListener('load', () => {
+const preloader = document.getElementById('preloader');
+setTimeout(() => {
+preloader.classList.add('fade-out');
+}, 800);
+});
+
+// Dark Mode Toggle
+const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.body;
+
+const isDarkMode = localStorage.getItem('darkMode') === 'true';
+if (isDarkMode) {
+body.classList.add('dark-mode');
+}
+
+darkModeToggle.addEventListener('click', () => {
+body.classList.toggle('dark-mode');
+localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+});
+
+// Mobile Menu Toggle
+function toggleMenu() {
+document.getElementById("navMenu").classList.toggle("active");
+}
+
+// Smooth scrolling untuk internal navigation
+document.querySelectorAll('.nav-link').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+
+const menu = document.getElementById("navMenu");
+menu.classList.remove("active");
+
+const targetId = this.getAttribute('href');
+const target = document.querySelector(targetId);
+
+if (target) {
+target.scrollIntoView({
+behavior: 'smooth',
+block: 'start'
+});
+
+document.querySelectorAll('.nav-link').forEach(link => {
+link.classList.remove('active');
+});
+this.classList.add('active');
+}
+});
+});
+
+// Update active link saat scroll
+window.addEventListener('scroll', function() {
+const sections = document.querySelectorAll('.section');
+const navLinks = document.querySelectorAll('.nav-link');
+
+let currentSection = '';
+
+sections.forEach(section => {
+const sectionTop = section.offsetTop - 150;
+if (pageYOffset >= sectionTop) {
+currentSection = section.getAttribute('id');
+}
+});
+
+navLinks.forEach(link => {
+link.classList.remove('active');
+if (link.getAttribute('href').substring(1) === currentSection) {
+link.classList.add('active');
+}
+});
+});
+
+// Initialize first link as active
+document.querySelector('.nav-link[href="#kurikulum"]').classList.add('active');
+
+// Realtime Clock untuk Footer
+function updateClock() {
+const now = new Date();
+const hours = String(now.getHours()).padStart(2, '0');
+const minutes = String(now.getMinutes()).padStart(2, '0');
+const seconds = String(now.getSeconds()).padStart(2, '0');
+const timeString = `${hours}:${minutes}:${seconds}`;
+
+const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+
+const dayName = days[now.getDay()];
+const day = now.getDate();
+const monthName = months[now.getMonth()];
+const year = now.getFullYear();
+const dateString = `${dayName}, ${day} ${monthName} ${year}`;
+
+document.getElementById('footerTime').textContent = timeString;
+document.getElementById('footerDate').textContent = dateString;
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// Visitor Counter
+function updateVisitorCounter() {
+const visitorKey = 'sman1cluring_visitor_count';
+let count = localStorage.getItem(visitorKey);
+
+if (!count) {
+count = 1;
+localStorage.setItem(visitorKey, count);
+} else {
+count = parseInt(count);
+if (!sessionStorage.getItem('visitor_counted')) {
+count++;
+localStorage.setItem(visitorKey, count);
+sessionStorage.setItem('visitor_counted', 'true');
+}
+}
+
+const formattedCount = count.toLocaleString('id-ID');
+document.getElementById('footerVisitorCount').textContent = `${formattedCount} Pengunjung`;
+}
+updateVisitorCounter();
+
+// ===== CHAT SYSTEM =====
+const chatButton = document.getElementById('chatButton');
+const chatBox = document.getElementById('chatBox');
+const chatClose = document.getElementById('chatClose');
+const chatInput = document.getElementById('chatInput');
+const chatSend = document.getElementById('chatSend');
+const chatMessages = document.getElementById('chatMessages');
+const quickReplies = document.querySelectorAll('.quick-reply');
+const notificationBadge = document.querySelector('.notification-badge');
+
+// Toggle chat box
+chatButton.addEventListener('click', () => {
+chatBox.classList.toggle('active');
+if (chatBox.classList.contains('active')) {
+notificationBadge.style.display = 'none';
+chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+});
+
+// Close chat box
+chatClose.addEventListener('click', () => {
+chatBox.classList.remove('active');
+});
+
+// Send message function
+function sendMessage() {
+const message = chatInput.value.trim();
+if (message === '') return;
+
+addMessage(message, 'user');
+chatInput.value = '';
+chatSend.disabled = true;
+
+setTimeout(() => {
+const botResponse = getBotResponse(message);
+addMessage(botResponse, 'bot');
+chatSend.disabled = false;
+chatMessages.scrollTop = chatMessages.scrollHeight;
+}, 1000);
+
+chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Add message to chat
+function addMessage(text, sender) {
+const messageDiv = document.createElement('div');
+messageDiv.className = `message ${sender}`;
+
+const now = new Date();
+const timeString = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+
+messageDiv.innerHTML = `
+<div class="message-avatar">
+<i class="fas ${sender === 'bot' ? 'fa-robot' : 'fa-user'}"></i>
+</div>
+<div class="message-content">
+<p>${text}</p>
+<div class="message-time">${timeString}</div>
+</div>
+`;
+
+chatMessages.appendChild(messageDiv);
+}
+
+// Bot response logic
+function getBotResponse(message) {
+const lowerMsg = message.toLowerCase();
+
+if (lowerMsg.includes('kurikulum') || lowerMsg.includes('merdeka')) {
+return "SMAN 1 Cluring menerapkan Kurikulum Merdeka yang berfokus pada pengembangan karakter Pancasila dan pembelajaran berbasis proyek (P5).";
+} else if (lowerMsg.includes('jadwal') || lowerMsg.includes('pelajaran')) {
+return "Jadwal pelajaran bisa diakses oleh siswa melalui aplikasi e-learning atau hubungi wali kelas masing-masing.";
+} else if (lowerMsg.includes('program') || lowerMsg.includes('unggulan')) {
+return "Program unggulan kami meliputi: Kelas Riset, Literasi, Numerasi, dan Program Bahasa. Silakan kunjungi halaman Akademik untuk info lengkap.";
+} else if (lowerMsg.includes('kalender') || lowerMsg.includes('akademik')) {
+return "Kalender akademik tersedia di halaman Akademik. Untuk download file lengkap, hubungi bagian kurikulum.";
+} else if (lowerMsg.includes('prestasi')) {
+return "SMAN 1 Cluring meraih berbagai prestasi di Olimpiade Sains, Kompetisi Teknologi, dan Lomba Bahasa. Lihat detailnya di halaman Prestasi.";
+} else if (lowerMsg.includes('terima kasih') || lowerMsg.includes('thanks')) {
+return "Sama-sama! Senang bisa membantu. Ada lagi yang ingin ditanyakan?";
+} else {
+return "Terima kasih atas pertanyaannya. Untuk informasi lebih lanjut, silakan hubungi admin melalui WhatsApp atau telepon ke nomor 0823-1971-2420.";
+}
+}
+
+// Send message on button click
+chatSend.addEventListener('click', sendMessage);
+
+// Send message on Enter key
+chatInput.addEventListener('keypress', (e) => {
+if (e.key === 'Enter') {
+sendMessage();
+}
+});
+
+// Quick replies
+quickReplies.forEach(reply => {
+reply.addEventListener('click', () => {
+const message = reply.getAttribute('data-message');
+chatInput.value = message;
+sendMessage();
+});
+});
+
+// Close chat when clicking outside
+document.addEventListener('click', (e) => {
+if (!chatBox.contains(e.target) && !chatButton.contains(e.target) && chatBox.classList.contains('active')) {
+chatBox.classList.remove('active');
+}
+});
+</script>
 
 </body>
 </html>
