@@ -14,17 +14,17 @@
   <meta property="og:title" content="Artikel & Berita - SMAN 1 Cluring" />
   <meta property="og:description" content="Berita terbaru, prestasi, dan kegiatan SMAN 1 Cluring Banyuwangi." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://sman1cluring.sch.id/artikel.html  " />
-  <meta property="og:image" content="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png  " />
+  <meta property="og:url" content="https://sman1cluring.sch.id/artikel.html" />
+  <meta property="og:image" content="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" />
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter  :ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css  " />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   
   <!-- AOS Animation Library -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css  " rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
     :root {
@@ -101,7 +101,7 @@
       align-items: center;
       z-index: 9999;
       opacity: 1;
-      transition: opacity 0.6s ease;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
     }
     #preloader.fade-out {
       opacity: 0;
@@ -154,10 +154,25 @@
       box-shadow: 0 20px 35px rgba(37, 211, 102, 0.4);
       background: linear-gradient(135deg, var(--whatsapp-dark) 0%, var(--whatsapp) 100%);
     }
+    .whatsapp-float::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 60px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      animation: ripple 1.5s infinite;
+    }
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.1); }
       100% { transform: scale(1); }
+    }
+    @keyframes ripple {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.3); opacity: 0; }
     }
 
     /* ===== HEADER ===== */
@@ -225,10 +240,12 @@
       background: var(--secondary);
       transition: width 0.3s ease;
     }
-    nav ul li a:hover {
+    nav ul li a:hover,
+    nav ul li a.active {
       opacity: 1;
     }
-    nav ul li a:hover::after {
+    nav ul li a:hover::after,
+    nav ul li a.active::after {
       width: 100%;
     }
     .dark-mode-toggle {
@@ -276,7 +293,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(145deg, rgba(10,42,94,0.8) 0%, rgba(5,26,59,0.9) 100%), url('https://i.ibb.co.com/8nyH2Bbd/da3.jpg  ') center/cover;
+      background: linear-gradient(145deg, rgba(10,42,94,0.8) 0%, rgba(5,26,59,0.9) 100%), url('https://i.ibb.co.com/8nyH2Bbd/da3.jpg') center/cover;
     }
     .hero h1 {
       font-size: 2.8rem;
@@ -636,6 +653,15 @@
       opacity: 0.8;
     }
 
+    /* ===== DARK MODE ADJUSTMENTS ===== */
+    .dark-mode .article-card {
+      background: var(--light);
+      border-color: rgba(255,255,255,0.08);
+    }
+    .dark-mode .footer-info-panel {
+      background: rgba(0, 0, 0, 0.4);
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 880px) {
       .menu-toggle {
@@ -736,7 +762,7 @@
 </div>
 
 <!-- WHATSAPP FLOAT BUTTON -->
-<a href="https://wa.me/6282319712420?text=Halo%20saya%20ingin%20bertanya%20tentang%20SMAN%201%20Cluring  "
+<a href="https://wa.me/6282319712420?text=Halo%20saya%20ingin%20bertanya%20tentang%20SMAN%201%20Cluring"
 class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <i class="fab fa-whatsapp"></i>
 <span>Chat Admin</span>
@@ -746,7 +772,7 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <header data-aos="fade-down">
   <div class="nav-container">
     <a href="index.html" class="brand">
-      <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png  " alt="Logo SMAN 1 Cluring" />
+      <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring" />
       <span>SMAN 1 CLURING</span>
     </a>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -761,7 +787,7 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
           <li><a href="humas.html">Humas</a></li>
           <li><a href="mitra.html">Mitra</a></li>
           <li><a href="alumni.html">Alumni</a></li>
-          <li><a href="artikel.html">Artikel</a></li>
+          <li><a href="artikel.html" class="active">Artikel</a></li>
           <li style="display: flex; align-items: center;">
             <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
               <i class="fas fa-moon"></i>
@@ -796,65 +822,66 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
     </div>
   </div>
 
-  <!-- FILTERS -->
+  <!-- FILTERS (Sudah responsif dengan JS yang dioptimasi) -->
   <div class="filters" data-aos="fade-up" data-aos-delay="100">
-    <button class="filter-btn active" onclick="filterByCategory('all')">Semua</button>
-    <button class="filter-btn" onclick="filterByCategory('berita')">Berita</button>
-    <button class="filter-btn" onclick="filterByCategory('prestasi')">Prestasi</button>
-    <button class="filter-btn" onclick="filterByCategory('kegiatan')">Kegiatan</button>
-    <button class="filter-btn" onclick="filterByCategory('ekskul')">Ekstrakurikuler</button>
-    <button class="filter-btn" onclick="filterByCategory('pancasila')">Pancasila</button>
-    <button class="filter-btn" onclick="filterByCategory('keagamaan')">Keagamaan</button>
-    <button class="filter-btn" onclick="filterByCategory('budaya')">Budaya</button>
+    <button class="filter-btn active" onclick="filterByCategory('all', this)">Semua</button>
+    <button class="filter-btn" onclick="filterByCategory('berita', this)">Berita</button>
+    <button class="filter-btn" onclick="filterByCategory('prestasi', this)">Prestasi</button>
+    <button class="filter-btn" onclick="filterByCategory('kegiatan', this)">Kegiatan</button>
+    <button class="filter-btn" onclick="filterByCategory('ekskul', this)">Ekstrakurikuler</button>
+    <button class="filter-btn" onclick="filterByCategory('pancasila', this)">Pancasila</button>
+    <button class="filter-btn" onclick="filterByCategory('keagamaan', this)">Keagamaan</button>
+    <button class="filter-btn" onclick="filterByCategory('budaya', this)">Budaya</button>
   </div>
 
-  <!-- ARTICLES GRID -->
+  <!-- ARTICLES GRID (dengan tautan yang sudah disesuaikan berdasarkan tabel) -->
   <div class="articles-grid" id="articlesGrid">
-    <!-- Artikel 1 - Hari Kesaktian Pancasila (1 Oktober 2026) -->
-    <a href="articles/Hari-Kesaktian-Pancasila.html" class="article-card" data-category="pancasila" data-aos="flip-up">
-      <img src="https://i.ibb.co/Kz2SXCCz/pembawa-acara-upacara.jpg  " alt="Upacara Hari Kesaktian Pancasila">
+    
+    <!-- 1. Hari Kesaktian Pancasila (1 Okt 2025) - Kategori Pancasila -->
+    <a href="Hari Kesaktian Pancasila.html" class="article-card" data-category="pancasila" data-aos="flip-up">
+      <img src="https://i.ibb.co/Kz2SXCCz/pembawa-acara-upacara.jpg" alt="Upacara Hari Kesaktian Pancasila">
       <div class="article-content">
         <div class="article-meta">
-          <span><i class="far fa-calendar"></i> 1 Oktober 2026</span>
+          <span><i class="far fa-calendar"></i> 1 Okt 2025</span>
           <span><i class="far fa-folder"></i> Pancasila</span>
         </div>
-        <h3>SMAN 1 Cluring Gelar Upacara Peringatan Hari Kesaktian Pancasila 2026</h3>
-        <p>Upacara khidmat dalam rangka Hari Kesaktian Pancasila 2026 untuk menanamkan nilai-nilai Pancasila.</p>
+        <h3>Hari Kesaktian Pancasila</h3>
+        <p>Upacara khidmat dalam rangka Hari Kesaktian Pancasila 2025 untuk menanamkan nilai-nilai Pancasila.</p>
         <span class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></span>
       </div>
     </a>
 
-    <!-- Artikel 2 - Program SIKAP (25 Jan 2026) -->
-    <a href="articles/Program-SIKAP.html" class="article-card" data-category="berita" data-aos="flip-up" data-aos-delay="100">
-      <img src="https://i.ibb.co/zHSfC2Qz/JENIS-TANAMAN.jpg  " alt="Program SIKAP 2026">
+    <!-- 2. Bazar Ramadhan (12 Mar 2025) - Keagamaan -->
+    <a href="2025-10-19-Pergantian-Takmir-Masjid.html" class="article-card" data-category="keagamaan" data-aos="flip-up" data-aos-delay="100">
+      <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c" alt="Bazar Ramadhan">
       <div class="article-content">
         <div class="article-meta">
-          <span><i class="far fa-calendar"></i> 25 Jan 2026</span>
+          <span><i class="far fa-calendar"></i> 12 Mar 2025</span>
+          <span><i class="far fa-folder"></i> Keagamaan</span>
+        </div>
+        <h3>Bazar Ramadhan 1446 H Meriah</h3>
+        <p>Kegiatan bazar Ramadhan yang diadakan OSIS berlangsung meriah dan diikuti seluruh siswa.</p>
+        <span class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- 3. Pelatihan Guru (5 Mar 2025) - Berita -->
+    <a href="Program SIKAP.html" class="article-card" data-category="berita" data-aos="flip-up" data-aos-delay="200">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Pelatihan Guru">
+      <div class="article-content">
+        <div class="article-meta">
+          <span><i class="far fa-calendar"></i> 5 Mar 2025</span>
           <span><i class="far fa-folder"></i> Berita</span>
         </div>
-        <h3>SMAN 1 Cluring Perkuat Ketahanan Pangan melalui Program SIKAP</h3>
-        <p>Sekolah Inovasi Ketahanan Pangan untuk menciptakan generasi yang peduli lingkungan.</p>
+        <h3>Guru SMAN 1 Cluring Ikuti Pelatihan Kurikulum Merdeka</h3>
+        <p>Seluruh guru mengikuti pelatihan implementasi Kurikulum Merdeka yang diselenggarakan Dinas Pendidikan.</p>
         <span class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></span>
       </div>
     </a>
 
-    <!-- Artikel 3 - Smaring Expo (15 Jan 2026) -->
-    <a href="articles/Smaring-Expo-2026.html" class="article-card" data-category="kegiatan" data-aos="flip-up" data-aos-delay="200">
-      <img src="https://i.ibb.co/TBfc9QcK/KS-LAUNCING-EXSPO.jpg  " alt="Smaring Expo 2026">
-      <div class="article-content">
-        <div class="article-meta">
-          <span><i class="far fa-calendar"></i> 15 Jan 2026</span>
-          <span><i class="far fa-folder"></i> Kegiatan</span>
-        </div>
-        <h3>Smaring Expo Campus dan Talkshow 2026</h3>
-        <p>SMAN 1 Cluring Gelar Smaring Expo Campus dan Talkshow 2026 untuk membuka wawasan siswa.</p>
-        <span class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></span>
-      </div>
-    </a>
-
-    <!-- Artikel 4 - Prestasi IGA 2025 (13 Feb 2026) -->
-    <a href="articles/februari-bukit-batari-2026.html" class="article-card" data-category="prestasi" data-aos="flip-up" data-aos-delay="300">
-      <img src="https://i.ibb.co.com/FbffbPWG/IGA-2026-1.jpg  " alt="SMAN 1 Cluring Raih IGA 2025">
+    <!-- 4. IGA 2025 (13 Feb 2026) - Prestasi -->
+    <a href="februari-bukit-batari-2026.html" class="article-card" data-category="prestasi" data-aos="flip-up" data-aos-delay="300">
+      <img src="https://i.ibb.co.com/FbffbPWG/IGA-2026-1.jpg" alt="SMAN 1 Cluring Raih IGA 2025">
       <div class="article-content">
         <div class="article-meta">
           <span><i class="far fa-calendar"></i> 13 Feb 2026</span>
@@ -866,9 +893,9 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
       </div>
     </a>
 
-    <!-- Artikel 5 - Jumat SENADA (13 Feb 2026) -->
-    <a href="articles/jumat-senada-2026.html" class="article-card" data-category="kegiatan" data-aos="flip-up" data-aos-delay="400">
-      <img src="https://i.ibb.co.com/N67GLqHb/SENADA-2.jpg  " alt="Jumat SENADA SMAN 1 Cluring">
+    <!-- 5. Jumat SENADA (13 Feb 2026) - Kegiatan -->
+    <a href="jumat-senada-2026.html" class="article-card" data-category="kegiatan" data-aos="flip-up" data-aos-delay="400">
+      <img src="https://i.ibb.co.com/N67GLqHb/SENADA-2.jpg" alt="Jumat SENADA SMAN 1 Cluring">
       <div class="article-content">
         <div class="article-meta">
           <span><i class="far fa-calendar"></i> 13 Feb 2026</span>
@@ -880,12 +907,26 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
       </div>
     </a>
 
-    <!-- Artikel 6 - Lomba Tari (28 Jan 2026) -->
-    <a href="articles/lomba-tari.html" class="article-card" data-category="ekskul" data-aos="flip-up" data-aos-delay="500">
-      <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d  " alt="Lomba Tari Gandrung">
+    <!-- 6. Program SIKAP (25 Jan 2026) - Berita -->
+    <a href="Program SIKAP.html" class="article-card" data-category="berita" data-aos="flip-up" data-aos-delay="500">
+      <img src="https://i.ibb.co/zHSfC2Qz/JENIS-TANAMAN.jpg" alt="Program SIKAP 2026">
       <div class="article-content">
         <div class="article-meta">
-          <span><i class="far fa-calendar"></i> 28 Jan 2026</span>
+          <span><i class="far fa-calendar"></i> 25 Jan 2026</span>
+          <span><i class="far fa-folder"></i> Berita</span>
+        </div>
+        <h3>SMAN 1 Cluring Perkuat Ketahanan Pangan melalui Program SIKAP</h3>
+        <p>Sekolah Inovasi Ketahanan Pangan untuk menciptakan generasi yang peduli lingkungan.</p>
+        <span class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- 7. Lomba Tari (28 Jan 2025) - Ekskul -->
+    <a href="bukit-batari-budaya-2025.html" class="article-card" data-category="ekskul" data-aos="flip-up" data-aos-delay="600">
+      <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d" alt="Lomba Tari Gandrung">
+      <div class="article-content">
+        <div class="article-meta">
+          <span><i class="far fa-calendar"></i> 28 Jan 2025</span>
           <span><i class="far fa-folder"></i> Ekstrakurikuler</span>
         </div>
         <h3>Siswa Tampil Memukau di Festival Tari Gandrung</h3>
@@ -894,40 +935,26 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
       </div>
     </a>
 
-    <!-- Artikel 7 - Bazar Ramadhan (12 Mar 2026) -->
-    <a href="articles/bazar-ramadhan.html" class="article-card" data-category="keagamaan" data-aos="flip-up" data-aos-delay="600">
-      <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c  " alt="Bazar Ramadhan">
+    <!-- 8. Smaring Expo (15 Jan 2026) - Kegiatan -->
+    <a href="Smaring Expo 2026.html" class="article-card" data-category="kegiatan" data-aos="flip-up" data-aos-delay="700">
+      <img src="https://i.ibb.co/TBfc9QcK/KS-LAUNCING-EXSPO.jpg" alt="Smaring Expo 2026">
       <div class="article-content">
         <div class="article-meta">
-          <span><i class="far fa-calendar"></i> 12 Mar 2026</span>
-          <span><i class="far fa-folder"></i> Keagamaan</span>
+          <span><i class="far fa-calendar"></i> 15 Jan 2026</span>
+          <span><i class="far fa-folder"></i> Kegiatan</span>
         </div>
-        <h3>Bazar Ramadhan 1447 H Meriah</h3>
-        <p>Kegiatan bazar Ramadhan yang diadakan OSIS berlangsung meriah dan diikuti seluruh siswa.</p>
+        <h3>Smaring Expo Campus dan Talkshow 2026</h3>
+        <p>SMAN 1 Cluring Gelar Smaring Expo Campus dan Talkshow 2026 untuk membuka wawasan siswa.</p>
         <span class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></span>
       </div>
     </a>
 
-    <!-- Artikel 8 - Pelatihan Guru (5 Mar 2026) -->
-    <a href="articles/pelatihan-guru.html" class="article-card" data-category="berita" data-aos="flip-up" data-aos-delay="700">
-      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f  " alt="Pelatihan Guru">
+    <!-- 9. Pergantian Takmir (19 Okt 2025) - Keagamaan -->
+    <a href="2025-10-19-Pergantian-Takmir-Masjid.html" class="article-card" data-category="keagamaan" data-aos="flip-up" data-aos-delay="800">
+      <img src="https://i.ibb.co.com/Fk521mwR/takmir-1.jpg" alt="Pergantian Takmir Masjid">
       <div class="article-content">
         <div class="article-meta">
-          <span><i class="far fa-calendar"></i> 5 Mar 2026</span>
-          <span><i class="far fa-folder"></i> Berita</span>
-        </div>
-        <h3>Guru SMAN 1 Cluring Ikuti Pelatihan Kurikulum Merdeka</h3>
-        <p>Seluruh guru mengikuti pelatihan implementasi Kurikulum Merdeka yang diselenggarakan Dinas Pendidikan.</p>
-        <span class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></span>
-      </div>
-    </a>
-
-    <!-- Artikel 9 - Pergantian Takmir (19 Oktober 2025) -->
-    <a href="articles/2025-10-19-Pergantian-Takmir-Masjid.html" class="article-card" data-category="keagamaan" data-aos="flip-up" data-aos-delay="800">
-      <img src="https://i.ibb.co.com/Fk521mwR/takmir-1.jpg  " alt="Pergantian Takmir Masjid">
-      <div class="article-content">
-        <div class="article-meta">
-          <span><i class="far fa-calendar"></i> 19 Oktober 2025</span>
+          <span><i class="far fa-calendar"></i> 19 Okt 2025</span>
           <span><i class="far fa-folder"></i> Keagamaan</span>
         </div>
         <h3>Pergantian Kepengurusan Takmir Masjid Baitul Muttaqin SMAN 1 Cluring</h3>
@@ -936,12 +963,12 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
       </div>
     </a>
 
-    <!-- Artikel 10 - Dewan Ambalan (17 Oktober 2025) -->
-    <a href="articles/serah-terima-pelantikan-dewan-ambalan-sman1-cluring.html" class="article-card" data-category="kegiatan" data-aos="flip-up" data-aos-delay="900">
-      <img src="https://i.ibb.co.com/8nyH2Bbd/da3.jpg  " alt="Pelantikan Dewan Ambalan">
+    <!-- 10. Dewan Ambalan (17 Okt 2025) - Kegiatan -->
+    <a href="serah-terima-pelantikan-dewan-ambalan-sman1-cluring.html" class="article-card" data-category="kegiatan" data-aos="flip-up" data-aos-delay="900">
+      <img src="https://i.ibb.co.com/8nyH2Bbd/da3.jpg" alt="Pelantikan Dewan Ambalan">
       <div class="article-content">
         <div class="article-meta">
-          <span><i class="far fa-calendar"></i> 17 Oktober 2025</span>
+          <span><i class="far fa-calendar"></i> 17 Okt 2025</span>
           <span><i class="far fa-folder"></i> Kegiatan</span>
         </div>
         <h3>Serah Terima Jabatan dan Pelantikan Dewan Ambalan SMAN 1 Cluring</h3>
@@ -950,23 +977,37 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
       </div>
     </a>
 
-    <!-- Artikel 11 - Hari Anak Nasional (23 Juli 2025) -->
-    <a href="articles/peringatan-hari-anak-nasional-2025-sman1-cluring.html" class="article-card" data-category="kegiatan" data-aos="flip-up" data-aos-delay="1000">
-      <img src="https://i.ibb.co.com/35vrSj5F/hari-anak-3.jpg  " alt="Hari Anak Nasional 2025">
+    <!-- 11. Nova Lourensia Wood Ball (11 Agu 2025) - Prestasi -->
+    <a href="nova-lourensia-wood-ball-2025.html" class="article-card" data-category="prestasi" data-aos="flip-up" data-aos-delay="1000">
+      <img src="https://i.ibb.co.com/G3C981Gn/Wood-Ball-2025.jpg" alt="Nova Lourensia Medali Emas Wood Ball 2025">
       <div class="article-content">
         <div class="article-meta">
-          <span><i class="far fa-calendar"></i> 23 Juli 2025</span>
+          <span><i class="far fa-calendar"></i> 11 Agu 2025</span>
+          <span><i class="far fa-folder"></i> Prestasi</span>
+        </div>
+        <h3>Nova Lourensia Sabet Emas Wood Ball 2025</h3>
+        <p>Nova Lourensia berhasil meraih medali emas dalam ajang Kejuaraan Wood Ball 2025 tingkat nasional.</p>
+        <span class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- 12. Hari Anak Nasional (23 Jul 2025) - Kegiatan -->
+    <a href="peringatan-hari-anak-nasional-2025-sman1-cluring.html" class="article-card" data-category="kegiatan" data-aos="flip-up" data-aos-delay="1100">
+      <img src="https://i.ibb.co.com/35vrSj5F/hari-anak-3.jpg" alt="Hari Anak Nasional 2025">
+      <div class="article-content">
+        <div class="article-meta">
+          <span><i class="far fa-calendar"></i> 23 Jul 2025</span>
           <span><i class="far fa-folder"></i> Kegiatan</span>
         </div>
-        <h3>Peringatan Hari Anak Nasional 2025 di SMAN 1 Cluring</h3>
+        <h3>Peringatan Hari Anak Nasional 2025</h3>
         <p>Siswa tampil memukau dalam Peringatan Hari Anak Nasional 2025 dengan berbagai kegiatan edukatif.</p>
         <span class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></span>
       </div>
     </a>
 
-    <!-- Artikel 12 - BUKIT BATARI (14 Jul 2025) -->
-    <a href="articles/bukit-batari-budaya-2025.html" class="article-card" data-category="budaya" data-aos="flip-up" data-aos-delay="1100">
-      <img src="https://i.ibb.co.com/q3kW1kxG/BATARI-1.jpg  " alt="Program BUKIT BATARI SMAN 1 Cluring">
+    <!-- 13. BUKIT BATARI (14 Jul 2025) - Budaya -->
+    <a href="bukit-batari-budaya-2025.html" class="article-card" data-category="budaya" data-aos="flip-up" data-aos-delay="1200">
+      <img src="https://i.ibb.co.com/q3kW1kxG/BATARI-1.jpg" alt="Program BUKIT BATARI SMAN 1 Cluring">
       <div class="article-content">
         <div class="article-meta">
           <span><i class="far fa-calendar"></i> 14 Jul 2025</span>
@@ -977,6 +1018,7 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <span class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></span>
       </div>
     </a>
+
   </div>
 
   <!-- PAGINATION -->
@@ -985,8 +1027,6 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
     <span class="active">1</span>
     <a href="#">2</a>
     <a href="#">3</a>
-    <a href="#">4</a>
-    <a href="#">5</a>
     <a href="#">❯</a>
   </div>
 </section>
@@ -994,41 +1034,41 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <div class="cultural-divider" data-aos="fade-in"></div>
 
 <!-- FOOTER -->
-<footer data-aos="fade-up">
+<footer data-aos="fade-up" id="kontak">
   <div class="footer-content">
     <div class="footer-section">
       <h3><i class="fas fa-map-marker-alt"></i> Kontak</h3>
       <p>Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, Jawa Timur</p>
       <p><i class="fas fa-phone"></i> <a href="tel:+6282319712420">0823-1971-2420</a></p>
-      <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6282319712420  " target="_blank">0823-1971-2420 (WA)</a></p>
+      <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6282319712420" target="_blank">0823-1971-2420 (WA)</a></p>
     </div>
 
     <div class="footer-section">
       <h3><i class="fas fa-link"></i> Link Penting</h3>
       <ul>
-        <li><a href="https://sma.kemendikdasmen.go.id  " target="_blank"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
-        <li><a href="https://dindik.jatimprov.go.id  " target="_blank"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
-        <li><a href="https://banyuwangicab.dindikjatim.id  " target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas Banyuwangi</a></li>
-        <li><a href="https://alam21234.github.io/Smaring-interactive-learning-comunity  " target="_blank"><i class="fas fa-external-link-alt"></i> Smaring Learning Community</a></li>
+        <li><a href="https://sma.kemendikdasmen.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
+        <li><a href="https://dindik.jatimprov.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
+        <li><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas Banyuwangi</a></li>
+        <li><a href="https://alam21234.github.io/Smaring-interactive-learning-comunity" target="_blank"><i class="fas fa-external-link-alt"></i> Smaring Learning Community</a></li>
       </ul>
     </div>
 
     <div class="footer-section">
       <h3><i class="fas fa-flask"></i> Lab Virtual</h3>
       <ul>
-        <li><a href="https://quran.nu.or.id  " target="_blank"><i class="fas fa-book-quran"></i> Al-Qur'an Digital</a></li>
-        <li><a href="https://virtualbiologylab.org  " target="_blank"><i class="fas fa-dna"></i> Virtual Biology Lab</a></li>
-        <li><a href="https://www.myphysicslab.com  " target="_blank"><i class="fas fa-atom"></i> MyPhysicsLab</a></li>
+        <li><a href="https://quran.nu.or.id" target="_blank"><i class="fas fa-book-quran"></i> Al-Qur'an Digital</a></li>
+        <li><a href="https://virtualbiologylab.org" target="_blank"><i class="fas fa-dna"></i> Virtual Biology Lab</a></li>
+        <li><a href="https://www.myphysicslab.com" target="_blank"><i class="fas fa-atom"></i> MyPhysicsLab</a></li>
       </ul>
     </div>
 
     <div class="footer-section">
       <h3><i class="fas fa-share-alt"></i> Media Sosial</h3>
       <div class="social-links">
-        <a href="https://www.facebook.com/Sman1Cluring  " target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/sman1_cluring  " target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM  " target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://wa.me/6282319712420  " target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/Sman1Cluring" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/sman1_cluring" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/6282319712420" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
   </div>
@@ -1047,14 +1087,11 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 
   <div class="footer-bottom">
     <p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
-    <p style="margin-top: 8px; font-size: 0.9rem; opacity: 0.8;">
-      Website Resmi SMAN 1 Cluring Banyuwangi
-    </p>
   </div>
 </footer>
 
-<!-- AOS & Custom JS -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js  "></script>
+<!-- AOS & Custom JS (Dioptimasi) -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   // Initialize AOS
   AOS.init({
@@ -1068,7 +1105,7 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
     const preloader = document.getElementById('preloader');
     setTimeout(() => {
       preloader.classList.add('fade-out');
-    }, 600);
+    }, 800);
   });
 
   // Dark Mode Toggle
@@ -1090,39 +1127,53 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
     document.getElementById("navMenu").classList.toggle("active");
   }
 
-  // Filter by category
-  function filterByCategory(category) {
-    const buttons = document.querySelectorAll('.filter-btn');
-    buttons.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
-    
+  // ===== FILTER & SEARCH YANG DIPADUKAN =====
+  let currentCategory = 'all';
+  let currentSearchTerm = '';
+
+  function applyFilters() {
     const articles = document.querySelectorAll('.article-card');
-    
     articles.forEach(article => {
-      if (category === 'all' || article.getAttribute('data-category') === category) {
-        article.style.display = 'block';
-      } else {
-        article.style.display = 'none';
-      }
+      const category = article.getAttribute('data-category');
+      const title = article.querySelector('h3').textContent.toLowerCase();
+      const desc = article.querySelector('p').textContent.toLowerCase();
+
+      const matchesCategory = (currentCategory === 'all' || category === currentCategory);
+      const matchesSearch = (currentSearchTerm === '' || 
+                             title.includes(currentSearchTerm) || 
+                             desc.includes(currentSearchTerm));
+
+      article.style.display = (matchesCategory && matchesSearch) ? 'block' : 'none';
     });
   }
 
-  // Search functionality
-  function filterArticles() {
-    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-    const articles = document.querySelectorAll('.article-card');
-    
-    articles.forEach(article => {
-      const title = article.querySelector('h3').textContent.toLowerCase();
-      const desc = article.querySelector('p').textContent.toLowerCase();
-      
-      if (title.includes(searchTerm) || desc.includes(searchTerm)) {
-        article.style.display = 'block';
-      } else {
-        article.style.display = 'none';
-      }
-    });
+  // Filter berdasarkan kategori
+  function filterByCategory(category, btnElement) {
+    currentCategory = category;
+
+    // Update class active
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => btn.classList.remove('active'));
+    if (btnElement) btnElement.classList.add('active');
+
+    applyFilters();
   }
+
+  // Filter berdasarkan pencarian
+  function filterArticles() {
+    const searchInput = document.getElementById('searchInput');
+    currentSearchTerm = searchInput.value.toLowerCase().trim();
+    applyFilters();
+  }
+
+  // Inisialisasi: set default active ke 'Semua'
+  document.addEventListener('DOMContentLoaded', function() {
+    const defaultBtn = Array.from(document.querySelectorAll('.filter-btn')).find(btn => btn.textContent.trim() === 'Semua');
+    if (defaultBtn) defaultBtn.classList.add('active');
+    currentCategory = 'all';
+    currentSearchTerm = '';
+    applyFilters(); // Tampilkan semua artikel
+  });
 
   // Realtime Clock untuk Footer
   function updateClock() {
