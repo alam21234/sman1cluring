@@ -28,25 +28,47 @@
 
   <style>
     :root {
+      /* Light Mode - Premium Palette */
       --primary: #0a2a5e;
       --primary-light: #1e3a7a;
+      --primary-dark: #051a3b;
       --secondary: #9e7b4b;
+      --secondary-light: #c1a06e;
       --accent: #c7a854;
+      --cultural-accent: #b13e3e;
+      --ijen-green: #2d6a4f;
       --light: #f5f7fa;
       --dark: #1e2b37;
       --gray: #4b5c6b;
       --white: #ffffff;
+      --glass: rgba(255, 255, 255, 0.1);
+      --glass-border: rgba(255, 255, 255, 0.2);
+      --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.05);
       --shadow-md: 0 8px 30px rgba(0, 20, 50, 0.12);
-      --border-radius: 24px;
+      --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
       --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+      --border-radius: 24px;
+      --border-radius-sm: 16px;
+      --whatsapp: #25D366;
+      --whatsapp-dark: #128C7E;
+      --chat-primary: #0a2a5e;
+      --chat-secondary: #9e7b4b;
+      --chat-user: #e3f2fd;
+      --chat-bot: #f5f5f5;
     }
 
     .dark-mode {
       --primary: #1e3a8a;
+      --primary-light: #3b5ba5;
+      --secondary: #d4af37;
       --light: #0f1825;
       --dark: #edf2f7;
       --gray: #a0b3c6;
       --white: #1a2533;
+      --glass: rgba(0, 0, 0, 0.25);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --chat-user: #1e3a8a;
+      --chat-bot: #2d3748;
     }
 
     * {
@@ -62,11 +84,14 @@
       line-height: 1.6;
       transition: background-color 0.4s ease, color 0.4s ease;
       overflow-x: hidden;
+      font-weight: 400;
+      letter-spacing: 0.2px;
     }
 
     h1, h2, h3, h4 {
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 700;
+      letter-spacing: -0.02em;
     }
 
     /* ===== PRELOADER ===== */
@@ -82,21 +107,317 @@
       align-items: center;
       z-index: 9999;
       opacity: 1;
-      transition: opacity 0.6s ease;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
     }
     #preloader.fade-out {
       opacity: 0;
       visibility: hidden;
     }
     .spinner {
-      width: 50px;
-      height: 50px;
-      border: 4px solid rgba(255,255,255,0.2);
+      width: 60px;
+      height: 60px;
+      border: 4px solid rgba(255, 255, 255, 0.1);
       border-top: 4px solid var(--secondary);
+      border-right: 4px solid var(--secondary);
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
-    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* ===== WHATSAPP FLOAT BUTTON ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      background: linear-gradient(135deg, var(--whatsapp) 0%, var(--whatsapp-dark) 100%);
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 28px;
+      border-radius: 60px;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+      z-index: 998;
+      transition: var(--transition);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-weight: 600;
+    }
+    .whatsapp-float i {
+      font-size: 28px;
+      animation: pulse 2s infinite;
+    }
+    .whatsapp-float span {
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+    }
+    .whatsapp-float:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 20px 35px rgba(37, 211, 102, 0.4);
+      background: linear-gradient(135deg, var(--whatsapp-dark) 0%, var(--whatsapp) 100%);
+    }
+    .whatsapp-float::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 60px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      animation: ripple 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    @keyframes ripple {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.3); opacity: 0; }
+    }
+
+    /* ===== CHAT BUTTON & BOX ===== */
+    .chat-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, var(--chat-primary) 0%, var(--primary-light) 100%);
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+      box-shadow: var(--shadow-lg);
+      z-index: 999;
+      transition: var(--transition);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    .chat-button:hover {
+      transform: scale(1.1) rotate(10deg);
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+    }
+    .chat-button .notification-badge {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background: var(--cultural-accent);
+      color: white;
+      font-size: 12px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border: 2px solid white;
+    }
+    .chat-box {
+      position: fixed;
+      bottom: 110px;
+      right: 30px;
+      width: 380px;
+      height: 500px;
+      background: var(--white);
+      border-radius: 24px;
+      box-shadow: var(--shadow-lg);
+      display: none;
+      z-index: 1000;
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(10px);
+      flex-direction: column;
+    }
+    .chat-box.active {
+      display: flex;
+    }
+    .chat-header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 2px solid var(--secondary);
+    }
+    .chat-header-avatar {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: white;
+      border: 2px solid white;
+    }
+    .chat-header-info {
+      flex: 1;
+    }
+    .chat-header-info h4 {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+    .chat-header-info p {
+      font-size: 0.8rem;
+      opacity: 0.9;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .chat-header-info p i {
+      font-size: 0.6rem;
+      color: #4caf50;
+    }
+    .chat-close {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .chat-close:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: rotate(90deg);
+    }
+    .chat-messages {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      background: var(--light);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .message {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      max-width: 80%;
+    }
+    .message.bot {
+      align-self: flex-start;
+    }
+    .message.user {
+      align-self: flex-end;
+      flex-direction: row-reverse;
+    }
+    .message-avatar {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .message.user .message-avatar {
+      background: var(--primary);
+    }
+    .message-content {
+      background: var(--chat-bot);
+      padding: 12px 16px;
+      border-radius: 18px;
+      border-top-left-radius: 4px;
+      color: var(--dark);
+      font-size: 0.95rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .message.user .message-content {
+      background: var(--chat-user);
+      color: var(--dark);
+      border-top-left-radius: 18px;
+      border-top-right-radius: 4px;
+    }
+    .message-time {
+      font-size: 0.7rem;
+      opacity: 0.6;
+      margin-top: 4px;
+      text-align: right;
+    }
+    .chat-input-area {
+      padding: 20px;
+      background: var(--white);
+      border-top: 1px solid var(--glass-border);
+      display: flex;
+      gap: 10px;
+    }
+    .chat-input {
+      flex: 1;
+      padding: 12px 18px;
+      border: 1px solid var(--glass-border);
+      border-radius: 30px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      background: var(--light);
+      color: var(--dark);
+      outline: none;
+      transition: var(--transition);
+    }
+    .chat-input:focus {
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(158, 123, 75, 0.2);
+    }
+    .chat-send {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+    .chat-send:hover {
+      transform: scale(1.1);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    }
+    .chat-send:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .quick-replies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 10px 20px 0;
+      background: var(--white);
+    }
+    .quick-reply {
+      background: var(--light);
+      border: 1px solid var(--secondary);
+      color: var(--secondary);
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .quick-reply:hover {
+      background: var(--secondary);
+      color: white;
+    }
 
     /* ===== HEADER ===== */
     header {
@@ -104,7 +425,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      box-shadow: var(--shadow-md);
     }
     .nav-container {
       max-width: 1400px;
@@ -113,295 +434,1222 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
     }
     .brand {
       display: flex;
       align-items: center;
       gap: 16px;
-      color: white;
-      text-decoration: none;
-      font-size: 1.5rem;
+      color: var(--white);
       font-weight: 800;
+      font-size: 1.5rem;
+      text-decoration: none;
+      letter-spacing: -0.5px;
     }
     .brand img {
       width: 52px;
+      height: auto;
       border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
     nav ul {
       list-style: none;
       display: flex;
       gap: 32px;
+      align-items: center;
     }
     nav ul li a {
-      color: white;
+      color: var(--white);
       text-decoration: none;
       font-weight: 500;
-      transition: opacity 0.3s;
-    }
-    nav ul li a:hover {
+      font-size: 1rem;
+      transition: var(--transition);
+      padding: 8px 0;
+      position: relative;
       opacity: 0.9;
+      white-space: nowrap;
+    }
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: width 0.3s ease;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      opacity: 1;
+    }
+    nav ul li a:hover::after,
+    nav ul li a.active::after {
+      width: 100%;
     }
     .dark-mode-toggle {
-      background: rgba(255,255,255,0.1);
-      border: none;
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
       width: 44px;
       height: 44px;
-      border-radius: 50%;
-      color: white;
+      border-radius: 60px;
+      color: var(--white);
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: var(--transition);
       display: flex;
       align-items: center;
       justify-content: center;
+      backdrop-filter: blur(8px);
+      margin-left: 8px;
+    }
+    .dark-mode-toggle:hover {
+      background: var(--secondary);
+      border-color: var(--secondary);
+      transform: rotate(30deg) scale(1.05);
+    }
+    .dark-mode .dark-mode-toggle i {
+      display: none;
+    }
+    .dark-mode .dark-mode-toggle i.sun {
+      display: block;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: var(--white);
       cursor: pointer;
     }
 
-    /* ===== HERO ===== */
-    .hero {
-      background: linear-gradient(135deg, rgba(10,42,94,0.85) 0%, rgba(5,26,59,0.9) 100%), url('https://i.ibb.co.com/8nyH2Bbd/da3.jpg') center/cover;
-      color: white;
+    /* ===== PAGE HEADER ===== */
+    .page-header {
+      background: linear-gradient(145deg, rgba(10,42,94,0.8) 0%, rgba(5,26,59,0.9) 100%), url('https://i.ibb.co.com/8nyH2Bbd/da3.jpg') center/cover;
+      color: var(--white);
       text-align: center;
       padding: 120px 20px 80px;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
-    .hero h1 {
+    .page-header h1 {
       font-size: 2.8rem;
       margin-bottom: 20px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      font-weight: 800;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
-    .hero p {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      opacity: 0.95;
+    .breadcrumb {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    .breadcrumb a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .breadcrumb a:hover {
+      text-decoration: underline;
     }
 
-    /* ===== SECTION ===== */
-    .section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 80px 32px;
+    /* ===== INTERNAL NAVIGATION ===== */
+    .internal-nav {
+      max-width: 1300px;
+      margin: -40px auto 0;
+      background: var(--white);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-md);
+      padding: 15px;
+      position: sticky;
+      top: 70px;
+      z-index: 900;
     }
-    .section-header {
-      text-align: center;
-      margin-bottom: 60px;
+    .internal-nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
     }
-    .section-header h2 {
-      color: var(--primary);
-      font-size: 2.5rem;
-      position: relative;
+    .internal-nav li {
+      list-style: none;
+    }
+    .internal-nav a {
       display: inline-block;
+      padding: 12px 24px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 50px;
+      transition: var(--transition);
+      text-align: center;
     }
-    .section-header h2::after {
+    .internal-nav a:hover,
+    .internal-nav a.active {
+      background: var(--primary);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(10,42,94,0.2);
+    }
+
+    /* ===== CONTENT ===== */
+    .container {
+      max-width: 1300px;
+      margin: 50px auto;
+      padding: 0 32px;
+    }
+    .section {
+      background: var(--white);
+      padding: 50px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 40px;
+      scroll-margin-top: 120px;
+      transition: var(--transition);
+      border: 1px solid rgba(158,123,75,0.1);
+    }
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--secondary);
+    }
+    .section h2 {
+      color: var(--primary);
+      margin-bottom: 25px;
+      font-size: 2.2rem;
+      position: relative;
+      text-align: center;
+    }
+    .section h2::after {
       content: '';
       display: block;
       width: 80px;
       height: 5px;
-      background: var(--secondary);
-      margin: 12px auto 0;
-      border-radius: 3px;
+      background: linear-gradient(90deg, var(--secondary) 0%, var(--accent) 100%);
+      margin: 16px auto 0;
+      border-radius: 4px;
+    }
+    .section h3 {
+      color: var(--primary);
+      margin: 30px 0 20px;
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section p {
+      line-height: 1.8;
+      font-size: 1.05rem;
+      margin-bottom: 18px;
+      color: var(--gray);
     }
 
-    /* ===== ORGANISASI & EKSKUL ===== */
+    /* ===== ORG CARDS ===== */
     .org-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
-      margin-top: 40px;
+      margin-top: 30px;
     }
     .org-card {
       background: var(--white);
       border-radius: var(--border-radius);
-      padding: 30px;
-      box-shadow: var(--shadow-md);
+      padding: 35px 30px;
+      box-shadow: var(--shadow-sm);
       transition: var(--transition);
       text-align: center;
       border: 1px solid rgba(158,123,75,0.1);
     }
     .org-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      box-shadow: var(--shadow-md);
+      border-color: var(--secondary);
     }
     .org-card i {
       font-size: 3rem;
-      color: var(--primary);
+      color: var(--secondary);
       margin-bottom: 20px;
     }
     .org-card h3 {
       color: var(--primary);
       margin-bottom: 15px;
+      font-size: 1.4rem;
     }
     .org-card p {
       color: var(--gray);
       line-height: 1.6;
+      font-size: 1rem;
     }
 
-    /* ===== PRESTASI ===== */
-    .prestasi-list {
-      background: var(--white);
-      padding: 40px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow-md);
+    /* ===== PRESTASI CARDS ===== */
+    .prestasi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
       margin-top: 30px;
     }
-    .prestasi-item {
-      padding: 15px 0;
-      border-bottom: 1px dashed #eee;
+    .prestasi-card {
+      background: linear-gradient(145deg, rgba(158,123,75,0.08) 0%, rgba(199,168,84,0.02) 100%);
+      border-left: 5px solid var(--secondary);
+      padding: 25px;
+      border-radius: 16px;
+      transition: var(--transition);
     }
-    .prestasi-item:last-child {
-      border-bottom: none;
+    .prestasi-card:hover {
+      transform: translateX(10px);
+      box-shadow: var(--shadow-sm);
     }
-    .prestasi-item h4 {
-      color: var(--primary);
-      margin-bottom: 6px;
-    }
-    .prestasi-item .date {
-      color: var(--secondary);
-      font-size: 0.9rem;
+    .prestasi-card .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: var(--secondary);
+      color: white;
+      border-radius: 20px;
+      font-size: 0.85rem;
       font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .prestasi-card.gold .badge { background: linear-gradient(135deg, #ffd700, #ffaa00); }
+    .prestasi-card.silver .badge { background: linear-gradient(135deg, #c0c0c0, #a0a0a0); }
+    .prestasi-card.bronze .badge { background: linear-gradient(135deg, #cd7f32, #b87333); }
+    .prestasi-card h4 {
+      color: var(--primary);
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+    .prestasi-card .date {
+      color: var(--gray);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    /* ===== FOOTER (SINGKAT) ===== */
-    footer {
-      background: var(--primary);
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-      margin-top: 80px;
+    /* ===== INFO BOX ===== */
+    .info-box {
+      margin-top: 30px;
+      padding: 25px;
+      background: rgba(10,42,94,0.05);
+      border-radius: var(--border-radius);
+      border-left: 6px solid var(--primary);
     }
-    footer a {
-      color: #c7a854;
+    .info-box p {
+      font-style: italic;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    /* ===== CULTURAL DIVIDER ===== */
+    .cultural-divider {
+      height: 4px;
+      background: linear-gradient(90deg,
+        var(--primary) 0%,
+        var(--secondary) 30%,
+        var(--cultural-accent) 50%,
+        var(--secondary) 70%,
+        var(--primary) 100%);
+      margin: 60px auto;
+      border-radius: 4px;
+      max-width: 1300px;
+      opacity: 0.6;
+    }
+
+    /* ===== BACK HOME ===== */
+    .back-home {
+      text-align: center;
+      margin-top: 50px;
+    }
+    .back-home a {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: var(--white);
+      padding: 14px 40px;
+      border-radius: 60px;
       text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: var(--shadow-md);
+    }
+    .back-home a:hover {
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(158,123,75,0.3);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: linear-gradient(145deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: var(--white);
+      padding: 70px 32px 30px;
+      font-size: 1rem;
+      position: relative;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--secondary), var(--accent), var(--secondary));
+    }
+    .footer-content {
+      max-width: 1300px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 50px;
+    }
+    .footer-section h3 {
+      font-size: 1.4rem;
+      margin-bottom: 25px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--secondary);
+    }
+    .footer-section ul {
+      list-style: none;
+    }
+    .footer-section ul li {
+      margin-bottom: 14px;
+    }
+    .footer-section a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-section a:hover {
+      color: var(--secondary);
+      transform: translateX(6px);
+    }
+    .social-links {
+      display: flex;
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 60px;
+      background: var(--glass);
+      color: var(--white);
+      font-size: 1.2rem;
+      transition: var(--transition);
+      border: 1px solid var(--glass-border);
+    }
+    .social-links a:hover {
+      background: var(--secondary);
+      transform: translateY(-6px) scale(1.1);
+      color: var(--primary-dark);
+    }
+    .footer-info-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 20px 30px;
+      border-radius: 60px;
+      margin: 40px auto 20px;
+      max-width: 1000px;
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
+    }
+    .footer-clock {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--white);
+      flex-wrap: wrap;
+    }
+    .footer-time {
+      font-size: 2rem;
+      font-weight: 700;
+      font-family: 'Plus Jakarta Sans', monospace;
+      background: rgba(0,0,0,0.3);
+      padding: 6px 18px;
+      border-radius: 50px;
+      letter-spacing: 2px;
+    }
+    .footer-date {
+      font-size: 1rem;
+      opacity: 0.9;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-visitor {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--secondary);
+      color: var(--primary-dark);
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+    }
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+
+    /* ===== DARK MODE ADJUSTMENTS ===== */
+    .dark-mode .section,
+    .dark-mode .org-card,
+    .dark-mode .internal-nav {
+      background: var(--light);
+      border-color: rgba(255,255,255,0.08);
+    }
+    .dark-mode .info-box {
+      background: rgba(212,175,55,0.1);
+      border-left-color: var(--secondary);
+    }
+    .dark-mode .footer-info-panel {
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .dark-mode .chat-box {
+      background: var(--light);
+    }
+    .dark-mode .message-content {
+      background: var(--white);
+    }
+    .dark-mode .prestasi-card {
+      background: linear-gradient(145deg, rgba(212,175,55,0.1) 0%, rgba(199,168,84,0.05) 100%);
     }
 
     /* ===== RESPONSIVE ===== */
+    @media (max-width: 880px) {
+      .menu-toggle {
+        display: block;
+        order: 3;
+      }
+      .nav-right {
+        order: 2;
+      }
+      nav ul {
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: var(--primary);
+        flex-direction: column;
+        padding: 25px 0;
+        display: none;
+        z-index: 100;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        backdrop-filter: blur(12px);
+        gap: 16px;
+      }
+      nav ul.active {
+        display: flex;
+      }
+      nav ul li {
+        text-align: center;
+      }
+      nav ul li a {
+        font-size: 1.1rem;
+        white-space: normal;
+      }
+      .page-header h1 { font-size: 2.2rem; }
+      .internal-nav a {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+      }
+      .org-grid { grid-template-columns: 1fr; }
+      .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+      }
+      .whatsapp-float span { display: none; }
+      .whatsapp-float i { font-size: 32px; }
+      .chat-button {
+        bottom: 100px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+        font-size: 24px;
+      }
+      .chat-box {
+        width: 320px;
+        height: 450px;
+        right: 20px;
+        bottom: 170px;
+      }
+    }
+
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2rem; }
-      nav ul { display: none; }
-      .section { padding: 60px 20px; }
+      .page-header { padding: 80px 20px 60px; min-height: 300px; }
+      .page-header h1 { font-size: 2rem; }
+      .container { padding: 0 20px; }
+      .section { padding: 35px 25px; }
+      .section h2 { font-size: 1.8rem; }
+      .footer-info-panel {
+        flex-direction: column;
+        text-align: center;
+        border-radius: 40px;
+        padding: 20px;
+      }
+      .footer-clock {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+      }
+      .footer-time {
+        font-size: 1.8rem;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand span { display: none; }
+      .brand img { width: 44px; }
+      .page-header h1 { font-size: 1.8rem; }
+      .internal-nav { padding: 10px; }
+      .internal-nav ul { flex-direction: column; gap: 8px; }
+      .internal-nav a { width: 100%; padding: 10px; }
+      .section { padding: 30px 20px; }
+      .section h2 { font-size: 1.6rem; }
+      .whatsapp-float {
+        bottom: 15px;
+        right: 15px;
+        padding: 8px;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        justify-content: center;
+      }
+      .whatsapp-float i { font-size: 24px; }
+      .chat-button {
+        bottom: 80px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+      }
+      .chat-box {
+        width: 300px;
+        height: 400px;
+        right: 15px;
+        bottom: 140px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- Preloader -->
+<!-- PRELOADER -->
 <div id="preloader">
   <div class="spinner"></div>
 </div>
 
-<!-- Header -->
-<header>
-  <div class="nav-container">
-    <a href="index.html" class="brand">
-      <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring">
-      SMAN 1 CLURING
-    </a>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="profil.html">Profil</a></li>
-        <li><a href="akademik.html">Akademik</a></li>
-        <li><a href="kesiswaan.html">Kesiswaan</a></li>
-        <li><a href="humas.html">Humas</a></li>
-        <li><a href="alumni.html">Alumni</a></li>
-        <li><a href="artikel.html">Artikel</a></li>
-      </ul>
-    </nav>
-    <button class="dark-mode-toggle" id="darkModeToggle">
-      <i class="fas fa-moon"></i>
-    </button>
-  </div>
+<!-- WHATSAPP FLOAT BUTTON -->
+<a href="https://wa.me/6282319712420?text=Halo%20saya%20ingin%20bertanya%20tentang%20kegiatan%20kesiswaan%20SMAN%201%20Cluring"
+class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+<i class="fab fa-whatsapp"></i>
+<span>Chat Admin</span>
+</a>
+
+<!-- CHAT BUTTON & BOX -->
+<div class="chat-button" id="chatButton">
+<i class="fas fa-comment-dots"></i>
+<span class="notification-badge">1</span>
+</div>
+<div class="chat-box" id="chatBox">
+<div class="chat-header">
+<div class="chat-header-avatar">
+<i class="fas fa-robot"></i>
+</div>
+<div class="chat-header-info">
+<h4>Asisten Virtual SMAN 1 Cluring</h4>
+<p><i class="fas fa-circle"></i> Online - Siap membantu</p>
+</div>
+<div class="chat-close" id="chatClose">
+<i class="fas fa-times"></i>
+</div>
+</div>
+<div class="quick-replies">
+<span class="quick-reply" data-message="Ekstrakurikuler">⚽ Ekstrakurikuler</span>
+<span class="quick-reply" data-message="OSIS">🏛️ OSIS</span>
+<span class="quick-reply" data-message="Prestasi">🏆 Prestasi</span>
+<span class="quick-reply" data-message="Pramuka">🪖 Pramuka</span>
+</div>
+<div class="chat-messages" id="chatMessages">
+<div class="message bot">
+<div class="message-avatar">
+<i class="fas fa-robot"></i>
+</div>
+<div class="message-content">
+<p>Halo! Selamat datang di layanan bantuan kesiswaan SMAN 1 Cluring. Ada yang bisa saya bantu?</p>
+<div class="message-time">Baru saja</div>
+</div>
+</div>
+</div>
+<div class="chat-input-area">
+<input type="text" class="chat-input" id="chatInput" placeholder="Ketik pesan..." />
+<button class="chat-send" id="chatSend">
+<i class="fas fa-paper-plane"></i>
+</button>
+</div>
+</div>
+
+<!-- HEADER -->
+<header data-aos="fade-down">
+<div class="nav-container">
+<a href="index.html" class="brand">
+<img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring">
+<span>SMAN 1 CLURING</span>
+</a>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<div class="nav-right">
+<nav>
+<ul id="navMenu">
+<li><a href="index.html">Home</a></li>
+<li><a href="profil.html">Profil</a></li>
+<li><a href="sarpras.html">Sarpras</a></li>
+<li><a href="akademik.html">Akademik</a></li>
+<li><a href="kesiswaan.html" class="active">Kesiswaan</a></li>
+<li><a href="humas.html">Humas</a></li>
+<li><a href="mitra.html">Mitra</a></li>
+<li><a href="alumni.html">Alumni</a></li>
+<li><a href="artikel.html">Artikel</a></li>
+<li style="display: flex; align-items: center;">
+<button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+<i class="fas fa-moon"></i>
+<i class="fas fa-sun sun"></i>
+</button>
+</li>
+</ul>
+</nav>
+</div>
+</div>
 </header>
 
-<!-- Hero Section -->
-<section class="hero" data-aos="fade-in">
-  <h1 data-aos="fade-up">Bidang Kesiswaan</h1>
-  <p data-aos="fade-up" data-aos-delay="100">
-    Mengembangkan potensi siswa melalui organisasi, ekstrakurikuler, dan kegiatan pembentukan karakter.
-  </p>
+<!-- PAGE HEADER -->
+<section class="page-header" data-aos="zoom-in">
+<h1 data-aos="fade-up">Bidang Kesiswaan</h1>
+<div class="breadcrumb" data-aos="fade-up" data-aos-delay="100">
+<a href="index.html">Beranda</a> / Kesiswaan
+</div>
 </section>
 
-<!-- Konten Utama -->
-<section class="section">
-  <div class="section-header" data-aos="fade-up">
-    <h2>Organisasi & Ekstrakurikuler</h2>
-  </div>
+<!-- INTERNAL NAVIGATION -->
+<nav class="internal-nav" data-aos="fade-down">
+<ul>
+<li><a href="#osis" class="nav-link active" data-aos="fade-up" data-aos-delay="100">OSIS</a></li>
+<li><a href="#ekskul" class="nav-link" data-aos="fade-up" data-aos-delay="200">Ekstrakurikuler</a></li>
+<li><a href="#prestasi" class="nav-link" data-aos="fade-up" data-aos-delay="300">Prestasi</a></li>
+<li><a href="#program" class="nav-link" data-aos="fade-up" data-aos-delay="400">Program</a></li>
+</ul>
+</nav>
 
-  <div class="org-grid">
-    <div class="org-card" data-aos="zoom-in">
-      <i class="fas fa-users"></i>
-      <h3>OSIS</h3>
-      <p>Organisasi Siswa Intra Sekolah sebagai wadah kepemimpinan dan pelatihan manajemen siswa.</p>
-    </div>
-    <div class="org-card" data-aos="zoom-in" data-aos-delay="100">
-      <i class="fas fa-shield-alt"></i>
-      <h3>Pramuka</h3>
-      <p>Membentuk karakter disiplin, tangguh, dan cinta alam melalui kegiatan kepramukaan.</p>
-    </div>
-    <div class="org-card" data-aos="zoom-in" data-aos-delay="200">
-      <i class="fas fa-heartbeat"></i>
-      <h3>PMR</h3>
-      <p>Palang Merah Remaja: pelatihan pertolongan pertama dan kemanusiaan.</p>
-    </div>
-    <div class="org-card" data-aos="zoom-in" data-aos-delay="300">
-      <i class="fas fa-futbol"></i>
-      <h3>Olahraga</h3>
-      <p>Basket, Futsal, Atletik, dan Voli untuk menumbuhkan sportivitas dan prestasi.</p>
-    </div>
-    <div class="org-card" data-aos="zoom-in" data-aos-delay="400">
-      <i class="fas fa-music"></i>
-      <h3>Seni & Budaya</h3>
-      <p>Tari, Musik, Teater, dan Batik sebagai pelestarian budaya Blambangan.</p>
-    </div>
-    <div class="org-card" data-aos="zoom-in" data-aos-delay="500">
-      <i class="fas fa-robot"></i>
-      <h3>TI & Kewirausahaan</h3>
-      <p>Klub Coding, Desain Grafis, dan Bisnis Siswa untuk kesiapan masa depan.</p>
-    </div>
-  </div>
+<!-- CONTENT -->
+<section class="container">
 
-  <div class="section-header" style="margin-top: 80px;">
-    <h2>Prestasi Terbaru</h2>
-  </div>
-  <div class="prestasi-list">
-    <div class="prestasi-item" data-aos="fade-right">
-      <div class="date">Februari 2026</div>
-      <h4>Juara 1 Lomba Tari Tradisional Tingkat Kabupaten</h4>
-    </div>
-    <div class="prestasi-item" data-aos="fade-right" data-aos-delay="100">
-      <div class="date">Januari 2026</div>
-      <h4>Finalis Olimpiade Sains Nasional (OSN) Bidang Biologi</h4>
-    </div>
-    <div class="prestasi-item" data-aos="fade-right" data-aos-delay="200">
-      <div class="date">Desember 2025</div>
-      <h4>Juara 3 Kompetisi Debat Bahasa Inggris Se-Jawa Timur</h4>
-    </div>
-    <div class="prestasi-item" data-aos="fade-right" data-aos-delay="300">
-      <div class="date">Oktober 2025</div>
-      <h4>Tim Basket Putra Juara 2 Turnamen Antar SMA se-Banyuwangi</h4>
-    </div>
-  </div>
+<!-- OSIS -->
+<div class="section" id="osis" data-aos="fade-up">
+<h2><i class="fas fa-users"></i> Organisasi Siswa Intra Sekolah</h2>
+
+<p data-aos="fade-right">
+OSIS SMAN 1 Cluring merupakan wadah kepemimpinan siswa yang berperan aktif dalam mengembangkan potensi, kreativitas, dan karakter peserta didik melalui berbagai program kerja yang inovatif dan bermanfaat.
+</p>
+
+<p data-aos="fade-left">
+Dengan semangat "Sekali di Cluring, Selamanya di Hati", OSIS berkomitmen untuk menciptakan lingkungan sekolah yang kondusif, inklusif, dan penuh prestasi.
+</p>
+
+<div class="info-box" data-aos="fade-up">
+<p>
+<i class="fas fa-info-circle" style="margin-right: 10px;"></i>
+OSIS SMAN 1 Cluring telah meraih berbagai penghargaan tingkat kabupaten dan provinsi atas inovasi program kerjanya.
+</p>
+</div>
+</div>
+
+<div class="cultural-divider" data-aos="fade-in"></div>
+
+<!-- EKSTRAKURIKULER -->
+<div class="section" id="ekskul" data-aos="fade-up">
+<h2><i class="fas fa-star"></i> Ekstrakurikuler</h2>
+
+<p data-aos="fade-right" style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
+SMAN 1 Cluring menyediakan berbagai ekstrakurikuler untuk mengembangkan bakat, minat, dan potensi siswa di bidang akademik maupun non-akademik.
+</p>
+
+<div class="org-grid">
+<div class="org-card" data-aos="zoom-in" data-aos-delay="100">
+<i class="fas fa-shield-alt"></i>
+<h3>Pramuka</h3>
+<p>Membentuk karakter disiplin, tangguh, dan cinta alam melalui kegiatan kepramukaan dan bakti sosial.</p>
+</div>
+
+<div class="org-card" data-aos="zoom-in" data-aos-delay="200">
+<i class="fas fa-heartbeat"></i>
+<h3>PMR</h3>
+<p>Palang Merah Remaja: pelatihan pertolongan pertama, donor darah, dan kegiatan kemanusiaan.</p>
+</div>
+
+<div class="org-card" data-aos="zoom-in" data-aos-delay="300">
+<i class="fas fa-futbol"></i>
+<h3>Olahraga</h3>
+<p>Basket, Futsal, Voli, Atletik untuk menumbuhkan sportivitas dan prestasi di bidang olahraga.</p>
+</div>
+
+<div class="org-card" data-aos="zoom-in" data-aos-delay="400">
+<i class="fas fa-music"></i>
+<h3>Seni & Budaya</h3>
+<p>Tari Blambangan, Musik, Teater, dan Batik sebagai pelestarian budaya lokal.</p>
+</div>
+
+<div class="org-card" data-aos="zoom-in" data-aos-delay="500">
+<i class="fas fa-robot"></i>
+<h3>KIR & Teknologi</h3>
+<p>Karya Ilmiah Remaja, Robotik, dan Coding untuk pengembangan inovasi dan penelitian.</p>
+</div>
+
+<div class="org-card" data-aos="zoom-in" data-aos-delay="600">
+<i class="fas fa-briefcase"></i>
+<h3>Kewirausahaan</h3>
+<p>Pelatihan bisnis, marketing, dan pengelolaan usaha untuk kesiapan masa depan.</p>
+</div>
+
+<div class="org-card" data-aos="zoom-in" data-aos-delay="700">
+<i class="fas fa-mosque"></i>
+<h3>Rohis</h3>
+<p>Kerohanian Islam: pembinaan akhlak, kajian rutin, dan kegiatan keagamaan.</p>
+</div>
+
+<div class="org-card" data-aos="zoom-in" data-aos-delay="800">
+<i class="fas fa-flag"></i>
+<h3>Paskibra</h3>
+<p>Pasukan Pengibar Bendera: pelatihan kedisiplinan dan upacara bendera.</p>
+</div>
+</div>
+</div>
+
+<div class="cultural-divider" data-aos="fade-in"></div>
+
+<!-- PRESTASI -->
+<div class="section" id="prestasi" data-aos="fade-up">
+<h2><i class="fas fa-trophy"></i> Prestasi Siswa</h2>
+
+<p data-aos="fade-right" style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
+Siswa SMAN 1 Cluring secara aktif mengikuti dan meraih prestasi dalam berbagai kompetisi di tingkat kabupaten, provinsi, hingga nasional.
+</p>
+
+<div class="prestasi-grid">
+<div class="prestasi-card gold" data-aos="fade-up" data-aos-delay="100">
+<span class="badge"><i class="fas fa-medal"></i> Juara 1</span>
+<h4>Lomba Tari Tradisional Tingkat Kabupaten</h4>
+<div class="date"><i class="fas fa-calendar"></i> Februari 2026</div>
+</div>
+
+<div class="prestasi-card silver" data-aos="fade-up" data-aos-delay="200">
+<span class="badge"><i class="fas fa-medal"></i> Juara 2</span>
+<h4>Tim Basket Putra Turnamen Antar SMA se-Banyuwangi</h4>
+<div class="date"><i class="fas fa-calendar"></i> Oktober 2025</div>
+</div>
+
+<div class="prestasi-card bronze" data-aos="fade-up" data-aos-delay="300">
+<span class="badge"><i class="fas fa-medal"></i> Juara 3</span>
+<h4>Kompetisi Debat Bahasa Inggris Se-Jawa Timur</h4>
+<div class="date"><i class="fas fa-calendar"></i> Desember 2025</div>
+</div>
+
+<div class="prestasi-card gold" data-aos="fade-up" data-aos-delay="400">
+<span class="badge"><i class="fas fa-medal"></i> Finalis</span>
+<h4>Olimpiade Sains Nasional (OSN) Bidang Biologi</h4>
+<div class="date"><i class="fas fa-calendar"></i> Januari 2026</div>
+</div>
+
+<div class="prestasi-card silver" data-aos="fade-up" data-aos-delay="500">
+<span class="badge"><i class="fas fa-medal"></i> Juara 2</span>
+<h4>Lomba Karya Ilmiah Remaja Tingkat Provinsi</h4>
+<div class="date"><i class="fas fa-calendar"></i> November 2025</div>
+</div>
+
+<div class="prestasi-card bronze" data-aos="fade-up" data-aos-delay="600">
+<span class="badge"><i class="fas fa-medal"></i> Juara 3</span>
+<h4>Festival Seni Budaya Blambangan</h4>
+<div class="date"><i class="fas fa-calendar"></i> September 2025</div>
+</div>
+</div>
+
+<div class="info-box" data-aos="fade-up">
+<p>
+<i class="fas fa-star" style="margin-right: 10px;"></i>
+Prestasi terbaru: SMAN 1 Cluring meraih <strong>Innovative Government Award (IGA) 2025</strong> untuk inovasi BUKIT BATARI – Budaya Kita Batik dan Tari.
+</p>
+</div>
+</div>
+
+<div class="cultural-divider" data-aos="fade-in"></div>
+
+<!-- PROGRAM KESISWAAN -->
+<div class="section" id="program" data-aos="fade-up">
+<h2><i class="fas fa-calendar-check"></i> Program Kesiswaan</h2>
+
+<div class="org-grid">
+<div class="org-card" data-aos="flip-up" data-aos-delay="100">
+<i class="fas fa-hand-holding-heart"></i>
+<h3>Bakti Sosial</h3>
+<p>Kegiatan sosial ke panti asuhan, desa binaan, dan masyarakat sekitar sebagai wujud kepedulian.</p>
+</div>
+
+<div class="org-card" data-aos="flip-up" data-aos-delay="200">
+<i class="fas fa-campground"></i>
+<h3>Perkemahan</h3>
+<p>Perkemahan Sabtu Minggu (Persami), LDKS, dan kegiatan outdoor untuk pembentukan karakter.</p>
+</div>
+
+<div class="org-card" data-aos="flip-up" data-aos-delay="300">
+<i class="fas fa-palette"></i>
+<h3>Pentas Seni</h3>
+<p>Pentas Seni Tahunan (Pensi) sebagai wadah ekspresi kreativitas siswa di bidang seni.</p>
+</div>
+
+<div class="org-card" data-aos="flip-up" data-aos-delay="400">
+<i class="fas fa-book-reader"></i>
+<h3>Literasi</h3>
+<p>Program Smaring Gemar Membaca (SGM) untuk meningkatkan budaya baca dan tulis siswa.</p>
+</div>
+</div>
+</div>
+
+<!-- BACK HOME -->
+<div class="back-home" data-aos="fade-up">
+<a href="index.html">
+<i class="fas fa-arrow-left"></i> Kembali ke Beranda
+</a>
+</div>
+
 </section>
 
-<!-- Footer -->
-<footer>
-  <p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
-  <p><a href="index.html">Kembali ke Beranda</a></p>
+<!-- FOOTER -->
+<footer data-aos="fade-up" id="kontak">
+<div class="footer-content">
+<div class="footer-section">
+<h3><i class="fas fa-map-marker-alt"></i> Kontak</h3>
+<p>Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, Jawa Timur</p>
+<p><i class="fas fa-phone"></i> <a href="tel:+6282319712420">0823-1971-2420</a></p>
+<p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6282319712420" target="_blank">0823-1971-2420 (WA)</a></p>
+</div>
+
+<div class="footer-section">
+<h3><i class="fas fa-link"></i> Link Penting</h3>
+<ul>
+<li><a href="https://sma.kemendikdasmen.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
+<li><a href="https://dindik.jatimprov.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
+<li><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas Banyuwangi</a></li>
+<li><a href="https://alam21234.github.io/Smaring-interactive-learning-comunity" target="_blank"><i class="fas fa-external-link-alt"></i> Smaring Learning Community</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h3><i class="fas fa-flask"></i> Lab Virtual</h3>
+<ul>
+<li><a href="https://quran.nu.or.id" target="_blank"><i class="fas fa-book-quran"></i> Al-Qur'an Digital</a></li>
+<li><a href="https://virtualbiologylab.org" target="_blank"><i class="fas fa-dna"></i> Virtual Biology Lab</a></li>
+<li><a href="https://www.myphysicslab.com" target="_blank"><i class="fas fa-atom"></i> MyPhysicsLab</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h3><i class="fas fa-share-alt"></i> Media Sosial</h3>
+<div class="social-links">
+<a href="https://www.facebook.com/Sman1Cluring" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+<a href="https://www.instagram.com/sman1_cluring" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+<a href="https://wa.me/6282319712420" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+</div>
+</div>
+
+<!-- CLOCK & VISITOR PANEL -->
+<div class="footer-info-panel">
+<div class="footer-clock">
+<span class="footer-time" id="footerTime">00:00:00</span>
+<span class="footer-date" id="footerDate">Sabtu, 1 Januari 2026</span>
+</div>
+<div class="footer-visitor">
+<i class="fas fa-eye"></i>
+<span id="footerVisitorCount">Loading...</span>
+</div>
+</div>
+
+<div class="footer-bottom">
+<p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
+</div>
 </footer>
 
-<!-- AOS & JS -->
+<!-- AOS & Custom JS -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-  AOS.init({ duration: 800, once: true });
-  window.addEventListener('load', () => {
-    setTimeout(() => document.getElementById('preloader').classList.add('fade-out'), 600);
-  });
+// Initialize AOS
+AOS.init({
+duration: 800,
+once: true,
+easing: 'ease-out-cubic'
+});
 
-  // Dark mode toggle
-  const darkModeToggle = document.getElementById('darkModeToggle');
-  const body = document.body;
-  if (localStorage.getItem('darkMode') === 'true') body.classList.add('dark-mode');
-  darkModeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
-  });
+// Preloader
+window.addEventListener('load', () => {
+const preloader = document.getElementById('preloader');
+setTimeout(() => {
+preloader.classList.add('fade-out');
+}, 800);
+});
+
+// Dark Mode Toggle
+const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.body;
+
+const isDarkMode = localStorage.getItem('darkMode') === 'true';
+if (isDarkMode) {
+body.classList.add('dark-mode');
+}
+
+darkModeToggle.addEventListener('click', () => {
+body.classList.toggle('dark-mode');
+localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+});
+
+// Mobile Menu Toggle
+function toggleMenu() {
+document.getElementById("navMenu").classList.toggle("active");
+}
+
+// Smooth scrolling untuk internal navigation
+document.querySelectorAll('.nav-link').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+
+const menu = document.getElementById("navMenu");
+menu.classList.remove("active");
+
+const targetId = this.getAttribute('href');
+const target = document.querySelector(targetId);
+
+if (target) {
+target.scrollIntoView({
+behavior: 'smooth',
+block: 'start'
+});
+
+document.querySelectorAll('.nav-link').forEach(link => {
+link.classList.remove('active');
+});
+this.classList.add('active');
+}
+});
+});
+
+// Update active link saat scroll
+window.addEventListener('scroll', function() {
+const sections = document.querySelectorAll('.section');
+const navLinks = document.querySelectorAll('.nav-link');
+
+let currentSection = '';
+
+sections.forEach(section => {
+const sectionTop = section.offsetTop - 150;
+if (pageYOffset >= sectionTop) {
+currentSection = section.getAttribute('id');
+}
+});
+
+navLinks.forEach(link => {
+link.classList.remove('active');
+if (link.getAttribute('href').substring(1) === currentSection) {
+link.classList.add('active');
+}
+});
+});
+
+// Initialize first link as active
+document.querySelector('.nav-link[href="#osis"]').classList.add('active');
+
+// Realtime Clock untuk Footer
+function updateClock() {
+const now = new Date();
+const hours = String(now.getHours()).padStart(2, '0');
+const minutes = String(now.getMinutes()).padStart(2, '0');
+const seconds = String(now.getSeconds()).padStart(2, '0');
+const timeString = `${hours}:${minutes}:${seconds}`;
+
+const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+
+const dayName = days[now.getDay()];
+const day = now.getDate();
+const monthName = months[now.getMonth()];
+const year = now.getFullYear();
+const dateString = `${dayName}, ${day} ${monthName} ${year}`;
+
+document.getElementById('footerTime').textContent = timeString;
+document.getElementById('footerDate').textContent = dateString;
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// Visitor Counter
+function updateVisitorCounter() {
+const visitorKey = 'sman1cluring_visitor_count';
+let count = localStorage.getItem(visitorKey);
+
+if (!count) {
+count = 1;
+localStorage.setItem(visitorKey, count);
+} else {
+count = parseInt(count);
+if (!sessionStorage.getItem('visitor_counted')) {
+count++;
+localStorage.setItem(visitorKey, count);
+sessionStorage.setItem('visitor_counted', 'true');
+}
+}
+
+const formattedCount = count.toLocaleString('id-ID');
+document.getElementById('footerVisitorCount').textContent = `${formattedCount} Pengunjung`;
+}
+updateVisitorCounter();
+
+// ===== CHAT SYSTEM =====
+const chatButton = document.getElementById('chatButton');
+const chatBox = document.getElementById('chatBox');
+const chatClose = document.getElementById('chatClose');
+const chatInput = document.getElementById('chatInput');
+const chatSend = document.getElementById('chatSend');
+const chatMessages = document.getElementById('chatMessages');
+const quickReplies = document.querySelectorAll('.quick-reply');
+const notificationBadge = document.querySelector('.notification-badge');
+
+// Toggle chat box
+chatButton.addEventListener('click', () => {
+chatBox.classList.toggle('active');
+if (chatBox.classList.contains('active')) {
+notificationBadge.style.display = 'none';
+chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+});
+
+// Close chat box
+chatClose.addEventListener('click', () => {
+chatBox.classList.remove('active');
+});
+
+// Send message function
+function sendMessage() {
+const message = chatInput.value.trim();
+if (message === '') return;
+
+addMessage(message, 'user');
+chatInput.value = '';
+chatSend.disabled = true;
+
+setTimeout(() => {
+const botResponse = getBotResponse(message);
+addMessage(botResponse, 'bot');
+chatSend.disabled = false;
+chatMessages.scrollTop = chatMessages.scrollHeight;
+}, 1000);
+
+chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Add message to chat
+function addMessage(text, sender) {
+const messageDiv = document.createElement('div');
+messageDiv.className = `message ${sender}`;
+
+const now = new Date();
+const timeString = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+
+messageDiv.innerHTML = `
+<div class="message-avatar">
+<i class="fas ${sender === 'bot' ? 'fa-robot' : 'fa-user'}"></i>
+</div>
+<div class="message-content">
+<p>${text}</p>
+<div class="message-time">${timeString}</div>
+</div>
+`;
+
+chatMessages.appendChild(messageDiv);
+}
+
+// Bot response logic untuk kesiswaan
+function getBotResponse(message) {
+const lowerMsg = message.toLowerCase();
+
+if (lowerMsg.includes('ekskul') || lowerMsg.includes('ekstrakurikuler')) {
+return "SMAN 1 Cluring memiliki berbagai ekstrakurikuler: Pramuka, Paskibra, PMR, Basket, Futsal, Seni Tari, Paduan Suara, KIR, Rohis, dan Kewirausahaan!";
+} else if (lowerMsg.includes('osis')) {
+return "OSIS SMAN 1 Cluring aktif mengadakan berbagai kegiatan seperti Bakti Sosial, Pentas Seni, dan Program Literasi. Hubungi pembina OSIS untuk info lebih lanjut.";
+} else if (lowerMsg.includes('prestasi')) {
+return "Siswa SMAN 1 Cluring meraih berbagai prestasi di Olimpiade Sains, Lomba Tari, Basket, dan Debat Bahasa Inggris. Lihat detailnya di halaman Prestasi.";
+} else if (lowerMsg.includes('pramuka')) {
+return "Pramuka SMAN 1 Cluring aktif dalam kegiatan perkemahan, bakti sosial, dan lomba tingkat kabupaten. Pendaftaran terbuka untuk semua siswa.";
+} else if (lowerMsg.includes('daftar') || lowerMsg.includes('bergabung')) {
+return "Untuk bergabung dengan ekstrakurikuler, silakan hubungi pembina masing-masing atau datang ke ruang OSIS pada jam istirahat.";
+} else if (lowerMsg.includes('terima kasih') || lowerMsg.includes('thanks')) {
+return "Sama-sama! Senang bisa membantu. Ada lagi yang ingin ditanyakan tentang kegiatan kesiswaan?";
+} else {
+return "Terima kasih atas pertanyaannya. Untuk informasi lebih lanjut, silakan hubungi admin melalui WhatsApp atau telepon ke nomor 0823-1971-2420.";
+}
+}
+
+// Send message on button click
+chatSend.addEventListener('click', sendMessage);
+
+// Send message on Enter key
+chatInput.addEventListener('keypress', (e) => {
+if (e.key === 'Enter') {
+sendMessage();
+}
+});
+
+// Quick replies
+quickReplies.forEach(reply => {
+reply.addEventListener('click', () => {
+const message = reply.getAttribute('data-message');
+chatInput.value = message;
+sendMessage();
+});
+});
+
+// Close chat when clicking outside
+document.addEventListener('click', (e) => {
+if (!chatBox.contains(e.target) && !chatButton.contains(e.target) && chatBox.classList.contains('active')) {
+chatBox.classList.remove('active');
+}
+});
 </script>
 
 </body>
