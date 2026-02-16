@@ -355,7 +355,47 @@
       color: var(--dark);
     }
 
-    /* ===== KEPALA SEKOLAH SECTION ===== */
+    /* ===== GALLERY ===== */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .gallery-item {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-item figcaption {
+      padding: 12px;
+      background: var(--white);
+      font-size: 0.85rem;
+      color: var(--gray);
+      text-align: center;
+    }
+
+    /* ===== KEPALA SEKOLAH SECTION (AVATAR) ===== */
     .headmaster-section {
       background: linear-gradient(145deg, rgba(13,71,161,0.05) 0%, rgba(21,101,192,0.02) 100%);
       border-radius: var(--border-radius);
@@ -434,12 +474,15 @@
       border-radius: 30px;
     }
 
-    .headmaster-info p {
-      color: var(--gray);
+    .headmaster-info .quote-text {
+      color: var(--dark);
       line-height: 1.8;
       font-size: 1rem;
       margin-bottom: 20px;
       font-style: italic;
+      position: relative;
+      padding-left: 20px;
+      border-left: 3px solid var(--secondary);
     }
 
     .headmaster-signature {
@@ -456,46 +499,6 @@
     .headmaster-signature i {
       color: var(--secondary);
       font-size: 1.5rem;
-    }
-
-    /* ===== GALLERY ===== */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 20px;
-      margin: 30px 0;
-    }
-
-    .gallery-item {
-      border-radius: var(--border-radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-    }
-
-    .gallery-item:hover {
-      transform: scale(1.02);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      display: block;
-      transition: var(--transition);
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.05);
-    }
-
-    .gallery-item figcaption {
-      padding: 12px;
-      background: var(--white);
-      font-size: 0.85rem;
-      color: var(--gray);
-      text-align: center;
     }
 
     /* ===== QUOTE BOX ===== */
@@ -766,6 +769,10 @@
         justify-content: center;
       }
 
+      .headmaster-info .quote-text {
+        text-align: left;
+      }
+
       .headmaster-signature {
         justify-content: center;
       }
@@ -903,19 +910,13 @@
       </div>
     </div>
 
-    <!-- GALLERY -->
+    <!-- GALLERY (HANYA FOTO NOVA) -->
     <div class="gallery" data-aos="fade-up" data-aos-delay="200">
       <figure class="gallery-item">
         <a href="https://ibb.co.com/G3C981Gn/Wood-Ball-2025.jpg" target="_blank">
           <img src="https://i.ibb.co.com/G3C981Gn/Wood-Ball-2025.jpg" alt="Nova Lourensia dengan medali emas Wood Ball 2025" />
         </a>
         <figcaption>Nova Lourensia usai meraih medali emas</figcaption>
-      </figure>
-      <figure class="gallery-item">
-        <a href="https://i.ibb.co.com/LDSSCYrF/1-Helmi-S-Pd-M-Si-Penanggung-Jawab-Umum.jpg" target="_blank">
-          <img src="https://i.ibb.co.com/LDSSCYrF/1-Helmi-S-Pd-M-Si-Penanggung-Jawab-Umum.jpg" alt="Kepala SMAN 1 Cluring, Helmi S.Pd M.Si" />
-        </a>
-        <figcaption>Kepala SMAN 1 Cluring, Helmi S.Pd M.Si</figcaption>
       </figure>
     </div>
 
@@ -928,12 +929,12 @@
     </p>
 
     <div class="quote-box" data-aos="fade-left" data-aos-delay="500">
-      "Saya bersyukur bisa meraih medali emas. Ini bukan hanya kemenangan saya, tapi juga untuk sekolah dan keluarga besar SMA Negeri 1 Cluring."
+      "Saya bersyukur bisa meraih medali emas. Ini bukan hanya kemenangan saya, tapi juga untuk sekolah dan keluarga besar SMA Negeri 1 Cluring." — <strong>Nova Lourensia</strong>
     </div>
 
     <h2>Dukungan Kepala Sekolah</h2>
     
-    <!-- FOTO KEPALA SEKOLAH DENGAN AVATAR OVERLAPING -->
+    <!-- FOTO KEPALA SEKOLAH DENGAN AVATAR (TANPA TULISAN) -->
     <div class="headmaster-section" data-aos="fade-up">
       <div class="headmaster-avatar-wrapper">
         <img src="https://i.ibb.co.com/LDSSCYrF/1-Helmi-S-Pd-M-Si-Penanggung-Jawab-Umum.jpg" alt="Helmi, S.Pd, M.Si - Kepala SMAN 1 Cluring" class="headmaster-avatar">
@@ -941,9 +942,9 @@
       <div class="headmaster-info">
         <h3><i class="fas fa-user-tie"></i> Helmi, S.Pd, M.Si</h3>
         <div class="title">Kepala Satuan Pendidikan SMAN 1 Cluring</div>
-        <p>
+        <div class="quote-text">
           "Prestasi ini menjadi motivasi bagi seluruh siswa SMA Negeri 1 Cluring untuk terus berusaha maksimal dalam mengembangkan potensi diri, baik di bidang akademik maupun non-akademik. Kami berharap Nova dapat menginspirasi teman-temannya untuk terus berprestasi."
-        </p>
+        </div>
         <div class="headmaster-signature">
           <i class="fas fa-quote-right"></i>
           <span>Wassalamu'alaikum warahmatullahi wabarakatuh</span>
