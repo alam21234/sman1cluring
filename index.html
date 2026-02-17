@@ -118,7 +118,7 @@ animation: spin 1s linear infinite;
 /* ===== WHATSAPP FLOAT BUTTON ===== */
 .whatsapp-float {
 position: fixed;
-bottom: 100px; /* Naikkan posisi karena ada chat button */
+bottom: 100px; 
 right: 30px;
 background: linear-gradient(135deg, var(--whatsapp) 0%, var(--whatsapp-dark) 100%);
 color: white;
@@ -651,6 +651,8 @@ flex-shrink: 0;
 position: relative;
 width: 220px;
 }
+
+/* ANIMASI LINGKARAN BERPUTAR DI AVATAR */
 .avatar-container::before {
 content: '';
 position: absolute;
@@ -661,19 +663,36 @@ width: 200px;
 height: 200px;
 border: 2px dashed var(--secondary);
 border-radius: 50%;
-opacity: 0.4;
+opacity: 0.6;
+animation: rotateCircle 8s linear infinite;
+pointer-events: none;
+z-index: 1;
 }
+
+@keyframes rotateCircle {
+0% { transform: translateX(-50%) rotate(0deg); }
+100% { transform: translateX(-50%) rotate(360deg); }
+}
+
 .avatar {
 width: 180px;
 height: 180px;
 border-radius: 50%;
 object-fit: cover;
 border: 4px solid var(--white);
-box-shadow: 0 20px 30px -10px rgba(10,42,94,0.3);
+box-shadow: 0 20px 30px -10px rgba(10,42,94,0.3), 
+            0 0 0 0 rgba(158, 123, 75, 0.4);
 transition: var(--transition);
 position: relative;
 z-index: 2;
+animation: pulseGlow 3s ease-in-out infinite;
 }
+
+@keyframes pulseGlow {
+0%, 100% { box-shadow: 0 20px 30px -10px rgba(10,42,94,0.3), 0 0 0 0 rgba(158, 123, 75, 0.4); }
+50% { box-shadow: 0 20px 30px -10px rgba(10,42,94,0.3), 0 0 0 12px rgba(158, 123, 75, 0); }
+}
+
 .avatar:hover {
 transform: scale(1.02);
 box-shadow: 0 25px 35px -8px var(--primary);
@@ -1046,11 +1065,13 @@ gap: 25px;
 width: 100%;
 margin-bottom: 10px;
 }
+/* Penyesuaian animasi untuk mobile */
 .avatar-container::before {
 left: 50%;
 transform: translateX(-50%);
 width: 190px;
 height: 190px;
+animation-duration: 10s; /* Lebih lambat di mobile */
 }
 .avatar {
 width: 170px;
@@ -1199,9 +1220,9 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <ul id="navMenu">
 <li><a href="index.html">Home</a></li>
 <li><a href="profil.html">Profil</a></li>
-<li><a href="sarpras.html">Sarpras</a></li>
 <li><a href="akademik.html">Akademik</a></li>
 <li><a href="kesiswaan.html">Kesiswaan</a></li>
+<li><a href="sarpras.html">Sarpras</a></li>
 <li><a href="humas.html">Humas</a></li>
 <li><a href="mitra.html">Mitra</a></li>
 <li><a href="alumni.html">Alumni</a></li>
