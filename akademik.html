@@ -247,6 +247,12 @@ justify-content: center;
 font-size: 24px;
 color: white;
 border: 2px solid white;
+overflow: hidden;
+}
+.chat-header-avatar img {
+width: 100%;
+height: 100%;
+object-fit: cover;
 }
 .chat-header-info {
 flex: 1;
@@ -314,6 +320,12 @@ justify-content: center;
 color: white;
 font-size: 16px;
 flex-shrink: 0;
+overflow: hidden;
+}
+.message-avatar img {
+width: 100%;
+height: 100%;
+object-fit: cover;
 }
 .message.user .message-avatar {
 background: var(--primary);
@@ -513,7 +525,7 @@ cursor: pointer;
 }
 /* ===== PAGE HEADER ===== */
 .page-header {
-background: linear-gradient(145deg, rgba(10,42,94,0.8) 0%, rgba(5,26,59,0.9) 100%), url('https://i.ibb.co.com/8nyH2Bbd/da3.jpg') center/cover;
+background: linear-gradient(145deg, rgba(10,42,94,0.8) 0%, rgba(5,26,59,0.9) 100%), url('https://i.ibb.co.com/Fbh5xfRr/foto-paskibra2.jpg') center/cover;
 color: var(--white);
 text-align: center;
 padding: 120px 20px 80px;
@@ -940,12 +952,14 @@ right: 20px;
 width: 55px;
 height: 55px;
 font-size: 24px;
+z-index: 999;
 }
 .chat-box {
 width: 320px;
 height: 450px;
 right: 20px;
 bottom: 170px;
+z-index: 1000;
 }
 }
 @media (max-width: 768px) {
@@ -968,6 +982,12 @@ width: 100%;
 .footer-time {
 font-size: 1.8rem;
 width: 100%;
+}
+.chat-button {
+bottom: 90px;
+}
+.chat-box {
+bottom: 155px;
 }
 }
 @media (max-width: 480px) {
@@ -995,12 +1015,22 @@ right: 15px;
 width: 50px;
 height: 50px;
 font-size: 22px;
+z-index: 999;
 }
 .chat-box {
 width: 300px;
 height: 400px;
 right: 15px;
 bottom: 140px;
+z-index: 1000;
+}
+}
+/* Memastikan chat box tidak menutupi menu navigasi saat menu terbuka */
+@media (max-width: 880px) {
+nav ul.active + .chat-box,
+nav ul.active ~ .chat-box,
+nav ul.active .chat-box {
+display: none !important;
 }
 }
 </style>
@@ -1024,11 +1054,11 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <div class="chat-box" id="chatBox">
 <div class="chat-header">
 <div class="chat-header-avatar">
-<i class="fas fa-robot"></i>
+<img src="https://i.ibb.co.com/bMXVm6cQ/2-Siswo-Hariningsih-S-Pd-Penanggung-Jawab-Kegiatan.jpg" alt="Ibu Siswo Hariningsih, S.Pd">
 </div>
 <div class="chat-header-info">
-<h4>Asisten Virtual SMAN 1 Cluring</h4>
-<p><i class="fas fa-circle"></i> Online - Siap membantu</p>
+<h4>Ibu Siswo Hariningsih, S.Pd</h4>
+<p><i class="fas fa-circle"></i> Wakabid Kurikulum - Online</p>
 </div>
 <div class="chat-close" id="chatClose">
 <i class="fas fa-times"></i>
@@ -1043,10 +1073,10 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <div class="chat-messages" id="chatMessages">
 <div class="message bot">
 <div class="message-avatar">
-<i class="fas fa-robot"></i>
+<img src="https://i.ibb.co.com/bMXVm6cQ/2-Siswo-Hariningsih-S-Pd-Penanggung-Jawab-Kegiatan.jpg" alt="Ibu Siswo Hariningsih, S.Pd">
 </div>
 <div class="message-content">
-<p>Halo! Selamat datang di layanan bantuan akademik SMAN 1 Cluring. Ada yang bisa saya bantu?</p>
+<p>Halo! Saya Ibu Siswo Hariningsih, Wakil Kepala Sekolah Bidang Kurikulum. Ada yang bisa saya bantu terkait program akademik SMAN 1 Cluring?</p>
 <div class="message-time">Baru saja</div>
 </div>
 </div>
@@ -1168,7 +1198,7 @@ Kurikulum Merdeka menekankan pada pengembangan soft skills, karakter Pancasila, 
 </div>
 </div>
 <div class="cultural-divider" data-aos="fade-in"></div>
-<!-- KALENDER AKADEMIK (DIURUTKAN BERDASARKAN BULAN & TAHUN) -->
+<!-- KALENDER AKADEMIK -->
 <div class="section" id="kalender" data-aos="fade-up">
 <h2><i class="fas fa-calendar-alt"></i> Kalender Akademik</h2>
 <p data-aos="fade-right">
@@ -1366,7 +1396,12 @@ localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
 });
 // Mobile Menu Toggle
 function toggleMenu() {
-document.getElementById("navMenu").classList.toggle("active");
+const navMenu = document.getElementById("navMenu");
+navMenu.classList.toggle("active");
+// Jika menu terbuka, sembunyikan chat box
+if (navMenu.classList.contains('active')) {
+chatBox.classList.remove('active');
+}
 }
 // Smooth scrolling untuk internal navigation
 document.querySelectorAll('.nav-link').forEach(anchor => {
@@ -1462,6 +1497,11 @@ chatBox.classList.toggle('active');
 if (chatBox.classList.contains('active')) {
 notificationBadge.style.display = 'none';
 chatMessages.scrollTop = chatMessages.scrollHeight;
+// Jika menu mobile terbuka, tutup menu
+const navMenu = document.getElementById("navMenu");
+if (navMenu.classList.contains('active')) {
+navMenu.classList.remove('active');
+}
 }
 });
 // Close chat box
@@ -1489,9 +1529,11 @@ const messageDiv = document.createElement('div');
 messageDiv.className = `message ${sender}`;
 const now = new Date();
 const timeString = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+// Gunakan foto yang sama untuk avatar bot
+const avatarSrc = 'https://i.ibb.co.com/bMXVm6cQ/2-Siswo-Hariningsih-S-Pd-Penanggung-Jawab-Kegiatan.jpg';
 messageDiv.innerHTML = `
 <div class="message-avatar">
-<i class="fas ${sender === 'bot' ? 'fa-robot' : 'fa-user'}"></i>
+${sender === 'bot' ? `<img src="${avatarSrc}" alt="Ibu Siswo Hariningsih, S.Pd">` : '<i class="fas fa-user"></i>'}
 </div>
 <div class="message-content">
 <p>${text}</p>
@@ -1504,9 +1546,9 @@ chatMessages.appendChild(messageDiv);
 function getBotResponse(message) {
 const lowerMsg = message.toLowerCase();
 if (lowerMsg.includes('kurikulum') || lowerMsg.includes('merdeka')) {
-return "SMAN 1 Cluring menerapkan Kurikulum Merdeka yang berfokus pada pengembangan karakter Pancasila dan pembelajaran berbasis proyek (P5).";
+return "SMAN 1 Cluring menerapkan Kurikulum Merdeka yang berfokus pada pengembangan karakter Pancasila dan pembelajaran berbasis proyek (P5). Sebagai Wakabid Kurikulum, saya bisa memberikan informasi lebih detail jika diperlukan.";
 } else if (lowerMsg.includes('jadwal') || lowerMsg.includes('pelajaran')) {
-return "Jadwal pelajaran bisa diakses oleh siswa melalui aplikasi e-learning atau hubungi wali kelas masing-masing.";
+return "Jadwal pelajaran bisa diakses oleh siswa melalui aplikasi e-learning atau hubungi wali kelas masing-masing. Jika ada kendala, silakan konsultasi dengan saya.";
 } else if (lowerMsg.includes('program') || lowerMsg.includes('unggulan')) {
 return "Program unggulan kami meliputi: Kelas Riset, Literasi, Numerasi, dan Program Bahasa. Silakan kunjungi halaman Akademik untuk info lengkap.";
 } else if (lowerMsg.includes('kalender') || lowerMsg.includes('akademik')) {
@@ -1514,9 +1556,9 @@ return "Kalender akademik tersedia di halaman Akademik. Untuk download file leng
 } else if (lowerMsg.includes('prestasi')) {
 return "SMAN 1 Cluring meraih berbagai prestasi di Olimpiade Sains, Kompetisi Teknologi, dan Lomba Bahasa. Lihat detailnya di halaman Prestasi.";
 } else if (lowerMsg.includes('terima kasih') || lowerMsg.includes('thanks')) {
-return "Sama-sama! Senang bisa membantu. Ada lagi yang ingin ditanyakan?";
+return "Sama-sama! Senang bisa membantu. Jangan ragu untuk bertanya lagi ya.";
 } else {
-return "Terima kasih atas pertanyaannya. Untuk informasi lebih lanjut, silakan hubungi admin melalui WhatsApp atau telepon ke nomor 0823-1971-2420.";
+return "Terima kasih atas pertanyaannya. Untuk informasi lebih lanjut, silakan hubungi saya langsung melalui WhatsApp atau telepon ke nomor 0823-1971-2420.";
 }
 }
 // Send message on button click
