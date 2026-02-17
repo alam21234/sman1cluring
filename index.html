@@ -510,68 +510,115 @@ font-size: 28px;
 color: var(--white);
 cursor: pointer;
 }
-/* ===== HERO ===== */
+/* ===== HERO HYBRID ===== */
 .hero {
 position: relative;
 color: var(--white);
-text-align: center;
-padding: 140px 20px 120px;
 min-height: 650px;
 display: flex;
-flex-direction: column;
-justify-content: center;
 align-items: center;
+overflow: hidden;
 background: linear-gradient(145deg, rgba(10,42,94,0.7) 0%, rgba(5,26,59,0.8) 100%);
 }
-.hero-video-container {
+/* Video Background */
+.hero-video-background {
 position: absolute;
 top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-overflow: hidden;
 z-index: -1;
+overflow: hidden;
 }
-.hero-video-container iframe {
+.hero-video-background iframe {
 position: absolute;
 top: 50%;
 left: 50%;
+width: 100vw;
+height: 100vh;
+transform: translate(-50%, -50%);
+pointer-events: none;
+object-fit: cover;
+filter: brightness(0.5) saturate(1.2);
+}
+/* Overlay gelap agar teks terbaca */
+.hero::after {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
 width: 100%;
 height: 100%;
-min-height: 100%;
-min-width: 100%;
-transform: translate(-50%, -50%);
-object-fit: cover;
-pointer-events: none;
-filter: brightness(0.7) saturate(1.2);
+background: linear-gradient(90deg, rgba(10,42,94,0.8) 0%, rgba(10,42,94,0.4) 100%);
+z-index: -1;
 }
-.hero-content {
+.hero-container {
 position: relative;
 z-index: 2;
-max-width: 1000px;
-padding: 30px;
-background: rgba(255,255,255,0.05);
-backdrop-filter: blur(12px);
-border-radius: var(--border-radius);
-border: 1px solid rgba(255,255,255,0.1);
-box-shadow: var(--shadow-lg);
+max-width: 1300px;
+width: 100%;
+margin: 0 auto;
+padding: 0 32px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 40px;
+}
+.hero-content {
+flex: 1;
+max-width: 600px;
 }
 .hero h1 {
 font-size: 3.5rem;
 margin-bottom: 20px;
 font-weight: 800;
 line-height: 1.2;
-text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-background: linear-gradient(135deg, #fff 0%, #e0e7ff 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+color: white;
 }
 .hero p {
-max-width: 800px;
-margin: 0 auto;
 font-size: 1.2rem;
-opacity: 0.9;
+opacity: 0.95;
 font-weight: 300;
+margin-bottom: 30px;
+text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.hero-image {
+flex: 1;
+max-width: 450px;
+text-align: center;
+}
+.hero-image img {
+max-width: 100%;
+height: auto;
+filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+animation: floatImage 4s ease-in-out infinite;
+position: relative;
+z-index: 3;
+}
+@keyframes floatImage {
+0% { transform: translateY(0px); }
+50% { transform: translateY(-15px); }
+100% { transform: translateY(0px); }
+}
+/* CTA Button */
+.hero-cta {
+display: inline-block;
+background: var(--secondary);
+color: white;
+padding: 14px 32px;
+border-radius: 50px;
+font-weight: 600;
+text-decoration: none;
+transition: var(--transition);
+border: 2px solid transparent;
+box-shadow: 0 10px 20px rgba(158, 123, 75, 0.3);
+}
+.hero-cta:hover {
+background: transparent;
+border-color: var(--secondary);
+color: var(--secondary);
+transform: translateY(-3px);
 }
 /* ===== SECTION ===== */
 .section {
@@ -651,8 +698,6 @@ flex-shrink: 0;
 position: relative;
 width: 220px;
 }
-
-/* ANIMASI LINGKARAN BERPUTAR DI AVATAR */
 .avatar-container::before {
 content: '';
 position: absolute;
@@ -668,12 +713,10 @@ animation: rotateCircle 8s linear infinite;
 pointer-events: none;
 z-index: 1;
 }
-
 @keyframes rotateCircle {
 0% { transform: translateX(-50%) rotate(0deg); }
 100% { transform: translateX(-50%) rotate(360deg); }
 }
-
 .avatar {
 width: 180px;
 height: 180px;
@@ -687,12 +730,10 @@ position: relative;
 z-index: 2;
 animation: pulseGlow 3s ease-in-out infinite;
 }
-
 @keyframes pulseGlow {
 0%, 100% { box-shadow: 0 20px 30px -10px rgba(10,42,94,0.3), 0 0 0 0 rgba(158, 123, 75, 0.4); }
 50% { box-shadow: 0 20px 30px -10px rgba(10,42,94,0.3), 0 0 0 12px rgba(158, 123, 75, 0); }
 }
-
 .avatar:hover {
 transform: scale(1.02);
 box-shadow: 0 25px 35px -8px var(--primary);
@@ -988,6 +1029,7 @@ background: var(--white);
 nav ul { gap: 20px; }
 .nav-container { padding: 12px 20px; }
 .sambutan-content { max-width: 100%; }
+.hero h1 { font-size: 2.8rem; }
 }
 @media (max-width: 880px) {
 .menu-toggle {
@@ -1024,8 +1066,18 @@ white-space: normal;
 .dark-mode-toggle {
 margin: 0 auto;
 }
+.hero-container {
+flex-direction: column;
+text-align: center;
+}
+.hero-content {
+text-align: center;
+}
 .hero h1 { font-size: 2.5rem; }
-.hero { padding: 100px 16px; min-height: 500px; }
+.hero { min-height: 500px; padding: 60px 0; }
+.hero-image {
+max-width: 300px;
+}
 .whatsapp-float {
 bottom: 20px;
 right: 20px;
@@ -1065,13 +1117,12 @@ gap: 25px;
 width: 100%;
 margin-bottom: 10px;
 }
-/* Penyesuaian animasi untuk mobile */
 .avatar-container::before {
 left: 50%;
 transform: translateX(-50%);
 width: 190px;
 height: 190px;
-animation-duration: 10s; /* Lebih lambat di mobile */
+animation-duration: 10s;
 }
 .avatar {
 width: 170px;
@@ -1104,7 +1155,9 @@ width: 100%;
 .brand span { display: none; }
 .brand img { width: 44px; }
 .hero h1 { font-size: 1.9rem; }
-.hero-content { padding: 20px; }
+.hero-image {
+max-width: 220px;
+}
 .whatsapp-float {
 bottom: 15px;
 right: 15px;
@@ -1239,24 +1292,34 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 </div>
 </div>
 </header>
-<!-- HERO dengan Video YouTube -->
-<section class="hero" data-aos="zoom-in" data-aos-delay="200">
-<div class="hero-video-container">
+
+<!-- HERO HYBRID: Video Background + Foto IGA di samping -->
+<section class="hero" data-aos="zoom-in">
+<!-- Video Background -->
+<div class="hero-video-background">
 <iframe
-src="https://www.youtube.com/embed/5ZgkVKZuFiM?si=iNOfQqNzc4y-CYp4&autoplay=1&mute=1&loop=1&playlist=5ZgkVKZuFiM"
+src="https://www.youtube.com/embed/5ZgkVKZuFiM?si=iNOfQqNzc4y-CYp4&autoplay=1&mute=1&loop=1&playlist=5ZgkVKZuFiM&controls=0&showinfo=0&rel=0"
 title="SMAN 1 Cluring Video Profile"
 frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 allowfullscreen>
 </iframe>
 </div>
-<div class="hero-content" data-aos="fade-up">
+
+<div class="hero-container">
+<div class="hero-content" data-aos="fade-right">
 <h1>Selamat Datang di Website Resmi<br>SMAN 1 Cluring</h1>
 <p>
 Menginspirasi Generasi Pancasila dari Bumi Blambangan — Pusat informasi akademik, kegiatan, dan layanan publik sekolah.
 </p>
+<a href="#profil" class="hero-cta">Jelajahi Sekolah</a>
+</div>
+<div class="hero-image" data-aos="fade-left" data-aos-delay="300">
+<img src="https://i.ibb.co.com/842GLgLy/IGA-2026-1-tanpa-background.png" alt="IGA 2026 SMAN 1 Cluring - Innovative Government Award">
+</div>
 </div>
 </section>
+
 <!-- SAMBUTAN -->
 <section class="section">
 <div class="section-header" data-aos="fade-right">
