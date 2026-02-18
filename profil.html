@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Profil Sekolah | SMAN 1 Cluring</title>
 
   <!-- SEO -->
@@ -18,7 +18,7 @@
   <meta property="og:image" content="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" />
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -27,586 +27,838 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
+    /* ===== CSS VARIABLES - DESIGN SYSTEM ===== */
     :root {
-      /* Light Mode - Premium Palette */
+      /* Primary Palette - Professional Blue */
       --primary: #0a2a5e;
-      --primary-light: #1e3a7a;
-      --primary-dark: #051a3b;
+      --primary-600: #1e40af;
+      --primary-700: #1d4ed8;
+      --primary-light: #dbeafe;
+      
+      /* Secondary Palette - Elegant Gold */
       --secondary: #9e7b4b;
-      --secondary-light: #c1a06e;
+      --secondary-600: #b4935a;
+      --secondary-light: #f5f0e6;
+      
+      /* Accent & Cultural */
       --accent: #c7a854;
-      --cultural-accent: #b13e3e;
-      --ijen-green: #2d6a4f;
-      --light: #f5f7fa;
-      --dark: #1e2b37;
-      --gray: #4b5c6b;
-      --white: #ffffff;
-      --glass: rgba(255, 255, 255, 0.1);
-      --glass-border: rgba(255, 255, 255, 0.2);
-      --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 8px 30px rgba(0, 20, 50, 0.12);
-      --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
-      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-      --border-radius: 24px;
-      --border-radius-sm: 16px;
+      --cultural: #b13e3e;
+      --ijen: #2d6a4f;
+      
+      /* Neutral Colors */
+      --bg-body: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-glass: rgba(255, 255, 255, 0.85);
+      --text-primary: #1e293b;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --border-color: rgba(148, 163, 184, 0.2);
+      --border-glass: rgba(255, 255, 255, 0.3);
+      
+      /* Shadows & Effects */
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      --shadow-glow: 0 0 40px rgba(158, 123, 75, 0.15);
+      
+      /* Transitions */
+      --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      
+      /* Layout */
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+      --radius-full: 9999px;
+      --container-max: 1280px;
+      --header-height: 72px;
+      --nav-sticky-offset: 88px;
+      
+      /* WhatsApp */
       --whatsapp: #25D366;
-      --whatsapp-dark: #128C7E;
+      --whatsapp-hover: #128C7E;
     }
 
+    /* ===== DARK MODE VARIABLES ===== */
     .dark-mode {
       --primary: #1e3a8a;
-      --primary-light: #3b5ba5;
+      --primary-light: #1e293b;
       --secondary: #d4af37;
-      --light: #0f1825;
-      --dark: #edf2f7;
-      --gray: #a0b3c6;
-      --white: #1a2533;
-      --glass: rgba(0, 0, 0, 0.25);
-      --glass-border: rgba(255, 255, 255, 0.08);
+      --secondary-light: #3f3f46;
+      --bg-body: #0f172a;
+      --bg-card: #1e293b;
+      --bg-glass: rgba(30, 41, 59, 0.85);
+      --text-primary: #f1f5f9;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border-color: rgba(148, 163, 184, 0.15);
+      --border-glass: rgba(255, 255, 255, 0.1);
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
     }
 
-    * {
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    body {
-      font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
-      transition: background-color 0.4s ease, color 0.4s ease;
-      overflow-x: hidden;
-      font-weight: 400;
-      letter-spacing: 0.2px;
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--nav-sticky-offset);
     }
 
-    h1, h2, h3, h4 {
+    body {
+      font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      transition: background-color var(--transition-normal), color var(--transition-normal);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4, h5, h6 {
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 700;
+      line-height: 1.3;
       letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+
+    h1 { font-size: clamp(2rem, 1.5rem + 3vw, 3.2rem); }
+    h2 { font-size: clamp(1.6rem, 1.3rem + 2vw, 2.4rem); }
+    h3 { font-size: clamp(1.3rem, 1.1rem + 1.5vw, 1.8rem); }
+    h4 { font-size: clamp(1.1rem, 1rem + 0.8vw, 1.4rem); }
+
+    p { margin-bottom: 1.25rem; color: var(--text-secondary); }
+    p:last-child { margin-bottom: 0; }
+
+    a {
+      color: var(--primary-700);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+    a:hover { color: var(--secondary); }
+
+    /* ===== UTILITIES ===== */
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 2.5rem);
+    }
+
+    .section {
+      background: var(--bg-card);
+      padding: clamp(2rem, 4vw, 3.5rem);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+      border: 1px solid var(--border-color);
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+      scroll-margin-top: var(--nav-sticky-offset);
+    }
+
+    .section:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--secondary);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: clamp(1.5rem, 3vw, 2rem);
+      position: relative;
+      padding-bottom: 1rem;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: clamp(60px, 10vw, 100px);
+      height: 4px;
+      background: linear-gradient(90deg, var(--secondary), var(--accent));
+      border-radius: 2px;
+    }
+
+    .section-title i {
+      margin-right: 0.5rem;
+      color: var(--secondary);
     }
 
     /* ===== PRELOADER ===== */
     #preloader {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       background: var(--primary);
       display: flex;
       justify-content: center;
       align-items: center;
       z-index: 9999;
       opacity: 1;
-      transition: opacity 0.6s ease;
+      visibility: visible;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
     }
+
     #preloader.fade-out {
       opacity: 0;
       visibility: hidden;
+      pointer-events: none;
     }
+
     .spinner {
-      width: 60px;
-      height: 60px;
-      border: 4px solid rgba(255, 255, 255, 0.1);
-      border-top: 4px solid var(--secondary);
-      border-right: 4px solid var(--secondary);
+      width: 56px;
+      height: 56px;
+      border: 3px solid rgba(255, 255, 255, 0.15);
+      border-top-color: var(--secondary);
+      border-right-color: var(--secondary);
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
+
     @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      to { transform: rotate(360deg); }
     }
 
-    /* ===== WHATSAPP FLOAT BUTTON ===== */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 100px;
-      right: 30px;
-      background: linear-gradient(135deg, var(--whatsapp) 0%, var(--whatsapp-dark) 100%);
-      color: white;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 14px 28px;
-      border-radius: 60px;
-      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-      z-index: 998;
-      transition: var(--transition);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      font-weight: 600;
-    }
-    .whatsapp-float i {
-      font-size: 28px;
-      animation: pulse 2s infinite;
-    }
-    .whatsapp-float span {
-      font-size: 1rem;
-      letter-spacing: 0.5px;
-    }
-    .whatsapp-float:hover {
-      transform: translateY(-8px) scale(1.05);
-      box-shadow: 0 20px 35px rgba(37, 211, 102, 0.4);
-      background: linear-gradient(135deg, var(--whatsapp-dark) 0%, var(--whatsapp) 100%);
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
-    }
-
-    /* ===== HEADER ===== */
+    /* ===== HEADER & NAVIGATION ===== */
     header {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-600) 100%);
       position: sticky;
       top: 0;
       z-index: 1000;
       box-shadow: var(--shadow-md);
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
     }
+
     .nav-container {
-      max-width: 1400px;
-      margin: auto;
-      padding: 12px 32px;
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 clamp(1rem, 4vw, 2rem);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
+      gap: 1rem;
     }
+
     .brand {
       display: flex;
       align-items: center;
-      gap: 16px;
-      color: var(--white);
+      gap: 0.875rem;
+      color: white;
       font-weight: 800;
-      font-size: 1.5rem;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
       text-decoration: none;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
     }
+
     .brand img {
-      width: 52px;
+      width: clamp(40px, 8vw, 52px);
       height: auto;
-      border-radius: 12px;
+      border-radius: var(--radius-sm);
       box-shadow: var(--shadow-sm);
+      border: 2px solid rgba(255, 255, 255, 0.2);
     }
+
     .nav-right {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: clamp(0.5rem, 2vw, 1.25rem);
     }
+
     nav ul {
       list-style: none;
       display: flex;
-      gap: 32px;
+      gap: clamp(0.5rem, 2vw, 2rem);
       align-items: center;
+      margin: 0;
+      padding: 0;
     }
+
     nav ul li a {
-      color: var(--white);
+      color: rgba(255, 255, 255, 0.92);
       text-decoration: none;
       font-weight: 500;
-      font-size: 1rem;
-      transition: var(--transition);
-      padding: 8px 0;
+      font-size: clamp(0.85rem, 2vw, 1rem);
+      padding: 0.5rem 0;
       position: relative;
-      opacity: 0.9;
+      transition: opacity var(--transition-fast), color var(--transition-fast);
       white-space: nowrap;
     }
+
     nav ul li a::after {
       content: '';
       position: absolute;
-      bottom: 0;
+      bottom: -4px;
       left: 0;
       width: 0;
       height: 2px;
       background: var(--secondary);
-      transition: width 0.3s ease;
+      transition: width var(--transition-normal);
+      border-radius: 1px;
     }
-    nav ul li a:hover {
+
+    nav ul li a:hover,
+    nav ul li a.active {
       opacity: 1;
+      color: white;
     }
-    nav ul li a:hover::after {
+
+    nav ul li a:hover::after,
+    nav ul li a.active::after {
       width: 100%;
     }
+
+    /* Dark Mode Toggle */
     .dark-mode-toggle {
-      background: var(--glass);
-      border: 1px solid var(--glass-border);
-      width: 44px;
-      height: 44px;
-      border-radius: 60px;
-      color: var(--white);
-      font-size: 1.2rem;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      width: clamp(40px, 8vw, 44px);
+      height: clamp(40px, 8vw, 44px);
+      border-radius: var(--radius-full);
+      color: white;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
       cursor: pointer;
-      transition: var(--transition);
+      transition: all var(--transition-normal);
       display: flex;
       align-items: center;
       justify-content: center;
       backdrop-filter: blur(8px);
-      margin-left: 8px;
+      margin-left: 0.25rem;
     }
+
     .dark-mode-toggle:hover {
       background: var(--secondary);
       border-color: var(--secondary);
-      transform: rotate(30deg) scale(1.05);
+      transform: rotate(15deg) scale(1.05);
     }
-    .dark-mode .dark-mode-toggle i {
-      display: none;
-    }
-    .dark-mode .dark-mode-toggle i.sun {
-      display: block;
-    }
+
+    .dark-mode-toggle .fa-sun { display: none; }
+    .dark-mode .dark-mode-toggle .fa-moon { display: none; }
+    .dark-mode .dark-mode-toggle .fa-sun { display: block; }
+
+    /* Mobile Menu Toggle */
     .menu-toggle {
       display: none;
-      font-size: 28px;
-      color: var(--white);
+      font-size: clamp(1.5rem, 4vw, 1.75rem);
+      color: white;
       cursor: pointer;
+      padding: 0.5rem;
+      border-radius: var(--radius-sm);
+      transition: background var(--transition-fast);
+    }
+
+    .menu-toggle:hover {
+      background: rgba(255, 255, 255, 0.15);
     }
 
     /* ===== PAGE HEADER ===== */
     .page-header {
-      background: linear-gradient(145deg, rgba(10,42,94,0.8) 0%, rgba(5,26,59,0.9) 100%), url('https://i.ibb.co.com/cKcqr1Db/agustusan-2025.jpg') center/cover;
-      color: var(--white);
+      background: 
+        linear-gradient(145deg, rgba(10,42,94,0.92) 0%, rgba(5,26,59,0.95) 100%),
+        url('https://i.ibb.co.com/cKcqr1Db/agustusan-2025.jpg') center/cover no-repeat;
+      color: white;
       text-align: center;
-      padding: 120px 20px 80px;
-      min-height: 400px;
+      padding: clamp(4rem, 15vw, 7rem) clamp(1.5rem, 4vw, 2rem) clamp(3rem, 10vw, 5rem);
+      min-height: clamp(280px, 40vh, 400px);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      position: relative;
+      overflow: hidden;
     }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 0%, rgba(10,42,94,0.4) 70%);
+      pointer-events: none;
+    }
+
     .page-header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 20px;
+      color: white;
+      margin-bottom: 1rem;
       font-weight: 800;
-      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+      position: relative;
+      z-index: 1;
     }
+
     .breadcrumb {
-      font-size: 1rem;
-      opacity: 0.9;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+      opacity: 0.95;
+      position: relative;
+      z-index: 1;
     }
+
     .breadcrumb a {
       color: var(--accent);
-      text-decoration: none;
-      transition: var(--transition);
+      font-weight: 500;
+      transition: opacity var(--transition-fast);
     }
+
     .breadcrumb a:hover {
+      opacity: 0.85;
       text-decoration: underline;
     }
 
-    /* ===== INTERNAL NAVIGATION ===== */
+    /* ===== INTERNAL NAVIGATION - SMART STICKY ===== */
     .internal-nav {
-      max-width: 1300px;
-      margin: -40px auto 0;
-      background: var(--white);
-      border-radius: var(--border-radius);
+      max-width: var(--container-max);
+      margin: -2.5rem auto 0;
+      background: var(--bg-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: var(--radius-lg);
       box-shadow: var(--shadow-md);
-      padding: 15px;
+      padding: clamp(0.5rem, 2vw, 0.875rem) clamp(0.75rem, 3vw, 1.25rem);
       position: sticky;
-      top: 70px;
-      z-index: 900;
+      top: var(--nav-sticky-offset);
+      z-index: 950;
+      transition: 
+        transform var(--transition-normal),
+        opacity var(--transition-normal),
+        box-shadow var(--transition-fast),
+        background var(--transition-fast);
+      border: 1px solid var(--border-glass);
+      display: flex;
+      justify-content: center;
     }
+
+    .internal-nav.hidden {
+      transform: translateY(-120%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .internal-nav.scrolled {
+      box-shadow: var(--shadow-lg);
+      background: rgba(255, 255, 255, 0.95);
+      border-color: var(--border-color);
+    }
+
+    .dark-mode .internal-nav {
+      background: rgba(30, 41, 59, 0.85);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .dark-mode .internal-nav.scrolled {
+      background: rgba(30, 41, 59, 0.95);
+      border-color: rgba(212, 175, 55, 0.3);
+    }
+
     .internal-nav ul {
       display: flex;
       justify-content: center;
-      gap: 10px;
+      gap: clamp(0.25rem, 1.5vw, 0.75rem);
       flex-wrap: wrap;
-    }
-    .internal-nav li {
       list-style: none;
-    }
-    .internal-nav a {
-      display: inline-block;
-      padding: 12px 24px;
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      border-radius: 50px;
-      transition: var(--transition);
-      text-align: center;
-    }
-    .internal-nav a:hover,
-    .internal-nav a.active {
-      background: var(--primary);
-      color: var(--white);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(10,42,94,0.2);
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
 
-    /* ===== CONTENT ===== */
-    .container {
-      max-width: 1300px;
-      margin: 50px auto;
-      padding: 0 32px;
-    }
-    .section {
-      background: var(--white);
-      padding: 50px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow-sm);
-      margin-bottom: 40px;
-      scroll-margin-top: 120px;
-      transition: var(--transition);
-      border: 1px solid rgba(158,123,75,0.1);
-    }
-    .section:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--secondary);
-    }
-    .section h2 {
-      color: var(--primary);
-      margin-bottom: 25px;
-      font-size: 2.2rem;
+    .internal-nav ul::-webkit-scrollbar { display: none; }
+
+    .internal-nav a {
+      display: inline-flex;
+      align-items: center;
+      padding: clamp(0.5rem, 2vw, 0.75rem) clamp(0.875rem, 2.5vw, 1.5rem);
+      color: var(--text-primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: clamp(0.8rem, 2vw, 0.95rem);
+      border-radius: var(--radius-full);
+      transition: all var(--transition-normal);
+      white-space: nowrap;
       position: relative;
-      text-align: center;
     }
-    .section h2::after {
+
+    .internal-nav a::after {
       content: '';
-      display: block;
-      width: 80px;
-      height: 5px;
-      background: linear-gradient(90deg, var(--secondary) 0%, var(--accent) 100%);
-      margin: 16px auto 0;
-      border-radius: 4px;
+      position: absolute;
+      bottom: 4px;
+      left: 50%;
+      transform: translateX(-50%) scaleX(0);
+      width: 70%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--secondary), var(--accent));
+      border-radius: 2px;
+      transition: transform var(--transition-normal);
+      transform-origin: center;
     }
-    .section h3 {
+
+    .internal-nav a:hover,
+    .internal-nav a.active {
       color: var(--primary);
-      margin: 30px 0 20px;
-      font-size: 1.6rem;
+      background: rgba(158, 123, 75, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .internal-nav a:hover::after,
+    .internal-nav a.active::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+
+    .dark-mode .internal-nav a { color: var(--text-secondary); }
+    .dark-mode .internal-nav a:hover,
+    .dark-mode .internal-nav a.active {
+      color: var(--secondary);
+      background: rgba(212, 175, 55, 0.15);
+    }
+
+    /* ===== CONTENT SECTIONS ===== */
+    .section {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section h3 {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 0.625rem;
+      margin: clamp(1.5rem, 3vw, 2rem) 0 clamp(1rem, 2vw, 1.25rem);
+      color: var(--primary);
     }
-    .section p {
-      line-height: 1.8;
-      font-size: 1.05rem;
-      margin-bottom: 18px;
-      color: var(--gray);
-    }
-    .section p:last-child {
-      margin-bottom: 0;
-    }
-    .list {
-      padding-left: 30px;
-      margin-top: 15px;
-      color: var(--gray);
-    }
-    .list li {
-      margin-bottom: 12px;
-      line-height: 1.7;
+
+    .section h3 i {
+      color: var(--secondary);
+      font-size: 1.2em;
     }
 
     /* ===== SCHOOL IMAGE ===== */
     .school-image-container {
       text-align: center;
-      margin: 30px auto 40px;
-      max-width: 100%;
+      margin: clamp(1.5rem, 3vw, 2rem) auto clamp(2rem, 4vw, 2.5rem);
     }
+
     .school-image {
       max-width: 100%;
       height: auto;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow-lg);
-      transition: var(--transition);
-      max-height: 350px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+      max-height: clamp(200px, 35vw, 350px);
       width: auto;
-      border: 4px solid var(--white);
+      border: 4px solid var(--bg-card);
+      display: block;
+      margin: 0 auto;
     }
+
     .school-image:hover {
-      transform: scale(1.03);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      transform: scale(1.02);
+      box-shadow: var(--shadow-glow);
     }
 
     /* ===== VISION BOX ===== */
     .vision-box {
-      background: linear-gradient(135deg, rgba(158,123,75,0.1) 0%, rgba(199,168,84,0.05) 100%);
-      border-left: 6px solid var(--secondary);
-      padding: 30px;
-      border-radius: 0 20px 20px 0;
-      margin: 30px 0;
-      font-weight: 700;
-      font-size: 1.3rem;
-      line-height: 1.6;
-      color: var(--primary);
+      background: linear-gradient(135deg, rgba(158,123,75,0.12) 0%, rgba(199,168,84,0.06) 100%);
+      border-left: 5px solid var(--secondary);
+      padding: clamp(1.25rem, 3vw, 1.75rem);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: clamp(1.25rem, 2.5vw, 1.75rem) 0;
+      font-weight: 600;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      line-height: 1.65;
+      color: var(--text-primary);
       position: relative;
+      box-shadow: var(--shadow-sm);
     }
+
     .vision-box::before {
       content: '"';
       position: absolute;
-      top: -15px;
-      left: 10px;
-      font-size: 5rem;
-      color: rgba(158,123,75,0.1);
+      top: -10px;
+      left: 8px;
+      font-size: clamp(3rem, 8vw, 5rem);
+      color: rgba(158, 123, 75, 0.12);
       font-family: Georgia, serif;
+      line-height: 1;
+      pointer-events: none;
     }
 
-    /* ===== MISSION CARD ===== */
+    /* ===== MISSION CARDS ===== */
     .mission-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-    .mission-card {
-      background: var(--white);
-      border: 2px solid var(--secondary);
-      border-radius: var(--border-radius);
-      padding: 30px;
-      transition: var(--transition);
-      box-shadow: var(--shadow-sm);
-    }
-    .mission-card:hover {
-      border-color: var(--primary);
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-lg);
-    }
-    .mission-card h4 {
-      color: var(--primary);
-      margin-bottom: 20px;
-      font-size: 1.4rem;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .mission-card ul {
-      padding-left: 28px;
-      margin-top: 12px;
-      color: var(--gray);
-    }
-    .mission-card li {
-      margin-bottom: 10px;
-      font-size: 1rem;
-      line-height: 1.7;
+      grid-template-columns: repeat(auto-fit, minmax(clamp(280px, 90vw, 320px), 1fr));
+      gap: clamp(1rem, 3vw, 1.75rem);
+      margin-top: clamp(1.25rem, 2.5vw, 1.75rem);
     }
 
+    .mission-card {
+      background: var(--bg-card);
+      border: 2px solid var(--secondary-light);
+      border-radius: var(--radius-md);
+      padding: clamp(1.25rem, 3vw, 1.75rem);
+      transition: all var(--transition-normal);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 0.875rem;
+    }
+
+    .mission-card:hover {
+      border-color: var(--secondary);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .mission-card h4 {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      color: var(--primary);
+      margin: 0;
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+    }
+
+    .mission-card h4 i {
+      color: var(--secondary);
+      margin-top: 0.125rem;
+      flex-shrink: 0;
+    }
+
+    .mission-card ul {
+      padding-left: 1.5rem;
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: clamp(0.9rem, 2vw, 0.95rem);
+    }
+
+    .mission-card li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .mission-card li:last-child { margin-bottom: 0; }
+
     /* ===== STRUCTURE TABLE ===== */
+    .structure-category {
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-600) 100%);
+      color: white;
+      font-weight: 700;
+      padding: clamp(0.875rem, 2vw, 1rem) clamp(1rem, 2.5vw, 1.25rem);
+      margin: clamp(1.5rem, 3vw, 2rem) 0 clamp(1rem, 2vw, 1.25rem);
+      border-radius: var(--radius-sm);
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      box-shadow: var(--shadow-sm);
+    }
+
     .structure-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 25px;
-      background: var(--white);
+      margin-top: 0.5rem;
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
     }
+
     .structure-table th {
       background: var(--primary);
-      color: var(--white);
-      padding: 16px;
+      color: white;
+      padding: clamp(0.875rem, 2vw, 1rem) clamp(1rem, 2.5vw, 1.25rem);
       text-align: left;
-      font-weight: 700;
-      font-size: 1.1rem;
+      font-weight: 600;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+      white-space: nowrap;
     }
+
     .structure-table td {
-      padding: 14px 16px;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      color: var(--gray);
+      padding: clamp(0.75rem, 2vw, 0.875rem) clamp(1rem, 2.5vw, 1.25rem);
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      font-size: clamp(0.9rem, 2vw, 0.95rem);
     }
-    .structure-table tr:nth-child(even) {
-      background: rgba(10,42,94,0.02);
-    }
-    .structure-table tr:hover {
-      background: rgba(158,123,75,0.05);
-    }
-    .structure-category {
-      background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
-      color: var(--white);
-      font-weight: 700;
-      padding: 14px 20px;
-      margin-top: 25px;
-      border-radius: 12px;
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+
+    .structure-table tr:last-child td { border-bottom: none; }
+    .structure-table tr:nth-child(even) { background: rgba(10, 42, 94, 0.03); }
+    .structure-table tr:hover { background: rgba(158, 123, 75, 0.08); }
+
+    .dark-mode .structure-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.03);
     }
 
     /* ===== SARPRAS CARDS ===== */
     .sarpras-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(clamp(220px, 80vw, 280px), 1fr));
+      gap: clamp(1rem, 2.5vw, 1.5rem);
+      margin-top: clamp(1.25rem, 2.5vw, 1.75rem);
     }
+
     .sarpras-card {
-      background: var(--white);
-      padding: 25px;
-      border-radius: var(--border-radius);
+      background: var(--bg-card);
+      padding: clamp(1.25rem, 3vw, 1.75rem);
+      border-radius: var(--radius-md);
       box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-      border: 1px solid rgba(158,123,75,0.1);
+      transition: all var(--transition-normal);
+      border: 1px solid var(--border-color);
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.875rem;
     }
+
     .sarpras-card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-6px);
       box-shadow: var(--shadow-lg);
       border-color: var(--secondary);
     }
+
     .sarpras-card i {
-      font-size: 2.5rem;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
       color: var(--primary);
-      margin-bottom: 15px;
+      background: linear-gradient(135deg, var(--primary-light), var(--secondary-light));
+      width: clamp(50px, 12vw, 70px);
+      height: clamp(50px, 12vw, 70px);
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.25rem;
+      transition: transform var(--transition-normal);
     }
+
+    .sarpras-card:hover i {
+      transform: scale(1.1) rotate(5deg);
+    }
+
     .sarpras-card h4 {
       color: var(--primary);
-      margin-bottom: 12px;
-      font-size: 1.3rem;
+      margin: 0;
+      font-size: clamp(1rem, 2vw, 1.2rem);
     }
+
     .sarpras-card p {
-      color: var(--gray);
-      font-size: 0.95rem;
+      color: var(--text-secondary);
+      font-size: clamp(0.85rem, 2vw, 0.95rem);
+      margin: 0;
       line-height: 1.6;
     }
 
     /* ===== INFO BOX ===== */
     .info-box {
-      margin-top: 30px;
-      padding: 25px;
-      background: rgba(10,42,94,0.05);
-      border-radius: var(--border-radius);
-      border-left: 6px solid var(--primary);
-    }
-    .info-box p {
-      font-style: italic;
-      color: var(--primary);
-      font-weight: 600;
-      font-size: 1.1rem;
+      margin-top: clamp(1.5rem, 3vw, 2rem);
+      padding: clamp(1rem, 2.5vw, 1.5rem);
+      background: rgba(10, 42, 94, 0.06);
+      border-radius: var(--radius-md);
+      border-left: 5px solid var(--primary);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
     }
 
-    /* ===== BACK HOME ===== */
+    .info-box i {
+      color: var(--primary);
+      font-size: 1.3em;
+      margin-top: 0.125rem;
+      flex-shrink: 0;
+    }
+
+    .info-box p {
+      font-style: italic;
+      color: var(--text-primary);
+      font-weight: 500;
+      margin: 0;
+      font-size: clamp(0.95rem, 2vw, 1.05rem);
+    }
+
+    /* ===== CULTURAL DIVIDER ===== */
+    .cultural-divider {
+      height: 3px;
+      background: linear-gradient(90deg,
+        var(--primary) 0%,
+        var(--secondary) 30%,
+        var(--cultural) 50%,
+        var(--secondary) 70%,
+        var(--primary) 100%);
+      margin: clamp(2.5rem, 5vw, 4rem) auto;
+      border-radius: 2px;
+      max-width: var(--container-max);
+      opacity: 0.7;
+      width: 100%;
+    }
+
+    /* ===== BACK HOME BUTTON ===== */
     .back-home {
       text-align: center;
-      margin-top: 50px;
+      margin-top: clamp(2.5rem, 5vw, 4rem);
+      padding-bottom: clamp(1rem, 2vw, 2rem);
     }
+
     .back-home a {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-      color: var(--white);
-      padding: 14px 40px;
-      border-radius: 60px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-600) 100%);
+      color: white;
+      padding: clamp(0.875rem, 2vw, 1rem) clamp(2rem, 4vw, 2.5rem);
+      border-radius: var(--radius-full);
       text-decoration: none;
       font-weight: 700;
-      font-size: 1.1rem;
-      transition: var(--transition);
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      transition: all var(--transition-normal);
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 0.625rem;
       box-shadow: var(--shadow-md);
+      border: 2px solid transparent;
     }
+
     .back-home a:hover {
-      background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-600) 100%);
       transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(158,123,75,0.3);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent);
+    }
+
+    .back-home a i {
+      transition: transform var(--transition-fast);
+    }
+
+    .back-home a:hover i {
+      transform: translateX(-3px);
     }
 
     /* ===== FOOTER ===== */
     footer {
-      background: linear-gradient(145deg, var(--primary-dark) 0%, var(--primary) 100%);
-      color: var(--white);
-      padding: 70px 32px 30px;
-      font-size: 1rem;
+      background: linear-gradient(145deg, var(--primary) 0%, var(--primary-600) 100%);
+      color: rgba(255, 255, 255, 0.92);
+      padding: clamp(3rem, 6vw, 4.5rem) clamp(1.5rem, 4vw, 2rem) clamp(1.5rem, 3vw, 2rem);
+      font-size: clamp(0.9rem, 2vw, 1rem);
       position: relative;
+      margin-top: clamp(2rem, 4vw, 3rem);
     }
+
     footer::before {
       content: '';
       position: absolute;
@@ -616,165 +868,431 @@
       height: 4px;
       background: linear-gradient(90deg, var(--secondary), var(--accent), var(--secondary));
     }
+
     .footer-content {
-      max-width: 1300px;
-      margin: auto;
+      max-width: var(--container-max);
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 50px;
+      grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 45vw, 240px), 1fr));
+      gap: clamp(1.5rem, 4vw, 2.5rem);
     }
+
     .footer-section h3 {
-      font-size: 1.4rem;
-      margin-bottom: 25px;
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+      margin-bottom: clamp(1rem, 2vw, 1.25rem);
       font-weight: 600;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 0.5rem;
       color: var(--secondary);
     }
+
     .footer-section ul {
       list-style: none;
+      margin: 0;
+      padding: 0;
     }
+
     .footer-section ul li {
-      margin-bottom: 14px;
+      margin-bottom: clamp(0.5rem, 1.5vw, 0.75rem);
     }
+
     .footer-section a {
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.85);
       text-decoration: none;
-      transition: var(--transition);
+      transition: all var(--transition-fast);
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 0.625rem;
+      font-size: clamp(0.9rem, 2vw, 0.95rem);
     }
+
     .footer-section a:hover {
       color: var(--secondary);
-      transform: translateX(6px);
+      transform: translateX(4px);
     }
+
+    .footer-section a i {
+      width: 1.2em;
+      text-align: center;
+      font-size: 0.9em;
+    }
+
     .social-links {
       display: flex;
-      gap: 18px;
-      margin-top: 20px;
+      gap: clamp(0.75rem, 2vw, 1rem);
+      margin-top: clamp(0.75rem, 1.5vw, 1rem);
+      flex-wrap: wrap;
     }
+
     .social-links a {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 44px;
-      height: 44px;
-      border-radius: 60px;
-      background: var(--glass);
-      color: var(--white);
-      font-size: 1.2rem;
-      transition: var(--transition);
-      border: 1px solid var(--glass-border);
+      width: clamp(40px, 9vw, 44px);
+      height: clamp(40px, 9vw, 44px);
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.12);
+      color: white;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      transition: all var(--transition-normal);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      text-decoration: none;
     }
+
     .social-links a:hover {
       background: var(--secondary);
-      transform: translateY(-6px) scale(1.1);
-      color: var(--primary-dark);
+      transform: translateY(-4px) scale(1.08);
+      color: var(--primary);
+      border-color: var(--secondary);
     }
+
     .footer-bottom {
       text-align: center;
-      margin-top: 30px;
-      padding-top: 30px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      font-size: 0.95rem;
-      opacity: 0.8;
+      margin-top: clamp(2rem, 4vw, 3rem);
+      padding-top: clamp(1.25rem, 2.5vw, 1.75rem);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: clamp(0.85rem, 2vw, 0.95rem);
+      opacity: 0.85;
+      line-height: 1.6;
     }
 
-    /* ===== CULTURAL DIVIDER ===== */
-    .cultural-divider {
-      height: 4px;
-      background: linear-gradient(90deg,
-        var(--primary) 0%,
-        var(--secondary) 30%,
-        var(--cultural-accent) 50%,
-        var(--secondary) 70%,
-        var(--primary) 100%);
-      margin: 60px auto;
-      border-radius: 4px;
-      max-width: 1300px;
-      opacity: 0.6;
+    .footer-bottom p { margin: 0.25rem 0; }
+
+    /* ===== WHATSAPP FLOAT BUTTON ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: clamp(1rem, 3vw, 1.5rem);
+      right: clamp(1rem, 3vw, 1.5rem);
+      background: linear-gradient(135deg, var(--whatsapp) 0%, var(--whatsapp-hover) 100%);
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: clamp(0.5rem, 1.5vw, 0.75rem);
+      padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 2.5vw, 1.75rem);
+      border-radius: var(--radius-full);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+      z-index: 998;
+      transition: all var(--transition-normal);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      font-weight: 600;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+      max-width: calc(100vw - 2rem);
     }
 
-    /* ===== RESPONSIVE ===== */
+    .whatsapp-float i {
+      font-size: clamp(1.4rem, 3.5vw, 1.75rem);
+      animation: pulse 2.5s infinite;
+      flex-shrink: 0;
+    }
+
+    .whatsapp-float span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
+      background: linear-gradient(135deg, var(--whatsapp-hover) 0%, var(--whatsapp) 100%);
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.12); }
+    }
+
+    /* ===== RESPONSIVE BREAKPOINTS ===== */
+    
+    /* Tablet & Small Desktop */
+    @media (max-width: 1024px) {
+      :root {
+        --header-height: 68px;
+        --nav-sticky-offset: 84px;
+      }
+    }
+
+    /* Mobile - Menu Toggle */
     @media (max-width: 880px) {
       .menu-toggle {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         order: 3;
       }
-      .nav-right {
-        order: 2;
-      }
+
       nav ul {
-        position: absolute;
-        top: 76px;
+        position: fixed;
+        top: var(--header-height);
         left: 0;
         right: 0;
         background: var(--primary);
         flex-direction: column;
-        padding: 25px 0;
+        padding: clamp(1rem, 3vw, 1.5rem);
         display: none;
-        z-index: 100;
-        border-top: 1px solid rgba(255,255,255,0.1);
-        backdrop-filter: blur(12px);
-        gap: 16px;
+        z-index: 999;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(16px);
+        gap: clamp(0.5rem, 2vw, 1rem);
+        animation: slideDown 0.3s ease;
       }
+
       nav ul.active {
         display: flex;
       }
+
+      @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
       nav ul li {
         text-align: center;
+        width: 100%;
       }
+
       nav ul li a {
-        font-size: 1.1rem;
+        display: block;
+        padding: clamp(0.75rem, 2vw, 1rem);
+        font-size: clamp(1rem, 2.5vw, 1.1rem);
+        border-radius: var(--radius-sm);
+      }
+
+      nav ul li a::after {
+        display: none;
+      }
+
+      nav ul li a:hover,
+      nav ul li a.active {
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      .internal-nav {
+        top: calc(var(--header-height) + 8px);
+        --nav-sticky-offset: calc(var(--header-height) + 16px);
+      }
+
+      .internal-nav ul {
+        justify-content: flex-start;
+        padding: 0.25rem 0;
+      }
+
+      .internal-nav a {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    /* Mobile - General Adjustments */
+    @media (max-width: 768px) {
+      :root {
+        --header-height: 64px;
+        --nav-sticky-offset: 140px;
+      }
+
+      .page-header {
+        padding: clamp(3rem, 12vw, 5rem) 1rem clamp(2rem, 8vw, 3rem);
+        min-height: 260px;
+      }
+
+      .page-header h1 {
+        font-size: clamp(1.6rem, 5vw, 2.2rem);
+      }
+
+      .section {
+        padding: clamp(1.5rem, 4vw, 2.25rem);
+      }
+
+      .section h2 {
+        font-size: clamp(1.4rem, 4vw, 1.9rem);
+      }
+
+      .school-image {
+        max-height: clamp(180px, 30vw, 250px);
+      }
+
+      .vision-box {
+        font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+        padding: clamp(1rem, 2.5vw, 1.25rem);
+      }
+
+      .mission-card h4 {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+      }
+
+      .structure-table th,
+      .structure-table td {
+        padding: clamp(0.625rem, 2vw, 0.75rem);
+        font-size: clamp(0.85rem, 2vw, 0.9rem);
+      }
+
+      .structure-table th {
         white-space: normal;
       }
-      .page-header h1 { font-size: 2.2rem; }
-      .internal-nav a {
-        padding: 10px 16px;
+
+      .whatsapp-float {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.625rem 1rem;
+      }
+
+      .whatsapp-float span {
+        display: none;
+      }
+
+      .whatsapp-float {
+        width: clamp(50px, 12vw, 56px);
+        height: clamp(50px, 12vw, 56px);
+        padding: 0;
+        justify-content: center;
+        border-radius: var(--radius-full);
+      }
+
+      .whatsapp-float i {
+        font-size: clamp(1.5rem, 4vw, 1.8rem);
+        animation: none;
+      }
+    }
+
+    /* Small Mobile */
+    @media (max-width: 480px) {
+      :root {
+        --header-height: 60px;
+        --nav-sticky-offset: 130px;
+      }
+
+      .brand span {
+        display: none;
+      }
+
+      .brand img {
+        width: 40px;
+      }
+
+      .page-header h1 {
+        font-size: clamp(1.4rem, 5.5vw, 1.9rem);
+      }
+
+      .breadcrumb {
         font-size: 0.9rem;
       }
-      .mission-cards { grid-template-columns: 1fr; }
-      .sarpras-grid { grid-template-columns: 1fr; }
-    }
 
-    @media (max-width: 768px) {
-      .page-header { padding: 80px 20px 60px; min-height: 300px; }
-      .page-header h1 { font-size: 2rem; }
-      .container { padding: 0 20px; }
-      .section { padding: 35px 25px; }
-      .section h2 { font-size: 1.8rem; }
-      .school-image { max-height: 250px; }
-      .whatsapp-float {
-        bottom: 20px;
-        right: 20px;
-        padding: 12px 20px;
+      .internal-nav {
+        padding: 0.5rem;
+        margin-top: -2rem;
       }
-      .whatsapp-float span { display: none; }
-      .whatsapp-float i { font-size: 32px; }
-    }
 
-    @media (max-width: 480px) {
-      .brand span { display: none; }
-      .brand img { width: 44px; }
-      .page-header h1 { font-size: 1.8rem; }
-      .internal-nav { padding: 10px; }
-      .internal-nav ul { flex-direction: column; gap: 8px; }
-      .internal-nav a { width: 100%; padding: 10px; }
-      .section { padding: 30px 20px; }
-      .section h2 { font-size: 1.6rem; }
-      .school-image { max-height: 200px; }
-      .whatsapp-float {
-        bottom: 15px;
-        right: 15px;
-        padding: 8px;
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
+      .internal-nav a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+      }
+
+      .section {
+        padding: clamp(1.25rem, 4vw, 1.75rem);
+      }
+
+      .section-title {
+        margin-bottom: 1.25rem;
+      }
+
+      .mission-cards,
+      .sarpras-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-section a {
         justify-content: center;
       }
-      .whatsapp-float i { font-size: 24px; }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .back-home a {
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+      }
+    }
+
+    /* Ultra Small Mobile */
+    @media (max-width: 360px) {
+      .internal-nav ul {
+        gap: 0.125rem;
+      }
+
+      .internal-nav a {
+        padding: 0.35rem 0.6rem;
+        font-size: 0.75rem;
+      }
+
+      .section h2 {
+        font-size: 1.3rem;
+      }
+
+      .vision-box::before {
+        font-size: 3rem;
+        top: -5px;
+      }
+    }
+
+    /* ===== ACCESSIBILITY ===== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      
+      html { scroll-behavior: auto; }
+    }
+
+    /* High Contrast Mode Support */
+    @media (prefers-contrast: high) {
+      :root {
+        --border-color: rgba(0, 0, 0, 0.4);
+        --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+      }
+      
+      .dark-mode {
+        --border-color: rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    /* Focus States for Keyboard Navigation */
+    a:focus-visible,
+    button:focus-visible,
+    .dark-mode-toggle:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: var(--radius-sm);
+    }
+
+    /* Print Styles */
+    @media print {
+      header, footer, .whatsapp-float, .internal-nav, .back-home {
+        display: none !important;
+      }
+      
+      body {
+        background: white;
+        color: black;
+        font-size: 11pt;
+      }
+      
+      .section {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+      }
     }
   </style>
 </head>
@@ -782,42 +1300,49 @@
 <body>
 
 <!-- PRELOADER -->
-<div id="preloader">
-  <div class="spinner"></div>
+<div id="preloader" role="status" aria-label="Loading">
+  <div class="spinner" aria-hidden="true"></div>
 </div>
 
 <!-- WHATSAPP FLOAT BUTTON -->
 <a href="https://wa.me/6282319712420?text=Halo%20saya%20ingin%20bertanya%20tentang%20SMAN%201%20Cluring"
-class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-<i class="fab fa-whatsapp"></i>
-<span>Chat Admin</span>
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener noreferrer"
+   aria-label="Chat dengan Admin via WhatsApp">
+  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  <span>Chat Admin</span>
 </a>
 
 <!-- HEADER -->
 <header data-aos="fade-down">
   <div class="nav-container">
     <a href="index.html" class="brand">
-      <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring">
+      <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring" width="52" height="52">
       <span>SMAN 1 CLURING</span>
     </a>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+    
     <div class="nav-right">
       <nav>
-        <ul id="navMenu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="profil.html">Profil</a></li>
-          <li><a href="akademik.html">Akademik</a></li>
-          <li><a href="kesiswaan.html">Kesiswaan</a></li>
-          <li><a href="sarpras.html">Sarpras</a></li>
-          <li><a href="humas.html">Humas</a></li>
-          <li><a href="mitra.html">Mitra</a></li>
-          <li><a href="alumni.html">Alumni</a></li>
-          <li><a href="artikel.html">Artikel</a></li>
-          <li><a href="#kontak">Kontak</a></li>
-          <li style="display: flex; align-items: center;">
+        <ul id="navMenu" role="menubar">
+          <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+          <li role="none"><a href="profil.html" role="menuitem" class="active">Profil</a></li>
+          <li role="none"><a href="akademik.html" role="menuitem">Akademik</a></li>
+          <li role="none"><a href="kesiswaan.html" role="menuitem">Kesiswaan</a></li>
+          <li role="none"><a href="sarpras.html" role="menuitem">Sarpras</a></li>
+          <li role="none"><a href="humas.html" role="menuitem">Humas</a></li>
+          <li role="none"><a href="mitra.html" role="menuitem">Mitra</a></li>
+          <li role="none"><a href="alumni.html" role="menuitem">Alumni</a></li>
+          <li role="none"><a href="artikel.html" role="menuitem">Artikel</a></li>
+          <li role="none"><a href="#kontak" role="menuitem">Kontak</a></li>
+          <li role="none" style="display: flex; align-items: center;">
             <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
-              <i class="fas fa-moon"></i>
-              <i class="fas fa-sun sun"></i>
+              <i class="fas fa-moon" aria-hidden="true"></i>
+              <i class="fas fa-sun" aria-hidden="true"></i>
             </button>
           </li>
         </ul>
@@ -829,30 +1354,35 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <!-- PAGE HEADER -->
 <section class="page-header" data-aos="zoom-in">
   <h1 data-aos="fade-up">Profil Sekolah</h1>
-  <div class="breadcrumb" data-aos="fade-up" data-aos-delay="100">
-    <a href="index.html">Beranda</a> / Profil Sekolah
-  </div>
+  <nav class="breadcrumb" aria-label="Breadcrumb" data-aos="fade-up" data-aos-delay="100">
+    <a href="index.html">Beranda</a> / <span aria-current="page">Profil Sekolah</span>
+  </nav>
 </section>
 
-<!-- INTERNAL NAVIGATION -->
-<nav class="internal-nav" data-aos="fade-down">
+<!-- INTERNAL NAVIGATION - SMART STICKY -->
+<nav class="internal-nav" data-aos="fade-down" aria-label="Section navigation">
   <ul>
-    <li><a href="#sejarah" class="nav-link active" data-aos="fade-up" data-aos-delay="100">Sejarah Sekolah</a></li>
-    <li><a href="#visimisi" class="nav-link" data-aos="fade-up" data-aos-delay="200">Visi dan Misi</a></li>
-    <li><a href="#struktur" class="nav-link" data-aos="fade-up" data-aos-delay="300">Struktur Organisasi</a></li>
-    <li><a href="#sarpras" class="nav-link" data-aos="fade-up" data-aos-delay="400">Sarana Prasarana</a></li>
+    <li><a href="#sejarah" class="nav-link active" data-section="sejarah">📜 Sejarah</a></li>
+    <li><a href="#visimisi" class="nav-link" data-section="visimisi">🎯 Visi Misi</a></li>
+    <li><a href="#struktur" class="nav-link" data-section="struktur">👥 Struktur</a></li>
+    <li><a href="#sarpras" class="nav-link" data-section="sarpras">🏫 Sarpras</a></li>
   </ul>
 </nav>
 
-<!-- CONTENT -->
-<section class="container">
+<!-- MAIN CONTENT -->
+<main class="container">
 
   <!-- SEJARAH SEKOLAH -->
-  <div class="section" id="sejarah" data-aos="fade-up">
-    <h2><i class="fas fa-history"></i> Sejarah Sekolah</h2>
+  <section class="section" id="sejarah" data-aos="fade-up">
+    <h2 class="section-title"><i class="fas fa-history" aria-hidden="true"></i> Sejarah Sekolah</h2>
     
     <div class="school-image-container" data-aos="zoom-in">
-      <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring" class="school-image">
+      <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" 
+           alt="Logo resmi SMAN 1 Cluring Banyuwangi" 
+           class="school-image"
+           width="400" 
+           height="400"
+           loading="lazy">
     </div>
     
     <p data-aos="fade-up" data-aos-delay="100">
@@ -864,272 +1394,249 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
     <p data-aos="fade-up" data-aos-delay="300">
       Berlokasi strategis di Jalan Huzaini, Benculuk, Cluring, sekolah ini memiliki akses yang mudah dan lingkungan yang kondusif untuk kegiatan belajar mengajar. Dengan dukungan fasilitas yang memadai dan tenaga pendidik yang profesional, SMAN 1 Cluring siap melahirkan lulusan-lulusan terbaik untuk kemajuan bangsa.
     </p>
-  </div>
+  </section>
 
-  <div class="cultural-divider" data-aos="fade-in"></div>
+  <div class="cultural-divider" data-aos="fade-in" aria-hidden="true"></div>
 
   <!-- VISI DAN MISI -->
-  <div class="section" id="visimisi" data-aos="fade-up">
-    <h2><i class="fas fa-bullseye"></i> Visi dan Misi</h2>
+  <section class="section" id="visimisi" data-aos="fade-up">
+    <h2 class="section-title"><i class="fas fa-bullseye" aria-hidden="true"></i> Visi dan Misi</h2>
     
-    <h3><i class="fas fa-eye"></i> Visi Satuan Pendidikan</h3>
-    <div class="vision-box" data-aos="fade-left">
-      "Mewujudkan peserta didik yang berprestasi, berkarakter, berlandaskan IMTAQ dan berwawasan lingkungan."
-    </div>
+    <h3><i class="fas fa-eye" aria-hidden="true"></i> Visi Satuan Pendidikan</h3>
+    <blockquote class="vision-box" data-aos="fade-left" cite="#visi">
+      Mewujudkan peserta didik yang berprestasi, berkarakter, berlandaskan IMTAQ dan berwawasan lingkungan.
+    </blockquote>
 
-    <h3><i class="fas fa-flag"></i> Misi Satuan Pendidikan</h3>
+    <h3><i class="fas fa-flag" aria-hidden="true"></i> Misi Satuan Pendidikan</h3>
     <p data-aos="fade-right">
       Untuk mewujudkan visi tersebut, sekolah melaksanakan langkah-langkah strategis melalui misi berikut:
     </p>
 
     <div class="mission-cards">
       <!-- MISI 1 -->
-      <div class="mission-card" data-aos="flip-up" data-aos-delay="100">
-        <h4><i class="fas fa-mosque"></i> 1. Mewujudkan Peserta Didik yang Ber-IMTAQ</h4>
-        <ul class="list">
-          <li>Mengawali dan mengakhiri kegiatan pembelajaran dengan senyum, salam, dan doa.</li>
-          <li>Melaksanakan pembiasaan ibadah sesuai agama dan kepercayaan masing-masing.</li>
-          <li>Menyelenggarakan peringatan hari besar keagamaan.</li>
-          <li>Menjalankan program Siswa Asuh Sebaya (SAS).</li>
-          <li>Membiasakan siswa untuk bersedekah (<em>bersodaqoh</em>).</li>
-          <li>Menyelenggarakan salat Jumat di masjid sekolah.</li>
-          <li>Melaksanakan salat Dhuha bersama terjadwal.</li>
-          <li>Salat Dzuhur dan Ashar berjamaah.</li>
-          <li>Ibadah puasa dan Pondok Ramadhan tertib & khusyuk.</li>
+      <article class="mission-card" data-aos="flip-up" data-aos-delay="100">
+        <h4><i class="fas fa-mosque" aria-hidden="true"></i> 1. Peserta Didik Ber-IMTAQ</h4>
+        <ul>
+          <li>Mengawali & mengakhiri pembelajaran dengan senyum, salam, doa</li>
+          <li>Pembiasaan ibadah sesuai agama masing-masing</li>
+          <li>Peringatan hari besar keagamaan</li>
+          <li>Program Siswa Asuh Sebaya (SAS)</li>
+          <li>Budaya bersedekah & salat berjamaah</li>
+          <li>Salat Dhuha, Dzuhur, Ashar terjadwal</li>
+          <li>Pondok Ramadhan yang khusyuk</li>
         </ul>
-      </div>
+      </article>
 
       <!-- MISI 2 -->
-      <div class="mission-card" data-aos="flip-up" data-aos-delay="200">
-        <h4><i class="fas fa-trophy"></i> 2. Mewujudkan Prestasi Akademik dan Nonakademik</h4>
-        <ul class="list">
-          <li>Menerapkan pembelajaran berdiferensiasi.</li>
-          <li>Melaksanakan PAIKEM, STEAM, HOTS.</li>
-          <li>Try Out & latihan soal USP, PSAJ, BKS, TOBK.</li>
-          <li>Mengikutsertakan siswa lomba kabupaten s.d. nasional.</li>
-          <li>Pembinaan ekstrakurikuler efektif & kreatif.</li>
-          <li>Pengelompokan siswa bakat, minat, rencana karir.</li>
-          <li>Pembimbingan Karya Tulis Ilmiah (KTI).</li>
+      <article class="mission-card" data-aos="flip-up" data-aos-delay="200">
+        <h4><i class="fas fa-trophy" aria-hidden="true"></i> 2. Prestasi Akademik & Nonakademik</h4>
+        <ul>
+          <li>Pembelajaran berdiferensiasi & PAIKEM</li>
+          <li>Implementasi STEAM & HOTS</li>
+          <li>Try Out & latihan soal USP, PSAJ, BKS</li>
+          <li>Pengembangan bakat melalui lomba</li>
+          <li>Ekstrakurikuler efektif & kreatif</li>
+          <li>Pemetaan minat, bakat, dan rencana karir</li>
+          <li>Pembimbingan Karya Tulis Ilmiah</li>
         </ul>
-      </div>
+      </article>
 
       <!-- MISI 3 -->
-      <div class="mission-card" data-aos="flip-up" data-aos-delay="300">
-        <h4><i class="fas fa-heart"></i> 3. Mewujudkan Karakter Positif dalam Sikap dan Perilaku</h4>
-        <ul class="list">
-          <li>Mengembangkan PPK (Penguatan Pendidikan Karakter).</li>
-          <li>Penyambutan siswa di gerbang sekolah.</li>
-          <li>Pelaksanaan PSE (Pembelajaran Sosial & Emosional).</li>
-          <li>Membiasakan 5S: Salam, Senyum, Sapa, Sopan, Santun.</li>
-          <li>Membaca Asmaul Husna sebelum KBM.</li>
-          <li>Menyanyikan Indonesia Raya, Mars Smaring, lagu nasional/daerah.</li>
-          <li>Literasi: Smaring Gemar Membaca (SGM).</li>
-          <li>Peduli lingkungan: membuang sampah di tempatnya.</li>
-          <li>Program Jumat Bersih rutin.</li>
-          <li>Bakti sosial ke masyarakat sekitar.</li>
+      <article class="mission-card" data-aos="flip-up" data-aos-delay="300">
+        <h4><i class="fas fa-heart" aria-hidden="true"></i> 3. Karakter Positif</h4>
+        <ul>
+          <li>Penguatan Pendidikan Karakter (PPK)</li>
+          <li>5S: Salam, Senyum, Sapa, Sopan, Santun</li>
+          <li>Pembelajaran Sosial & Emosional (PSE)</li>
+          <li>Literasi: Smaring Gemar Membaca</li>
+          <li>Peduli lingkungan & Jumat Bersih</li>
+          <li>Bakti sosial ke masyarakat</li>
         </ul>
-      </div>
+      </article>
 
       <!-- MISI 4 -->
-      <div class="mission-card" data-aos="flip-up" data-aos-delay="400">
-        <h4><i class="fas fa-leaf"></i> 4. Mewujudkan Wawasan dan Kepedulian terhadap Lingkungan</h4>
-        <ul class="list">
-          <li>Sekolah peduli, berbudaya, dan berwawasan lingkungan.</li>
-          <li>Membangun lingkungan berkelanjutan.</li>
-          <li>Mengurangi emisi karbon:</li>
-          <li style="margin-left: 20px;">• Mematikan mesin kendaraan di lingkungan sekolah.</li>
-          <li style="margin-left: 20px;">• Penghijauan lingkungan sekolah.</li>
+      <article class="mission-card" data-aos="flip-up" data-aos-delay="400">
+        <h4><i class="fas fa-leaf" aria-hidden="true"></i> 4. Peduli Lingkungan</h4>
+        <ul>
+          <li>Sekolah berbudaya lingkungan</li>
+          <li>Pembangunan berkelanjutan</li>
+          <li>Reduksi emisi karbon:</li>
+          <li style="margin-left: 1.2rem;">• Matikan mesin di area sekolah</li>
+          <li style="margin-left: 1.2rem;">• Program penghijauan aktif</li>
         </ul>
-      </div>
+      </article>
     </div>
-  </div>
+  </section>
 
-  <div class="cultural-divider" data-aos="fade-in"></div>
+  <div class="cultural-divider" data-aos="fade-in" aria-hidden="true"></div>
 
   <!-- STRUKTUR ORGANISASI -->
-  <div class="section" id="struktur" data-aos="fade-up">
-    <h2><i class="fas fa-sitemap"></i> Struktur Organisasi</h2>
+  <section class="section" id="struktur" data-aos="fade-up">
+    <h2 class="section-title"><i class="fas fa-sitemap" aria-hidden="true"></i> Struktur Organisasi</h2>
     <p data-aos="fade-right">
-      Struktur organisasi SMAN 1 Cluring dirancang untuk mendukung efektivitas dan efisiensi penyelenggaraan pendidikan. Setiap posisi memiliki peran dan tanggung jawab yang jelas dalam mencapai tujuan sekolah.
+      Struktur organisasi SMAN 1 Cluring dirancang untuk mendukung efektivitas dan efisiensi penyelenggaraan pendidikan. Setiap posisi memiliki peran dan tanggung jawab yang jelas.
     </p>
 
     <!-- KEPEMIMPINAN -->
     <div class="structure-category" data-aos="fade-left">
-      <i class="fas fa-user-tie"></i> Kepemimpinan
+      <i class="fas fa-user-tie" aria-hidden="true"></i> Kepemimpinan
     </div>
-    <table class="structure-table" data-aos="fade-up">
-      <tr>
-        <th>Jabatan</th>
-        <th>Nama</th>
-      </tr>
-      <tr>
-        <td><strong>Kepala Satuan Pendidikan</strong></td>
-        <td>HELMI, S.Pd, M.Si</td>
-      </tr>
-      <tr>
-        <td><strong>Wakil Kepala Satuan Pendidikan Bidang Kurikulum</strong></td>
-        <td>SISWO HARININGSIH, S.Pd.</td>
-      </tr>
-      <tr>
-        <td><strong>Wakil Kepala Satuan Pendidikan Bidang Kesiswaan</strong></td>
-        <td>Drs. MAKHRUS</td>
-      </tr>
-      <tr>
-        <td><strong>Wakil Kepala Satuan Pendidikan Bidang Sarana Prasarana</strong></td>
-        <td>ALI MUTHOHAR, S.Pd.</td>
-      </tr>
-      <tr>
-        <td><strong>Wakil Kepala Satuan Pendidikan Bidang Humas</strong></td>
-        <td>MOH. SUHARSO, S.Pd.</td>
-      </tr>
-    </table>
+    <div style="overflow-x: auto; border-radius: var(--radius-sm);">
+      <table class="structure-table" data-aos="fade-up">
+        <thead>
+          <tr>
+            <th scope="col">Jabatan</th>
+            <th scope="col">Nama</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Kepala Satuan Pendidikan</strong></td><td>HELMI, S.Pd, M.Si</td></tr>
+          <tr><td><strong>Waka Kurikulum</strong></td><td>SISWO HARININGSIH, S.Pd.</td></tr>
+          <tr><td><strong>Waka Kesiswaan</strong></td><td>Drs. MAKHRUS</td></tr>
+          <tr><td><strong>Waka Sarpras</strong></td><td>ALI MUTHOHAR, S.Pd.</td></tr>
+          <tr><td><strong>Waka Humas</strong></td><td>MOH. SUHARSO, S.Pd.</td></tr>
+        </tbody>
+      </table>
+    </div>
 
     <!-- TENAGA KEPENDIDIKAN -->
-    <div class="structure-category" style="margin-top: 30px;" data-aos="fade-left">
-      <i class="fas fa-users"></i> Tenaga Kependidikan
+    <div class="structure-category" data-aos="fade-left">
+      <i class="fas fa-users" aria-hidden="true"></i> Tenaga Kependidikan
     </div>
-    <table class="structure-table" data-aos="fade-up">
-      <tr>
-        <th>Jabatan</th>
-        <th>Nama</th>
-      </tr>
-      <tr>
-        <td><strong>Kepala Tata Usaha</strong></td>
-        <td>ADISTI RUSMITA</td>
-      </tr>
-      <tr>
-        <td><strong>Staf Administrasi</strong></td>
-        <td>ERLINA NOVITASARI, S.Pd.</td>
-      </tr>
-      <tr>
-        <td><strong>Pustakawan</strong></td>
-        <td>MUKHLISIN</td>
-      </tr>
-      <tr>
-        <td><strong>Operator Sekolah</strong></td>
-        <td>ZENIFA FAIRUS MAULIDYA,A.Md</td>
-      </tr>
-      <tr>
-        <td><strong>Tenaga Kebersihan dan Keamanan</strong></td>
-        <td>AHMAD AFID DAN SUROTO</td>
-      </tr>
-    </table>
+    <div style="overflow-x: auto; border-radius: var(--radius-sm);">
+      <table class="structure-table" data-aos="fade-up">
+        <thead>
+          <tr>
+            <th scope="col">Jabatan</th>
+            <th scope="col">Nama</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Kepala Tata Usaha</strong></td><td>ADISTI RUSMITA</td></tr>
+          <tr><td><strong>Staf Administrasi</strong></td><td>ERLINA NOVITASARI, S.Pd.</td></tr>
+          <tr><td><strong>Pustakawan</strong></td><td>MUKHLISIN</td></tr>
+          <tr><td><strong>Operator Sekolah</strong></td><td>ZENIFA FAIRUS MAULIDYA, A.Md</td></tr>
+          <tr><td><strong>Kebersihan & Keamanan</strong></td><td>AHMAD AFID & SUROTO</td></tr>
+        </tbody>
+      </table>
+    </div>
 
     <!-- DEWAN GURU -->
-    <div class="structure-category" style="margin-top: 30px;" data-aos="fade-left">
-      <i class="fas fa-chalkboard-teacher"></i> Dewan Guru
+    <div class="structure-category" data-aos="fade-left">
+      <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i> Dewan Guru
     </div>
-    <p style="margin-top: 15px;" data-aos="fade-up">
+    <p data-aos="fade-up">
       Terdiri dari guru-guru profesional yang kompeten di bidangnya masing-masing, dengan latar belakang pendidikan S1 dan S2 dari berbagai universitas ternama di Indonesia.
     </p>
-  </div>
+  </section>
 
-  <div class="cultural-divider" data-aos="fade-in"></div>
+  <div class="cultural-divider" data-aos="fade-in" aria-hidden="true"></div>
 
   <!-- SARANA DAN PRASARANA -->
-  <div class="section" id="sarpras" data-aos="fade-up">
-    <h2><i class="fas fa-building"></i> Sarana dan Prasarana</h2>
+  <section class="section" id="sarpras" data-aos="fade-up">
+    <h2 class="section-title"><i class="fas fa-building" aria-hidden="true"></i> Sarana dan Prasarana</h2>
     <p data-aos="fade-right">
-      SMAN 1 Cluring dilengkapi dengan sarana dan prasarana yang memadai untuk mendukung proses pembelajaran yang efektif dan menyenangkan. Fasilitas sekolah terus dikembangkan sesuai dengan kebutuhan pendidikan modern.
+      SMAN 1 Cluring dilengkapi dengan sarana dan prasarana yang memadai untuk mendukung proses pembelajaran yang efektif dan menyenangkan.
     </p>
 
     <div class="sarpras-grid">
-      <div class="sarpras-card" data-aos="zoom-in" data-aos-delay="100">
-        <i class="fas fa-school"></i>
+      <article class="sarpras-card" data-aos="zoom-in" data-aos-delay="100">
+        <i class="fas fa-school" aria-hidden="true"></i>
         <h4>Ruang Kelas</h4>
-        <p>Dilengkapi Smart TV, sound system, dan meja belajar yang nyaman.</p>
-      </div>
+        <p>Smart TV, sound system, dan meja belajar ergonomis untuk kenyamanan belajar.</p>
+      </article>
 
-      <div class="sarpras-card" data-aos="zoom-in" data-aos-delay="200">
-        <i class="fas fa-flask"></i>
+      <article class="sarpras-card" data-aos="zoom-in" data-aos-delay="200">
+        <i class="fas fa-flask" aria-hidden="true"></i>
         <h4>Laboratorium</h4>
-        <p>Lab IPA, Komputer, dan Bahasa dengan peralatan lengkap dan modern.</p>
-      </div>
+        <p>Lab IPA, Komputer, dan Bahasa dengan peralatan modern dan terawat.</p>
+      </article>
 
-      <div class="sarpras-card" data-aos="zoom-in" data-aos-delay="300">
-        <i class="fas fa-book"></i>
+      <article class="sarpras-card" data-aos="zoom-in" data-aos-delay="300">
+        <i class="fas fa-book" aria-hidden="true"></i>
         <h4>Perpustakaan</h4>
-        <p>Koleksi buku lengkap, ruang baca nyaman, dan akses internet gratis.</p>
-      </div>
+        <p>Koleksi buku lengkap, ruang baca nyaman, dan akses digital gratis.</p>
+      </article>
 
-      <div class="sarpras-card" data-aos="zoom-in" data-aos-delay="400">
-        <i class="fas fa-dumbbell"></i>
+      <article class="sarpras-card" data-aos="zoom-in" data-aos-delay="400">
+        <i class="fas fa-dumbbell" aria-hidden="true"></i>
         <h4>Lapangan Olahraga</h4>
         <p>Lapangan basket, volley, futsal, dan atletik yang representatif.</p>
-      </div>
+      </article>
 
-      <div class="sarpras-card" data-aos="zoom-in" data-aos-delay="500">
-        <i class="fas fa-utensils"></i>
+      <article class="sarpras-card" data-aos="zoom-in" data-aos-delay="500">
+        <i class="fas fa-utensils" aria-hidden="true"></i>
         <h4>Kantin Sehat</h4>
-        <p>Menyediakan makanan bergizi dengan harga terjangkau.</p>
-      </div>
+        <p>Menu bergizi, higienis, dan harga terjangkau untuk siswa.</p>
+      </article>
 
-      <div class="sarpras-card" data-aos="zoom-in" data-aos-delay="600">
-        <i class="fas fa-wifi"></i>
+      <article class="sarpras-card" data-aos="zoom-in" data-aos-delay="600">
+        <i class="fas fa-wifi" aria-hidden="true"></i>
         <h4>Internet & WiFi</h4>
-        <p>Akses internet cepat di seluruh area sekolah untuk mendukung pembelajaran digital.</p>
-      </div>
+        <p>Akses internet cepat di seluruh area untuk pembelajaran digital.</p>
+      </article>
     </div>
 
     <div class="info-box" data-aos="fade-up">
-      <p>
-        <i class="fas fa-info-circle" style="margin-right: 10px;"></i>
-        Seluruh sarana dan prasarana sekolah terus dikembangkan dan diperbarui untuk mendukung implementasi Kurikulum Merdeka dan pembelajaran abad ke-21.
-      </p>
+      <i class="fas fa-info-circle" aria-hidden="true"></i>
+      <p>Seluruh sarana terus dikembangkan untuk mendukung Kurikulum Merdeka dan pembelajaran abad ke-21.</p>
     </div>
-  </div>
+  </section>
 
   <div class="back-home" data-aos="fade-up">
     <a href="index.html">
-      <i class="fas fa-arrow-left"></i> Kembali ke Beranda
+      <i class="fas fa-arrow-left" aria-hidden="true"></i> Kembali ke Beranda
     </a>
   </div>
 
-</section>
+</main>
 
 <!-- FOOTER -->
 <footer data-aos="fade-up" id="kontak">
   <div class="footer-content">
     <div class="footer-section">
-      <h3><i class="fas fa-map-marker-alt"></i> Kontak</h3>
-      <p>Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, Jawa Timur</p>
-      <p><i class="fas fa-phone"></i> <a href="tel:+6282319712420">0823-1971-2420</a></p>
-      <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6282319712420" target="_blank">0823-1971-2420 (WA)</a></p>
+      <h3><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Kontak</h3>
+      <address style="font-style: normal; margin-bottom: 0.75rem;">
+        Jl. Huzaini, Benculuk, Cluring<br>
+        Banyuwangi, Jawa Timur
+      </address>
+      <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+6282319712420">0823-1971-2420</a></p>
+      <p><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/6282319712420" target="_blank" rel="noopener">0823-1971-2420 (WA)</a></p>
     </div>
 
     <div class="footer-section">
-      <h3><i class="fas fa-link"></i> Link Penting</h3>
+      <h3><i class="fas fa-link" aria-hidden="true"></i> Link Penting</h3>
       <ul>
-        <li><a href="https://sma.kemendikdasmen.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
-        <li><a href="https://dindik.jatimprov.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
-        <li><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas Banyuwangi</a></li>
-        <li><a href="https://alam21234.github.io/Smaring-interactive-learning-comunity" target="_blank"><i class="fas fa-external-link-alt"></i> Smaring Learning Community</a></li>
+        <li><a href="https://sma.kemendikdasmen.go.id" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Kemendikbud</a></li>
+        <li><a href="https://dindik.jatimprov.go.id" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Dindik Jatim</a></li>
+        <li><a href="https://banyuwangicab.dindikjatim.id" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Cabang Dinas</a></li>
+        <li><a href="https://alam21234.github.io/Smaring-interactive-learning-comunity" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Smaring Community</a></li>
       </ul>
     </div>
 
     <div class="footer-section">
-      <h3><i class="fas fa-flask"></i> Lab Virtual</h3>
+      <h3><i class="fas fa-flask" aria-hidden="true"></i> Lab Virtual</h3>
       <ul>
-        <li><a href="https://quran.nu.or.id" target="_blank"><i class="fas fa-book-quran"></i> Al-Qur'an Digital</a></li>
-        <li><a href="https://virtualbiologylab.org" target="_blank"><i class="fas fa-dna"></i> Virtual Biology Lab</a></li>
-        <li><a href="https://www.myphysicslab.com" target="_blank"><i class="fas fa-atom"></i> MyPhysicsLab</a></li>
+        <li><a href="https://quran.nu.or.id" target="_blank" rel="noopener"><i class="fas fa-book-quran" aria-hidden="true"></i> Al-Qur'an Digital</a></li>
+        <li><a href="https://virtualbiologylab.org" target="_blank" rel="noopener"><i class="fas fa-dna" aria-hidden="true"></i> Virtual Biology Lab</a></li>
+        <li><a href="https://www.myphysicslab.com" target="_blank" rel="noopener"><i class="fas fa-atom" aria-hidden="true"></i> MyPhysicsLab</a></li>
       </ul>
     </div>
 
     <div class="footer-section">
-      <h3><i class="fas fa-share-alt"></i> Media Sosial</h3>
+      <h3><i class="fas fa-share-alt" aria-hidden="true"></i> Media Sosial</h3>
       <div class="social-links">
-        <a href="https://www.facebook.com/Sman1Cluring" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/sman1_cluring" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://wa.me/6282319712420" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/Sman1Cluring" target="_blank" rel="noopener" aria-label="Facebook SMAN 1 Cluring"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/sman1_cluring" target="_blank" rel="noopener" aria-label="Instagram SMAN 1 Cluring"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank" rel="noopener" aria-label="YouTube SMAN 1 Cluring"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+        <a href="https://wa.me/6282319712420" target="_blank" rel="noopener" aria-label="WhatsApp Admin"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>
 
   <div class="footer-bottom">
     <p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
-    <p style="margin-top: 8px; font-size: 0.9rem; opacity: 0.8;">
+    <p style="margin-top: 0.5rem; font-size: 0.9em; opacity: 0.85;">
       Website Resmi SMAN 1 Cluring Banyuwangi
     </p>
   </div>
@@ -1138,91 +1645,213 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <!-- AOS & Custom JS -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-  // Initialize AOS
-  AOS.init({
-    duration: 800,
-    once: true,
-    easing: 'ease-out-cubic'
-  });
+  // ===== INITIALIZATION =====
+  document.addEventListener('DOMContentLoaded', () => {
+    // Initialize AOS
+    AOS.init({ 
+      duration: 700, 
+      once: true, 
+      easing: 'ease-out-cubic',
+      disable: 'mobile' // Optional: disable on mobile for performance
+    });
 
-  // Preloader
-  window.addEventListener('load', () => {
+    // Preloader
     const preloader = document.getElementById('preloader');
-    setTimeout(() => {
-      preloader.classList.add('fade-out');
-    }, 600);
-  });
+    if (preloader) {
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          preloader.classList.add('fade-out');
+          setTimeout(() => preloader.style.display = 'none', 500);
+        }, 400);
+      });
+    }
 
-  // Dark Mode Toggle
-  const darkModeToggle = document.getElementById('darkModeToggle');
-  const body = document.body;
-  
-  const isDarkMode = localStorage.getItem('darkMode') === 'true';
-  if (isDarkMode) {
-    body.classList.add('dark-mode');
-  }
-  
-  darkModeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
-  });
+    // Dark Mode
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    
+    // Check saved preference or system preference
+    const savedMode = localStorage.getItem('darkMode');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedMode === 'true' || (savedMode === null && systemPrefersDark)) {
+      body.classList.add('dark-mode');
+    }
+    
+    darkModeToggle?.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+    });
 
-  // Mobile Menu Toggle
-  function toggleMenu() {
-    document.getElementById("navMenu").classList.toggle("active");
-  }
-
-  // Smooth scrolling untuk internal navigation
-  document.querySelectorAll('.nav-link').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      // Close mobile menu if open
-      const menu = document.getElementById("navMenu");
-      menu.classList.remove("active");
-      
-      const targetId = this.getAttribute('href');
-      const target = document.querySelector(targetId);
-      
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-        
-        // Update active class
-        document.querySelectorAll('.nav-link').forEach(link => {
-          link.classList.remove('active');
-        });
-        this.classList.add('active');
+    // Listen for system preference changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if (localStorage.getItem('darkMode') === null) {
+        body.classList.toggle('dark-mode', e.matches);
       }
     });
-  });
 
-  // Update active link saat scroll
-  window.addEventListener('scroll', function() {
-    const sections = document.querySelectorAll('.section');
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.getElementById('navMenu');
+    
+    menuToggle?.addEventListener('click', () => {
+      const isActive = navMenu?.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+      menuToggle.innerHTML = isActive 
+        ? '<i class="fas fa-times" aria-hidden="true"></i>' 
+        : '<i class="fas fa-bars" aria-hidden="true"></i>';
+    });
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('#navMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navMenu?.classList.contains('active')) {
+          navMenu.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
+        }
+      });
+    });
+
+    // ===== SMART STICKY INTERNAL NAV =====
+    const internalNav = document.querySelector('.internal-nav');
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+    const scrollThreshold = 300;
+
+    function handleScroll() {
+      if (!internalNav) return;
+      
+      const currentY = window.scrollY;
+      const isAtTop = currentY < 50;
+      const isScrollingDown = currentY > lastScrollY;
+      
+      // Logic: Show at top, hide when scrolling up past threshold, show when scrolling down
+      if (isAtTop) {
+        internalNav.classList.remove('hidden', 'scrolled');
+      } else if (currentY > scrollThreshold) {
+        if (isScrollingDown) {
+          internalNav.classList.remove('hidden');
+          internalNav.classList.add('scrolled');
+        } else {
+          internalNav.classList.add('hidden');
+          internalNav.classList.remove('scrolled');
+        }
+      }
+      
+      lastScrollY = currentY;
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(handleScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // ===== SMOOTH SCROLLING & ACTIVE LINK =====
     const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.section');
     
-    let currentSection = '';
-    
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 150;
-      if (pageYOffset >= sectionTop) {
-        currentSection = section.getAttribute('id');
-      }
-    });
-    
+    // Click handler
     navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href').substring(1) === currentSection) {
-        link.classList.add('active');
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Close mobile menu
+        if (navMenu?.classList.contains('active')) {
+          navMenu.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
+        }
+        
+        const targetId = link.getAttribute('href');
+        const target = document.querySelector(targetId);
+        
+        if (target) {
+          const headerOffset = 180;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          
+          window.scrollTo({ 
+            top: offsetPosition, 
+            behavior: 'smooth' 
+          });
+          
+          // Update active state
+          navLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Scroll spy with Intersection Observer
+    const observerOptions = {
+      root: null,
+      rootMargin: '-180px 0px -50% 0px',
+      threshold: 0.1
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Reveal section animation
+          entry.target.classList.add('visible');
+          
+          // Update nav link
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.dataset.section === id || link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => {
+      sectionObserver.observe(section);
+      // Show first section immediately
+      if (section.id === 'sejarah') {
+        section.classList.add('visible');
       }
     });
-  });
 
-  // Initialize first link as active
-  document.querySelector('.nav-link[href="#sejarah"]').classList.add('active');
+    // ===== WHATSAPP BUTTON SCROLL AWARE =====
+    const whatsappBtn = document.querySelector('.whatsapp-float');
+    if (whatsappBtn) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          whatsappBtn.style.opacity = '1';
+          whatsappBtn.style.transform = 'translateY(0)';
+        } else {
+          whatsappBtn.style.opacity = '0.92';
+          whatsappBtn.style.transform = 'translateY(8px)';
+        }
+      }, { passive: true });
+    }
+
+    // ===== KEYBOARD NAVIGATION ENHANCEMENT =====
+    document.addEventListener('keydown', (e) => {
+      // Close mobile menu on Escape
+      if (e.key === 'Escape' && navMenu?.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
+        menuToggle?.focus();
+      }
+    });
+
+    // ===== PERFORMANCE: Lazy load images not in viewport =====
+    if ('loading' in HTMLImageElement.prototype) {
+      // Browser supports native lazy loading
+      document.querySelectorAll('img:not([loading])').forEach(img => {
+        img.loading = 'lazy';
+      });
+    }
+  });
 </script>
 
 </body>
