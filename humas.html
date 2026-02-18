@@ -40,8 +40,11 @@
       --white: #ffffff;
       --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       --shadow-md: 0 8px 30px rgba(0, 20, 50, 0.12);
+      --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
       --border-radius: 24px;
-      --transition: all 0.4s ease;
+      --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --glass: rgba(255, 255, 255, 0.1);
+      --glass-border: rgba(255, 255, 255, 0.2);
     }
 
     .dark-mode {
@@ -52,13 +55,11 @@
       --dark: #edf2f7;
       --gray: #a0b3c6;
       --white: #1a2533;
+      --glass: rgba(0, 0, 0, 0.25);
+      --glass-border: rgba(255, 255, 255, 0.08);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
@@ -69,377 +70,421 @@
       overflow-x: hidden;
     }
 
-    h1, h2, h3, h4 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 700;
-    }
+    h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; }
 
     /* ===== PRELOADER ===== */
     #preloader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--primary);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      opacity: 1;
-      transition: opacity 0.6s ease;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: var(--primary); z-index: 9999;
+      display: flex; justify-content: center; align-items: center;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
     }
-    #preloader.fade-out {
-      opacity: 0;
-      visibility: hidden;
-    }
+    #preloader.fade-out { opacity: 0; visibility: hidden; }
     .spinner {
-      width: 60px;
-      height: 60px;
+      width: 60px; height: 60px;
       border: 4px solid rgba(255, 255, 255, 0.1);
       border-top: 4px solid var(--secondary);
       border-right: 4px solid var(--secondary);
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-    /* ===== HEADER ===== */
+    /* ===== PREMIUM NAVIGATION ===== */
     header {
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      position: sticky; top: 0; z-index: 1000;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+    }
+    header.scrolled {
+      background: rgba(10, 42, 94, 0.95);
+      backdrop-filter: blur(12px);
+      padding: 8px 0;
     }
     .nav-container {
-      max-width: 1400px;
-      margin: auto;
-      padding: 12px 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
+      max-width: 1400px; margin: auto; padding: 12px 32px;
+      display: flex; justify-content: space-between; align-items: center; gap: 20px;
     }
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      color: var(--white);
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 1.5rem;
+      display: flex; align-items: center; gap: 16px;
+      color: var(--white); text-decoration: none;
+      font-weight: 800; font-size: 1.4rem;
+      transition: var(--transition);
     }
-    .brand img {
-      width: 52px;
-      border-radius: 12px;
-    }
+    .brand:hover { transform: scale(1.02); }
+    .brand img { width: 52px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+    
     nav ul {
-      list-style: none;
-      display: flex;
-      gap: 32px;
+      list-style: none; display: flex; gap: 8px;
+      position: relative;
     }
+    nav ul li { position: relative; }
     nav ul li a {
-      color: var(--white);
-      text-decoration: none;
-      font-weight: 500;
-      transition: opacity 0.3s;
+      color: var(--white); text-decoration: none;
+      font-weight: 500; font-size: 0.95rem;
+      padding: 12px 18px; border-radius: 12px;
+      transition: var(--transition);
+      position: relative; display: flex; align-items: center; gap: 6px;
+      opacity: 0.95;
     }
-    nav ul li a:hover {
-      opacity: 0.9;
+    nav ul li a::after {
+      content: ''; position: absolute; bottom: 6px; left: 50%;
+      width: 0; height: 3px; background: var(--accent);
+      border-radius: 2px; transition: var(--transition);
+      transform: translateX(-50%);
     }
+    nav ul li a:hover, nav ul li a.active {
+      opacity: 1; background: var(--glass);
+      transform: translateY(-2px);
+    }
+    nav ul li a:hover::after, nav ul li a.active::after { width: 70%; }
+    nav ul li a.active {
+      background: var(--secondary); color: var(--white);
+      box-shadow: 0 4px 15px rgba(158, 123, 75, 0.4);
+    }
+    nav ul li a.active::after { display: none; }
+    
+    .menu-toggle {
+      display: none; color: var(--white); font-size: 24px;
+      cursor: pointer; padding: 10px; border-radius: 12px;
+      transition: var(--transition);
+    }
+    .menu-toggle:hover { background: var(--glass); }
+    
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
     .dark-mode-toggle {
-      background: rgba(255,255,255,0.1);
-      border: none;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      color: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
+      background: var(--glass); border: 1px solid var(--glass-border);
+      width: 44px; height: 44px; border-radius: 50%;
+      color: var(--white); display: flex; align-items: center;
+      justify-content: center; cursor: pointer; transition: var(--transition);
     }
+    .dark-mode-toggle:hover { background: var(--secondary); transform: rotate(15deg); }
+    .dark-mode-toggle .fa-sun { display: none; }
+    .dark-mode .dark-mode-toggle .fa-moon { display: none; }
+    .dark-mode .dark-mode-toggle .fa-sun { display: block; }
 
-    /* ===== HERO ===== */
+    /* ===== HERO WITH OPTIMIZED IMAGE ===== */
     .hero {
-      background: linear-gradient(135deg, rgba(10,42,94,0.85) 0%, rgba(5,26,59,0.9) 100%), url('https://i.ibb.co.com/8nyH2Bbd/da3.jpg') center/cover;
+      position: relative;
       color: var(--white);
       text-align: center;
-      padding: 120px 20px 80px;
+      padding: 140px 20px 100px;
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      /* ✅ HERO IMAGE OPTIMIZED - Cover + Center + Overlay */
+      background: 
+        linear-gradient(135deg, rgba(10,42,94,0.85) 0%, rgba(5,26,59,0.92) 100%),
+        url('https://i.ibb.co.com/gMp9rBjX/Penyampaian-materi-SNP-oleh-kepala-satuan-pendidikan.jpg') 
+        center center / cover no-repeat fixed;
+      background-blend-mode: multiply;
     }
+    .hero::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(ellipse at center, transparent 0%, rgba(10,42,94,0.4) 100%);
+      pointer-events: none;
+    }
+    .hero > * { position: relative; z-index: 2; }
     .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 20px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      font-size: 3rem; margin-bottom: 20px;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      max-width: 900px; line-height: 1.3;
     }
     .hero p {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      opacity: 0.95;
+      max-width: 750px; margin: 0 auto;
+      font-size: 1.2rem; opacity: 0.98;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--secondary); color: var(--white);
+      padding: 8px 20px; border-radius: 50px;
+      font-weight: 600; font-size: 0.9rem;
+      margin-bottom: 25px; box-shadow: 0 4px 15px rgba(158,123,75,0.4);
     }
 
     /* ===== SECTION ===== */
-    .section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 80px 32px;
-    }
+    .section { max-width: 1200px; margin: auto; padding: 80px 32px; }
     .section-header {
-      text-align: center;
-      margin-bottom: 60px;
+      text-align: center; margin-bottom: 60px;
     }
     .section-header h2 {
-      color: var(--primary);
-      font-size: 2.5rem;
-      position: relative;
-      display: inline-block;
+      color: var(--primary); font-size: 2.5rem;
+      position: relative; display: inline-block;
     }
     .section-header h2::after {
-      content: '';
-      display: block;
-      width: 80px;
-      height: 5px;
+      content: ''; display: block; width: 80px; height: 5px;
       background: linear-gradient(90deg, var(--secondary) 0%, var(--accent) 100%);
-      margin: 16px auto 0;
-      border-radius: 4px;
+      margin: 16px auto 0; border-radius: 4px;
     }
 
     /* ===== INFO CARD ===== */
     .info-card {
-      background: var(--white);
-      border-radius: 24px;
-      padding: 40px;
-      box-shadow: var(--shadow);
-      margin-bottom: 40px;
-      border-left: 6px solid var(--secondary);
+      background: var(--white); border-radius: 24px;
+      padding: 40px; box-shadow: var(--shadow);
+      margin-bottom: 40px; border-left: 6px solid var(--secondary);
+      transition: var(--transition);
     }
-    .info-card h3 {
-      color: var(--primary);
-      margin-bottom: 20px;
-      font-size: 1.8rem;
-    }
-    .info-card p {
-      color: var(--gray);
-      line-height: 1.7;
-      margin-bottom: 15px;
-    }
+    .info-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+    .info-card h3 { color: var(--primary); margin-bottom: 20px; font-size: 1.8rem; }
+    .info-card p { color: var(--gray); line-height: 1.7; margin-bottom: 15px; }
 
     /* ===== ANNOUNCEMENT ===== */
     .announcement {
-      background: linear-gradient(135deg, rgba(158,123,75,0.05) 0%, rgba(199,168,84,0.02) 100%);
+      background: linear-gradient(135deg, rgba(158,123,75,0.08) 0%, rgba(199,168,84,0.03) 100%);
       border-left: 6px solid var(--secondary);
-      padding: 25px;
-      border-radius: 0 16px 16px 0;
-      margin: 25px 0;
+      padding: 25px 30px; border-radius: 0 20px 20px 0;
+      margin: 25px 0; transition: var(--transition);
+      border-right: 1px solid rgba(158,123,75,0.1);
     }
-    .announcement h4 {
-      color: var(--primary);
-      margin-bottom: 10px;
-      font-size: 1.3rem;
-    }
-    .announcement p {
-      color: var(--gray);
-      line-height: 1.6;
-    }
+    .announcement:hover { transform: translateX(5px); background: linear-gradient(135deg, rgba(158,123,75,0.12) 0%, rgba(199,168,84,0.06) 100%); }
+    .announcement h4 { color: var(--primary); margin-bottom: 10px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+    .announcement p { color: var(--gray); line-height: 1.6; margin: 0; }
 
     /* ===== DOWNLOAD LIST ===== */
     .download-list {
-      background: var(--white);
-      padding: 30px;
+      background: var(--white); padding: 30px;
       border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      margin: 30px 0;
+      box-shadow: var(--shadow); margin: 30px 0;
     }
     .download-item {
-      padding: 15px 0;
-      border-bottom: 1px solid #eee;
-      display: flex;
-      align-items: center;
-      gap: 15px;
+      padding: 18px 20px; border-bottom: 1px solid #eee;
+      display: flex; align-items: center; gap: 18px;
+      transition: var(--transition); border-radius: 12px;
     }
-    .download-item:last-child {
-      border-bottom: none;
-    }
-    .download-item i {
-      color: var(--primary);
-      font-size: 1.5rem;
-    }
+    .download-item:last-child { border-bottom: none; }
+    .download-item:hover { background: var(--light); transform: translateX(8px); }
+    .download-item i { color: var(--primary); font-size: 1.5rem; width: 24px; text-align: center; }
     .download-item a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
-      transition: var(--transition);
+      color: var(--primary); text-decoration: none;
+      font-weight: 600; transition: var(--transition); flex: 1;
     }
-    .download-item a:hover {
-      color: var(--secondary);
-      text-decoration: underline;
+    .download-item a:hover { color: var(--secondary); }
+    .download-item .badge {
+      background: var(--secondary); color: white;
+      padding: 4px 12px; border-radius: 20px;
+      font-size: 0.75rem; font-weight: 600;
     }
 
     /* ===== CONTACT INFO ===== */
     .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px; margin-top: 40px;
     }
     .contact-card {
-      background: var(--white);
-      padding: 30px;
+      background: var(--white); padding: 35px 30px;
       border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      text-align: center;
+      box-shadow: var(--shadow); text-align: center;
       transition: var(--transition);
       border: 1px solid rgba(158,123,75,0.1);
+      position: relative; overflow: hidden;
+    }
+    .contact-card::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+      background: linear-gradient(90deg, var(--secondary), var(--accent));
+      transform: scaleX(0); transition: transform 0.4s ease;
+      transform-origin: left;
     }
     .contact-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-md);
+      transform: translateY(-10px); box-shadow: var(--shadow-lg);
       border-color: var(--secondary);
     }
+    .contact-card:hover::before { transform: scaleX(1); }
     .contact-card i {
-      font-size: 3rem;
-      color: var(--primary);
-      margin-bottom: 20px;
+      font-size: 3.2rem; color: var(--primary);
+      margin-bottom: 20px; transition: var(--transition);
     }
-    .contact-card h3 {
-      color: var(--primary);
-      margin-bottom: 15px;
-    }
-    .contact-card p {
-      color: var(--gray);
-      line-height: 1.7;
-    }
+    .contact-card:hover i { transform: scale(1.1); color: var(--secondary); }
+    .contact-card h3 { color: var(--primary); margin-bottom: 12px; font-size: 1.4rem; }
+    .contact-card p { color: var(--gray); line-height: 1.7; margin: 8px 0; }
     .contact-card a {
-      color: var(--secondary);
-      text-decoration: none;
-      font-weight: 600;
-      transition: var(--transition);
-      display: block;
-      margin-top: 10px;
+      color: var(--secondary); text-decoration: none;
+      font-weight: 600; transition: var(--transition);
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 15px; padding: 10px 20px;
+      border-radius: 50px; background: rgba(158,123,75,0.1);
     }
     .contact-card a:hover {
-      color: var(--primary);
+      color: white; background: var(--secondary);
+      transform: translateY(-3px); box-shadow: 0 8px 20px rgba(158,123,75,0.3);
     }
 
     /* ===== FOOTER ===== */
     footer {
       background: linear-gradient(145deg, var(--primary-dark) 0%, var(--primary) 100%);
-      color: var(--white);
-      padding: 70px 32px 30px;
-      font-size: 1rem;
-      position: relative;
+      color: var(--white); padding: 70px 32px 30px;
+      font-size: 1rem; position: relative;
     }
     footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
       background: linear-gradient(90deg, var(--secondary), var(--accent), var(--secondary));
     }
     .footer-content {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      max-width: 1200px; margin: auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 50px;
     }
     .footer-section h3 {
-      font-size: 1.4rem;
-      margin-bottom: 25px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--secondary);
+      font-size: 1.4rem; margin-bottom: 25px; font-weight: 600;
+      display: flex; align-items: center; gap: 10px; color: var(--secondary);
     }
-    .footer-section ul {
-      list-style: none;
-    }
-    .footer-section ul li {
-      margin-bottom: 14px;
-    }
+    .footer-section ul { list-style: none; }
+    .footer-section ul li { margin-bottom: 14px; }
     .footer-section a {
-      color: rgba(255, 255, 255, 0.8);
-      text-decoration: none;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      color: rgba(255, 255, 255, 0.85); text-decoration: none;
+      transition: var(--transition); display: flex; align-items: center; gap: 10px;
     }
-    .footer-section a:hover {
-      color: var(--secondary);
-      transform: translateX(6px);
-    }
+    .footer-section a:hover { color: var(--secondary); transform: translateX(6px); }
     .footer-bottom {
-      text-align: center;
-      margin-top: 30px;
-      padding-top: 30px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      font-size: 0.95rem;
-      opacity: 0.8;
+      text-align: center; margin-top: 30px; padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.95rem; opacity: 0.85;
     }
 
+    /* ===== WHATSAPP FLOAT ===== */
+    .whatsapp-float {
+      position: fixed; bottom: 30px; right: 30px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white; text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+      padding: 14px 24px; border-radius: 50px;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
+      z-index: 998; transition: var(--transition);
+      font-weight: 600; font-size: 0.95rem;
+    }
+    .whatsapp-float:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
+    }
+    .whatsapp-float i { font-size: 22px; }
+
     /* ===== RESPONSIVE ===== */
+    @media (max-width: 992px) {
+      .hero { padding: 120px 20px 80px; min-height: 60vh; }
+      .hero h1 { font-size: 2.4rem; }
+      nav ul { display: none; }
+      .menu-toggle { display: block; }
+      .nav-mobile {
+        position: absolute; top: 100%; left: 0; right: 0;
+        background: var(--primary); padding: 20px;
+        display: none; flex-direction: column; gap: 8px;
+        border-top: 1px solid var(--glass-border);
+        backdrop-filter: blur(12px);
+      }
+      .nav-mobile.active { display: flex; }
+      .nav-mobile a {
+        color: var(--white); padding: 14px 20px;
+        border-radius: 12px; transition: var(--transition);
+      }
+      .nav-mobile a:hover, .nav-mobile a.active {
+        background: var(--glass); color: var(--accent);
+      }
+    }
+
     @media (max-width: 768px) {
       .hero h1 { font-size: 2rem; }
-      nav ul { display: none; }
+      .hero p { font-size: 1.05rem; }
       .section { padding: 60px 20px; }
-      .contact-grid { grid-template-columns: 1fr; }
+      .info-card, .announcement, .download-list { padding: 25px 20px; }
+      .contact-card { padding: 30px 20px; }
+      .whatsapp-float { bottom: 20px; right: 20px; padding: 12px 18px; }
+      .whatsapp-float span { display: none; }
+      .whatsapp-float i { font-size: 24px; }
     }
+
+    @media (max-width: 480px) {
+      .brand span { display: none; }
+      .brand img { width: 44px; }
+      .hero { padding: 100px 15px 60px; min-height: 55vh; }
+      .hero h1 { font-size: 1.7rem; }
+      .section-header h2 { font-size: 2rem; }
+      .nav-container { padding: 10px 20px; }
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .floating { animation: float 3s ease-in-out infinite; }
   </style>
 </head>
 <body>
 
 <!-- Preloader -->
-<div id="preloader">
-  <div class="spinner"></div>
-</div>
+<div id="preloader"><div class="spinner"></div></div>
 
-<!-- Header -->
-<header>
+<!-- WhatsApp Float -->
+<a href="https://wa.me/6282319712420?text=Halo%20saya%20ingin%20bertanya%20tentang%20Humas%20SMAN%201%20Cluring"
+   class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-whatsapp"></i>
+  <span>Chat Humas</span>
+</a>
+
+<!-- Header dengan Premium Nav -->
+<header id="mainHeader">
   <div class="nav-container">
     <a href="index.html" class="brand">
       <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring">
-      SMAN 1 CLURING
+      <span>SMAN 1 CLURING</span>
     </a>
+    
+    <div class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <i class="fas fa-bars"></i>
+    </div>
+    
     <nav>
-  <ul id="navMenu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="profil.html">Profil</a></li>
-    <li><a href="akademik.html">Akademik</a></li>
-    <li><a href="kesiswaan.html">Kesiswaan</a></li>
-    <li><a href="sarpras.html">Sarpras</a></li>
-    <li><a href="humas.html" class="active">Humas</a></li>
-    <li><a href="mitra.html">Mitra</a></li>
-    <li><a href="alumni.html">Alumni</a></li>
-    <li><a href="artikel.html">Artikel</a></li>
-    <li><a href="kontak.html">Kontak</a></li>
-    <li style="display: flex; align-items: center;">
+      <ul id="navMenu">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="profil.html"><i class="fas fa-school"></i> Profil</a></li>
+        <li><a href="akademik.html"><i class="fas fa-book"></i> Akademik</a></li>
+        <li><a href="kesiswaan.html"><i class="fas fa-users"></i> Kesiswaan</a></li>
+        <li><a href="sarpras.html"><i class="fas fa-building"></i> Sarpras</a></li>
+        <li><a href="humas.html" class="active"><i class="fas fa-bullhorn"></i> Humas</a></li>
+        <li><a href="mitra.html"><i class="fas fa-handshake"></i> Mitra</a></li>
+        <li><a href="alumni.html"><i class="fas fa-graduation-cap"></i> Alumni</a></li>
+        <li><a href="artikel.html"><i class="fas fa-newspaper"></i> Artikel</a></li>
+        <li><a href="#" onclick="openContactModal(); return false;"><i class="fas fa-envelope"></i> Kontak</a></li>
+      </ul>
+    </nav>
+    
+    <div class="nav-actions">
       <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
         <i class="fas fa-moon"></i>
-        <i class="fas fa-sun sun"></i>
+        <i class="fas fa-sun"></i>
       </button>
-    </li>
-  </ul>
-</nav>
-    <button class="dark-mode-toggle" id="darkModeToggle">
-      <i class="fas fa-moon"></i>
-    </button>
+    </div>
+  </div>
+  
+  <!-- Mobile Menu -->
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="profil.html"><i class="fas fa-school"></i> Profil</a>
+    <a href="akademik.html"><i class="fas fa-book"></i> Akademik</a>
+    <a href="kesiswaan.html"><i class="fas fa-users"></i> Kesiswaan</a>
+    <a href="sarpras.html"><i class="fas fa-building"></i> Sarpras</a>
+    <a href="humas.html" class="active"><i class="fas fa-bullhorn"></i> Humas</a>
+    <a href="mitra.html"><i class="fas fa-handshake"></i> Mitra</a>
+    <a href="alumni.html"><i class="fas fa-graduation-cap"></i> Alumni</a>
+    <a href="artikel.html"><i class="fas fa-newspaper"></i> Artikel</a>
+    <a href="#" onclick="openContactModal(); closeMobileMenu(); return false;"><i class="fas fa-envelope"></i> Kontak</a>
   </div>
 </header>
 
-<!-- Hero Section -->
+<!-- Hero Section dengan Background Image Optimal -->
 <section class="hero" data-aos="fade-in">
-  <h1 data-aos="fade-up"><i class="fas fa-bullhorn" style="margin-right: 10px;"></i>Hubungan Masyarakat</h1>
-  <p data-aos="fade-up" data-aos-delay="100">
-    Pusat informasi publik, pengumuman resmi, dan layanan komunikasi SMAN 1 Cluring Banyuwangi
+  <div class="hero-badge" data-aos="zoom-in">
+    <i class="fas fa-shield-alt"></i> Transparan • Akuntabel • Responsif
+  </div>
+  <h1 data-aos="fade-up" data-aos-delay="100">
+    <i class="fas fa-bullhorn" style="margin-right: 12px;"></i>
+    Hubungan Masyarakat
+  </h1>
+  <p data-aos="fade-up" data-aos-delay="200">
+    Pusat informasi publik, pengumuman resmi, dan layanan komunikasi 
+    <strong>SMAN 1 Cluring Banyuwangi</strong> untuk masyarakat, orang tua, dan stakeholders.
   </p>
 </section>
 
@@ -451,13 +496,9 @@
 
   <div class="info-card" data-aos="fade-up">
     <h3><i class="fas fa-info-circle" style="margin-right: 10px;"></i>Visi & Misi</h3>
-    <p>
-      <strong>Visi:</strong> Menjadi pusat informasi yang transparan, akuntabel, dan responsif dalam menjembatani komunikasi antara sekolah dengan masyarakat.
-    </p>
-    <p>
-      <strong>Misi:</strong>
-    </p>
-    <ul style="padding-left: 25px; color: var(--gray);">
+    <p><strong>Visi:</strong> Menjadi pusat informasi yang transparan, akuntabel, dan responsif dalam menjembatani komunikasi antara sekolah dengan masyarakat.</p>
+    <p style="margin-top: 15px;"><strong>Misi:</strong></p>
+    <ul style="padding-left: 25px; color: var(--gray); line-height: 1.8;">
       <li>Menyediakan informasi publik yang akurat dan terkini</li>
       <li>Memfasilitasi komunikasi dua arah antara sekolah dan stakeholders</li>
       <li>Mengelola publikasi dan dokumentasi kegiatan sekolah</li>
@@ -469,25 +510,19 @@
     <h2>Pengumuman Resmi</h2>
   </div>
 
-  <div class="announcement" data-aos="fade-up">
-    <h4><i class="fas fa-bell" style="margin-right: 8px;"></i>PPDB Tahun Ajaran 2026/2027</h4>
-    <p>
-      Pendaftaran Peserta Didik Baru (PPDB) SMAN 1 Cluring Tahun Ajaran 2026/2027 akan dibuka pada tanggal 15 Mei 2026 s.d. 15 Juni 2026. Informasi selengkapnya dapat diakses melalui menu PPDB atau menghubungi panitia di nomor 0823-1971-2420.
-    </p>
+  <div class="announcement" data-aos="fade-right">
+    <h4><i class="fas fa-bell"></i> PPDB Tahun Ajaran 2026/2027</h4>
+    <p>Pendaftaran Peserta Didik Baru (PPDB) SMAN 1 Cluring Tahun Ajaran 2026/2027 akan dibuka pada tanggal <strong>15 Mei 2026 s.d. 15 Juni 2026</strong>. Informasi selengkapnya dapat diakses melalui menu PPDB atau menghubungi panitia di nomor 0823-1971-2420.</p>
   </div>
 
-  <div class="announcement" data-aos="fade-up" data-aos-delay="100">
-    <h4><i class="fas fa-calendar-alt" style="margin-right: 8px;"></i>Jadwal Libur Semester Genap 2025/2026</h4>
-    <p>
-      Libur semester genap tahun ajaran 2025/2026 akan berlangsung mulai tanggal 20 Juni 2026 s.d. 12 Juli 2026. Kegiatan Pembelajaran Semester Ganjil 2026/2027 dimulai pada tanggal 13 Juli 2026.
-    </p>
+  <div class="announcement" data-aos="fade-right" data-aos-delay="100">
+    <h4><i class="fas fa-calendar-alt"></i> Jadwal Libur Semester Genap 2025/2026</h4>
+    <p>Libur semester genap tahun ajaran 2025/2026 akan berlangsung mulai tanggal <strong>20 Juni 2026 s.d. 12 Juli 2026</strong>. Kegiatan Pembelajaran Semester Ganjil 2026/2027 dimulai pada tanggal 13 Juli 2026.</p>
   </div>
 
-  <div class="announcement" data-aos="fade-up" data-aos-delay="200">
-    <h4><i class="fas fa-trophy" style="margin-right: 8px;"></i>Penghargaan IGA 2025</h4>
-    <p>
-      SMAN 1 Cluring berhasil meraih Innovative Government Award (IGA) 2025 atas inovasi program BUKIT BATARI (Budaya Kita Batik dan Tari). Selamat kepada seluruh civitas akademika!
-    </p>
+  <div class="announcement" data-aos="fade-right" data-aos-delay="200">
+    <h4><i class="fas fa-trophy"></i> Penghargaan IGA 2025</h4>
+    <p>SMAN 1 Cluring berhasil meraih <strong>Innovative Government Award (IGA) 2025</strong> atas inovasi program BUKIT BATARI (Budaya Kita Batik dan Tari). Selamat kepada seluruh civitas akademika! 🎉</p>
   </div>
 
   <div class="section-header" data-aos="fade-up">
@@ -497,23 +532,28 @@
   <div class="download-list" data-aos="fade-up">
     <div class="download-item">
       <i class="fas fa-file-pdf"></i>
-      <a href="#" target="_blank">📄 Kurikulum Merdeka SMAN 1 Cluring 2025/2026</a>
+      <a href="#" target="_blank">Kurikulum Merdeka SMAN 1 Cluring 2025/2026</a>
+      <span class="badge">PDF</span>
     </div>
     <div class="download-item">
       <i class="fas fa-file-pdf"></i>
-      <a href="#" target="_blank">📄 Tata Tertib Siswa SMAN 1 Cluring</a>
+      <a href="#" target="_blank">Tata Tertib Siswa SMAN 1 Cluring</a>
+      <span class="badge">PDF</span>
     </div>
     <div class="download-item">
       <i class="fas fa-file-pdf"></i>
-      <a href="#" target="_blank">📄 Kalender Pendidikan 2025/2026</a>
+      <a href="#" target="_blank">Kalender Pendidikan 2025/2026</a>
+      <span class="badge">PDF</span>
     </div>
     <div class="download-item">
       <i class="fas fa-file-pdf"></i>
-      <a href="#" target="_blank">📄 SOP Pelayanan Publik SMAN 1 Cluring</a>
+      <a href="#" target="_blank">SOP Pelayanan Publik SMAN 1 Cluring</a>
+      <span class="badge">PDF</span>
     </div>
     <div class="download-item">
       <i class="fas fa-file-pdf"></i>
-      <a href="#" target="_blank">📄 Laporan Tahunan 2025</a>
+      <a href="#" target="_blank">Laporan Tahunan 2025</a>
+      <span class="badge">Baru</span>
     </div>
   </div>
 
@@ -523,21 +563,21 @@
 
   <div class="contact-grid">
     <div class="contact-card" data-aos="zoom-in">
-      <i class="fas fa-user-tie"></i>
+      <i class="fas fa-user-tie floating"></i>
       <h3>Koordinator Humas</h3>
-      <p><strong>Moh.Suharso, S.Pd</strong></p>
+      <p><strong>Moh. Suharso, S.Pd</strong></p>
       <p>Wakil Kepala Bidang Humas</p>
       <a href="tel:+6282319712420"><i class="fas fa-phone"></i> 0823-1971-2420</a>
     </div>
     <div class="contact-card" data-aos="zoom-in" data-aos-delay="100">
-      <i class="fas fa-envelope"></i>
+      <i class="fas fa-envelope floating"></i>
       <h3>Email Resmi</h3>
       <p>humas@sman1cluring.sch.id</p>
       <p>info@sman1cluring.sch.id</p>
       <a href="mailto:humas@sman1cluring.sch.id"><i class="fas fa-paper-plane"></i> Kirim Email</a>
     </div>
     <div class="contact-card" data-aos="zoom-in" data-aos-delay="200">
-      <i class="fab fa-whatsapp"></i>
+      <i class="fab fa-whatsapp floating"></i>
       <h3>WhatsApp Admin</h3>
       <p>Hubungi admin untuk informasi lebih lanjut</p>
       <a href="https://wa.me/6282319712420" target="_blank"><i class="fab fa-whatsapp"></i> Chat Sekarang</a>
@@ -551,20 +591,18 @@
     <div class="footer-section">
       <h3><i class="fas fa-map-marker-alt"></i> Kontak</h3>
       <p>Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, Jawa Timur</p>
-      <p><i class="fas fa-phone"></i> <a href="tel:+6282319712420">0823-1971-2420</a></p>
-      <p><i class="fas fa-envelope"></i> <a href="mailto:sman1cluring@sch.id">sman1cluring@sch.id</a></p>
+      <p><i class="fas fa-phone"></i> <a href="tel:+62333713297">0333-713297</a></p>
+      <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6282319712420" target="_blank">0823-1971-2420</a></p>
     </div>
-
     <div class="footer-section">
       <h3><i class="fas fa-link"></i> Link Penting</h3>
       <ul>
         <li><a href="https://sma.kemendikdasmen.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
         <li><a href="https://dindik.jatimprov.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
         <li><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas Banyuwangi</a></li>
-        <li><a href="https://alam21234.github.io/Smaring-interactive-learning-comunity" target="_blank"><i class="fas fa-external-link-alt"></i> Smaring Learning Community</a></li>
+        <li><a href="https://alam21234.github.io/Smaring-interactive-learning-comunity" target="_blank"><i class="fas fa-external-link-alt"></i> Smaring Learning</a></li>
       </ul>
     </div>
-
     <div class="footer-section">
       <h3><i class="fas fa-flask"></i> Lab Virtual</h3>
       <ul>
@@ -573,47 +611,308 @@
         <li><a href="https://www.myphysicslab.com" target="_blank"><i class="fas fa-atom"></i> MyPhysicsLab</a></li>
       </ul>
     </div>
-
     <div class="footer-section">
       <h3><i class="fas fa-share-alt"></i> Media Sosial</h3>
       <div style="display: flex; gap: 15px; margin-top: 15px;">
-        <a href="https://www.facebook.com/Sman1Cluring" target="_blank" style="color: white; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/sman1_cluring" target="_blank" style="color: white; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank" style="color: white; font-size: 1.5rem;"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.facebook.com/Sman1Cluring" target="_blank" style="color: white; font-size: 1.5rem; transition: var(--transition);" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform=''"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/sman1_cluring" target="_blank" style="color: white; font-size: 1.5rem; transition: var(--transition);" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform=''"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank" style="color: white; font-size: 1.5rem; transition: var(--transition);" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform=''"><i class="fab fa-youtube"></i></a>
       </div>
     </div>
   </div>
-
   <div class="footer-bottom">
     <p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
-    <p style="margin-top: 8px; font-size: 0.9rem; opacity: 0.8;">
-      Website Resmi SMAN 1 Cluring Banyuwangi
-    </p>
+    <p style="margin-top: 8px; font-size: 0.9rem; opacity: 0.8;">Website Resmi SMAN 1 Cluring Banyuwangi</p>
   </div>
 </footer>
+
+<!-- ===== MODAL KONTAK PREMIUM ===== -->
+<div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-contact">
+    <button class="modal-close" onclick="closeContactModal()" aria-label="Tutup modal">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="modal-header">
+      <h2 id="modalTitle"><i class="fas fa-headset"></i> Hubungi Kami</h2>
+      <p>SMAN 1 Cluring - Siap Melayani Anda</p>
+    </div>
+    <div class="modal-body">
+      <div class="quick-actions">
+        <a href="https://wa.me/6282319712420" target="_blank" class="action-btn whatsapp">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="mailto:zuliastutik24@guru.sma.belajar.id" class="action-btn email">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+        <a href="tel:+62333713297" class="action-btn phone">
+          <i class="fas fa-phone"></i> Telepon
+        </a>
+        <a href="https://maps.google.com/?q=SMAN+1+Cluring+Banyuwangi" target="_blank" class="action-btn maps">
+          <i class="fas fa-map-marker-alt"></i> Lokasi
+        </a>
+      </div>
+      <div class="info-panel">
+        <h4><i class="fas fa-info-circle"></i> Informasi Sekolah</h4>
+        <ul>
+          <li><i class="fas fa-map-pin"></i> Jl. Huzaini, Benculuk, Cluring, Banyuwangi</li>
+          <li><i class="fas fa-clock"></i> Senin-Jumat: 07.00 - 15.30 WIB</li>
+          <li><i class="fas fa-building"></i> SMAN 1 Cluring - NPSN: 20537373</li>
+        </ul>
+      </div>
+      <div class="contact-form">
+        <h4><i class="fas fa-paper-plane"></i> Kirim Pesan</h4>
+        <form id="contactForm" onsubmit="handleContactSubmit(event)">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="nama">Nama Lengkap *</label>
+              <input type="text" id="nama" name="nama" required placeholder="Masukkan nama Anda">
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="email@contoh.com">
+            </div>
+            <div class="form-group full">
+              <label for="subjek">Subjek *</label>
+              <input type="text" id="subjek" name="subjek" required placeholder="Tulis subjek pesan">
+            </div>
+            <div class="form-group full">
+              <label for="pesan">Pesan *</label>
+              <textarea id="pesan" name="pesan" required placeholder="Tulis pesan Anda di sini..."></textarea>
+            </div>
+          </div>
+          <button type="submit" class="submit-btn" id="submitBtn">
+            <i class="fas fa-paper-plane"></i> Kirim Pesan
+          </button>
+        </form>
+      </div>
+      <div class="map-preview">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.5!2d114.2!3d-8.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMzAnMDAuMCJTIDExNMKwMTInMDAuMCJF!5e0!3m2!1sid!2sid!4v1234567890" loading="lazy" title="Lokasi SMAN 1 Cluring" allowfullscreen></iframe>
+        <a href="https://maps.google.com/?q=SMAN+1+Cluring+Banyuwangi" target="_blank" class="map-link">
+          <i class="fas fa-external-link-alt"></i> Buka di Google Maps
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="toastMessage">Pesan berhasil dikirim!</span></div>
 
 <!-- AOS & JS -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-  AOS.init({ duration: 800, once: true });
-  
+  // ===== INIT AOS & PRELOADER =====
+  AOS.init({ duration: 800, once: true, offset: 100 });
   window.addEventListener('load', () => {
-    setTimeout(() => {
-      document.getElementById('preloader').classList.add('fade-out');
-    }, 600);
+    setTimeout(() => document.getElementById('preloader').classList.add('fade-out'), 600);
   });
 
-  // Dark mode toggle
+  // ===== DARK MODE =====
   const darkModeToggle = document.getElementById('darkModeToggle');
   const body = document.body;
-  if (localStorage.getItem('darkMode') === 'true') {
-    body.classList.add('dark-mode');
-  }
+  if (localStorage.getItem('darkMode') === 'true') body.classList.add('dark-mode');
   darkModeToggle.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
     localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
   });
+
+  // ===== HEADER SCROLL EFFECT =====
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  });
+
+  // ===== MOBILE MENU TOGGLE =====
+  const menuToggle = document.getElementById('menuToggle');
+  const navMobile = document.getElementById('navMobile');
+  function toggleMobileMenu() {
+    navMobile.classList.toggle('active');
+    menuToggle.innerHTML = navMobile.classList.contains('active') 
+      ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+  }
+  function closeMobileMenu() {
+    navMobile.classList.remove('active');
+    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+  }
+  menuToggle.addEventListener('click', toggleMobileMenu);
+  document.querySelectorAll('.nav-mobile a').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+
+  // ===== MODAL KONTAK FUNCTIONS =====
+  function openContactModal() {
+    const modal = document.getElementById('contactModal');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    closeMobileMenu();
+    setTimeout(() => modal.querySelector('.modal-close')?.focus(), 300);
+  }
+  function closeContactModal() {
+    const modal = document.getElementById('contactModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('contactModal')?.addEventListener('click', (e) => {
+    if (e.target.id === 'contactModal') closeContactModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const modal = document.getElementById('contactModal');
+      if (modal?.classList.contains('active')) closeContactModal();
+    }
+  });
+
+  // ===== CONTACT FORM =====
+  function handleContactSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    const originalText = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+    
+    const formData = {
+      nama: document.getElementById('nama').value,
+      email: document.getElementById('email').value,
+      subjek: document.getElementById('subjek').value,
+      pesan: document.getElementById('pesan').value,
+      timestamp: new Date().toISOString()
+    };
+    
+    setTimeout(() => {
+      const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
+      submissions.push(formData);
+      localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
+      showToast('✅ Pesan berhasil dikirim! Kami akan segera menghubungi Anda.', 'success');
+      document.getElementById('contactForm').reset();
+      btn.disabled = false;
+      btn.innerHTML = originalText;
+      setTimeout(() => closeContactModal(), 2000);
+    }, 1500);
+  }
+
+  function showToast(message, type = 'success') {
+    const toast = document.getElementById('toast');
+    document.getElementById('toastMessage').textContent = message;
+    toast.className = `toast ${type} show`;
+    setTimeout(() => toast.classList.remove('show'), 4000);
+  }
+
+  // ===== FORM VALIDATION =====
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contactForm');
+    if (form) {
+      form.querySelectorAll('input, textarea').forEach(field => {
+        field.addEventListener('blur', function() {
+          this.style.borderColor = (this.required && !this.value.trim()) ? '#e74c3c' : '';
+        });
+        field.addEventListener('input', () => this.style.borderColor = '');
+      });
+    }
+  });
 </script>
+
+<!-- Modal CSS Tambahan (Inline untuk kemudahan) -->
+<style>
+  .modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(10, 42, 94, 0.85); display: flex;
+    align-items: center; justify-content: center; z-index: 2000;
+    opacity: 0; visibility: hidden; transition: var(--transition);
+    padding: 20px; backdrop-filter: blur(8px);
+  }
+  .modal-overlay.active { opacity: 1; visibility: visible; }
+  .modal-contact {
+    background: var(--white); border-radius: 24px; max-width: 900px;
+    width: 100%; max-height: 90vh; overflow-y: auto;
+    box-shadow: var(--shadow-lg); transform: translateY(30px);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative; border: 1px solid var(--glass-border);
+  }
+  .modal-overlay.active .modal-contact { transform: translateY(0); }
+  .modal-close {
+    position: absolute; top: 20px; right: 20px; width: 40px; height: 40px;
+    border-radius: 50%; background: var(--light); border: none;
+    color: var(--dark); font-size: 1.2rem; cursor: pointer;
+    transition: var(--transition); display: flex; align-items: center;
+    justify-content: center; z-index: 10;
+  }
+  .modal-close:hover { background: var(--secondary); color: white; transform: rotate(90deg); }
+  .modal-header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white; padding: 30px; text-align: center; position: relative; overflow: hidden;
+  }
+  .modal-header::before {
+    content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  }
+  .modal-header h2 { font-size: 1.8rem; margin-bottom: 8px; position: relative; z-index: 1; }
+  .modal-header p { opacity: 0.9; position: relative; z-index: 1; }
+  .modal-body { padding: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+  .quick-actions { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+  .action-btn {
+    display: flex; align-items: center; gap: 12px; padding: 15px 20px;
+    border-radius: 16px; background: var(--light); border: 2px solid transparent;
+    color: var(--dark); text-decoration: none; font-weight: 600;
+    transition: var(--transition); text-align: center;
+  }
+  .action-btn:hover { border-color: var(--secondary); transform: translateY(-3px); box-shadow: var(--shadow-md); color: var(--secondary); }
+  .action-btn.whatsapp { background: rgba(37, 211, 102, 0.1); color: #128C7E; }
+  .action-btn.whatsapp:hover { background: #25D366; color: white; }
+  .action-btn.email { background: rgba(158, 123, 75, 0.1); }
+  .action-btn.phone { background: rgba(10, 42, 94, 0.1); }
+  .action-btn.maps { background: rgba(66, 133, 244, 0.1); color: #4285f4; }
+  .action-btn i { font-size: 1.3rem; width: 24px; text-align: center; }
+  .info-panel { background: var(--light); padding: 20px; border-radius: 16px; }
+  .info-panel h4 { color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
+  .info-panel ul { list-style: none; }
+  .info-panel li { padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; }
+  .info-panel li:last-child { border-bottom: none; }
+  .info-panel i { color: var(--secondary); margin-top: 3px; }
+  .contact-form { grid-column: 1 / -1; }
+  .contact-form h4 { color: var(--primary); margin-bottom: 20px; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group.full { grid-column: 1 / -1; }
+  .form-group label { font-weight: 500; font-size: 0.9rem; color: var(--gray); }
+  .form-group input, .form-group textarea {
+    padding: 12px 16px; border: 2px solid rgba(0,0,0,0.1); border-radius: 12px;
+    font-family: inherit; font-size: 1rem; transition: var(--transition); background: var(--white);
+  }
+  .form-group input:focus, .form-group textarea:focus {
+    outline: none; border-color: var(--secondary);
+    box-shadow: 0 0 0 4px rgba(158, 123, 75, 0.15);
+  }
+  .form-group textarea { min-height: 100px; resize: vertical; }
+  .submit-btn {
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    color: white; border: none; padding: 14px 30px; border-radius: 50px;
+    font-weight: 600; font-size: 1rem; cursor: pointer; transition: var(--transition);
+    display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;
+  }
+  .submit-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+  .map-preview { grid-column: 1 / -1; background: var(--light); border-radius: 16px; overflow: hidden; border: 2px solid rgba(0,0,0,0.05); }
+  .map-preview iframe { width: 100%; height: 250px; border: 0; }
+  .map-link {
+    display: block; text-align: center; padding: 12px; background: var(--primary);
+    color: white; text-decoration: none; font-weight: 500; transition: var(--transition);
+  }
+  .map-link:hover { background: var(--primary-light); }
+  .toast {
+    position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px);
+    background: var(--dark); color: white; padding: 15px 25px; border-radius: 12px;
+    box-shadow: var(--shadow-lg); z-index: 3000; transition: transform 0.3s ease;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+  .toast.success { background: #25D366; }
+  .toast.error { background: #e74c3c; }
+  @media (max-width: 768px) {
+    .modal-body { grid-template-columns: 1fr; padding: 20px; }
+    .quick-actions { grid-template-columns: 1fr; }
+    .form-grid { grid-template-columns: 1fr; }
+    .modal-header h2 { font-size: 1.5rem; }
+  }
+</style>
 
 </body>
 </html>
