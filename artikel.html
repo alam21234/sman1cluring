@@ -136,13 +136,29 @@
       display: flex; align-items: center; justify-content: center; cursor: pointer;
     }
 
-    /* ===== HERO ===== */
+    /* ===== HERO - UPDATED WITH NEW IMAGE ===== */
     .hero {
       position: relative; color: var(--white); text-align: center;
-      padding: 100px 20px 60px;
-      background: linear-gradient(rgba(10,42,94,0.8), rgba(5,26,59,0.9)), url('https://i.ibb.co.com/8nyH2Bbd/da3.jpg') center/cover;
+      padding: 120px 20px 80px; /* Adjusted padding for better image view */
+      background: linear-gradient(rgba(10,42,94,0.7), rgba(5,26,59,0.8)), url('https://i.ibb.co.com/FbZZw0w7/KASAT-PENANAMAN-SIKAP.jpg') center/cover fixed;
+      /* 'fixed' attachment creates a nice parallax effect, optional. Use 'cover' for standard */
+      min-height: 60vh; /* Ensures hero section has a substantial height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
-    .hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
+    .hero h1 { 
+        font-size: 3rem; 
+        margin-bottom: 15px; 
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        max-width: 900px;
+    }
+    .hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
 
     /* ===== MAIN CONTENT ===== */
     .section { max-width: 1300px; margin: auto; padding: 60px 20px; }
@@ -330,8 +346,12 @@
     }
 
     @media (max-width: 768px) {
-      .hero { padding: 80px 20px 60px; }
+      .hero { 
+          padding: 80px 20px 60px; 
+          min-height: 50vh;
+      }
       .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
       .section { padding: 60px 20px; }
       
       /* Footer Responsive Adjustments */
@@ -406,7 +426,7 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
   </div>
 </header>
 
-<!-- HERO -->
+<!-- HERO - Updated with the new image -->
 <section class="hero" data-aos="zoom-in">
   <h1 data-aos="fade-up">Artikel & Berita Terbaru</h1>
   <p data-aos="fade-up" data-aos-delay="100">
@@ -449,6 +469,7 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
     <div class="footer-section">
       <h3><i class="fas fa-map-marker-alt"></i> Kontak</h3>
       <p>Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, Jawa Timur</p>
+      <!-- Perbaikan: Tautan Telepon dan WA sekarang aktif -->
       <p><i class="fas fa-phone"></i> <a href="tel:+6282319712420">0823-1971-2420</a></p>
       <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6282319712420" target="_blank">0823-1971-2420 (WA)</a></p>
     </div>
