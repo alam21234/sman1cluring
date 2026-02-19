@@ -25,14 +25,10 @@
     h1,h2,h3{font-family:var(--font);font-weight:700;line-height:1.3}
     a{text-decoration:none;color:inherit;transition:var(--transition)}
     img{max-width:100%;height:auto;display:block}
-    
-    /* Preloader - CEPAT */
     #preloader{position:fixed;inset:0;background:var(--primary);z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity .3s}
     #preloader.hide{opacity:0;pointer-events:none}
     .spinner{width:50px;height:50px;border:3px solid rgba(255,255,255,.2);border-top-color:var(--secondary);border-radius:50%;animation:spin .8s linear infinite}
     @keyframes spin{to{transform:rotate(360deg)}}
-    
-    /* Header */
     header{background:linear-gradient(135deg,var(--primary),var(--primary-light));position:sticky;top:0;z-index:1000;box-shadow:var(--shadow)}
     .nav{max-width:1200px;margin:auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:800;font-size:1.3rem}
@@ -46,35 +42,25 @@
     .theme-btn:hover{background:var(--secondary);transform:rotate(15deg)}
     .dark-mode .fa-sun{display:none}.dark-mode .fa-moon{display:block}
     .fa-sun{display:none}
-    
-    /* Hero */
     .hero{position:relative;color:#fff;text-align:center;padding:100px 20px 60px;min-height:50vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(10,42,94,.9),rgba(5,26,59,.95)),url('https://i.ibb.co.com/qLBTZN5t/Whats-App-Image-2025-08-16-at-19-17-54.jpg')center/cover}
     .hero h1{font-size:clamp(1.6rem,5vw,2.5rem);margin-bottom:16px;text-shadow:0 4px 20px rgba(0,0,0,.4)}
     .hero p{max-width:700px;font-size:clamp(1rem,2.5vw,1.1rem);opacity:.95}
     .badge{display:inline-flex;align-items:center;gap:8px;background:var(--secondary);padding:6px 16px;border-radius:50px;font-size:.85rem;font-weight:600;margin-bottom:20px}
-    
-    /* Section */
     .section{max-width:1200px;margin:auto;padding:60px 24px}
     .section-title{text-align:center;margin-bottom:40px}
     .section-title h2{color:var(--primary);font-size:clamp(1.5rem,4vw,2rem);position:relative;display:inline-block}
     .section-title h2::after{content:'';display:block;width:70px;height:4px;background:linear-gradient(90deg,var(--secondary),var(--accent));margin:12px auto 0;border-radius:2px}
-    
-    /* Mitra Cards */
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:30px}
     .card{background:var(--white);border-radius:var(--radius);padding:28px 24px;text-align:center;box-shadow:var(--shadow);transition:var(--transition);border:1px solid rgba(158,123,75,.1)}
     .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--secondary)}
     .card-icon{width:70px;height:70px;background:linear-gradient(135deg,rgba(158,123,75,.1),rgba(199,168,84,.05));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:2rem;color:var(--primary);border:2px solid var(--secondary)}
     .card h3{color:var(--primary);margin:12px 0;font-size:1.2rem}
     .card p{color:var(--gray);font-size:.95rem;line-height:1.6}
-    
-    /* Info Box */
     .info-box{background:linear-gradient(135deg,rgba(10,42,94,.05),rgba(158,123,75,.03));padding:40px 30px;border-radius:var(--radius);margin:30px 0;border-left:5px solid var(--secondary)}
     .info-box h3{color:var(--primary);margin-bottom:15px;font-size:1.4rem;display:flex;align-items:center;gap:10px}
     .info-box p{color:var(--gray);margin-bottom:12px}
     .info-box ul{padding-left:25px;color:var(--gray);line-height:1.8}
     .info-box li{margin-bottom:8px}
-    
-    /* Contact */
     .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:30px}
     .c-card{background:var(--white);padding:30px 24px;border-radius:var(--radius);text-align:center;box-shadow:var(--shadow);transition:var(--transition);border:1px solid rgba(158,123,75,.1)}
     .c-card i{font-size:2.5rem;color:var(--primary);margin-bottom:12px}
@@ -82,8 +68,6 @@
     .c-card p{color:var(--gray);margin:4px 0;font-size:.95rem}
     .c-card a{color:var(--secondary);font-weight:600;display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:8px 16px;border-radius:40px;background:rgba(158,123,75,.1)}
     .c-card a:hover{color:#fff;background:var(--secondary);transform:translateY(-2px)}
-    
-    /* Footer */
     footer{background:linear-gradient(145deg,var(--primary),var(--primary-light));color:#fff;padding:50px 24px 24px}
     .foot{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px}
     .foot h4{font-size:1.2rem;margin-bottom:18px;color:var(--secondary);display:flex;align-items:center;gap:8px}
@@ -95,13 +79,9 @@
     .social a{color:#fff;font-size:1.3rem;transition:var(--transition)}
     .social a:hover{transform:translateY(-3px);color:var(--secondary)}
     .copy{text-align:center;margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:.9rem;opacity:.85}
-    
-    /* WhatsApp Float */
     .wa{position:fixed;bottom:24px;right:24px;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;padding:12px 20px;border-radius:50px;display:flex;align-items:center;gap:8px;font-weight:600;font-size:.9rem;box-shadow:0 8px 20px rgba(37,211,102,.4);z-index:999;transition:var(--transition)}
     .wa:hover{transform:translateY(-4px) scale(1.05);box-shadow:0 12px 28px rgba(37,211,102,.6)}
     .wa i{font-size:20px}
-    
-    /* Modal */
     .modal{position:fixed;inset:0;background:rgba(10,42,94,.9);display:flex;align-items:center;justify-content:center;z-index:2000;opacity:0;visibility:hidden;transition:var(--transition);padding:20px}
     .modal.show{opacity:1;visibility:visible}
     .modal-box{background:var(--white);border-radius:24px;max-width:800px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow-lg);transform:translateY(20px);transition:transform .4s}
@@ -138,8 +118,6 @@
     .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--dark);color:#fff;padding:12px 20px;border-radius:12px;box-shadow:var(--shadow-lg);z-index:3000;transition:transform .3s;display:flex;align-items:center;gap:8px}
     .toast.show{transform:translateX(-50%) translateY(0)}
     .toast.ok{background:#25D366}.toast.err{background:#e74c3c}
-    
-    /* Responsive */
     @media(max-width:992px){nav ul{display:none}.menu-btn{display:flex}.nav-m{position:absolute;top:100%;left:0;right:0;background:var(--primary);padding:16px;display:none;flex-direction:column;gap:8px;border-top:1px solid rgba(255,255,255,.1)}.nav-m.show{display:flex}.nav-m a{color:#fff;padding:12px 16px;border-radius:10px}.nav-m a:hover,.nav-m a.active{background:rgba(255,255,255,.1);color:var(--accent)}.modal-body{grid-template-columns:1fr;padding:20px}.actions{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}}
     @media(max-width:768px){.section{padding:40px 20px}.hero{padding:80px 16px 40px;min-height:45vh}.card{padding:24px 20px}.c-card{padding:26px 20px}.wa span{display:none}.brand span{display:none}.brand img{width:42px}.foot{grid-template-columns:1fr}}
     @media(max-width:480px){.hero h1{font-size:1.4rem}.section-title h2{font-size:1.4rem}.fg input,.fg textarea{font-size:16px}}
@@ -148,13 +126,8 @@
   </style>
 </head>
 <body>
-  <!-- Preloader Cepat -->
   <div id="preloader"><div class="spinner"></div></div>
-
-  <!-- WhatsApp Float -->
   <a href="https://wa.me/6282319712420?text=Halo%20saya%20ingin%20bertanya%20tentang%20Mitra%20SMAN%201%20Cluring" class="wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i><span>Chat Admin</span></a>
-
-  <!-- Header -->
   <header>
     <div class="nav">
       <a href="index.html" class="brand">
@@ -191,18 +164,13 @@
       <a href="#" onclick="openModal();closeMenu();return false"><i class="fas fa-envelope"></i> Kontak</a>
     </div>
   </header>
-
-  <!-- Hero -->
   <section class="hero">
     <div class="badge"><i class="fas fa-handshake"></i> Kolaborasi • Sinergi • Berkembang</div>
     <h1><i class="fas fa-handshake" style="margin-right:10px"></i>Mitra Pendidikan</h1>
     <p>Kolaborasi strategis untuk pengembangan pendidikan berkualitas di <strong>SMAN 1 Cluring Banyuwangi</strong></p>
   </section>
-
-  <!-- Main -->
   <main>
     <section class="section">
-      <!-- Profil Mitra -->
       <div class="section-title"><h2><i class="fas fa-users"></i> Profil Kemitraan</h2></div>
       <div class="info-box">
         <h3><i class="fas fa-bullseye"></i> Visi & Tujuan</h3>
@@ -215,8 +183,6 @@
           <li>Mengembangkan inovasi pendidikan berbasis kolaborasi</li>
         </ul>
       </div>
-
-      <!-- Daftar Mitra -->
       <div class="section-title"><h2><i class="fas fa-building-columns"></i> Mitra Strategis</h2></div>
       <div class="grid">
         <div class="card"><div class="card-icon"><i class="fas fa-graduation-cap"></i></div><h3>Kemendikbud</h3><p>Program BOS, Merdeka Belajar, dan pendanaan pendidikan nasional.</p></div>
@@ -229,8 +195,6 @@
         <div class="card"><div class="card-icon"><i class="fas fa-utensils"></i></div><h3>Hotel Ketapang Indah</h3><p>Magang siswa jurusan pariwisata dan hospitality.</p></div>
         <div class="card"><div class="card-icon"><i class="fas fa-book"></i></div><h3>Gramedia Banyuwangi</h3><p>Donasi buku, program literasi, dan pengembangan perpustakaan.</p></div>
       </div>
-
-      <!-- Peluang Kolaborasi -->
       <div class="section-title"><h2><i class="fas fa-lightbulb"></i> Peluang Kolaborasi</h2></div>
       <div class="info-box">
         <h3><i class="fas fa-hand-holding-heart"></i> Bergabung Bersama Kami</h3>
@@ -243,8 +207,6 @@
           <li><strong>Event Edukatif:</strong> Lomba, seminar, atau kegiatan kolaboratif</li>
         </ul>
       </div>
-
-      <!-- Kontak -->
       <div class="section-title"><h2><i class="fas fa-address-book"></i> Kontak Mitra</h2></div>
       <div class="contact-grid">
         <div class="c-card">
@@ -276,8 +238,7 @@
       </div>
     </section>
   </main>
-
-  <!-- Footer -->
+  <!-- Footer dengan Lab Virtual & Tagline Blambangan -->
   <footer>
     <div class="foot">
       <div>
@@ -287,11 +248,20 @@
         <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6282319712420">0823-1971-2420</a></p>
       </div>
       <div>
-        <h4><i class="fas fa-link"></i> Link</h4>
+        <h4><i class="fas fa-link"></i> Link Penting</h4>
         <ul>
           <li><a href="https://sma.kemendikdasmen.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
           <li><a href="https://dindik.jatimprov.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
           <li><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas</a></li>
+        </ul>
+      </div>
+      <!-- Lab Virtual Section - PASTI MUNCUL -->
+      <div>
+        <h4><i class="fas fa-flask"></i> Lab Virtual</h4>
+        <ul>
+          <li><a href="https://quran.nu.or.id" target="_blank"><i class="fas fa-book-quran"></i> Al-Qur'an Digital</a></li>
+          <li><a href="https://virtualbiologylab.org" target="_blank"><i class="fas fa-dna"></i> Virtual Biology Lab</a></li>
+          <li><a href="https://www.myphysicslab.com" target="_blank"><i class="fas fa-atom"></i> MyPhysicsLab</a></li>
         </ul>
       </div>
       <div>
@@ -303,9 +273,12 @@
         </div>
       </div>
     </div>
-    <div class="copy">© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila</div>
+    <!-- Tagline Blambangan - PASTI MUNCUL -->
+    <div class="copy">
+      <p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
+      <p style="margin-top:8px;font-size:0.9rem;opacity:0.8">Website Resmi SMAN 1 Cluring Banyuwangi</p>
+    </div>
   </footer>
-
   <!-- Modal Kontak -->
   <div class="modal" id="modal">
     <div class="modal-box">
@@ -345,41 +318,29 @@
       </div>
     </div>
   </div>
-
-  <!-- Toast -->
   <div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="tmsg">Pesan terkirim!</span></div>
-
-  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded',()=>{
-      // Preloader cepat 300ms
       setTimeout(()=>document.getElementById('preloader').classList.add('hide'),300);
-      // AOS
       if(typeof AOS!=='undefined')AOS.init({duration:600,once:true});
-      // Dark mode
       const tBtn=document.getElementById('themeBtn'),body=document.body;
       if(localStorage.getItem('dark')==='1')body.classList.add('dark-mode');
       tBtn?.addEventListener('click',()=>{body.classList.toggle('dark-mode');localStorage.setItem('dark',body.classList.contains('dark-mode')?'1':'0')});
-      // Mobile menu
       const mBtn=document.getElementById('menuBtn'),mNav=document.getElementById('navM');
       mBtn?.addEventListener('click',()=>{mNav.classList.toggle('show');mBtn.innerHTML=mNav.classList.contains('show')?'<i class="fas fa-times"></i>':'<i class="fas fa-bars"></i>'});
       document.addEventListener('click',e=>{if(mNav.classList.contains('show')&&!mNav.contains(e.target)&&!mBtn.contains(e.target)){mNav.classList.remove('show');mBtn.innerHTML='<i class="fas fa-bars"></i>'}});
       window.closeMenu=()=>{mNav?.classList.remove('show');if(mBtn)mBtn.innerHTML='<i class="fas fa-bars"></i>'};
-      // Modal
       const modal=document.getElementById('modal');
       window.openModal=()=>{modal?.classList.add('show');document.body.style.overflow='hidden';closeMenu()};
       window.closeModal=()=>{modal?.classList.remove('show');document.body.style.overflow=''};
       modal?.addEventListener('click',e=>e.target===modal&&closeModal());
       document.addEventListener('keydown',e=>e.key==='Escape'&&modal?.classList.contains('show')&&closeModal());
-      // Form
       const frm=document.getElementById('frm');
       window.send=e=>{e.preventDefault();const btn=frm.querySelector('.btn');if(!btn||btn.disabled)return;if(!frm.checkValidity()){frm.reportValidity();return}
         const orig=btn.innerHTML;btn.disabled=true;btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Mengirim...';
         setTimeout(()=>{try{const d={nm:document.getElementById('nm').value,em:document.getElementById('em').value,sj:document.getElementById('sj').value,ps:document.getElementById('ps').value,ts:new Date().toISOString()};const s=JSON.parse(localStorage.getItem('mitraMsg')||'[]');s.push(d);localStorage.setItem('mitraMsg',JSON.stringify(s));toast('✅ Pesan terkirim!','ok');frm.reset();setTimeout(closeModal,1500)}catch{toast('❌ Gagal mengirim','err')}finally{btn.disabled=false;btn.innerHTML=orig}},1200)};
-      // Toast
       window.toast=(msg,type='ok')=>{const t=document.getElementById('toast'),m=document.getElementById('tmsg');if(!t||!m)return;m.textContent=msg;t.className=`toast ${type} show`;setTimeout(()=>t.classList.remove('show'),3500)};
-      // Accessibility
       const skip=document.createElement('a');skip.href='#main';skip.className='skip';skip.style.cssText='position:absolute;left:-9999px;top:0;background:var(--secondary);color:#fff;padding:10px 16px;z-index:9999';skip.textContent='Lewati ke konten';skip.onfocus=()=>skip.style.left='0';skip.onblur=()=>skip.style.left='-9999px';document.body.prepend(skip);document.querySelector('main')?.setAttribute('id','main');
     });
   </script>
