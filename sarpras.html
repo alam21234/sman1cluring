@@ -4,1486 +4,409 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sarana Prasarana | SMAN 1 Cluring</title>
-
-  <!-- SEO -->
-  <meta name="description" content="Sarana dan Prasarana lengkap SMAN 1 Cluring Banyuwangi - Fasilitas penunjang pembelajaran yang modern dan representatif." />
+  <meta name="description" content="Data Sarana Prasarana SMAN 1 Cluring - Fasilitas pembelajaran modern dan lengkap." />
   <meta name="author" content="SMAN 1 Cluring" />
-  <meta name="keywords" content="Sarana Prasarana, fasilitas sekolah, SMAN 1 Cluring, ruang kelas, laboratorium, perpustakaan, Banyuwangi" />
-
-  <!-- Open Graph -->
   <meta property="og:title" content="Sarana Prasarana | SMAN 1 Cluring" />
-  <meta property="og:description" content="Fasilitas lengkap penunjang pembelajaran di SMAN 1 Cluring Banyuwangi." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://sman1cluring.sch.id/sarpras.html" />
+  <meta property="og:description" content="Fasilitas lengkap SMAN 1 Cluring Banyuwangi" />
   <meta property="og:image" content="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-
-  <!-- Preconnect for Performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://i.ibb.co" />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  
-  <!-- Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  
-  <!-- AOS Animation -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
   <style>
-    /* ===== CSS VARIABLES & THEME ===== */
-    :root {
-      --primary: #0a2a5e;
-      --primary-light: #1e3a7a;
-      --primary-dark: #051a3b;
-      --secondary: #9e7b4b;
-      --secondary-light: #c1a06e;
-      --accent: #c7a854;
-      --light: #f5f7fa;
-      --dark: #1e2b37;
-      --gray: #4b5c6b;
-      --white: #ffffff;
-      --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      --shadow-md: 0 8px 30px rgba(0, 20, 50, 0.12);
-      --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
-      --border-radius: 24px;
-      --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-      --glass: rgba(255, 255, 255, 0.1);
-      --glass-border: rgba(255, 255, 255, 0.2);
-      --font-base: 'Inter', 'Plus Jakarta Sans', sans-serif;
-      --font-heading: 'Plus Jakarta Sans', sans-serif;
-      --container-max: 1200px;
-      --section-padding: 80px 32px;
-    }
-
-    .dark-mode {
-      --primary: #1e3a8a;
-      --primary-light: #3b5ba5;
-      --secondary: #d4af37;
-      --light: #0f1825;
-      --dark: #edf2f7;
-      --gray: #a0b3c6;
-      --white: #1a2533;
-      --glass: rgba(0, 0, 0, 0.25);
-      --glass-border: rgba(255, 255, 255, 0.08);
-    }
-
-    /* ===== RESET & BASE ===== */
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--font-base);
-      background-color: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
-      transition: background-color 0.4s ease, color 0.4s ease;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      font-family: var(--font-heading);
-      font-weight: 700;
-      line-height: 1.3;
-    }
-    img { max-width: 100%; height: auto; display: block; }
-    a { text-decoration: none; color: inherit; transition: var(--transition); }
-    ul { list-style: none; }
-
-    /* ===== PRELOADER ===== */
-    #preloader {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: var(--primary);
-      z-index: 9999;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: opacity 0.6s ease, visibility 0.6s ease;
-    }
-    #preloader.fade-out {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-    .spinner {
-      width: 60px; height: 60px;
-      border: 4px solid rgba(255, 255, 255, 0.1);
-      border-top: 4px solid var(--secondary);
-      border-right: 4px solid var(--secondary);
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    /* ===== NAVIGASI ===== */
-    header {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: var(--shadow-md);
-      transition: var(--transition);
-    }
-    header.scrolled {
-      background: rgba(10, 42, 94, 0.95);
-      backdrop-filter: blur(12px);
-      padding: 8px 0;
-    }
-    .nav-container {
-      max-width: var(--container-max);
-      margin: auto;
-      padding: 12px 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      color: var(--white);
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 1.4rem;
-      transition: var(--transition);
-      white-space: nowrap;
-    }
-    .brand:hover { transform: scale(1.02); }
-    .brand img {
-      width: 52px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      object-fit: contain;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 4px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    nav ul li { position: relative; }
-    nav ul li a {
-      color: var(--white);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.9rem;
-      padding: 10px 12px;
-      border-radius: 12px;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      opacity: 0.95;
-      white-space: nowrap;
-    }
-    nav ul li a::after {
-      content: '';
-      position: absolute;
-      bottom: 4px;
-      left: 50%;
-      width: 0;
-      height: 3px;
-      background: var(--accent);
-      border-radius: 2px;
-      transition: var(--transition);
-      transform: translateX(-50%);
-    }
-    nav ul li a:hover,
-    nav ul li a.active {
-      opacity: 1;
-      background: var(--glass);
-      transform: translateY(-2px);
-    }
-    nav ul li a:hover::after,
-    nav ul li a.active::after {
-      width: 60%;
-    }
-    nav ul li a.active {
-      background: var(--secondary);
-      color: var(--white);
-      box-shadow: 0 4px 15px rgba(158, 123, 75, 0.4);
-    }
-    nav ul li a.active::after { display: none; }
-    .menu-toggle {
-      display: none;
-      color: var(--white);
-      font-size: 24px;
-      cursor: pointer;
-      padding: 10px;
-      border-radius: 12px;
-      transition: var(--transition);
-      min-width: 44px;
-      min-height: 44px;
-      align-items: center;
-      justify-content: center;
-    }
-    .menu-toggle:hover { background: var(--glass); }
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .dark-mode-toggle {
-      background: var(--glass);
-      border: 1px solid var(--glass-border);
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      color: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: var(--transition);
-      flex-shrink: 0;
-    }
-    .dark-mode-toggle:hover {
-      background: var(--secondary);
-      transform: rotate(15deg);
-    }
-    .dark-mode-toggle .fa-sun { display: none; }
-    .dark-mode .dark-mode-toggle .fa-moon { display: none; }
-    .dark-mode .dark-mode-toggle .fa-sun { display: block; }
-
-    /* ===== HERO SECTION ===== */
-    .hero {
-      position: relative;
-      color: var(--white);
-      text-align: center;
-      padding: 140px 20px 100px;
-      min-height: 60vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background:
-        linear-gradient(135deg, rgba(10,42,94,0.88) 0%, rgba(5,26,59,0.94) 100%),
-        url('https://i.ibb.co.com/j91238Vc/X-6-PROSES-PEMBELAJARAN.jpg')
-        center center / cover no-repeat;
-      background-blend-mode: multiply;
-    }
-    @media (max-width: 768px) {
-      .hero {
-        background-attachment: scroll !important;
-        background-position: center 30% !important;
-      }
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: radial-gradient(ellipse at center, transparent 0%, rgba(10,42,94,0.5) 100%);
-      pointer-events: none;
-      z-index: 1;
-    }
-    .hero > * {
-      position: relative;
-      z-index: 2;
-      max-width: 100%;
-    }
-    .hero h1 {
-      font-size: clamp(1.8rem, 5vw, 3rem);
-      margin-bottom: 20px;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.4);
-      line-height: 1.3;
-      padding: 0 10px;
-    }
-    .hero p {
-      max-width: 750px;
-      margin: 0 auto;
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      opacity: 0.98;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-      padding: 0 15px;
-    }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--secondary);
-      color: var(--white);
-      padding: 8px 20px;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 15px rgba(158,123,75,0.4);
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    /* ===== SECTIONS ===== */
-    .section {
-      max-width: var(--container-max);
-      margin: auto;
-      padding: var(--section-padding);
-    }
-    .section-header {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-    .section-header h2 {
-      color: var(--primary);
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      position: relative;
-      display: inline-block;
-    }
-    .section-header h2::after {
-      content: '';
-      display: block;
-      width: 80px;
-      height: 5px;
-      background: linear-gradient(90deg, var(--secondary) 0%, var(--accent) 100%);
-      margin: 16px auto 0;
-      border-radius: 4px;
-    }
-
-    /* ===== FACILITY CARDS ===== */
-    .facility-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-    .facility-card {
-      background: var(--white);
-      border-radius: var(--border-radius);
-      padding: 35px 30px;
-      text-align: center;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      border: 1px solid rgba(158,123,75,0.1);
-    }
-    .facility-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--secondary);
-    }
-    .facility-icon {
-      width: 75px;
-      height: 75px;
-      background: linear-gradient(135deg, rgba(158,123,75,0.1) 0%, rgba(199,168,84,0.05) 100%);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 22px;
-      font-size: 2.2rem;
-      color: var(--primary);
-      border: 2px solid var(--secondary);
-    }
-    .facility-card h3 {
-      color: var(--primary);
-      margin-bottom: 14px;
-      font-size: 1.5rem;
-    }
-    .facility-card p {
-      color: var(--gray);
-      line-height: 1.7;
-      font-size: 0.95rem;
-    }
-
-    /* ===== STATS SECTION ===== */
-    .stats-section {
-      background: linear-gradient(135deg, rgba(10,42,94,0.05) 0%, rgba(158,123,75,0.03) 100%);
-      padding: 70px 32px;
-      text-align: center;
-    }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 35px;
-      max-width: 1100px;
-      margin: 50px auto 0;
-    }
-    .stat-item {
-      padding: 25px 20px;
-    }
-    .stat-number {
-      font-size: 3rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 8px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-    .stat-label {
-      color: var(--gray);
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
-    /* ===== CONTACT CARDS ===== */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-top: 40px;
-    }
-    .contact-card {
-      background: var(--white);
-      padding: 35px 30px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      text-align: center;
-      transition: var(--transition);
-      border: 1px solid rgba(158,123,75,0.1);
-      position: relative;
-      overflow: hidden;
-    }
-    .contact-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 4px;
-      background: linear-gradient(90deg, var(--secondary), var(--accent));
-      transform: scaleX(0);
-      transition: transform 0.4s ease;
-      transform-origin: left;
-    }
-    .contact-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--secondary);
-    }
-    .contact-card:hover::before { transform: scaleX(1); }
-    .contact-card i {
-      font-size: 3.2rem;
-      color: var(--primary);
-      margin-bottom: 20px;
-      transition: var(--transition);
-    }
-    .contact-card:hover i {
-      transform: scale(1.1);
-      color: var(--secondary);
-    }
-    .contact-card h3 {
-      color: var(--primary);
-      margin-bottom: 12px;
-      font-size: 1.4rem;
-    }
-    .contact-card p {
-      color: var(--gray);
-      line-height: 1.7;
-      margin: 8px 0;
-    }
-    .contact-card a {
-      color: var(--secondary);
-      text-decoration: none;
-      font-weight: 600;
-      transition: var(--transition);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 15px;
-      padding: 10px 20px;
-      border-radius: 50px;
-      background: rgba(158,123,75,0.1);
-    }
-    .contact-card a:hover {
-      color: white;
-      background: var(--secondary);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(158,123,75,0.3);
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: linear-gradient(145deg, var(--primary-dark) 0%, var(--primary) 100%);
-      color: var(--white);
-      padding: 70px 32px 30px;
-      font-size: 1rem;
-      position: relative;
-    }
-    footer::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 4px;
-      background: linear-gradient(90deg, var(--secondary), var(--accent), var(--secondary));
-    }
-    .footer-content {
-      max-width: var(--container-max);
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 50px;
-    }
-    .footer-section h3 {
-      font-size: 1.4rem;
-      margin-bottom: 25px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--secondary);
-    }
-    .footer-section ul { list-style: none; }
-    .footer-section ul li { margin-bottom: 14px; }
-    .footer-section a {
-      color: rgba(255, 255, 255, 0.85);
-      text-decoration: none;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .footer-section a:hover {
-      color: var(--secondary);
-      transform: translateX(6px);
-    }
-    .footer-bottom {
-      text-align: center;
-      margin-top: 30px;
-      padding-top: 30px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      font-size: 0.95rem;
-      opacity: 0.85;
-    }
-
-    /* ===== WHATSAPP FLOAT ===== */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: linear-gradient(135deg, #25D366, #128C7E);
-      color: white;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 24px;
-      border-radius: 50px;
-      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
-      z-index: 998;
-      transition: var(--transition);
-      font-weight: 600;
-      font-size: 0.95rem;
-      max-width: calc(100% - 40px);
-    }
-    .whatsapp-float:hover {
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
-    }
-    .whatsapp-float i {
-      font-size: 22px;
-      flex-shrink: 0;
-    }
-    .whatsapp-float span {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    /* ===== MODAL STYLES ===== */
-    .modal-overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(10, 42, 94, 0.85);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2000;
-      opacity: 0;
-      visibility: hidden;
-      transition: var(--transition);
-      padding: 20px;
-      backdrop-filter: blur(8px);
-    }
-    .modal-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-    .modal-contact {
-      background: var(--white);
-      border-radius: 24px;
-      max-width: 900px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      box-shadow: var(--shadow-lg);
-      transform: translateY(30px);
-      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      position: relative;
-      border: 1px solid var(--glass-border);
-    }
-    .modal-overlay.active .modal-contact {
-      transform: translateY(0);
-    }
-    .modal-close {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--light);
-      border: none;
-      color: var(--dark);
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10;
-      min-width: 40px;
-      min-height: 40px;
-    }
-    .modal-close:hover {
-      background: var(--secondary);
-      color: white;
-      transform: rotate(90deg);
-    }
-    .modal-header {
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
-      color: white;
-      padding: 30px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .modal-header::before {
-      content: '';
-      position: absolute;
-      top: -50%; left: -50%;
-      width: 200%; height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-    }
-    .modal-header h2 {
-      font-size: 1.8rem;
-      margin-bottom: 8px;
-      position: relative;
-      z-index: 1;
-    }
-    .modal-header p {
-      opacity: 0.9;
-      position: relative;
-      z-index: 1;
-    }
-    .modal-body {
-      padding: 30px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
-    .quick-actions {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-    }
-    .action-btn {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 15px 20px;
-      border-radius: 16px;
-      background: var(--light);
-      border: 2px solid transparent;
-      color: var(--dark);
-      text-decoration: none;
-      font-weight: 600;
-      transition: var(--transition);
-      text-align: center;
-      min-height: 56px;
-    }
-    .action-btn:hover {
-      border-color: var(--secondary);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-      color: var(--secondary);
-    }
-    .action-btn.whatsapp { background: rgba(37, 211, 102, 0.1); color: #128C7E; }
-    .action-btn.whatsapp:hover { background: #25D366; color: white; }
-    .action-btn.email { background: rgba(158, 123, 75, 0.1); }
-    .action-btn.phone { background: rgba(10, 42, 94, 0.1); }
-    .action-btn.maps { background: rgba(66, 133, 244, 0.1); color: #4285f4; }
-    .action-btn i {
-      font-size: 1.3rem;
-      width: 24px;
-      text-align: center;
-      flex-shrink: 0;
-    }
-    .info-panel {
-      background: var(--light);
-      padding: 20px;
-      border-radius: 16px;
-    }
-    .info-panel h4 {
-      color: var(--primary);
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .info-panel ul { list-style: none; }
-    .info-panel li {
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.95rem;
-    }
-    .info-panel li:last-child { border-bottom: none; }
-    .info-panel i {
-      color: var(--secondary);
-      margin-top: 3px;
-      flex-shrink: 0;
-    }
-    .contact-form { grid-column: 1 / -1; }
-    .contact-form h4 {
-      color: var(--primary);
-      margin-bottom: 20px;
-    }
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .form-group.full { grid-column: 1 / -1; }
-    .form-group label {
-      font-weight: 500;
-      font-size: 0.9rem;
-      color: var(--gray);
-    }
-    .form-group input,
-    .form-group textarea {
-      padding: 12px 16px;
-      border: 2px solid rgba(0,0,0,0.1);
-      border-radius: 12px;
-      font-family: inherit;
-      font-size: 1rem;
-      transition: var(--transition);
-      background: var(--white);
-      min-height: 48px;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--secondary);
-      box-shadow: 0 0 0 4px rgba(158, 123, 75, 0.15);
-    }
-    .form-group textarea {
-      min-height: 100px;
-      resize: vertical;
-    }
-    .submit-btn {
-      background: linear-gradient(135deg, var(--secondary), var(--accent));
-      color: white;
-      border: none;
-      padding: 14px 30px;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: var(--transition);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 10px;
-      min-height: 50px;
-    }
-    .submit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-    }
-    .submit-btn:disabled {
-      opacity: 0.7;
-      cursor: not-allowed;
-      transform: none;
-    }
-    .map-preview {
-      grid-column: 1 / -1;
-      background: var(--light);
-      border-radius: 16px;
-      overflow: hidden;
-      border: 2px solid rgba(0,0,0,0.05);
-    }
-    .map-preview iframe {
-      width: 100%;
-      height: 250px;
-      border: 0;
-    }
-    .map-link {
-      display: block;
-      text-align: center;
-      padding: 12px;
-      background: var(--primary);
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: var(--transition);
-    }
-    .map-link:hover { background: var(--primary-light); }
-    .toast {
-      position: fixed;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%) translateY(100px);
-      background: var(--dark);
-      color: white;
-      padding: 15px 25px;
-      border-radius: 12px;
-      box-shadow: var(--shadow-lg);
-      z-index: 3000;
-      transition: transform 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      max-width: calc(100% - 40px);
-      text-align: center;
-    }
-    .toast.show { transform: translateX(-50%) translateY(0); }
-    .toast.success { background: #25D366; }
-    .toast.error { background: #e74c3c; }
-
-    /* ===== ANIMATIONS ===== */
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    .floating { animation: float 3s ease-in-out infinite; }
-
-    /* ===== RESPONSIVE BREAKPOINTS ===== */
-    @media (max-width: 992px) {
-      nav ul { display: none; }
-      .menu-toggle { display: flex; }
-      .nav-mobile {
-        position: absolute;
-        top: 100%;
-        left: 0; right: 0;
-        background: var(--primary);
-        padding: 20px;
-        display: none;
-        flex-direction: column;
-        gap: 8px;
-        border-top: 1px solid var(--glass-border);
-        backdrop-filter: blur(12px);
-        z-index: 999;
-      }
-      .nav-mobile.active { display: flex; }
-      .nav-mobile a {
-        color: var(--white);
-        padding: 14px 20px;
-        border-radius: 12px;
-        transition: var(--transition);
-        min-height: 48px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-      .nav-mobile a:hover,
-      .nav-mobile a.active {
-        background: var(--glass);
-        color: var(--accent);
-      }
-      .modal-body {
-        grid-template-columns: 1fr;
-        padding: 20px;
-      }
-      .quick-actions {
-        grid-template-columns: 1fr;
-      }
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    @media (max-width: 768px) {
-      :root { --section-padding: 60px 20px; }
-      .hero { padding: 100px 15px 60px; min-height: 55vh; }
-      .hero h1 { font-size: clamp(1.6rem, 6vw, 2rem); }
-      .hero p { font-size: clamp(0.95rem, 3vw, 1.05rem); }
-      .section { padding: var(--section-padding); }
-      .facility-card { padding: 30px 25px; }
-      .contact-card { padding: 30px 20px; }
-      .whatsapp-float { bottom: 20px; right: 20px; padding: 12px 16px; font-size: 0.9rem; }
-      .whatsapp-float span { display: none; }
-      .whatsapp-float i { font-size: 24px; }
-      .nav-container { padding: 10px 20px; }
-      .brand img { width: 44px; }
-      .brand span { display: none; }
-      .footer-content { grid-template-columns: 1fr; gap: 35px; }
-      .modal-header h2 { font-size: 1.5rem; }
-      .modal-header p { font-size: 0.95rem; }
-    }
-    @media (max-width: 480px) {
-      .hero { padding: 90px 12px 50px; min-height: 50vh; }
-      .hero h1 { font-size: clamp(1.5rem, 7vw, 1.8rem); }
-      .section-header h2 { font-size: clamp(1.6rem, 5vw, 2rem); }
-      .contact-card a { width: 100%; justify-content: center; }
-      .form-group input, .form-group textarea { font-size: 16px; }
-      .action-btn { justify-content: center; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-      html { scroll-behavior: auto; }
-    }
-    a:focus, button:focus, input:focus, textarea:focus {
-      outline: 3px solid var(--accent);
-      outline-offset: 2px;
-    }
+    :root{--primary:#0a2a5e;--primary-light:#1e3a7a;--secondary:#9e7b4b;--accent:#c7a854;--light:#f5f7fa;--dark:#1e2b37;--gray:#4b5c6b;--white:#fff;--shadow:0 4px 20px rgba(0,0,0,.1);--shadow-lg:0 20px 40px rgba(0,0,0,.15);--radius:24px;--transition:all .4s cubic-bezier(.25,.8,.25,1);--font:'Inter','Plus Jakarta Sans',sans-serif}
+    .dark-mode{--primary:#1e3a8a;--secondary:#d4af37;--light:#0f1825;--dark:#edf2f7;--gray:#a0b3c6;--white:#1a2533}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font);background:var(--light);color:var(--dark);line-height:1.6;transition:background .4s,color .4s;overflow-x:hidden}
+    h1,h2,h3{font-family:var(--font);font-weight:700;line-height:1.3}
+    a{text-decoration:none;color:inherit;transition:var(--transition)}
+    img{max-width:100%;height:auto;display:block}
+    
+    /* Preloader - CEPAT */
+    #preloader{position:fixed;inset:0;background:var(--primary);z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity .3s}
+    #preloader.hide{opacity:0;pointer-events:none}
+    .spinner{width:50px;height:50px;border:3px solid rgba(255,255,255,.2);border-top-color:var(--secondary);border-radius:50%;animation:spin .8s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    
+    /* Header */
+    header{background:linear-gradient(135deg,var(--primary),var(--primary-light));position:sticky;top:0;z-index:1000;box-shadow:var(--shadow)}
+    .nav{max-width:1200px;margin:auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:800;font-size:1.3rem}
+    .brand img{width:48px;border-radius:10px}
+    nav ul{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;list-style:none}
+    nav a{color:#fff;padding:10px 12px;border-radius:12px;font-size:.9rem;font-weight:500;display:flex;align-items:center;gap:6px;opacity:.95}
+    nav a:hover,nav a.active{opacity:1;background:rgba(255,255,255,.1);transform:translateY(-2px)}
+    nav a.active{background:var(--secondary);box-shadow:0 4px 15px rgba(158,123,75,.4)}
+    .menu-btn{display:none;color:#fff;font-size:22px;padding:8px;border-radius:10px;cursor:pointer}
+    .theme-btn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);width:40px;height:40px;border-radius:50%;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition)}
+    .theme-btn:hover{background:var(--secondary);transform:rotate(15deg)}
+    .dark-mode .fa-sun{display:none}.dark-mode .fa-moon{display:block}
+    .fa-sun{display:none}
+    
+    /* Hero */
+    .hero{position:relative;color:#fff;text-align:center;padding:100px 20px 60px;min-height:50vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(10,42,94,.9),rgba(5,26,59,.95)),url('https://i.ibb.co.com/j91238Vc/X-6-PROSES-PEMBELAJARAN.jpg')center/cover}
+    .hero h1{font-size:clamp(1.6rem,5vw,2.5rem);margin-bottom:16px;text-shadow:0 4px 20px rgba(0,0,0,.4)}
+    .hero p{max-width:700px;font-size:clamp(1rem,2.5vw,1.1rem);opacity:.95}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:var(--secondary);padding:6px 16px;border-radius:50px;font-size:.85rem;font-weight:600;margin-bottom:20px}
+    
+    /* Section */
+    .section{max-width:1200px;margin:auto;padding:60px 24px}
+    .section-title{text-align:center;margin-bottom:40px}
+    .section-title h2{color:var(--primary);font-size:clamp(1.5rem,4vw,2rem);position:relative;display:inline-block}
+    .section-title h2::after{content:'';display:block;width:70px;height:4px;background:linear-gradient(90deg,var(--secondary),var(--accent));margin:12px auto 0;border-radius:2px}
+    
+    /* Cards */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:30px}
+    .card{background:var(--white);border-radius:var(--radius);padding:28px 24px;text-align:center;box-shadow:var(--shadow);transition:var(--transition);border:1px solid rgba(158,123,75,.1)}
+    .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--secondary)}
+    .card-icon{width:65px;height:65px;background:linear-gradient(135deg,rgba(158,123,75,.1),rgba(199,168,84,.05));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.8rem;color:var(--primary);border:2px solid var(--secondary)}
+    .card h3{color:var(--primary);margin:12px 0;font-size:1.2rem}
+    .card .nums{display:flex;justify-content:center;gap:12px;margin-top:12px}
+    .num{background:var(--light);padding:6px 14px;border-radius:30px;font-size:.8rem;font-weight:600}
+    .num span{display:block;font-size:1.2rem;font-weight:800;color:var(--secondary)}
+    
+    /* Stats */
+    .stats{background:linear-gradient(135deg,rgba(10,42,94,.05),rgba(158,123,75,.03));padding:50px 24px;text-align:center}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:24px;max-width:900px;margin:30px auto 0}
+    .stat .val{font-size:2.2rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+    .stat .lbl{color:var(--gray);font-size:.9rem;font-weight:600}
+    
+    /* Table */
+    .table-wrap{overflow-x:auto;margin-top:30px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    table{width:100%;border-collapse:collapse;background:var(--white);min-width:600px}
+    th{background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;padding:14px 12px;text-align:left;font-weight:600;font-size:.9rem;position:sticky;top:0}
+    td{padding:14px 12px;border-bottom:1px solid rgba(0,0,0,.05);font-size:.9rem}
+    tr:hover{background:var(--light)}
+    .total{background:linear-gradient(135deg,rgba(158,123,75,.1),rgba(199,168,84,.05));font-weight:700}
+    .total td{border-top:2px solid var(--secondary)}
+    .sem{display:inline-block;padding:3px 10px;border-radius:15px;font-size:.7rem;font-weight:600;background:var(--secondary);color:#fff}
+    .sem.g{background:var(--primary)}
+    
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:30px}
+    .c-card{background:var(--white);padding:30px 24px;border-radius:var(--radius);text-align:center;box-shadow:var(--shadow);transition:var(--transition);border:1px solid rgba(158,123,75,.1);position:relative;overflow:hidden}
+    .c-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--secondary),var(--accent));transform:scaleX(0);transition:transform .4s;transform-origin:left}
+    .c-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:var(--secondary)}
+    .c-card:hover::before{transform:scaleX(1)}
+    .c-card i{font-size:2.8rem;color:var(--primary);margin-bottom:16px;transition:var(--transition)}
+    .c-card:hover i{transform:scale(1.1);color:var(--secondary)}
+    .c-card h3{color:var(--primary);margin:10px 0;font-size:1.3rem}
+    .c-card p{color:var(--gray);margin:6px 0}
+    .c-card a{color:var(--secondary);font-weight:600;display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:8px 16px;border-radius:40px;background:rgba(158,123,75,.1)}
+    .c-card a:hover{color:#fff;background:var(--secondary);transform:translateY(-2px)}
+    
+    /* Footer */
+    footer{background:linear-gradient(145deg,var(--primary),var(--primary-light));color:#fff;padding:50px 24px 24px}
+    .foot{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px}
+    .foot h4{font-size:1.2rem;margin-bottom:18px;color:var(--secondary);display:flex;align-items:center;gap:8px}
+    .foot ul{list-style:none}
+    .foot li{margin-bottom:10px}
+    .foot a{color:rgba(255,255,255,.85);display:flex;align-items:center;gap:8px}
+    .foot a:hover{color:var(--secondary);transform:translateX(4px)}
+    .social{display:flex;gap:12px;margin-top:12px}
+    .social a{color:#fff;font-size:1.3rem;transition:var(--transition)}
+    .social a:hover{transform:translateY(-3px);color:var(--secondary)}
+    .copy{text-align:center;margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:.9rem;opacity:.85}
+    
+    /* WhatsApp Float */
+    .wa{position:fixed;bottom:24px;right:24px;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;padding:12px 20px;border-radius:50px;display:flex;align-items:center;gap:8px;font-weight:600;font-size:.9rem;box-shadow:0 8px 20px rgba(37,211,102,.4);z-index:999;transition:var(--transition)}
+    .wa:hover{transform:translateY(-4px) scale(1.05);box-shadow:0 12px 28px rgba(37,211,102,.6)}
+    .wa i{font-size:20px}
+    
+    /* Modal */
+    .modal{position:fixed;inset:0;background:rgba(10,42,94,.9);display:flex;align-items:center;justify-content:center;z-index:2000;opacity:0;visibility:hidden;transition:var(--transition);padding:20px}
+    .modal.show{opacity:1;visibility:visible}
+    .modal-box{background:var(--white);border-radius:24px;max-width:800px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow-lg);transform:translateY(20px);transition:transform .4s}
+    .modal.show .modal-box{transform:translateY(0)}
+    .modal-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:var(--light);border:none;color:var(--dark);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition)}
+    .modal-close:hover{background:var(--secondary);color:#fff;transform:rotate(90deg)}
+    .modal-head{background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;padding:24px;text-align:center}
+    .modal-head h3{font-size:1.5rem;margin-bottom:6px}
+    .modal-body{padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .actions{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .act{display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;background:var(--light);font-weight:600;transition:var(--transition);text-align:center}
+    .act:hover{transform:translateY(-2px);box-shadow:var(--shadow);border:2px solid var(--secondary)}
+    .act.wa{background:rgba(37,211,102,.1);color:#128C7E}
+    .act.wa:hover{background:#25D366;color:#fff}
+    .act i{font-size:1.2rem;width:20px;text-align:center}
+    .info{background:var(--light);padding:16px;border-radius:14px}
+    .info h4{color:var(--primary);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+    .info li{padding:6px 0;border-bottom:1px solid rgba(0,0,0,.05);display:flex;gap:8px;font-size:.9rem}
+    .info li:last-child{border:none}
+    .form{grid-column:1/-1}
+    .form h4{color:var(--primary);margin-bottom:16px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .fg{display:flex;flex-direction:column;gap:4px}
+    .fg.full{grid-column:1/-1}
+    .fg label{font-weight:500;font-size:.85rem;color:var(--gray)}
+    .fg input,.fg textarea{padding:10px 14px;border:2px solid rgba(0,0,0,.1);border-radius:10px;font:inherit;font-size:1rem;background:var(--white);min-height:44px;transition:var(--transition)}
+    .fg input:focus,.fg textarea:focus{outline:none;border-color:var(--secondary);box-shadow:0 0 0 3px rgba(158,123,75,.15)}
+    .fg textarea{min-height:90px;resize:vertical}
+    .btn{background:linear-gradient(135deg,var(--secondary),var(--accent));color:#fff;border:none;padding:12px 24px;border-radius:40px;font-weight:600;cursor:pointer;transition:var(--transition);display:inline-flex;align-items:center;gap:6px;margin-top:8px}
+    .btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+    .map{grid-column:1/-1;background:var(--light);border-radius:14px;overflow:hidden}
+    .map iframe{width:100%;height:200px;border:0}
+    .map a{display:block;text-align:center;padding:10px;background:var(--primary);color:#fff;font-weight:500}
+    .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--dark);color:#fff;padding:12px 20px;border-radius:12px;box-shadow:var(--shadow-lg);z-index:3000;transition:transform .3s;display:flex;align-items:center;gap:8px}
+    .toast.show{transform:translateX(-50%) translateY(0)}
+    .toast.ok{background:#25D366}.toast.err{background:#e74c3c}
+    
+    /* Responsive */
+    @media(max-width:992px){nav ul{display:none}.menu-btn{display:flex}.nav-m{position:absolute;top:100%;left:0;right:0;background:var(--primary);padding:16px;display:none;flex-direction:column;gap:8px;border-top:1px solid rgba(255,255,255,.1)}.nav-m.show{display:flex}.nav-m a{color:#fff;padding:12px 16px;border-radius:10px}.nav-m a:hover,.nav-m a.active{background:rgba(255,255,255,.1);color:var(--accent)}.modal-body{grid-template-columns:1fr;padding:20px}.actions{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}}
+    @media(max-width:768px){.section{padding:40px 20px}.hero{padding:80px 16px 40px;min-height:45vh}.card{padding:24px 20px}.c-card{padding:26px 20px}.wa span{display:none}.brand span{display:none}.brand img{width:42px}.foot{grid-template-columns:1fr}}
+    @media(max-width:480px){.hero h1{font-size:1.4rem}.section-title h2{font-size:1.4rem}.fg input,.fg textarea{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}html{scroll-behavior:auto}}
+    :focus{outline:3px solid var(--accent);outline-offset:2px}
   </style>
 </head>
 <body>
+  <!-- Preloader Cepat -->
+  <div id="preloader"><div class="spinner"></div></div>
 
-<!-- Preloader -->
-<div id="preloader" role="status" aria-label="Loading">
-  <div class="spinner"></div>
-</div>
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/6282319712420?text=Halo%20saya%20ingin%20bertanya%20tentang%20Sarpras%20SMAN%201%20Cluring" class="wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i><span>Chat Admin</span></a>
 
-<!-- WhatsApp Float Button -->
-<a href="https://wa.me/6282319712420?text=Halo%20saya%20ingin%20bertanya%20tentang%20Sarpras%20SMAN%201%20Cluring"
-   class="whatsapp-float"
-   target="_blank"
-   rel="noopener noreferrer"
-   aria-label="Chat dengan Admin via WhatsApp">
-  <i class="fab fa-whatsapp" aria-hidden="true"></i>
-  <span>Chat Admin</span>
-</a>
-
-<!-- Header Navigation -->
-<header id="mainHeader">
-  <div class="nav-container">
-    <a href="index.html" class="brand">
-      <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png"
-           alt="Logo SMAN 1 Cluring"
-           width="52"
-           height="52"
-           loading="eager">
-      <span>SMAN 1 CLURING</span>
-    </a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-      <i class="fas fa-bars" aria-hidden="true"></i>
-    </button>
-    <nav aria-label="Main navigation">
-      <ul id="navMenu">
-        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="profil.html"><i class="fas fa-school"></i> Profil</a></li>
-        <li><a href="akademik.html"><i class="fas fa-book"></i> Akademik</a></li>
-        <li><a href="kesiswaan.html"><i class="fas fa-users"></i> Kesiswaan</a></li>
-        <li><a href="sarpras.html" class="active" aria-current="page"><i class="fas fa-building"></i> Sarpras</a></li>
-        <li><a href="humas.html"><i class="fas fa-bullhorn"></i> Humas</a></li>
-        <li><a href="mitra.html"><i class="fas fa-handshake"></i> Mitra</a></li>
-        <li><a href="alumni.html"><i class="fas fa-graduation-cap"></i> Alumni</a></li>
-        <li><a href="artikel.html"><i class="fas fa-newspaper"></i> Artikel</a></li>
-        <li><a href="#" onclick="openContactModal(); return false;"><i class="fas fa-envelope"></i> Kontak</a></li>
-      </ul>
-    </nav>
-    <div class="nav-actions">
-      <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
-        <i class="fas fa-moon" aria-hidden="true"></i>
-        <i class="fas fa-sun" aria-hidden="true"></i>
-      </button>
+  <!-- Header -->
+  <header>
+    <div class="nav">
+      <a href="index.html" class="brand">
+        <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo" loading="eager">
+        <span>SMAN 1 CLURING</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      <nav>
+        <ul id="navMenu">
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="profil.html"><i class="fas fa-school"></i> Profil</a></li>
+          <li><a href="akademik.html"><i class="fas fa-book"></i> Akademik</a></li>
+          <li><a href="kesiswaan.html"><i class="fas fa-users"></i> Kesiswaan</a></li>
+          <li><a href="sarpras.html" class="active"><i class="fas fa-building"></i> Sarpras</a></li>
+          <li><a href="humas.html"><i class="fas fa-bullhorn"></i> Humas</a></li>
+          <li><a href="mitra.html"><i class="fas fa-handshake"></i> Mitra</a></li>
+          <li><a href="alumni.html"><i class="fas fa-graduation-cap"></i> Alumni</a></li>
+          <li><a href="artikel.html"><i class="fas fa-newspaper"></i> Artikel</a></li>
+          <li><a href="#" onclick="openModal();return false"><i class="fas fa-envelope"></i> Kontak</a></li>
+        </ul>
+      </nav>
+      <button class="theme-btn" id="themeBtn" aria-label="Dark mode"><i class="fas fa-moon"></i><i class="fas fa-sun"></i></button>
     </div>
-  </div>
-  <!-- Mobile Menu -->
-  <div class="nav-mobile" id="navMobile" role="dialog" aria-label="Mobile menu">
-    <a href="index.html"><i class="fas fa-home"></i> Home</a>
-    <a href="profil.html"><i class="fas fa-school"></i> Profil</a>
-    <a href="akademik.html"><i class="fas fa-book"></i> Akademik</a>
-    <a href="kesiswaan.html"><i class="fas fa-users"></i> Kesiswaan</a>
-    <a href="sarpras.html" class="active"><i class="fas fa-building"></i> Sarpras</a>
-    <a href="humas.html"><i class="fas fa-bullhorn"></i> Humas</a>
-    <a href="mitra.html"><i class="fas fa-handshake"></i> Mitra</a>
-    <a href="alumni.html"><i class="fas fa-graduation-cap"></i> Alumni</a>
-    <a href="artikel.html"><i class="fas fa-newspaper"></i> Artikel</a>
-    <a href="#" onclick="openContactModal(); closeMobileMenu(); return false;"><i class="fas fa-envelope"></i> Kontak</a>
-  </div>
-</header>
-
-<!-- Hero Section -->
-<section class="hero" data-aos="fade-in">
-  <div class="hero-badge" data-aos="zoom-in">
-    <i class="fas fa-check-circle"></i> Modern • Representatif • Berstandar Nasional
-  </div>
-  <h1 data-aos="fade-up" data-aos-delay="100">
-    <i class="fas fa-building" style="margin-right: 12px;"></i>
-    Sarana & Prasarana
-  </h1>
-  <p data-aos="fade-up" data-aos-delay="200">
-    Fasilitas lengkap penunjang pembelajaran di <strong>SMAN 1 Cluring Banyuwangi</strong> 
-    yang modern, representatif, dan berstandar nasional untuk mendukung proses belajar mengajar yang optimal.
-  </p>
-</section>
-
-<!-- Main Content -->
-<main>
-  <section class="section">
-    <!-- Fasilitas Utama -->
-    <div class="section-header" data-aos="fade-up">
-      <h2><i class="fas fa-school"></i> Fasilitas Utama</h2>
+    <div class="nav-m" id="navM">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="profil.html"><i class="fas fa-school"></i> Profil</a>
+      <a href="akademik.html"><i class="fas fa-book"></i> Akademik</a>
+      <a href="kesiswaan.html"><i class="fas fa-users"></i> Kesiswaan</a>
+      <a href="sarpras.html" class="active"><i class="fas fa-building"></i> Sarpras</a>
+      <a href="humas.html"><i class="fas fa-bullhorn"></i> Humas</a>
+      <a href="mitra.html"><i class="fas fa-handshake"></i> Mitra</a>
+      <a href="alumni.html"><i class="fas fa-graduation-cap"></i> Alumni</a>
+      <a href="artikel.html"><i class="fas fa-newspaper"></i> Artikel</a>
+      <a href="#" onclick="openModal();closeMenu();return false"><i class="fas fa-envelope"></i> Kontak</a>
     </div>
+  </header>
 
-    <div class="facility-grid">
-      <div class="facility-card" data-aos="zoom-in">
-        <div class="facility-icon"><i class="fas fa-chalkboard"></i></div>
-        <h3>Ruang Kelas</h3>
-        <p>27 ruang kelas dilengkapi Smart TV, sound system modern, dan AC untuk mendukung pembelajaran aktif dan kreatif.</p>
-      </div>
-
-      <div class="facility-card" data-aos="zoom-in" data-aos-delay="100">
-        <div class="facility-icon"><i class="fas fa-mosque"></i></div>
-        <h3>Masjid Baitul Muttaqin</h3>
-        <p>Masjid sekolah berkapasitas 700 jamaah dengan fasilitas wudhu modern, sound system berkualitas, dan ruang takmir representatif.</p>
-      </div>
-
-      <div class="facility-card" data-aos="zoom-in" data-aos-delay="200">
-        <div class="facility-icon"><i class="fas fa-book-open"></i></div>
-        <h3>Perpustakaan</h3>
-        <p>Koleksi 1000+ buku, ruang baca nyaman ber-AC, akses digital, dan layanan peminjaman online untuk mendukung literasi siswa.</p>
-      </div>
-
-      <div class="facility-card" data-aos="zoom-in" data-aos-delay="300">
-        <div class="facility-icon"><i class="fas fa-microscope"></i></div>
-        <h3>Laboratorium IPA</h3>
-        <p>3 lab IPA (Fisika, Kimia, Biologi) dengan peralatan lengkap, meja praktikum modern, dan ruang penyimpanan bahan kimia yang aman.</p>
-      </div>
-
-      <div class="facility-card" data-aos="zoom-in" data-aos-delay="400">
-        <div class="facility-icon"><i class="fas fa-desktop"></i></div>
-        <h3>Lab Komputer</h3>
-        <p>2 lab komputer dengan 60 unit PC spek tinggi, koneksi internet fiber optik, dan software pembelajaran terupdate.</p>
-      </div>
-
-      <div class="facility-card" data-aos="zoom-in" data-aos-delay="500">
-        <div class="facility-icon"><i class="fas fa-language"></i></div>
-        <h3>Lab Bahasa</h3>
-        <p>Lab bahasa modern dengan headphone digital, sistem audio terintegrasi, dan software pembelajaran bahasa Inggris, Jepang, dan Arab.</p>
-      </div>
-
-      <div class="facility-card" data-aos="zoom-in" data-aos-delay="600">
-        <div class="facility-icon"><i class="fas fa-dumbbell"></i></div>
-        <h3>Lapangan Olahraga</h3>
-        <p>Lapangan basket, futsal, voli, dan atletik dengan tribun penonton, gudang peralatan, dan ruang ganti yang representatif.</p>
-      </div>
-
-      <div class="facility-card" data-aos="zoom-in" data-aos-delay="700">
-        <div class="facility-icon"><i class="fas fa-utensils"></i></div>
-        <h3>Kantin Sehat</h3>
-        <p>3 unit kantin dengan standar kebersihan tinggi, menyediakan makanan bergizi, minuman sehat, dan harga terjangkau.</p>
-      </div>
-
-      <div class="facility-card" data-aos="zoom-in" data-aos-delay="800">
-        <div class="facility-icon"><i class="fas fa-first-aid"></i></div>
-        <h3>UKS</h3>
-        <p>Ruang UKS lengkap dengan tempat tidur, obat-obatan standar, dan tenaga medis yang siap melayani siswa yang membutuhkan pertolongan pertama.</p>
-      </div>
-
-      <div class="facility-card" data-aos="zoom-in" data-aos-delay="900">
-        <div class="facility-icon"><i class="fas fa-shield-alt"></i></div>
-        <h3>Pos Keamanan</h3>
-        <p>Pos keamanan 24 jam dengan CCTV terpasang di seluruh area sekolah, sistem absensi digital, dan petugas keamanan profesional.</p>
-      </div>
-
-      <div class="facility-card" data-aos="zoom-in" data-aos-delay="1000">
-        <div class="facility-icon"><i class="fas fa-leaf"></i></div>
-        <h3>Taman & Area Hijau</h3>
-        <p>Area taman yang asri dengan tanaman hias, area duduk nyaman, dan program lingkungan hidup untuk mendukung sekolah adiwiyata.</p>
-      </div>
-
-      <div class="facility-card" data-aos="zoom-in" data-aos-delay="1100">
-        <div class="facility-icon"><i class="fas fa-wifi"></i></div>
-        <h3>Hotspot Area</h3>
-        <p>WiFi gratis dengan jaringan fiber optik 100 Mbps di seluruh area sekolah untuk mendukung pembelajaran digital.</p>
-      </div>
-    </div>
-
-    <!-- Statistik Sarpras -->
-    <div class="stats-section">
-      <div class="section-header" data-aos="fade-up">
-        <h2><i class="fas fa-chart-line"></i> Statistik Fasilitas</h2>
-      </div>
-      <div class="stats-grid">
-        <div class="stat-item" data-aos="fade-up">
-          <div class="stat-number">27</div>
-          <div class="stat-label">Ruang Kelas</div>
-        </div>
-        <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-          <div class="stat-number">3</div>
-          <div class="stat-label">Laboratorium IPA</div>
-        </div>
-        <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-          <div class="stat-number">2</div>
-          <div class="stat-label">Lab Komputer</div>
-        </div>
-        <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-          <div class="stat-number">1</div>
-          <div class="stat-label">Lab Bahasa</div>
-        </div>
-        <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
-          <div class="stat-number">3</div>
-          <div class="stat-label">Kantin Sehat</div>
-        </div>
-        <div class="stat-item" data-aos="fade-up" data-aos-delay="500">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Smart TV</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Kontak Sarpras (SAMA PERSIS DENGAN HUMAS) -->
-    <div class="section-header" data-aos="fade-up">
-      <h2>Kontak Sarpras</h2>
-    </div>
-    <div class="contact-grid">
-      <article class="contact-card" data-aos="zoom-in">
-        <i class="fas fa-user-tie floating"></i>
-        <h3>Koordinator Sarpras</h3>
-        <p><strong>Moh. Suharso, S.Pd</strong></p>
-        <p>Wakil Kepala Bidang Sarpras</p>
-        <a href="tel:+6282319712420" aria-label="Telepon Koordinator Sarpras">
-          <i class="fas fa-phone"></i> 0823-1971-2420
-        </a>
-      </article>
-      <article class="contact-card" data-aos="zoom-in" data-aos-delay="100">
-        <i class="fas fa-envelope floating"></i>
-        <h3>Email Resmi</h3>
-        <p>humas@sman1cluring.sch.id</p>
-        <p>info@sman1cluring.sch.id</p>
-        <a href="mailto:humas@sman1cluring.sch.id" aria-label="Kirim email">
-          <i class="fas fa-paper-plane"></i> Kirim Email
-        </a>
-      </article>
-      <article class="contact-card" data-aos="zoom-in" data-aos-delay="200">
-        <i class="fab fa-whatsapp floating"></i>
-        <h3>WhatsApp Admin</h3>
-        <p>Hubungi admin untuk informasi lebih lanjut</p>
-        <a href="https://wa.me/6282319712420" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
-          <i class="fab fa-whatsapp"></i> Chat Sekarang
-        </a>
-      </article>
-    </div>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="badge"><i class="fas fa-check-circle"></i> Lengkap • Modern • Berstandar</div>
+    <h1><i class="fas fa-building" style="margin-right:10px"></i>Sarana & Prasarana</h1>
+    <p>Data fasilitas penunjang pembelajaran di <strong>SMAN 1 Cluring Banyuwangi</strong></p>
   </section>
-</main>
 
-<!-- Footer -->
-<footer>
-  <div class="footer-content">
-    <div class="footer-section">
-      <h3><i class="fas fa-map-marker-alt"></i> Kontak</h3>
-      <address>
-        Jl. Huzaini, Benculuk, Cluring<br>
-        Banyuwangi, Jawa Timur
-      </address>
-      <p><i class="fas fa-phone"></i> <a href="tel:+62333713297">0333-713297</a></p>
-      <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6282319712420" target="_blank" rel="noopener">0823-1971-2420</a></p>
-    </div>
-    <div class="footer-section">
-      <h3><i class="fas fa-link"></i> Link Penting</h3>
-      <ul>
-        <li><a href="https://sma.kemendikdasmen.go.id" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
-        <li><a href="https://dindik.jatimprov.go.id" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
-        <li><a href="https://banyuwangicab.dindikjatim.id" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Cabang Dinas Banyuwangi</a></li>
-        <li><a href="https://alam21234.github.io/Smaring-interactive-learning-comunity" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Smaring Learning</a></li>
-      </ul>
-    </div>
-    <div class="footer-section">
-      <h3><i class="fas fa-flask"></i> Lab Virtual</h3>
-      <ul>
-        <li><a href="https://quran.nu.or.id" target="_blank" rel="noopener"><i class="fas fa-book-quran"></i> Al-Qur'an Digital</a></li>
-        <li><a href="https://virtualbiologylab.org" target="_blank" rel="noopener"><i class="fas fa-dna"></i> Virtual Biology Lab</a></li>
-        <li><a href="https://www.myphysicslab.com" target="_blank" rel="noopener"><i class="fas fa-atom"></i> MyPhysicsLab</a></li>
-      </ul>
-    </div>
-    <div class="footer-section">
-      <h3><i class="fas fa-share-alt"></i> Media Sosial</h3>
-      <div style="display: flex; gap: 15px; margin-top: 15px;">
-        <a href="https://www.facebook.com/Sman1Cluring" target="_blank" rel="noopener"
-           style="color: white; font-size: 1.5rem; transition: var(--transition);"
-           aria-label="Facebook SMAN 1 Cluring"
-           onmouseover="this.style.transform='translateY(-3px)'"
-           onmouseout="this.style.transform=''">
-          <i class="fab fa-facebook"></i>
-        </a>
-        <a href="https://www.instagram.com/sman1_cluring" target="_blank" rel="noopener"
-           style="color: white; font-size: 1.5rem; transition: var(--transition);"
-           aria-label="Instagram SMAN 1 Cluring"
-           onmouseover="this.style.transform='translateY(-3px)'"
-           onmouseout="this.style.transform=''">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank" rel="noopener"
-           style="color: white; font-size: 1.5rem; transition: var(--transition);"
-           aria-label="YouTube SMAN 1 Cluring"
-           onmouseover="this.style.transform='translateY(-3px)'"
-           onmouseout="this.style.transform=''">
-          <i class="fab fa-youtube"></i>
-        </a>
+  <!-- Main -->
+  <main>
+    <section class="section">
+      <div class="section-title"><h2><i class="fas fa-school"></i> Daftar Fasilitas</h2></div>
+      <div class="grid">
+        <div class="card"><div class="card-icon"><i class="fas fa-chalkboard"></i></div><h3>Ruang Kelas</h3><div class="nums"><div class="num"><span>27</span>Genap</div><div class="num"><span>27</span>Ganjil</div></div></div>
+        <div class="card"><div class="card-icon"><i class="fas fa-book"></i></div><h3>Perpustakaan</h3><div class="nums"><div class="num"><span>1</span>Genap</div><div class="num"><span>1</span>Ganjil</div></div></div>
+        <div class="card"><div class="card-icon"><i class="fas fa-flask"></i></div><h3>Laboratorium</h3><div class="nums"><div class="num"><span>3</span>Genap</div><div class="num"><span>3</span>Ganjil</div></div></div>
+        <div class="card"><div class="card-icon"><i class="fas fa-tools"></i></div><h3>Ruang Praktik</h3><div class="nums"><div class="num"><span>1</span>Genap</div><div class="num"><span>1</span>Ganjil</div></div></div>
+        <div class="card"><div class="card-icon"><i class="fas fa-user-tie"></i></div><h3>Ruang Pimpinan</h3><div class="nums"><div class="num"><span>1</span>Genap</div><div class="num"><span>1</span>Ganjil</div></div></div>
+        <div class="card"><div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div><h3>Ruang Guru</h3><div class="nums"><div class="num"><span>1</span>Genap</div><div class="num"><span>1</span>Ganjil</div></div></div>
+        <div class="card"><div class="card-icon"><i class="fas fa-mosque"></i></div><h3>Ruang Ibadah</h3><div class="nums"><div class="num"><span>3</span>Genap</div><div class="num"><span>3</span>Ganjil</div></div></div>
+        <div class="card"><div class="card-icon"><i class="fas fa-first-aid"></i></div><h3>UKS</h3><div class="nums"><div class="num"><span>1</span>Genap</div><div class="num"><span>1</span>Ganjil</div></div></div>
+        <div class="card"><div class="card-icon"><i class="fas fa-restroom"></i></div><h3>Toilet</h3><div class="nums"><div class="num"><span>11</span>Genap</div><div class="num"><span>11</span>Ganjil</div></div></div>
+        <div class="card"><div class="card-icon"><i class="fas fa-warehouse"></i></div><h3>Gudang</h3><div class="nums"><div class="num"><span>3</span>Genap</div><div class="num"><span>3</span>Ganjil</div></div></div>
+        <div class="card"><div class="card-icon"><i class="fas fa-directions"></i></div><h3>Sirkulasi</h3><div class="nums"><div class="num"><span>2</span>Genap</div><div class="num"><span>2</span>Ganjil</div></div></div>
+        <div class="card"><div class="card-icon"><i class="fas fa-futbol"></i></div><h3>Olahraga</h3><div class="nums"><div class="num"><span>1</span>Genap</div><div class="num"><span>1</span>Ganjil</div></div></div>
+        <div class="card"><div class="card-icon"><i class="fas fa-briefcase"></i></div><h3>Ruang TU</h3><div class="nums"><div class="num"><span>1</span>Genap</div><div class="num"><span>1</span>Ganjil</div></div></div>
+        <div class="card"><div class="card-icon"><i class="fas fa-comments"></i></div><h3>Konseling</h3><div class="nums"><div class="num"><span>1</span>Genap</div><div class="num"><span>1</span>Ganjil</div></div></div>
+        <div class="card"><div class="card-icon"><i class="fas fa-users"></i></div><h3>Ruang OSIS</h3><div class="nums"><div class="num"><span>1</span>Genap</div><div class="num"><span>1</span>Ganjil</div></div></div>
+        <div class="card"><div class="card-icon"><i class="fas fa-hard-hat"></i></div><h3>R. Bangunan</h3><div class="nums"><div class="num"><span>16</span>Genap</div><div class="num"><span>16</span>Ganjil</div></div></div>
       </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
-    <p style="margin-top: 8px; font-size: 0.9rem; opacity: 0.8;">Website Resmi SMAN 1 Cluring Banyuwangi</p>
-  </div>
-</footer>
 
-<!-- Contact Modal (SAMA PERSIS DENGAN HUMAS) -->
-<div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
-  <div class="modal-contact">
-    <button class="modal-close" onclick="closeContactModal()" aria-label="Tutup modal">
-      <i class="fas fa-times"></i>
-    </button>
-    <div class="modal-header">
-      <h2 id="modalTitle"><i class="fas fa-headset"></i> Hubungi Kami</h2>
-      <p>SMAN 1 Cluring - Siap Melayani Anda</p>
-    </div>
-    <div class="modal-body">
-      <div class="quick-actions">
-        <a href="https://wa.me/6282319712420" target="_blank" rel="noopener" class="action-btn whatsapp">
-          <i class="fab fa-whatsapp"></i> WhatsApp
-        </a>
-        <a href="mailto:zuliastutik24@guru.sma.belajar.id" class="action-btn email">
-          <i class="fas fa-envelope"></i> Email
-        </a>
-        <a href="tel:+62333713297" class="action-btn phone">
-          <i class="fas fa-phone"></i> Telepon
-        </a>
-        <a href="https://maps.google.com/?q=SMAN+1+Cluring+Banyuwangi" target="_blank" rel="noopener" class="action-btn maps">
-          <i class="fas fa-map-marker-alt"></i> Lokasi
-        </a>
+      <!-- Stats -->
+      <div class="stats">
+        <div class="section-title"><h2><i class="fas fa-chart-pie"></i> Ringkasan</h2></div>
+        <div class="stats-grid">
+          <div class="stat"><div class="val">16</div><div class="lbl">Jenis Fasilitas</div></div>
+          <div class="stat"><div class="val">74</div><div class="lbl">Total Genap 23/24</div></div>
+          <div class="stat"><div class="val">74</div><div class="lbl">Total Ganjil 24/25</div></div>
+          <div class="stat"><div class="val">100%</div><div class="lbl">Ketersediaan</div></div>
+        </div>
       </div>
-      <div class="info-panel">
-        <h4><i class="fas fa-info-circle"></i> Informasi Sekolah</h4>
+
+      <!-- Table -->
+      <div class="section-title"><h2><i class="fas fa-table"></i> Data Lengkap</h2></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>No</th><th>Jenis Sarpras</th><th>Genap 23/24 <span class="sem">Gnp</span></th><th>Ganjil 24/25 <span class="sem g">Gnj</span></th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Ruang Kelas</td><td>27</td><td>27</td></tr>
+            <tr><td>2</td><td>Ruang Perpustakaan</td><td>1</td><td>1</td></tr>
+            <tr><td>3</td><td>Ruang Laboratorium</td><td>3</td><td>3</td></tr>
+            <tr><td>4</td><td>Ruang Praktik</td><td>1</td><td>1</td></tr>
+            <tr><td>5</td><td>Ruang Pimpinan</td><td>1</td><td>1</td></tr>
+            <tr><td>6</td><td>Ruang Guru</td><td>1</td><td>1</td></tr>
+            <tr><td>7</td><td>Ruang Ibadah</td><td>3</td><td>3</td></tr>
+            <tr><td>8</td><td>Ruang UKS</td><td>1</td><td>1</td></tr>
+            <tr><td>9</td><td>Ruang Toilet</td><td>11</td><td>11</td></tr>
+            <tr><td>10</td><td>Ruang Gudang</td><td>3</td><td>3</td></tr>
+            <tr><td>11</td><td>Ruang Sirkulasi</td><td>2</td><td>2</td></tr>
+            <tr><td>12</td><td>Tempat Bermain/Olahraga</td><td>1</td><td>1</td></tr>
+            <tr><td>13</td><td>Ruang TU</td><td>1</td><td>1</td></tr>
+            <tr><td>14</td><td>Ruang Konseling</td><td>1</td><td>1</td></tr>
+            <tr><td>15</td><td>Ruang OSIS</td><td>1</td><td>1</td></tr>
+            <tr><td>16</td><td>Ruang Bangunan</td><td>16</td><td>16</td></tr>
+            <tr class="total"><td colspan="2"><strong>Total</strong></td><td><strong>74</strong></td><td><strong>74</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Kontak (SAMA DENGAN HUMAS + EMAIL IBU) -->
+      <div class="section-title"><h2>Kontak Sarpras</h2></div>
+      <div class="contact-grid">
+        <div class="c-card">
+          <i class="fas fa-user-tie"></i>
+          <h3>Koordinator</h3>
+          <p><strong>Moh. Suharso, S.Pd</strong></p>
+          <p>Wakil Kepala Sarpras</p>
+          <a href="tel:+6282319712420"><i class="fas fa-phone"></i> 0823-1971-2420</a>
+        </div>
+        <div class="c-card">
+          <i class="fas fa-envelope"></i>
+          <h3>Email Resmi</h3>
+          <p>humas@sman1cluring.sch.id</p>
+          <p>zuliastutik24@guru.sma.belajar.id</p>
+          <a href="mailto:zuliastutik24@guru.sma.belajar.id"><i class="fas fa-paper-plane"></i> Kirim Email</a>
+        </div>
+        <div class="c-card">
+          <i class="fab fa-whatsapp"></i>
+          <h3>WhatsApp</h3>
+          <p>Admin siap membantu</p>
+          <a href="https://wa.me/6282319712420" target="_blank"><i class="fab fa-whatsapp"></i> Chat Sekarang</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="foot">
+      <div>
+        <h4><i class="fas fa-map-marker-alt"></i> Alamat</h4>
+        <p>Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, Jawa Timur</p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+62333713297">0333-713297</a></p>
+        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6282319712420">0823-1971-2420</a></p>
+      </div>
+      <div>
+        <h4><i class="fas fa-link"></i> Link</h4>
         <ul>
-          <li><i class="fas fa-map-pin"></i> Jl. Huzaini, Benculuk, Cluring, Banyuwangi</li>
-          <li><i class="fas fa-clock"></i> Senin-Jumat: 07.00 - 15.30 WIB</li>
-          <li><i class="fas fa-building"></i> SMAN 1 Cluring - NPSN: 20525862</li>
+          <li><a href="https://sma.kemendikdasmen.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
+          <li><a href="https://dindik.jatimprov.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
+          <li><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas</a></li>
         </ul>
       </div>
-      <div class="contact-form">
-        <h4><i class="fas fa-paper-plane"></i> Kirim Pesan</h4>
-        <form id="contactForm" onsubmit="handleContactSubmit(event)" novalidate>
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="nama">Nama Lengkap *</label>
-              <input type="text" id="nama" name="nama" required placeholder="Masukkan nama Anda" autocomplete="name">
-            </div>
-            <div class="form-group">
-              <label for="email">Email *</label>
-              <input type="email" id="email" name="email" required placeholder="email@contoh.com" autocomplete="email">
-            </div>
-            <div class="form-group full">
-              <label for="subjek">Subjek *</label>
-              <input type="text" id="subjek" name="subjek" required placeholder="Tulis subjek pesan">
-            </div>
-            <div class="form-group full">
-              <label for="pesan">Pesan *</label>
-              <textarea id="pesan" name="pesan" required placeholder="Tulis pesan Anda di sini..."></textarea>
-            </div>
-          </div>
-          <button type="submit" class="submit-btn" id="submitBtn">
-            <i class="fas fa-paper-plane"></i> Kirim Pesan
-          </button>
-        </form>
+      <div>
+        <h4><i class="fas fa-share-alt"></i> Sosial Media</h4>
+        <div class="social">
+          <a href="https://facebook.com/Sman1Cluring" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://instagram.com/sman1_cluring" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://youtube.com/watch?v=5ZgkVKZuFiM" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
       </div>
-      <div class="map-preview">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.5!2d114.2!3d-8.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMzAnMDAuMCJTIDExNMKwMTInMDAuMCJF!5e0!3m2!1sid!2sid!4v1234567890"
-          loading="lazy"
-          title="Lokasi SMAN 1 Cluring"
-          allowfullscreen
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-        <a href="https://maps.google.com/?q=SMAN+1+Cluring+Banyuwangi" target="_blank" rel="noopener" class="map-link">
-          <i class="fas fa-external-link-alt"></i> Buka di Google Maps
-        </a>
+    </div>
+    <div class="copy">© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila</div>
+  </footer>
+
+  <!-- Modal Kontak -->
+  <div class="modal" id="modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+      <div class="modal-head"><h3><i class="fas fa-headset"></i> Hubungi Kami</h3><p>SMAN 1 Cluring - Siap Melayani</p></div>
+      <div class="modal-body">
+        <div class="actions">
+          <a href="https://wa.me/6282319712420" class="act wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <a href="mailto:zuliastutik24@guru.sma.belajar.id" class="act"><i class="fas fa-envelope"></i> Email</a>
+          <a href="tel:+62333713297" class="act"><i class="fas fa-phone"></i> Telepon</a>
+          <a href="https://maps.google.com/?q=SMAN+1+Cluring" class="act" target="_blank"><i class="fas fa-map-marker-alt"></i> Lokasi</a>
+        </div>
+        <div class="info">
+          <h4><i class="fas fa-info-circle"></i> Info Sekolah</h4>
+          <ul>
+            <li><i class="fas fa-map-pin"></i> Jl. Huzaini, Benculuk, Cluring</li>
+            <li><i class="fas fa-clock"></i> Senin-Jumat: 07.00-15.30 WIB</li>
+            <li><i class="fas fa-building"></i> NPSN: 20537373</li>
+          </ul>
+        </div>
+        <div class="form">
+          <h4><i class="fas fa-paper-plane"></i> Kirim Pesan</h4>
+          <form id="frm" onsubmit="send(event)">
+            <div class="form-grid">
+              <div class="fg"><label>Nama *</label><input type="text" id="nm" required></div>
+              <div class="fg"><label>Email *</label><input type="email" id="em" required></div>
+              <div class="fg full"><label>Subjek *</label><input type="text" id="sj" required></div>
+              <div class="fg full"><label>Pesan *</label><textarea id="ps" required></textarea></div>
+            </div>
+            <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Kirim</button>
+          </form>
+        </div>
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.5!2d114.2!3d-8.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMzAnMDAuMCJTIDExNMKwMTInMDAuMCJF!5e0!3m2!1sid!2sid!4v1234567890" loading="lazy"></iframe>
+          <a href="https://maps.google.com/?q=SMAN+1+Cluring+Banyuwangi" target="_blank">Buka Google Maps</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Toast Notification -->
-<div class="toast" id="toast" role="alert" aria-live="polite">
-  <i class="fas fa-check-circle"></i>
-  <span id="toastMessage">Pesan berhasil dikirim!</span>
-</div>
+  <!-- Toast -->
+  <div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="tmsg">Pesan terkirim!</span></div>
 
-<!-- Scripts -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-(function() {
-  const App = {
-    init() {
-      this.initPreloader();
-      this.initAOS();
-      this.initDarkMode();
-      this.initHeaderScroll();
-      this.initMobileMenu();
-      this.initModal();
-      this.initForm();
-      this.initAccessibility();
-    },
-    initPreloader() {
-      const preloader = document.getElementById('preloader');
-      if (!preloader) return;
-      const hide = () => preloader.classList.add('fade-out');
-      window.addEventListener('load', () => setTimeout(hide, 600));
-      setTimeout(hide, 3000);
-    },
-    initAOS() {
-      if (typeof AOS !== 'undefined') {
-        AOS.init({ duration: 800, once: true, offset: 100 });
-      }
-    },
-    initDarkMode() {
-      const toggle = document.getElementById('darkModeToggle');
-      const body = document.body;
-      if (!toggle) return;
-      if (localStorage.getItem('darkMode') === 'true') body.classList.add('dark-mode');
-      toggle.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-        localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
-      });
-    },
-    initHeaderScroll() {
-      const header = document.getElementById('mainHeader');
-      if (!header) return;
-      const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 50);
-      window.addEventListener('scroll', () => requestAnimationFrame(onScroll));
-      onScroll();
-    },
-    initMobileMenu() {
-      const toggle = document.getElementById('menuToggle');
-      const menu = document.getElementById('navMobile');
-      if (!toggle || !menu) return;
-      const close = () => {
-        menu.classList.remove('active');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.innerHTML = '<i class="fas fa-bars"></i>';
-      };
-      const open = () => {
-        menu.classList.add('active');
-        toggle.setAttribute('aria-expanded', 'true');
-        toggle.innerHTML = '<i class="fas fa-times"></i>';
-      };
-      toggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        menu.classList.contains('active') ? close() : open();
-      });
-      document.addEventListener('click', (e) => {
-        if (menu.classList.contains('active') && !menu.contains(e.target) && !toggle.contains(e.target)) close();
-      });
-      menu.querySelectorAll('a').forEach(link => link.addEventListener('click', close));
-      window.closeMobileMenu = close;
-    },
-    initModal() {
-      const modal = document.getElementById('contactModal');
-      if (!modal) return;
-      window.openContactModal = () => {
-        modal.classList.add('active');
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-        window.closeMobileMenu?.();
-        setTimeout(() => modal.querySelector('.modal-close')?.focus(), 300);
-      };
-      window.closeContactModal = () => {
-        modal.classList.remove('active');
-        modal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      };
-      modal.addEventListener('click', (e) => e.target === modal && closeContactModal());
-      document.addEventListener('keydown', (e) => e.key === 'Escape' && modal.classList.contains('active') && closeContactModal());
-    },
-    initForm() {
-      const form = document.getElementById('contactForm');
-      if (!form) return;
-      form.querySelectorAll('input[required], textarea[required]').forEach(f => {
-        f.addEventListener('blur', function() {
-          if (this.required && !this.value.trim()) {
-            this.style.borderColor = '#e74c3c';
-            this.setAttribute('aria-invalid', 'true');
-          } else {
-            this.style.borderColor = '';
-            this.setAttribute('aria-invalid', 'false');
-          }
-        });
-        f.addEventListener('input', function() {
-          this.style.borderColor = '';
-          this.setAttribute('aria-invalid', 'false');
-        });
-      });
-      window.handleContactSubmit = (e) => {
-        e.preventDefault();
-        const btn = document.getElementById('submitBtn');
-        if (!btn || btn.disabled) return;
-        if (!form.checkValidity()) { form.reportValidity(); return; }
-        const original = btn.innerHTML;
-        btn.disabled = true;
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
-        setTimeout(() => {
-          try {
-            const data = {
-              nama: document.getElementById('nama')?.value || '',
-              email: document.getElementById('email')?.value || '',
-              subjek: document.getElementById('subjek')?.value || '',
-              pesan: document.getElementById('pesan')?.value || '',
-              timestamp: new Date().toISOString()
-            };
-            const subs = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
-            subs.push(data);
-            localStorage.setItem('contactSubmissions', JSON.stringify(subs));
-            App.showToast('✅ Pesan berhasil dikirim! Kami akan segera menghubungi Anda.', 'success');
-            form.reset();
-            setTimeout(() => closeContactModal?.(), 2000);
-          } catch (err) {
-            App.showToast('❌ Terjadi kesalahan. Silakan coba lagi.', 'error');
-          } finally {
-            btn.disabled = false;
-            btn.innerHTML = original;
-          }
-        }, 1500);
-      };
-    },
-    showToast(message, type = 'success') {
-      const toast = document.getElementById('toast');
-      const msgEl = document.getElementById('toastMessage');
-      if (!toast || !msgEl) return;
-      msgEl.textContent = message;
-      toast.className = `toast ${type} show`;
-      setTimeout(() => toast.classList.remove('show'), 4000);
-    },
-    initAccessibility() {
-      const skip = document.createElement('a');
-      skip.href = '#main-content';
-      skip.className = 'skip-link';
-      skip.style.cssText = 'position:absolute;left:-9999px;top:0;background:var(--secondary);color:white;padding:12px 24px;z-index:10000;border-radius:0 0 8px 0;';
-      skip.textContent = 'Lewati ke konten';
-      skip.addEventListener('focus', () => skip.style.left = '0');
-      skip.addEventListener('blur', () => skip.style.left = '-9999px');
-      document.body.insertBefore(skip, document.body.firstChild);
-      const main = document.querySelector('main');
-      if (main && !main.id) main.id = 'main-content';
-    }
-  };
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => App.init());
-  } else {
-    App.init();
-  }
-})();
-</script>
-
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Init
+    document.addEventListener('DOMContentLoaded',()=>{
+      // Preloader cepat
+      setTimeout(()=>document.getElementById('preloader').classList.add('hide'),300);
+      // AOS
+      if(typeof AOS!=='undefined')AOS.init({duration:600,once:true});
+      // Dark mode
+      const tBtn=document.getElementById('themeBtn'),body=document.body;
+      if(localStorage.getItem('dark')==='1')body.classList.add('dark-mode');
+      tBtn?.addEventListener('click',()=>{body.classList.toggle('dark-mode');localStorage.setItem('dark',body.classList.contains('dark-mode')?'1':'0')});
+      // Mobile menu
+      const mBtn=document.getElementById('menuBtn'),mNav=document.getElementById('navM');
+      mBtn?.addEventListener('click',()=>{mNav.classList.toggle('show');mBtn.innerHTML=mNav.classList.contains('show')?'<i class="fas fa-times"></i>':'<i class="fas fa-bars"></i>'});
+      document.addEventListener('click',e=>{if(mNav.classList.contains('show')&&!mNav.contains(e.target)&&!mBtn.contains(e.target)){mNav.classList.remove('show');mBtn.innerHTML='<i class="fas fa-bars"></i>'}});
+      window.closeMenu=()=>{mNav?.classList.remove('show');if(mBtn)mBtn.innerHTML='<i class="fas fa-bars"></i>'};
+      // Modal
+      const modal=document.getElementById('modal');
+      window.openModal=()=>{modal?.classList.add('show');document.body.style.overflow='hidden';closeMenu()};
+      window.closeModal=()=>{modal?.classList.remove('show');document.body.style.overflow=''};
+      modal?.addEventListener('click',e=>e.target===modal&&closeModal());
+      document.addEventListener('keydown',e=>e.key==='Escape'&&modal?.classList.contains('show')&&closeModal());
+      // Form
+      const frm=document.getElementById('frm');
+      window.send=e=>{e.preventDefault();const btn=frm.querySelector('.btn');if(!btn||btn.disabled)return;if(!frm.checkValidity()){frm.reportValidity();return}
+        const orig=btn.innerHTML;btn.disabled=true;btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+        setTimeout(()=>{try{const d={nm:document.getElementById('nm').value,em:document.getElementById('em').value,sj:document.getElementById('sj').value,ps:document.getElementById('ps').value,ts:new Date().toISOString()};const s=JSON.parse(localStorage.getItem('sarprasMsg')||'[]');s.push(d);localStorage.setItem('sarprasMsg',JSON.stringify(s));toast('✅ Pesan terkirim!','ok');frm.reset();setTimeout(closeModal,1500)}catch{toast('❌ Gagal mengirim','err')}finally{btn.disabled=false;btn.innerHTML=orig}},1200)};
+      // Toast
+      window.toast=(msg,type='ok')=>{const t=document.getElementById('toast'),m=document.getElementById('tmsg');if(!t||!m)return;m.textContent=msg;t.className=`toast ${type} show`;setTimeout(()=>t.classList.remove('show'),3500)};
+      // Accessibility
+      const skip=document.createElement('a');skip.href='#main';skip.className='skip';skip.style.cssText='position:absolute;left:-9999px;top:0;background:var(--secondary);color:#fff;padding:10px 16px;z-index:9999';skip.textContent='Lewati ke konten';skip.onfocus=()=>skip.style.left='0';skip.onblur=()=>skip.style.left='-9999px';document.body.prepend(skip);document.querySelector('main')?.setAttribute('id','main');
+    });
+  </script>
 </body>
 </html>
