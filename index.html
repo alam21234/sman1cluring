@@ -4,1688 +4,949 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>SMAN 1 Cluring | Website Resmi</title>
+
+<!-- DNS Preconnect for Speed -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="preconnect" href="https://www.youtube.com">
+<link rel="preconnect" href="https://i.ibb.co">
+
 <!-- SEO -->
 <meta name="description" content="Website Resmi SMAN 1 Cluring Banyuwangi sebagai pusat informasi akademik dan layanan publik sekolah." />
 <meta name="author" content="SMAN 1 Cluring" />
 <meta name="keywords" content="SMAN 1 Cluring, Banyuwangi, sekolah, PPDB, prestasi, OSIS, Blambangan, sarana prasarana, mitra pendidikan" />
+
 <!-- Open Graph / Social Media -->
 <meta property="og:title" content="SMAN 1 Cluring | Website Resmi" />
 <meta property="og:description" content="Pusat informasi akademik dan kegiatan kesiswaan SMAN 1 Cluring Banyuwangi." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://sman1cluring.sch.id" />
 <meta property="og:image" content="/assets/images/hero-bg.jpg" />
-<!-- Google Fonts -->
+
+<!-- Google Fonts (Optimized with display=swap) -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
 <!-- Font Awesome Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <!-- AOS Animation Library -->
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
 <style>
+/* ===== CORE VARIABLES ===== */
 :root {
-/* Light Mode - Premium Palette */
---primary: #0a2a5e;
---primary-light: #1e3a7a;
---primary-dark: #051a3b;
---secondary: #9e7b4b;
---secondary-light: #c1a06e;
---accent: #c7a854;
---cultural-accent: #b13e3e;
---ijen-green: #2d6a4f;
---light: #f5f7fa;
---dark: #1e2b37;
---gray: #4b5c6b;
---white: #ffffff;
---glass: rgba(255, 255, 255, 0.1);
---glass-border: rgba(255, 255, 255, 0.2);
---shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.05);
---shadow-md: 0 8px 30px rgba(0, 20, 50, 0.12);
---shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
---transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
---border-radius: 24px;
---border-radius-sm: 16px;
---whatsapp: #25D366;
---whatsapp-dark: #128C7E;
---chat-primary: #0a2a5e;
---chat-secondary: #9e7b4b;
---chat-user: #e3f2fd;
---chat-bot: #f5f5f5;
+    --primary: #0a2a5e;
+    --primary-light: #1e3a7a;
+    --primary-dark: #051a3b;
+    --secondary: #9e7b4b;
+    --secondary-light: #c1a06e;
+    --accent: #c7a854;
+    --cultural-accent: #b13e3e;
+    --ijen-green: #2d6a4f;
+    --light: #f5f7fa;
+    --dark: #1e2b37;
+    --gray: #4b5c6b;
+    --white: #ffffff;
+    --glass: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 8px 30px rgba(0, 20, 50, 0.12);
+    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    --border-radius: 24px;
+    --border-radius-sm: 16px;
+    --whatsapp: #25D366;
+    --whatsapp-dark: #128C7E;
+    --chat-primary: #0a2a5e;
+    --chat-secondary: #9e7b4b;
+    --chat-user: #e3f2fd;
+    --chat-bot: #f5f5f5;
 }
+
 .dark-mode {
---primary: #1e3a8a;
---primary-light: #3b5ba5;
---secondary: #d4af37;
---light: #0f1825;
---dark: #edf2f7;
---gray: #a0b3c6;
---white: #1a2533;
---glass: rgba(0, 0, 0, 0.25);
---glass-border: rgba(255, 255, 255, 0.08);
---chat-user: #1e3a8a;
---chat-bot: #2d3748;
+    --primary: #1e3a8a;
+    --primary-light: #3b5ba5;
+    --secondary: #d4af37;
+    --light: #0f1825;
+    --dark: #edf2f7;
+    --gray: #a0b3c6;
+    --white: #1a2533;
+    --glass: rgba(0, 0, 0, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --chat-user: #1e3a8a;
+    --chat-bot: #2d3748;
 }
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
+
+/* ===== RESET & BASE ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
-background-color: var(--light);
-color: var(--dark);
-line-height: 1.6;
-transition: background-color 0.4s ease, color 0.4s ease;
-overflow-x: hidden;
-font-weight: 400;
-letter-spacing: 0.2px;
+    font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
+    font-weight: 400;
+    letter-spacing: 0.2px;
 }
-h1, h2, h3, h4 {
-font-family: 'Plus Jakarta Sans', sans-serif;
-font-weight: 700;
-letter-spacing: -0.02em;
-}
-/* ===== PRELOADER ===== */
+h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* ===== PRELOADER (Optimized) ===== */
 #preloader {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: var(--primary);
-display: flex;
-justify-content: center;
-align-items: center;
-z-index: 9999;
-opacity: 1;
-transition: opacity 0.6s ease, visibility 0.6s ease;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--primary); display: flex; justify-content: center; align-items: center;
+    z-index: 9999; opacity: 1; transition: opacity 0.5s ease, visibility 0.5s ease;
 }
-#preloader.fade-out {
-opacity: 0;
-visibility: hidden;
-}
+#preloader.fade-out { opacity: 0; visibility: hidden; }
 .spinner {
-width: 60px;
-height: 60px;
-border: 4px solid rgba(255, 255, 255, 0.1);
-border-top: 4px solid var(--secondary);
-border-right: 4px solid var(--secondary);
-border-radius: 50%;
-animation: spin 1s linear infinite;
+    width: 50px; height: 50px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top: 4px solid var(--secondary);
+    border-right: 4px solid var(--secondary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
 }
-@keyframes spin {
-0% { transform: rotate(0deg); }
-100% { transform: rotate(360deg); }
-}
-/* ===== WHATSAPP FLOAT BUTTON ===== */
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* ===== WHATSAPP FLOAT ===== */
 .whatsapp-float {
-position: fixed;
-bottom: 100px; 
-right: 30px;
-background: linear-gradient(135deg, var(--whatsapp) 0%, var(--whatsapp-dark) 100%);
-color: white;
-text-decoration: none;
-display: flex;
-align-items: center;
-gap: 12px;
-padding: 14px 28px;
-border-radius: 60px;
-box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-z-index: 998;
-transition: var(--transition);
-backdrop-filter: blur(10px);
-border: 1px solid rgba(255, 255, 255, 0.2);
-font-weight: 600;
+    position: fixed; bottom: 100px; right: 30px;
+    background: linear-gradient(135deg, var(--whatsapp) 0%, var(--whatsapp-dark) 100%);
+    color: white; display: flex; align-items: center; gap: 12px;
+    padding: 14px 28px; border-radius: 60px;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+    z-index: 998; transition: var(--transition);
+    backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: 600; text-decoration: none;
 }
-.whatsapp-float i {
-font-size: 28px;
-animation: pulse 2s infinite;
-}
-.whatsapp-float span {
-font-size: 1rem;
-letter-spacing: 0.5px;
-}
-.whatsapp-float:hover {
-transform: translateY(-8px) scale(1.05);
-box-shadow: 0 20px 35px rgba(37, 211, 102, 0.4);
-background: linear-gradient(135deg, var(--whatsapp-dark) 0%, var(--whatsapp) 100%);
-}
+.whatsapp-float i { font-size: 28px; animation: pulse 2s infinite; }
+.whatsapp-float:hover { transform: translateY(-8px) scale(1.05); box-shadow: 0 20px 35px rgba(37, 211, 102, 0.4); }
 .whatsapp-float::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-border-radius: 60px;
-border: 2px solid rgba(255, 255, 255, 0.3);
-animation: ripple 1.5s infinite;
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 60px; border: 2px solid rgba(255, 255, 255, 0.3);
+    animation: ripple 1.5s infinite;
 }
-@keyframes pulse {
-0% { transform: scale(1); }
-50% { transform: scale(1.1); }
-100% { transform: scale(1); }
-}
-@keyframes ripple {
-0% { transform: scale(1); opacity: 1; }
-100% { transform: scale(1.3); opacity: 0; }
-}
-/* ===== CHAT BUTTON & BOX ===== */
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+@keyframes ripple { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(1.3); opacity: 0; } }
+
+/* ===== CHAT SYSTEM ===== */
 .chat-button {
-position: fixed;
-bottom: 30px;
-right: 30px;
-background: linear-gradient(135deg, var(--chat-primary) 0%, var(--primary-light) 100%);
-width: 65px;
-height: 65px;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-color: white;
-font-size: 28px;
-cursor: pointer;
-box-shadow: var(--shadow-lg);
-z-index: 999;
-transition: var(--transition);
-border: 2px solid rgba(255, 255, 255, 0.2);
+    position: fixed; bottom: 30px; right: 30px;
+    background: linear-gradient(135deg, var(--chat-primary) 0%, var(--primary-light) 100%);
+    width: 65px; height: 65px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 28px; cursor: pointer;
+    box-shadow: var(--shadow-lg); z-index: 999;
+    transition: var(--transition); border: 2px solid rgba(255, 255, 255, 0.2);
 }
-.chat-button:hover {
-transform: scale(1.1) rotate(10deg);
-background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
-}
+.chat-button:hover { transform: scale(1.1) rotate(10deg); background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%); }
 .chat-button .notification-badge {
-position: absolute;
-top: -5px;
-right: -5px;
-background: var(--cultural-accent);
-color: white;
-font-size: 12px;
-width: 22px;
-height: 22px;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-font-weight: bold;
-border: 2px solid white;
+    position: absolute; top: -5px; right: -5px;
+    background: var(--cultural-accent); color: white;
+    font-size: 12px; width: 22px; height: 22px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: bold; border: 2px solid white;
 }
 .chat-box {
-position: fixed;
-bottom: 110px;
-right: 30px;
-width: 380px;
-height: 500px;
-background: var(--white);
-border-radius: 24px;
-box-shadow: var(--shadow-lg);
-display: none;
-z-index: 1000;
-overflow: hidden;
-border: 1px solid var(--glass-border);
-backdrop-filter: blur(10px);
-flex-direction: column;
+    position: fixed; bottom: 110px; right: 30px;
+    width: 380px; height: 500px;
+    background: var(--white); border-radius: 24px;
+    box-shadow: var(--shadow-lg); display: none;
+    z-index: 1000; overflow: hidden;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px); flex-direction: column;
 }
-.chat-box.active {
-display: flex;
-}
+.chat-box.active { display: flex; }
 .chat-header {
-background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-color: white;
-padding: 20px;
-display: flex;
-align-items: center;
-gap: 12px;
-border-bottom: 2px solid var(--secondary);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white; padding: 20px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 2px solid var(--secondary);
 }
 .chat-header-avatar {
-width: 45px;
-height: 45px;
-border-radius: 50%;
-background: var(--secondary);
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 24px;
-color: white;
-border: 2px solid white;
+    width: 45px; height: 45px; border-radius: 50%;
+    background: var(--secondary); display: flex; align-items: center; justify-content: center;
+    font-size: 24px; color: white; border: 2px solid white;
 }
-.chat-header-info {
-flex: 1;
-}
-.chat-header-info h4 {
-font-size: 1.1rem;
-margin-bottom: 4px;
-}
-.chat-header-info p {
-font-size: 0.8rem;
-opacity: 0.9;
-display: flex;
-align-items: center;
-gap: 5px;
-}
-.chat-header-info p i {
-font-size: 0.6rem;
-color: #4caf50;
-}
+.chat-header-info { flex: 1; }
+.chat-header-info h4 { font-size: 1.1rem; margin-bottom: 4px; }
+.chat-header-info p { font-size: 0.8rem; opacity: 0.9; display: flex; align-items: center; gap: 5px; }
+.chat-header-info p i { font-size: 0.6rem; color: #4caf50; }
 .chat-close {
-width: 35px;
-height: 35px;
-border-radius: 50%;
-background: rgba(255, 255, 255, 0.2);
-display: flex;
-align-items: center;
-justify-content: center;
-cursor: pointer;
-transition: var(--transition);
+    width: 35px; height: 35px; border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: var(--transition);
 }
-.chat-close:hover {
-background: rgba(255, 255, 255, 0.3);
-transform: rotate(90deg);
-}
+.chat-close:hover { background: rgba(255, 255, 255, 0.3); transform: rotate(90deg); }
 .chat-messages {
-flex: 1;
-padding: 20px;
-overflow-y: auto;
-background: var(--light);
-display: flex;
-flex-direction: column;
-gap: 15px;
+    flex: 1; padding: 20px; overflow-y: auto;
+    background: var(--light); display: flex; flex-direction: column; gap: 15px;
 }
-.message {
-display: flex;
-align-items: flex-start;
-gap: 10px;
-max-width: 80%;
-}
-.message.bot {
-align-self: flex-start;
-}
-.message.user {
-align-self: flex-end;
-flex-direction: row-reverse;
-}
+.message { display: flex; align-items: flex-start; gap: 10px; max-width: 80%; }
+.message.bot { align-self: flex-start; }
+.message.user { align-self: flex-end; flex-direction: row-reverse; }
 .message-avatar {
-width: 35px;
-height: 35px;
-border-radius: 50%;
-background: var(--secondary);
-display: flex;
-align-items: center;
-justify-content: center;
-color: white;
-font-size: 16px;
-flex-shrink: 0;
+    width: 35px; height: 35px; border-radius: 50%;
+    background: var(--secondary); display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 16px; flex-shrink: 0;
 }
-.message.user .message-avatar {
-background: var(--primary);
-}
+.message.user .message-avatar { background: var(--primary); }
 .message-content {
-background: var(--chat-bot);
-padding: 12px 16px;
-border-radius: 18px;
-border-top-left-radius: 4px;
-color: var(--dark);
-font-size: 0.95rem;
-box-shadow: var(--shadow-sm);
+    background: var(--chat-bot); padding: 12px 16px;
+    border-radius: 18px; border-top-left-radius: 4px;
+    color: var(--dark); font-size: 0.95rem; box-shadow: var(--shadow-sm);
 }
 .message.user .message-content {
-background: var(--chat-user);
-color: var(--dark);
-border-top-left-radius: 18px;
-border-top-right-radius: 4px;
+    background: var(--chat-user); color: var(--dark);
+    border-top-left-radius: 18px; border-top-right-radius: 4px;
 }
-.message-time {
-font-size: 0.7rem;
-opacity: 0.6;
-margin-top: 4px;
-text-align: right;
-}
+.message-time { font-size: 0.7rem; opacity: 0.6; margin-top: 4px; text-align: right; }
 .chat-input-area {
-padding: 20px;
-background: var(--white);
-border-top: 1px solid var(--glass-border);
-display: flex;
-gap: 10px;
+    padding: 20px; background: var(--white);
+    border-top: 1px solid var(--glass-border);
+    display: flex; gap: 10px;
 }
 .chat-input {
-flex: 1;
-padding: 12px 18px;
-border: 1px solid var(--glass-border);
-border-radius: 30px;
-font-family: inherit;
-font-size: 0.95rem;
-background: var(--light);
-color: var(--dark);
-outline: none;
-transition: var(--transition);
+    flex: 1; padding: 12px 18px; border: 1px solid var(--glass-border);
+    border-radius: 30px; font-family: inherit; font-size: 0.95rem;
+    background: var(--light); color: var(--dark); outline: none; transition: var(--transition);
 }
-.chat-input:focus {
-border-color: var(--secondary);
-box-shadow: 0 0 0 3px rgba(158, 123, 75, 0.2);
-}
+.chat-input:focus { border-color: var(--secondary); box-shadow: 0 0 0 3px rgba(158, 123, 75, 0.2); }
 .chat-send {
-width: 48px;
-height: 48px;
-border-radius: 50%;
-background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
-color: white;
-border: none;
-cursor: pointer;
-transition: var(--transition);
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 20px;
+    width: 48px; height: 48px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+    color: white; border: none; cursor: pointer;
+    transition: var(--transition); display: flex; align-items: center; justify-content: center; font-size: 20px;
 }
-.chat-send:hover {
-transform: scale(1.1);
-background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-}
-.chat-send:disabled {
-opacity: 0.5;
-cursor: not-allowed;
-}
-/* Quick replies */
-.quick-replies {
-display: flex;
-flex-wrap: wrap;
-gap: 8px;
-padding: 10px 20px 0;
-background: var(--white);
-}
+.chat-send:hover { transform: scale(1.1); background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); }
+.chat-send:disabled { opacity: 0.5; cursor: not-allowed; }
+.quick-replies { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 20px 0; background: var(--white); }
 .quick-reply {
-background: var(--light);
-border: 1px solid var(--secondary);
-color: var(--secondary);
-padding: 8px 15px;
-border-radius: 20px;
-font-size: 0.85rem;
-cursor: pointer;
-transition: var(--transition);
+    background: var(--light); border: 1px solid var(--secondary);
+    color: var(--secondary); padding: 8px 15px; border-radius: 20px;
+    font-size: 0.85rem; cursor: pointer; transition: var(--transition);
 }
-.quick-reply:hover {
-background: var(--secondary);
-color: white;
-}
+.quick-reply:hover { background: var(--secondary); color: white; }
+
 /* ===== HEADER ===== */
 header {
-background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-position: sticky;
-top: 0;
-z-index: 1000;
-box-shadow: var(--shadow-md);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    position: sticky; top: 0; z-index: 1000;
+    box-shadow: var(--shadow-md);
 }
 .nav-container {
-max-width: 1400px;
-margin: auto;
-padding: 12px 32px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-gap: 20px;
+    max-width: 1400px; margin: auto; padding: 12px 32px;
+    display: flex; justify-content: space-between; align-items: center; gap: 20px;
 }
 .brand {
-display: flex;
-align-items: center;
-gap: 16px;
-color: var(--white);
-font-weight: 800;
-font-size: 1.5rem;
-text-decoration: none;
-letter-spacing: -0.5px;
+    display: flex; align-items: center; gap: 16px;
+    color: var(--white); font-weight: 800; font-size: 1.5rem;
+    letter-spacing: -0.5px;
 }
-.brand img {
-width: 52px;
-height: auto;
-border-radius: 12px;
-box-shadow: var(--shadow-sm);
-}
-.nav-right {
-display: flex;
-align-items: center;
-gap: 20px;
-}
-nav ul {
-list-style: none;
-display: flex;
-gap: 32px;
-align-items: center;
-}
+.brand img { width: 52px; height: auto; border-radius: 12px; box-shadow: var(--shadow-sm); }
+.nav-right { display: flex; align-items: center; gap: 20px; }
+nav ul { list-style: none; display: flex; gap: 32px; align-items: center; }
 nav ul li a {
-color: var(--white);
-text-decoration: none;
-font-weight: 500;
-font-size: 1rem;
-transition: var(--transition);
-padding: 8px 0;
-position: relative;
-opacity: 0.9;
-white-space: nowrap;
+    color: var(--white); text-decoration: none; font-weight: 500;
+    font-size: 1rem; transition: var(--transition); padding: 8px 0;
+    position: relative; opacity: 0.9; white-space: nowrap;
 }
 nav ul li a::after {
-content: '';
-position: absolute;
-bottom: 0;
-left: 0;
-width: 0;
-height: 2px;
-background: var(--secondary);
-transition: width 0.3s ease;
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 0; height: 2px; background: var(--secondary);
+    transition: width 0.3s ease;
 }
-nav ul li a:hover {
-opacity: 1;
-}
-nav ul li a:hover::after {
-width: 100%;
-}
+nav ul li a:hover { opacity: 1; }
+nav ul li a:hover::after { width: 100%; }
 .dark-mode-toggle {
-background: var(--glass);
-border: 1px solid var(--glass-border);
-width: 44px;
-height: 44px;
-border-radius: 60px;
-color: var(--white);
-font-size: 1.2rem;
-cursor: pointer;
-transition: var(--transition);
-display: flex;
-align-items: center;
-justify-content: center;
-backdrop-filter: blur(8px);
-margin-left: 8px;
+    background: var(--glass); border: 1px solid var(--glass-border);
+    width: 44px; height: 44px; border-radius: 60px;
+    color: var(--white); font-size: 1.2rem; cursor: pointer;
+    transition: var(--transition); display: flex; align-items: center; justify-content: center;
+    backdrop-filter: blur(8px); margin-left: 8px;
 }
-.dark-mode-toggle:hover {
-background: var(--secondary);
-border-color: var(--secondary);
-transform: rotate(30deg) scale(1.05);
-}
-.dark-mode .dark-mode-toggle i {
-display: none;
-}
-.dark-mode .dark-mode-toggle i.sun {
-display: block;
-}
-.menu-toggle {
-display: none;
-font-size: 28px;
-color: var(--white);
-cursor: pointer;
-}
+.dark-mode-toggle:hover { background: var(--secondary); border-color: var(--secondary); transform: rotate(30deg) scale(1.05); }
+.dark-mode .dark-mode-toggle i { display: none; }
+.dark-mode .dark-mode-toggle i.sun { display: block; }
+.menu-toggle { display: none; font-size: 28px; color: var(--white); cursor: pointer; }
+
 /* ===== HERO HYBRID ===== */
 .hero {
-position: relative;
-color: var(--white);
-min-height: 650px;
-display: flex;
-align-items: center;
-overflow: hidden;
-background: linear-gradient(145deg, rgba(10,42,94,0.7) 0%, rgba(5,26,59,0.8) 100%);
+    position: relative; color: var(--white);
+    min-height: 650px; display: flex; align-items: center;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(10,42,94,0.7) 0%, rgba(5,26,59,0.8) 100%);
 }
-/* Video Background */
 .hero-video-background {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-z-index: -1;
-overflow: hidden;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1; overflow: hidden;
 }
 .hero-video-background iframe {
-position: absolute;
-top: 50%;
-left: 50%;
-width: 100vw;
-height: 100vh;
-transform: translate(-50%, -50%);
-pointer-events: none;
-object-fit: cover;
-filter: brightness(0.5) saturate(1.2);
+    position: absolute; top: 50%; left: 50%;
+    width: 100vw; height: 100vh;
+    transform: translate(-50%, -50%);
+    pointer-events: none; object-fit: cover;
+    filter: brightness(0.5) saturate(1.2);
 }
-/* Overlay gelap agar teks terbaca */
 .hero::after {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: linear-gradient(90deg, rgba(10,42,94,0.8) 0%, rgba(10,42,94,0.4) 100%);
-z-index: -1;
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(90deg, rgba(10,42,94,0.8) 0%, rgba(10,42,94,0.4) 100%);
+    z-index: -1;
 }
 .hero-container {
-position: relative;
-z-index: 2;
-max-width: 1300px;
-width: 100%;
-margin: 0 auto;
-padding: 0 32px;
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 40px;
+    position: relative; z-index: 2;
+    max-width: 1300px; width: 100%; margin: 0 auto;
+    padding: 0 32px; display: flex; align-items: center;
+    justify-content: space-between; gap: 40px;
 }
-.hero-content {
-flex: 1;
-max-width: 600px;
-}
+.hero-content { flex: 1; max-width: 600px; }
 .hero h1 {
-font-size: 3.5rem;
-margin-bottom: 20px;
-font-weight: 800;
-line-height: 1.2;
-text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-color: white;
+    font-size: 3.5rem; margin-bottom: 20px; font-weight: 800;
+    line-height: 1.2; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); color: white;
 }
 .hero p {
-font-size: 1.2rem;
-opacity: 0.95;
-font-weight: 300;
-margin-bottom: 30px;
-text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    font-size: 1.2rem; opacity: 0.95; font-weight: 300;
+    margin-bottom: 30px; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
-.hero-image {
-flex: 1;
-max-width: 450px;
-text-align: center;
-}
+.hero-image { flex: 1; max-width: 450px; text-align: center; }
 .hero-image img {
-max-width: 100%;
-height: auto;
-filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
-animation: floatImage 4s ease-in-out infinite;
-position: relative;
-z-index: 3;
+    max-width: 100%; height: auto;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+    animation: floatImage 4s ease-in-out infinite;
+    position: relative; z-index: 3;
 }
-@keyframes floatImage {
-0% { transform: translateY(0px); }
-50% { transform: translateY(-15px); }
-100% { transform: translateY(0px); }
-}
-/* CTA Button */
+@keyframes floatImage { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
 .hero-cta {
-display: inline-block;
-background: var(--secondary);
-color: white;
-padding: 14px 32px;
-border-radius: 50px;
-font-weight: 600;
-text-decoration: none;
-transition: var(--transition);
-border: 2px solid transparent;
-box-shadow: 0 10px 20px rgba(158, 123, 75, 0.3);
+    display: inline-block; background: var(--secondary); color: white;
+    padding: 14px 32px; border-radius: 50px; font-weight: 600;
+    transition: var(--transition); border: 2px solid transparent;
+    box-shadow: 0 10px 20px rgba(158, 123, 75, 0.3);
 }
 .hero-cta:hover {
-background: transparent;
-border-color: var(--secondary);
-color: var(--secondary);
-transform: translateY(-3px);
+    background: transparent; border-color: var(--secondary);
+    color: var(--secondary); transform: translateY(-3px);
 }
+
 /* ===== SECTION ===== */
-.section {
-max-width: 1300px;
-margin: auto;
-padding: 100px 32px;
-}
+.section { max-width: 1300px; margin: auto; padding: 100px 32px; }
 .section-header {
-display: flex;
-justify-content: space-between;
-align-items: flex-end;
-margin-bottom: 60px;
-flex-wrap: wrap;
-gap: 15px;
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 60px; flex-wrap: wrap; gap: 15px;
 }
 .section-header h2 {
-color: var(--primary);
-font-size: 2.8rem;
-font-weight: 800;
-line-height: 1.2;
+    color: var(--primary); font-size: 2.8rem; font-weight: 800; line-height: 1.2;
 }
 .section-header h2 span {
-display: block;
-font-size: 1rem;
-font-weight: 400;
-color: var(--secondary);
-text-transform: uppercase;
-letter-spacing: 3px;
-margin-bottom: 8px;
+    display: block; font-size: 1rem; font-weight: 400;
+    color: var(--secondary); text-transform: uppercase;
+    letter-spacing: 3px; margin-bottom: 8px;
 }
 .section-header h2::after {
-content: '';
-display: block;
-width: 80px;
-height: 5px;
-background: linear-gradient(90deg, var(--secondary) 0%, var(--accent) 100%);
-margin: 16px 0 0 0;
-border-radius: 4px;
+    content: ''; display: block; width: 80px; height: 5px;
+    background: linear-gradient(90deg, var(--secondary) 0%, var(--accent) 100%);
+    margin: 16px 0 0 0; border-radius: 4px;
 }
 .view-all {
-color: var(--secondary);
-text-decoration: none;
-font-weight: 600;
-font-size: 1.2rem;
-transition: var(--transition);
-padding: 10px 20px;
-border: 1px solid var(--secondary);
-border-radius: 40px;
-background: rgba(158, 123, 75, 0.05);
+    color: var(--secondary); text-decoration: none; font-weight: 600;
+    font-size: 1.2rem; transition: var(--transition);
+    padding: 10px 20px; border: 1px solid var(--secondary);
+    border-radius: 40px; background: rgba(158, 123, 75, 0.05);
 }
-.view-all:hover {
-background: var(--secondary);
-color: var(--white);
-border-color: var(--secondary);
-}
+.view-all:hover { background: var(--secondary); color: var(--white); border-color: var(--secondary); }
+
 /* ===== SAMBUTAN ===== */
 .sambutan-container {
-background: var(--white);
-border-radius: var(--border-radius);
-padding: 50px;
-box-shadow: var(--shadow-md);
-max-width: 1200px;
-margin: 0 auto;
-border: 1px solid rgba(158, 123, 75, 0.2);
-overflow: hidden;
+    background: var(--white); border-radius: var(--border-radius);
+    padding: 50px; box-shadow: var(--shadow-md);
+    max-width: 1200px; margin: 0 auto;
+    border: 1px solid rgba(158, 123, 75, 0.2);
+    overflow: hidden;
 }
-.sambutan {
-display: flex;
-gap: 40px;
-align-items: flex-start;
-flex-wrap: wrap;
-}
+.sambutan { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; }
 .avatar-container {
-display: flex;
-justify-content: center;
-flex-shrink: 0;
-position: relative;
-width: 220px;
+    display: flex; justify-content: center; flex-shrink: 0;
+    position: relative; width: 220px;
 }
 .avatar-container::before {
-content: '';
-position: absolute;
-top: -10px;
-left: 50%;
-transform: translateX(-50%);
-width: 200px;
-height: 200px;
-border: 2px dashed var(--secondary);
-border-radius: 50%;
-opacity: 0.6;
-animation: rotateCircle 8s linear infinite;
-pointer-events: none;
-z-index: 1;
+    content: ''; position: absolute; top: -10px; left: 50%;
+    transform: translateX(-50%); width: 200px; height: 200px;
+    border: 2px dashed var(--secondary); border-radius: 50%;
+    opacity: 0.6; animation: rotateCircle 8s linear infinite;
+    pointer-events: none; z-index: 1;
 }
-@keyframes rotateCircle {
-0% { transform: translateX(-50%) rotate(0deg); }
-100% { transform: translateX(-50%) rotate(360deg); }
-}
+@keyframes rotateCircle { 0% { transform: translateX(-50%) rotate(0deg); } 100% { transform: translateX(-50%) rotate(360deg); } }
 .avatar {
-width: 180px;
-height: 180px;
-border-radius: 50%;
-object-fit: cover;
-border: 4px solid var(--white);
-box-shadow: 0 20px 30px -10px rgba(10,42,94,0.3), 
-            0 0 0 0 rgba(158, 123, 75, 0.4);
-transition: var(--transition);
-position: relative;
-z-index: 2;
-animation: pulseGlow 3s ease-in-out infinite;
+    width: 180px; height: 180px; border-radius: 50%;
+    object-fit: cover; border: 4px solid var(--white);
+    box-shadow: 0 20px 30px -10px rgba(10,42,94,0.3), 0 0 0 0 rgba(158, 123, 75, 0.4);
+    transition: var(--transition); position: relative; z-index: 2;
+    animation: pulseGlow 3s ease-in-out infinite;
 }
 @keyframes pulseGlow {
-0%, 100% { box-shadow: 0 20px 30px -10px rgba(10,42,94,0.3), 0 0 0 0 rgba(158, 123, 75, 0.4); }
-50% { box-shadow: 0 20px 30px -10px rgba(10,42,94,0.3), 0 0 0 12px rgba(158, 123, 75, 0); }
+    0%, 100% { box-shadow: 0 20px 30px -10px rgba(10,42,94,0.3), 0 0 0 0 rgba(158, 123, 75, 0.4); }
+    50% { box-shadow: 0 20px 30px -10px rgba(10,42,94,0.3), 0 0 0 12px rgba(158, 123, 75, 0); }
 }
-.avatar:hover {
-transform: scale(1.02);
-box-shadow: 0 25px 35px -8px var(--primary);
-}
-.sambutan-content {
-flex: 1;
-min-width: 300px;
-max-width: 750px;
-overflow-wrap: break-word;
-word-wrap: break-word;
-hyphens: auto;
-}
-.sambutan-content p {
-margin-bottom: 20px;
-font-size: 1.05rem;
-line-height: 1.7;
-color: var(--dark);
-text-align: justify;
-}
+.avatar:hover { transform: scale(1.02); box-shadow: 0 25px 35px -8px var(--primary); }
+.sambutan-content { flex: 1; min-width: 300px; max-width: 750px; overflow-wrap: break-word; word-wrap: break-word; hyphens: auto; }
+.sambutan-content p { margin-bottom: 20px; font-size: 1.05rem; line-height: 1.7; color: var(--dark); text-align: justify; }
 .sambutan-content .vision {
-background: linear-gradient(145deg, rgba(158,123,75,0.08) 0%, rgba(199,168,84,0.02) 100%);
-border-left: 6px solid var(--secondary);
-padding: 20px 24px;
-border-radius: 0 20px 20px 0;
-margin: 25px 0;
-font-weight: 600;
-color: var(--primary);
-font-size: 1.2rem;
-font-style: italic;
-line-height: 1.6;
+    background: linear-gradient(145deg, rgba(158,123,75,0.08) 0%, rgba(199,168,84,0.02) 100%);
+    border-left: 6px solid var(--secondary); padding: 20px 24px;
+    border-radius: 0 20px 20px 0; margin: 25px 0;
+    font-weight: 600; color: var(--primary); font-size: 1.2rem;
+    font-style: italic; line-height: 1.6;
 }
 .signature {
-margin-top: 35px;
-padding-top: 20px;
-border-top: 2px solid rgba(158,123,75,0.3);
-font-weight: 600;
-color: var(--secondary);
-line-height: 1.8;
+    margin-top: 35px; padding-top: 20px;
+    border-top: 2px solid rgba(158,123,75,0.3);
+    font-weight: 600; color: var(--secondary); line-height: 1.8;
 }
-/* ===== GRIDS ===== */
-.news-grid,
-.activity-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-gap: 40px;
+
+/* ===== GRIDS & CARDS ===== */
+.news-grid, .activity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+.news-card, .activity-card {
+    background: var(--white); border-radius: 28px;
+    overflow: hidden; box-shadow: var(--shadow-sm);
+    text-decoration: none; color: inherit;
+    transition: var(--transition); border: 1px solid rgba(0,0,0,0.02);
 }
-.news-card,
-.activity-card {
-background: var(--white);
-border-radius: 28px;
-overflow: hidden;
-box-shadow: var(--shadow-sm);
-text-decoration: none;
-color: inherit;
-transition: var(--transition);
-border: 1px solid rgba(0,0,0,0.02);
-}
-.news-card:hover,
-.activity-card:hover {
-transform: translateY(-10px);
-box-shadow: var(--shadow-lg);
-}
-.news-card img,
-.activity-card img {
-width: 100%;
-height: 220px;
-object-fit: cover;
-transition: var(--transition);
-}
-.news-card:hover img,
-.activity-card:hover img {
-transform: scale(1.03);
-}
-.news-card div,
-.activity-card div {
-padding: 28px;
-}
-.news-card h3,
-.activity-card h3 {
-color: var(--primary);
-margin-bottom: 12px;
-font-size: 1.5rem;
-font-weight: 700;
-}
-.news-card p,
-.activity-card p {
-color: var(--gray);
-font-size: 1rem;
-line-height: 1.7;
-}
-/* ===== INFO CARDS ===== */
-.cards {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 40px;
-margin-top: 40px;
-}
+.news-card:hover, .activity-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
+.news-card img, .activity-card img { width: 100%; height: 220px; object-fit: cover; transition: var(--transition); }
+.news-card:hover img, .activity-card:hover img { transform: scale(1.03); }
+.news-card div, .activity-card div { padding: 28px; }
+.news-card h3, .activity-card h3 { color: var(--primary); margin-bottom: 12px; font-size: 1.5rem; font-weight: 700; }
+.news-card p, .activity-card p { color: var(--gray); font-size: 1rem; line-height: 1.7; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-top: 40px; }
 .card {
-background: var(--white);
-padding: 40px 30px;
-text-align: center;
-border-radius: 32px;
-box-shadow: var(--shadow-sm);
-transition: var(--transition);
-border: 1px solid rgba(158,123,75,0.1);
+    background: var(--white); padding: 40px 30px; text-align: center;
+    border-radius: 32px; box-shadow: var(--shadow-sm);
+    transition: var(--transition); border: 1px solid rgba(158,123,75,0.1);
 }
-.card:hover {
-transform: translateY(-8px) scale(1.01);
-box-shadow: var(--shadow-md);
-border-color: var(--secondary);
-}
-.card h3 {
-color: var(--primary);
-margin-bottom: 16px;
-font-size: 1.8rem;
-font-weight: 700;
-}
-.card p {
-color: var(--gray);
-font-size: 1.1rem;
-}
-/* ===== CULTURAL DIVIDER ===== */
+.card:hover { transform: translateY(-8px) scale(1.01); box-shadow: var(--shadow-md); border-color: var(--secondary); }
+.card h3 { color: var(--primary); margin-bottom: 16px; font-size: 1.8rem; font-weight: 700; }
+.card p { color: var(--gray); font-size: 1.1rem; }
+
+/* ===== DIVIDER & FOOTER ===== */
 .cultural-divider {
-height: 4px;
-background: linear-gradient(90deg,
-var(--primary) 0%,
-var(--secondary) 30%,
-var(--cultural-accent) 50%,
-var(--secondary) 70%,
-var(--primary) 100%);
-margin: 70px auto;
-border-radius: 4px;
-max-width: 1300px;
-opacity: 0.6;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 30%, var(--cultural-accent) 50%, var(--secondary) 70%, var(--primary) 100%);
+    margin: 70px auto; border-radius: 4px; max-width: 1300px; opacity: 0.6;
 }
-/* ===== FOOTER ===== */
 footer {
-background: linear-gradient(145deg, var(--primary-dark) 0%, var(--primary) 100%);
-color: var(--white);
-padding: 70px 32px 30px;
-font-size: 1rem;
-position: relative;
+    background: linear-gradient(145deg, var(--primary-dark) 0%, var(--primary) 100%);
+    color: var(--white); padding: 70px 32px 30px;
+    font-size: 1rem; position: relative;
 }
 footer::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 4px;
-background: linear-gradient(90deg, var(--secondary), var(--accent), var(--secondary));
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+    background: linear-gradient(90deg, var(--secondary), var(--accent), var(--secondary));
 }
 .footer-content {
-max-width: 1300px;
-margin: auto;
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-gap: 50px;
+    max-width: 1300px; margin: auto;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 50px;
 }
-.footer-section h3 {
-font-size: 1.4rem;
-margin-bottom: 25px;
-font-weight: 600;
-display: flex;
-align-items: center;
-gap: 10px;
-color: var(--secondary);
-}
-.footer-section ul {
-list-style: none;
-}
-.footer-section ul li {
-margin-bottom: 14px;
-}
+.footer-section h3 { font-size: 1.4rem; margin-bottom: 25px; font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--secondary); }
+.footer-section ul { list-style: none; }
+.footer-section ul li { margin-bottom: 14px; }
 .footer-section a {
-color: rgba(255, 255, 255, 0.8);
-text-decoration: none;
-transition: var(--transition);
-display: flex;
-align-items: center;
-gap: 10px;
+    color: rgba(255, 255, 255, 0.8); text-decoration: none;
+    transition: var(--transition); display: flex; align-items: center; gap: 10px;
 }
-.footer-section a:hover {
-color: var(--secondary);
-transform: translateX(6px);
-}
-.social-links {
-display: flex;
-gap: 18px;
-margin-top: 20px;
-}
+.footer-section a:hover { color: var(--secondary); transform: translateX(6px); }
+.social-links { display: flex; gap: 18px; margin-top: 20px; }
 .social-links a {
-display: inline-flex;
-align-items: center;
-justify-content: center;
-width: 44px;
-height: 44px;
-border-radius: 60px;
-background: var(--glass);
-color: var(--white);
-font-size: 1.2rem;
-transition: var(--transition);
-border: 1px solid var(--glass-border);
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; border-radius: 60px;
+    background: var(--glass); color: var(--white);
+    font-size: 1.2rem; transition: var(--transition);
+    border: 1px solid var(--glass-border);
 }
-.social-links a:hover {
-background: var(--secondary);
-transform: translateY(-6px) scale(1.1);
-color: var(--primary-dark);
-}
+.social-links a:hover { background: var(--secondary); transform: translateY(-6px) scale(1.1); color: var(--primary-dark); }
 .footer-info-panel {
-display: flex;
-align-items: center;
-justify-content: space-between;
-flex-wrap: wrap;
-gap: 20px;
-background: rgba(0, 0, 0, 0.2);
-padding: 20px 30px;
-border-radius: 60px;
-margin: 40px auto 20px;
-max-width: 1000px;
-border: 1px solid rgba(255,255,255,0.1);
-backdrop-filter: blur(8px);
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 20px;
+    background: rgba(0, 0, 0, 0.2); padding: 20px 30px;
+    border-radius: 60px; margin: 40px auto 20px;
+    max-width: 1000px; border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
 }
-.footer-clock {
-display: flex;
-align-items: center;
-gap: 20px;
-color: var(--white);
-flex-wrap: wrap;
-}
+.footer-clock { display: flex; align-items: center; gap: 20px; color: var(--white); flex-wrap: wrap; }
 .footer-time {
-font-size: 2rem;
-font-weight: 700;
-font-family: 'Plus Jakarta Sans', monospace;
-background: rgba(0,0,0,0.3);
-padding: 6px 18px;
-border-radius: 50px;
-letter-spacing: 2px;
+    font-size: 2rem; font-weight: 700; font-family: 'Plus Jakarta Sans', monospace;
+    background: rgba(0,0,0,0.3); padding: 6px 18px;
+    border-radius: 50px; letter-spacing: 2px;
 }
-.footer-date {
-font-size: 1rem;
-opacity: 0.9;
-display: flex;
-align-items: center;
-gap: 8px;
-}
+.footer-date { font-size: 1rem; opacity: 0.9; display: flex; align-items: center; gap: 8px; }
 .footer-visitor {
-display: flex;
-align-items: center;
-gap: 12px;
-background: var(--secondary);
-color: var(--primary-dark);
-padding: 10px 24px;
-border-radius: 50px;
-font-weight: 600;
-font-size: 1.1rem;
-box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+    display: flex; align-items: center; gap: 12px;
+    background: var(--secondary); color: var(--primary-dark);
+    padding: 10px 24px; border-radius: 50px;
+    font-weight: 600; font-size: 1.1rem;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 }
-.footer-bottom {
-text-align: center;
-margin-top: 30px;
-padding-top: 30px;
-border-top: 1px solid rgba(255,255,255,0.1);
-font-size: 0.95rem;
-opacity: 0.8;
-}
+.footer-bottom { text-align: center; margin-top: 30px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.95rem; opacity: 0.8; }
+
 /* ===== DARK MODE ADJUSTMENTS ===== */
-.dark-mode .sambutan-container {
-background: var(--light);
-border-color: var(--secondary);
-}
-.dark-mode .avatar {
-border-color: var(--secondary);
-box-shadow: 0 20px 30px -10px rgba(212,175,55,0.3);
-}
-.dark-mode .news-card,
-.dark-mode .activity-card,
-.dark-mode .card {
-background: var(--light);
-border-color: rgba(255,255,255,0.05);
-}
-.dark-mode .footer-info-panel {
-background: rgba(0, 0, 0, 0.4);
-}
-.dark-mode .chat-box {
-background: var(--light);
-}
-.dark-mode .message-content {
-background: var(--white);
-}
+.dark-mode .sambutan-container { background: var(--light); border-color: var(--secondary); }
+.dark-mode .avatar { border-color: var(--secondary); box-shadow: 0 20px 30px -10px rgba(212,175,55,0.3); }
+.dark-mode .news-card, .dark-mode .activity-card, .dark-mode .card { background: var(--light); border-color: rgba(255,255,255,0.05); }
+.dark-mode .footer-info-panel { background: rgba(0, 0, 0, 0.4); }
+.dark-mode .chat-box { background: var(--light); }
+.dark-mode .message-content { background: var(--white); }
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-nav ul { gap: 20px; }
-.nav-container { padding: 12px 20px; }
-.sambutan-content { max-width: 100%; }
-.hero h1 { font-size: 2.8rem; }
+    nav ul { gap: 20px; }
+    .nav-container { padding: 12px 20px; }
+    .sambutan-content { max-width: 100%; }
+    .hero h1 { font-size: 2.8rem; }
 }
 @media (max-width: 880px) {
-.menu-toggle {
-display: block;
-order: 3;
-}
-.nav-right {
-order: 2;
-}
-nav ul {
-position: absolute;
-top: 76px;
-left: 0;
-right: 0;
-background: var(--primary);
-flex-direction: column;
-padding: 25px 0;
-display: none;
-z-index: 100;
-border-top: 1px solid rgba(255,255,255,0.1);
-backdrop-filter: blur(12px);
-gap: 16px;
-}
-nav ul.active {
-display: flex;
-}
-nav ul li {
-text-align: center;
-}
-nav ul li a {
-font-size: 1.1rem;
-white-space: normal;
-}
-.dark-mode-toggle {
-margin: 0 auto;
-}
-.hero-container {
-flex-direction: column;
-text-align: center;
-}
-.hero-content {
-text-align: center;
-}
-.hero h1 { font-size: 2.5rem; }
-.hero { min-height: 500px; padding: 60px 0; }
-.hero-image {
-max-width: 300px;
-}
-.whatsapp-float {
-bottom: 20px;
-right: 20px;
-padding: 12px 20px;
-}
-.whatsapp-float span {
-display: none;
-}
-.whatsapp-float i {
-font-size: 32px;
-margin: 0;
-}
-.chat-button {
-bottom: 100px;
-right: 20px;
-width: 55px;
-height: 55px;
-font-size: 24px;
-}
-.chat-box {
-width: 320px;
-height: 450px;
-right: 20px;
-bottom: 170px;
-}
+    .menu-toggle { display: block; order: 3; }
+    .nav-right { order: 2; }
+    nav ul {
+        position: absolute; top: 76px; left: 0; right: 0;
+        background: var(--primary); flex-direction: column;
+        padding: 25px 0; display: none; z-index: 100;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        backdrop-filter: blur(12px); gap: 16px;
+    }
+    nav ul.active { display: flex; }
+    nav ul li { text-align: center; }
+    nav ul li a { font-size: 1.1rem; white-space: normal; }
+    .dark-mode-toggle { margin: 0 auto; }
+    .hero-container { flex-direction: column; text-align: center; }
+    .hero-content { text-align: center; }
+    .hero h1 { font-size: 2.5rem; }
+    .hero { min-height: 500px; padding: 60px 0; }
+    .hero-image { max-width: 300px; }
+    .whatsapp-float { bottom: 20px; right: 20px; padding: 12px 20px; }
+    .whatsapp-float span { display: none; }
+    .whatsapp-float i { font-size: 32px; margin: 0; }
+    .chat-button { bottom: 100px; right: 20px; width: 55px; height: 55px; font-size: 24px; }
+    .chat-box { width: 320px; height: 450px; right: 20px; bottom: 170px; }
 }
 @media (max-width: 768px) {
-.sambutan-container {
-padding: 30px 20px;
-}
-.sambutan {
-flex-direction: column;
-text-align: center;
-gap: 25px;
-}
-.avatar-container {
-width: 100%;
-margin-bottom: 10px;
-}
-.avatar-container::before {
-left: 50%;
-transform: translateX(-50%);
-width: 190px;
-height: 190px;
-animation-duration: 10s;
-}
-.avatar {
-width: 170px;
-height: 170px;
-}
-.sambutan-content p {
-text-align: left;
-font-size: 1rem;
-}
-.section { padding: 70px 20px; }
-.section-header h2 { font-size: 2.2rem; }
-.view-all { font-size: 1rem; }
-.footer-info-panel {
-flex-direction: column;
-text-align: center;
-border-radius: 40px;
-padding: 20px;
-}
-.footer-clock {
-flex-direction: column;
-gap: 12px;
-width: 100%;
-}
-.footer-time {
-font-size: 1.8rem;
-width: 100%;
-}
+    .sambutan-container { padding: 30px 20px; }
+    .sambutan { flex-direction: column; text-align: center; gap: 25px; }
+    .avatar-container { width: 100%; margin-bottom: 10px; }
+    .avatar-container::before { left: 50%; transform: translateX(-50%); width: 190px; height: 190px; animation-duration: 10s; }
+    .avatar { width: 170px; height: 170px; }
+    .sambutan-content p { text-align: left; font-size: 1rem; }
+    .section { padding: 70px 20px; }
+    .section-header h2 { font-size: 2.2rem; }
+    .view-all { font-size: 1rem; }
+    .footer-info-panel { flex-direction: column; text-align: center; border-radius: 40px; padding: 20px; }
+    .footer-clock { flex-direction: column; gap: 12px; width: 100%; }
+    .footer-time { font-size: 1.8rem; width: 100%; }
 }
 @media (max-width: 480px) {
-.brand span { display: none; }
-.brand img { width: 44px; }
-.hero h1 { font-size: 1.9rem; }
-.hero-image {
-max-width: 220px;
-}
-.whatsapp-float {
-bottom: 15px;
-right: 15px;
-padding: 8px;
-width: 45px;
-height: 45px;
-border-radius: 50%;
-justify-content: center;
-}
-.whatsapp-float i {
-font-size: 24px;
-}
-.chat-button {
-bottom: 80px;
-right: 15px;
-width: 50px;
-height: 50px;
-font-size: 22px;
-}
-.chat-box {
-width: 300px;
-height: 400px;
-right: 15px;
-bottom: 140px;
-}
-.chat-header {
-padding: 15px;
-}
-.chat-header-avatar {
-width: 35px;
-height: 35px;
-font-size: 18px;
-}
-.chat-header-info h4 {
-font-size: 0.9rem;
-}
-.sambutan-container {
-padding: 25px 16px;
-}
-.avatar {
-width: 150px;
-height: 150px;
-}
-.footer-time { font-size: 1.5rem; }
-.footer-visitor { padding: 8px 16px; font-size: 0.9rem; }
+    .brand span { display: none; }
+    .brand img { width: 44px; }
+    .hero h1 { font-size: 1.9rem; }
+    .hero-image { max-width: 220px; }
+    .whatsapp-float { bottom: 15px; right: 15px; padding: 8px; width: 45px; height: 45px; border-radius: 50%; justify-content: center; }
+    .whatsapp-float i { font-size: 24px; }
+    .chat-button { bottom: 80px; right: 15px; width: 50px; height: 50px; font-size: 22px; }
+    .chat-box { width: 300px; height: 400px; right: 15px; bottom: 140px; }
+    .chat-header { padding: 15px; }
+    .chat-header-avatar { width: 35px; height: 35px; font-size: 18px; }
+    .chat-header-info h4 { font-size: 0.9rem; }
+    .sambutan-container { padding: 25px 16px; }
+    .avatar { width: 150px; height: 150px; }
+    .footer-time { font-size: 1.5rem; }
+    .footer-visitor { padding: 8px 16px; font-size: 0.9rem; }
 }
 </style>
 </head>
 <body>
 <!-- PRELOADER -->
 <div id="preloader">
-<div class="spinner"></div>
+    <div class="spinner"></div>
 </div>
+
 <!-- WHATSAPP FLOAT BUTTON -->
 <a href="https://wa.me/6282319712420?text=Halo%20saya%20ingin%20bertanya%20tentang%20SMAN%201%20Cluring"
-class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-<i class="fab fa-whatsapp"></i>
-<span>Chat Admin</span>
+   class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+    <span>Chat Admin</span>
 </a>
+
 <!-- CHAT BUTTON & BOX -->
 <div class="chat-button" id="chatButton">
-<i class="fas fa-comment-dots"></i>
-<span class="notification-badge">1</span>
+    <i class="fas fa-comment-dots"></i>
+    <span class="notification-badge">1</span>
 </div>
 <div class="chat-box" id="chatBox">
-<div class="chat-header">
-<div class="chat-header-avatar">
-<i class="fas fa-robot"></i>
+    <div class="chat-header">
+        <div class="chat-header-avatar"><i class="fas fa-robot"></i></div>
+        <div class="chat-header-info">
+            <h4>Asisten Virtual SMAN 1 Cluring</h4>
+            <p><i class="fas fa-circle"></i> Online - Siap membantu</p>
+        </div>
+        <div class="chat-close" id="chatClose"><i class="fas fa-times"></i></div>
+    </div>
+    <div class="quick-replies">
+        <span class="quick-reply" data-message="Info PPDB">📚 Info PPDB</span>
+        <span class="quick-reply" data-message="Jadwal Pelajaran">📅 Jadwal</span>
+        <span class="quick-reply" data-message="Kontak Guru">👨‍🏫 Kontak Guru</span>
+        <span class="quick-reply" data-message="Ekstrakurikuler">⚽ Ekstrakurikuler</span>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+        <div class="message bot">
+            <div class="message-avatar"><i class="fas fa-robot"></i></div>
+            <div class="message-content">
+                <p>Halo! Selamat datang di layanan bantuan SMAN 1 Cluring. Ada yang bisa saya bantu?</p>
+                <div class="message-time">Baru saja</div>
+            </div>
+        </div>
+    </div>
+    <div class="chat-input-area">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Ketik pesan..." />
+        <button class="chat-send" id="chatSend"><i class="fas fa-paper-plane"></i></button>
+    </div>
 </div>
-<div class="chat-header-info">
-<h4>Asisten Virtual SMAN 1 Cluring</h4>
-<p><i class="fas fa-circle"></i> Online - Siap membantu</p>
-</div>
-<div class="chat-close" id="chatClose">
-<i class="fas fa-times"></i>
-</div>
-</div>
-<div class="quick-replies">
-<span class="quick-reply" data-message="Info PPDB">📚 Info PPDB</span>
-<span class="quick-reply" data-message="Jadwal Pelajaran">📅 Jadwal</span>
-<span class="quick-reply" data-message="Kontak Guru">👨‍🏫 Kontak Guru</span>
-<span class="quick-reply" data-message="Ekstrakurikuler">⚽ Ekstrakurikuler</span>
-</div>
-<div class="chat-messages" id="chatMessages">
-<!-- Messages will be added here by JavaScript -->
-<div class="message bot">
-<div class="message-avatar">
-<i class="fas fa-robot"></i>
-</div>
-<div class="message-content">
-<p>Halo! Selamat datang di layanan bantuan SMAN 1 Cluring. Ada yang bisa saya bantu?</p>
-<div class="message-time">Baru saja</div>
-</div>
-</div>
-</div>
-<div class="chat-input-area">
-<input type="text" class="chat-input" id="chatInput" placeholder="Ketik pesan..." />
-<button class="chat-send" id="chatSend">
-<i class="fas fa-paper-plane"></i>
-</button>
-</div>
-</div>
+
 <!-- HEADER -->
 <header data-aos="fade-down">
-<div class="nav-container">
-<a href="index.html" class="brand">
-<img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring" />
-<span>SMAN 1 CLURING</span>
-</a>
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
-<div class="nav-right">
-<nav>
-<ul id="navMenu">
-<li><a href="index.html">Home</a></li>
-<li><a href="profil.html">Profil</a></li>
-<li><a href="akademik.html">Akademik</a></li>
-<li><a href="kesiswaan.html">Kesiswaan</a></li>
-<li><a href="sarpras.html">Sarpras</a></li>
-<li><a href="humas.html">Humas</a></li>
-<li><a href="mitra.html">Mitra</a></li>
-<li><a href="alumni.html">Alumni</a></li>
-<li><a href="artikel.html">Artikel</a></li>
-<li><a href="#kontak">Kontak</a></li>
-<li style="display: flex; align-items: center;">
-<button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
-<i class="fas fa-moon"></i>
-<i class="fas fa-sun sun"></i>
-</button>
-</li>
-</ul>
-</nav>
-</div>
-</div>
+    <div class="nav-container">
+        <a href="index.html" class="brand">
+            <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring" width="52" height="52" />
+            <span>SMAN 1 CLURING</span>
+        </a>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="nav-right">
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="akademik.html">Akademik</a></li>
+                    <li><a href="kesiswaan.html">Kesiswaan</a></li>
+                    <li><a href="sarpras.html">Sarpras</a></li>
+                    <li><a href="humas.html">Humas</a></li>
+                    <li><a href="mitra.html">Mitra</a></li>
+                    <li><a href="alumni.html">Alumni</a></li>
+                    <li><a href="artikel.html">Artikel</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                    <li style="display: flex; align-items: center;">
+                        <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                            <i class="fas fa-sun sun"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 </header>
 
-<!-- HERO HYBRID: Video Background + Foto IGA di samping -->
+<!-- HERO HYBRID -->
 <section class="hero" data-aos="zoom-in">
-<!-- Video Background -->
-<div class="hero-video-background">
-<iframe
-src="https://www.youtube.com/embed/5ZgkVKZuFiM?si=iNOfQqNzc4y-CYp4&autoplay=1&mute=1&loop=1&playlist=5ZgkVKZuFiM&controls=0&showinfo=0&rel=0"
-title="SMAN 1 Cluring Video Profile"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
-</div>
-
-<div class="hero-container">
-<div class="hero-content" data-aos="fade-right">
-<h1>Selamat Datang di Website Resmi<br>SMAN 1 Cluring</h1>
-<p>
-Menginspirasi Generasi Pancasila dari Bumi Blambangan — Pusat informasi akademik, kegiatan, dan layanan publik sekolah.
-</p>
-<a href="#profil" class="hero-cta">Jelajahi Sekolah</a>
-</div>
-<div class="hero-image" data-aos="fade-left" data-aos-delay="300">
-<img src="https://i.ibb.co.com/842GLgLy/IGA-2026-1-tanpa-background.png" alt="IGA 2026 SMAN 1 Cluring - Innovative Government Award">
-</div>
-</div>
+    <div class="hero-video-background">
+        <iframe
+            src="https://www.youtube.com/embed/5ZgkVKZuFiM?si=iNOfQqNzc4y-CYp4&autoplay=1&mute=1&loop=1&playlist=5ZgkVKZuFiM&controls=0&showinfo=0&rel=0"
+            title="SMAN 1 Cluring Video Profile"
+            frameborder="0"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+    </div>
+    <div class="hero-container">
+        <div class="hero-content" data-aos="fade-right">
+            <h1>Selamat Datang di Website Resmi<br>SMAN 1 Cluring</h1>
+            <p>Menginspirasi Generasi Pancasila dari Bumi Blambangan — Pusat informasi akademik, kegiatan, dan layanan publik sekolah.</p>
+            <a href="#profil" class="hero-cta">Jelajahi Sekolah</a>
+        </div>
+        <div class="hero-image" data-aos="fade-left" data-aos-delay="300">
+            <img src="https://i.ibb.co.com/842GLgLy/IGA-2026-1-tanpa-background.png" alt="IGA 2026 SMAN 1 Cluring" width="450" height="450" fetchpriority="high" />
+        </div>
+    </div>
 </section>
 
 <!-- SAMBUTAN -->
 <section class="section">
-<div class="section-header" data-aos="fade-right">
-<h2><span>Sambutan</span>Kepala Satuan Pendidikan</h2>
-</div>
-<div class="sambutan-container" data-aos="fade-up" data-aos-delay="100">
-<div class="sambutan">
-<div class="avatar-container">
-<img src="https://i.ibb.co/LDSSCYrF/1-Helmi-S-Pd-M-Si-Penanggung-Jawab-Umum.jpg" alt="Helmi, S.Pd, M.Si - Kepala SMAN 1 Cluring" class="avatar">
-</div>
-<div class="sambutan-content">
-<p>
-Assalamu'alaikum warahmatullahi wabarakatuh,<br>
-Om swastyastu, Namo buddhaya, Salam kebajikan.
-</p>
-<p>
-Puji syukur kita panjatkan ke hadirat Tuhan Yang Maha Esa atas limpahan rahmat-Nya sehingga kita dapat terus berkontribusi dalam dunia pendidikan.
-</p>
-<p>
-Sebagai Kepala SMAN 1 Cluring, saya bangga dapat membersamai generasi penerus bangsa yang penuh potensi. Sekolah ini adalah rumah kedua bagi seluruh siswa — tempat belajar, membangun karakter, serta menanamkan nilai-nilai kebangsaan.
-</p>
-<div class="vision">
-"Mewujudkan peserta didik yang berprestasi, berkarakter, beriman dan bertakwa, serta berwawasan lingkungan."
-</div>
-<p>
-Dukungan dari dewan guru, orang tua, peserta didik, dan masyarakat sangat penting dalam menciptakan lingkungan belajar yang aman, nyaman, dan inspiratif. Kami mengembangkan pembelajaran aktif, kreatif, dan memanfaatkan teknologi untuk meningkatkan mutu pendidikan.
-</p>
-<p>
-Mari kita terus bersinergi demi kemajuan SMAN 1 Cluring — menjadikannya pusat pembinaan generasi muda yang cerdas, santun, berakhlak mulia, dan berintegritas.
-</p>
-<p>
-Terima kasih atas dukungan semua pihak. Semoga ikhtiar kita membawa manfaat nyata bagi kemajuan pendidikan di sekolah tercinta.
-</p>
-<div class="signature">
-Wassalamu'alaikum warahmatullahi wabarakatuh,<br>
-Om santih santih santih om.<br><br>
-Helmi, S.Pd, M.Si<br>
-Kepala SMAN 1 Cluring
-</div>
-</div>
-</div>
-</div>
+    <div class="section-header" data-aos="fade-right">
+        <h2><span>Sambutan</span>Kepala Satuan Pendidikan</h2>
+    </div>
+    <div class="sambutan-container" data-aos="fade-up" data-aos-delay="100">
+        <div class="sambutan">
+            <div class="avatar-container">
+                <img src="https://i.ibb.co/LDSSCYrF/1-Helmi-S-Pd-M-Si-Penanggung-Jawab-Umum.jpg" alt="Helmi, S.Pd, M.Si" class="avatar" width="180" height="180" loading="lazy" />
+            </div>
+            <div class="sambutan-content">
+                <p>Assalamu'alaikum warahmatullahi wabarakatuh,<br>Om swastyastu, Namo buddhaya, Salam kebajikan.</p>
+                <p>Puji syukur kita panjatkan ke hadirat Tuhan Yang Maha Esa atas limpahan rahmat-Nya sehingga kita dapat terus berkontribusi dalam dunia pendidikan.</p>
+                <p>Sebagai Kepala SMAN 1 Cluring, saya bangga dapat membersamai generasi penerus bangsa yang penuh potensi. Sekolah ini adalah rumah kedua bagi seluruh siswa — tempat belajar, membangun karakter, serta menanamkan nilai-nilai kebangsaan.</p>
+                <div class="vision">"Mewujudkan peserta didik yang berprestasi, berkarakter, beriman dan bertakwa, serta berwawasan lingkungan."</div>
+                <p>Dukungan dari dewan guru, orang tua, peserta didik, dan masyarakat sangat penting dalam menciptakan lingkungan belajar yang aman, nyaman, dan inspiratif. Kami mengembangkan pembelajaran aktif, kreatif, dan memanfaatkan teknologi untuk meningkatkan mutu pendidikan.</p>
+                <p>Mari kita terus bersinergi demi kemajuan SMAN 1 Cluring — menjadikannya pusat pembinaan generasi muda yang cerdas, santun, berakhlak mulia, dan berintegritas.</p>
+                <p>Terima kasih atas dukungan semua pihak. Semoga ikhtiar kita membawa manfaat nyata bagi kemajuan pendidikan di sekolah tercinta.</p>
+                <div class="signature">Wassalamu'alaikum warahmatullahi wabarakatuh,<br>Om santih santih santih om.<br><br>Helmi, S.Pd, M.Si<br>Kepala SMAN 1 Cluring</div>
+            </div>
+        </div>
+    </div>
 </section>
+
 <div class="cultural-divider" data-aos="fade-in"></div>
+
 <!-- BERITA TERKINI -->
 <section class="section">
-<div class="section-header">
-<h2 data-aos="fade-right"><span>Update Terkini</span>Berita Terbaru</h2>
-<a href="artikel.html" class="view-all" data-aos="fade-left">Lihat Semua →</a>
-</div>
-<div class="news-grid">
-<a href="articles/februari-bukit-batari-2026.html" class="news-card" data-aos="flip-up" data-aos-delay="100">
-<img src="https://i.ibb.co.com/FbffbPWG/IGA-2026-1.jpg" alt="SMAN 1 Cluring Raih IGA 2025" />
-<div>
-<h3>SMAN 1 Cluring Raih Innovative Government Award (IGA) 2025</h3>
-<p>Penghargaan atas inovasi BUKIT BATARI – Budaya Kita Batik dan Tari.</p>
-</div>
-</a>
-<a href="articles/Program SIKAP.html" class="news-card" data-aos="flip-up" data-aos-delay="200">
-<img src="https://i.ibb.co/zHSfC2Qz/JENIS-TANAMAN.jpg" alt="Program SIKAP 2026" />
-<div>
-<h3>SMAN 1 Cluring Perkuat Ketahanan Pangan melalui Program SIKAP</h3>
-<p>Sekolah Inovasi Ketahanan Pangan.</p>
-</div>
-</a>
-<a href="articles/Smaring Expo 2026.html" class="news-card" data-aos="flip-up" data-aos-delay="300">
-<img src="https://i.ibb.co/TBfc9QcK/KS-LAUNCING-EXSPO.jpg" alt="Smaring Expo 2026" />
-<div>
-<h3>Smaring Expo Campus dan Talkshow 2026</h3>
-<p>SMAN 1 Cluring Gelar Smaring Expo Campus dan Talkshow 2026.</p>
-</div>
-</a>
-</div>
+    <div class="section-header">
+        <h2 data-aos="fade-right"><span>Update Terkini</span>Berita Terbaru</h2>
+        <a href="artikel.html" class="view-all" data-aos="fade-left">Lihat Semua →</a>
+    </div>
+    <div class="news-grid">
+        <a href="articles/februari-bukit-batari-2026.html" class="news-card" data-aos="flip-up" data-aos-delay="100">
+            <img src="https://i.ibb.co.com/FbffbPWG/IGA-2026-1.jpg" alt="SMAN 1 Cluring Raih IGA 2025" width="320" height="220" loading="lazy" />
+            <div><h3>SMAN 1 Cluring Raih Innovative Government Award (IGA) 2025</h3><p>Penghargaan atas inovasi BUKIT BATARI – Budaya Kita Batik dan Tari.</p></div>
+        </a>
+        <a href="articles/Program SIKAP.html" class="news-card" data-aos="flip-up" data-aos-delay="200">
+            <img src="https://i.ibb.co/zHSfC2Qz/JENIS-TANAMAN.jpg" alt="Program SIKAP 2026" width="320" height="220" loading="lazy" />
+            <div><h3>SMAN 1 Cluring Perkuat Ketahanan Pangan melalui Program SIKAP</h3><p>Sekolah Inovasi Ketahanan Pangan.</p></div>
+        </a>
+        <a href="articles/Smaring Expo 2026.html" class="news-card" data-aos="flip-up" data-aos-delay="300">
+            <img src="https://i.ibb.co/TBfc9QcK/KS-LAUNCING-EXSPO.jpg" alt="Smaring Expo 2026" width="320" height="220" loading="lazy" />
+            <div><h3>Smaring Expo Campus dan Talkshow 2026</h3><p>SMAN 1 Cluring Gelar Smaring Expo Campus dan Talkshow 2026.</p></div>
+        </a>
+    </div>
 </section>
+
 <!-- KEGIATAN KESISWAAN -->
 <section class="section">
-<div class="section-header">
-<h2 data-aos="fade-right"><span>Aktivitas</span>Kegiatan Kesiswaan</h2>
-<a href="artikel.html" class="view-all" data-aos="fade-left">Lihat Semua →</a>
-</div>
-<div class="activity-grid">
-<a href="articles/2025-10-19-Pergantian-Takmir-Masjid.html" class="activity-card" data-aos="zoom-in" data-aos-delay="100">
-<img src="https://i.ibb.co.com/Fk521mwR/takmir-1.jpg" alt="TAKMIR" />
-<div>
-<h3>Pergantian Kepengurusan Takmir Masjid Baitul Muttaqin</h3>
-<p>Pergantian Kepengurusan Takmir Masjid Baitul Muttaqin.</p>
-</div>
-</a>
-<a href="articles/serah-terima-pelantikan-dewan-ambalan-sman1-cluring.html" class="activity-card" data-aos="zoom-in" data-aos-delay="200">
-<img src="https://i.ibb.co.com/8nyH2Bbd/da3.jpg" alt="Pelantikan Pengurus Dewan Ambalan" />
-<div>
-<h3>Serah Terima Jabatan dan Pelantikan Dewan Ambalan</h3>
-<p>SMAN 1 Cluring melaksanakan Upacara Serah Terima Jabatan dan Pelantikan Pengurus Dewan Ambalan.</p>
-</div>
-</a>
-<a href="articles/peringatan-hari-anak-nasional-2025-sman1-cluring.html" class="activity-card" data-aos="zoom-in" data-aos-delay="300">
-<img src="https://i.ibb.co.com/35vrSj5F/hari-anak-3.jpg" alt="Hari Anak Nasional 2025" />
-<div>
-<h3>Peringatan Hari Anak Nasional 2025 di SMAN 1 Cluring</h3>
-<p>Siswa tampil memukau dalam Peringatan Hari Anak Nasional 2025 di SMAN 1 Cluring.</p>
-</div>
-</a>
-</div>
+    <div class="section-header">
+        <h2 data-aos="fade-right"><span>Aktivitas</span>Kegiatan Kesiswaan</h2>
+        <a href="artikel.html" class="view-all" data-aos="fade-left">Lihat Semua →</a>
+    </div>
+    <div class="activity-grid">
+        <a href="articles/2025-10-19-Pergantian-Takmir-Masjid.html" class="activity-card" data-aos="zoom-in" data-aos-delay="100">
+            <img src="https://i.ibb.co.com/Fk521mwR/takmir-1.jpg" alt="TAKMIR" width="320" height="220" loading="lazy" />
+            <div><h3>Pergantian Kepengurusan Takmir Masjid Baitul Muttaqin</h3><p>Pergantian Kepengurusan Takmir Masjid Baitul Muttaqin.</p></div>
+        </a>
+        <a href="articles/serah-terima-pelantikan-dewan-ambalan-sman1-cluring.html" class="activity-card" data-aos="zoom-in" data-aos-delay="200">
+            <img src="https://i.ibb.co.com/8nyH2Bbd/da3.jpg" alt="Pelantikan Pengurus Dewan Ambalan" width="320" height="220" loading="lazy" />
+            <div><h3>Serah Terima Jabatan dan Pelantikan Dewan Ambalan</h3><p>SMAN 1 Cluring melaksanakan Upacara Serah Terima Jabatan dan Pelantikan Pengurus Dewan Ambalan.</p></div>
+        </a>
+        <a href="articles/peringatan-hari-anak-nasional-2025-sman1-cluring.html" class="activity-card" data-aos="zoom-in" data-aos-delay="300">
+            <img src="https://i.ibb.co.com/35vrSj5F/hari-anak-3.jpg" alt="Hari Anak Nasional 2025" width="320" height="220" loading="lazy" />
+            <div><h3>Peringatan Hari Anak Nasional 2025 di SMAN 1 Cluring</h3><p>Siswa tampil memukau dalam Peringatan Hari Anak Nasional 2025 di SMAN 1 Cluring.</p></div>
+        </a>
+    </div>
 </section>
+
 <!-- INFORMASI UTAMA -->
 <section class="section">
-<div class="section-header">
-<h2 data-aos="fade-up"><span>Layanan</span>Informasi Utama</h2>
-</div>
-<div class="cards">
-<div class="card" data-aos="fade-up" data-aos-delay="100">
-<h3>Akademik</h3>
-<p>Kurikulum Merdeka dan kegiatan pembelajaran.</p>
-</div>
-<div class="card" data-aos="fade-up" data-aos-delay="200">
-<h3>Kesiswaan</h3>
-<p>OSIS, ekstrakurikuler, dan prestasi.</p>
-</div>
-<div class="card" data-aos="fade-up" data-aos-delay="300">
-<h3>Humas</h3>
-<p>Informasi publik dan pengumuman resmi.</p>
-</div>
-</div>
+    <div class="section-header">
+        <h2 data-aos="fade-up"><span>Layanan</span>Informasi Utama</h2>
+    </div>
+    <div class="cards">
+        <div class="card" data-aos="fade-up" data-aos-delay="100"><h3>Akademik</h3><p>Kurikulum Merdeka dan kegiatan pembelajaran.</p></div>
+        <div class="card" data-aos="fade-up" data-aos-delay="200"><h3>Kesiswaan</h3><p>OSIS, ekstrakurikuler, dan prestasi.</p></div>
+        <div class="card" data-aos="fade-up" data-aos-delay="300"><h3>Humas</h3><p>Informasi publik dan pengumuman resmi.</p></div>
+    </div>
 </section>
+
 <!-- FOOTER -->
 <footer data-aos="fade-up" id="kontak">
-<div class="footer-content">
-<div class="footer-section">
-<h3><i class="fas fa-map-marker-alt"></i> Kontak</h3>
-<p>Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, Jawa Timur</p>
-<p><i class="fas fa-phone"></i> <a href="tel:+6282319712420">0823-1971-2420</a></p>
-<p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6282319712420" target="_blank">0823-1971-2420 (WA)</a></p>
-</div>
-<div class="footer-section">
-<h3><i class="fas fa-link"></i> Link Penting</h3>
-<ul>
-<li><a href="https://sma.kemendikdasmen.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
-<li><a href="https://dindik.jatimprov.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
-<li><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas Banyuwangi</a></li>
-<li><a href="https://alam21234.github.io/Smaring-interactive-learning-comunity" target="_blank"><i class="fas fa-external-link-alt"></i> Smaring Learning Community</a></li>
-</ul>
-</div>
-<div class="footer-section">
-<h3><i class="fas fa-flask"></i> Lab Virtual</h3>
-<ul>
-<li><a href="https://quran.nu.or.id" target="_blank"><i class="fas fa-book-quran"></i> Al-Qur'an Digital</a></li>
-<li><a href="https://virtualbiologylab.org" target="_blank"><i class="fas fa-dna"></i> Virtual Biology Lab</a></li>
-<li><a href="https://www.myphysicslab.com" target="_blank"><i class="fas fa-atom"></i> MyPhysicsLab</a></li>
-</ul>
-</div>
-<div class="footer-section">
-<h3><i class="fas fa-share-alt"></i> Media Sosial</h3>
-<div class="social-links">
-<a href="https://www.facebook.com/Sman1Cluring" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-<a href="https://www.instagram.com/sman1_cluring" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-<a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-<a href="https://wa.me/6282319712420" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-</div>
-</div>
-</div>
-<!-- CLOCK & VISITOR PANEL -->
-<div class="footer-info-panel">
-<div class="footer-clock">
-<span class="footer-time" id="footerTime">00:00:00</span>
-<span class="footer-date" id="footerDate">Sabtu, 1 Januari 2026</span>
-</div>
-<div class="footer-visitor">
-<i class="fas fa-eye"></i>
-<span id="footerVisitorCount">Loading...</span>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
-</div>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3><i class="fas fa-map-marker-alt"></i> Kontak</h3>
+            <p>Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, Jawa Timur</p>
+            <p><i class="fas fa-phone"></i> <a href="tel:+6282319712420">0823-1971-2420</a></p>
+            <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6282319712420" target="_blank">0823-1971-2420 (WA)</a></p>
+        </div>
+        <div class="footer-section">
+            <h3><i class="fas fa-link"></i> Link Penting</h3>
+            <ul>
+                <li><a href="https://sma.kemendikdasmen.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
+                <li><a href="https://dindik.jatimprov.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
+                <li><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas Banyuwangi</a></li>
+                <li><a href="https://alam21234.github.io/Smaring-interactive-learning-comunity" target="_blank"><i class="fas fa-external-link-alt"></i> Smaring Learning Community</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3><i class="fas fa-flask"></i> Lab Virtual</h3>
+            <ul>
+                <li><a href="https://quran.nu.or.id" target="_blank"><i class="fas fa-book-quran"></i> Al-Qur'an Digital</a></li>
+                <li><a href="https://virtualbiologylab.org" target="_blank"><i class="fas fa-dna"></i> Virtual Biology Lab</a></li>
+                <li><a href="https://www.myphysicslab.com" target="_blank"><i class="fas fa-atom"></i> MyPhysicsLab</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3><i class="fas fa-share-alt"></i> Media Sosial</h3>
+            <div class="social-links">
+                <a href="https://www.facebook.com/Sman1Cluring" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/sman1_cluring" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://wa.me/6282319712420" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-info-panel">
+        <div class="footer-clock">
+            <span class="footer-time" id="footerTime">00:00:00</span>
+            <span class="footer-date" id="footerDate">Sabtu, 1 Januari 2026</span>
+        </div>
+        <div class="footer-visitor">
+            <i class="fas fa-eye"></i>
+            <span id="footerVisitorCount">Loading...</span>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
+    </div>
 </footer>
+
 <!-- AOS & Custom JS -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-// Initialize AOS
-AOS.init({
-duration: 800,
-once: true,
-easing: 'ease-out-cubic'
-});
-// Preloader
-window.addEventListener('load', () => {
-const preloader = document.getElementById('preloader');
-setTimeout(() => {
-preloader.classList.add('fade-out');
-}, 800);
-});
-// Dark Mode Toggle
-const darkModeToggle = document.getElementById('darkModeToggle');
-const body = document.body;
-const isDarkMode = localStorage.getItem('darkMode') === 'true';
-if (isDarkMode) {
-body.classList.add('dark-mode');
-}
-darkModeToggle.addEventListener('click', () => {
-body.classList.toggle('dark-mode');
-localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
-});
-// Mobile Menu Toggle
-function toggleMenu() {
-const menu = document.getElementById("navMenu");
-menu.classList.toggle("active");
-}
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function(e) {
-const href = this.getAttribute('href');
-if (href !== '#') {
-e.preventDefault();
-const target = document.querySelector(href);
-if (target) {
-target.scrollIntoView({
-behavior: 'smooth',
-block: 'start'
-});
-document.getElementById("navMenu").classList.remove("active");
-}
-}
-});
-});
-// Realtime Clock untuk Footer
-function updateClock() {
-const now = new Date();
-const hours = String(now.getHours()).padStart(2, '0');
-const minutes = String(now.getMinutes()).padStart(2, '0');
-const seconds = String(now.getSeconds()).padStart(2, '0');
-const timeString = `${hours}:${minutes}:${seconds}`;
-const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
-const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
-'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-const dayName = days[now.getDay()];
-const day = now.getDate();
-const monthName = months[now.getMonth()];
-const year = now.getFullYear();
-const dateString = `${dayName}, ${day} ${monthName} ${year}`;
-document.getElementById('footerTime').textContent = timeString;
-document.getElementById('footerDate').textContent = dateString;
-}
-setInterval(updateClock, 1000);
-updateClock();
-// Visitor Counter
-function updateVisitorCounter() {
-const visitorKey = 'sman1cluring_visitor_count';
-let count = localStorage.getItem(visitorKey);
-if (!count) {
-count = 1;
-localStorage.setItem(visitorKey, count);
-} else {
-count = parseInt(count);
-if (!sessionStorage.getItem('visitor_counted')) {
-count++;
-localStorage.setItem(visitorKey, count);
-sessionStorage.setItem('visitor_counted', 'true');
-}
-}
-const formattedCount = count.toLocaleString('id-ID');
-document.getElementById('footerVisitorCount').textContent = `${formattedCount} Pengunjung`;
-}
-updateVisitorCounter();
-// ===== CHAT SYSTEM =====
-const chatButton = document.getElementById('chatButton');
-const chatBox = document.getElementById('chatBox');
-const chatClose = document.getElementById('chatClose');
-const chatInput = document.getElementById('chatInput');
-const chatSend = document.getElementById('chatSend');
-const chatMessages = document.getElementById('chatMessages');
-const quickReplies = document.querySelectorAll('.quick-reply');
-const notificationBadge = document.querySelector('.notification-badge');
-// Toggle chat box
-chatButton.addEventListener('click', () => {
-chatBox.classList.toggle('active');
-if (chatBox.classList.contains('active')) {
-notificationBadge.style.display = 'none';
-// Scroll ke pesan terakhir
-chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-});
-// Close chat box
-chatClose.addEventListener('click', () => {
-chatBox.classList.remove('active');
-});
-// Send message function
-function sendMessage() {
-const message = chatInput.value.trim();
-if (message === '') return;
-// Add user message
-addMessage(message, 'user');
-// Clear input
-chatInput.value = '';
-// Disable send button temporarily
-chatSend.disabled = true;
-// Simulate bot typing
-setTimeout(() => {
-// Bot response based on keywords
-const botResponse = getBotResponse(message);
-addMessage(botResponse, 'bot');
-chatSend.disabled = false;
-// Scroll to bottom
-chatMessages.scrollTop = chatMessages.scrollHeight;
-}, 1000);
-// Scroll to bottom
-chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-// Add message to chat
-function addMessage(text, sender) {
-const messageDiv = document.createElement('div');
-messageDiv.className = `message ${sender}`;
-const now = new Date();
-const timeString = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
-messageDiv.innerHTML = `
-<div class="message-avatar">
-<i class="fas ${sender === 'bot' ? 'fa-robot' : 'fa-user'}"></i>
-</div>
-<div class="message-content">
-<p>${text}</p>
-<div class="message-time">${timeString}</div>
-</div>
-`;
-chatMessages.appendChild(messageDiv);
-}
-// Bot response logic
-function getBotResponse(message) {
-const lowerMsg = message.toLowerCase();
-if (lowerMsg.includes('ppdb') || lowerMsg.includes('pendaftaran')) {
-return "Pendaftaran PPDB SMAN 1 Cluring akan dibuka pada bulan Mei 2026. Informasi lengkap bisa dilihat di menu PPDB atau hubungi admin via WhatsApp.";
-} else if (lowerMsg.includes('jadwal') || lowerMsg.includes('pelajaran')) {
-return "Jadwal pelajaran bisa diakses oleh siswa melalui aplikasi e-learning atau hubungi wali kelas masing-masing.";
-} else if (lowerMsg.includes('guru') || lowerMsg.includes('kontak guru')) {
-return "Untuk kontak guru, silakan hubungi bagian TU di nomor 0823-1971-2420 atau melalui WhatsApp.";
-} else if (lowerMsg.includes('ekskul') || lowerMsg.includes('ekstrakurikuler')) {
-return "SMAN 1 Cluring memiliki berbagai ekstrakurikuler: Pramuka, Paskibra, PMR, Basket, Futsal, Seni Tari, Paduan Suara, dan banyak lagi!";
-} else if (lowerMsg.includes('alumni')) {
-return "Untuk informasi alumni dan tracer study, silakan kunjungi halaman Alumni atau hubungi tim humas.";
-} else if (lowerMsg.includes('prestasi')) {
-return "SMAN 1 Cluring baru saja meraih Innovative Government Award (IGA) 2025! Lihat prestasi lainnya di halaman Prestasi.";
-} else if (lowerMsg.includes('terima kasih') || lowerMsg.includes('thanks')) {
-return "Sama-sama! Senang bisa membantu. Ada lagi yang ingin ditanyakan?";
-} else {
-return "Terima kasih atas pertanyaannya. Untuk informasi lebih lanjut, silakan hubungi admin melalui WhatsApp atau telepon ke nomor 0823-1971-2420.";
-}
-}
-// Send message on button click
-chatSend.addEventListener('click', sendMessage);
-// Send message on Enter key
-chatInput.addEventListener('keypress', (e) => {
-if (e.key === 'Enter') {
-sendMessage();
-}
-});
-// Quick replies
-quickReplies.forEach(reply => {
-reply.addEventListener('click', () => {
-const message = reply.getAttribute('data-message');
-chatInput.value = message;
-sendMessage();
-});
-});
-// Close chat when clicking outside
-document.addEventListener('click', (e) => {
-if (!chatBox.contains(e.target) && !chatButton.contains(e.target) && chatBox.classList.contains('active')) {
-chatBox.classList.remove('active');
-}
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize AOS
+    AOS.init({ duration: 800, once: true, easing: 'ease-out-cubic' });
+
+    // Preloader (Optimized: Hide on DOMContentLoaded + short timeout)
+    const preloader = document.getElementById('preloader');
+    setTimeout(() => {
+        preloader.classList.add('fade-out');
+    }, 600); // Reduced from 800ms + waits for load event previously
+
+    // Dark Mode Toggle
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    if (isDarkMode) body.classList.add('dark-mode');
+
+    darkModeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+    });
+
+    // Mobile Menu Toggle
+    window.toggleMenu = () => {
+        document.getElementById("navMenu").classList.toggle("active");
+    };
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.getElementById("navMenu").classList.remove("active");
+                }
+            }
+        });
+    });
+
+    // Realtime Clock
+    function updateClock() {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString('id-ID');
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const dateString = now.toLocaleDateString('id-ID', options);
+        document.getElementById('footerTime').textContent = timeString;
+        document.getElementById('footerDate').textContent = dateString;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Visitor Counter
+    function updateVisitorCounter() {
+        const visitorKey = 'sman1cluring_visitor_count';
+        let count = localStorage.getItem(visitorKey);
+        if (!count) {
+            count = 1;
+            localStorage.setItem(visitorKey, count);
+        } else {
+            count = parseInt(count);
+            if (!sessionStorage.getItem('visitor_counted')) {
+                count++;
+                localStorage.setItem(visitorKey, count);
+                sessionStorage.setItem('visitor_counted', 'true');
+            }
+        }
+        document.getElementById('footerVisitorCount').textContent = `${count.toLocaleString('id-ID')} Pengunjung`;
+    }
+    updateVisitorCounter();
+
+    // ===== CHAT SYSTEM =====
+    const chatButton = document.getElementById('chatButton');
+    const chatBox = document.getElementById('chatBox');
+    const chatClose = document.getElementById('chatClose');
+    const chatInput = document.getElementById('chatInput');
+    const chatSend = document.getElementById('chatSend');
+    const chatMessages = document.getElementById('chatMessages');
+    const quickReplies = document.querySelectorAll('.quick-reply');
+    const notificationBadge = document.querySelector('.notification-badge');
+
+    chatButton.addEventListener('click', () => {
+        chatBox.classList.toggle('active');
+        if (chatBox.classList.contains('active')) {
+            notificationBadge.style.display = 'none';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    });
+
+    chatClose.addEventListener('click', () => chatBox.classList.remove('active'));
+
+    function sendMessage() {
+        const message = chatInput.value.trim();
+        if (message === '') return;
+        addMessage(message, 'user');
+        chatInput.value = '';
+        chatSend.disabled = true;
+        setTimeout(() => {
+            addMessage(getBotResponse(message), 'bot');
+            chatSend.disabled = false;
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 800); // Reduced typing simulation time
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function addMessage(text, sender) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${sender}`;
+        const timeString = new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+        messageDiv.innerHTML = `
+            <div class="message-avatar"><i class="fas ${sender === 'bot' ? 'fa-robot' : 'fa-user'}"></i></div>
+            <div class="message-content"><p>${text}</p><div class="message-time">${timeString}</div></div>`;
+        chatMessages.appendChild(messageDiv);
+    }
+
+    function getBotResponse(message) {
+        const lowerMsg = message.toLowerCase();
+        if (lowerMsg.includes('ppdb') || lowerMsg.includes('pendaftaran')) return "Pendaftaran PPDB SMAN 1 Cluring akan dibuka pada bulan Mei 2026. Informasi lengkap bisa dilihat di menu PPDB atau hubungi admin via WhatsApp.";
+        if (lowerMsg.includes('jadwal') || lowerMsg.includes('pelajaran')) return "Jadwal pelajaran bisa diakses oleh siswa melalui aplikasi e-learning atau hubungi wali kelas masing-masing.";
+        if (lowerMsg.includes('guru') || lowerMsg.includes('kontak guru')) return "Untuk kontak guru, silakan hubungi bagian TU di nomor 0823-1971-2420 atau melalui WhatsApp.";
+        if (lowerMsg.includes('ekskul') || lowerMsg.includes('ekstrakurikuler')) return "SMAN 1 Cluring memiliki berbagai ekstrakurikuler: Pramuka, Paskibra, PMR, Basket, Futsal, Seni Tari, Paduan Suara, dan banyak lagi!";
+        if (lowerMsg.includes('alumni')) return "Untuk informasi alumni dan tracer study, silakan kunjungi halaman Alumni atau hubungi tim humas.";
+        if (lowerMsg.includes('prestasi')) return "SMAN 1 Cluring baru saja meraih Innovative Government Award (IGA) 2025! Lihat prestasi lainnya di halaman Prestasi.";
+        if (lowerMsg.includes('terima kasih') || lowerMsg.includes('thanks')) return "Sama-sama! Senang bisa membantu. Ada lagi yang ingin ditanyakan?";
+        return "Terima kasih atas pertanyaannya. Untuk informasi lebih lanjut, silakan hubungi admin melalui WhatsApp atau telepon ke nomor 0823-1971-2420.";
+    }
+
+    chatSend.addEventListener('click', sendMessage);
+    chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
+    quickReplies.forEach(reply => {
+        reply.addEventListener('click', () => {
+            chatInput.value = reply.getAttribute('data-message');
+            sendMessage();
+        });
+    });
+    document.addEventListener('click', (e) => {
+        if (!chatBox.contains(e.target) && !chatButton.contains(e.target) && chatBox.classList.contains('active')) {
+            chatBox.classList.remove('active');
+        }
+    });
 });
 </script>
 </body>
