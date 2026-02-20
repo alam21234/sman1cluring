@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Galeri Ucapan & Perayaan - SMAN 1 Cluring</title>
+<!-- SEO -->
+<meta name="description" content="Kumpulan ucapan selamat hari raya, hari besar nasional, dan event khusus dari SMAN 1 Cluring." />
+<meta name="author" content="SMAN 1 Cluring" />
+<meta name="keywords" content="ucapan selamat, hari raya, imlek, puasa, natal, tahun baru, SMAN 1 Cluring" />
+<!-- Open Graph -->
+<meta property="og:title" content="Galeri Ucapan - SMAN 1 Cluring" />
+<meta property="og:description" content="Kumpulan ucapan selamat hari raya dan event spesial dari keluarga besar SMAN 1 Cluring." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://sman1cluring.sch.id/ucapan.html" />
+<meta property="og:image" content="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" />
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<style>
+:root {
+/* Premium Palette - Same as artikel.html */
+--primary: #0a2a5e;
+--primary-light: #1e3a7a;
+--primary-dark: #051a3b;
+--secondary: #9e7b4b;
+--accent: #c7a854;
+--light: #f5f7fa;
+--dark: #1e2b37;
+--gray: #4b5c6b;
+--white: #ffffff;
+--glass: rgba(255, 255, 255, 0.1);
+--glass-border: rgba(255, 255, 255, 0.2);
+--shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.05);
+--shadow-md: 0 8px 30px rgba(0, 20, 50, 0.12);
+--shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+--transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+--border-radius: 16px;
+--whatsapp: #25D366;
+--whatsapp-dark: #128C7E;
+}
+.dark-mode {
+--primary: #1e3a8a;
+--primary-light: #3b5ba5;
+--secondary: #d4af37;
+--light: #0f1825;
+--dark: #edf2f7;
+--gray: #a0b3c6;
+--white: #1a2533;
+--glass: rgba(0, 0, 0, 0.25);
+--glass-border: rgba(255, 255, 255, 0.08);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+font-family: 'Inter', sans-serif;
+background-color: var(--light);
+color: var(--dark);
+line-height: 1.6;
+transition: background-color 0.3s ease, color 0.3s ease;
+overflow-x: hidden;
+}
+h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; }
+a { text-decoration: none; color: inherit; }
+
+/* ===== PRELOADER ===== */
+#preloader {
+position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+background: var(--primary); z-index: 9999;
+display: flex; justify-content: center; align-items: center;
+transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+#preloader.fade-out { opacity: 0; visibility: hidden; }
+.spinner {
+width: 50px; height: 50px;
+border: 4px solid rgba(255,255,255,0.1);
+border-top: 4px solid var(--secondary);
+border-radius: 50%;
+animation: spin 1s linear infinite;
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* ===== HEADER ===== */
+header {
+background: linear-gradient(135deg, var(--primary), var(--primary-light));
+position: sticky; top: 0; z-index: 1000;
+box-shadow: var(--shadow-md);
+}
+.nav-container {
+max-width: 1400px; margin: auto; padding: 15px 20px;
+display: flex; justify-content: space-between; align-items: center;
+}
+.brand {
+display: flex; align-items: center; gap: 12px;
+color: var(--white); font-weight: 800; font-size: 1.2rem;
+}
+.brand img { width: 45px; border-radius: 8px; }
+nav ul { list-style: none; display: flex; gap: 20px; }
+nav ul li a {
+color: var(--white); text-decoration: none; font-weight: 500;
+font-size: 0.95rem; transition: var(--transition); opacity: 0.9;
+}
+nav ul li a:hover, nav ul li a.active { opacity: 1; color: var(--accent); }
+.menu-toggle { display: none; color: var(--white); font-size: 24px; cursor: pointer; }
+.dark-mode-toggle {
+background: var(--glass); border: 1px solid var(--glass-border);
+width: 40px; height: 40px; border-radius: 50%; color: var(--white);
+display: flex; align-items: center; justify-content: center; cursor: pointer;
+}
+.back-btn {
+color: var(--white); background: rgba(255,255,255,0.1);
+padding: 8px 16px; border-radius: 50px; font-size: 0.9rem;
+transition: var(--transition); display: flex; align-items: center; gap: 8px;
+}
+.back-btn:hover { background: var(--secondary); }
+
+/* ===== HERO ===== */
+.hero-greeting {
+text-align: center; color: var(--white);
+padding: 100px 20px 80px;
+background: linear-gradient(rgba(10,42,94,0.85), rgba(5,26,59,0.9)), 
+url('https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=1920') center/cover fixed;
+position: relative; overflow: hidden;
+}
+.hero-greeting::before {
+content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+animation: rotate 20s linear infinite;
+}
+@keyframes rotate { 100% { transform: rotate(360deg); } }
+.hero-greeting h1 {
+font-size: 2.8rem; margin-bottom: 15px;
+position: relative; z-index: 1;
+text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+.hero-greeting p {
+font-size: 1.15rem; max-width: 650px; margin: 0 auto;
+position: relative; z-index: 1; opacity: 0.95;
+text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+/* ===== MAIN CONTENT ===== */
+.container { max-width: 1400px; margin: auto; padding: 60px 20px; }
+
+/* Filter Group */
+.filter-group {
+display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+margin-bottom: 50px;
+background: var(--white); padding: 25px; border-radius: var(--border-radius);
+box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.05);
+}
+.filter-btn {
+padding: 10px 24px; border: 2px solid var(--secondary); background: transparent;
+color: var(--secondary); border-radius: 50px; cursor: pointer; font-weight: 600;
+transition: var(--transition); font-size: 0.95rem;
+}
+.filter-btn.active, .filter-btn:hover {
+background: var(--secondary); color: var(--white); transform: translateY(-2px);
+box-shadow: var(--shadow-md);
+}
+
+/* Gallery Grid */
+.greeting-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+gap: 35px;
+}
+
+/* Greeting Card */
+.greeting-card {
+background: var(--white); border-radius: var(--border-radius);
+overflow: hidden; box-shadow: var(--shadow-sm);
+transition: var(--transition); position: relative;
+border: 1px solid rgba(0,0,0,0.05);
+}
+.greeting-card:hover {
+transform: translateY(-10px); box-shadow: var(--shadow-lg);
+border-color: var(--secondary);
+}
+.card-image-wrapper {
+position: relative; padding-top: 140%;
+overflow: hidden; background: #f0f0f0;
+}
+.card-image-wrapper img {
+position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+object-fit: cover; transition: transform 0.6s ease;
+}
+.greeting-card:hover img { transform: scale(1.08); }
+
+/* Card Overlay Actions */
+.card-overlay {
+position: absolute; bottom: 0; left: 0; right: 0;
+background: linear-gradient(to top, rgba(10,42,94,0.9), transparent);
+padding: 20px; opacity: 0; transition: var(--transition);
+display: flex; justify-content: center; gap: 12px;
+}
+.greeting-card:hover .card-overlay { opacity: 1; }
+
+.action-icon {
+width: 42px; height: 42px; border-radius: 50%;
+background: var(--white); color: var(--primary);
+display: flex; align-items: center; justify-content: center;
+cursor: pointer; transition: var(--transition);
+font-size: 1rem;
+}
+.action-icon:hover {
+background: var(--secondary); color: var(--white);
+transform: scale(1.15) rotate(5deg);
+}
+
+/* Card Info */
+.card-info { padding: 20px; }
+.card-tag {
+font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+color: var(--secondary); letter-spacing: 1.2px;
+margin-bottom: 8px; display: inline-block;
+background: rgba(158, 123, 75, 0.1);
+padding: 4px 12px; border-radius: 20px;
+}
+.card-title {
+font-size: 1.15rem; font-weight: 700; color: var(--primary);
+margin-bottom: 8px; line-height: 1.4;
+display: -webkit-box; -webkit-line-clamp: 2;
+-webkit-box-orient: vertical; overflow: hidden;
+}
+.card-date {
+font-size: 0.85rem; color: var(--gray);
+display: flex; align-items: center; gap: 6px;
+}
+
+/* Empty State */
+.empty-state {
+grid-column: 1 / -1; text-align: center; padding: 80px 20px;
+color: var(--gray);
+}
+.empty-state i {
+font-size: 4rem; margin-bottom: 20px; opacity: 0.3;
+color: var(--secondary);
+}
+.empty-state h3 { font-size: 1.5rem; margin-bottom: 10px; color: var(--primary); }
+.empty-state p { font-size: 1rem; }
+
+/* ===== FOOTER (Same as artikel.html) ===== */
+footer {
+background: linear-gradient(145deg, var(--primary-dark) 0%, var(--primary) 100%);
+color: var(--white); padding: 70px 32px 30px;
+font-size: 1rem; position: relative; margin-top: 80px;
+}
+footer::before {
+content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+background: linear-gradient(90deg, var(--secondary), var(--accent), var(--secondary));
+}
+.footer-content {
+max-width: 1300px; margin: auto;
+display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+gap: 50px;
+}
+.footer-section h3 {
+font-size: 1.4rem; margin-bottom: 25px; font-weight: 600;
+display: flex; align-items: center; gap: 10px; color: var(--secondary);
+}
+.footer-section ul { list-style: none; }
+.footer-section ul li { margin-bottom: 14px; }
+.footer-section a {
+color: rgba(255, 255, 255, 0.8); text-decoration: none;
+transition: var(--transition); display: flex; align-items: center; gap: 10px;
+}
+.footer-section a:hover { color: var(--secondary); transform: translateX(6px); }
+.social-links { display: flex; gap: 18px; margin-top: 20px; }
+.social-links a {
+display: inline-flex; align-items: center; justify-content: center;
+width: 44px; height: 44px; border-radius: 60px;
+background: var(--glass); color: var(--white);
+font-size: 1.2rem; transition: var(--transition);
+border: 1px solid var(--glass-border);
+}
+.social-links a:hover {
+background: var(--secondary); transform: translateY(-6px) scale(1.1);
+color: var(--primary-dark);
+}
+.footer-info-panel {
+display: flex; align-items: center; justify-content: space-between;
+flex-wrap: wrap; gap: 20px;
+background: rgba(0, 0, 0, 0.2); padding: 20px 30px;
+border-radius: 60px; margin: 40px auto 20px; max-width: 1000px;
+border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(8px);
+}
+.footer-clock { display: flex; align-items: center; gap: 20px; color: var(--white); flex-wrap: wrap; }
+.footer-time {
+font-size: 2rem; font-weight: 700; font-family: 'Plus Jakarta Sans', monospace;
+background: rgba(0,0,0,0.3); padding: 6px 18px; border-radius: 50px; letter-spacing: 2px;
+}
+.footer-date { font-size: 1rem; opacity: 0.9; display: flex; align-items: center; gap: 8px; }
+.footer-visitor {
+display: flex; align-items: center; gap: 12px;
+background: var(--secondary); color: var(--primary-dark);
+padding: 10px 24px; border-radius: 50px; font-weight: 600; font-size: 1.1rem;
+box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+.footer-bottom {
+text-align: center; margin-top: 30px; padding-top: 30px;
+border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.95rem; opacity: 0.8;
+}
+
+/* ===== WHATSAPP FLOAT ===== */
+.whatsapp-float {
+position: fixed; bottom: 30px; right: 30px;
+background: linear-gradient(135deg, var(--whatsapp), var(--whatsapp-dark));
+color: white; text-decoration: none;
+display: flex; align-items: center; gap: 10px;
+padding: 12px 24px; border-radius: 50px;
+box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+z-index: 998; transition: var(--transition); font-weight: 600;
+}
+.whatsapp-float:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4); }
+.whatsapp-float i { font-size: 24px; }
+
+/* ===== TOAST NOTIFICATION ===== */
+.toast {
+position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px);
+background: var(--dark); color: white; padding: 15px 25px;
+border-radius: 12px; box-shadow: var(--shadow-lg);
+z-index: 3000; transition: transform 0.3s ease;
+display: flex; align-items: center; gap: 10px;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+.toast.success { background: var(--whatsapp); }
+.toast.error { background: #e74c3c; }
+
+/* ===== RESPONSIVE MEDIA QUERIES ===== */
+@media (max-width: 880px) {
+.menu-toggle { display: block; }
+nav ul {
+position: absolute; top: 76px; left: 0; right: 0;
+background: var(--primary); flex-direction: column;
+padding: 25px 0; display: none; z-index: 100;
+border-top: 1px solid rgba(255,255,255,0.1);
+}
+nav ul.active { display: flex; }
+nav ul li { text-align: center; }
+.hero-greeting h1 { font-size: 2.2rem; }
+.greeting-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.whatsapp-float span { display: none; }
+.whatsapp-float { bottom: 20px; right: 20px; padding: 12px; }
+}
+@media (max-width: 768px) {
+.hero-greeting { padding: 80px 20px 60px; }
+.hero-greeting h1 { font-size: 2rem; }
+.hero-greeting p { font-size: 1rem; }
+.container { padding: 40px 20px; }
+.filter-group { padding: 20px; }
+.footer-info-panel { flex-direction: column; text-align: center; border-radius: 40px; padding: 20px; }
+.footer-clock { flex-direction: column; gap: 12px; width: 100%; }
+.footer-time { font-size: 1.8rem; width: 100%; }
+}
+@media (max-width: 480px) {
+.brand span { display: none; }
+.brand img { width: 44px; }
+.hero-greeting h1 { font-size: 1.8rem; }
+.greeting-grid { grid-template-columns: 1fr; }
+.whatsapp-float { width: 50px; height: 50px; border-radius: 50%; justify-content: center; padding: 0; }
+.footer-time { font-size: 1.5rem; }
+.footer-visitor { padding: 8px 16px; font-size: 0.9rem; }
+}
+</style>
+</head>
+<body>
+<!-- PRELOADER -->
+<div id="preloader"><div class="spinner"></div></div>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/6282319712420?text=Halo%20saya%20ingin%20bertanya%20tentang%20Galeri%20Ucapan%20SMAN%201%20Cluring"
+class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+<i class="fab fa-whatsapp"></i>
+<span>Chat Admin</span>
+</a>
+
+<!-- HEADER -->
+<header data-aos="fade-down">
+<div class="nav-container">
+<a href="index.html" class="brand">
+<img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring" />
+<span>SMAN 1 CLURING</span>
+</a>
+<div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+<div class="nav-right" style="display: flex; align-items: center; gap: 15px;">
+<a href="artikel.html" class="back-btn"><i class="fas fa-arrow-left"></i> Artikel</a>
+<nav>
+<ul id="navMenu">
+<li><a href="index.html">Home</a></li>
+<li><a href="profil.html">Profil</a></li>
+<li><a href="akademik.html">Akademik</a></li>
+<li><a href="kesiswaan.html">Kesiswaan</a></li>
+<li><a href="sarpras.html">Sarpras</a></li>
+<li><a href="humas.html">Humas</a></li>
+<li><a href="mitra.html">Mitra</a></li>
+<li><a href="alumni.html">Alumni</a></li>
+<li><a href="artikel.html">Artikel</a></li>
+<li><a href="ucapan.html" class="active">Ucapan</a></li>
+<li style="display: flex; align-items: center;">
+<button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+<i class="fas fa-moon"></i>
+<i class="fas fa-sun sun" style="display: none;"></i>
+</button>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</header>
+
+<!-- HERO -->
+<section class="hero-greeting" data-aos="zoom-in">
+<h1 data-aos="fade-up"><i class="fas fa-gift"></i> Galeri Ucapan & Perayaan</h1>
+<p data-aos="fade-up" data-aos-delay="100">
+Kumpulan desain ucapan selamat hari raya, hari besar nasional, dan momen spesial dari keluarga besar SMAN 1 Cluring Banyuwangi.
+</p>
+</section>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+<!-- FILTERS -->
+<div class="filter-group" data-aos="fade-up">
+<button class="filter-btn active" onclick="filterGallery('all', this)">
+<i class="fas fa-th"></i> Semua
+</button>
+<button class="filter-btn" onclick="filterGallery('agama', this)">
+<i class="fas fa-mosque"></i> Hari Raya Agama
+</button>
+<button class="filter-btn" onclick="filterGallery('nasional', this)">
+<i class="fas fa-flag"></i> Hari Nasional
+</button>
+<button class="filter-btn" onclick="filterGallery('internasional', this)">
+<i class="fas fa-globe"></i> Internasional
+</button>
+<button class="filter-btn" onclick="filterGallery('sekolah', this)">
+<i class="fas fa-school"></i> Event Sekolah
+</button>
+</div>
+
+<!-- GALLERY GRID -->
+<div class="greeting-grid" id="galleryGrid">
+<!-- Items will be loaded via JavaScript -->
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer data-aos="fade-up">
+<div class="footer-content">
+<div class="footer-section">
+<h3><i class="fas fa-map-marker-alt"></i> Kontak</h3>
+<p>Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, Jawa Timur</p>
+<p><i class="fas fa-phone"></i> <a href="tel:+62333713297">0333-713297</a></p>
+<p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6282319712420" target="_blank">0823-1971-2420 (WA)</a></p>
+</div>
+<div class="footer-section">
+<h3><i class="fas fa-link"></i> Link Penting</h3>
+<ul>
+<li><a href="https://sma.kemendikdasmen.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
+<li><a href="https://dindik.jatimprov.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
+<li><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas Banyuwangi</a></li>
+<li><a href="artikel.html"><i class="fas fa-newspaper"></i> Artikel & Berita</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3><i class="fas fa-share-alt"></i> Media Sosial</h3>
+<div class="social-links">
+<a href="https://www.facebook.com/Sman1Cluring" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+<a href="https://www.instagram.com/sman1_cluring" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+<a href="https://wa.me/6282319712420" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+</div>
+</div>
+<!-- CLOCK & VISITOR PANEL -->
+<div class="footer-info-panel">
+<div class="footer-clock">
+<span class="footer-time" id="footerTime">00:00:00</span>
+<span class="footer-date" id="footerDate">Sabtu, 1 Januari 2026</span>
+</div>
+<div class="footer-visitor">
+<i class="fas fa-eye"></i>
+<span id="footerVisitorCount">Loading...</span>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
+</div>
+</footer>
+
+<!-- Toast Notification -->
+<div class="toast" id="toast">
+<i class="fas fa-check-circle"></i>
+<span id="toastMessage">Berhasil!</span>
+</div>
+
+<!-- JAVASCRIPT LOGIC -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+// ===== DATA UCAPAN (DATABASE - MUDAH DITAMBAH) =====
+const greetingData = [
+{
+id: 1,
+title: "Selamat Tahun Baru Imlek 2577",
+category: "agama",
+year: 2026,
+date: "2026-01-29",
+image: "https://i.ibb.co.com/W4xkCJL0/imlek.jpg",
+link: "https://ibb.co.com/39rpKZnv"
+},
+{
+id: 2,
+title: "Selamat Menunaikan Ibadah Puasa 1447 H",
+category: "agama",
+year: 2026,
+date: "2026-02-20",
+image: "https://i.ibb.co.com/ZR322tPt/puasa.jpg",
+link: "https://ibb.co.com/Y4600YMY"
+},
+// CONTOH DATA TAMBAHAN (Bisa ditambah sesuai kebutuhan)
+{
+id: 3,
+title: "Selamat Hari Kemerdekaan RI ke-81",
+category: "nasional",
+year: 2026,
+date: "2026-08-17",
+image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&q=80&w=600",
+link: "#"
+},
+{
+id: 4,
+title: "Selamat Hari Guru Nasional 2025",
+category: "sekolah",
+year: 2025,
+date: "2025-11-25",
+image: "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&q=80&w=600",
+link: "#"
+},
+{
+id: 5,
+title: "Selamat Natal & Tahun Baru 2026",
+category: "agama",
+year: 2025,
+date: "2025-12-25",
+image: "https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&fit=crop&q=80&w=600",
+link: "#"
+},
+{
+id: 6,
+title: "Selamat Hari Pendidikan Nasional",
+category: "nasional",
+year: 2026,
+date: "2026-05-02",
+image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600",
+link: "#"
+},
+{
+id: 7,
+title: "Selamat Hari Kartini 2026",
+category: "nasional",
+year: 2026,
+date: "2026-04-21",
+image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=600",
+link: "#"
+},
+{
+id: 8,
+title: "Selamat Hari Anak Nasional 2025",
+category: "internasional",
+year: 2025,
+date: "2025-07-23",
+image: "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&q=80&w=600",
+link: "#"
+}
+];
+
+const galleryGrid = document.getElementById('galleryGrid');
+
+// ===== FORMAT DATE =====
+function formatDate(dateString) {
+const options = { year: 'numeric', month: 'long', day: 'numeric' };
+return new Date(dateString).toLocaleDateString('id-ID', options);
+}
+
+// ===== GET CATEGORY LABEL =====
+function getCategoryLabel(category) {
+const labels = {
+'agama': 'Hari Raya',
+'nasional': 'Nasional',
+'internasional': 'Internasional',
+'sekolah': 'Event Sekolah'
+};
+return labels[category] || 'Umum';
+}
+
+// ===== RENDER GALLERY =====
+function renderGallery(data) {
+galleryGrid.innerHTML = '';
+if (data.length === 0) {
+galleryGrid.innerHTML = `
+<div class="empty-state" data-aos="zoom-in">
+<i class="fas fa-images"></i>
+<h3>Belum ada ucapan untuk kategori ini</h3>
+<p>Check back soon for more updates!</p>
+</div>`;
+return;
+}
+
+data.forEach((item, index) => {
+const card = document.createElement('div');
+card.className = 'greeting-card';
+card.setAttribute('data-aos', 'fade-up');
+card.setAttribute('data-aos-delay', (index % 4) * 50);
+
+card.innerHTML = `
+<div class="card-image-wrapper">
+<a href="${item.link}" target="_blank" rel="noopener">
+<img src="${item.image}" alt="${item.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x560?text=SMAN+1+Cluring'">
+</a>
+<div class="card-overlay">
+<a href="${item.link}" target="_blank" class="action-icon" title="Lihat Full Size">
+<i class="fas fa-expand"></i>
+</a>
+<a href="#" onclick="shareGreeting('${item.title.replace(/'/g, "\\'")}', '${item.link}'); return false;" 
+class="action-icon" title="Bagikan">
+<i class="fas fa-share-alt"></i>
+</a>
+<a href="${item.image}" download="${item.title}.jpg" class="action-icon" title="Download">
+<i class="fas fa-download"></i>
+</a>
+</div>
+</div>
+<div class="card-info">
+<span class="card-tag">${getCategoryLabel(item.category)} • ${item.year}</span>
+<h3 class="card-title">${item.title}</h3>
+<p class="card-date"><i class="far fa-calendar"></i> ${formatDate(item.date)}</p>
+</div>
+`;
+galleryGrid.appendChild(card);
+});
+}
+
+// ===== FILTER FUNCTION =====
+function filterGallery(category, btn) {
+document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+if(btn) btn.classList.add('active');
+
+if (category === 'all') {
+renderGallery(greetingData);
+} else {
+const filtered = greetingData.filter(item => item.category === category);
+renderGallery(filtered);
+}
+}
+
+// ===== SHARE FUNCTION =====
+function shareGreeting(title, link) {
+if (navigator.share) {
+navigator.share({
+title: title,
+text: `Lihat ucapan "${title}" dari SMAN 1 Cluring`,
+url: link
+}).catch(console.error);
+} else {
+// Fallback: Copy to clipboard
+navigator.clipboard.writeText(link).then(() => {
+showToast('📋 Link berhasil disalin!', 'success');
+}).catch(() => {
+alert('Link: ' + link);
+});
+}
+}
+
+// ===== TOAST NOTIFICATION =====
+function showToast(message, type = 'success') {
+const toast = document.getElementById('toast');
+const toastMsg = document.getElementById('toastMessage');
+toastMsg.textContent = message;
+toast.className = `toast ${type} show`;
+setTimeout(() => {
+toast.classList.remove('show');
+}, 4000);
+}
+
+// ===== MOBILE MENU TOGGLE =====
+function toggleMenu() {
+document.getElementById('navMenu').classList.toggle('active');
+}
+
+// ===== DARK MODE TOGGLE =====
+const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.body;
+const moonIcon = darkModeToggle.querySelector('.fa-moon');
+const sunIcon = darkModeToggle.querySelector('.sun');
+
+// Check saved preference
+if (localStorage.getItem('darkMode') === 'enabled') {
+body.classList.add('dark-mode');
+moonIcon.style.display = 'none';
+sunIcon.style.display = 'block';
+}
+
+darkModeToggle.addEventListener('click', () => {
+body.classList.toggle('dark-mode');
+if(body.classList.contains('dark-mode')){
+moonIcon.style.display = 'none';
+sunIcon.style.display = 'block';
+localStorage.setItem('darkMode', 'enabled');
+} else {
+moonIcon.style.display = 'block';
+sunIcon.style.display = 'none';
+localStorage.setItem('darkMode', 'disabled');
+}
+});
+
+// ===== REALTIME CLOCK =====
+function updateClock() {
+const now = new Date();
+const hours = String(now.getHours()).padStart(2, '0');
+const minutes = String(now.getMinutes()).padStart(2, '0');
+const seconds = String(now.getSeconds()).padStart(2, '0');
+document.getElementById('footerTime').textContent = `${hours}:${minutes}:${seconds}`;
+
+const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+document.getElementById('footerDate').textContent = `${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// ===== VISITOR COUNTER =====
+function updateVisitorCounter() {
+const visitorKey = 'sman1cluring_greeting_visitor_count';
+let count = localStorage.getItem(visitorKey);
+if (!count) {
+count = 1;
+localStorage.setItem(visitorKey, count);
+} else {
+count = parseInt(count);
+if (!sessionStorage.getItem('greeting_visitor_counted')) {
+count++;
+localStorage.setItem(visitorKey, count);
+sessionStorage.setItem('greeting_visitor_counted', 'true');
+}
+}
+document.getElementById('footerVisitorCount').textContent = `${count.toLocaleString('id-ID')} Pengunjung`;
+}
+updateVisitorCounter();
+
+// ===== INITIALIZATION =====
+document.addEventListener('DOMContentLoaded', () => {
+// Sort by date (newest first)
+greetingData.sort((a, b) => new Date(b.date) - new Date(a.date));
+renderGallery(greetingData);
+
+// Hide preloader
+setTimeout(() => {
+document.getElementById('preloader').classList.add('fade-out');
+}, 600);
+
+// Initialize AOS
+AOS.init({ duration: 600, once: true, offset: 50 });
+});
+</script>
+</body>
+</html>
