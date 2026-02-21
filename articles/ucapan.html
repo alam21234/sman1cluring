@@ -85,11 +85,17 @@ display: flex; align-items: center; gap: 12px;
 color: var(--white); font-weight: 800; font-size: 1.2rem;
 }
 .brand img { width: 45px; border-radius: 8px; }
-nav ul { list-style: none; display: flex; gap: 20px; }
+.nav-right {
+display: flex; align-items: center; gap: 15px;
+}
+nav ul { 
+list-style: none; display: flex; gap: 20px; 
+margin: 0; padding: 0;
+}
 nav ul li a {
 color: var(--white); text-decoration: none; font-weight: 500;
 font-size: 0.95rem; transition: var(--transition); opacity: 0.9;
-position: relative; padding: 5px 0;
+position: relative; padding: 5px 0; white-space: nowrap;
 }
 nav ul li a::after {
 content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
@@ -102,11 +108,14 @@ nav ul li a:hover, nav ul li a.active { opacity: 1; color: var(--accent); }
 background: var(--glass); border: 1px solid var(--glass-border);
 width: 40px; height: 40px; border-radius: 50%; color: var(--white);
 display: flex; align-items: center; justify-content: center; cursor: pointer;
+border: none;
 }
+.dark-mode-toggle i { font-size: 1.1rem; }
 .back-btn {
 color: var(--white); background: rgba(255,255,255,0.1);
 padding: 8px 16px; border-radius: 50px; font-size: 0.9rem;
 transition: var(--transition); display: flex; align-items: center; gap: 8px;
+white-space: nowrap;
 }
 .back-btn:hover { background: var(--secondary); }
 /* HERO */
@@ -259,7 +268,22 @@ font-weight: 600; font-size: 1.1rem; box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 text-align: center; margin-top: 30px; padding-top: 30px;
 border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.95rem; opacity: 0.8;
 }
+/* Toast Notification */
+.toast {
+position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px);
+background: var(--primary); color: white; padding: 12px 24px; border-radius: 50px;
+box-shadow: var(--shadow-lg); z-index: 9999; display: flex; align-items: center; gap: 10px;
+transition: transform 0.3s ease; opacity: 0; visibility: hidden;
+}
+.toast.show { transform: translateX(-50%) translateY(0); opacity: 1; visibility: visible; }
+.toast i { font-size: 1.2rem; }
+.toast.success { background: #10b981; }
+.toast.error { background: #ef4444; }
 /* RESPONSIVE */
+@media (max-width: 1100px) {
+nav ul { gap: 12px; }
+nav ul li a { font-size: 0.85rem; }
+}
 @media (max-width: 880px) {
 .menu-toggle { display: block; }
 nav ul {
@@ -269,6 +293,8 @@ border-top: 1px solid rgba(255,255,255,0.1);
 }
 nav ul.active { display: flex; }
 nav ul li { text-align: center; }
+nav ul li a { font-size: 1rem; white-space: normal; }
+.nav-right { gap: 10px; }
 .hero-greeting h1 { font-size: 2.2rem; }
 .greeting-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
 .whatsapp-float span { display: none; }
@@ -292,6 +318,8 @@ nav ul li { text-align: center; }
 .whatsapp-float { width: 50px; height: 50px; border-radius: 50%; justify-content: center; padding: 0; }
 .footer-time { font-size: 1.5rem; }
 .footer-visitor { padding: 8px 16px; font-size: 0.9rem; }
+.back-btn span { display: none; }
+.back-btn i { margin: 0; }
 }
 </style>
 </head>
@@ -313,8 +341,8 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <span>SMAN 1 CLURING</span>
 </a>
 <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-<div class="nav-right" style="display: flex; align-items: center; gap: 15px;">
-<a href="artikel.html" class="back-btn"><i class="fas fa-arrow-left"></i> Artikel</a>
+<div class="nav-right">
+<a href="artikel.html" class="back-btn"><i class="fas fa-arrow-left"></i> <span>Artikel</span></a>
 <nav>
 <ul id="navMenu">
 <li><a href="index.html" data-page="index">Home</a></li>
@@ -327,9 +355,10 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <li><a href="alumni.html" data-page="alumni">Alumni</a></li>
 <li><a href="artikel.html" data-page="artikel">Artikel</a></li>
 <li><a href="ucapan.html" data-page="ucapan">Ucapan</a></li>
-<li style="display: flex; align-items: center;">
+<li>
 <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
-<i class="fas fa-moon"></i><i class="fas fa-sun sun" style="display: none;"></i>
+<i class="fas fa-moon"></i>
+<i class="fas fa-sun" style="display: none;"></i>
 </button>
 </li>
 </ul>
@@ -491,29 +520,54 @@ setTimeout(() => toast.classList.remove('show'), 4000);
 }
 
 // ===== MOBILE MENU =====
-function toggleMenu() { document.getElementById('navMenu').classList.toggle('active'); }
+function toggleMenu() { 
+document.getElementById('navMenu').classList.toggle('active'); 
+}
 
-// ===== NAVIGATION ACTIVE CLASS (AUTO) =====
+// ===== CLOSE MOBILE MENU WHEN CLICK LINK =====
+function setupMobileMenuClose() {
+const navLinks = document.querySelectorAll('#navMenu a');
+navLinks.forEach(link => {
+link.addEventListener('click', () => {
+document.getElementById('navMenu').classList.remove('active');
+});
+});
+}
+
+// ===== NAVIGATION ACTIVE CLASS =====
 function setActiveNav() {
 const currentPage = window.location.pathname.split('/').pop().replace('.html','') || 'index';
 document.querySelectorAll('#navMenu a[data-page]').forEach(link => {
 link.classList.remove('active');
-if (link.dataset.page === currentPage) link.classList.add('active');
+if (link.dataset.page === currentPage) {
+link.classList.add('active');
+}
 });
 }
 
 // ===== DARK MODE =====
-const darkModeToggle = document.getElementById('darkModeToggle'), body = document.body;
-const moonIcon = darkModeToggle.querySelector('.fa-moon'), sunIcon = darkModeToggle.querySelector('.sun');
+const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.body;
+const moonIcon = darkModeToggle.querySelector('.fa-moon');
+const sunIcon = darkModeToggle.querySelector('.fa-sun');
+
+// Check localStorage for dark mode preference
 if (localStorage.getItem('darkMode') === 'enabled') {
-body.classList.add('dark-mode'); moonIcon.style.display='none'; sunIcon.style.display='block';
+body.classList.add('dark-mode');
+moonIcon.style.display = 'none';
+sunIcon.style.display = 'block';
 }
+
 darkModeToggle.addEventListener('click', () => {
 body.classList.toggle('dark-mode');
 if (body.classList.contains('dark-mode')) {
-moonIcon.style.display='none'; sunIcon.style.display='block'; localStorage.setItem('darkMode','enabled');
+moonIcon.style.display = 'none';
+sunIcon.style.display = 'block';
+localStorage.setItem('darkMode', 'enabled');
 } else {
-moonIcon.style.display='block'; sunIcon.style.display='none'; localStorage.setItem('darkMode','disabled');
+moonIcon.style.display = 'block';
+sunIcon.style.display = 'none';
+localStorage.setItem('darkMode', 'disabled');
 }
 });
 
@@ -525,25 +579,47 @@ const days = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
 const months = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
 document.getElementById('footerDate').textContent = `${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
 }
-setInterval(updateClock, 1000); updateClock();
+setInterval(updateClock, 1000); 
+updateClock();
 
 // ===== VISITOR COUNTER =====
 function updateVisitorCounter() {
 const visitorKey = 'sman1cluring_greeting_visitor_count';
 let count = localStorage.getItem(visitorKey);
-if (!count) { count = 1; localStorage.setItem(visitorKey, count); }
-else { count = parseInt(count); if (!sessionStorage.getItem('greeting_visitor_counted')) { count++; localStorage.setItem(visitorKey, count); sessionStorage.setItem('greeting_visitor_counted', 'true'); } }
+if (!count) { 
+count = 1; 
+localStorage.setItem(visitorKey, count); 
+} else { 
+count = parseInt(count); 
+if (!sessionStorage.getItem('greeting_visitor_counted')) { 
+count++; 
+localStorage.setItem(visitorKey, count); 
+sessionStorage.setItem('greeting_visitor_counted', 'true'); 
+} 
+}
 document.getElementById('footerVisitorCount').textContent = `${count.toLocaleString('id-ID')} Pengunjung`;
 }
-updateVisitorCounter();
 
 // ===== INIT =====
 document.addEventListener('DOMContentLoaded', () => {
 greetingData.sort((a,b) => new Date(b.date) - new Date(a.date));
 renderGallery(greetingData);
-setActiveNav(); // Set active navigation
+setActiveNav(); 
+setupMobileMenuClose(); // Setup mobile menu close on link click
 setTimeout(() => document.getElementById('preloader').classList.add('fade-out'), 600);
 AOS.init({duration:600,once:true,offset:50});
+updateVisitorCounter();
+});
+
+// ===== CLICK OUTSIDE TO CLOSE MOBILE MENU =====
+document.addEventListener('click', function(event) {
+const navMenu = document.getElementById('navMenu');
+const menuToggle = document.querySelector('.menu-toggle');
+if (navMenu.classList.contains('active') && 
+!navMenu.contains(event.target) && 
+!menuToggle.contains(event.target)) {
+navMenu.classList.remove('active');
+}
 });
 </script>
 </body>
