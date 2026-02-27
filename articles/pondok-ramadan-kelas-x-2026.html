@@ -178,38 +178,59 @@
             margin: 30px 0; font-weight: 500;
         }
         
-        /* ===== QURAN VERSE BOX ===== */
+        /* ===== QURAN VERSE BOX (TOP POSITION) ===== */
         .quran-verse {
-            background: linear-gradient(135deg, rgba(10,42,94,0.05), rgba(158,123,75,0.05));
-            border: 2px solid var(--secondary);
-            border-radius: 20px;
-            padding: 35px 30px;
-            margin: 40px 0;
+            background: linear-gradient(135deg, rgba(10,42,94,0.08), rgba(158,123,75,0.08));
+            border: 3px solid var(--secondary);
+            border-radius: 24px;
+            padding: 40px 35px;
+            margin: 0 0 40px 0;
             text-align: center;
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+        .quran-verse::before {
+            content: '﷽';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Traditional Arabic', serif;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            opacity: 0.5;
         }
         .quran-arabic {
             font-family: 'Traditional Arabic', 'Amiri', 'Scheherazade', Arial, sans-serif;
-            font-size: 1.8rem;
-            line-height: 2.2;
+            font-size: 2rem;
+            line-height: 2.4;
             color: var(--primary);
-            margin-bottom: 25px;
+            margin: 20px 0 25px 0;
             direction: rtl;
-            font-weight: 500;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .quran-reference {
             color: var(--secondary);
             font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
             letter-spacing: 1px;
+            display: inline-block;
+            padding: 5px 20px;
+            background: rgba(158,123,75,0.1);
+            border-radius: 20px;
         }
         .quran-translation {
             color: var(--gray);
             font-size: 1.05rem;
-            line-height: 1.8;
+            line-height: 1.9;
             font-style: italic;
-            padding: 0 20px;
+            padding: 20px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 12px;
+            margin-top: 15px;
         }
         
         /* ===== IMAGE GALLERY ===== */
@@ -358,7 +379,7 @@
             .whatsapp-float { bottom: 20px; right: 20px; padding: 10px 18px; }
             .whatsapp-float span { display: none; }
             .whatsapp-float i { font-size: 28px; }
-            .quran-arabic { font-size: 1.5rem; }
+            .quran-arabic { font-size: 1.6rem; }
         }
         @media (max-width: 480px) {
             .brand span { display: none; }
@@ -369,8 +390,8 @@
             .image-gallery { grid-template-columns: 1fr; }
             .footer-time { font-size: 1.4rem; }
             .footer-visitor { padding: 7px 18px; font-size: 0.9rem; }
-            .quran-arabic { font-size: 1.3rem; line-height: 2; }
-            .quran-verse { padding: 25px 20px; }
+            .quran-arabic { font-size: 1.4rem; line-height: 2.2; }
+            .quran-verse { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -433,6 +454,17 @@
     <article class="article-wrapper" data-aos="fade-up">
         <a href="../artikel.html" class="back-btn"><i class="fas fa-arrow-left"></i> Kembali ke Artikel</a>
         
+        <!-- QURAN VERSE SECTION - POSISI DI ATAS -->
+        <div class="quran-verse" data-aos="fade-up">
+            <div class="quran-arabic">
+                يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ كُتِبَ عَلَيۡكُمُ ٱلصِّيَامُ كَمَا كُتِبَ عَلَى ٱلَّذِينَ مِن قَبۡلِكُمۡ لَعَلَّكُمۡ تَتَّقُونَ
+            </div>
+            <div class="quran-reference">QS. Al-Baqarah: 183</div>
+            <div class="quran-translation">
+                Artinya: "Wahai orang-orang yang beriman, diwajibkan atas kamu berpuasa sebagaimana diwajibkan atas orang-orang sebelum kamu agar kamu bertakwa".
+            </div>
+        </div>
+        
         <div class="featured-image" style="text-align:center;margin:25px 0 35px;">
             <img src="https://i.ibb.co.com/5hvX29ms/1-pembukaan-oleh-Gus-Ulin-Nuha-Ali-Mansur.jpg" 
                  alt="Pembukaan Pondok Ramadan oleh Gus Ulin Nuha Ali Mansur" 
@@ -450,17 +482,6 @@
             <div class="highlight">
                 <i class="fas fa-lightbulb" style="margin-right:8px;"></i>
                 Sinergi sekolah dan pesantren merupakan strategi efektif dalam membentuk karakter peserta didik yang holistik, memadukan ilmu pengetahuan umum dengan nilai-nilai keislaman.
-            </div>
-        </div>
-        
-        <!-- QURAN VERSE SECTION -->
-        <div class="quran-verse" data-aos="fade-up">
-            <div class="quran-arabic">
-                يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ كُتِبَ عَلَيۡكُمُ ٱلصِّيَامُ كَمَا كُتِبَ عَلَى ٱلَّذِينَ مِن قَبۡلِكُمۡ لَعَلَّكُمۡ تَتَّقُونَ
-            </div>
-            <div class="quran-reference">QS. Al-Baqarah: 183</div>
-            <div class="quran-translation">
-                Artinya: "Wahai orang-orang yang beriman, diwajibkan atas kamu berpuasa sebagaimana diwajibkan atas orang-orang sebelum kamu agar kamu bertakwa".
             </div>
         </div>
         
