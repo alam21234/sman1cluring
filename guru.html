@@ -1,1543 +1,1061 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<title>Dewan Guru | SMAN 1 Cluring</title>
-<!-- SEO -->
-<meta name="description" content="Dewan Guru SMAN 1 Cluring Banyuwangi - Daftar guru profesional dan kompeten di bidangnya." />
-<meta name="author" content="SMAN 1 Cluring" />
-<meta name="keywords" content="Guru SMAN 1 Cluring, dewan guru, tenaga pendidik, Banyuwangi" />
-<!-- Open Graph / Social Media -->
-<meta property="og:title" content="Dewan Guru | SMAN 1 Cluring" />
-<meta property="og:description" content="Dewan Guru SMAN 1 Cluring Banyuwangi - Daftar guru profesional dan kompeten di bidangnya." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://sman1cluring.sch.id/guru.html" />
-<meta property="og:image" content="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" />
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<!-- Font Awesome Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-<!-- AOS Animation Library -->
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-<style>
-/* ===== CSS VARIABLES - DESIGN SYSTEM ===== */
-:root {
-/* Primary Palette - Professional Blue */
---primary: #0a2a5e;
---primary-600: #1e40af;
---primary-700: #1d4ed8;
---primary-light: #dbeafe;
-/* Secondary Palette - Elegant Gold */
---secondary: #9e7b4b;
---secondary-600: #b4935a;
---secondary-light: #f5f0e6;
-/* Accent & Cultural */
---accent: #c7a854;
---cultural: #b13e3e;
---ijen: #2d6a4f;
-/* Neutral Colors */
---bg-body: #f8fafc;
---bg-card: #ffffff;
---bg-glass: rgba(255, 255, 255, 0.85);
---text-primary: #1e293b;
---text-secondary: #475569;
---text-muted: #64748b;
---border-color: rgba(148, 163, 184, 0.2);
---border-glass: rgba(255, 255, 255, 0.3);
-/* Shadows & Effects */
---shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
---shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
---shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
---shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
---shadow-glow: 0 0 40px rgba(158, 123, 75, 0.15);
-/* Transitions */
---transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
---transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
---transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
-/* Layout */
---radius-sm: 12px;
---radius-md: 20px;
---radius-lg: 28px;
---radius-full: 9999px;
---container-max: 1280px;
---header-height: 72px;
---nav-sticky-offset: 88px;
-/* WhatsApp */
---whatsapp: #25D366;
---whatsapp-hover: #128C7E;
-}
-/* ===== DARK MODE VARIABLES ===== */
-.dark-mode {
---primary: #1e3a8a;
---primary-light: #1e293b;
---secondary: #d4af37;
---secondary-light: #3f3f46;
---bg-body: #0f172a;
---bg-card: #1e293b;
---bg-glass: rgba(30, 41, 59, 0.85);
---text-primary: #f1f5f9;
---text-secondary: #cbd5e1;
---text-muted: #94a3b8;
---border-color: rgba(148, 163, 184, 0.15);
---border-glass: rgba(255, 255, 255, 0.1);
---shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
---shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
---shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
-}
-/* ===== RESET & BASE ===== */
-*, *::before, *::after {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-html {
-scroll-behavior: smooth;
-scroll-padding-top: var(--nav-sticky-offset);
-}
-body {
-font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-background-color: var(--bg-body);
-color: var(--text-primary);
-line-height: 1.7;
-font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
-font-weight: 400;
-letter-spacing: 0.01em;
-transition: background-color var(--transition-normal), color var(--transition-normal);
-overflow-x: hidden;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-}
-/* ===== TYPOGRAPHY ===== */
-h1, h2, h3, h4, h5, h6 {
-font-family: 'Plus Jakarta Sans', sans-serif;
-font-weight: 700;
-line-height: 1.3;
-letter-spacing: -0.02em;
-color: var(--text-primary);
-}
-h1 { font-size: clamp(2rem, 1.5rem + 3vw, 3.2rem); }
-h2 { font-size: clamp(1.6rem, 1.3rem + 2vw, 2.4rem); }
-h3 { font-size: clamp(1.3rem, 1.1rem + 1.5vw, 1.8rem); }
-h4 { font-size: clamp(1.1rem, 1rem + 0.8vw, 1.4rem); }
-p { margin-bottom: 1.25rem; color: var(--text-secondary); }
-p:last-child { margin-bottom: 0; }
-a {
-color: var(--primary-700);
-text-decoration: none;
-transition: color var(--transition-fast);
-}
-a:hover { color: var(--secondary); }
-/* ===== UTILITIES ===== */
-.container {
-width: 100%;
-max-width: var(--container-max);
-margin: 0 auto;
-padding: 0 clamp(1.5rem, 4vw, 2.5rem);
-}
-.section {
-background: var(--bg-card);
-padding: clamp(2rem, 4vw, 3.5rem);
-border-radius: var(--radius-lg);
-box-shadow: var(--shadow-md);
-margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
-border: 1px solid var(--border-color);
-transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
-scroll-margin-top: var(--nav-sticky-offset);
-}
-.section:hover {
-transform: translateY(-4px);
-box-shadow: var(--shadow-lg);
-border-color: var(--secondary);
-}
-.section-title {
-text-align: center;
-margin-bottom: clamp(1.5rem, 3vw, 2rem);
-position: relative;
-padding-bottom: 1rem;
-}
-.section-title::after {
-content: '';
-position: absolute;
-bottom: 0;
-left: 50%;
-transform: translateX(-50%);
-width: clamp(60px, 10vw, 100px);
-height: 4px;
-background: linear-gradient(90deg, var(--secondary), var(--accent));
-border-radius: 2px;
-}
-.section-title i {
-margin-right: 0.5rem;
-color: var(--secondary);
-}
-/* ===== PRELOADER ===== */
-#preloader {
-position: fixed;
-inset: 0;
-background: var(--primary);
-display: flex;
-justify-content: center;
-align-items: center;
-z-index: 9999;
-opacity: 1;
-visibility: visible;
-transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-#preloader.fade-out {
-opacity: 0;
-visibility: hidden;
-pointer-events: none;
-}
-.spinner {
-width: 48px;
-height: 48px;
-border: 3px solid rgba(255, 255, 255, 0.15);
-border-top-color: var(--secondary);
-border-right-color: var(--secondary);
-border-radius: 50%;
-animation: spin 0.8s linear infinite;
-}
-@keyframes spin {
-to { transform: rotate(360deg); }
-}
-/* ===== HEADER & NAVIGATION ===== */
-header {
-background: linear-gradient(135deg, var(--primary) 0%, var(--primary-600) 100%);
-position: sticky;
-top: 0;
-z-index: 1000;
-box-shadow: var(--shadow-md);
-height: var(--header-height);
-display: flex;
-align-items: center;
-}
-.nav-container {
-width: 100%;
-max-width: var(--container-max);
-margin: 0 auto;
-padding: 0 clamp(1rem, 4vw, 2rem);
-display: flex;
-justify-content: space-between;
-align-items: center;
-gap: 1rem;
-}
-.brand {
-display: flex;
-align-items: center;
-gap: 0.875rem;
-color: white;
-font-weight: 800;
-font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-text-decoration: none;
-letter-spacing: -0.02em;
-white-space: nowrap;
-}
-.brand img {
-width: clamp(40px, 8vw, 52px);
-height: auto;
-border-radius: var(--radius-sm);
-box-shadow: var(--shadow-sm);
-border: 2px solid rgba(255, 255, 255, 0.2);
-}
-.nav-right {
-display: flex;
-align-items: center;
-gap: clamp(0.5rem, 2vw, 1.25rem);
-}
-nav ul {
-list-style: none;
-display: flex;
-gap: clamp(0.5rem, 2vw, 2rem);
-align-items: center;
-margin: 0;
-padding: 0;
-}
-nav ul li a {
-color: rgba(255, 255, 255, 0.92);
-text-decoration: none;
-font-weight: 500;
-font-size: clamp(0.85rem, 2vw, 1rem);
-padding: 0.5rem 0;
-position: relative;
-transition: opacity var(--transition-fast), color var(--transition-fast);
-white-space: nowrap;
-}
-nav ul li a::after {
-content: '';
-position: absolute;
-bottom: -4px;
-left: 0;
-width: 0;
-height: 2px;
-background: var(--secondary);
-transition: width var(--transition-normal);
-border-radius: 1px;
-}
-nav ul li a:hover,
-nav ul li a.active {
-opacity: 1;
-color: white;
-}
-nav ul li a:hover::after,
-nav ul li a.active::after {
-width: 100%;
-}
-/* ===== DARK MODE TOGGLE ===== */
-.dark-mode-toggle {
-background: rgba(255, 255, 255, 0.15);
-border: 1px solid rgba(255, 255, 255, 0.25);
-width: clamp(40px, 8vw, 44px);
-height: clamp(40px, 8vw, 44px);
-border-radius: var(--radius-full);
-color: white;
-font-size: clamp(1rem, 2.5vw, 1.2rem);
-cursor: pointer;
-transition: all var(--transition-normal);
-display: flex;
-align-items: center;
-justify-content: center;
-backdrop-filter: blur(8px);
-margin-left: 0.25rem;
-flex-shrink: 0;
-}
-.dark-mode-toggle:hover {
-background: var(--secondary);
-border-color: var(--secondary);
-transform: rotate(15deg) scale(1.05);
-}
-.dark-mode-toggle .fa-sun { display: none; }
-.dark-mode .dark-mode-toggle .fa-moon { display: none; }
-.dark-mode .dark-mode-toggle .fa-sun { display: block; }
-/* Mobile Menu Toggle */
-.menu-toggle {
-display: none;
-font-size: clamp(1.5rem, 4vw, 1.75rem);
-color: white;
-cursor: pointer;
-padding: 0.5rem;
-border-radius: var(--radius-sm);
-transition: background var(--transition-fast);
-flex-shrink: 0;
-}
-.menu-toggle:hover {
-background: rgba(255, 255, 255, 0.15);
-}
-/* ===== PAGE HEADER ===== */
-.page-header {
-background:
-linear-gradient(145deg, rgba(10,42,94,0.92) 0%, rgba(5,26,59,0.95) 100%),
-url('https://i.ibb.co.com/cKcqr1Db/agustusan-2025.jpg') center/cover no-repeat;
-color: white;
-text-align: center;
-padding: clamp(4rem, 15vw, 7rem) clamp(1.5rem, 4vw, 2rem) clamp(3rem, 10vw, 5rem);
-min-height: clamp(280px, 40vh, 400px);
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-position: relative;
-overflow: hidden;
-}
-.page-header::before {
-content: '';
-position: absolute;
-inset: 0;
-background: radial-gradient(ellipse at center, transparent 0%, rgba(10,42,94,0.4) 70%);
-pointer-events: none;
-}
-.page-header h1 {
-color: white;
-margin-bottom: 1rem;
-font-weight: 800;
-text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
-position: relative;
-z-index: 1;
-}
-.breadcrumb {
-font-size: clamp(0.9rem, 2vw, 1rem);
-opacity: 0.95;
-position: relative;
-z-index: 1;
-}
-.breadcrumb a {
-color: var(--accent);
-font-weight: 500;
-transition: opacity var(--transition-fast);
-}
-.breadcrumb a:hover {
-opacity: 0.85;
-text-decoration: underline;
-}
-/* ===== INTERNAL NAVIGATION ===== */
-.internal-nav {
-max-width: var(--container-max);
-margin: -2.5rem auto 0;
-background: var(--bg-glass);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
-border-radius: var(--radius-lg);
-box-shadow: var(--shadow-md);
-padding: clamp(0.5rem, 2vw, 0.875rem) clamp(0.75rem, 3vw, 1.25rem);
-position: sticky;
-top: calc(var(--header-height) + 8px);
-z-index: 950;
-transition:
-transform var(--transition-normal),
-opacity var(--transition-normal),
-box-shadow var(--transition-fast),
-background var(--transition-fast);
-border: 1px solid var(--border-glass);
-display: flex;
-justify-content: center;
-}
-.internal-nav.hidden {
-transform: translateY(-120%);
-opacity: 0;
-pointer-events: none;
-}
-.internal-nav.scrolled {
-box-shadow: var(--shadow-lg);
-background: rgba(255, 255, 255, 0.95);
-border-color: var(--border-color);
-}
-.dark-mode .internal-nav {
-background: rgba(30, 41, 59, 0.85);
-border-color: rgba(255, 255, 255, 0.1);
-}
-.dark-mode .internal-nav.scrolled {
-background: rgba(30, 41, 59, 0.95);
-border-color: rgba(212, 175, 55, 0.3);
-}
-.internal-nav ul {
-display: flex;
-justify-content: center;
-gap: clamp(0.25rem, 1.5vw, 0.75rem);
-flex-wrap: wrap;
-list-style: none;
-margin: 0;
-padding: 0;
-max-width: 100%;
-overflow-x: auto;
-scrollbar-width: none;
--ms-overflow-style: none;
-}
-.internal-nav ul::-webkit-scrollbar { display: none; }
-.internal-nav a {
-display: inline-flex;
-align-items: center;
-padding: clamp(0.5rem, 2vw, 0.75rem) clamp(0.875rem, 2.5vw, 1.5rem);
-color: var(--text-primary);
-text-decoration: none;
-font-weight: 600;
-font-size: clamp(0.8rem, 2vw, 0.95rem);
-border-radius: var(--radius-full);
-transition: all var(--transition-normal);
-white-space: nowrap;
-position: relative;
-}
-.internal-nav a::after {
-content: '';
-position: absolute;
-bottom: 4px;
-left: 50%;
-transform: translateX(-50%) scaleX(0);
-width: 70%;
-height: 3px;
-background: linear-gradient(90deg, var(--secondary), var(--accent));
-border-radius: 2px;
-transition: transform var(--transition-normal);
-transform-origin: center;
-}
-.internal-nav a:hover,
-.internal-nav a.active {
-color: var(--primary);
-background: rgba(158, 123, 75, 0.12);
-transform: translateY(-2px);
-}
-.internal-nav a:hover::after,
-.internal-nav a.active::after {
-transform: translateX(-50%) scaleX(1);
-}
-.dark-mode .internal-nav a { color: var(--text-secondary); }
-.dark-mode .internal-nav a:hover,
-.dark-mode .internal-nav a.active {
-color: var(--secondary);
-background: rgba(212, 175, 55, 0.15);
-}
-/* ===== CONTENT SECTIONS ===== */
-.section {
-opacity: 0;
-transform: translateY(24px);
-transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.section.visible {
-opacity: 1;
-transform: translateY(0);
-}
-.section h3 {
-display: flex;
-align-items: center;
-gap: 0.625rem;
-margin: clamp(1.5rem, 3vw, 2rem) 0 clamp(1rem, 2vw, 1.25rem);
-color: var(--primary);
-}
-.section h3 i {
-color: var(--secondary);
-font-size: 1.2em;
-}
-/* ===== TEACHER TABLE ===== */
-.structure-category {
-background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-600) 100%);
-color: white;
-font-weight: 700;
-padding: clamp(0.875rem, 2vw, 1rem) clamp(1rem, 2.5vw, 1.25rem);
-margin: clamp(1.5rem, 3vw, 2rem) 0 clamp(1rem, 2vw, 1.25rem);
-border-radius: var(--radius-sm);
-font-size: clamp(1rem, 2vw, 1.15rem);
-display: flex;
-align-items: center;
-gap: 0.625rem;
-box-shadow: var(--shadow-sm);
-}
-.structure-table {
-width: 100%;
-border-collapse: collapse;
-margin-top: 0.5rem;
-background: var(--bg-card);
-border-radius: var(--radius-sm);
-overflow: hidden;
-box-shadow: var(--shadow-sm);
-}
-.structure-table th {
-background: var(--primary);
-color: white;
-padding: clamp(0.875rem, 2vw, 1rem) clamp(1rem, 2.5vw, 1.25rem);
-text-align: left;
-font-weight: 600;
-font-size: clamp(0.9rem, 2vw, 1rem);
-white-space: nowrap;
-}
-.structure-table td {
-padding: clamp(0.75rem, 2vw, 0.875rem) clamp(1rem, 2.5vw, 1.25rem);
-border-bottom: 1px solid var(--border-color);
-color: var(--text-secondary);
-font-size: clamp(0.9rem, 2vw, 0.95rem);
-}
-.structure-table tr:last-child td { border-bottom: none; }
-.structure-table tr:nth-child(even) { background: rgba(10, 42, 94, 0.03); }
-.structure-table tr:hover { background: rgba(158, 123, 75, 0.08); }
-.dark-mode .structure-table tr:nth-child(even) {
-background: rgba(255, 255, 255, 0.03);
-}
-/* ===== STATS CARDS ===== */
-.stats-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 40vw, 250px), 1fr));
-gap: clamp(1rem, 2.5vw, 1.5rem);
-margin: clamp(1.5rem, 3vw, 2rem) 0;
-}
-.stat-card {
-background: linear-gradient(135deg, var(--primary) 0%, var(--primary-600) 100%);
-color: white;
-padding: clamp(1.5rem, 3vw, 2rem);
-border-radius: var(--radius-md);
-text-align: center;
-box-shadow: var(--shadow-md);
-transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-}
-.stat-card:hover {
-transform: translateY(-6px);
-box-shadow: var(--shadow-lg);
-}
-.stat-card i {
-font-size: clamp(2rem, 5vw, 2.5rem);
-margin-bottom: 0.75rem;
-opacity: 0.9;
-}
-.stat-card .stat-number {
-font-size: clamp(2rem, 5vw, 2.8rem);
-font-weight: 800;
-line-height: 1;
-margin-bottom: 0.5rem;
-}
-.stat-card .stat-label {
-font-size: clamp(0.9rem, 2vw, 1rem);
-opacity: 0.9;
-}
-/* ===== BACK BUTTON ===== */
-.back-home {
-text-align: center;
-margin-top: clamp(2.5rem, 5vw, 4rem);
-padding-bottom: clamp(1rem, 2vw, 2rem);
-}
-.back-home a {
-background: linear-gradient(135deg, var(--primary) 0%, var(--primary-600) 100%);
-color: white;
-padding: clamp(0.875rem, 2vw, 1rem) clamp(2rem, 4vw, 2.5rem);
-border-radius: var(--radius-full);
-text-decoration: none;
-font-weight: 700;
-font-size: clamp(0.95rem, 2vw, 1.1rem);
-transition: all var(--transition-normal);
-display: inline-flex;
-align-items: center;
-gap: 0.625rem;
-box-shadow: var(--shadow-md);
-border: 2px solid transparent;
-}
-.back-home a:hover {
-background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-600) 100%);
-transform: translateY(-4px);
-box-shadow: var(--shadow-lg);
-border-color: var(--accent);
-}
-.back-home a i {
-transition: transform var(--transition-fast);
-}
-.back-home a:hover i {
-transform: translateX(-3px);
-}
-/* ===== FOOTER ===== */
-footer {
-background: linear-gradient(145deg, var(--primary) 0%, var(--primary-600) 100%);
-color: rgba(255, 255, 255, 0.92);
-padding: clamp(3rem, 6vw, 4.5rem) clamp(1.5rem, 4vw, 2rem) clamp(1.5rem, 3vw, 2rem);
-font-size: clamp(0.9rem, 2vw, 1rem);
-position: relative;
-margin-top: clamp(2rem, 4vw, 3rem);
-}
-footer::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 4px;
-background: linear-gradient(90deg, var(--secondary), var(--accent), var(--secondary));
-}
-.footer-content {
-max-width: var(--container-max);
-margin: 0 auto;
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 45vw, 240px), 1fr));
-gap: clamp(1.5rem, 4vw, 2.5rem);
-}
-.footer-section h3 {
-font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-margin-bottom: clamp(1rem, 2vw, 1.25rem);
-font-weight: 600;
-display: flex;
-align-items: center;
-gap: 0.5rem;
-color: var(--secondary);
-}
-.footer-section ul {
-list-style: none;
-margin: 0;
-padding: 0;
-}
-.footer-section ul li {
-margin-bottom: clamp(0.5rem, 1.5vw, 0.75rem);
-}
-.footer-section a {
-color: rgba(255, 255, 255, 0.85);
-text-decoration: none;
-transition: all var(--transition-fast);
-display: flex;
-align-items: center;
-gap: 0.625rem;
-font-size: clamp(0.9rem, 2vw, 0.95rem);
-}
-.footer-section a:hover {
-color: var(--secondary);
-transform: translateX(4px);
-}
-.footer-section a i {
-width: 1.2em;
-text-align: center;
-font-size: 0.9em;
-}
-.social-links {
-display: flex;
-gap: clamp(0.75rem, 2vw, 1rem);
-margin-top: clamp(0.75rem, 1.5vw, 1rem);
-flex-wrap: wrap;
-}
-.social-links a {
-display: inline-flex;
-align-items: center;
-justify-content: center;
-width: clamp(40px, 9vw, 44px);
-height: clamp(40px, 9vw, 44px);
-border-radius: var(--radius-full);
-background: rgba(255, 255, 255, 0.12);
-color: white;
-font-size: clamp(1rem, 2.5vw, 1.2rem);
-transition: all var(--transition-normal);
-border: 1px solid rgba(255, 255, 255, 0.2);
-text-decoration: none;
-}
-.social-links a:hover {
-background: var(--secondary);
-transform: translateY(-4px) scale(1.08);
-color: var(--primary);
-border-color: var(--secondary);
-}
-.footer-bottom {
-text-align: center;
-margin-top: clamp(2rem, 4vw, 3rem);
-padding-top: clamp(1.25rem, 2.5vw, 1.75rem);
-border-top: 1px solid rgba(255, 255, 255, 0.12);
-font-size: clamp(0.85rem, 2vw, 0.95rem);
-opacity: 0.85;
-line-height: 1.6;
-}
-.footer-bottom p { margin: 0.25rem 0; }
-/* ===== WHATSAPP FLOAT BUTTON ===== */
-.whatsapp-float {
-position: fixed;
-bottom: clamp(1rem, 3vw, 1.5rem);
-right: clamp(1rem, 3vw, 1.5rem);
-background: linear-gradient(135deg, var(--whatsapp) 0%, var(--whatsapp-hover) 100%);
-color: white;
-text-decoration: none;
-display: flex;
-align-items: center;
-gap: clamp(0.5rem, 1.5vw, 0.75rem);
-padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 2.5vw, 1.75rem);
-border-radius: var(--radius-full);
-box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
-z-index: 998;
-transition: all var(--transition-normal);
-backdrop-filter: blur(10px);
-border: 2px solid rgba(255, 255, 255, 0.25);
-font-weight: 600;
-font-size: clamp(0.9rem, 2vw, 1rem);
-max-width: calc(100vw - 2rem);
-}
-.whatsapp-float i {
-font-size: clamp(1.4rem, 3.5vw, 1.75rem);
-animation: pulse 2.5s infinite;
-flex-shrink: 0;
-}
-.whatsapp-float span {
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
-}
-.whatsapp-float:hover {
-transform: translateY(-6px) scale(1.03);
-box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
-background: linear-gradient(135deg, var(--whatsapp-hover) 0%, var(--whatsapp) 100%);
-}
-@keyframes pulse {
-0%, 100% { transform: scale(1); }
-50% { transform: scale(1.12); }
-}
-/* ===== RESPONSIVE BREAKPOINTS ===== */
-@media (max-width: 1024px) {
-:root {
---header-height: 68px;
---nav-sticky-offset: 84px;
-}
-}
-@media (max-width: 880px) {
-.menu-toggle {
-display: flex;
-align-items: center;
-justify-content: center;
-order: 3;
-}
-nav ul {
-position: fixed;
-top: var(--header-height);
-left: 0;
-right: 0;
-background: var(--primary);
-flex-direction: column;
-padding: clamp(1rem, 3vw, 1.5rem);
-display: none;
-z-index: 999;
-border-top: 1px solid rgba(255, 255, 255, 0.1);
-backdrop-filter: blur(16px);
-gap: clamp(0.5rem, 2vw, 1rem);
-animation: slideDown 0.3s ease;
-}
-nav ul.active {
-display: flex;
-}
-@keyframes slideDown {
-from { opacity: 0; transform: translateY(-10px); }
-to { opacity: 1; transform: translateY(0); }
-}
-nav ul li {
-text-align: center;
-width: 100%;
-}
-nav ul li a {
-display: block;
-padding: clamp(0.75rem, 2vw, 1rem);
-font-size: clamp(1rem, 2.5vw, 1.1rem);
-border-radius: var(--radius-sm);
-}
-nav ul li a::after {
-display: none;
-}
-nav ul li a:hover,
-nav ul li a.active {
-background: rgba(255, 255, 255, 0.12);
-}
-.nav-right {
-position: relative;
-}
-.dark-mode-toggle {
-position: fixed;
-top: calc(var(--header-height) + 10px);
-right: 10px;
-z-index: 1001;
-margin: 0;
-}
-.internal-nav {
-top: calc(var(--header-height) + 60px);
-}
-.internal-nav ul {
-justify-content: flex-start;
-padding: 0.25rem 0;
-}
-.internal-nav a {
-padding: 0.5rem 1rem;
-font-size: 0.85rem;
-}
-}
-@media (max-width: 768px) {
-:root {
---header-height: 64px;
---nav-sticky-offset: 140px;
-}
-.page-header {
-padding: clamp(3rem, 12vw, 5rem) 1rem clamp(2rem, 8vw, 3rem);
-min-height: 260px;
-}
-.page-header h1 {
-font-size: clamp(1.6rem, 5vw, 2.2rem);
-}
-.section {
-padding: clamp(1.5rem, 4vw, 2.25rem);
-scroll-margin-top: 180px;
-}
-.section h2 {
-font-size: clamp(1.4rem, 4vw, 1.9rem);
-}
-.structure-table th,
-.structure-table td {
-padding: clamp(0.625rem, 2vw, 0.75rem);
-font-size: clamp(0.85rem, 2vw, 0.9rem);
-}
-.structure-table th {
-white-space: normal;
-}
-.internal-nav {
-padding: 0.5rem;
-margin-top: -2rem;
-}
-.internal-nav a {
-padding: 0.4rem 0.8rem;
-font-size: 0.8rem;
-}
-.whatsapp-float {
-bottom: 1rem;
-right: 1rem;
-padding: 0.625rem 1rem;
-}
-.whatsapp-float span {
-display: none;
-}
-.whatsapp-float {
-width: clamp(50px, 12vw, 56px);
-height: clamp(50px, 12vw, 56px);
-padding: 0;
-justify-content: center;
-border-radius: var(--radius-full);
-}
-.whatsapp-float i {
-font-size: clamp(1.5rem, 4vw, 1.8rem);
-animation: none;
-}
-}
-@media (max-width: 480px) {
-:root {
---header-height: 60px;
---nav-sticky-offset: 130px;
-}
-.brand span {
-display: none;
-}
-.brand img {
-width: 40px;
-}
-.page-header h1 {
-font-size: clamp(1.4rem, 5.5vw, 1.9rem);
-}
-.breadcrumb {
-font-size: 0.9rem;
-}
-.internal-nav {
-top: calc(var(--header-height) + 50px);
-padding: 0.5rem;
-margin-top: -2rem;
-}
-.internal-nav ul {
-gap: 0.25rem;
-}
-.internal-nav a {
-padding: 0.35rem 0.6rem;
-font-size: 0.75rem;
-}
-.section {
-padding: clamp(1.25rem, 4vw, 1.75rem);
-scroll-margin-top: 160px;
-}
-.section-title {
-margin-bottom: 1.25rem;
-}
-.stats-grid {
-grid-template-columns: 1fr;
-}
-.footer-content {
-grid-template-columns: 1fr;
-text-align: center;
-}
-.footer-section a {
-justify-content: center;
-}
-.social-links {
-justify-content: center;
-}
-.back-home a {
-width: 100%;
-max-width: 320px;
-justify-content: center;
-}
-}
-/* ===== MOBILE PERFORMANCE OPTIMIZATION ===== */
-@media (max-width: 768px) {
-.section {
-opacity: 1 !important;
-transform: none !important;
-transition: none !important;
-}
-.section.visible {
-opacity: 1 !important;
-transform: none !important;
-}
-#preloader {
-transition: opacity 0.15s ease, visibility 0.15s ease;
-}
-.section:hover {
-transform: none !important;
-}
-html {
-scroll-behavior: auto;
-}
-.section {
-box-shadow: var(--shadow-sm) !important;
-}
-.internal-nav {
-transition: transform 0.15s ease, opacity 0.15s ease;
-}
-.internal-nav.scrolled {
-transition: box-shadow 0.1s ease, background 0.1s ease;
-}
-}
-/* ===== ACCESSIBILITY ===== */
-@media (prefers-reduced-motion: reduce) {
-*, *::before, *::after {
-animation-duration: 0.01ms !important;
-animation-iteration-count: 1 !important;
-transition-duration: 0.01ms !important;
-}
-html { scroll-behavior: auto; }
-}
-@media (prefers-contrast: high) {
-:root {
---border-color: rgba(0, 0, 0, 0.4);
---shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-.dark-mode {
---border-color: rgba(255, 255, 255, 0.5);
-}
-}
-a:focus-visible,
-button:focus-visible,
-.dark-mode-toggle:focus-visible {
-outline: 3px solid var(--accent);
-outline-offset: 3px;
-border-radius: var(--radius-sm);
-}
-@media print {
-header, footer, .whatsapp-float, .internal-nav, .back-home {
-display: none !important;
-}
-body {
-background: white;
-color: black;
-font-size: 11pt;
-}
-.section {
-box-shadow: none;
-border: 1px solid #ddd;
-page-break-inside: avoid;
-}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+  <title>Dewan Guru | SMAN 1 Cluring</title>
+  
+  <!-- ===== SEO & METADATA ===== -->
+  <meta name="description" content="Dewan Guru SMAN 1 Cluring Banyuwangi - Daftar guru profesional dan kompeten di bidangnya." />
+  <meta name="author" content="SMAN 1 Cluring" />
+  <meta name="keywords" content="Guru SMAN 1 Cluring, dewan guru, tenaga pendidik, Banyuwangi" />
+  
+  <!-- ===== OPEN GRAPH / SOCIAL MEDIA ===== -->
+  <meta property="og:title" content="Dewan Guru | SMAN 1 Cluring" />
+  <meta property="og:description" content="Dewan Guru SMAN 1 Cluring Banyuwangi - Daftar guru profesional dan kompeten di bidangnya." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sman1cluring.sch.id/guru.html" />
+  <meta property="og:image" content="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" />
+  
+  <!-- ===== FONTS & ICONS ===== -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  
+  <!-- ===== CSS VARIABLES & STYLES ===== -->
+  <style>
+    /* ===== DESIGN SYSTEM ===== */
+    :root {
+      /* Primary - Professional Blue */
+      --primary: #0a2a5e; --primary-600: #1e40af; --primary-700: #1d4ed8; --primary-light: #dbeafe;
+      /* Secondary - Elegant Gold */
+      --secondary: #9e7b4b; --secondary-600: #b4935a; --secondary-light: #f5f0e6;
+      /* Accent & Cultural */
+      --accent: #c7a854; --cultural: #b13e3e; --ijen: #2d6a4f;
+      /* Neutral */
+      --bg-body: #f8fafc; --bg-card: #ffffff; --bg-glass: rgba(255,255,255,0.85);
+      --text-primary: #1e293b; --text-secondary: #475569; --text-muted: #64748b;
+      --border-color: rgba(148,163,184,0.2); --border-glass: rgba(255,255,255,0.3);
+      /* Shadows & Effects */
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --shadow-glow: 0 0 40px rgba(158,123,75,0.15);
+      /* Transitions */
+      --transition-fast: 150ms cubic-bezier(0.4,0,0.2,1);
+      --transition-normal: 300ms cubic-bezier(0.4,0,0.2,1);
+      --transition-slow: 500ms cubic-bezier(0.4,0,0.2,1);
+      /* Layout */
+      --radius-sm: 12px; --radius-md: 20px; --radius-lg: 28px; --radius-full: 9999px;
+      --container-max: 1280px; --header-height: 72px; --nav-sticky-offset: 88px;
+      /* WhatsApp */
+      --whatsapp: #25D366; --whatsapp-hover: #128C7E;
+    }
+
+    /* ===== DARK MODE ===== */
+    .dark-mode {
+      --primary: #1e3a8a; --primary-light: #1e293b; --secondary: #d4af37; --secondary-light: #3f3f46;
+      --bg-body: #0f172a; --bg-card: #1e293b; --bg-glass: rgba(30,41,59,0.85);
+      --text-primary: #f1f5f9; --text-secondary: #cbd5e1; --text-muted: #94a3b8;
+      --border-color: rgba(148,163,184,0.15); --border-glass: rgba(255,255,255,0.1);
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.3); --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.4);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.4);
+    }
+
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--nav-sticky-offset); }
+    body {
+      font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: var(--bg-body); color: var(--text-primary); line-height: 1.7;
+      font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem); font-weight: 400;
+      transition: background-color var(--transition-normal), color var(--transition-normal);
+      overflow-x: hidden; -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1,h2,h3,h4,h5,h6 {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; line-height: 1.3;
+      letter-spacing: -0.02em; color: var(--text-primary);
+    }
+    h1 { font-size: clamp(2rem, 1.5rem + 3vw, 3.2rem); }
+    h2 { font-size: clamp(1.6rem, 1.3rem + 2vw, 2.4rem); }
+    h3 { font-size: clamp(1.3rem, 1.1rem + 1.5vw, 1.8rem); }
+    p { margin-bottom: 1.25rem; color: var(--text-secondary); }
+    p:last-child { margin-bottom: 0; }
+    a { color: var(--primary-700); text-decoration: none; transition: color var(--transition-fast); }
+    a:hover { color: var(--secondary); }
+
+    /* ===== UTILITIES ===== */
+    .container { width: 100%; max-width: var(--container-max); margin: 0 auto; padding: 0 clamp(1.5rem, 4vw, 2.5rem); }
+    .section {
+      background: var(--bg-card); padding: clamp(2rem, 4vw, 3.5rem);
+      border-radius: var(--radius-lg); box-shadow: var(--shadow-md);
+      margin-bottom: clamp(1.5rem, 3vw, 2.5rem); border: 1px solid var(--border-color);
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+      scroll-margin-top: var(--nav-sticky-offset);
+    }
+    .section:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--secondary); }
+    .section-title {
+      text-align: center; margin-bottom: clamp(1.5rem, 3vw, 2rem);
+      position: relative; padding-bottom: 1rem;
+    }
+    .section-title::after {
+      content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: clamp(60px, 10vw, 100px); height: 4px;
+      background: linear-gradient(90deg, var(--secondary), var(--accent)); border-radius: 2px;
+    }
+    .section-title i { margin-right: 0.5rem; color: var(--secondary); }
+
+    /* ===== PRELOADER ===== */
+    #preloader {
+      position: fixed; inset: 0; background: var(--primary);
+      display: flex; justify-content: center; align-items: center;
+      z-index: 9999; opacity: 1; visibility: visible;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    #preloader.fade-out { opacity: 0; visibility: hidden; pointer-events: none; }
+    .spinner {
+      width: 48px; height: 48px;
+      border: 3px solid rgba(255,255,255,0.15);
+      border-top-color: var(--secondary); border-right-color: var(--secondary);
+      border-radius: 50%; animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ===== HEADER & NAV ===== */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-600) 100%);
+      position: sticky; top: 0; z-index: 1000;
+      box-shadow: var(--shadow-md); height: var(--header-height);
+      display: flex; align-items: center;
+    }
+    .nav-container {
+      width: 100%; max-width: var(--container-max); margin: 0 auto;
+      padding: 0 clamp(1rem, 4vw, 2rem);
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 0.875rem; color: white;
+      font-weight: 800; font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
+    }
+    .brand img {
+      width: clamp(40px, 8vw, 52px); height: auto; border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-sm); border: 2px solid rgba(255,255,255,0.2);
+    }
+    .nav-right { display: flex; align-items: center; gap: clamp(0.5rem, 2vw, 1.25rem); }
+    nav ul {
+      list-style: none; display: flex; gap: clamp(0.5rem, 2vw, 2rem);
+      align-items: center; margin: 0; padding: 0;
+    }
+    nav ul li a {
+      color: rgba(255,255,255,0.92); text-decoration: none; font-weight: 500;
+      font-size: clamp(0.85rem, 2vw, 1rem); padding: 0.5rem 0; position: relative;
+      transition: opacity var(--transition-fast), color var(--transition-fast);
+      white-space: nowrap;
+    }
+    nav ul li a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+      background: var(--secondary); transition: width var(--transition-normal); border-radius: 1px;
+    }
+    nav ul li a:hover, nav ul li a.active { opacity: 1; color: white; }
+    nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
+
+    /* ===== DARK MODE TOGGLE ===== */
+    .dark-mode-toggle {
+      background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
+      width: clamp(40px, 8vw, 44px); height: clamp(40px, 8vw, 44px);
+      border-radius: var(--radius-full); color: white;
+      font-size: clamp(1rem, 2.5vw, 1.2rem); cursor: pointer;
+      transition: all var(--transition-normal);
+      display: flex; align-items: center; justify-content: center;
+      backdrop-filter: blur(8px); margin-left: 0.25rem; flex-shrink: 0;
+    }
+    .dark-mode-toggle:hover {
+      background: var(--secondary); border-color: var(--secondary);
+      transform: rotate(15deg) scale(1.05);
+    }
+    .dark-mode-toggle .fa-sun { display: none; }
+    .dark-mode .dark-mode-toggle .fa-moon { display: none; }
+    .dark-mode .dark-mode-toggle .fa-sun { display: block; }
+
+    /* ===== MOBILE MENU ===== */
+    .menu-toggle {
+      display: none; font-size: clamp(1.5rem, 4vw, 1.75rem); color: white;
+      cursor: pointer; padding: 0.5rem; border-radius: var(--radius-sm);
+      transition: background var(--transition-fast); flex-shrink: 0;
+    }
+    .menu-toggle:hover { background: rgba(255,255,255,0.15); }
+
+    /* ===== PAGE HEADER ===== */
+    .page-header {
+      background: linear-gradient(145deg, rgba(10,42,94,0.92) 0%, rgba(5,26,59,0.95) 100%),
+                  url('https://i.ibb.co.com/cKcqr1Db/agustusan-2025.jpg') center/cover no-repeat;
+      color: white; text-align: center;
+      padding: clamp(4rem, 15vw, 7rem) clamp(1.5rem, 4vw, 2rem) clamp(3rem, 10vw, 5rem);
+      min-height: clamp(280px, 40vh, 400px);
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    .page-header::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, transparent 0%, rgba(10,42,94,0.4) 70%);
+      pointer-events: none;
+    }
+    .page-header h1 {
+      color: white; margin-bottom: 1rem; font-weight: 800;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.35); position: relative; z-index: 1;
+    }
+    .breadcrumb {
+      font-size: clamp(0.9rem, 2vw, 1rem); opacity: 0.95; position: relative; z-index: 1;
+    }
+    .breadcrumb a { color: var(--accent); font-weight: 500; transition: opacity var(--transition-fast); }
+    .breadcrumb a:hover { opacity: 0.85; text-decoration: underline; }
+
+    /* ===== INTERNAL NAV ===== */
+    .internal-nav {
+      max-width: var(--container-max); margin: -2.5rem auto 0;
+      background: var(--bg-glass); backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px); border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md); padding: clamp(0.5rem, 2vw, 0.875rem) clamp(0.75rem, 3vw, 1.25rem);
+      position: sticky; top: calc(var(--header-height) + 8px); z-index: 950;
+      transition: transform var(--transition-normal), opacity var(--transition-normal),
+                  box-shadow var(--transition-fast), background var(--transition-fast);
+      border: 1px solid var(--border-glass); display: flex; justify-content: center;
+    }
+    .internal-nav.hidden { transform: translateY(-120%); opacity: 0; pointer-events: none; }
+    .internal-nav.scrolled {
+      box-shadow: var(--shadow-lg); background: rgba(255,255,255,0.95); border-color: var(--border-color);
+    }
+    .dark-mode .internal-nav { background: rgba(30,41,59,0.85); border-color: rgba(255,255,255,0.1); }
+    .dark-mode .internal-nav.scrolled { background: rgba(30,41,59,0.95); border-color: rgba(212,175,55,0.3); }
+    .internal-nav ul {
+      display: flex; justify-content: center; gap: clamp(0.25rem, 1.5vw, 0.75rem);
+      flex-wrap: wrap; list-style: none; margin: 0; padding: 0;
+      max-width: 100%; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;
+    }
+    .internal-nav ul::-webkit-scrollbar { display: none; }
+    .internal-nav a {
+      display: inline-flex; align-items: center;
+      padding: clamp(0.5rem, 2vw, 0.75rem) clamp(0.875rem, 2.5vw, 1.5rem);
+      color: var(--text-primary); text-decoration: none; font-weight: 600;
+      font-size: clamp(0.8rem, 2vw, 0.95rem); border-radius: var(--radius-full);
+      transition: all var(--transition-normal); white-space: nowrap; position: relative;
+    }
+    .internal-nav a::after {
+      content: ''; position: absolute; bottom: 4px; left: 50%;
+      transform: translateX(-50%) scaleX(0); width: 70%; height: 3px;
+      background: linear-gradient(90deg, var(--secondary), var(--accent));
+      border-radius: 2px; transition: transform var(--transition-normal); transform-origin: center;
+    }
+    .internal-nav a:hover, .internal-nav a.active {
+      color: var(--primary); background: rgba(158,123,75,0.12); transform: translateY(-2px);
+    }
+    .internal-nav a:hover::after, .internal-nav a.active::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+    .dark-mode .internal-nav a { color: var(--text-secondary); }
+    .dark-mode .internal-nav a:hover, .dark-mode .internal-nav a.active {
+      color: var(--secondary); background: rgba(212,175,55,0.15);
+    }
+
+    /* ===== QUOTES SECTION - BARU! ===== */
+    .quotes-section {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-600) 100%);
+      color: white; padding: clamp(2rem, 4vw, 3rem);
+      border-radius: var(--radius-lg); margin: clamp(1.5rem, 3vw, 2.5rem) 0;
+      box-shadow: var(--shadow-lg); position: relative; overflow: hidden;
+    }
+    .quotes-section::before {
+      content: '"'; position: absolute; top: -20px; left: clamp(1rem, 3vw, 2rem);
+      font-size: clamp(4rem, 10vw, 8rem); font-family: Georgia, serif;
+      color: rgba(255,255,255,0.1); line-height: 1;
+    }
+    .quotes-carousel {
+      max-width: 900px; margin: 0 auto; text-align: center;
+    }
+    .quote-item {
+      display: none; animation: fadeIn 0.5s ease;
+    }
+    .quote-item.active { display: block; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .quote-text {
+      font-size: clamp(1.1rem, 2vw, 1.4rem); font-style: italic;
+      line-height: 1.6; margin-bottom: 1rem; font-weight: 300;
+    }
+    .quote-author {
+      font-size: clamp(0.95rem, 2vw, 1.1rem); font-weight: 600;
+      color: var(--secondary); display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+    }
+    .quote-author i { color: var(--accent); }
+    .quote-nav {
+      display: flex; justify-content: center; gap: 0.5rem; margin-top: 1.5rem;
+    }
+    .quote-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: rgba(255,255,255,0.4); border: none; cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .quote-dot.active { background: var(--secondary); transform: scale(1.2); }
+    .quote-dot:hover { background: var(--accent); }
+
+    /* ===== CONTENT SECTIONS ===== */
+    .section { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .section.visible { opacity: 1; transform: translateY(0); }
+    .section h3 {
+      display: flex; align-items: center; gap: 0.625rem;
+      margin: clamp(1.5rem, 3vw, 2rem) 0 clamp(1rem, 2vw, 1.25rem);
+      color: var(--primary);
+    }
+    .section h3 i { color: var(--secondary); font-size: 1.2em; }
+
+    /* ===== TEACHER TABLE ===== */
+    .structure-category {
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-600) 100%);
+      color: white; font-weight: 700;
+      padding: clamp(0.875rem, 2vw, 1rem) clamp(1rem, 2.5vw, 1.25rem);
+      margin: clamp(1.5rem, 3vw, 2rem) 0 clamp(1rem, 2vw, 1.25rem);
+      border-radius: var(--radius-sm); font-size: clamp(1rem, 2vw, 1.15rem);
+      display: flex; align-items: center; gap: 0.625rem; box-shadow: var(--shadow-sm);
+    }
+    .structure-table {
+      width: 100%; border-collapse: collapse; margin-top: 0.5rem;
+      background: var(--bg-card); border-radius: var(--radius-sm);
+      overflow: hidden; box-shadow: var(--shadow-sm);
+    }
+    .structure-table th {
+      background: var(--primary); color: white;
+      padding: clamp(0.875rem, 2vw, 1rem) clamp(1rem, 2.5vw, 1.25rem);
+      text-align: left; font-weight: 600; font-size: clamp(0.9rem, 2vw, 1rem);
+      white-space: nowrap;
+    }
+    .structure-table td {
+      padding: clamp(0.75rem, 2vw, 0.875rem) clamp(1rem, 2.5vw, 1.25rem);
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-secondary); font-size: clamp(0.9rem, 2vw, 0.95rem);
+    }
+    .structure-table tr:last-child td { border-bottom: none; }
+    .structure-table tr:nth-child(even) { background: rgba(10,42,94,0.03); }
+    .structure-table tr:hover { background: rgba(158,123,75,0.08); }
+    .dark-mode .structure-table tr:nth-child(even) { background: rgba(255,255,255,0.03); }
+
+    /* ===== STATS CARDS ===== */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 40vw, 250px), 1fr));
+      gap: clamp(1rem, 2.5vw, 1.5rem); margin: clamp(1.5rem, 3vw, 2rem) 0;
+    }
+    .stat-card {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-600) 100%);
+      color: white; padding: clamp(1.5rem, 3vw, 2rem);
+      border-radius: var(--radius-md); text-align: center;
+      box-shadow: var(--shadow-md);
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    }
+    .stat-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .stat-card i { font-size: clamp(2rem, 5vw, 2.5rem); margin-bottom: 0.75rem; opacity: 0.9; }
+    .stat-card .stat-number {
+      font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 800;
+      line-height: 1; margin-bottom: 0.5rem;
+    }
+    .stat-card .stat-label { font-size: clamp(0.9rem, 2vw, 1rem); opacity: 0.9; }
+
+    /* ===== BACK BUTTON ===== */
+    .back-home { text-align: center; margin-top: clamp(2.5rem, 5vw, 4rem); padding-bottom: clamp(1rem, 2vw, 2rem); }
+    .back-home a {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-600) 100%);
+      color: white; padding: clamp(0.875rem, 2vw, 1rem) clamp(2rem, 4vw, 2.5rem);
+      border-radius: var(--radius-full); text-decoration: none;
+      font-weight: 700; font-size: clamp(0.95rem, 2vw, 1.1rem);
+      transition: all var(--transition-normal);
+      display: inline-flex; align-items: center; gap: 0.625rem;
+      box-shadow: var(--shadow-md); border: 2px solid transparent;
+    }
+    .back-home a:hover {
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-600) 100%);
+      transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--accent);
+    }
+    .back-home a i { transition: transform var(--transition-fast); }
+    .back-home a:hover i { transform: translateX(-3px); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: linear-gradient(145deg, var(--primary) 0%, var(--primary-600) 100%);
+      color: rgba(255,255,255,0.92);
+      padding: clamp(3rem, 6vw, 4.5rem) clamp(1.5rem, 4vw, 2rem) clamp(1.5rem, 3vw, 2rem);
+      font-size: clamp(0.9rem, 2vw, 1rem); position: relative;
+      margin-top: clamp(2rem, 4vw, 3rem);
+    }
+    footer::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+      background: linear-gradient(90deg, var(--secondary), var(--accent), var(--secondary));
+    }
+    .footer-content {
+      max-width: var(--container-max); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 45vw, 240px), 1fr));
+      gap: clamp(1.5rem, 4vw, 2.5rem);
+    }
+    .footer-section h3 {
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem); margin-bottom: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 600; display: flex; align-items: center; gap: 0.5rem; color: var(--secondary);
+    }
+    .footer-section ul { list-style: none; margin: 0; padding: 0; }
+    .footer-section ul li { margin-bottom: clamp(0.5rem, 1.5vw, 0.75rem); }
+    .footer-section a {
+      color: rgba(255,255,255,0.85); text-decoration: none;
+      transition: all var(--transition-fast);
+      display: flex; align-items: center; gap: 0.625rem;
+      font-size: clamp(0.9rem, 2vw, 0.95rem);
+    }
+    .footer-section a:hover { color: var(--secondary); transform: translateX(4px); }
+    .footer-section a i { width: 1.2em; text-align: center; font-size: 0.9em; }
+    .social-links {
+      display: flex; gap: clamp(0.75rem, 2vw, 1rem);
+      margin-top: clamp(0.75rem, 1.5vw, 1rem); flex-wrap: wrap;
+    }
+    .social-links a {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: clamp(40px, 9vw, 44px); height: clamp(40px, 9vw, 44px);
+      border-radius: var(--radius-full); background: rgba(255,255,255,0.12);
+      color: white; font-size: clamp(1rem, 2.5vw, 1.2rem);
+      transition: all var(--transition-normal);
+      border: 1px solid rgba(255,255,255,0.2); text-decoration: none;
+    }
+    .social-links a:hover {
+      background: var(--secondary); transform: translateY(-4px) scale(1.08);
+      color: var(--primary); border-color: var(--secondary);
+    }
+    .footer-bottom {
+      text-align: center; margin-top: clamp(2rem, 4vw, 3rem);
+      padding-top: clamp(1.25rem, 2.5vw, 1.75rem);
+      border-top: 1px solid rgba(255,255,255,0.12);
+      font-size: clamp(0.85rem, 2vw, 0.95rem); opacity: 0.85; line-height: 1.6;
+    }
+    .footer-bottom p { margin: 0.25rem 0; }
+
+    /* ===== WHATSAPP FLOAT ===== */
+    .whatsapp-float {
+      position: fixed; bottom: clamp(1rem, 3vw, 1.5rem); right: clamp(1rem, 3vw, 1.5rem);
+      background: linear-gradient(135deg, var(--whatsapp) 0%, var(--whatsapp-hover) 100%);
+      color: white; text-decoration: none;
+      display: flex; align-items: center; gap: clamp(0.5rem, 1.5vw, 0.75rem);
+      padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 2.5vw, 1.75rem);
+      border-radius: var(--radius-full);
+      box-shadow: 0 8px 25px rgba(37,211,102,0.35); z-index: 998;
+      transition: all var(--transition-normal); backdrop-filter: blur(10px);
+      border: 2px solid rgba(255,255,255,0.25);
+      font-weight: 600; font-size: clamp(0.9rem, 2vw, 1rem);
+      max-width: calc(100vw - 2rem);
+    }
+    .whatsapp-float i {
+      font-size: clamp(1.4rem, 3.5vw, 1.75rem); animation: pulse 2.5s infinite; flex-shrink: 0;
+    }
+    .whatsapp-float span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .whatsapp-float:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 15px 35px rgba(37,211,102,0.5);
+      background: linear-gradient(135deg, var(--whatsapp-hover) 0%, var(--whatsapp) 100%);
+    }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      :root { --header-height: 68px; --nav-sticky-offset: 84px; }
+    }
+    @media (max-width: 880px) {
+      .menu-toggle { display: flex; align-items: center; justify-content: center; order: 3; }
+      nav ul {
+        position: fixed; top: var(--header-height); left: 0; right: 0;
+        background: var(--primary); flex-direction: column;
+        padding: clamp(1rem, 3vw, 1.5rem); display: none; z-index: 999;
+        border-top: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(16px);
+        gap: clamp(0.5rem, 2vw, 1rem); animation: slideDown 0.3s ease;
+      }
+      nav ul.active { display: flex; }
+      @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      nav ul li { text-align: center; width: 100%; }
+      nav ul li a {
+        display: block; padding: clamp(0.75rem, 2vw, 1rem);
+        font-size: clamp(1rem, 2.5vw, 1.1rem); border-radius: var(--radius-sm);
+      }
+      nav ul li a::after { display: none; }
+      nav ul li a:hover, nav ul li a.active { background: rgba(255,255,255,0.12); }
+      .nav-right { position: relative; }
+      .dark-mode-toggle {
+        position: fixed; top: calc(var(--header-height) + 10px); right: 10px;
+        z-index: 1001; margin: 0;
+      }
+      .internal-nav { top: calc(var(--header-height) + 60px); }
+      .internal-nav ul { justify-content: flex-start; padding: 0.25rem 0; }
+      .internal-nav a { padding: 0.5rem 1rem; font-size: 0.85rem; }
+    }
+    @media (max-width: 768px) {
+      :root { --header-height: 64px; --nav-sticky-offset: 140px; }
+      .page-header { padding: clamp(3rem, 12vw, 5rem) 1rem clamp(2rem, 8vw, 3rem); min-height: 260px; }
+      .page-header h1 { font-size: clamp(1.6rem, 5vw, 2.2rem); }
+      .section { padding: clamp(1.5rem, 4vw, 2.25rem); scroll-margin-top: 180px; }
+      .section h2 { font-size: clamp(1.4rem, 4vw, 1.9rem); }
+      .structure-table th, .structure-table td {
+        padding: clamp(0.625rem, 2vw, 0.75rem); font-size: clamp(0.85rem, 2vw, 0.9rem);
+      }
+      .structure-table th { white-space: normal; }
+      .internal-nav { padding: 0.5rem; margin-top: -2rem; }
+      .internal-nav a { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
+      .whatsapp-float { bottom: 1rem; right: 1rem; padding: 0.625rem 1rem; }
+      .whatsapp-float span { display: none; }
+      .whatsapp-float {
+        width: clamp(50px, 12vw, 56px); height: clamp(50px, 12vw, 56px);
+        padding: 0; justify-content: center; border-radius: var(--radius-full);
+      }
+      .whatsapp-float i { font-size: clamp(1.5rem, 4vw, 1.8rem); animation: none; }
+    }
+    @media (max-width: 480px) {
+      :root { --header-height: 60px; --nav-sticky-offset: 130px; }
+      .brand span { display: none; }
+      .brand img { width: 40px; }
+      .page-header h1 { font-size: clamp(1.4rem, 5.5vw, 1.9rem); }
+      .breadcrumb { font-size: 0.9rem; }
+      .internal-nav { top: calc(var(--header-height) + 50px); padding: 0.5rem; margin-top: -2rem; }
+      .internal-nav ul { gap: 0.25rem; }
+      .internal-nav a { padding: 0.35rem 0.6rem; font-size: 0.75rem; }
+      .section { padding: clamp(1.25rem, 4vw, 1.75rem); scroll-margin-top: 160px; }
+      .section-title { margin-bottom: 1.25rem; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .footer-content { grid-template-columns: 1fr; text-align: center; }
+      .footer-section a { justify-content: center; }
+      .social-links { justify-content: center; }
+      .back-home a { width: 100%; max-width: 320px; justify-content: center; }
+    }
+
+    /* ===== PERFORMANCE & ACCESSIBILITY ===== */
+    @media (max-width: 768px) {
+      .section { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .section.visible { opacity: 1 !important; transform: none !important; }
+      #preloader { transition: opacity 0.15s ease, visibility 0.15s ease; }
+      .section:hover { transform: none !important; }
+      html { scroll-behavior: auto; }
+      .section { box-shadow: var(--shadow-sm) !important; }
+      .internal-nav { transition: transform 0.15s ease, opacity 0.15s ease; }
+      .internal-nav.scrolled { transition: box-shadow 0.1s ease, background 0.1s ease; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto; }
+    }
+    @media (prefers-contrast: high) {
+      :root { --border-color: rgba(0,0,0,0.4); --shadow-sm: 0 1px 2px rgba(0,0,0,0.2); }
+      .dark-mode { --border-color: rgba(255,255,255,0.5); }
+    }
+    a:focus-visible, button:focus-visible, .dark-mode-toggle:focus-visible {
+      outline: 3px solid var(--accent); outline-offset: 3px; border-radius: var(--radius-sm);
+    }
+    @media print {
+      header, footer, .whatsapp-float, .internal-nav, .back-home { display: none !important; }
+      body { background: white; color: black; font-size: 11pt; }
+      .section { box-shadow: none; border: 1px solid #ddd; page-break-inside: avoid; }
+    }
+  </style>
 </head>
 <body>
-<!-- PRELOADER -->
-<div id="preloader" role="status" aria-label="Loading">
-<div class="spinner" aria-hidden="true"></div>
-</div>
+  <!-- PRELOADER -->
+  <div id="preloader" role="status" aria-label="Loading">
+    <div class="spinner" aria-hidden="true"></div>
+  </div>
 
-<!-- WHATSAPP FLOAT BUTTON -->
-<a href="https://wa.me/6282319712420?text=Halo%20saya%20ingin%20bertanya%20tentang%20Dewan%20Guru%20SMAN%201%20Cluring"
-class="whatsapp-float"
-target="_blank"
-rel="noopener noreferrer"
-aria-label="Chat dengan Admin via WhatsApp">
-<i class="fab fa-whatsapp" aria-hidden="true"></i>
-<span>Chat Admin</span>
-</a>
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/6282319712420?text=Halo%20saya%20ingin%20bertanya%20tentang%20Dewan%20Guru%20SMAN%201%20Cluring"
+     class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+     aria-label="Chat dengan Admin via WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    <span>Chat Admin</span>
+  </a>
 
-<!-- HEADER -->
-<header data-aos="fade-down">
-<div class="nav-container">
-<a href="index.html" class="brand">
-<img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring" width="52" height="52">
-<span>SMAN 1 CLURING</span>
-</a>
-<button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
-<i class="fas fa-bars" aria-hidden="true"></i>
-</button>
-<div class="nav-right">
-<nav>
-<ul id="navMenu" role="menubar">
-<li role="none"><a href="index.html" role="menuitem">Home</a></li>
-<li role="none"><a href="profil.html" role="menuitem">Profil</a></li>
-<li role="none"><a href="akademik.html" role="menuitem">Akademik</a></li>
-<li role="none"><a href="kesiswaan.html" role="menuitem">Kesiswaan</a></li>
-<li role="none"><a href="sarpras.html" role="menuitem">Sarpras</a></li>
-<li role="none"><a href="humas.html" role="menuitem">Humas</a></li>
-<li role="none"><a href="mitra.html" role="menuitem">Mitra</a></li>
-<li role="none"><a href="alumni.html" role="menuitem">Alumni</a></li>
-<li role="none"><a href="artikel.html" role="menuitem">Artikel</a></li>
-<li role="none"><a href="profil.html#kontak" role="menuitem">Kontak</a></li>
-</ul>
-</nav>
-<button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
-<i class="fas fa-moon" aria-hidden="true"></i>
-<i class="fas fa-sun" aria-hidden="true"></i>
-</button>
-</div>
-</div>
-</header>
+  <!-- HEADER -->
+  <header data-aos="fade-down">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring" width="52" height="52">
+        <span>SMAN 1 CLURING</span>
+      </a>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <div class="nav-right">
+        <nav>
+          <ul id="navMenu" role="menubar">
+            <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+            <li role="none"><a href="profil.html" role="menuitem">Profil</a></li>
+            <li role="none"><a href="akademik.html" role="menuitem">Akademik</a></li>
+            <li role="none"><a href="kesiswaan.html" role="menuitem">Kesiswaan</a></li>
+            <li role="none"><a href="sarpras.html" role="menuitem">Sarpras</a></li>
+            <li role="none"><a href="humas.html" role="menuitem">Humas</a></li>
+            <li role="none"><a href="mitra.html" role="menuitem">Mitra</a></li>
+            <li role="none"><a href="alumni.html" role="menuitem">Alumni</a></li>
+            <li role="none"><a href="artikel.html" role="menuitem">Artikel</a></li>
+            <li role="none"><a href="profil.html#kontak" role="menuitem">Kontak</a></li>
+          </ul>
+        </nav>
+        <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+          <i class="fas fa-sun" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
 
-<!-- PAGE HEADER -->
-<section class="page-header" data-aos="zoom-in">
-<h1 data-aos="fade-up">Dewan Guru</h1>
-<nav class="breadcrumb" aria-label="Breadcrumb" data-aos="fade-up" data-aos-delay="100">
-<a href="index.html">Beranda</a> / <a href="profil.html">Profil</a> / <span aria-current="page">Dewan Guru</span>
-</nav>
-</section>
+  <!-- PAGE HEADER -->
+  <section class="page-header" data-aos="zoom-in">
+    <h1 data-aos="fade-up">Dewan Guru</h1>
+    <nav class="breadcrumb" aria-label="Breadcrumb" data-aos="fade-up" data-aos-delay="100">
+      <a href="index.html">Beranda</a> / <a href="profil.html">Profil</a> / <span aria-current="page">Dewan Guru</span>
+    </nav>
+  </section>
 
-<!-- INTERNAL NAVIGATION -->
-<nav class="internal-nav" data-aos="fade-down" aria-label="Section navigation">
-<ul>
-<li><a href="#guru-mapel" class="nav-link active" data-section="guru-mapel">📚 Guru Mapel</a></li>
-<li><a href="#guru-bk" class="nav-link" data-section="guru-bk">🎯 Guru BK</a></li>
-<li><a href="#statistik" class="nav-link" data-section="statistik">📊 Statistik</a></li>
-</ul>
-</nav>
+  <!-- INTERNAL NAVIGATION -->
+  <nav class="internal-nav" data-aos="fade-down" aria-label="Section navigation">
+    <ul>
+      <li><a href="#quotes" class="nav-link" data-section="quotes">💭 Quotes</a></li>
+      <li><a href="#guru-mapel" class="nav-link" data-section="guru-mapel">📚 Guru Mapel</a></li>
+      <li><a href="#guru-bk" class="nav-link" data-section="guru-bk">🎯 Guru BK</a></li>
+      <li><a href="#statistik" class="nav-link" data-section="statistik">📊 Statistik</a></li>
+    </ul>
+  </nav>
 
-<!-- MAIN CONTENT -->
-<main class="container">
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    
+    <!-- ✨ QUOTES PEMIKIR INDONESIA - SECTION BARU -->
+    <section class="quotes-section" id="quotes" data-aos="fade-up">
+      <div class="quotes-carousel">
+        <div class="quote-item active">
+          <p class="quote-text">Ing Ngarsa Sung Tuladha, Ing Madya Mangun Karsa, Tut Wuri Handayani</p>
+          <p class="quote-author"><i class="fas fa-feather-alt"></i> Ki Hajar Dewantara</p>
+        </div>
+        <div class="quote-item">
+          <p class="quote-text">Tujuan pendidikan itu untuk mempertajam kecerdasan, memperkukuh kemauan, serta memperhalus perasaan.</p>
+          <p class="quote-author"><i class="fas fa-feather-alt"></i> Tan Malaka</p>
+        </div>
+        <div class="quote-item">
+          <p class="quote-text">Beri aku 10 pemuda, maka akan kuguncangkan dunia.</p>
+          <p class="quote-author"><i class="fas fa-feather-alt"></i> Ir. Soekarno</p>
+        </div>
+        <div class="quote-item">
+          <p class="quote-text">Habis Gelap Terbitlah Terang.</p>
+          <p class="quote-author"><i class="fas fa-feather-alt"></i> R.A. Kartini</p>
+        </div>
+        <div class="quote-item">
+          <p class="quote-text">Kecantikan yang abadi terletak pada keelokan adab dan ketinggian ilmu seseorang.</p>
+          <p class="quote-author"><i class="fas fa-feather-alt"></i> Buya Hamka</p>
+        </div>
+      </div>
+      <div class="quote-nav">
+        <button class="quote-dot active" data-index="0" aria-label="Quote 1"></button>
+        <button class="quote-dot" data-index="1" aria-label="Quote 2"></button>
+        <button class="quote-dot" data-index="2" aria-label="Quote 3"></button>
+        <button class="quote-dot" data-index="3" aria-label="Quote 4"></button>
+        <button class="quote-dot" data-index="4" aria-label="Quote 5"></button>
+      </div>
+    </section>
 
-<!-- STATISTIK GURU -->
-<section class="section" id="statistik" data-aos="fade-up">
-<h2 class="section-title"><i class="fas fa-chart-bar" aria-hidden="true"></i> Statistik Dewan Guru</h2>
-<div class="stats-grid">
-<div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
-<i class="fas fa-chalkboard-teacher"></i>
-<div class="stat-number">45</div>
-<div class="stat-label">Total Guru</div>
-</div>
-<div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
-<i class="fas fa-user-graduate"></i>
-<div class="stat-number">S2</div>
-<div class="stat-label">Kualifikasi Tertinggi</div>
-</div>
-<div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
-<i class="fas fa-certificate"></i>
-<div class="stat-number">100%</div>
-<div class="stat-label">Bersertifikat Pendidik</div>
-</div>
-<div class="stat-card" data-aos="zoom-in" data-aos-delay="400">
-<i class="fas fa-award"></i>
-<div class="stat-number">45</div>
-<div class="stat-label">Guru Berprestasi</div>
-</div>
-</div>
-</section>
+    <!-- STATISTIK GURU -->
+    <section class="section" id="statistik" data-aos="fade-up">
+      <h2 class="section-title"><i class="fas fa-chart-bar" aria-hidden="true"></i> Statistik Dewan Guru</h2>
+      <div class="stats-grid">
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+          <i class="fas fa-chalkboard-teacher"></i>
+          <div class="stat-number">45</div>
+          <div class="stat-label">Total Guru</div>
+        </div>
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+          <i class="fas fa-user-graduate"></i>
+          <div class="stat-number">S2</div>
+          <div class="stat-label">Kualifikasi Tertinggi</div>
+        </div>
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+          <i class="fas fa-certificate"></i>
+          <div class="stat-number">98%</div>
+          <div class="stat-label">Bersertifikat Pendidik</div>
+        </div>
+        
+    </section>
 
-<!-- GURU MATA PELAJARAN -->
-<section class="section" id="guru-mapel" data-aos="fade-up">
-<h2 class="section-title"><i class="fas fa-chalkboard-teacher" aria-hidden="true"></i> Guru Mata Pelajaran</h2>
-<p data-aos="fade-right">
-Berikut adalah daftar guru mata pelajaran SMAN 1 Cluring yang profesional dan berkompeten di bidangnya:
-</p>
+    <!-- GURU MATA PELAJARAN -->
+    <section class="section" id="guru-mapel" data-aos="fade-up">
+      <h2 class="section-title"><i class="fas fa-chalkboard-teacher" aria-hidden="true"></i> Guru Mata Pelajaran</h2>
+      <p data-aos="fade-right">
+        Berikut adalah daftar guru mata pelajaran SMAN 1 Cluring yang profesional dan berkompeten di bidangnya:
+      </p>
+      
+      <!-- Bahasa & Sastra -->
+      <div class="structure-category" data-aos="fade-left">
+        <i class="fas fa-language" aria-hidden="true"></i> Bahasa & Sastra
+      </div>
+      <div style="overflow-x: auto; border-radius: var(--radius-sm);">
+        <table class="structure-table" data-aos="fade-up">
+          <thead>
+            <tr><th scope="col">No</th><th scope="col">Nama Guru</th><th scope="col">Mata Pelajaran</th><th scope="col">Kualifikasi</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Drs. MISNAN</td><td>Bahasa Inggris</td><td>S1</td></tr>
+            <tr><td>2</td><td>MOHAMAD ARIF SUSIAWAN, S.Pd</td><td>Bahasa Inggris</td><td>S1</td></tr>
+            <tr><td>3</td><td>MAGIYONO, S.Pd</td><td>Bahasa Inggris</td><td>S1</td></tr>
+            <tr><td>4</td><td>ENDRY ERNANING TT, S.Pd</td><td>Bahasa Indonesia</td><td>S1</td></tr>
+            <tr><td>5</td><td>Dra. SIH PUSPITANING</td><td>Bahasa Indonesia</td><td>S1</td></tr>
+            <tr><td>6</td><td>MOHAMMAD AS'ADI, S.Pd</td><td>Bahasa Inggris</td><td>S1</td></tr>
+            <tr><td>7</td><td>SHIENDA SETYAWATIE, S.Pd</td><td>Bahasa Inggris</td><td>S1</td></tr>
+            <tr><td>8</td><td>VIOLA LUTFI SAGITA, S.Pd</td><td>Bahasa Indonesia</td><td>S1</td></tr>
+            <tr><td>9</td><td>WIYANTO, S.Pd</td><td>Bahasa Jawa</td><td>S1</td></tr>
+            <tr><td>10</td><td>DANIK SUSELOWATI, S.Pd</td><td>Bahasa Jawa</td><td>S1</td></tr>
+            <tr><td>11</td><td>JOKO IRAWAN, S.Pd</td><td>Bahasa Jepang</td><td>S1</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-<div class="structure-category" data-aos="fade-left">
-<i class="fas fa-language" aria-hidden="true"></i> Bahasa & Sastra
-</div>
-<div style="overflow-x: auto; border-radius: var(--radius-sm);">
-<table class="structure-table" data-aos="fade-up">
-<thead>
-<tr>
-<th scope="col">No</th>
-<th scope="col">Nama Guru</th>
-<th scope="col">Mata Pelajaran</th>
-<th scope="col">Kualifikasi</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>1</td><td>Drs. MISNAN</td><td>Bahasa Inggris</td><td>S1</td></tr>
-<tr><td>2</td><td>MOHAMAD ARIF SUSIAWAN, S.Pd</td><td>Bahasa Inggris</td><td>S1</td></tr>
-<tr><td>3</td><td>MAGIYONO, S.Pd</td><td>Bahasa Inggris</td><td>S1</td></tr>
-<tr><td>4</td><td>ENDRY ERNANING TT, S.Pd</td><td>Bahasa Indonesia</td><td>S1</td></tr>
-<tr><td>5</td><td>Dra. SIH PUSPITANING</td><td>Bahasa Indonesia</td><td>S1</td></tr>
-<tr><td>6</td><td>MOHAMMAD AS'ADI, S.Pd</td><td>Bahasa Inggris</td><td>S1</td></tr>
-<tr><td>7</td><td>SHIENDA SETYAWATIE, S.Pd</td><td>Bahasa Inggris</td><td>S1</td></tr>
-<tr><td>8</td><td>VIOLA LUTFI SAGITA, S.Pd</td><td>Bahasa Indonesia</td><td>S1</td></tr>
-<tr><td>9</td><td>WIYANTO, S.Pd</td><td>Bahasa Jawa</td><td>S1</td></tr>
-<tr><td>10</td><td>DANIK SUSELOWATI, S.Pd</td><td>Bahasa Jawa</td><td>S1</td></tr>
-<tr><td>11</td><td>JOKO IRAWAN, S.Pd</td><td>Bahasa Jepang</td><td>S1</td></tr>
-</tbody>
-</table>
-</div>
+      <!-- MIPA -->
+      <div class="structure-category" data-aos="fade-left">
+        <i class="fas fa-calculator" aria-hidden="true"></i> MIPA (Matematika & Ilmu Pengetahuan Alam)
+      </div>
+      <div style="overflow-x: auto; border-radius: var(--radius-sm);">
+        <table class="structure-table" data-aos="fade-up">
+          <thead>
+            <tr><th scope="col">No</th><th scope="col">Nama Guru</th><th scope="col">Mata Pelajaran</th><th scope="col">Kualifikasi</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>AGUS SUPRIYADI S.Pd</td><td>Matematika</td><td>S1</td></tr>
+            <tr><td>2</td><td>ALI MUTHOHAR, S.Pd</td><td>Matematika</td><td>S1</td></tr>
+            <tr><td>3</td><td>ARIS RIYANTO, S.Pd</td><td>Matematika</td><td>S1</td></tr>
+            <tr><td>4</td><td>RINI ASIH, S.Pd</td><td>Matematika</td><td>S1</td></tr>
+            <tr><td>5</td><td>YUNITA FIRMANSYAH, S.Pd</td><td>Matematika</td><td>S1</td></tr>
+            <tr><td>6</td><td>SLAMET WAHYONO S.Pd</td><td>Kimia</td><td>S1</td></tr>
+            <tr><td>7</td><td>TINA WAHYU LESTARI, S.Pd</td><td>Fisika</td><td>S1</td></tr>
+            <tr><td>8</td><td>DITA FITRIANI, S.Pd</td><td>Fisika</td><td>S1</td></tr>
+            <tr><td>9</td><td>Drs. SUMARDAMI</td><td>Biologi</td><td>S1</td></tr>
+            <tr><td>10</td><td>Dra. SIRKAH MUAWANAH</td><td>Biologi</td><td>S1</td></tr>
+            <tr><td>11</td><td>IMAM AFANDI S.Pd</td><td>Biologi</td><td>S1</td></tr>
+            <tr><td>12</td><td>DESI MUTIARA, S.Pd</td><td>Biologi</td><td>S1</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-<div class="structure-category" data-aos="fade-left">
-<i class="fas fa-calculator" aria-hidden="true"></i> MIPA (Matematika & Ilmu Pengetahuan Alam)
-</div>
-<div style="overflow-x: auto; border-radius: var(--radius-sm);">
-<table class="structure-table" data-aos="fade-up">
-<thead>
-<tr>
-<th scope="col">No</th>
-<th scope="col">Nama Guru</th>
-<th scope="col">Mata Pelajaran</th>
-<th scope="col">Kualifikasi</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>1</td><td>AGUS SUPRIYADI S.Pd</td><td>Matematika</td><td>S1</td></tr>
-<tr><td>2</td><td>ALI MUTHOHAR, S.Pd</td><td>Matematika</td><td>S1</td></tr>
-<tr><td>3</td><td>ARIS RIYANTO, S.Pd</td><td>Matematika</td><td>S1</td></tr>
-<tr><td>4</td><td>RINI ASIH, S.Pd</td><td>Matematika</td><td>S1</td></tr>
-<tr><td>5</td><td>YUNITA FIRMANSYAH, S.Pd</td><td>Matematika</td><td>S1</td></tr>
-<tr><td>6</td><td>SLAMET WAHYONO S.Pd</td><td>Kimia</td><td>S1</td></tr>
-<tr><td>7</td><td>TINA WAHYU LESTARI, S.Pd</td><td>Fisika</td><td>S1</td></tr>
-<tr><td>8</td><td>DITA FITRIANI, S.Pd</td><td>Fisika</td><td>S1</td></tr>
-<tr><td>9</td><td>Drs. SUMARDAMI</td><td>Biologi</td><td>S1</td></tr>
-<tr><td>10</td><td>Dra. SIRKAH MUAWANAH</td><td>Biologi</td><td>S1</td></tr>
-<tr><td>11</td><td>IMAM AFANDI S.Pd</td><td>Biologi</td><td>S1</td></tr>
-<tr><td>12</td><td>DESI MUTIARA, S.Pd</td><td>Biologi</td><td>S1</td></tr>
-</tbody>
-</table>
-</div>
+      <!-- IPS -->
+      <div class="structure-category" data-aos="fade-left">
+        <i class="fas fa-globe-asia" aria-hidden="true"></i> Ilmu Pengetahuan Sosial
+      </div>
+      <div style="overflow-x: auto; border-radius: var(--radius-sm);">
+        <table class="structure-table" data-aos="fade-up">
+          <thead>
+            <tr><th scope="col">No</th><th scope="col">Nama Guru</th><th scope="col">Mata Pelajaran</th><th scope="col">Kualifikasi</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Dra. SUBEKTI RAHAYU</td><td>Geografi</td><td>S1</td></tr>
+            <tr><td>2</td><td>TITIN NURSANTI, S.Pd</td><td>Geografi</td><td>S1</td></tr>
+            <tr><td>3</td><td>MOH. SUHARSO, S.Pd</td><td>Sosiologi</td><td>S1</td></tr>
+            <tr><td>4</td><td>RITWAN JUNIANTO, S.Pd</td><td>Sejarah</td><td>S1</td></tr>
+            <tr><td>5</td><td>SILVIA MAHARANI HILDA, S.Pd</td><td>Sejarah</td><td>S1</td></tr>
+            <tr><td>6</td><td>SITI ROFIAH, S.Pd</td><td>Ekonomi</td><td>S1</td></tr>
+            <tr><td>7</td><td>ALAMSYAH, S.Pd</td><td>Ekonomi</td><td>S1</td></tr>
+            <tr><td>8</td><td>YULI FITRIYANI, S.Pd</td><td>Ekonomi</td><td>S1</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-<div class="structure-category" data-aos="fade-left">
-<i class="fas fa-globe-asia" aria-hidden="true"></i> Ilmu Pengetahuan Sosial
-</div>
-<div style="overflow-x: auto; border-radius: var(--radius-sm);">
-<table class="structure-table" data-aos="fade-up">
-<thead>
-<tr>
-<th scope="col">No</th>
-<th scope="col">Nama Guru</th>
-<th scope="col">Mata Pelajaran</th>
-<th scope="col">Kualifikasi</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>1</td><td>Dra. SUBEKTI RAHAYU</td><td>Geografi</td><td>S1</td></tr>
-<tr><td>2</td><td>TITIN NURSANTI, S.Pd</td><td>Geografi</td><td>S1</td></tr>
-<tr><td>3</td><td>MOH. SUHARSO, S.Pd</td><td>Sosiologi</td><td>S1</td></tr>
-<tr><td>4</td><td>RITWAN JUNIANTO, S.Pd</td><td>Sejarah</td><td>S1</td></tr>
-<tr><td>5</td><td>SILVIA MAHARANI HILDA, S.Pd</td><td>Sejarah</td><td>S1</td></tr>
-<tr><td>6</td><td>SITI ROFIAH, S.Pd</td><td>Ekonomi</td><td>S1</td></tr>
-<tr><td>7</td><td>ALAMSYAH, S.Pd</td><td>Ekonomi</td><td>S1</td></tr>
-<tr><td>8</td><td>YULI FITRIYANI, S.Pd</td><td>Ekonomi</td><td>S1</td></tr>
-</tbody>
-</table>
-</div>
+      <!-- Agama & Karakter -->
+      <div class="structure-category" data-aos="fade-left">
+        <i class="fas fa-pray" aria-hidden="true"></i> Pendidikan Agama & Karakter
+      </div>
+      <div style="overflow-x: auto; border-radius: var(--radius-sm);">
+        <table class="structure-table" data-aos="fade-up">
+          <thead>
+            <tr><th scope="col">No</th><th scope="col">Nama Guru</th><th scope="col">Mata Pelajaran</th><th scope="col">Kualifikasi</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>IMAM HADI TAUFIK H, S.Pd</td><td>PAI</td><td>S1</td></tr>
+            <tr><td>2</td><td>DEWI AINUR ROKHMAH, S.Pd.I</td><td>PAI</td><td>S1</td></tr>
+            <tr><td>3</td><td>Drs. SUROSO</td><td>PAI</td><td>S1</td></tr>
+            <tr><td>4</td><td>Dra. PUJI RAHAYU</td><td>PKN</td><td>S1</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-<div class="structure-category" data-aos="fade-left">
-<i class="fas fa-pray" aria-hidden="true"></i> Pendidikan Agama & Karakter
-</div>
-<div style="overflow-x: auto; border-radius: var(--radius-sm);">
-<table class="structure-table" data-aos="fade-up">
-<thead>
-<tr>
-<th scope="col">No</th>
-<th scope="col">Nama Guru</th>
-<th scope="col">Mata Pelajaran</th>
-<th scope="col">Kualifikasi</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>1</td><td>IMAM HADI TAUFIK H, S.Pd</td><td>PAI</td><td>S1</td></tr>
-<tr><td>2</td><td>DEWI AINUR ROKHMAH, S.Pd.I</td><td>PAI</td><td>S1</td></tr>
-<tr><td>3</td><td>Drs. SUROSO</td><td>PAI</td><td>S1</td></tr>
-<tr><td>4</td><td>Dra. PUJI RAHAYU</td><td>PKN</td><td>S1</td></tr>
-</tbody>
-</table>
-</div>
+      <!-- Olahraga & Seni -->
+      <div class="structure-category" data-aos="fade-left">
+        <i class="fas fa-running" aria-hidden="true"></i> Olahraga & Seni
+      </div>
+      <div style="overflow-x: auto; border-radius: var(--radius-sm);">
+        <table class="structure-table" data-aos="fade-up">
+          <thead>
+            <tr><th scope="col">No</th><th scope="col">Nama Guru</th><th scope="col">Mata Pelajaran</th><th scope="col">Kualifikasi</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Drs. BAGUS DWI SUASONO, M.Pd</td><td>PJOK</td><td>S2</td></tr>
+            <tr><td>2</td><td>Drs. MAKHRUS</td><td>PJOK</td><td>S1</td></tr>
+            <tr><td>3</td><td>EKO SUPRASETYO, S.Pd</td><td>PJOK</td><td>S1</td></tr>
+            <tr><td>4</td><td>CAHYA MAHARDIKA, S.Pd</td><td>PJOK</td><td>S1</td></tr>
+            <tr><td>5</td><td>MIRZA PRASTYO, S.Pd</td><td>Seni Budaya</td><td>S1</td></tr>
+            <tr><td>6</td><td>GALIH KIDUNG WIBOWO, S.Pd</td><td>Seni Budaya</td><td>S1</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-<div class="structure-category" data-aos="fade-left">
-<i class="fas fa-running" aria-hidden="true"></i> Olahraga & Seni
-</div>
-<div style="overflow-x: auto; border-radius: var(--radius-sm);">
-<table class="structure-table" data-aos="fade-up">
-<thead>
-<tr>
-<th scope="col">No</th>
-<th scope="col">Nama Guru</th>
-<th scope="col">Mata Pelajaran</th>
-<th scope="col">Kualifikasi</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>1</td><td>Drs. BAGUS DWI SUASONO, M.Pd</td><td>PJOK</td><td>S2</td></tr>
-<tr><td>2</td><td>Drs. MAKHRUS</td><td>PJOK</td><td>S1</td></tr>
-<tr><td>3</td><td>EKO SUPRASETYO, S.Pd</td><td>PJOK</td><td>S1</td></tr>
-<tr><td>4</td><td>CAHYA MAHARDIKA, S.Pd</td><td>PJOK</td><td>S1</td></tr>
-<tr><td>5</td><td>MIRZA PRASTYO, S.Pd</td><td>Seni Budaya</td><td>S1</td></tr>
-<tr><td>6</td><td>GALIH KIDUNG WIBOWO, S.Pd</td><td>Seni Budaya</td><td>S1</td></tr>
-</tbody>
-</table>
-</div>
+      <!-- Keterampilan & Teknologi -->
+      <div class="structure-category" data-aos="fade-left">
+        <i class="fas fa-briefcase" aria-hidden="true"></i> Keterampilan & Teknologi
+      </div>
+      <div style="overflow-x: auto; border-radius: var(--radius-sm);">
+        <table class="structure-table" data-aos="fade-up">
+          <thead>
+            <tr><th scope="col">No</th><th scope="col">Nama Guru</th><th scope="col">Mata Pelajaran</th><th scope="col">Kualifikasi</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>ADHA QIFTIYATUL M, S.Pd</td><td>Kewirausahaan</td><td>S1</td></tr>
+            <tr><td>2</td><td>USWATUN FATIMAH, S.E</td><td>Kewirausahaan</td><td>S1</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-<div class="structure-category" data-aos="fade-left">
-<i class="fas fa-briefcase" aria-hidden="true"></i> Keterampilan & Teknologi
-</div>
-<div style="overflow-x: auto; border-radius: var(--radius-sm);">
-<table class="structure-table" data-aos="fade-up">
-<thead>
-<tr>
-<th scope="col">No</th>
-<th scope="col">Nama Guru</th>
-<th scope="col">Mata Pelajaran</th>
-<th scope="col">Kualifikasi</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>1</td><td>ADHA QIFTIYATUL M, S.Pd</td><td>Kewirausahaan</td><td>S1</td></tr>
-<tr><td>2</td><td>USWATUN FATIMAH, S.E</td><td>Kewirausahaan</td><td>S1</td></tr>
-</tbody>
-</table>
-</div>
-</section>
+    <!-- GURU BK -->
+    <section class="section" id="guru-bk" data-aos="fade-up">
+      <h2 class="section-title"><i class="fas fa-user-friends" aria-hidden="true"></i> Guru Bimbingan Konseling (BK)</h2>
+      <p data-aos="fade-right">
+        Guru BK siap membantu siswa dalam pengembangan pribadi, sosial, belajar, dan karir:
+      </p>
+      <div style="overflow-x: auto; border-radius: var(--radius-sm);">
+        <table class="structure-table" data-aos="fade-up">
+          <thead>
+            <tr><th scope="col">No</th><th scope="col">Nama Guru</th><th scope="col">Bidang</th><th scope="col">Kualifikasi</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Drs. SY HADI</td><td>BK</td><td>S1</td></tr>
+            <tr><td>2</td><td>ANDIS DWI SAPUTRO, S.Pd</td><td>BK</td><td>S1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="info-box" data-aos="fade-up" style="margin-top: 1.5rem; padding: 1rem; background: var(--primary-light); border-left: 4px solid var(--secondary); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;">
+        <i class="fas fa-info-circle" aria-hidden="true"></i>
+        <p style="margin: 0; color: var(--text-primary);">Layanan BK tersedia untuk konseling individu, kelompok, dan pengembangan karir siswa.</p>
+      </div>
+    </section>
 
-<!-- GURU BK -->
-<section class="section" id="guru-bk" data-aos="fade-up">
-<h2 class="section-title"><i class="fas fa-user-friends" aria-hidden="true"></i> Guru Bimbingan Konseling (BK)</h2>
-<p data-aos="fade-right">
-Guru BK siap membantu siswa dalam pengembangan pribadi, sosial, belajar, dan karir:
-</p>
+    <!-- BACK BUTTON -->
+    <div class="back-home" data-aos="fade-up">
+      <a href="profil.html#struktur">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Kembali ke Profil
+      </a>
+    </div>
+  </main>
 
-<div style="overflow-x: auto; border-radius: var(--radius-sm);">
-<table class="structure-table" data-aos="fade-up">
-<thead>
-<tr>
-<th scope="col">No</th>
-<th scope="col">Nama Guru</th>
-<th scope="col">Bidang</th>
-<th scope="col">Kualifikasi</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>1</td><td>Drs. SY HADI</td><td>BK</td><td>S1</td></tr>
-<tr><td>2</td><td>ANDIS DWI SAPUTRO, S.Pd</td><td>BK</td><td>S1</td></tr>
-</tbody>
-</table>
-</div>
+  <!-- FOOTER -->
+  <footer data-aos="fade-up" id="kontak">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Kontak</h3>
+        <address style="font-style: normal; margin-bottom: 0.75rem;">
+          Jl. Huzaini, Benculuk, Cluring<br>
+          Banyuwangi, Jawa Timur
+        </address>
+        <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+6282319712420">0823-1971-2420</a></p>
+        <p><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/6282319712420" target="_blank" rel="noopener">0823-1971-2420 (WA)</a></p>
+      </div>
+      <div class="footer-section">
+        <h3><i class="fas fa-link" aria-hidden="true"></i> Link Penting</h3>
+        <ul>
+          <li><a href="https://sma.kemendikdasmen.go.id" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Kemendikbud</a></li>
+          <li><a href="https://dindik.jatimprov.go.id" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Dindik Jatim</a></li>
+          <li><a href="https://banyuwangicab.dindikjatim.id" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Cabang Dinas</a></li>
+          <li><a href="https://alam21234.github.io/Smaring-interactive-learning-comunity" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Smaring Community</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3><i class="fas fa-flask" aria-hidden="true"></i> Lab Virtual</h3>
+        <ul>
+          <li><a href="https://quran.nu.or.id" target="_blank" rel="noopener"><i class="fas fa-book-quran" aria-hidden="true"></i> Al-Qur'an Digital</a></li>
+          <li><a href="https://virtualbiologylab.org" target="_blank" rel="noopener"><i class="fas fa-dna" aria-hidden="true"></i> Virtual Biology Lab</a></li>
+          <li><a href="https://www.myphysicslab.com" target="_blank" rel="noopener"><i class="fas fa-atom" aria-hidden="true"></i> MyPhysicsLab</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3><i class="fas fa-share-alt" aria-hidden="true"></i> Media Sosial</h3>
+        <div class="social-links">
+          <a href="https://www.facebook.com/Sman1Cluring" target="_blank" rel="noopener" aria-label="Facebook SMAN 1 Cluring"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/sman1_cluring" target="_blank" rel="noopener" aria-label="Instagram SMAN 1 Cluring"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank" rel="noopener" aria-label="YouTube SMAN 1 Cluring"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+          <a href="https://wa.me/6282319712420" target="_blank" rel="noopener" aria-label="WhatsApp Admin"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
+      <p style="margin-top: 0.5rem; font-size: 0.9em; opacity: 0.85;">Website Resmi SMAN 1 Cluring Banyuwangi</p>
+    </div>
+  </footer>
 
-<div class="info-box" data-aos="fade-up" style="margin-top: 1.5rem;">
-<i class="fas fa-info-circle" aria-hidden="true"></i>
-<p>Layanan BK tersedia untuk konseling individu, kelompok, dan pengembangan karir siswa.</p>
-</div>
-</section>
+  <!-- ===== JAVASCRIPT ===== -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const isMobile = window.innerWidth <= 768;
 
-<div class="back-home" data-aos="fade-up">
-<a href="profil.html#struktur">
-<i class="fas fa-arrow-left" aria-hidden="true"></i> Kembali ke Profil
-</a>
-</div>
-</main>
+      // ===== AOS Initialization =====
+      AOS.init({ duration: isMobile ? 0 : 700, once: true, easing: 'ease-out-cubic', disable: isMobile, offset: isMobile ? 0 : 120 });
 
-<!-- FOOTER -->
-<footer data-aos="fade-up" id="kontak">
-<div class="footer-content">
-<div class="footer-section">
-<h3><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Kontak</h3>
-<address style="font-style: normal; margin-bottom: 0.75rem;">
-Jl. Huzaini, Benculuk, Cluring<br>
-Banyuwangi, Jawa Timur
-</address>
-<p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+6282319712420">0823-1971-2420</a></p>
-<p><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/6282319712420" target="_blank" rel="noopener">0823-1971-2420 (WA)</a></p>
-</div>
-<div class="footer-section">
-<h3><i class="fas fa-link" aria-hidden="true"></i> Link Penting</h3>
-<ul>
-<li><a href="https://sma.kemendikdasmen.go.id" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Kemendikbud</a></li>
-<li><a href="https://dindik.jatimprov.go.id" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Dindik Jatim</a></li>
-<li><a href="https://banyuwangicab.dindikjatim.id" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Cabang Dinas</a></li>
-<li><a href="https://alam21234.github.io/Smaring-interactive-learning-comunity" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Smaring Community</a></li>
-</ul>
-</div>
-<div class="footer-section">
-<h3><i class="fas fa-flask" aria-hidden="true"></i> Lab Virtual</h3>
-<ul>
-<li><a href="https://quran.nu.or.id" target="_blank" rel="noopener"><i class="fas fa-book-quran" aria-hidden="true"></i> Al-Qur'an Digital</a></li>
-<li><a href="https://virtualbiologylab.org" target="_blank" rel="noopener"><i class="fas fa-dna" aria-hidden="true"></i> Virtual Biology Lab</a></li>
-<li><a href="https://www.myphysicslab.com" target="_blank" rel="noopener"><i class="fas fa-atom" aria-hidden="true"></i> MyPhysicsLab</a></li>
-</ul>
-</div>
-<div class="footer-section">
-<h3><i class="fas fa-share-alt" aria-hidden="true"></i> Media Sosial</h3>
-<div class="social-links">
-<a href="https://www.facebook.com/Sman1Cluring" target="_blank" rel="noopener" aria-label="Facebook SMAN 1 Cluring"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-<a href="https://www.instagram.com/sman1_cluring" target="_blank" rel="noopener" aria-label="Instagram SMAN 1 Cluring"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-<a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank" rel="noopener" aria-label="YouTube SMAN 1 Cluring"><i class="fab fa-youtube" aria-hidden="true"></i></a>
-<a href="https://wa.me/6282319712420" target="_blank" rel="noopener" aria-label="WhatsApp Admin"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-</div>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
-<p style="margin-top: 0.5rem; font-size: 0.9em; opacity: 0.85;">
-Website Resmi SMAN 1 Cluring Banyuwangi
-</p>
-</div>
-</footer>
+      // ===== Preloader =====
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        const preloaderTime = isMobile ? 100 : 400;
+        const fadeOutTime = isMobile ? 150 : 500;
+        window.addEventListener('load', () => {
+          setTimeout(() => {
+            preloader.classList.add('fade-out');
+            setTimeout(() => preloader.style.display = 'none', fadeOutTime);
+          }, preloaderTime);
+        });
+      }
 
-<!-- AOS & Custom JS -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-// ===== INITIALIZATION =====
-document.addEventListener('DOMContentLoaded', () => {
-// Detect mobile device
-const isMobile = window.innerWidth <= 768;
+      // ===== Dark Mode =====
+      const darkModeToggle = document.getElementById('darkModeToggle');
+      const body = document.body;
+      const savedMode = localStorage.getItem('darkMode');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedMode === 'true' || (savedMode === null && systemPrefersDark)) body.classList.add('dark-mode');
+      darkModeToggle?.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+      });
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if (localStorage.getItem('darkMode') === null) body.classList.toggle('dark-mode', e.matches);
+      });
 
-// Initialize AOS
-AOS.init({
-duration: isMobile ? 0 : 700,
-once: true,
-easing: 'ease-out-cubic',
-disable: isMobile,
-offset: isMobile ? 0 : 120
-});
+      // ===== Mobile Menu =====
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navMenu = document.getElementById('navMenu');
+      menuToggle?.addEventListener('click', () => {
+        const isActive = navMenu?.classList.toggle('active');
+        menuToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+        menuToggle.innerHTML = isActive ? '<i class="fas fa-times" aria-hidden="true"></i>' : '<i class="fas fa-bars" aria-hidden="true"></i>';
+      });
+      document.querySelectorAll('#navMenu a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (navMenu?.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
+          }
+        });
+      });
 
-// Preloader
-const preloader = document.getElementById('preloader');
-if (preloader) {
-const preloaderTime = isMobile ? 100 : 400;
-const fadeOutTime = isMobile ? 150 : 500;
-window.addEventListener('load', () => {
-setTimeout(() => {
-preloader.classList.add('fade-out');
-setTimeout(() => preloader.style.display = 'none', fadeOutTime);
-}, preloaderTime);
-});
-}
+      // ===== Smart Sticky Internal Nav =====
+      const internalNav = document.querySelector('.internal-nav');
+      let lastScrollY = window.scrollY, ticking = false;
+      const scrollThreshold = isMobile ? 150 : 300;
+      function handleScroll() {
+        if (!internalNav) return;
+        const currentY = window.scrollY, isAtTop = currentY < 50, isScrollingDown = currentY > lastScrollY;
+        if (isAtTop) internalNav.classList.remove('hidden', 'scrolled');
+        else if (currentY > scrollThreshold) {
+          if (isScrollingDown) { internalNav.classList.remove('hidden'); internalNav.classList.add('scrolled'); }
+          else { internalNav.classList.add('hidden'); internalNav.classList.remove('scrolled'); }
+        }
+        lastScrollY = currentY; ticking = false;
+      }
+      window.addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(handleScroll); ticking = true; } }, { passive: true });
 
-// Dark Mode
-const darkModeToggle = document.getElementById('darkModeToggle');
-const body = document.body;
-const savedMode = localStorage.getItem('darkMode');
-const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      // ===== Smooth Scroll & Active Link =====
+      const navLinks = document.querySelectorAll('.nav-link');
+      const sections = document.querySelectorAll('.section, .quotes-section');
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (navMenu?.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
+          }
+          const targetId = link.getAttribute('href'), target = document.querySelector(targetId);
+          if (target) {
+            const headerOffset = isMobile ? 180 : 120;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({ top: offsetPosition, behavior: isMobile ? 'auto' : 'smooth' });
+            navLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+          }
+        });
+      });
 
-if (savedMode === 'true' || (savedMode === null && systemPrefersDark)) {
-body.classList.add('dark-mode');
-}
+      // ===== Scroll Spy =====
+      const observerOptions = { root: null, rootMargin: isMobile ? '-100px 0px -30% 0px' : '-180px 0px -50% 0px', threshold: isMobile ? 0.01 : 0.1 };
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if (isMobile) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; entry.target.classList.add('visible'); }
+            else entry.target.classList.add('visible');
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.dataset.section === id || link.getAttribute('href') === `#${id}`) link.classList.add('active');
+            });
+          }
+        });
+      }, observerOptions);
+      sections.forEach(section => {
+        sectionObserver.observe(section);
+        if (section.id === 'statistik' || section.id === 'quotes') {
+          section.classList.add('visible');
+          if (isMobile) { section.style.opacity = '1'; section.style.transform = 'translateY(0)'; }
+        }
+      });
 
-darkModeToggle?.addEventListener('click', () => {
-body.classList.toggle('dark-mode');
-localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
-});
+      // ===== Quotes Carousel =====
+      const quoteItems = document.querySelectorAll('.quote-item');
+      const quoteDots = document.querySelectorAll('.quote-dot');
+      let currentQuote = 0;
+      function showQuote(index) {
+        quoteItems.forEach(item => item.classList.remove('active'));
+        quoteDots.forEach(dot => dot.classList.remove('active'));
+        quoteItems[index].classList.add('active');
+        quoteDots[index].classList.add('active');
+        currentQuote = index;
+      }
+      quoteDots.forEach(dot => {
+        dot.addEventListener('click', () => showQuote(parseInt(dot.dataset.index)));
+      });
+      // Auto-rotate quotes every 6 seconds
+      setInterval(() => {
+        const nextQuote = (currentQuote + 1) % quoteItems.length;
+        showQuote(nextQuote);
+      }, 6000);
 
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-if (localStorage.getItem('darkMode') === null) {
-body.classList.toggle('dark-mode', e.matches);
-}
-});
+      // ===== WhatsApp Button Scroll Aware =====
+      const whatsappBtn = document.querySelector('.whatsapp-float');
+      if (whatsappBtn) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 400) { whatsappBtn.style.opacity = '1'; whatsappBtn.style.transform = 'translateY(0)'; }
+          else { whatsappBtn.style.opacity = '0.92'; whatsappBtn.style.transform = 'translateY(8px)'; }
+        }, { passive: true });
+      }
 
-// Mobile Menu Toggle
-const menuToggle = document.querySelector('.menu-toggle');
-const navMenu = document.getElementById('navMenu');
-
-menuToggle?.addEventListener('click', () => {
-const isActive = navMenu?.classList.toggle('active');
-menuToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-menuToggle.innerHTML = isActive
-? '<i class="fas fa-times" aria-hidden="true"></i>'
-: '<i class="fas fa-bars" aria-hidden="true"></i>';
-});
-
-// Close mobile menu when clicking a link
-document.querySelectorAll('#navMenu a').forEach(link => {
-link.addEventListener('click', () => {
-if (navMenu?.classList.contains('active')) {
-navMenu.classList.remove('active');
-menuToggle.setAttribute('aria-expanded', 'false');
-menuToggle.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
-}
-});
-});
-
-// ===== SMART STICKY INTERNAL NAV =====
-const internalNav = document.querySelector('.internal-nav');
-let lastScrollY = window.scrollY;
-let ticking = false;
-const scrollThreshold = isMobile ? 150 : 300;
-
-function handleScroll() {
-if (!internalNav) return;
-
-const currentY = window.scrollY;
-const isAtTop = currentY < 50;
-const isScrollingDown = currentY > lastScrollY;
-
-if (isAtTop) {
-internalNav.classList.remove('hidden', 'scrolled');
-} else if (currentY > scrollThreshold) {
-if (isScrollingDown) {
-internalNav.classList.remove('hidden');
-internalNav.classList.add('scrolled');
-} else {
-internalNav.classList.add('hidden');
-internalNav.classList.remove('scrolled');
-}
-}
-
-lastScrollY = currentY;
-ticking = false;
-}
-
-window.addEventListener('scroll', () => {
-if (!ticking) {
-requestAnimationFrame(handleScroll);
-ticking = true;
-}
-}, { passive: true });
-
-// ===== SMOOTH SCROLLING & ACTIVE LINK =====
-const navLinks = document.querySelectorAll('.nav-link');
-const sections = document.querySelectorAll('.section');
-
-navLinks.forEach(link => {
-link.addEventListener('click', (e) => {
-e.preventDefault();
-
-if (navMenu?.classList.contains('active')) {
-navMenu.classList.remove('active');
-menuToggle.setAttribute('aria-expanded', 'false');
-menuToggle.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
-}
-
-const targetId = link.getAttribute('href');
-const target = document.querySelector(targetId);
-
-if (target) {
-const headerOffset = isMobile ? 180 : 120;
-const elementPosition = target.getBoundingClientRect().top;
-const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-window.scrollTo({
-top: offsetPosition,
-behavior: isMobile ? 'auto' : 'smooth'
-});
-
-navLinks.forEach(l => l.classList.remove('active'));
-link.classList.add('active');
-}
-});
-});
-
-// Scroll spy with Intersection Observer
-const observerOptions = {
-root: null,
-rootMargin: isMobile ? '-100px 0px -30% 0px' : '-180px 0px -50% 0px',
-threshold: isMobile ? 0.01 : 0.1
-};
-
-const sectionObserver = new IntersectionObserver((entries) => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-if (isMobile) {
-entry.target.style.opacity = '1';
-entry.target.style.transform = 'translateY(0)';
-entry.target.classList.add('visible');
-} else {
-entry.target.classList.add('visible');
-}
-
-const id = entry.target.getAttribute('id');
-navLinks.forEach(link => {
-link.classList.remove('active');
-if (link.dataset.section === id || link.getAttribute('href') === `#${id}`) {
-link.classList.add('active');
-}
-});
-}
-});
-}, observerOptions);
-
-sections.forEach(section => {
-sectionObserver.observe(section);
-if (section.id === 'statistik') {
-section.classList.add('visible');
-if (isMobile) {
-section.style.opacity = '1';
-section.style.transform = 'translateY(0)';
-}
-}
-});
-
-// ===== WHATSAPP BUTTON SCROLL AWARE =====
-const whatsappBtn = document.querySelector('.whatsapp-float');
-if (whatsappBtn) {
-window.addEventListener('scroll', () => {
-if (window.scrollY > 400) {
-whatsappBtn.style.opacity = '1';
-whatsappBtn.style.transform = 'translateY(0)';
-} else {
-whatsappBtn.style.opacity = '0.92';
-whatsappBtn.style.transform = 'translateY(8px)';
-}
-}, { passive: true });
-}
-
-// ===== KEYBOARD NAVIGATION =====
-document.addEventListener('keydown', (e) => {
-if (e.key === 'Escape' && navMenu?.classList.contains('active')) {
-navMenu.classList.remove('active');
-menuToggle.setAttribute('aria-expanded', 'false');
-menuToggle.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
-menuToggle?.focus();
-}
-});
-});
-</script>
+      // ===== Keyboard Navigation =====
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navMenu?.classList.contains('active')) {
+          navMenu.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
+          menuToggle?.focus();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
