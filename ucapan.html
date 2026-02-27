@@ -442,12 +442,13 @@ Kumpulan desain ucapan selamat hari raya, hari besar nasional, dan momen spesial
 const greetingData = [
 {id:1,title:"Selamat Tahun Baru Imlek 2577",category:"agama",year:2026,date:"2026-01-29",image:"https://i.ibb.co.com/W4xkCJL0/imlek.jpg",link:"https://ibb.co.com/39rpKZnv"},
 {id:2,title:"Selamat Menunaikan Ibadah Puasa 1447 H",category:"agama",year:2026,date:"2026-02-20",image:"https://i.ibb.co.com/ZR322tPt/puasa.jpg",link:"https://ibb.co.com/Y4600YMY"},
-{id:3,title:"Selamat Hari Kemerdekaan RI ke-81",category:"nasional",year:2026,date:"2026-08-17",image:"https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&q=80&w=600",link:"#"},
-{id:4,title:"Kurangi Sampah Plastik",category:"sekolah",year:2025,date:"2025-11-25",image:"https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&q=80&w=600",link:"#"},
-{id:5,title:"Selamat Natal & Tahun Baru 2026",category:"agama",year:2025,date:"2025-12-25",image:"https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&fit=crop&q=80&w=600",link:"#"},
-{id:6,title:"Selamat Hari Pendidikan Nasional",category:"nasional",year:2026,date:"2026-05-02",image:"https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600",link:"#"},
-{id:7,title:"Selamat Hari Kartini 2026",category:"nasional",year:2026,date:"2026-04-21",image:"https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=600",link:"#"},
-{id:8,title:"Selamat Hari Anak Nasional 2025",category:"internasional",year:2025,date:"2025-07-23",image:"https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&q=80&w=600",link:"#"}
+{id:3,title:"Flyer Pondok Ramadan Kelas X 2026",category:"sekolah",year:2026,date:"2026-02-23",image:"https://i.ibb.co.com/vvscHcKY/brosur-pondok-romadhon.jpg",link:"https://ibb.co.com/FqshKhjV"},
+{id:4,title:"Kampanye Kurangi Sampah Plastik",category:"sekolah",year:2026,date:"2026-02-21",image:"https://i.ibb.co.com/xKJC3qrh/flayer-sampah-plastik.jpg",link:"https://ibb.co.com/Fkgxn4d6"},
+{id:5,title:"Selamat Hari Kemerdekaan RI ke-81",category:"nasional",year:2026,date:"2026-08-17",image:"https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&q=80&w=600",link:"#"},
+{id:6,title:"Selamat Natal & Tahun Baru 2026",category:"agama",year:2025,date:"2025-12-25",image:"https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&fit=crop&q=80&w=600",link:"#"},
+{id:7,title:"Selamat Hari Pendidikan Nasional",category:"nasional",year:2026,date:"2026-05-02",image:"https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600",link:"#"},
+{id:8,title:"Selamat Hari Kartini 2026",category:"nasional",year:2026,date:"2026-04-21",image:"https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=600",link:"#"},
+{id:9,title:"Selamat Hari Anak Nasional 2025",category:"internasional",year:2025,date:"2025-07-23",image:"https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&q=80&w=600",link:"#"}
 ];
 const galleryGrid = document.getElementById('galleryGrid');
 
@@ -605,7 +606,7 @@ document.addEventListener('DOMContentLoaded', () => {
 greetingData.sort((a,b) => new Date(b.date) - new Date(a.date));
 renderGallery(greetingData);
 setActiveNav(); 
-setupMobileMenuClose(); // Setup mobile menu close on link click
+setupMobileMenuClose();
 setTimeout(() => document.getElementById('preloader').classList.add('fade-out'), 600);
 AOS.init({duration:600,once:true,offset:50});
 updateVisitorCounter();
