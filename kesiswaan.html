@@ -83,7 +83,7 @@ font-family: 'Plus Jakarta Sans', sans-serif;
 font-weight: 700;
 letter-spacing: -0.02em;
 }
-/* ===== PRELOADER (OPTIMIZED - FAST) ===== */
+/* ===== PRELOADER (OPTIMIZED - FAST 200ms) ===== */
 #preloader {
 position: fixed;
 top: 0;
@@ -96,7 +96,7 @@ justify-content: center;
 align-items: center;
 z-index: 9999;
 opacity: 1;
-transition: opacity 0.4s ease, visibility 0.4s ease;
+transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 #preloader.fade-out {
 opacity: 0;
@@ -593,7 +593,7 @@ padding: 50px;
 border-radius: var(--border-radius);
 box-shadow: var(--shadow-sm);
 margin-bottom: 40px;
-scroll-margin-top: 120px;
+scroll-margin-top: 180px; /* ✅ DIPERBAIKI: dari 120px ke 180px */
 transition: var(--transition);
 border: 1px solid rgba(158,123,75,0.1);
 }
@@ -965,9 +965,16 @@ font-size: 1.1rem;
 white-space: normal;
 }
 .page-header h1 { font-size: 2.2rem; }
+.internal-nav {
+top: 80px; /* ✅ DIPERBAIKI: posisi internal nav mobile */
+padding: 10px;
+}
 .internal-nav a {
 padding: 10px 16px;
 font-size: 0.9rem;
+}
+.section {
+scroll-margin-top: 200px; /* ✅ DIPERBAIKI: scroll margin mobile */
 }
 .org-grid { grid-template-columns: 1fr; }
 .whatsapp-float {
@@ -1021,10 +1028,25 @@ width: 100%;
 .brand span { display: none; }
 .brand img { width: 44px; }
 .page-header h1 { font-size: 1.8rem; }
-.internal-nav { padding: 10px; }
-.internal-nav ul { flex-direction: column; gap: 8px; }
-.internal-nav a { width: 100%; padding: 10px; }
-.section { padding: 30px 20px; }
+.internal-nav {
+padding: 10px;
+position: relative; /* ✅ DIPERBAIKI: non-sticky di layar sangat kecil */
+top: 0;
+margin: 20px auto;
+box-shadow: none;
+}
+.internal-nav ul {
+flex-direction: column;
+gap: 8px;
+}
+.internal-nav a {
+width: 100%;
+padding: 10px;
+}
+.section {
+padding: 30px 20px;
+scroll-margin-top: 100px; /* ✅ DIPERBAIKI: karena internal nav tidak sticky */
+}
 .section h2 { font-size: 1.6rem; }
 .whatsapp-float {
 bottom: 15px;
@@ -1125,7 +1147,6 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <li><a href="mitra.html">Mitra</a></li>
 <li><a href="alumni.html">Alumni</a></li>
 <li><a href="artikel.html">Artikel</a></li>
-<!-- FUNGSIONALITAS KONTAK: Tautan langsung ke bagian kontak di halaman yang sama (footer) -->
 <li><a href="#kontak">Kontak</a></li>
 <li style="display: flex; align-items: center;">
 <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
@@ -1138,7 +1159,7 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 </div>
 </div>
 </header>
-<!-- PAGE HEADER - dengan background gambar kordinasi yang baru -->
+<!-- PAGE HEADER -->
 <section class="page-header" data-aos="zoom-in">
 <h1 data-aos="fade-up">Bidang Kesiswaan</h1>
 <div class="breadcrumb" data-aos="fade-up" data-aos-delay="100">
@@ -1319,7 +1340,7 @@ Prestasi terbaru: SMAN 1 Cluring meraih <strong>Innovative Government Award (IGA
 </a>
 </div>
 </section>
-<!-- FOOTER (dengan ID kontak untuk ditautkan dari menu) -->
+<!-- FOOTER -->
 <footer data-aos="fade-up" id="kontak">
 <div class="footer-content">
 <div class="footer-section">
@@ -1380,12 +1401,12 @@ once: true,
 easing: 'ease-out-cubic'
 });
 
-// Preloader (OPTIMIZED - FAST 400ms)
+// ✅ PRELOADER (OPTIMIZED - FAST 200ms)
 window.addEventListener('load', () => {
-const preloader = document.getElementById('preloader');
-setTimeout(() => {
-preloader.classList.add('fade-out');
-}, 400); // Dipercepat dari 800ms menjadi 400ms
+    const preloader = document.getElementById('preloader');
+    setTimeout(() => {
+        preloader.classList.add('fade-out');
+    }, 200); // ✅ DIPERCEPAT: dari 400ms menjadi 200ms
 });
 
 // Dark Mode Toggle
@@ -1393,80 +1414,86 @@ const darkModeToggle = document.getElementById('darkModeToggle');
 const body = document.body;
 const isDarkMode = localStorage.getItem('darkMode') === 'true';
 if (isDarkMode) {
-body.classList.add('dark-mode');
+    body.classList.add('dark-mode');
 }
 darkModeToggle.addEventListener('click', () => {
-body.classList.toggle('dark-mode');
-localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+    body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
 });
 
 // Mobile Menu Toggle
 function toggleMenu() {
-document.getElementById("navMenu").classList.toggle("active");
+    document.getElementById("navMenu").classList.toggle("active");
 }
 
-// Smooth scrolling untuk internal navigation (osis, ekskul, dll.)
+// ✅ Smooth scrolling untuk internal navigation (DIPERBAIKI UNTUK MOBILE)
 document.querySelectorAll('.nav-link').forEach(anchor => {
-anchor.addEventListener('click', function(e) {
-e.preventDefault();
-const menu = document.getElementById("navMenu");
-menu.classList.remove("active");
-const targetId = this.getAttribute('href');
-const target = document.querySelector(targetId);
-if (target) {
-target.scrollIntoView({
-behavior: 'smooth',
-block: 'start'
-});
-document.querySelectorAll('.nav-link').forEach(link => {
-link.classList.remove('active');
-});
-this.classList.add('active');
-}
-});
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const menu = document.getElementById("navMenu");
+        menu.classList.remove("active");
+        const targetId = this.getAttribute('href');
+        const target = document.querySelector(targetId);
+        if (target) {
+            // ✅ Hitung offset dinamis berdasarkan ukuran layar
+            const headerOffset = window.innerWidth <= 480 ? 100 : 
+                                window.innerWidth <= 880 ? 200 : 180;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+            
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            this.classList.add('active');
+        }
+    });
 });
 
 // Fungsi untuk menangani klik pada menu "Kontak" di navigasi utama
 document.querySelectorAll('nav ul li a[href="#kontak"]').forEach(anchor => {
-anchor.addEventListener('click', function(e) {
-e.preventDefault();
-// Tutup menu mobile jika terbuka
-document.getElementById("navMenu").classList.remove("active");
-// Ambil target elemen footer dengan id "kontak"
-const target = document.querySelector(this.getAttribute('href'));
-if (target) {
-// Scroll halus ke footer
-target.scrollIntoView({
-behavior: 'smooth',
-block: 'start'
-});
-// Opsional: Beri efek highlight sebentar pada footer
-target.style.transition = 'background-color 0.5s ease';
-target.style.backgroundColor = 'rgba(158, 123, 75, 0.2)';
-setTimeout(() => {
-target.style.backgroundColor = '';
-}, 1000);
-}
-});
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById("navMenu").classList.remove("active");
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            target.style.transition = 'background-color 0.5s ease';
+            target.style.backgroundColor = 'rgba(158, 123, 75, 0.2)';
+            setTimeout(() => {
+                target.style.backgroundColor = '';
+            }, 1000);
+        }
+    });
 });
 
 // Update active link saat scroll
 window.addEventListener('scroll', function() {
-const sections = document.querySelectorAll('.section');
-const navLinks = document.querySelectorAll('.nav-link');
-let currentSection = '';
-sections.forEach(section => {
-const sectionTop = section.offsetTop - 150;
-if (pageYOffset >= sectionTop) {
-currentSection = section.getAttribute('id');
-}
-});
-navLinks.forEach(link => {
-link.classList.remove('active');
-if (link.getAttribute('href').substring(1) === currentSection) {
-link.classList.add('active');
-}
-});
+    const sections = document.querySelectorAll('.section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    let currentSection = '';
+    sections.forEach(section => {
+        // ✅ Offset dinamis untuk mobile
+        const scrollOffset = window.innerWidth <= 480 ? 100 : 
+                            window.innerWidth <= 880 ? 200 : 150;
+        const sectionTop = section.offsetTop - scrollOffset;
+        if (pageYOffset >= sectionTop) {
+            currentSection = section.getAttribute('id');
+        }
+    });
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === currentSection) {
+            link.classList.add('active');
+        }
+    });
 });
 
 // Initialize first link as active
@@ -1474,42 +1501,42 @@ document.querySelector('.nav-link[href="#osis"]').classList.add('active');
 
 // Realtime Clock untuk Footer
 function updateClock() {
-const now = new Date();
-const hours = String(now.getHours()).padStart(2, '0');
-const minutes = String(now.getMinutes()).padStart(2, '0');
-const seconds = String(now.getSeconds()).padStart(2, '0');
-const timeString = `${hours}:${minutes}:${seconds}`;
-const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
-const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
-'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-const dayName = days[now.getDay()];
-const day = now.getDate();
-const monthName = months[now.getMonth()];
-const year = now.getFullYear();
-const dateString = `${dayName}, ${day} ${monthName} ${year}`;
-document.getElementById('footerTime').textContent = timeString;
-document.getElementById('footerDate').textContent = dateString;
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    const timeString = `${hours}:${minutes}:${seconds}`;
+    const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+    const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+    'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+    const dayName = days[now.getDay()];
+    const day = now.getDate();
+    const monthName = months[now.getMonth()];
+    const year = now.getFullYear();
+    const dateString = `${dayName}, ${day} ${monthName} ${year}`;
+    document.getElementById('footerTime').textContent = timeString;
+    document.getElementById('footerDate').textContent = dateString;
 }
 setInterval(updateClock, 1000);
 updateClock();
 
 // Visitor Counter
 function updateVisitorCounter() {
-const visitorKey = 'sman1cluring_visitor_count';
-let count = localStorage.getItem(visitorKey);
-if (!count) {
-count = 1;
-localStorage.setItem(visitorKey, count);
-} else {
-count = parseInt(count);
-if (!sessionStorage.getItem('visitor_counted')) {
-count++;
-localStorage.setItem(visitorKey, count);
-sessionStorage.setItem('visitor_counted', 'true');
-}
-}
-const formattedCount = count.toLocaleString('id-ID');
-document.getElementById('footerVisitorCount').textContent = `${formattedCount} Pengunjung`;
+    const visitorKey = 'sman1cluring_visitor_count';
+    let count = localStorage.getItem(visitorKey);
+    if (!count) {
+        count = 1;
+        localStorage.setItem(visitorKey, count);
+    } else {
+        count = parseInt(count);
+        if (!sessionStorage.getItem('visitor_counted')) {
+            count++;
+            localStorage.setItem(visitorKey, count);
+            sessionStorage.setItem('visitor_counted', 'true');
+        }
+    }
+    const formattedCount = count.toLocaleString('id-ID');
+    document.getElementById('footerVisitorCount').textContent = `${formattedCount} Pengunjung`;
 }
 updateVisitorCounter();
 
@@ -1525,70 +1552,70 @@ const notificationBadge = document.querySelector('.notification-badge');
 
 // Toggle chat box
 chatButton.addEventListener('click', () => {
-chatBox.classList.toggle('active');
-if (chatBox.classList.contains('active')) {
-notificationBadge.style.display = 'none';
-chatMessages.scrollTop = chatMessages.scrollHeight;
-}
+    chatBox.classList.toggle('active');
+    if (chatBox.classList.contains('active')) {
+        notificationBadge.style.display = 'none';
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
 });
 
 // Close chat box
 chatClose.addEventListener('click', () => {
-chatBox.classList.remove('active');
+    chatBox.classList.remove('active');
 });
 
 // Send message function
 function sendMessage() {
-const message = chatInput.value.trim();
-if (message === '') return;
-addMessage(message, 'user');
-chatInput.value = '';
-chatSend.disabled = true;
-setTimeout(() => {
-const botResponse = getBotResponse(message);
-addMessage(botResponse, 'bot');
-chatSend.disabled = false;
-chatMessages.scrollTop = chatMessages.scrollHeight;
-}, 1000);
-chatMessages.scrollTop = chatMessages.scrollHeight;
+    const message = chatInput.value.trim();
+    if (message === '') return;
+    addMessage(message, 'user');
+    chatInput.value = '';
+    chatSend.disabled = true;
+    setTimeout(() => {
+        const botResponse = getBotResponse(message);
+        addMessage(botResponse, 'bot');
+        chatSend.disabled = false;
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }, 1000);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
 // Add message to chat
 function addMessage(text, sender) {
-const messageDiv = document.createElement('div');
-messageDiv.className = `message ${sender}`;
-const now = new Date();
-const timeString = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
-messageDiv.innerHTML = `
-<div class="message-avatar">
-<i class="fas ${sender === 'bot' ? 'fa-robot' : 'fa-user'}"></i>
-</div>
-<div class="message-content">
-<p>${text}</p>
-<div class="message-time">${timeString}</div>
-</div>
-`;
-chatMessages.appendChild(messageDiv);
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${sender}`;
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+    messageDiv.innerHTML = `
+    <div class="message-avatar">
+    <i class="fas ${sender === 'bot' ? 'fa-robot' : 'fa-user'}"></i>
+    </div>
+    <div class="message-content">
+    <p>${text}</p>
+    <div class="message-time">${timeString}</div>
+    </div>
+    `;
+    chatMessages.appendChild(messageDiv);
 }
 
 // Bot response logic untuk kesiswaan
 function getBotResponse(message) {
-const lowerMsg = message.toLowerCase();
-if (lowerMsg.includes('ekskul') || lowerMsg.includes('ekstrakurikuler')) {
-return "SMAN 1 Cluring memiliki berbagai ekstrakurikuler: Pramuka, Paskibra, PMR, Basket, Futsal, Seni Tari, Paduan Suara, KIR, Rohis, dan Kewirausahaan!";
-} else if (lowerMsg.includes('osis')) {
-return "OSIS SMAN 1 Cluring aktif mengadakan berbagai kegiatan seperti Bakti Sosial, Pentas Seni, dan Program Literasi. Hubungi pembina OSIS untuk info lebih lanjut.";
-} else if (lowerMsg.includes('prestasi')) {
-return "Siswa SMAN 1 Cluring meraih berbagai prestasi di Olimpiade Sains, Lomba Tari, Basket, dan Debat Bahasa Inggris. Lihat detailnya di halaman Prestasi.";
-} else if (lowerMsg.includes('pramuka')) {
-return "Pramuka SMAN 1 Cluring aktif dalam kegiatan perkemahan, bakti sosial, dan lomba tingkat kabupaten. Pendaftaran terbuka untuk semua siswa.";
-} else if (lowerMsg.includes('daftar') || lowerMsg.includes('bergabung')) {
-return "Untuk bergabung dengan ekstrakurikuler, silakan hubungi pembina masing-masing atau datang ke ruang OSIS pada jam istirahat.";
-} else if (lowerMsg.includes('terima kasih') || lowerMsg.includes('thanks')) {
-return "Sama-sama! Senang bisa membantu. Ada lagi yang ingin ditanyakan tentang kegiatan kesiswaan?";
-} else {
-return "Terima kasih atas pertanyaannya. Untuk informasi lebih lanjut, silakan hubungi admin melalui WhatsApp atau telepon ke nomor 0823-1971-2420.";
-}
+    const lowerMsg = message.toLowerCase();
+    if (lowerMsg.includes('ekskul') || lowerMsg.includes('ekstrakurikuler')) {
+        return "SMAN 1 Cluring memiliki berbagai ekstrakurikuler: Pramuka, Paskibra, PMR, Basket, Futsal, Seni Tari, Paduan Suara, KIR, Rohis, dan Kewirausahaan!";
+    } else if (lowerMsg.includes('osis')) {
+        return "OSIS SMAN 1 Cluring aktif mengadakan berbagai kegiatan seperti Bakti Sosial, Pentas Seni, dan Program Literasi. Hubungi pembina OSIS untuk info lebih lanjut.";
+    } else if (lowerMsg.includes('prestasi')) {
+        return "Siswa SMAN 1 Cluring meraih berbagai prestasi di Olimpiade Sains, Lomba Tari, Basket, dan Debat Bahasa Inggris. Lihat detailnya di halaman Prestasi.";
+    } else if (lowerMsg.includes('pramuka')) {
+        return "Pramuka SMAN 1 Cluring aktif dalam kegiatan perkemahan, bakti sosial, dan lomba tingkat kabupaten. Pendaftaran terbuka untuk semua siswa.";
+    } else if (lowerMsg.includes('daftar') || lowerMsg.includes('bergabung')) {
+        return "Untuk bergabung dengan ekstrakurikuler, silakan hubungi pembina masing-masing atau datang ke ruang OSIS pada jam istirahat.";
+    } else if (lowerMsg.includes('terima kasih') || lowerMsg.includes('thanks')) {
+        return "Sama-sama! Senang bisa membantu. Ada lagi yang ingin ditanyakan tentang kegiatan kesiswaan?";
+    } else {
+        return "Terima kasih atas pertanyaannya. Untuk informasi lebih lanjut, silakan hubungi admin melalui WhatsApp atau telepon ke nomor 0823-1971-2420.";
+    }
 }
 
 // Send message on button click
@@ -1596,25 +1623,25 @@ chatSend.addEventListener('click', sendMessage);
 
 // Send message on Enter key
 chatInput.addEventListener('keypress', (e) => {
-if (e.key === 'Enter') {
-sendMessage();
-}
+    if (e.key === 'Enter') {
+        sendMessage();
+    }
 });
 
 // Quick replies
 quickReplies.forEach(reply => {
-reply.addEventListener('click', () => {
-const message = reply.getAttribute('data-message');
-chatInput.value = message;
-sendMessage();
-});
+    reply.addEventListener('click', () => {
+        const message = reply.getAttribute('data-message');
+        chatInput.value = message;
+        sendMessage();
+    });
 });
 
 // Close chat when clicking outside
 document.addEventListener('click', (e) => {
-if (!chatBox.contains(e.target) && !chatButton.contains(e.target) && chatBox.classList.contains('active')) {
-chatBox.classList.remove('active');
-}
+    if (!chatBox.contains(e.target) && !chatButton.contains(e.target) && chatBox.classList.contains('active')) {
+        chatBox.classList.remove('active');
+    }
 });
 </script>
 </body>
