@@ -25,10 +25,13 @@
     h1,h2,h3{font-family:var(--font);font-weight:700;line-height:1.3}
     a{text-decoration:none;color:inherit;transition:var(--transition)}
     img{max-width:100%;height:auto;display:block}
+    
+    /* Preloader Style */
     #preloader{position:fixed;inset:0;background:var(--primary);z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity .3s}
     #preloader.hide{opacity:0;pointer-events:none}
     .spinner{width:50px;height:50px;border:3px solid rgba(255,255,255,.2);border-top-color:var(--secondary);border-radius:50%;animation:spin .8s linear infinite}
     @keyframes spin{to{transform:rotate(360deg)}}
+
     header{background:linear-gradient(135deg,var(--primary),var(--primary-light));position:sticky;top:0;z-index:1000;box-shadow:var(--shadow)}
     .nav{max-width:1200px;margin:auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:800;font-size:1.3rem}
@@ -126,8 +129,11 @@
   </style>
 </head>
 <body>
+  <!-- Preloader -->
   <div id="preloader"><div class="spinner"></div></div>
+  
   <a href="https://wa.me/6282319712420?text=Halo%20saya%20ingin%20bertanya%20tentang%20Mitra%20SMAN%201%20Cluring" class="wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i><span>Chat Admin</span></a>
+  
   <header>
     <div class="nav">
       <a href="index.html" class="brand">
@@ -164,11 +170,13 @@
       <a href="#" onclick="openModal();closeMenu();return false"><i class="fas fa-envelope"></i> Kontak</a>
     </div>
   </header>
+
   <section class="hero">
     <div class="badge"><i class="fas fa-handshake"></i> Kolaborasi • Sinergi • Berkembang</div>
     <h1><i class="fas fa-handshake" style="margin-right:10px"></i>Mitra Pendidikan</h1>
     <p>Kolaborasi strategis untuk pengembangan pendidikan berkualitas di <strong>SMAN 1 Cluring Banyuwangi</strong></p>
   </section>
+
   <main>
     <section class="section">
       <div class="section-title"><h2><i class="fas fa-users"></i> Profil Kemitraan</h2></div>
@@ -183,10 +191,102 @@
           <li>Mengembangkan inovasi pendidikan berbasis kolaborasi</li>
         </ul>
       </div>
-      <div class="section-title"><h2><i class="fas fa-building-columns"></i> Mitra Strategis</h2></div>
+
+      <!-- BAGIAN BARU: MITRA KAMPUS NEGERI -->
+      <div class="section-title" style="margin-top: 60px;"><h2><i class="fas fa-university"></i> Mitra Kampus Negeri (Jawa & Bali)</h2></div>
+      <div class="grid">
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-landmark"></i></div>
+            <h3>Universitas Airlangga</h3>
+            <p>Surabaya, Jawa Timur</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-landmark"></i></div>
+            <h3>Universitas Brawijaya</h3>
+            <p>Malang, Jawa Timur</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-landmark"></i></div>
+            <h3>Universitas Negeri Surabaya</h3>
+            <p>Surabaya, Jawa Timur</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-landmark"></i></div>
+            <h3>Universitas Jember</h3>
+            <p>Jember, Jawa Timur</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-microchip"></i></div>
+            <h3>PENS Surabaya</h3>
+            <p>Politeknik Elektronika Negeri</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-atom"></i></div>
+            <h3>ITB Bandung</h3>
+            <p>Institut Teknologi Bandung</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-landmark"></i></div>
+            <h3>Universitas Padjadjaran</h3>
+            <p>Sumedang, Jawa Barat</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-landmark"></i></div>
+            <h3>UPI Bandung</h3>
+            <p>Universitas Pendidikan Indonesia</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-landmark"></i></div>
+            <h3>Universitas Indonesia</h3>
+            <p>Depok, Jawa Barat</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-landmark"></i></div>
+            <h3>UNJ Jakarta</h3>
+            <p>Universitas Negeri Jakarta</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-landmark"></i></div>
+            <h3>UGM Yogyakarta</h3>
+            <p>Universitas Gadjah Mada</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-landmark"></i></div>
+            <h3>Undip Semarang</h3>
+            <p>Universitas Diponegoro</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-landmark"></i></div>
+            <h3>UNNES Semarang</h3>
+            <p>Universitas Negeri Semarang</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-umbrella-beach"></i></div>
+            <h3>Unud Denpasar</h3>
+            <p>Universitas Udayana, Bali</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-tools"></i></div>
+            <h3>Polnep Bali</h3>
+            <p>Politeknik Negeri Bali</p>
+        </div>
+      </div>
+
+      <!-- BAGIAN BARU: MITRA BLK -->
+      <div class="section-title" style="margin-top: 60px;"><h2><i class="fas fa-tools"></i> Mitra Pelatihan Vokasi</h2></div>
+      <div class="grid">
+        <div class="card" style="border-color: var(--primary);">
+            <div class="card-icon" style="background: var(--primary); color: #fff;"><i class="fas fa-certificate"></i></div>
+            <h3>BLVP Banyuwangi</h3>
+            <p>Balai Latihan Vokasi dan Produktivitas</p>
+            <p style="font-size: 0.85rem; margin-top:5px;">Muncar-Banyuwangi<br>Pelatihan vokasi & keterampilan kerja</p>
+        </div>
+      </div>
+
+      <!-- Mitra Lainnya (Tetap Ada) -->
+      <div class="section-title" style="margin-top: 60px;"><h2><i class="fas fa-building-columns"></i> Mitra Strategis Lainnya</h2></div>
       <div class="grid">
         <div class="card"><div class="card-icon"><i class="fas fa-graduation-cap"></i></div><h3>Kemendikbud</h3><p>Program BOS, Merdeka Belajar, dan pendanaan pendidikan nasional.</p></div>
-        <div class="card"><div class="card-icon"><i class="fas fa-university"></i></div><h3>Universitas Brawijaya</h3><p>Magang guru, riset kolaboratif, dan program pengabdian masyarakat.</p></div>
         <div class="card"><div class="card-icon"><i class="fas fa-industry"></i></div><h3>PT. Pindad</h3><p>Kunjungan industri, magang siswa, dan program vokasi.</p></div>
         <div class="card"><div class="card-icon"><i class="fas fa-hospital"></i></div><h3>RSUD Blambangan</h3><p>Praktik kerja lapangan jurusan kesehatan dan program UKS.</p></div>
         <div class="card"><div class="card-icon"><i class="fas fa-leaf"></i></div><h3>DLH Banyuwangi</h3><p>Program Adiwiyata, pengelolaan sampah, dan konservasi lingkungan.</p></div>
@@ -195,6 +295,7 @@
         <div class="card"><div class="card-icon"><i class="fas fa-utensils"></i></div><h3>Hotel Ketapang Indah</h3><p>Magang siswa jurusan pariwisata dan hospitality.</p></div>
         <div class="card"><div class="card-icon"><i class="fas fa-book"></i></div><h3>Gramedia Banyuwangi</h3><p>Donasi buku, program literasi, dan pengembangan perpustakaan.</p></div>
       </div>
+
       <div class="section-title"><h2><i class="fas fa-lightbulb"></i> Peluang Kolaborasi</h2></div>
       <div class="info-box">
         <h3><i class="fas fa-hand-holding-heart"></i> Bergabung Bersama Kami</h3>
@@ -207,6 +308,7 @@
           <li><strong>Event Edukatif:</strong> Lomba, seminar, atau kegiatan kolaboratif</li>
         </ul>
       </div>
+
       <div class="section-title"><h2><i class="fas fa-address-book"></i> Kontak Mitra</h2></div>
       <div class="contact-grid">
         <div class="c-card">
@@ -238,7 +340,7 @@
       </div>
     </section>
   </main>
-  <!-- Footer dengan Lab Virtual & Tagline Blambangan -->
+
   <footer>
     <div class="foot">
       <div>
@@ -255,7 +357,6 @@
           <li><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas</a></li>
         </ul>
       </div>
-      <!-- Lab Virtual Section - PASTI MUNCUL -->
       <div>
         <h4><i class="fas fa-flask"></i> Lab Virtual</h4>
         <ul>
@@ -273,12 +374,12 @@
         </div>
       </div>
     </div>
-    <!-- Tagline Blambangan - PASTI MUNCUL -->
     <div class="copy">
       <p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
       <p style="margin-top:8px;font-size:0.9rem;opacity:0.8">Website Resmi SMAN 1 Cluring Banyuwangi</p>
     </div>
   </footer>
+
   <!-- Modal Kontak -->
   <div class="modal" id="modal">
     <div class="modal-box">
@@ -318,11 +419,15 @@
       </div>
     </div>
   </div>
+
   <div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="tmsg">Pesan terkirim!</span></div>
+
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded',()=>{
-      setTimeout(()=>document.getElementById('preloader').classList.add('hide'),300);
+      // PRELOADER DIPERCEPAT: Dari 300ms menjadi 50ms
+      setTimeout(()=>document.getElementById('preloader').classList.add('hide'),50);
+      
       if(typeof AOS!=='undefined')AOS.init({duration:600,once:true});
       const tBtn=document.getElementById('themeBtn'),body=document.body;
       if(localStorage.getItem('dark')==='1')body.classList.add('dark-mode');
