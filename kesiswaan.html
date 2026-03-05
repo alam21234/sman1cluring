@@ -1274,6 +1274,14 @@ SMAN 1 Cluring menyediakan berbagai ekstrakurikuler untuk mengembangkan bakat, m
 <p>Belajar membaca rute dan navigasi alam bebas. Melatih kemandirian, survival skill, dan cinta lingkungan.</p>
 </div>
 </div>
+<!-- FOTO EKSTRA: PENCAK SILAT -->
+<div class="org-card" data-aos="zoom-in" data-aos-delay="1100">
+<img src="https://i.ibb.co.com/4nQYXLhT/pencaksilat.jpg" alt="Pencak Silat" class="org-card-image" loading="lazy">
+<div class="org-card-content">
+<h3>Pencak Silat</h3>
+<p>Seni bela diri tradisional Indonesia untuk melatih disiplin, ketangkasan, dan melestarikan budaya bangsa.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="cultural-divider" data-aos="fade-in"></div>
@@ -1284,7 +1292,6 @@ SMAN 1 Cluring menyediakan berbagai ekstrakurikuler untuk mengembangkan bakat, m
 Siswa SMAN 1 Cluring secara aktif mengikuti dan meraih prestasi dalam berbagai kompetisi di tingkat kabupaten, provinsi, hingga nasional. Berikut adalah prestasi terbaru dari ekstrakurikuler Taekwondo.
 </p>
 <div class="prestasi-grid">
-
 <!-- PRESTASI TAEKWONDO - CHEYSHA (JUARA 2) -->
 <div class="prestasi-card silver" data-aos="fade-up" data-aos-delay="100">
 <span class="badge"><i class="fas fa-medal"></i> Juara 2</span>
@@ -1298,7 +1305,6 @@ Siswa SMAN 1 Cluring secara aktif mengikuti dan meraih prestasi dalam berbagai k
 </a>
 </div>
 </div>
-
 <!-- PRESTASI TAEKWONDO - GRISELDA (JUARA 3) -->
 <div class="prestasi-card bronze" data-aos="fade-up" data-aos-delay="200">
 <span class="badge"><i class="fas fa-medal"></i> Juara 3</span>
@@ -1312,7 +1318,6 @@ Siswa SMAN 1 Cluring secara aktif mengikuti dan meraih prestasi dalam berbagai k
 </a>
 </div>
 </div>
-
 </div> <!-- Tutup prestasi-grid -->
 <div class="info-box" data-aos="fade-up">
 <p>
@@ -1608,7 +1613,7 @@ chatMessages.appendChild(messageDiv);
 function getBotResponse(message) {
 const lowerMsg = message.toLowerCase();
 if (lowerMsg.includes('ekskul') || lowerMsg.includes('ekstrakurikuler')) {
-return "SMAN 1 Cluring memiliki berbagai ekstrakurikuler: Pramuka, Paskibra, PMR, Basket, Futsal, Seni Tari, Paduan Suara, KIR, Rohis, Bulu Tangkis, Tae Kwon Do, dan Kewirausahaan!";
+return "SMAN 1 Cluring memiliki berbagai ekstrakurikuler: Pramuka, Paskibra, PMR, Basket, Futsal, Seni Tari, Paduan Suara, KIR, Rohis, Bulu Tangkis, Tae Kwon Do, Pencak Silat, dan Kewirausahaan!";
 } else if (lowerMsg.includes('osis')) {
 return "OSIS SMAN 1 Cluring aktif mengadakan berbagai kegiatan seperti Bakti Sosial, Pentas Seni, dan Program Literasi. Hubungi pembina OSIS untuk info lebih lanjut.";
 } else if (lowerMsg.includes('prestasi')) {
@@ -1619,6 +1624,8 @@ return "Pramuka SMAN 1 Cluring aktif dalam kegiatan perkemahan, bakti sosial, da
 return "Ekstrakurikuler Bulu Tangkis SMAN 1 Cluring melatih keterampilan, kecepatan, dan strategi. Latihan rutin setiap minggu!";
 } else if (lowerMsg.includes('tae kwon do') || lowerMsg.includes('taekwondo')) {
 return "Tae Kwon Do SMAN 1 Cluring melatih disiplin, kekuatan fisik, dan seni bela diri Korea. Terbuka untuk semua siswa!";
+} else if (lowerMsg.includes('pencak silat') || lowerMsg.includes('silat')) {
+return "Ekstrakurikuler Pencak Silat SMAN 1 Cluring melatih seni bela diri tradisional Indonesia, disiplin, dan pelestarian budaya bangsa.";
 } else if (lowerMsg.includes('daftar') || lowerMsg.includes('bergabung')) {
 return "Untuk bergabung dengan ekstrakurikuler, silakan hubungi pembina masing-masing atau datang ke ruang OSIS pada jam istirahat.";
 } else if (lowerMsg.includes('terima kasih') || lowerMsg.includes('thanks')) {
