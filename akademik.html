@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <title>Akademik | SMAN 1 Cluring</title>
 <!-- SEO -->
 <meta name="description" content="Informasi akademik SMAN 1 Cluring Banyuwangi - Kurikulum Merdeka, Program Unggulan, Kalender Akademik, dan Prestasi." />
@@ -49,6 +49,8 @@
 --chat-secondary: #9e7b4b;
 --chat-user: #e3f2fd;
 --chat-bot: #f5f5f5;
+/* Mobile Bottom Nav */
+--bottom-nav-height: 72px;
 }
 .dark-mode {
 --primary: #1e3a8a;
@@ -77,6 +79,7 @@ transition: background-color 0.4s ease, color 0.4s ease;
 overflow-x: hidden;
 font-weight: 400;
 letter-spacing: 0.2px;
+padding-bottom: var(--bottom-nav-height);
 }
 h1, h2, h3, h4 {
 font-family: 'Plus Jakarta Sans', sans-serif;
@@ -118,7 +121,7 @@ animation: spin 1s linear infinite;
 /* ===== WHATSAPP FLOAT BUTTON ===== */
 .whatsapp-float {
 position: fixed;
-bottom: 100px;
+bottom: calc(var(--bottom-nav-height) + 1rem);
 right: 30px;
 background: linear-gradient(135deg, var(--whatsapp) 0%, var(--whatsapp-dark) 100%);
 color: white;
@@ -171,7 +174,7 @@ animation: ripple 1.5s infinite;
 /* ===== CHAT BUTTON & BOX ===== */
 .chat-button {
 position: fixed;
-bottom: 30px;
+bottom: calc(var(--bottom-nav-height) + 1rem);
 right: 30px;
 background: linear-gradient(135deg, var(--chat-primary) 0%, var(--primary-light) 100%);
 width: 65px;
@@ -210,7 +213,7 @@ border: 2px solid white;
 }
 .chat-box {
 position: fixed;
-bottom: 110px;
+bottom: calc(var(--bottom-nav-height) + 120px);
 right: 30px;
 width: 380px;
 height: 500px;
@@ -553,7 +556,7 @@ transition: var(--transition);
 .breadcrumb a:hover {
 text-decoration: underline;
 }
-/* ===== INTERNAL NAVIGATION ===== */
+/* ===== INTERNAL NAVIGATION - DESKTOP (TOP) ===== */
 .internal-nav {
 max-width: 1300px;
 margin: -40px auto 0;
@@ -591,6 +594,70 @@ background: var(--primary);
 color: var(--white);
 transform: translateY(-2px);
 box-shadow: 0 4px 12px rgba(10,42,94,0.2);
+}
+/* ===== MOBILE BOTTOM NAVIGATION - LIKE APP ===== */
+.mobile-bottom-nav {
+display: none;
+position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+background: var(--white);
+border-top: 1px solid var(--glass-border);
+box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+z-index: 999;
+padding: 0.5rem 0.75rem;
+padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
+}
+.dark-mode .mobile-bottom-nav {
+background: var(--light);
+border-top-color: rgba(255, 255, 255, 0.1);
+}
+.mobile-bottom-nav ul {
+display: flex;
+justify-content: space-around;
+align-items: center;
+list-style: none;
+margin: 0;
+padding: 0;
+gap: 0.25rem;
+}
+.mobile-bottom-nav a {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 0.5rem 0.75rem;
+color: var(--gray);
+text-decoration: none;
+font-size: 0.7rem;
+font-weight: 600;
+border-radius: var(--border-radius-sm);
+transition: all 0.3s ease;
+flex: 1;
+max-width: 80px;
+}
+.mobile-bottom-nav a i {
+font-size: 1.3rem;
+margin-bottom: 0.25rem;
+transition: transform 0.3s ease;
+}
+.mobile-bottom-nav a span {
+font-size: 0.65rem;
+white-space: nowrap;
+}
+.mobile-bottom-nav a:hover,
+.mobile-bottom-nav a.active {
+color: var(--primary);
+background: rgba(158, 123, 75, 0.1);
+}
+.mobile-bottom-nav a:hover i,
+.mobile-bottom-nav a.active i {
+transform: translateY(-2px);
+color: var(--secondary);
+}
+.mobile-bottom-nav a.active {
+color: var(--secondary);
 }
 /* ===== CONTENT ===== */
 .container {
@@ -939,34 +1006,24 @@ padding: 10px 16px;
 font-size: 0.9rem;
 }
 .program-grid { grid-template-columns: 1fr; }
-.whatsapp-float {
-bottom: 20px;
-right: 20px;
-padding: 12px 20px;
 }
-.whatsapp-float span { display: none; }
-.whatsapp-float i { font-size: 32px; }
-.chat-button {
-bottom: 100px;
-right: 20px;
-width: 55px;
-height: 55px;
-font-size: 24px;
-z-index: 999;
-}
-.chat-box {
-width: 320px;
-height: 450px;
-right: 20px;
-bottom: 170px;
-z-index: 1000;
-}
-}
+/* Mobile - Bottom Navigation LIKE APP */
 @media (max-width: 768px) {
+/* Hide desktop internal nav on mobile */
+.internal-nav {
+display: none;
+}
+/* Show mobile bottom nav */
+.mobile-bottom-nav {
+display: block;
+}
 .page-header { padding: 80px 20px 60px; min-height: 300px; }
 .page-header h1 { font-size: 2rem; }
 .container { padding: 0 20px; }
-.section { padding: 35px 25px; }
+.section { 
+padding: 35px 25px;
+scroll-margin-top: 100px;
+}
 .section h2 { font-size: 1.8rem; }
 .footer-info-panel {
 flex-direction: column;
@@ -983,11 +1040,47 @@ width: 100%;
 font-size: 1.8rem;
 width: 100%;
 }
+/* WhatsApp button - above bottom nav */
+.whatsapp-float {
+bottom: calc(var(--bottom-nav-height) + 0.75rem);
+right: 1rem;
+padding: 0.625rem 1rem;
+}
+.whatsapp-float span { display: none; }
+.whatsapp-float {
+width: clamp(50px, 12vw, 56px);
+height: clamp(50px, 12vw, 56px);
+padding: 0;
+justify-content: center;
+border-radius: 50%;
+}
+.whatsapp-float i { 
+font-size: clamp(1.5rem, 4vw, 1.8rem);
+animation: none;
+}
+/* Chat button - above bottom nav */
 .chat-button {
-bottom: 90px;
+bottom: calc(var(--bottom-nav-height) + 0.75rem);
+right: 1rem;
+width: 55px;
+height: 55px;
+font-size: 24px;
+z-index: 999;
 }
 .chat-box {
-bottom: 155px;
+width: 320px;
+height: 450px;
+right: 1rem;
+bottom: calc(var(--bottom-nav-height) + 160px);
+z-index: 1000;
+}
+/* Dark mode toggle position */
+.dark-mode-toggle {
+position: fixed;
+top: calc(76px + 10px);
+right: 10px;
+z-index: 1001;
+margin: 0;
 }
 }
 @media (max-width: 480px) {
@@ -999,30 +1092,24 @@ bottom: 155px;
 .internal-nav a { width: 100%; padding: 10px; }
 .section { padding: 30px 20px; }
 .section h2 { font-size: 1.6rem; }
-.whatsapp-float {
-bottom: 15px;
-right: 15px;
-padding: 8px;
-width: 45px;
-height: 45px;
-border-radius: 50%;
-justify-content: center;
+/* Bottom nav smaller text */
+.mobile-bottom-nav a {
+padding: 0.4rem 0.5rem;
 }
-.whatsapp-float i { font-size: 24px; }
-.chat-button {
-bottom: 80px;
-right: 15px;
-width: 50px;
-height: 50px;
-font-size: 22px;
-z-index: 999;
+.mobile-bottom-nav a span {
+font-size: 0.6rem;
 }
-.chat-box {
-width: 300px;
-height: 400px;
-right: 15px;
-bottom: 140px;
-z-index: 1000;
+.mobile-bottom-nav a i {
+font-size: 1.2rem;
+}
+}
+/* Ultra Small Mobile */
+@media (max-width: 360px) {
+.mobile-bottom-nav a span {
+display: none;
+}
+.mobile-bottom-nav a {
+padding: 0.6rem 0.5rem;
 }
 }
 /* Memastikan chat box tidak menutupi menu navigasi saat menu terbuka */
@@ -1031,6 +1118,26 @@ nav ul.active + .chat-box,
 nav ul.active ~ .chat-box,
 nav ul.active .chat-box {
 display: none !important;
+}
+}
+/* ===== MOBILE PERFORMANCE OPTIMIZATION ===== */
+@media (max-width: 768px) {
+.section {
+opacity: 1 !important;
+transform: none !important;
+transition: none !important;
+}
+.section:hover {
+transform: none !important;
+}
+.program-card:hover {
+transform: none !important;
+}
+html {
+scroll-behavior: auto;
+}
+.section {
+box-shadow: var(--shadow-sm) !important;
 }
 }
 </style>
@@ -1127,13 +1234,34 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <a href="index.html">Beranda</a> / Akademik
 </div>
 </section>
-<!-- INTERNAL NAVIGATION -->
+<!-- INTERNAL NAVIGATION - DESKTOP (TOP) -->
 <nav class="internal-nav" data-aos="fade-down">
 <ul>
 <li><a href="#kurikulum" class="nav-link active" data-aos="fade-up" data-aos-delay="100">Kurikulum</a></li>
 <li><a href="#program" class="nav-link" data-aos="fade-up" data-aos-delay="200">Program Unggulan</a></li>
 <li><a href="#kalender" class="nav-link" data-aos="fade-up" data-aos-delay="300">Kalender Akademik</a></li>
 <li><a href="#prestasi" class="nav-link" data-aos="fade-up" data-aos-delay="400">Prestasi</a></li>
+</ul>
+</nav>
+<!-- MOBILE BOTTOM NAVIGATION - LIKE APP -->
+<nav class="mobile-bottom-nav" aria-label="Mobile section navigation">
+<ul>
+<li><a href="#kurikulum" class="mobile-nav-link active" data-section="kurikulum">
+<i class="fas fa-book-open" aria-hidden="true"></i>
+<span>Kurikulum</span>
+</a></li>
+<li><a href="#program" class="mobile-nav-link" data-section="program">
+<i class="fas fa-trophy" aria-hidden="true"></i>
+<span>Program</span>
+</a></li>
+<li><a href="#kalender" class="mobile-nav-link" data-section="kalender">
+<i class="fas fa-calendar-alt" aria-hidden="true"></i>
+<span>Kalender</span>
+</a></li>
+<li><a href="#prestasi" class="mobile-nav-link" data-section="prestasi">
+<i class="fas fa-medal" aria-hidden="true"></i>
+<span>Prestasi</span>
+</a></li>
 </ul>
 </nav>
 <!-- CONTENT -->
@@ -1371,17 +1499,19 @@ Prestasi terbaru: SMAN 1 Cluring meraih <strong>Innovative Government Award (IGA
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
 // Initialize AOS
+const isMobile = window.innerWidth <= 768;
 AOS.init({
-duration: 800,
+duration: isMobile ? 0 : 800,
 once: true,
-easing: 'ease-out-cubic'
+easing: 'ease-out-cubic',
+disable: isMobile
 });
 // Preloader
 window.addEventListener('load', () => {
 const preloader = document.getElementById('preloader');
 setTimeout(() => {
 preloader.classList.add('fade-out');
-}, 800);
+}, isMobile ? 100 : 800);
 });
 // Dark Mode Toggle
 const darkModeToggle = document.getElementById('darkModeToggle');
@@ -1398,13 +1528,15 @@ localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
 function toggleMenu() {
 const navMenu = document.getElementById("navMenu");
 navMenu.classList.toggle("active");
-// Jika menu terbuka, sembunyikan chat box
 if (navMenu.classList.contains('active')) {
 chatBox.classList.remove('active');
 }
 }
 // Smooth scrolling untuk internal navigation
-document.querySelectorAll('.nav-link').forEach(anchor => {
+const navLinks = document.querySelectorAll('.nav-link');
+const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+const allNavLinks = [...navLinks, ...mobileNavLinks];
+allNavLinks.forEach(anchor => {
 anchor.addEventListener('click', function(e) {
 e.preventDefault();
 const menu = document.getElementById("navMenu");
@@ -1412,11 +1544,14 @@ menu.classList.remove("active");
 const targetId = this.getAttribute('href');
 const target = document.querySelector(targetId);
 if (target) {
-target.scrollIntoView({
-behavior: 'smooth',
-block: 'start'
+const headerOffset = isMobile ? 100 : 120;
+const elementPosition = target.getBoundingClientRect().top;
+const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+window.scrollTo({
+top: offsetPosition,
+behavior: isMobile ? 'auto' : 'smooth'
 });
-document.querySelectorAll('.nav-link').forEach(link => {
+allNavLinks.forEach(link => {
 link.classList.remove('active');
 });
 this.classList.add('active');
@@ -1426,15 +1561,14 @@ this.classList.add('active');
 // Update active link saat scroll
 window.addEventListener('scroll', function() {
 const sections = document.querySelectorAll('.section');
-const navLinks = document.querySelectorAll('.nav-link');
 let currentSection = '';
 sections.forEach(section => {
-const sectionTop = section.offsetTop - 150;
+const sectionTop = section.offsetTop - (isMobile ? 100 : 150);
 if (pageYOffset >= sectionTop) {
 currentSection = section.getAttribute('id');
 }
 });
-navLinks.forEach(link => {
+allNavLinks.forEach(link => {
 link.classList.remove('active');
 if (link.getAttribute('href').substring(1) === currentSection) {
 link.classList.add('active');
@@ -1442,7 +1576,8 @@ link.classList.add('active');
 });
 });
 // Initialize first link as active
-document.querySelector('.nav-link[href="#kurikulum"]').classList.add('active');
+document.querySelector('.nav-link[href="#kurikulum"]')?.classList.add('active');
+document.querySelector('.mobile-nav-link[href="#kurikulum"]')?.classList.add('active');
 // Realtime Clock untuk Footer
 function updateClock() {
 const now = new Date();
@@ -1491,24 +1626,20 @@ const chatSend = document.getElementById('chatSend');
 const chatMessages = document.getElementById('chatMessages');
 const quickReplies = document.querySelectorAll('.quick-reply');
 const notificationBadge = document.querySelector('.notification-badge');
-// Toggle chat box
 chatButton.addEventListener('click', () => {
 chatBox.classList.toggle('active');
 if (chatBox.classList.contains('active')) {
 notificationBadge.style.display = 'none';
 chatMessages.scrollTop = chatMessages.scrollHeight;
-// Jika menu mobile terbuka, tutup menu
 const navMenu = document.getElementById("navMenu");
 if (navMenu.classList.contains('active')) {
 navMenu.classList.remove('active');
 }
 }
 });
-// Close chat box
 chatClose.addEventListener('click', () => {
 chatBox.classList.remove('active');
 });
-// Send message function
 function sendMessage() {
 const message = chatInput.value.trim();
 if (message === '') return;
@@ -1523,13 +1654,11 @@ chatMessages.scrollTop = chatMessages.scrollHeight;
 }, 1000);
 chatMessages.scrollTop = chatMessages.scrollHeight;
 }
-// Add message to chat
 function addMessage(text, sender) {
 const messageDiv = document.createElement('div');
 messageDiv.className = `message ${sender}`;
 const now = new Date();
 const timeString = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
-// Gunakan foto yang sama untuk avatar bot
 const avatarSrc = 'https://i.ibb.co.com/bMXVm6cQ/2-Siswo-Hariningsih-S-Pd-Penanggung-Jawab-Kegiatan.jpg';
 messageDiv.innerHTML = `
 <div class="message-avatar">
@@ -1542,7 +1671,6 @@ ${sender === 'bot' ? `<img src="${avatarSrc}" alt="Ibu Siswo Hariningsih, S.Pd">
 `;
 chatMessages.appendChild(messageDiv);
 }
-// Bot response logic
 function getBotResponse(message) {
 const lowerMsg = message.toLowerCase();
 if (lowerMsg.includes('kurikulum') || lowerMsg.includes('merdeka')) {
@@ -1561,15 +1689,12 @@ return "Sama-sama! Senang bisa membantu. Jangan ragu untuk bertanya lagi ya.";
 return "Terima kasih atas pertanyaannya. Untuk informasi lebih lanjut, silakan hubungi humas langsung melalui WhatsApp atau telepon ke nomor 0823-1971-2420.";
 }
 }
-// Send message on button click
 chatSend.addEventListener('click', sendMessage);
-// Send message on Enter key
 chatInput.addEventListener('keypress', (e) => {
 if (e.key === 'Enter') {
 sendMessage();
 }
 });
-// Quick replies
 quickReplies.forEach(reply => {
 reply.addEventListener('click', () => {
 const message = reply.getAttribute('data-message');
@@ -1577,7 +1702,6 @@ chatInput.value = message;
 sendMessage();
 });
 });
-// Close chat when clicking outside
 document.addEventListener('click', (e) => {
 if (!chatBox.contains(e.target) && !chatButton.contains(e.target) && chatBox.classList.contains('active')) {
 chatBox.classList.remove('active');
