@@ -49,6 +49,8 @@
 --chat-secondary: #9e7b4b;
 --chat-user: #e3f2fd;
 --chat-bot: #f5f5f5;
+/* Mobile Nav Height */
+--mobile-nav-height: 70px;
 }
 .dark-mode {
 --primary: #1e3a8a;
@@ -77,6 +79,13 @@ transition: background-color 0.4s ease, color 0.4s ease;
 overflow-x: hidden;
 font-weight: 400;
 letter-spacing: 0.2px;
+/* Padding bottom for mobile nav */
+padding-bottom: 0;
+}
+@media (max-width: 768px) {
+body {
+padding-bottom: var(--mobile-nav-height);
+}
 }
 h1, h2, h3, h4 {
 font-family: 'Plus Jakarta Sans', sans-serif;
@@ -542,7 +551,7 @@ transition: var(--transition);
 .breadcrumb a:hover {
 text-decoration: underline;
 }
-/* ===== INTERNAL NAVIGATION ===== */
+/* ===== INTERNAL NAVIGATION (DESKTOP) ===== */
 .internal-nav {
 max-width: 1300px;
 margin: -40px auto 0;
@@ -581,6 +590,64 @@ color: var(--white);
 transform: translateY(-2px);
 box-shadow: 0 4px 12px rgba(10,42,94,0.2);
 }
+
+/* ===== MOBILE BOTTOM NAVIGATION (APP STYLE) ===== */
+.mobile-bottom-nav {
+display: none; /* Hidden on desktop */
+position: fixed;
+bottom: 0;
+left: 0;
+width: 100%;
+height: var(--mobile-nav-height);
+background: var(--white);
+box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+z-index: 995;
+border-top: 1px solid var(--glass-border);
+}
+.dark-mode .mobile-bottom-nav {
+background: var(--white); /* Keep light for contrast or use var(--light) */
+background: var(--primary-dark);
+}
+.mobile-bottom-nav ul {
+display: flex;
+justify-content: space-around;
+align-items: center;
+height: 100%;
+list-style: none;
+margin: 0;
+padding: 0;
+}
+.mobile-bottom-nav li {
+flex: 1;
+text-align: center;
+}
+.mobile-bottom-nav a {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-decoration: none;
+color: var(--gray);
+font-size: 0.75rem;
+font-weight: 600;
+gap: 4px;
+height: 100%;
+transition: var(--transition);
+}
+.mobile-bottom-nav a i {
+font-size: 1.2rem;
+margin-bottom: 2px;
+}
+.mobile-bottom-nav a.active {
+color: var(--primary);
+}
+.dark-mode .mobile-bottom-nav a.active {
+color: var(--secondary);
+}
+.mobile-bottom-nav a:hover {
+background: rgba(0,0,0,0.05);
+}
+
 /* ===== CONTENT ===== */
 .container {
 max-width: 1300px;
@@ -593,7 +660,7 @@ padding: 50px;
 border-radius: var(--border-radius);
 box-shadow: var(--shadow-sm);
 margin-bottom: 40px;
-scroll-margin-top: 180px;
+scroll-margin-top: 180px; /* Default for desktop */
 transition: var(--transition);
 border: 1px solid rgba(158,123,75,0.1);
 }
@@ -965,27 +1032,29 @@ font-size: 1.1rem;
 white-space: normal;
 }
 .page-header h1 { font-size: 2.2rem; }
+/* Hide Desktop Internal Nav on Mobile */
 .internal-nav {
-top: 80px;
-padding: 10px;
+display: none;
 }
-.internal-nav a {
-padding: 10px 16px;
-font-size: 0.9rem;
+/* Show Mobile Bottom Nav */
+.mobile-bottom-nav {
+display: block;
 }
+/* Adjust Section Scroll Margin for Mobile */
 .section {
-scroll-margin-top: 200px;
+scroll-margin-top: 100px; /* Adjusted for header */
+padding: 35px 25px;
 }
 .org-grid { grid-template-columns: 1fr; }
 .whatsapp-float {
-bottom: 20px;
+bottom: 90px; /* Moved up above bottom nav */
 right: 20px;
 padding: 12px 20px;
 }
 .whatsapp-float span { display: none; }
 .whatsapp-float i { font-size: 32px; }
 .chat-button {
-bottom: 100px;
+bottom: 90px; /* Moved up above bottom nav */
 right: 20px;
 width: 55px;
 height: 55px;
@@ -1006,7 +1075,6 @@ background-attachment: scroll;
 }
 .page-header h1 { font-size: 2rem; }
 .container { padding: 0 20px; }
-.section { padding: 35px 25px; }
 .section h2 { font-size: 1.8rem; }
 .footer-info-panel {
 flex-direction: column;
@@ -1028,28 +1096,12 @@ width: 100%;
 .brand span { display: none; }
 .brand img { width: 44px; }
 .page-header h1 { font-size: 1.8rem; }
-.internal-nav {
-padding: 10px;
-position: relative;
-top: 0;
-margin: 20px auto;
-box-shadow: none;
-}
-.internal-nav ul {
-flex-direction: column;
-gap: 8px;
-}
-.internal-nav a {
-width: 100%;
-padding: 10px;
-}
 .section {
 padding: 30px 20px;
-scroll-margin-top: 100px;
 }
 .section h2 { font-size: 1.6rem; }
 .whatsapp-float {
-bottom: 15px;
+bottom: 85px;
 right: 15px;
 padding: 8px;
 width: 45px;
@@ -1059,7 +1111,7 @@ justify-content: center;
 }
 .whatsapp-float i { font-size: 24px; }
 .chat-button {
-bottom: 80px;
+bottom: 85px;
 right: 15px;
 width: 50px;
 height: 50px;
@@ -1166,7 +1218,8 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <a href="index.html">Beranda</a> / Kesiswaan
 </div>
 </section>
-<!-- INTERNAL NAVIGATION -->
+
+<!-- INTERNAL NAVIGATION (DESKTOP ONLY) -->
 <nav class="internal-nav" data-aos="fade-down">
 <ul>
 <li><a href="#osis" class="nav-link active" data-aos="fade-up" data-aos-delay="100">OSIS</a></li>
@@ -1175,6 +1228,17 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <li><a href="#program" class="nav-link" data-aos="fade-up" data-aos-delay="400">Program</a></li>
 </ul>
 </nav>
+
+<!-- MOBILE BOTTOM NAVIGATION (APP STYLE) -->
+<nav class="mobile-bottom-nav">
+<ul>
+<li><a href="#osis" class="mobile-nav-link active"><i class="fas fa-users"></i> OSIS</a></li>
+<li><a href="#ekskul" class="mobile-nav-link"><i class="fas fa-star"></i> Eskul</a></li>
+<li><a href="#prestasi" class="mobile-nav-link"><i class="fas fa-trophy"></i> Prestasi</a></li>
+<li><a href="#program" class="mobile-nav-link"><i class="fas fa-calendar-check"></i> Program</a></li>
+</ul>
+</nav>
+
 <!-- CONTENT -->
 <section class="container">
 <!-- OSIS -->
@@ -1450,28 +1514,38 @@ localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
 function toggleMenu() {
 document.getElementById("navMenu").classList.toggle("active");
 }
-// ✅ Smooth scrolling untuk internal navigation (DIPERBAIKI UNTUK MOBILE)
-document.querySelectorAll('.nav-link').forEach(anchor => {
+// ✅ Smooth scrolling untuk internal navigation (DIPERBAIKI UNTUK MOBILE & BOTTOM NAV)
+const allNavLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+allNavLinks.forEach(anchor => {
 anchor.addEventListener('click', function(e) {
 e.preventDefault();
+// Close mobile main menu if open
 const menu = document.getElementById("navMenu");
 menu.classList.remove("active");
+
 const targetId = this.getAttribute('href');
 const target = document.querySelector(targetId);
 if (target) {
 // ✅ Hitung offset dinamis berdasarkan ukuran layar
+// Mobile has bottom nav, so we need to ensure content isn't hidden
 const headerOffset = window.innerWidth <= 480 ? 100 :
-window.innerWidth <= 880 ? 200 : 180;
+window.innerWidth <= 880 ? 100 : 180;
 const elementPosition = target.getBoundingClientRect().top;
 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 window.scrollTo({
 top: offsetPosition,
 behavior: 'smooth'
 });
-document.querySelectorAll('.nav-link').forEach(link => {
+
+// Update Active State for BOTH navs
+document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
 link.classList.remove('active');
 });
-this.classList.add('active');
+// Add active to clicked link AND corresponding link in other nav
+const href = this.getAttribute('href');
+document.querySelectorAll(`.nav-link[href="${href}"], .mobile-nav-link[href="${href}"]`).forEach(link => {
+link.classList.add('active');
+});
 }
 });
 });
@@ -1497,12 +1571,12 @@ target.style.backgroundColor = '';
 // Update active link saat scroll
 window.addEventListener('scroll', function() {
 const sections = document.querySelectorAll('.section');
-const navLinks = document.querySelectorAll('.nav-link');
+const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
 let currentSection = '';
 sections.forEach(section => {
 // ✅ Offset dinamis untuk mobile
 const scrollOffset = window.innerWidth <= 480 ? 100 :
-window.innerWidth <= 880 ? 200 : 150;
+window.innerWidth <= 880 ? 100 : 150;
 const sectionTop = section.offsetTop - scrollOffset;
 if (pageYOffset >= sectionTop) {
 currentSection = section.getAttribute('id');
@@ -1516,7 +1590,7 @@ link.classList.add('active');
 });
 });
 // Initialize first link as active
-document.querySelector('.nav-link[href="#osis"]').classList.add('active');
+document.querySelectorAll('.nav-link[href="#osis"], .mobile-nav-link[href="#osis"]').forEach(link => link.classList.add('active'));
 // Realtime Clock untuk Footer
 function updateClock() {
 const now = new Date();
