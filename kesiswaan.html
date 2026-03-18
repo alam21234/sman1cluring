@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
 <title>Kesiswaan | SMAN 1 Cluring</title>
 <!-- SEO -->
 <meta name="description" content="Informasi kegiatan kesiswaan, organisasi, ekstrakurikuler, dan prestasi siswa di SMAN 1 Cluring Banyuwangi." />
@@ -82,7 +82,7 @@ letter-spacing: 0.2px;
 /* Padding bottom for mobile nav */
 padding-bottom: 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 880px) {
 body {
 padding-bottom: var(--mobile-nav-height);
 }
@@ -551,7 +551,7 @@ transition: var(--transition);
 .breadcrumb a:hover {
 text-decoration: underline;
 }
-/* ===== INTERNAL NAVIGATION (DESKTOP) ===== */
+/* ===== INTERNAL NAVIGATION (DESKTOP ONLY) ===== */
 .internal-nav {
 max-width: 1300px;
 margin: -40px auto 0;
@@ -590,7 +590,6 @@ color: var(--white);
 transform: translateY(-2px);
 box-shadow: 0 4px 12px rgba(10,42,94,0.2);
 }
-
 /* ===== MOBILE BOTTOM NAVIGATION (APP STYLE) ===== */
 .mobile-bottom-nav {
 display: none; /* Hidden on desktop */
@@ -605,7 +604,7 @@ z-index: 995;
 border-top: 1px solid var(--glass-border);
 }
 .dark-mode .mobile-bottom-nav {
-background: var(--white); /* Keep light for contrast or use var(--light) */
+background: var(--white);
 background: var(--primary-dark);
 }
 .mobile-bottom-nav ul {
@@ -647,7 +646,6 @@ color: var(--secondary);
 .mobile-bottom-nav a:hover {
 background: rgba(0,0,0,0.05);
 }
-
 /* ===== CONTENT ===== */
 .container {
 max-width: 1300px;
@@ -998,6 +996,19 @@ background: var(--white);
 .dark-mode .prestasi-card {
 background: linear-gradient(145deg, rgba(212,175,55,0.1) 0%, rgba(199,168,84,0.05) 100%);
 }
+/* ===== BILINGUAL FINE-TUNING ===== */
+.lang-id, .lang-en {
+display: inline;
+}
+.lang-en {
+display: none;
+}
+body[lang="en"] .lang-id {
+display: none;
+}
+body[lang="en"] .lang-en {
+display: inline;
+}
 /* ===== RESPONSIVE ===== */
 @media (max-width: 880px) {
 .menu-toggle {
@@ -1042,9 +1053,10 @@ display: block;
 }
 /* Adjust Section Scroll Margin for Mobile */
 .section {
-scroll-margin-top: 100px; /* Adjusted for header */
+scroll-margin-top: 90px; /* Adjusted for header + bottom nav */
 padding: 35px 25px;
 }
+.section h2 { font-size: 1.9rem; }
 .org-grid { grid-template-columns: 1fr; }
 .whatsapp-float {
 bottom: 90px; /* Moved up above bottom nav */
@@ -1126,7 +1138,7 @@ bottom: 140px;
 }
 </style>
 </head>
-<body>
+<body lang="id">
 <!-- PRELOADER -->
 <div id="preloader">
 <div class="spinner"></div>
@@ -1135,7 +1147,8 @@ bottom: 140px;
 <a href="https://wa.me/6282319712420?text=Halo%20saya%20ingin%20bertanya%20tentang%20kegiatan%20kesiswaan%20SMAN%201%20Cluring"
 class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <i class="fab fa-whatsapp"></i>
-<span>Chat Admin</span>
+<span class="lang-id">Chat Admin</span>
+<span class="lang-en">Chat Admin</span>
 </a>
 <!-- CHAT BUTTON & BOX -->
 <div class="chat-button" id="chatButton">
@@ -1148,17 +1161,17 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <i class="fas fa-robot"></i>
 </div>
 <div class="chat-header-info">
-<h4>Asisten Virtual SMAN 1 Cluring</h4>
-<p><i class="fas fa-circle"></i> Online - Siap membantu</p>
+<h4><span class="lang-id">Asisten Virtual SMAN 1 Cluring</span><span class="lang-en">Virtual Assistant SMAN 1 Cluring</span></h4>
+<p><i class="fas fa-circle"></i> <span class="lang-id">Online - Siap membantu</span><span class="lang-en">Online - Ready to help</span></p>
 </div>
 <div class="chat-close" id="chatClose">
 <i class="fas fa-times"></i>
 </div>
 </div>
 <div class="quick-replies">
-<span class="quick-reply" data-message="Ekstrakurikuler">⚽ Ekstrakurikuler</span>
+<span class="quick-reply" data-message="Ekstrakurikuler">⚽ <span class="lang-id">Ekstrakurikuler</span><span class="lang-en">Extracurricular</span></span>
 <span class="quick-reply" data-message="OSIS">🏛️ OSIS</span>
-<span class="quick-reply" data-message="Prestasi">🏆 Prestasi</span>
+<span class="quick-reply" data-message="Prestasi">🏆 <span class="lang-id">Prestasi</span><span class="lang-en">Achievements</span></span>
 <span class="quick-reply" data-message="Pramuka">🪖 Pramuka</span>
 </div>
 <div class="chat-messages" id="chatMessages">
@@ -1167,8 +1180,9 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <i class="fas fa-robot"></i>
 </div>
 <div class="message-content">
-<p>Halo! Selamat datang di layanan bantuan kesiswaan SMAN 1 Cluring. Ada yang bisa saya bantu?</p>
-<div class="message-time">Baru saja</div>
+<p class="lang-id">Halo! Selamat datang di layanan bantuan kesiswaan SMAN 1 Cluring. Ada yang bisa saya bantu?</p>
+<p class="lang-en">Hello! Welcome to the student affairs assistance service of SMAN 1 Cluring. How can I help you?</p>
+<div class="message-time"><span class="lang-id">Baru saja</span><span class="lang-en">Just now</span></div>
 </div>
 </div>
 </div>
@@ -1190,16 +1204,16 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <div class="nav-right">
 <nav>
 <ul id="navMenu">
-<li><a href="index.html">Home</a></li>
-<li><a href="profil.html">Profil</a></li>
-<li><a href="akademik.html">Akademik</a></li>
-<li><a href="kesiswaan.html" class="active">Kesiswaan</a></li>
-<li><a href="sarpras.html">Sarpras</a></li>
-<li><a href="humas.html">Humas</a></li>
-<li><a href="mitra.html">Mitra</a></li>
-<li><a href="alumni.html">Alumni</a></li>
-<li><a href="artikel.html">Artikel</a></li>
-<li><a href="#kontak">Kontak</a></li>
+<li><a href="index.html"><span class="lang-id">Home</span><span class="lang-en">Home</span></a></li>
+<li><a href="profil.html"><span class="lang-id">Profil</span><span class="lang-en">Profile</span></a></li>
+<li><a href="akademik.html"><span class="lang-id">Akademik</span><span class="lang-en">Academics</span></a></li>
+<li><a href="kesiswaan.html" class="active"><span class="lang-id">Kesiswaan</span><span class="lang-en">Student Affairs</span></a></li>
+<li><a href="sarpras.html"><span class="lang-id">Sarpras</span><span class="lang-en">Facilities</span></a></li>
+<li><a href="humas.html"><span class="lang-id">Humas</span><span class="lang-en">Public Relations</span></a></li>
+<li><a href="mitra.html"><span class="lang-id">Mitra</span><span class="lang-en">Partners</span></a></li>
+<li><a href="alumni.html"><span class="lang-id">Alumni</span><span class="lang-en">Alumni</span></a></li>
+<li><a href="artikel.html"><span class="lang-id">Artikel</span><span class="lang-en">Articles</span></a></li>
+<li><a href="#kontak"><span class="lang-id">Kontak</span><span class="lang-en">Contact</span></a></li>
 <li style="display: flex; align-items: center;">
 <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
 <i class="fas fa-moon"></i>
@@ -1213,29 +1227,29 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 </header>
 <!-- PAGE HEADER -->
 <section class="page-header" data-aos="zoom-in">
-<h1 data-aos="fade-up">Bidang Kesiswaan</h1>
+<h1 data-aos="fade-up"><span class="lang-id">Bidang Kesiswaan</span><span class="lang-en">Student Affairs</span></h1>
 <div class="breadcrumb" data-aos="fade-up" data-aos-delay="100">
-<a href="index.html">Beranda</a> / Kesiswaan
+<a href="index.html"><span class="lang-id">Beranda</span><span class="lang-en">Home</span></a> / <span class="lang-id">Kesiswaan</span><span class="lang-en">Student Affairs</span>
 </div>
 </section>
 
 <!-- INTERNAL NAVIGATION (DESKTOP ONLY) -->
 <nav class="internal-nav" data-aos="fade-down">
 <ul>
-<li><a href="#osis" class="nav-link active" data-aos="fade-up" data-aos-delay="100">OSIS</a></li>
-<li><a href="#ekskul" class="nav-link" data-aos="fade-up" data-aos-delay="200">Ekstrakurikuler</a></li>
-<li><a href="#prestasi" class="nav-link" data-aos="fade-up" data-aos-delay="300">Prestasi</a></li>
-<li><a href="#program" class="nav-link" data-aos="fade-up" data-aos-delay="400">Program</a></li>
+<li><a href="#osis" class="nav-link active" data-aos="fade-up" data-aos-delay="100"><span class="lang-id">OSIS</span><span class="lang-en">OSIS</span></a></li>
+<li><a href="#ekskul" class="nav-link" data-aos="fade-up" data-aos-delay="200"><span class="lang-id">Ekstrakurikuler</span><span class="lang-en">Extracurricular</span></a></li>
+<li><a href="#prestasi" class="nav-link" data-aos="fade-up" data-aos-delay="300"><span class="lang-id">Prestasi</span><span class="lang-en">Achievements</span></a></li>
+<li><a href="#program" class="nav-link" data-aos="fade-up" data-aos-delay="400"><span class="lang-id">Program</span><span class="lang-en">Programs</span></a></li>
 </ul>
 </nav>
 
 <!-- MOBILE BOTTOM NAVIGATION (APP STYLE) -->
 <nav class="mobile-bottom-nav">
 <ul>
-<li><a href="#osis" class="mobile-nav-link active"><i class="fas fa-users"></i> OSIS</a></li>
-<li><a href="#ekskul" class="mobile-nav-link"><i class="fas fa-star"></i> Eskul</a></li>
-<li><a href="#prestasi" class="mobile-nav-link"><i class="fas fa-trophy"></i> Prestasi</a></li>
-<li><a href="#program" class="mobile-nav-link"><i class="fas fa-calendar-check"></i> Program</a></li>
+<li><a href="#osis" class="mobile-nav-link active"><i class="fas fa-users"></i> <span class="lang-id">OSIS</span><span class="lang-en">OSIS</span></a></li>
+<li><a href="#ekskul" class="mobile-nav-link"><i class="fas fa-star"></i> <span class="lang-id">Eskul</span><span class="lang-en">Eskul</span></a></li>
+<li><a href="#prestasi" class="mobile-nav-link"><i class="fas fa-trophy"></i> <span class="lang-id">Prestasi</span><span class="lang-en">Achievements</span></a></li>
+<li><a href="#program" class="mobile-nav-link"><i class="fas fa-calendar-check"></i> <span class="lang-id">Program</span><span class="lang-en">Programs</span></a></li>
 </ul>
 </nav>
 
@@ -1243,99 +1257,103 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <section class="container">
 <!-- OSIS -->
 <div class="section" id="osis" data-aos="fade-up">
-<h2><i class="fas fa-users"></i> Organisasi Siswa Intra Sekolah</h2>
+<h2><i class="fas fa-users"></i> <span class="lang-id">Organisasi Siswa Intra Sekolah</span><span class="lang-en">Student Organization (OSIS)</span></h2>
 <p data-aos="fade-right">
-OSIS SMAN 1 Cluring merupakan wadah kepemimpinan siswa yang berperan aktif dalam mengembangkan potensi, kreativitas, dan karakter peserta didik melalui berbagai program kerja yang inovatif dan bermanfaat.
+<span class="lang-id">OSIS SMAN 1 Cluring merupakan wadah kepemimpinan siswa yang berperan aktif dalam mengembangkan potensi, kreativitas, dan karakter peserta didik melalui berbagai program kerja yang inovatif dan bermanfaat.</span>
+<span class="lang-en">OSIS SMAN 1 Cluring is a student leadership platform that actively develops students' potential, creativity, and character through various innovative and beneficial work programs.</span>
 </p>
 <p data-aos="fade-left">
-Dengan semangat "Sekali di Cluring, Selamanya di Hati", OSIS berkomitmen untuk menciptakan lingkungan sekolah yang kondusif, inklusif, dan penuh prestasi.
+<span class="lang-id">Dengan semangat "Sekali di Cluring, Selamanya di Hati", OSIS berkomitmen untuk menciptakan lingkungan sekolah yang kondusif, inklusif, dan penuh prestasi.</span>
+<span class="lang-en">With the spirit "Once at Cluring, Forever in the Heart", OSIS is committed to creating a conducive, inclusive, and high-achieving school environment.</span>
 </p>
 <div class="info-box" data-aos="fade-up">
 <p>
 <i class="fas fa-info-circle" style="margin-right: 10px;"></i>
-OSIS SMAN 1 Cluring telah meraih berbagai penghargaan tingkat kabupaten dan provinsi atas inovasi program kerjanya.
+<span class="lang-id">OSIS SMAN 1 Cluring telah meraih berbagai penghargaan tingkat kabupaten dan provinsi atas inovasi program kerjanya.</span>
+<span class="lang-en">OSIS SMAN 1 Cluring has won various district and provincial awards for its innovative work programs.</span>
 </p>
 </div>
 </div>
 <div class="cultural-divider" data-aos="fade-in"></div>
 <!-- EKSTRAKURIKULER -->
 <div class="section" id="ekskul" data-aos="fade-up">
-<h2><i class="fas fa-star"></i> Ekstrakurikuler</h2>
+<h2><i class="fas fa-star"></i> <span class="lang-id">Ekstrakurikuler</span><span class="lang-en">Extracurriculars</span></h2>
 <p data-aos="fade-right" style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
-SMAN 1 Cluring menyediakan berbagai ekstrakurikuler untuk mengembangkan bakat, minat, dan potensi siswa di bidang akademik maupun non-akademik.
+<span class="lang-id">SMAN 1 Cluring menyediakan berbagai ekstrakurikuler untuk mengembangkan bakat, minat, dan potensi siswa di bidang akademik maupun non-akademik.</span>
+<span class="lang-en">SMAN 1 Cluring provides various extracurriculars to develop students' talents, interests, and potential in academic and non-academic fields.</span>
 </p>
 <div class="org-grid">
 <div class="org-card" data-aos="zoom-in" data-aos-delay="100">
 <img src="https://i.ibb.co.com/7J0LqMQz/da2.jpg" alt="Pramuka" class="org-card-image" loading="lazy">
 <div class="org-card-content">
-<h3>Pramuka</h3>
-<p>Membentuk karakter disiplin, tangguh, dan cinta alam melalui kegiatan kepramukaan dan bakti sosial.</p>
+<h3><span class="lang-id">Pramuka</span><span class="lang-en">Scouts</span></h3>
+<p><span class="lang-id">Membentuk karakter disiplin, tangguh, dan cinta alam melalui kegiatan kepramukaan dan bakti sosial.</span><span class="lang-en">Builds discipline, resilience, and love for nature through scouting and social service activities.</span></p>
 </div>
 </div>
 <div class="org-card" data-aos="zoom-in" data-aos-delay="200">
-<img src="https://i.ibb.co.com/nMBWzpGP/donor-darah.jpg" alt="PMR - Donor Darah" class="org-card-image" loading="lazy">
+<img src="https://i.ibb.co.com/nMBWzpGP/donor-darah.jpg" alt="PMR" class="org-card-image" loading="lazy">
 <div class="org-card-content">
 <h3>PMR</h3>
-<p>Palang Merah Remaja: pelatihan pertolongan pertama, donor darah, dan kegiatan kemanusiaan.</p>
+<p><span class="lang-id">Palang Merah Remaja: pelatihan pertolongan pertama, donor darah, dan kegiatan kemanusiaan.</span><span class="lang-en">Youth Red Cross: first aid training, blood donation, and humanitarian activities.</span></p>
 </div>
 </div>
 <div class="org-card" data-aos="zoom-in" data-aos-delay="300">
 <img src="https://i.ibb.co.com/1J4P2p1k/sepak-bola.jpg" alt="Sepak Bola" class="org-card-image" loading="lazy">
 <div class="org-card-content">
-<h3>Sepak Bola</h3>
-<p>Mengembangkan sportivitas, kerjasama tim, dan prestasi di bidang olahraga sepak bola.</p>
+<h3><span class="lang-id">Sepak Bola</span><span class="lang-en">Soccer</span></h3>
+<p><span class="lang-id">Mengembangkan sportivitas, kerjasama tim, dan prestasi di bidang olahraga sepak bola.</span><span class="lang-en">Develops sportsmanship, teamwork, and achievement in soccer.</span></p>
 </div>
 </div>
 <div class="org-card" data-aos="zoom-in" data-aos-delay="400">
 <img src="https://i.ibb.co.com/gFzcP60f/seni-budaya.jpg" alt="Seni Budaya" class="org-card-image" loading="lazy">
 <div class="org-card-content">
-<h3>Seni & Budaya</h3>
-<p>Tari Blambangan, Musik, Teater sebagai pelestarian budaya lokal Banyuwangi.</p>
+<h3><span class="lang-id">Seni & Budaya</span><span class="lang-en">Arts & Culture</span></h3>
+<p><span class="lang-id">Tari Blambangan, Musik, Teater sebagai pelestarian budaya lokal Banyuwangi.</span><span class="lang-en">Blambangan dance, music, theater to preserve Banyuwangi's local culture.</span></p>
 </div>
 </div>
 <div class="org-card" data-aos="zoom-in" data-aos-delay="500">
 <img src="https://i.ibb.co.com/4Z5NNStH/rois.jpg" alt="Rohis" class="org-card-image" loading="lazy">
 <div class="org-card-content">
 <h3>Rohis</h3>
-<p>Kerohanian Islam: pembinaan akhlak, kajian rutin, dan kegiatan keagamaan.</p>
+<p><span class="lang-id">Kerohanian Islam: pembinaan akhlak, kajian rutin, dan kegiatan keagamaan.</span><span class="lang-en">Islamic spirituality: moral development, routine studies, and religious activities.</span></p>
 </div>
 </div>
 <div class="org-card" data-aos="zoom-in" data-aos-delay="600">
 <img src="https://i.ibb.co.com/Fbh5xfRr/foto-paskibra2.jpg" alt="Paskibraka" class="org-card-image" loading="lazy">
 <div class="org-card-content">
 <h3>Paskibraka</h3>
-<p>Pasukan Pengibar Bendera: pelatihan kedisiplinan dan upacara bendera.</p>
+<p><span class="lang-id">Pasukan Pengibar Bendera: pelatihan kedisiplinan dan upacara bendera.</span><span class="lang-en">Flag hoisting troop: discipline training and flag ceremonies.</span></p>
 </div>
 </div>
 <div class="org-card" data-aos="zoom-in" data-aos-delay="700">
 <img src="https://i.ibb.co.com/q3kW1kxG/BATARI-1.jpg" alt="Membatik" class="org-card-image" loading="lazy">
 <div class="org-card-content">
-<h3>Membatik</h3>
-<p>Pelestarian budaya batik tradisional Banyuwangi melalui program BUKIT BATARI.</p>
+<h3><span class="lang-id">Membatik</span><span class="lang-en">Batik Making</span></h3>
+<p><span class="lang-id">Pelestarian budaya batik tradisional Banyuwangi melalui program BUKIT BATARI.</span><span class="lang-en">Preservation of Banyuwangi's traditional batik culture through the BUKIT BATARI program.</span></p>
 </div>
 </div>
 <div class="org-card" data-aos="zoom-in" data-aos-delay="800">
 <img src="https://i.ibb.co.com/6Rtqqb13/BULU-TANGKIS.jpg" alt="Bulu Tangkis" class="org-card-image" loading="lazy">
 <div class="org-card-content">
-<h3>Bulu Tangkis</h3>
-<p>Mengembangkan keterampilan, kecepatan, dan strategi dalam olahraga bulu tangkis.</p>
+<h3><span class="lang-id">Bulu Tangkis</span><span class="lang-en">Badminton</span></h3>
+<p><span class="lang-id">Mengembangkan keterampilan, kecepatan, dan strategi dalam olahraga bulu tangkis.</span><span class="lang-en">Develops skills, speed, and strategy in badminton.</span></p>
 </div>
 </div>
 <div class="org-card" data-aos="zoom-in" data-aos-delay="900">
 <img src="https://i.ibb.co.com/xqGN5Gkk/TAE-KWON-DO.jpg" alt="Tae Kwon Do" class="org-card-image" loading="lazy">
 <div class="org-card-content">
 <h3>Tae Kwon Do</h3>
-<p>Seni bela diri Korea untuk melatih disiplin, kekuatan fisik, dan pertahanan diri.</p>
+<p><span class="lang-id">Seni bela diri Korea untuk melatih disiplin, kekuatan fisik, dan pertahanan diri.</span><span class="lang-en">Korean martial art to train discipline, physical strength, and self-defense.</span></p>
 </div>
 </div>
-<!-- FOTO EKSTRA: PECINTA ALAM BELAJAR MEMBACA RUTE -->
+<!-- FOTO EKSTRA: PECINTA ALAM -->
 <div class="org-card" data-aos="zoom-in" data-aos-delay="1000">
 <a href="https://ibb.co.com/G4Qy2CrQ" target="_blank">
 <img src="https://i.ibb.co.com/tTpgsY1p/PECINTA-ALAM-BELAJAR-MEMBACA-RUTE.jpg" alt="PECINTA-ALAM-BELAJAR-MEMBACA-RUTE" class="org-card-image" loading="lazy">
 </a>
 <div class="org-card-content">
-<h3>Pecinta Alam</h3>
-<p>Belajar membaca rute dan navigasi alam bebas. Melatih kemandirian, survival skill, dan cinta lingkungan.</p>
+<h3><span class="lang-id">Pecinta Alam</span><span class="lang-en">Nature Lovers</span></h3>
+<p><span class="lang-id">Belajar membaca rute dan navigasi alam bebas. Melatih kemandirian, survival skill, dan cinta lingkungan.</span><span class="lang-en">Learn route reading and wilderness navigation. Train independence, survival skills, and love for the environment.</span></p>
 </div>
 </div>
 <!-- FOTO EKSTRA: PENCAK SILAT -->
@@ -1343,7 +1361,7 @@ SMAN 1 Cluring menyediakan berbagai ekstrakurikuler untuk mengembangkan bakat, m
 <img src="https://i.ibb.co.com/4nQYXLhT/pencaksilat.jpg" alt="Pencak Silat" class="org-card-image" loading="lazy">
 <div class="org-card-content">
 <h3>Pencak Silat</h3>
-<p>Seni bela diri tradisional Indonesia untuk melatih disiplin, ketangkasan, dan melestarikan budaya bangsa.</p>
+<p><span class="lang-id">Seni bela diri tradisional Indonesia untuk melatih disiplin, ketangkasan, dan melestarikan budaya bangsa.</span><span class="lang-en">Traditional Indonesian martial art to train discipline, agility, and preserve national culture.</span></p>
 </div>
 </div>
 </div>
@@ -1351,76 +1369,76 @@ SMAN 1 Cluring menyediakan berbagai ekstrakurikuler untuk mengembangkan bakat, m
 <div class="cultural-divider" data-aos="fade-in"></div>
 <!-- PRESTASI -->
 <div class="section" id="prestasi" data-aos="fade-up">
-<h2><i class="fas fa-trophy"></i> Prestasi Siswa</h2>
+<h2><i class="fas fa-trophy"></i> <span class="lang-id">Prestasi Siswa</span><span class="lang-en">Student Achievements</span></h2>
 <p data-aos="fade-right" style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
-Siswa SMAN 1 Cluring secara aktif mengikuti dan meraih prestasi dalam berbagai kompetisi di tingkat kabupaten, provinsi, hingga nasional. Berikut adalah prestasi terbaru dari ekstrakurikuler Taekwondo.
+<span class="lang-id">Siswa SMAN 1 Cluring secara aktif mengikuti dan meraih prestasi dalam berbagai kompetisi di tingkat kabupaten, provinsi, hingga nasional. Berikut adalah prestasi terbaru dari ekstrakurikuler Taekwondo.</span>
+<span class="lang-en">Students of SMAN 1 Cluring actively participate and achieve in various competitions at the district, provincial, and national levels. Here are the latest achievements from the Taekwondo extracurricular.</span>
 </p>
 <div class="prestasi-grid">
-<!-- PRESTASI TAEKWONDO - CHEYSHA (JUARA 2) -->
+<!-- PRESTASI TAEKWONDO - CHEYSHA -->
 <div class="prestasi-card silver" data-aos="fade-up" data-aos-delay="100">
-<span class="badge"><i class="fas fa-medal"></i> Juara 2</span>
+<span class="badge"><i class="fas fa-medal"></i> <span class="lang-id">Juara 2</span><span class="lang-en">2nd Place</span></span>
 <h4>Cheysha - Taekwondo Indonesia Antar Pelajar Jawa Timur 2025</h4>
-<p style="font-size: 0.9rem; margin: 5px 0; color: var(--gray);">Kelas Putri</p>
-<div class="date"><i class="fas fa-calendar"></i> 25–28 September 2025, GOR Ken Arok, Kota Malang</div>
-<!-- Foto Prestasi -->
+<p style="font-size: 0.9rem; margin: 5px 0; color: var(--gray);"><span class="lang-id">Kelas Putri</span><span class="lang-en">Girls Class</span></p>
+<div class="date"><i class="fas fa-calendar"></i> 25–28 September 2025, GOR Ken Arok, Malang</div>
 <div style="margin-top: 15px; text-align: center;">
 <a href="https://ibb.co.com/nM6BxS7p" target="_blank">
 <img src="https://i.ibb.co.com/yFdpHJ62/cheysha-foto-juara-2-tae-kwondo.jpg" alt="Cheysha Juara 2 Taekwondo" style="width: 100%; max-width: 250px; border-radius: 12px; box-shadow: var(--shadow-sm);">
 </a>
 </div>
 </div>
-<!-- PRESTASI TAEKWONDO - GRISELDA (JUARA 3) -->
+<!-- PRESTASI TAEKWONDO - GRISELDA -->
 <div class="prestasi-card bronze" data-aos="fade-up" data-aos-delay="200">
-<span class="badge"><i class="fas fa-medal"></i> Juara 3</span>
+<span class="badge"><i class="fas fa-medal"></i> <span class="lang-id">Juara 3</span><span class="lang-en">3rd Place</span></span>
 <h4>Griselda Forto - Taekwondo Indonesia Antar Pelajar Jawa Timur 2025</h4>
-<p style="font-size: 0.9rem; margin: 5px 0; color: var(--gray);">Kelas Putri</p>
-<div class="date"><i class="fas fa-calendar"></i> 25–28 September 2025, GOR Ken Arok, Kota Malang</div>
-<!-- Foto Prestasi -->
+<p style="font-size: 0.9rem; margin: 5px 0; color: var(--gray);"><span class="lang-id">Kelas Putri</span><span class="lang-en">Girls Class</span></p>
+<div class="date"><i class="fas fa-calendar"></i> 25–28 September 2025, GOR Ken Arok, Malang</div>
 <div style="margin-top: 15px; text-align: center;">
 <a href="https://ibb.co.com/0RFB0XdP" target="_blank">
 <img src="https://i.ibb.co.com/FL0sQWjG/griselda-forto-juara-3-tae-kwondo.jpg" alt="Griselda Forto Juara 3 Taekwondo" style="width: 100%; max-width: 250px; border-radius: 12px; box-shadow: var(--shadow-sm);">
 </a>
 </div>
 </div>
-</div> <!-- Tutup prestasi-grid -->
+</div>
 <div class="info-box" data-aos="fade-up">
 <p>
 <i class="fas fa-star" style="margin-right: 10px;"></i>
-Prestasi terbaru: SMAN 1 Cluring meraih <strong>Innovative Government Award (IGA) 2025</strong> untuk inovasi BUKIT BATARI – Budaya Kita Batik dan Tari.
+<span class="lang-id">Prestasi terbaru: SMAN 1 Cluring meraih <strong>Innovative Government Award (IGA) 2025</strong> untuk inovasi BUKIT BATARI – Budaya Kita Batik dan Tari.</span>
+<span class="lang-en">Latest achievement: SMAN 1 Cluring won the <strong>Innovative Government Award (IGA) 2025</strong> for the BUKIT BATARI innovation – Our Culture Batik and Dance.</span>
 </p>
 </div>
-</div> <!-- Tutup section prestasi -->
+</div>
 <div class="cultural-divider" data-aos="fade-in"></div>
 <!-- PROGRAM KESISWAAN -->
 <div class="section" id="program" data-aos="fade-up">
-<h2><i class="fas fa-calendar-check"></i> Program Kesiswaan</h2>
+<h2><i class="fas fa-calendar-check"></i> <span class="lang-id">Program Kesiswaan</span><span class="lang-en">Student Programs</span></h2>
 <div class="org-grid">
 <div class="org-card" data-aos="flip-up" data-aos-delay="100">
 <i class="fas fa-hand-holding-heart"></i>
 <div class="org-card-content">
-<h3>Bakti Sosial</h3>
-<p>Kegiatan sosial ke panti asuhan, desa binaan, dan masyarakat sekitar sebagai wujud kepedulian.</p>
+<h3><span class="lang-id">Bakti Sosial</span><span class="lang-en">Social Service</span></h3>
+<p><span class="lang-id">Kegiatan sosial ke panti asuhan, desa binaan, dan masyarakat sekitar sebagai wujud kepedulian.</span><span class="lang-en">Social activities to orphanages, fostered villages, and surrounding communities as a form of care.</span></p>
 </div>
 </div>
 <div class="org-card" data-aos="flip-up" data-aos-delay="200">
 <i class="fas fa-campground"></i>
 <div class="org-card-content">
-<h3>Perkemahan</h3>
-<p>Perkemahan Sabtu Minggu (Persami), LDKS, dan kegiatan outdoor untuk pembentukan karakter.</p>
+<h3><span class="lang-id">Perkemahan</span><span class="lang-en">Camping</span></h3>
+<p><span class="lang-id">Perkemahan Sabtu Minggu (Persami), LDKS, dan kegiatan outdoor untuk pembentukan karakter.</span><span class="lang-en">Saturday-Sunday camps, LDKS, and outdoor activities for character building.</span></p>
 </div>
 </div>
 <div class="org-card" data-aos="flip-up" data-aos-delay="300">
 <i class="fas fa-palette"></i>
 <div class="org-card-content">
-<h3>Pentas Seni</h3>
-<p>Pentas Seni Tahunan (Pensi) sebagai wadah ekspresi kreativitas siswa di bidang seni.</p>
+<h3><span class="lang-id">Pentas Seni</span><span class="lang-en">Art Performance</span></h3>
+<p><span class="lang-id">Pentas Seni Tahunan (Pensi) sebagai wadah ekspresi kreativitas siswa di bidang seni.</span><span class="lang-en">Annual Art Performance as a platform for students' creative expression in the arts.</span></p>
 </div>
 </div>
 <div class="org-card" data-aos="flip-up" data-aos-delay="400">
 <i class="fas fa-book-reader"></i>
 <div class="org-card-content">
-<h3>Literasi</h3>
-<p>Program Smaring Gemar Membaca (SGM) untuk meningkatkan budaya baca dan tulis siswa.</p>
+<h3><span class="lang-id">Literasi</span><span class="lang-en">Literacy</span></h3>
+<p><span class="lang-id">Program Smaring Gemar Membaca (SGM) untuk meningkatkan budaya baca dan tulis siswa.</span><span class="lang-en">Smaring Reading Enthusiast program to improve students' reading and writing culture.</span></p>
 </div>
 </div>
 </div>
@@ -1428,7 +1446,7 @@ Prestasi terbaru: SMAN 1 Cluring meraih <strong>Innovative Government Award (IGA
 <!-- BACK HOME -->
 <div class="back-home" data-aos="fade-up">
 <a href="index.html">
-<i class="fas fa-arrow-left"></i> Kembali ke Beranda
+<i class="fas fa-arrow-left"></i> <span class="lang-id">Kembali ke Beranda</span><span class="lang-en">Back to Home</span>
 </a>
 </div>
 </section>
@@ -1436,22 +1454,22 @@ Prestasi terbaru: SMAN 1 Cluring meraih <strong>Innovative Government Award (IGA
 <footer data-aos="fade-up" id="kontak">
 <div class="footer-content">
 <div class="footer-section">
-<h3><i class="fas fa-map-marker-alt"></i> Kontak</h3>
+<h3><i class="fas fa-map-marker-alt"></i> <span class="lang-id">Kontak</span><span class="lang-en">Contact</span></h3>
 <p>Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, Jawa Timur</p>
 <p><i class="fas fa-phone"></i> <a href="tel:+6282319712420">0823-1971-2420</a></p>
 <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6282319712420" target="_blank">0823-1971-2420 (WA)</a></p>
 </div>
 <div class="footer-section">
-<h3><i class="fas fa-link"></i> Link Penting</h3>
+<h3><i class="fas fa-link"></i> <span class="lang-id">Link Penting</span><span class="lang-en">Important Links</span></h3>
 <ul>
 <li><a href="https://sma.kemendikdasmen.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
 <li><a href="https://dindik.jatimprov.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
-<li><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas Banyuwangi</a></li>
+<li><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabdin Banyuwangi</a></li>
 <li><a href="https://alam21234.github.io/Smaring-interactive-learning-comunity" target="_blank"><i class="fas fa-external-link-alt"></i> Smaring Learning Community</a></li>
 </ul>
 </div>
 <div class="footer-section">
-<h3><i class="fas fa-flask"></i> Lab Virtual</h3>
+<h3><i class="fas fa-flask"></i> <span class="lang-id">Lab Virtual</span><span class="lang-en">Virtual Lab</span></h3>
 <ul>
 <li><a href="https://quran.nu.or.id" target="_blank"><i class="fas fa-book-quran"></i> Al-Qur'an Digital</a></li>
 <li><a href="https://virtualbiologylab.org" target="_blank"><i class="fas fa-dna"></i> Virtual Biology Lab</a></li>
@@ -1459,7 +1477,7 @@ Prestasi terbaru: SMAN 1 Cluring meraih <strong>Innovative Government Award (IGA
 </ul>
 </div>
 <div class="footer-section">
-<h3><i class="fas fa-share-alt"></i> Media Sosial</h3>
+<h3><i class="fas fa-share-alt"></i> <span class="lang-id">Media Sosial</span><span class="lang-en">Social Media</span></h3>
 <div class="social-links">
 <a href="https://www.facebook.com/Sman1Cluring" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
 <a href="https://www.instagram.com/sman1_cluring" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
@@ -1480,7 +1498,7 @@ Prestasi terbaru: SMAN 1 Cluring meraih <strong>Innovative Government Award (IGA
 </div>
 </div>
 <div class="footer-bottom">
-<p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
+<p>© 2026 SMAN 1 Cluring — <span class="lang-id">Menginspirasi Generasi Pancasila dari Bumi Blambangan</span><span class="lang-en">Inspiring Pancasila Generation from Bumi Blambangan</span></p>
 </div>
 </footer>
 <!-- AOS & Custom JS -->
@@ -1492,12 +1510,12 @@ duration: 800,
 once: true,
 easing: 'ease-out-cubic'
 });
-// ✅ PRELOADER (SUPER FAST - 100ms)
+// Preloader
 window.addEventListener('load', () => {
 const preloader = document.getElementById('preloader');
 setTimeout(() => {
 preloader.classList.add('fade-out');
-}, 100); // ✅ DIPERCEPAT: dari 200ms menjadi 100ms
+}, 100);
 });
 // Dark Mode Toggle
 const darkModeToggle = document.getElementById('darkModeToggle');
@@ -1514,34 +1532,26 @@ localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
 function toggleMenu() {
 document.getElementById("navMenu").classList.toggle("active");
 }
-// ✅ Smooth scrolling untuk internal navigation (DIPERBAIKI UNTUK MOBILE & BOTTOM NAV)
+// Smooth scrolling for internal navigation (desktop & mobile)
 const allNavLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
 allNavLinks.forEach(anchor => {
 anchor.addEventListener('click', function(e) {
 e.preventDefault();
-// Close mobile main menu if open
 const menu = document.getElementById("navMenu");
 menu.classList.remove("active");
-
 const targetId = this.getAttribute('href');
 const target = document.querySelector(targetId);
 if (target) {
-// ✅ Hitung offset dinamis berdasarkan ukuran layar
-// Mobile has bottom nav, so we need to ensure content isn't hidden
-const headerOffset = window.innerWidth <= 480 ? 100 :
-window.innerWidth <= 880 ? 100 : 180;
+const headerOffset = window.innerWidth <= 880 ? 80 : 180;
 const elementPosition = target.getBoundingClientRect().top;
 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 window.scrollTo({
 top: offsetPosition,
 behavior: 'smooth'
 });
-
-// Update Active State for BOTH navs
 document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
 link.classList.remove('active');
 });
-// Add active to clicked link AND corresponding link in other nav
 const href = this.getAttribute('href');
 document.querySelectorAll(`.nav-link[href="${href}"], .mobile-nav-link[href="${href}"]`).forEach(link => {
 link.classList.add('active');
@@ -1549,34 +1559,13 @@ link.classList.add('active');
 }
 });
 });
-// Fungsi untuk menangani klik pada menu "Kontak" di navigasi utama
-document.querySelectorAll('nav ul li a[href="#kontak"]').forEach(anchor => {
-anchor.addEventListener('click', function(e) {
-e.preventDefault();
-document.getElementById("navMenu").classList.remove("active");
-const target = document.querySelector(this.getAttribute('href'));
-if (target) {
-target.scrollIntoView({
-behavior: 'smooth',
-block: 'start'
-});
-target.style.transition = 'background-color 0.5s ease';
-target.style.backgroundColor = 'rgba(158, 123, 75, 0.2)';
-setTimeout(() => {
-target.style.backgroundColor = '';
-}, 1000);
-}
-});
-});
-// Update active link saat scroll
+// Update active link on scroll
 window.addEventListener('scroll', function() {
 const sections = document.querySelectorAll('.section');
 const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
 let currentSection = '';
 sections.forEach(section => {
-// ✅ Offset dinamis untuk mobile
-const scrollOffset = window.innerWidth <= 480 ? 100 :
-window.innerWidth <= 880 ? 100 : 150;
+const scrollOffset = window.innerWidth <= 880 ? 70 : 150;
 const sectionTop = section.offsetTop - scrollOffset;
 if (pageYOffset >= sectionTop) {
 currentSection = section.getAttribute('id');
@@ -1589,25 +1578,20 @@ link.classList.add('active');
 }
 });
 });
-// Initialize first link as active
-document.querySelectorAll('.nav-link[href="#osis"], .mobile-nav-link[href="#osis"]').forEach(link => link.classList.add('active'));
-// Realtime Clock untuk Footer
+// Realtime Clock
 function updateClock() {
 const now = new Date();
 const hours = String(now.getHours()).padStart(2, '0');
 const minutes = String(now.getMinutes()).padStart(2, '0');
 const seconds = String(now.getSeconds()).padStart(2, '0');
-const timeString = `${hours}:${minutes}:${seconds}`;
+document.getElementById('footerTime').textContent = `${hours}:${minutes}:${seconds}`;
 const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
-const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
-'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
 const dayName = days[now.getDay()];
 const day = now.getDate();
 const monthName = months[now.getMonth()];
 const year = now.getFullYear();
-const dateString = `${dayName}, ${day} ${monthName} ${year}`;
-document.getElementById('footerTime').textContent = timeString;
-document.getElementById('footerDate').textContent = dateString;
+document.getElementById('footerDate').textContent = `${dayName}, ${day} ${monthName} ${year}`;
 }
 setInterval(updateClock, 1000);
 updateClock();
@@ -1626,11 +1610,10 @@ localStorage.setItem(visitorKey, count);
 sessionStorage.setItem('visitor_counted', 'true');
 }
 }
-const formattedCount = count.toLocaleString('id-ID');
-document.getElementById('footerVisitorCount').textContent = `${formattedCount} Pengunjung`;
+document.getElementById('footerVisitorCount').textContent = `${count.toLocaleString('id-ID')} Pengunjung`;
 }
 updateVisitorCounter();
-// ===== CHAT SYSTEM =====
+// Chat System
 const chatButton = document.getElementById('chatButton');
 const chatBox = document.getElementById('chatBox');
 const chatClose = document.getElementById('chatClose');
@@ -1639,7 +1622,6 @@ const chatSend = document.getElementById('chatSend');
 const chatMessages = document.getElementById('chatMessages');
 const quickReplies = document.querySelectorAll('.quick-reply');
 const notificationBadge = document.querySelector('.notification-badge');
-// Toggle chat box
 chatButton.addEventListener('click', () => {
 chatBox.classList.toggle('active');
 if (chatBox.classList.contains('active')) {
@@ -1647,11 +1629,9 @@ notificationBadge.style.display = 'none';
 chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 });
-// Close chat box
 chatClose.addEventListener('click', () => {
 chatBox.classList.remove('active');
 });
-// Send message function
 function sendMessage() {
 const message = chatInput.value.trim();
 if (message === '') return;
@@ -1666,7 +1646,6 @@ chatMessages.scrollTop = chatMessages.scrollHeight;
 }, 1000);
 chatMessages.scrollTop = chatMessages.scrollHeight;
 }
-// Add message to chat
 function addMessage(text, sender) {
 const messageDiv = document.createElement('div');
 messageDiv.className = `message ${sender}`;
@@ -1683,40 +1662,24 @@ messageDiv.innerHTML = `
 `;
 chatMessages.appendChild(messageDiv);
 }
-// Bot response logic untuk kesiswaan
 function getBotResponse(message) {
 const lowerMsg = message.toLowerCase();
-if (lowerMsg.includes('ekskul') || lowerMsg.includes('ekstrakurikuler')) {
+if (lowerMsg.includes('ekskul') || lowerMsg.includes('ekstrakurikuler') || lowerMsg.includes('extracurricular')) {
 return "SMAN 1 Cluring memiliki berbagai ekstrakurikuler: Pramuka, Paskibra, PMR, Basket, Futsal, Seni Tari, Paduan Suara, KIR, Rohis, Bulu Tangkis, Tae Kwon Do, Pencak Silat, dan Kewirausahaan!";
 } else if (lowerMsg.includes('osis')) {
 return "OSIS SMAN 1 Cluring aktif mengadakan berbagai kegiatan seperti Bakti Sosial, Pentas Seni, dan Program Literasi. Hubungi pembina OSIS untuk info lebih lanjut.";
-} else if (lowerMsg.includes('prestasi')) {
+} else if (lowerMsg.includes('prestasi') || lowerMsg.includes('achievement')) {
 return "Siswa SMAN 1 Cluring meraih berbagai prestasi di Olimpiade Sains, Lomba Tari, Basket, dan Debat Bahasa Inggris. Lihat detailnya di halaman Prestasi.";
-} else if (lowerMsg.includes('pramuka')) {
+} else if (lowerMsg.includes('pramuka') || lowerMsg.includes('scout')) {
 return "Pramuka SMAN 1 Cluring aktif dalam kegiatan perkemahan, bakti sosial, dan lomba tingkat kabupaten. Pendaftaran terbuka untuk semua siswa.";
-} else if (lowerMsg.includes('bulu tangkis') || lowerMsg.includes('badminton')) {
-return "Ekstrakurikuler Bulu Tangkis SMAN 1 Cluring melatih keterampilan, kecepatan, dan strategi. Latihan rutin setiap minggu!";
-} else if (lowerMsg.includes('tae kwon do') || lowerMsg.includes('taekwondo')) {
-return "Tae Kwon Do SMAN 1 Cluring melatih disiplin, kekuatan fisik, dan seni bela diri Korea. Terbuka untuk semua siswa!";
-} else if (lowerMsg.includes('pencak silat') || lowerMsg.includes('silat')) {
-return "Ekstrakurikuler Pencak Silat SMAN 1 Cluring melatih seni bela diri tradisional Indonesia, disiplin, dan pelestarian budaya bangsa.";
-} else if (lowerMsg.includes('daftar') || lowerMsg.includes('bergabung')) {
-return "Untuk bergabung dengan ekstrakurikuler, silakan hubungi pembina masing-masing atau datang ke ruang OSIS pada jam istirahat.";
-} else if (lowerMsg.includes('terima kasih') || lowerMsg.includes('thanks')) {
-return "Sama-sama! Senang bisa membantu. Ada lagi yang ingin ditanyakan tentang kegiatan kesiswaan?";
 } else {
 return "Terima kasih atas pertanyaannya. Untuk informasi lebih lanjut, silakan hubungi admin melalui WhatsApp atau telepon ke nomor 0823-1971-2420.";
 }
 }
-// Send message on button click
 chatSend.addEventListener('click', sendMessage);
-// Send message on Enter key
 chatInput.addEventListener('keypress', (e) => {
-if (e.key === 'Enter') {
-sendMessage();
-}
+if (e.key === 'Enter') sendMessage();
 });
-// Quick replies
 quickReplies.forEach(reply => {
 reply.addEventListener('click', () => {
 const message = reply.getAttribute('data-message');
@@ -1724,12 +1687,16 @@ chatInput.value = message;
 sendMessage();
 });
 });
-// Close chat when clicking outside
 document.addEventListener('click', (e) => {
 if (!chatBox.contains(e.target) && !chatButton.contains(e.target) && chatBox.classList.contains('active')) {
 chatBox.classList.remove('active');
 }
 });
 </script>
+<!-- Sederhana toggle bahasa (opsional) -->
+<div style="position: fixed; top: 100px; right: 20px; z-index: 1001; background: var(--white); padding: 8px 15px; border-radius: 30px; box-shadow: var(--shadow-md);">
+<button onclick="document.body.lang='id'" style="background:none; border:none; cursor:pointer; font-weight:bold; color:var(--primary);">🇮🇩</button>
+<button onclick="document.body.lang='en'" style="background:none; border:none; cursor:pointer; font-weight:bold; color:var(--secondary);">🇬🇧</button>
+</div>
 </body>
 </html>
