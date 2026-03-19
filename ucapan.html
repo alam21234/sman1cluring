@@ -80,6 +80,63 @@
     .whatsapp-float:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4); }
     .whatsapp-float i { font-size: 24px; }
     
+    /* ADMIN CONTROLS */
+    .admin-controls {
+      background: var(--white);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      margin-bottom: 30px;
+      box-shadow: var(--shadow-sm);
+      border: 2px solid var(--secondary);
+    }
+    .admin-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+    .admin-title i {
+      color: var(--secondary);
+      font-size: 1.5rem;
+    }
+    .release-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .release-btn {
+      padding: 8px 16px;
+      border: 2px solid var(--primary);
+      background: transparent;
+      color: var(--primary);
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: var(--transition);
+      font-size: 0.9rem;
+    }
+    .release-btn:hover {
+      background: var(--primary);
+      color: var(--white);
+    }
+    .release-btn.active {
+      background: var(--secondary);
+      border-color: var(--secondary);
+      color: var(--white);
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+    .status-scheduled { background: #fef3c7; color: #92400e; }
+    .status-live { background: #d1fae5; color: #065f46; }
+    .status-past { background: #e5e7eb; color: #374151; }
+    
     /* HEADER */
     header {
       background: linear-gradient(135deg, var(--primary), var(--primary-light));
@@ -150,7 +207,7 @@
     /* Filter Group */
     .filter-group {
       display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
-      margin-bottom: 50px; background: var(--white); padding: 25px;
+      margin-bottom: 30px; background: var(--white); padding: 25px;
       border-radius: var(--border-radius); box-shadow: var(--shadow-sm);
       border: 1px solid rgba(0,0,0,0.05);
     }
@@ -184,6 +241,25 @@
       object-fit: cover; transition: transform 0.6s ease;
     }
     .greeting-card:hover img { transform: scale(1.08); }
+    
+    /* Card Status Indicator */
+    .card-status {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 10;
+      padding: 6px 12px;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+    .card-status.scheduled { background: #fef3c7; color: #92400e; border-left: 4px solid #f59e0b; }
+    .card-status.live { background: #d1fae5; color: #065f46; border-left: 4px solid #10b981; }
+    .card-status.past { background: #e5e7eb; color: #374151; border-left: 4px solid #6b7280; }
     
     /* Card Overlay Actions */
     .card-overlay {
@@ -387,6 +463,25 @@
 
   <!-- MAIN CONTENT -->
   <div class="container">
+    <!-- ADMIN CONTROLS (hanya muncul jika login/ mode admin) -->
+    <div class="admin-controls" data-aos="fade-up" id="adminControls" style="display: none;">
+      <div class="admin-title">
+        <i class="fas fa-crown"></i>
+        <h3>Panel Kontrol Admin - Rilis Konten</h3>
+      </div>
+      <div class="release-buttons">
+        <button class="release-btn active" onclick="setReleaseMode('auto')" id="modeAuto">🎯 Otomatis (Sesuai Jadwal)</button>
+        <button class="release-btn" onclick="setReleaseMode('all')" id="modeAll">📢 Rilis Semua Konten</button>
+        <button class="release-btn" onclick="setReleaseMode('2025')" id="mode2025">📅 Rilis 2025 Saja</button>
+        <button class="release-btn" onclick="setReleaseMode('2026')" id="mode2026">⏳ Rilis 2026 Saja</button>
+        <button class="release-btn" onclick="setReleaseMode('idulFitri')" id="modeIdul">🌙 Rilis Idul Fitri 2026</button>
+      </div>
+      <p style="margin-top: 15px; font-size: 0.9rem; color: var(--gray);">
+        <i class="fas fa-info-circle"></i> Mode <strong>Otomatis</strong>: Hanya menampilkan konten yang sudah mencapai tanggalnya.
+        Mode lainnya akan memaksa konten tertentu untuk tampil.
+      </p>
+    </div>
+
     <!-- FILTERS -->
     <div class="filter-group" data-aos="fade-up">
       <button class="filter-btn active" onclick="filterGallery('all', this)"><i class="fas fa-th"></i> Semua</button>
@@ -395,6 +490,7 @@
       <button class="filter-btn" onclick="filterGallery('internasional', this)"><i class="fas fa-globe"></i> Internasional</button>
       <button class="filter-btn" onclick="filterGallery('sekolah', this)"><i class="fas fa-school"></i> Event Sekolah</button>
     </div>
+    
     <!-- GALLERY GRID -->
     <div class="greeting-grid" id="galleryGrid"></div>
   </div>
@@ -448,37 +544,178 @@
   <!-- JAVASCRIPT LOGIC -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    // ===== DATA UCAPAN (Diurutkan: tanggal → bulan → tahun ASCENDING) =====
+    // ===== DATA UCAPAN DENGAN STATUS JADWAL =====
     const greetingData = [
-      // 2025
-      { id: 9, title: "Selamat Hari Anak Nasional 2025", category: "internasional", year: 2025, date: "2025-07-23", image: "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&q=80&w=600", link: "#" },
-      { id: 6, title: "Selamat Natal & Tahun Baru 2026", category: "agama", year: 2025, date: "2025-12-25", image: "https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&fit=crop&q=80&w=600", link: "#" },
+      // KONTEN MASA LALU (2025) - Bisa disembunyikan
+      { 
+        id: 9, 
+        title: "Selamat Hari Anak Nasional 2025", 
+        category: "internasional", 
+        year: 2025, 
+        date: "2025-07-23", 
+        image: "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&q=80&w=600", 
+        link: "#",
+        status: "past" // konten lama
+      },
+      { 
+        id: 6, 
+        title: "Selamat Natal & Tahun Baru 2026", 
+        category: "agama", 
+        year: 2025, 
+        date: "2025-12-25", 
+        image: "https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&fit=crop&q=80&w=600", 
+        link: "#",
+        status: "past" // konten lama
+      },
       
-      // 2026 - Januari
-      { id: 1, title: "Selamat Tahun Baru Imlek 2577", category: "agama", year: 2026, date: "2026-01-29", image: "https://i.ibb.co.com/W4xkCJL0/imlek.jpg", link: "https://ibb.co.com/39rpKZnv" },
+      // KONTEN 2026
+      { 
+        id: 1, 
+        title: "Selamat Tahun Baru Imlek 2577", 
+        category: "agama", 
+        year: 2026, 
+        date: "2026-01-29", 
+        image: "https://i.ibb.co.com/W4xkCJL0/imlek.jpg", 
+        link: "https://ibb.co.com/39rpKZnv",
+        status: "past" // sudah lewat
+      },
+      { 
+        id: 2, 
+        title: "Selamat Menunaikan Ibadah Puasa 1447 H", 
+        category: "sekolah", 
+        year: 2026, 
+        date: "2026-02-20", 
+        image: "https://i.ibb.co.com/ZR322tPt/puasa.jpg", 
+        link: "https://ibb.co.com/Y4600YMY",
+        status: "past" // sudah lewat
+      },
+      { 
+        id: 4, 
+        title: "Kampanye Kurangi Sampah Plastik", 
+        category: "sekolah", 
+        year: 2026, 
+        date: "2026-02-21", 
+        image: "https://i.ibb.co.com/xKJC3qrh/flayer-sampah-plastik.jpg", 
+        link: "https://ibb.co.com/Fkgxn4d6",
+        status: "past" // sudah lewat
+      },
+      { 
+        id: 3, 
+        title: "Pondok Ramadan 2026", 
+        category: "sekolah", 
+        year: 2026, 
+        date: "2026-02-23", 
+        image: "https://i.ibb.co.com/vvscHcKY/brosur-pondok-romadhon.jpg", 
+        link: "https://ibb.co.com/FqshKhjV",
+        status: "past" // sudah lewat
+      },
+      { 
+        id: 10, 
+        title: "Program Siswa Asuh Sebaya 2026", 
+        category: "sekolah", 
+        year: 2026, 
+        date: "2026-02-23", 
+        image: "https://i.ibb.co.com/90M2JhH/siswa-asuh-sebaya.jpg", 
+        link: "https://ibb.co.com/QV5nZkv",
+        status: "past" // sudah lewat
+      },
+      { 
+        id: 11, 
+        title: "Selamat Hari Raya Nyepi 2026", 
+        category: "agama", 
+        year: 2026, 
+        date: "2026-03-18", 
+        image: "https://i.ibb.co.com/0VsXwy4h/nyepi.jpg", 
+        link: "https://ibb.co.com/Z12JZz4W",
+        status: "past" // sudah lewat
+      },
       
-      // 2026 - Februari
-      { id: 2, title: "Selamat Menunaikan Ibadah Puasa 1447 H", category: "sekolah", year: 2026, date: "2026-02-20", image: "https://i.ibb.co.com/ZR322tPt/puasa.jpg", link: "https://ibb.co.com/Y4600YMY" },
-      { id: 4, title: "Kampanye Kurangi Sampah Plastik", category: "sekolah", year: 2026, date: "2026-02-21", image: "https://i.ibb.co.com/xKJC3qrh/flayer-sampah-plastik.jpg", link: "https://ibb.co.com/Fkgxn4d6" },
-      { id: 3, title: "Pondok Ramadan 2026", category: "sekolah", year: 2026, date: "2026-02-23", image: "https://i.ibb.co.com/vvscHcKY/brosur-pondok-romadhon.jpg", link: "https://ibb.co.com/FqshKhjV" },
-      { id: 10, title: "Program Siswa Asuh Sebaya 2026", category: "sekolah", year: 2026, date: "2026-02-23", image: "https://i.ibb.co.com/90M2JhH/siswa-asuh-sebaya.jpg", link: "https://ibb.co.com/QV5nZkv" },
+      // IDUL FITRI 2026 - YANG BENAR 21 MARET 2026
+      { 
+        id: 12, 
+        title: "Hari Raya Idul Fitri 1447 H", 
+        category: "agama", 
+        year: 2026, 
+        date: "2026-03-21", // Diperbaiki jadi 2026
+        image: "https://i.ibb.co.com/LDpPyrhQ/hari-raya-idul-fitri-1447-H.jpg", 
+        link: "https://ibb.co.com/vCzBWhvs",
+        status: "scheduled" // KONTEN JADWAL (akan muncul otomatis 21 Maret 2026)
+      },
       
-      // 2026 - Maret ✨ BARU: Nyepi & Idul Fitri
-      { id: 11, title: "Selamat Hari Raya Nyepi 2026", category: "agama", year: 2026, date: "2026-03-18", image: "https://i.ibb.co.com/0VsXwy4h/nyepi.jpg", link: "https://ibb.co.com/Z12JZz4W" },
-      { id: 12, title: "Hari Raya Idul Fitri 1447 H", category: "agama", year: 2026, date: "2026-03-21", image: "https://i.ibb.co.com/LDpPyrhQ/hari-raya-idul-fitri-1447-H.jpg", link: "https://ibb.co.com/vCzBWhvs" },
-      
-      // 2026 - April
-      { id: 8, title: "Selamat Hari Kartini 2026", category: "nasional", year: 2026, date: "2026-04-21", image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=600", link: "#" },
-      
-      // 2026 - Mei
-      { id: 7, title: "Selamat Hari Pendidikan Nasional", category: "nasional", year: 2026, date: "2026-05-02", image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600", link: "#" },
-      
-      // 2026 - Agustus
-      { id: 5, title: "Selamat Hari Kemerdekaan RI ke-81", category: "nasional", year: 2026, date: "2026-08-17", image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&q=80&w=600", link: "#" }
+      // KONTEN MENDATANG (2026)
+      { 
+        id: 8, 
+        title: "Selamat Hari Kartini 2026", 
+        category: "nasional", 
+        year: 2026, 
+        date: "2026-04-21", 
+        image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=600", 
+        link: "#",
+        status: "scheduled" // Akan muncul 21 April 2026
+      },
+      { 
+        id: 7, 
+        title: "Selamat Hari Pendidikan Nasional", 
+        category: "nasional", 
+        year: 2026, 
+        date: "2026-05-02", 
+        image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600", 
+        link: "#",
+        status: "scheduled" // Akan muncul 2 Mei 2026
+      },
+      { 
+        id: 5, 
+        title: "Selamat Hari Kemerdekaan RI ke-81", 
+        category: "nasional", 
+        year: 2026, 
+        date: "2026-08-17", 
+        image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&q=80&w=600", 
+        link: "#",
+        status: "scheduled" // Akan muncul 17 Agustus 2026
+      }
     ];
     
     const galleryGrid = document.getElementById('galleryGrid');
-
+    let currentFilter = 'all';
+    let releaseMode = 'auto'; // auto, all, 2025, 2026, idulFitri
+    
+    // ===== CEK TANGGAL HARI INI =====
+    function getTodayDate() {
+      const today = new Date();
+      return today.toISOString().split('T')[0]; // Format YYYY-MM-DD
+    }
+    
+    // ===== FILTER KONTEN BERDASARKAN MODE RELEASE =====
+    function filterByReleaseMode(data) {
+      const today = getTodayDate();
+      
+      switch(releaseMode) {
+        case 'all':
+          // Tampilkan semua konten tanpa terkecuali
+          return data;
+          
+        case '2025':
+          // Tampilkan hanya konten tahun 2025
+          return data.filter(item => item.year === 2025);
+          
+        case '2026':
+          // Tampilkan hanya konten tahun 2026
+          return data.filter(item => item.year === 2026);
+          
+        case 'idulFitri':
+          // Tampilkan hanya Idul Fitri
+          return data.filter(item => item.id === 12);
+          
+        case 'auto':
+        default:
+          // Mode otomatis: tampilkan konten yang sudah mencapai tanggalnya
+          return data.filter(item => {
+            // Konten dengan status 'past' atau tanggalnya sudah lewat
+            return item.date <= today;
+          });
+      }
+    }
+    
     // ===== FORMAT DATE =====
     function formatDate(dateString) {
       return new Date(dateString).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -489,21 +726,70 @@
       const labels = { 'agama': 'Hari Raya', 'nasional': 'Nasional', 'internasional': 'Internasional', 'sekolah': 'Event Sekolah' };
       return labels[category] || 'Umum';
     }
+    
+    // ===== GET STATUS LABEL =====
+    function getStatusLabel(status, date) {
+      const today = getTodayDate();
+      
+      if (date > today) {
+        return '<span class="status-badge status-scheduled"><i class="far fa-clock"></i> Akan Datang</span>';
+      } else if (date < today) {
+        return '<span class="status-badge status-past"><i class="fas fa-history"></i> Arsip</span>';
+      } else {
+        return '<span class="status-badge status-live"><i class="fas fa-broadcast-tower"></i> Hari Ini</span>';
+      }
+    }
 
     // ===== RENDER GALLERY =====
     function renderGallery(data) {
+      // Terapkan filter berdasarkan mode release
+      let filteredByRelease = filterByReleaseMode(data);
+      
+      // Terapkan filter kategori
+      let finalData = currentFilter === 'all' 
+        ? filteredByRelease 
+        : filteredByRelease.filter(item => item.category === currentFilter);
+      
       galleryGrid.innerHTML = '';
-      if (data.length === 0) {
-        galleryGrid.innerHTML = `<div class="empty-state" data-aos="zoom-in"><i class="fas fa-images"></i><h3>Belum ada ucapan untuk kategori ini</h3><p>Check back soon for more updates!</p></div>`;
+      
+      if (finalData.length === 0) {
+        let message = '';
+        if (releaseMode === 'auto') {
+          message = 'Belum ada ucapan untuk saat ini. Silakan cek lagi nanti atau gunakan panel admin untuk pratayang.';
+        } else {
+          message = 'Tidak ada konten dengan filter yang dipilih.';
+        }
+        
+        galleryGrid.innerHTML = `<div class="empty-state" data-aos="zoom-in">
+          <i class="fas fa-images"></i>
+          <h3>Belum Ada Ucapan</h3>
+          <p>${message}</p>
+        </div>`;
         return;
       }
-      data.forEach((item, index) => {
+      
+      // Urutkan berdasarkan tanggal
+      finalData.sort((a, b) => new Date(a.date) - new Date(b.date));
+      
+      finalData.forEach((item, index) => {
+        const today = getTodayDate();
+        const statusClass = item.date > today ? 'scheduled' : (item.date < today ? 'past' : 'live');
+        
         const card = document.createElement('div');
         card.className = 'greeting-card';
         card.setAttribute('data-aos', 'fade-up');
         card.setAttribute('data-aos-delay', (index % 4) * 50);
+        
+        // Status badge di pojok
+        const statusBadge = item.date > today 
+          ? '<div class="card-status scheduled"><i class="far fa-clock"></i> Jadwal: ' + formatDate(item.date) + '</div>'
+          : (item.date < today 
+            ? '<div class="card-status past"><i class="fas fa-archive"></i> Arsip</div>' 
+            : '<div class="card-status live"><i class="fas fa-broadcast-tower"></i> TAYANG HARI INI</div>');
+        
         card.innerHTML = `
           <div class="card-image-wrapper">
+            ${statusBadge}
             <a href="${item.link}" target="_blank" rel="noopener">
               <img src="${item.image}" alt="${item.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x560?text=SMAN+1+Cluring'">
             </a>
@@ -517,17 +803,50 @@
             <span class="card-tag">${getCategoryLabel(item.category)} • ${item.year}</span>
             <h3 class="card-title">${item.title}</h3>
             <p class="card-date"><i class="far fa-calendar"></i> ${formatDate(item.date)}</p>
+            <p style="font-size: 0.8rem; margin-top: 5px; color: var(--secondary);">
+              ${item.date > today ? '<i class="far fa-hourglass"></i> Akan tayang ' + formatDate(item.date) : ''}
+            </p>
           </div>`;
         galleryGrid.appendChild(card);
       });
+    }
+
+    // ===== SET RELEASE MODE =====
+    function setReleaseMode(mode) {
+      releaseMode = mode;
+      
+      // Update active class on buttons
+      document.querySelectorAll('.release-btn').forEach(btn => btn.classList.remove('active'));
+      if (mode === 'auto') document.getElementById('modeAuto').classList.add('active');
+      if (mode === 'all') document.getElementById('modeAll').classList.add('active');
+      if (mode === '2025') document.getElementById('mode2025').classList.add('active');
+      if (mode === '2026') document.getElementById('mode2026').classList.add('active');
+      if (mode === 'idulFitri') document.getElementById('modeIdul').classList.add('active');
+      
+      // Tampilkan pesan sesuai mode
+      let message = '';
+      switch(mode) {
+        case 'auto': message = 'Mode otomatis: Hanya menampilkan konten yang sudah waktunya tayang'; break;
+        case 'all': message = 'Menampilkan SEMUA konten (termasuk yang belum waktunya)'; break;
+        case '2025': message = 'Menampilkan konten tahun 2025 saja'; break;
+        case '2026': message = 'Menampilkan konten tahun 2026 saja'; break;
+        case 'idulFitri': message = 'Pratayang: Idul Fitri 2026'; break;
+      }
+      
+      showToast('🔄 ' + message, 'success');
+      
+      // Render ulang dengan filter yang baru
+      filterGallery(currentFilter, document.querySelector('.filter-btn.active'));
     }
 
     // ===== FILTER FUNCTION =====
     function filterGallery(category, btn) {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       if (btn) btn.classList.add('active');
-      if (category === 'all') renderGallery(greetingData);
-      else renderGallery(greetingData.filter(item => item.category === category));
+      currentFilter = category;
+      
+      // Render dengan filter kategori dan mode release
+      renderGallery(greetingData);
     }
 
     // ===== SHARE FUNCTION =====
@@ -629,8 +948,10 @@
 
     // ===== INIT =====
     document.addEventListener('DOMContentLoaded', () => {
-      // ✅ SORT ASCENDING: tanggal → bulan → tahun
-      greetingData.sort((a, b) => new Date(a.date) - new Date(b.date));
+      // Tampilkan panel admin (untuk demo, bisa dihapus jika tidak ingin publik melihatnya)
+      document.getElementById('adminControls').style.display = 'block';
+      
+      // Render awal
       renderGallery(greetingData);
       setActiveNav(); 
       setupMobileMenuClose();
