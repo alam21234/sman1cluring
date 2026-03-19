@@ -68,6 +68,33 @@
     }
     @keyframes spin { 100% { transform: rotate(360deg); } }
     
+    /* LANGUAGE SWITCHER */
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-right: 10px;
+    }
+    .lang-btn {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      color: var(--white);
+      padding: 6px 12px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .lang-btn.active {
+      background: var(--secondary);
+      border-color: var(--secondary);
+    }
+    .lang-btn:hover {
+      background: var(--secondary);
+      transform: translateY(-2px);
+    }
+    
     /* WHATSAPP FLOAT */
     .whatsapp-float {
       position: fixed; bottom: 30px; right: 30px;
@@ -416,7 +443,7 @@
   <!-- WHATSAPP FLOAT -->
   <a href="https://wa.me/6282319712420?text=Halo%20saya%20ingin%20bertanya%20tentang%20Galeri%20Ucapan%20SMAN%201%20Cluring"
      class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-    <i class="fab fa-whatsapp"></i><span>Chat Admin</span>
+    <i class="fab fa-whatsapp"></i><span class="whatsapp-text">Chat Admin</span>
   </a>
 
   <!-- HEADER -->
@@ -428,19 +455,23 @@
       </a>
       <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
       <div class="nav-right">
-        <a href="artikel.html" class="back-btn"><i class="fas fa-arrow-left"></i> <span>Artikel</span></a>
+        <div class="lang-switcher">
+          <button class="lang-btn active" onclick="switchLanguage('id')" id="langId">ID</button>
+          <button class="lang-btn" onclick="switchLanguage('en')" id="langEn">EN</button>
+        </div>
+        <a href="artikel.html" class="back-btn"><i class="fas fa-arrow-left"></i> <span class="back-text">Artikel</span></a>
         <nav>
           <ul id="navMenu">
-            <li><a href="index.html" data-page="index">Home</a></li>
-            <li><a href="profil.html" data-page="profil">Profil</a></li>
-            <li><a href="akademik.html" data-page="akademik">Akademik</a></li>
-            <li><a href="kesiswaan.html" data-page="kesiswaan">Kesiswaan</a></li>
-            <li><a href="sarpras.html" data-page="sarpras">Sarpras</a></li>
-            <li><a href="humas.html" data-page="humas">Humas</a></li>
-            <li><a href="mitra.html" data-page="mitra">Mitra</a></li>
-            <li><a href="alumni.html" data-page="alumni">Alumni</a></li>
-            <li><a href="artikel.html" data-page="artikel">Artikel</a></li>
-            <li><a href="ucapan.html" data-page="ucapan">Ucapan</a></li>
+            <li><a href="index.html" data-page="index" data-id="Home" data-en="Home">Home</a></li>
+            <li><a href="profil.html" data-page="profil" data-id="Profil" data-en="Profile">Profil</a></li>
+            <li><a href="akademik.html" data-page="akademik" data-id="Akademik" data-en="Academics">Akademik</a></li>
+            <li><a href="kesiswaan.html" data-page="kesiswaan" data-id="Kesiswaan" data-en="Student Affairs">Kesiswaan</a></li>
+            <li><a href="sarpras.html" data-page="sarpras" data-id="Sarpras" data-en="Facilities">Sarpras</a></li>
+            <li><a href="humas.html" data-page="humas" data-id="Humas" data-en="Public Relations">Humas</a></li>
+            <li><a href="mitra.html" data-page="mitra" data-id="Mitra" data-en="Partners">Mitra</a></li>
+            <li><a href="alumni.html" data-page="alumni" data-id="Alumni" data-en="Alumni">Alumni</a></li>
+            <li><a href="artikel.html" data-page="artikel" data-id="Artikel" data-en="Articles">Artikel</a></li>
+            <li><a href="ucapan.html" data-page="ucapan" data-id="Ucapan" data-en="Greetings">Ucapan</a></li>
             <li>
               <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
                 <i class="fas fa-moon"></i>
@@ -455,28 +486,28 @@
 
   <!-- HERO -->
   <section class="hero-greeting" data-aos="zoom-in">
-    <h1 data-aos="fade-up"><i class="fas fa-gift"></i> Galeri Ucapan & Perayaan</h1>
-    <p data-aos="fade-up" data-aos-delay="100">
+    <h1 data-aos="fade-up" id="heroTitle"><i class="fas fa-gift"></i> Galeri Ucapan & Perayaan</h1>
+    <p data-aos="fade-up" data-aos-delay="100" id="heroDesc">
       Kumpulan desain ucapan selamat hari raya, hari besar nasional, dan momen spesial dari keluarga besar SMAN 1 Cluring Banyuwangi.
     </p>
   </section>
 
   <!-- MAIN CONTENT -->
   <div class="container">
-    <!-- ADMIN CONTROLS (hanya muncul jika login/ mode admin) -->
-    <div class="admin-controls" data-aos="fade-up" id="adminControls" style="display: none;">
+    <!-- ADMIN CONTROLS -->
+    <div class="admin-controls" data-aos="fade-up" id="adminControls">
       <div class="admin-title">
         <i class="fas fa-crown"></i>
-        <h3>Panel Kontrol Admin - Rilis Konten</h3>
+        <h3 id="adminTitle">Panel Kontrol Admin - Rilis Konten</h3>
       </div>
       <div class="release-buttons">
-        <button class="release-btn active" onclick="setReleaseMode('auto')" id="modeAuto">🎯 Otomatis (Sesuai Jadwal)</button>
-        <button class="release-btn" onclick="setReleaseMode('all')" id="modeAll">📢 Rilis Semua Konten</button>
-        <button class="release-btn" onclick="setReleaseMode('2025')" id="mode2025">📅 Rilis 2025 Saja</button>
-        <button class="release-btn" onclick="setReleaseMode('2026')" id="mode2026">⏳ Rilis 2026 Saja</button>
-        <button class="release-btn" onclick="setReleaseMode('idulFitri')" id="modeIdul">🌙 Rilis Idul Fitri 2026</button>
+        <button class="release-btn active" onclick="setReleaseMode('auto')" id="modeAuto">🎯 <span data-id="Otomatis (Sesuai Jadwal)" data-en="Automatic (Scheduled)">Otomatis (Sesuai Jadwal)</span></button>
+        <button class="release-btn" onclick="setReleaseMode('all')" id="modeAll">📢 <span data-id="Rilis Semua Konten" data-en="Release All Content">Rilis Semua Konten</span></button>
+        <button class="release-btn" onclick="setReleaseMode('2025')" id="mode2025">📅 <span data-id="Rilis 2025 Saja" data-en="Release 2025 Only">Rilis 2025 Saja</span></button>
+        <button class="release-btn" onclick="setReleaseMode('2026')" id="mode2026">⏳ <span data-id="Rilis 2026 Saja" data-en="Release 2026 Only">Rilis 2026 Saja</span></button>
+        <button class="release-btn" onclick="setReleaseMode('idulFitri')" id="modeIdul">🌙 <span data-id="Rilis Idul Fitri 2026" data-en="Release Eid 2026">Rilis Idul Fitri 2026</span></button>
       </div>
-      <p style="margin-top: 15px; font-size: 0.9rem; color: var(--gray);">
+      <p style="margin-top: 15px; font-size: 0.9rem; color: var(--gray);" id="adminInfo">
         <i class="fas fa-info-circle"></i> Mode <strong>Otomatis</strong>: Hanya menampilkan konten yang sudah mencapai tanggalnya.
         Mode lainnya akan memaksa konten tertentu untuk tampil.
       </p>
@@ -484,11 +515,11 @@
 
     <!-- FILTERS -->
     <div class="filter-group" data-aos="fade-up">
-      <button class="filter-btn active" onclick="filterGallery('all', this)"><i class="fas fa-th"></i> Semua</button>
-      <button class="filter-btn" onclick="filterGallery('agama', this)"><i class="fas fa-mosque"></i> Hari Raya Agama</button>
-      <button class="filter-btn" onclick="filterGallery('nasional', this)"><i class="fas fa-flag"></i> Hari Nasional</button>
-      <button class="filter-btn" onclick="filterGallery('internasional', this)"><i class="fas fa-globe"></i> Internasional</button>
-      <button class="filter-btn" onclick="filterGallery('sekolah', this)"><i class="fas fa-school"></i> Event Sekolah</button>
+      <button class="filter-btn active" onclick="filterGallery('all', this)"><i class="fas fa-th"></i> <span data-id="Semua" data-en="All">Semua</span></button>
+      <button class="filter-btn" onclick="filterGallery('agama', this)"><i class="fas fa-mosque"></i> <span data-id="Hari Raya Agama" data-en="Religious Holidays">Hari Raya Agama</span></button>
+      <button class="filter-btn" onclick="filterGallery('nasional', this)"><i class="fas fa-flag"></i> <span data-id="Hari Nasional" data-en="National Days">Hari Nasional</span></button>
+      <button class="filter-btn" onclick="filterGallery('internasional', this)"><i class="fas fa-globe"></i> <span data-id="Internasional" data-en="International">Internasional</span></button>
+      <button class="filter-btn" onclick="filterGallery('sekolah', this)"><i class="fas fa-school"></i> <span data-id="Event Sekolah" data-en="School Events">Event Sekolah</span></button>
     </div>
     
     <!-- GALLERY GRID -->
@@ -499,22 +530,22 @@
   <footer data-aos="fade-up">
     <div class="footer-content">
       <div class="footer-section">
-        <h3><i class="fas fa-map-marker-alt"></i> Kontak</h3>
+        <h3><i class="fas fa-map-marker-alt"></i> <span data-id="Kontak" data-en="Contact">Kontak</span></h3>
         <p>Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, Jawa Timur</p>
         <p><i class="fas fa-phone"></i> <a href="tel:+62333713297">0333-713297</a></p>
         <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6282319712420" target="_blank">0823-1971-2420 (WA)</a></p>
       </div>
       <div class="footer-section">
-        <h3><i class="fas fa-link"></i> Link Penting</h3>
+        <h3><i class="fas fa-link"></i> <span data-id="Link Penting" data-en="Important Links">Link Penting</span></h3>
         <ul>
           <li><a href="https://sma.kemendikdasmen.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
           <li><a href="https://dindik.jatimprov.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
           <li><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas Banyuwangi</a></li>
-          <li><a href="artikel.html"><i class="fas fa-newspaper"></i> Artikel & Berita</a></li>
+          <li><a href="artikel.html"><i class="fas fa-newspaper"></i> <span data-id="Artikel & Berita" data-en="Articles & News">Artikel & Berita</span></a></li>
         </ul>
       </div>
       <div class="footer-section">
-        <h3><i class="fas fa-share-alt"></i> Media Sosial</h3>
+        <h3><i class="fas fa-share-alt"></i> <span data-id="Media Sosial" data-en="Social Media">Media Sosial</span></h3>
         <div class="social-links">
           <a href="https://www.facebook.com/Sman1Cluring" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/sman1_cluring" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
@@ -523,6 +554,7 @@
         </div>
       </div>
     </div>
+    
     <!-- CLOCK & VISITOR PANEL -->
     <div class="footer-info-panel">
       <div class="footer-clock">
@@ -534,7 +566,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
+      <p id="footerText">© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
     </div>
   </footer>
 
@@ -544,145 +576,316 @@
   <!-- JAVASCRIPT LOGIC -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
+    // ===== BILINGUAL CONFIGURATION =====
+    let currentLang = 'id'; // Default: Indonesian
+    
+    // Translation dictionary
+    const translations = {
+      id: {
+        // Hero Section
+        heroTitle: 'Galeri Ucapan & Perayaan',
+        heroDesc: 'Kumpulan desain ucapan selamat hari raya, hari besar nasional, dan momen spesial dari keluarga besar SMAN 1 Cluring Banyuwangi.',
+        
+        // Admin Panel
+        adminTitle: 'Panel Kontrol Admin - Rilis Konten',
+        adminInfo: 'Mode Otomatis: Hanya menampilkan konten yang sudah mencapai tanggalnya. Mode lainnya akan memaksa konten tertentu untuk tampil.',
+        
+        // Release Modes
+        modeAuto: 'Otomatis (Sesuai Jadwal)',
+        modeAll: 'Rilis Semua Konten',
+        mode2025: 'Rilis 2025 Saja',
+        mode2026: 'Rilis 2026 Saja',
+        modeIdul: 'Rilis Idul Fitri 2026',
+        
+        // Filters
+        filterAll: 'Semua',
+        filterAgama: 'Hari Raya Agama',
+        filterNasional: 'Hari Nasional',
+        filterInternasional: 'Internasional',
+        filterSekolah: 'Event Sekolah',
+        
+        // Card Status
+        statusScheduled: 'Jadwal',
+        statusPast: 'Arsip',
+        statusLive: 'TAYANG HARI INI',
+        willAir: 'Akan tayang',
+        
+        // Empty State
+        emptyTitle: 'Belum Ada Ucapan',
+        emptyAuto: 'Belum ada ucapan untuk saat ini. Silakan cek lagi nanti atau gunakan panel admin untuk pratayang.',
+        emptyFilter: 'Tidak ada konten dengan filter yang dipilih.',
+        
+        // Toast Messages
+        toastAuto: 'Mode otomatis: Hanya menampilkan konten yang sudah waktunya tayang',
+        toastAll: 'Menampilkan SEMUA konten (termasuk yang belum waktunya)',
+        toast2025: 'Menampilkan konten tahun 2025 saja',
+        toast2026: 'Menampilkan konten tahun 2026 saja',
+        toastIdul: 'Pratayang: Idul Fitri 2026',
+        toastCopied: '📋 Link berhasil disalin!',
+        
+        // Navigation
+        backText: 'Artikel',
+        whatsappText: 'Chat Admin',
+        
+        // Footer
+        footerContact: 'Kontak',
+        footerLinks: 'Link Penting',
+        footerSocial: 'Media Sosial',
+        footerArticles: 'Artikel & Berita',
+        footerText: '© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan'
+      },
+      en: {
+        // Hero Section
+        heroTitle: 'Greetings & Celebrations Gallery',
+        heroDesc: 'Collection of greeting designs for religious holidays, national days, and special moments from the SMAN 1 Cluring Banyuwangi family.',
+        
+        // Admin Panel
+        adminTitle: 'Admin Control Panel - Content Release',
+        adminInfo: 'Automatic Mode: Only shows content that has reached its date. Other modes will force specific content to appear.',
+        
+        // Release Modes
+        modeAuto: 'Automatic (Scheduled)',
+        modeAll: 'Release All Content',
+        mode2025: 'Release 2025 Only',
+        mode2026: 'Release 2026 Only',
+        modeIdul: 'Release Eid 2026',
+        
+        // Filters
+        filterAll: 'All',
+        filterAgama: 'Religious Holidays',
+        filterNasional: 'National Days',
+        filterInternasional: 'International',
+        filterSekolah: 'School Events',
+        
+        // Card Status
+        statusScheduled: 'Scheduled',
+        statusPast: 'Archive',
+        statusLive: 'AIRING TODAY',
+        willAir: 'Will air on',
+        
+        // Empty State
+        emptyTitle: 'No Greetings Yet',
+        emptyAuto: 'No greetings available at this time. Please check again later or use the admin panel for preview.',
+        emptyFilter: 'No content with the selected filter.',
+        
+        // Toast Messages
+        toastAuto: 'Automatic mode: Only showing content that is due to air',
+        toastAll: 'Showing ALL content (including those not yet due)',
+        toast2025: 'Showing 2025 content only',
+        toast2026: 'Showing 2026 content only',
+        toastIdul: 'Preview: Eid al-Fitr 2026',
+        toastCopied: '📋 Link copied successfully!',
+        
+        // Navigation
+        backText: 'Articles',
+        whatsappText: 'Chat Admin',
+        
+        // Footer
+        footerContact: 'Contact',
+        footerLinks: 'Important Links',
+        footerSocial: 'Social Media',
+        footerArticles: 'Articles & News',
+        footerText: '© 2026 SMAN 1 Cluring — Inspiring Pancasila Generation from Bumi Blambangan'
+      }
+    };
+
+    // ===== LANGUAGE SWITCHER =====
+    function switchLanguage(lang) {
+      currentLang = lang;
+      
+      // Update active class on language buttons
+      document.getElementById('langId').classList.toggle('active', lang === 'id');
+      document.getElementById('langEn').classList.toggle('active', lang === 'en');
+      
+      // Update all translatable elements
+      document.querySelectorAll('[data-id]').forEach(el => {
+        const idText = el.getAttribute('data-id');
+        const enText = el.getAttribute('data-en');
+        if (el.tagName === 'SPAN' || el.tagName === 'A' || (el.tagName === 'BUTTON' && !el.classList.contains('lang-btn'))) {
+          el.textContent = lang === 'id' ? idText : enText;
+        }
+      });
+      
+      // Update elements with specific IDs
+      document.getElementById('heroTitle').innerHTML = `<i class="fas fa-gift"></i> ${translations[lang].heroTitle}`;
+      document.getElementById('heroDesc').textContent = translations[lang].heroDesc;
+      document.getElementById('adminTitle').textContent = translations[lang].adminTitle;
+      document.getElementById('adminInfo').innerHTML = `<i class="fas fa-info-circle"></i> ${translations[lang].adminInfo}`;
+      
+      // Update release mode buttons text
+      document.querySelector('#modeAuto span').textContent = translations[lang].modeAuto;
+      document.querySelector('#modeAll span').textContent = translations[lang].modeAll;
+      document.querySelector('#mode2025 span').textContent = translations[lang].mode2025;
+      document.querySelector('#mode2026 span').textContent = translations[lang].mode2026;
+      document.querySelector('#modeIdul span').textContent = translations[lang].modeIdul;
+      
+      // Update filter buttons
+      const filterBtns = document.querySelectorAll('.filter-btn span');
+      if (filterBtns.length >= 5) {
+        filterBtns[0].textContent = translations[lang].filterAll;
+        filterBtns[1].textContent = translations[lang].filterAgama;
+        filterBtns[2].textContent = translations[lang].filterNasional;
+        filterBtns[3].textContent = translations[lang].filterInternasional;
+        filterBtns[4].textContent = translations[lang].filterSekolah;
+      }
+      
+      // Update navigation
+      document.querySelector('.back-text').textContent = translations[lang].backText;
+      document.querySelector('.whatsapp-text').textContent = translations[lang].whatsappText;
+      
+      // Update footer
+      document.querySelectorAll('.footer-section h3 span').forEach((el, index) => {
+        if (index === 0) el.textContent = translations[lang].footerContact;
+        else if (index === 1) el.textContent = translations[lang].footerLinks;
+        else if (index === 2) el.textContent = translations[lang].footerSocial;
+      });
+      
+      document.querySelector('.footer-section ul li:last-child a span').textContent = translations[lang].footerArticles;
+      document.getElementById('footerText').textContent = translations[lang].footerText;
+      
+      // Re-render gallery to update status texts
+      renderGallery(greetingData);
+    }
+
     // ===== DATA UCAPAN DENGAN STATUS JADWAL =====
     const greetingData = [
-      // KONTEN MASA LALU (2025) - Bisa disembunyikan
+      // KONTEN MASA LALU (2025)
       { 
         id: 9, 
-        title: "Selamat Hari Anak Nasional 2025", 
+        titleId: "Selamat Hari Anak Nasional 2025",
+        titleEn: "Happy National Children's Day 2025",
         category: "internasional", 
         year: 2025, 
         date: "2025-07-23", 
         image: "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&q=80&w=600", 
-        link: "#",
-        status: "past" // konten lama
+        link: "#"
       },
       { 
         id: 6, 
-        title: "Selamat Natal & Tahun Baru 2026", 
+        titleId: "Selamat Natal & Tahun Baru 2026",
+        titleEn: "Merry Christmas & Happy New Year 2026",
         category: "agama", 
         year: 2025, 
         date: "2025-12-25", 
         image: "https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&fit=crop&q=80&w=600", 
-        link: "#",
-        status: "past" // konten lama
+        link: "#"
       },
       
       // KONTEN 2026
       { 
         id: 1, 
-        title: "Selamat Tahun Baru Imlek 2577", 
+        titleId: "Selamat Tahun Baru Imlek 2577",
+        titleEn: "Happy Chinese New Year 2577",
         category: "agama", 
         year: 2026, 
         date: "2026-01-29", 
         image: "https://i.ibb.co.com/W4xkCJL0/imlek.jpg", 
-        link: "https://ibb.co.com/39rpKZnv",
-        status: "past" // sudah lewat
+        link: "https://ibb.co.com/39rpKZnv"
       },
       { 
         id: 2, 
-        title: "Selamat Menunaikan Ibadah Puasa 1447 H", 
+        titleId: "Selamat Menunaikan Ibadah Puasa 1447 H",
+        titleEn: "Blessed Ramadan 1447 H",
         category: "sekolah", 
         year: 2026, 
         date: "2026-02-20", 
         image: "https://i.ibb.co.com/ZR322tPt/puasa.jpg", 
-        link: "https://ibb.co.com/Y4600YMY",
-        status: "past" // sudah lewat
+        link: "https://ibb.co.com/Y4600YMY"
       },
       { 
         id: 4, 
-        title: "Kampanye Kurangi Sampah Plastik", 
+        titleId: "Kampanye Kurangi Sampah Plastik",
+        titleEn: "Reduce Plastic Waste Campaign",
         category: "sekolah", 
         year: 2026, 
         date: "2026-02-21", 
         image: "https://i.ibb.co.com/xKJC3qrh/flayer-sampah-plastik.jpg", 
-        link: "https://ibb.co.com/Fkgxn4d6",
-        status: "past" // sudah lewat
+        link: "https://ibb.co.com/Fkgxn4d6"
       },
       { 
         id: 3, 
-        title: "Pondok Ramadan 2026", 
+        titleId: "Pondok Ramadan 2026",
+        titleEn: "Ramadan Islamic Boarding 2026",
         category: "sekolah", 
         year: 2026, 
         date: "2026-02-23", 
         image: "https://i.ibb.co.com/vvscHcKY/brosur-pondok-romadhon.jpg", 
-        link: "https://ibb.co.com/FqshKhjV",
-        status: "past" // sudah lewat
+        link: "https://ibb.co.com/FqshKhjV"
       },
       { 
         id: 10, 
-        title: "Program Siswa Asuh Sebaya 2026", 
+        titleId: "Program Siswa Asuh Sebaya 2026",
+        titleEn: "Peer Tutoring Program 2026",
         category: "sekolah", 
         year: 2026, 
         date: "2026-02-23", 
         image: "https://i.ibb.co.com/90M2JhH/siswa-asuh-sebaya.jpg", 
-        link: "https://ibb.co.com/QV5nZkv",
-        status: "past" // sudah lewat
+        link: "https://ibb.co.com/QV5nZkv"
       },
       { 
         id: 11, 
-        title: "Selamat Hari Raya Nyepi 2026", 
+        titleId: "Selamat Hari Raya Nyepi 2026",
+        titleEn: "Happy Nyepi Day 2026",
         category: "agama", 
         year: 2026, 
         date: "2026-03-18", 
         image: "https://i.ibb.co.com/0VsXwy4h/nyepi.jpg", 
-        link: "https://ibb.co.com/Z12JZz4W",
-        status: "past" // sudah lewat
+        link: "https://ibb.co.com/Z12JZz4W"
       },
       
-      // IDUL FITRI 2026 - YANG BENAR 21 MARET 2026
+      // IDUL FITRI 2026 - 21 MARET 2026
       { 
         id: 12, 
-        title: "Hari Raya Idul Fitri 1447 H", 
+        titleId: "Hari Raya Idul Fitri 1447 H",
+        titleEn: "Eid al-Fitr 1447 H",
         category: "agama", 
         year: 2026, 
-        date: "2026-03-21", // Diperbaiki jadi 2026
+        date: "2026-03-21",
         image: "https://i.ibb.co.com/LDpPyrhQ/hari-raya-idul-fitri-1447-H.jpg", 
-        link: "https://ibb.co.com/vCzBWhvs",
-        status: "scheduled" // KONTEN JADWAL (akan muncul otomatis 21 Maret 2026)
+        link: "https://ibb.co.com/vCzBWhvs"
       },
       
       // KONTEN MENDATANG (2026)
       { 
         id: 8, 
-        title: "Selamat Hari Kartini 2026", 
+        titleId: "Selamat Hari Kartini 2026",
+        titleEn: "Happy Kartini Day 2026",
         category: "nasional", 
         year: 2026, 
         date: "2026-04-21", 
         image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=600", 
-        link: "#",
-        status: "scheduled" // Akan muncul 21 April 2026
+        link: "#"
       },
       { 
         id: 7, 
-        title: "Selamat Hari Pendidikan Nasional", 
+        titleId: "Selamat Hari Pendidikan Nasional",
+        titleEn: "Happy National Education Day",
         category: "nasional", 
         year: 2026, 
         date: "2026-05-02", 
         image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600", 
-        link: "#",
-        status: "scheduled" // Akan muncul 2 Mei 2026
+        link: "#"
       },
       { 
         id: 5, 
-        title: "Selamat Hari Kemerdekaan RI ke-81", 
+        titleId: "Selamat Hari Kemerdekaan RI ke-81",
+        titleEn: "Happy 81st Independence Day of Indonesia",
         category: "nasional", 
         year: 2026, 
         date: "2026-08-17", 
         image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&q=80&w=600", 
-        link: "#",
-        status: "scheduled" // Akan muncul 17 Agustus 2026
+        link: "#"
       }
     ];
     
     const galleryGrid = document.getElementById('galleryGrid');
     let currentFilter = 'all';
-    let releaseMode = 'auto'; // auto, all, 2025, 2026, idulFitri
+    let releaseMode = 'auto';
     
     // ===== CEK TANGGAL HARI INI =====
     function getTodayDate() {
       const today = new Date();
-      return today.toISOString().split('T')[0]; // Format YYYY-MM-DD
+      return today.toISOString().split('T')[0];
     }
     
     // ===== FILTER KONTEN BERDASARKAN MODE RELEASE =====
@@ -691,61 +894,35 @@
       
       switch(releaseMode) {
         case 'all':
-          // Tampilkan semua konten tanpa terkecuali
           return data;
-          
         case '2025':
-          // Tampilkan hanya konten tahun 2025
           return data.filter(item => item.year === 2025);
-          
         case '2026':
-          // Tampilkan hanya konten tahun 2026
           return data.filter(item => item.year === 2026);
-          
         case 'idulFitri':
-          // Tampilkan hanya Idul Fitri
           return data.filter(item => item.id === 12);
-          
         case 'auto':
         default:
-          // Mode otomatis: tampilkan konten yang sudah mencapai tanggalnya
-          return data.filter(item => {
-            // Konten dengan status 'past' atau tanggalnya sudah lewat
-            return item.date <= today;
-          });
+          return data.filter(item => item.date <= today);
       }
     }
     
     // ===== FORMAT DATE =====
     function formatDate(dateString) {
-      return new Date(dateString).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' });
+      return new Date(dateString).toLocaleDateString(currentLang === 'id' ? 'id-ID' : 'en-US', 
+        { year: 'numeric', month: 'long', day: 'numeric' });
     }
 
     // ===== GET CATEGORY LABEL =====
     function getCategoryLabel(category) {
-      const labels = { 'agama': 'Hari Raya', 'nasional': 'Nasional', 'internasional': 'Internasional', 'sekolah': 'Event Sekolah' };
-      return labels[category] || 'Umum';
-    }
-    
-    // ===== GET STATUS LABEL =====
-    function getStatusLabel(status, date) {
-      const today = getTodayDate();
-      
-      if (date > today) {
-        return '<span class="status-badge status-scheduled"><i class="far fa-clock"></i> Akan Datang</span>';
-      } else if (date < today) {
-        return '<span class="status-badge status-past"><i class="fas fa-history"></i> Arsip</span>';
-      } else {
-        return '<span class="status-badge status-live"><i class="fas fa-broadcast-tower"></i> Hari Ini</span>';
-      }
+      const labelsId = { 'agama': 'Hari Raya', 'nasional': 'Nasional', 'internasional': 'Internasional', 'sekolah': 'Event Sekolah' };
+      const labelsEn = { 'agama': 'Religious', 'nasional': 'National', 'internasional': 'International', 'sekolah': 'School Event' };
+      return currentLang === 'id' ? (labelsId[category] || 'Umum') : (labelsEn[category] || 'General');
     }
 
     // ===== RENDER GALLERY =====
     function renderGallery(data) {
-      // Terapkan filter berdasarkan mode release
       let filteredByRelease = filterByReleaseMode(data);
-      
-      // Terapkan filter kategori
       let finalData = currentFilter === 'all' 
         ? filteredByRelease 
         : filteredByRelease.filter(item => item.category === currentFilter);
@@ -753,58 +930,56 @@
       galleryGrid.innerHTML = '';
       
       if (finalData.length === 0) {
-        let message = '';
-        if (releaseMode === 'auto') {
-          message = 'Belum ada ucapan untuk saat ini. Silakan cek lagi nanti atau gunakan panel admin untuk pratayang.';
-        } else {
-          message = 'Tidak ada konten dengan filter yang dipilih.';
-        }
+        let message = releaseMode === 'auto' 
+          ? translations[currentLang].emptyAuto 
+          : translations[currentLang].emptyFilter;
         
         galleryGrid.innerHTML = `<div class="empty-state" data-aos="zoom-in">
           <i class="fas fa-images"></i>
-          <h3>Belum Ada Ucapan</h3>
+          <h3>${translations[currentLang].emptyTitle}</h3>
           <p>${message}</p>
         </div>`;
         return;
       }
       
-      // Urutkan berdasarkan tanggal
       finalData.sort((a, b) => new Date(a.date) - new Date(b.date));
       
       finalData.forEach((item, index) => {
         const today = getTodayDate();
-        const statusClass = item.date > today ? 'scheduled' : (item.date < today ? 'past' : 'live');
+        const title = currentLang === 'id' ? item.titleId : item.titleEn;
         
         const card = document.createElement('div');
         card.className = 'greeting-card';
         card.setAttribute('data-aos', 'fade-up');
         card.setAttribute('data-aos-delay', (index % 4) * 50);
         
-        // Status badge di pojok
-        const statusBadge = item.date > today 
-          ? '<div class="card-status scheduled"><i class="far fa-clock"></i> Jadwal: ' + formatDate(item.date) + '</div>'
-          : (item.date < today 
-            ? '<div class="card-status past"><i class="fas fa-archive"></i> Arsip</div>' 
-            : '<div class="card-status live"><i class="fas fa-broadcast-tower"></i> TAYANG HARI INI</div>');
+        let statusBadge = '';
+        if (item.date > today) {
+          statusBadge = `<div class="card-status scheduled"><i class="far fa-clock"></i> ${translations[currentLang].statusScheduled}: ${formatDate(item.date)}</div>`;
+        } else if (item.date < today) {
+          statusBadge = `<div class="card-status past"><i class="fas fa-archive"></i> ${translations[currentLang].statusPast}</div>`;
+        } else {
+          statusBadge = `<div class="card-status live"><i class="fas fa-broadcast-tower"></i> ${translations[currentLang].statusLive}</div>`;
+        }
         
         card.innerHTML = `
           <div class="card-image-wrapper">
             ${statusBadge}
             <a href="${item.link}" target="_blank" rel="noopener">
-              <img src="${item.image}" alt="${item.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x560?text=SMAN+1+Cluring'">
+              <img src="${item.image}" alt="${title}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x560?text=SMAN+1+Cluring'">
             </a>
             <div class="card-overlay">
-              <a href="${item.link}" target="_blank" class="action-icon" title="Lihat Full Size"><i class="fas fa-expand"></i></a>
-              <a href="#" onclick="shareGreeting('${item.title.replace(/'/g, "\\'")}', '${item.link}'); return false;" class="action-icon" title="Bagikan"><i class="fas fa-share-alt"></i></a>
-              <a href="${item.image}" download="${item.title}.jpg" class="action-icon" title="Download"><i class="fas fa-download"></i></a>
+              <a href="${item.link}" target="_blank" class="action-icon" title="${currentLang === 'id' ? 'Lihat Full Size' : 'View Full Size'}"><i class="fas fa-expand"></i></a>
+              <a href="#" onclick="shareGreeting('${title.replace(/'/g, "\\'")}', '${item.link}'); return false;" class="action-icon" title="${currentLang === 'id' ? 'Bagikan' : 'Share'}"><i class="fas fa-share-alt"></i></a>
+              <a href="${item.image}" download="${title}.jpg" class="action-icon" title="${currentLang === 'id' ? 'Download' : 'Download'}"><i class="fas fa-download"></i></a>
             </div>
           </div>
           <div class="card-info">
             <span class="card-tag">${getCategoryLabel(item.category)} • ${item.year}</span>
-            <h3 class="card-title">${item.title}</h3>
+            <h3 class="card-title">${title}</h3>
             <p class="card-date"><i class="far fa-calendar"></i> ${formatDate(item.date)}</p>
             <p style="font-size: 0.8rem; margin-top: 5px; color: var(--secondary);">
-              ${item.date > today ? '<i class="far fa-hourglass"></i> Akan tayang ' + formatDate(item.date) : ''}
+              ${item.date > today ? `<i class="far fa-hourglass"></i> ${translations[currentLang].willAir} ${formatDate(item.date)}` : ''}
             </p>
           </div>`;
         galleryGrid.appendChild(card);
@@ -815,7 +990,6 @@
     function setReleaseMode(mode) {
       releaseMode = mode;
       
-      // Update active class on buttons
       document.querySelectorAll('.release-btn').forEach(btn => btn.classList.remove('active'));
       if (mode === 'auto') document.getElementById('modeAuto').classList.add('active');
       if (mode === 'all') document.getElementById('modeAll').classList.add('active');
@@ -823,19 +997,16 @@
       if (mode === '2026') document.getElementById('mode2026').classList.add('active');
       if (mode === 'idulFitri') document.getElementById('modeIdul').classList.add('active');
       
-      // Tampilkan pesan sesuai mode
-      let message = '';
+      let messageKey = '';
       switch(mode) {
-        case 'auto': message = 'Mode otomatis: Hanya menampilkan konten yang sudah waktunya tayang'; break;
-        case 'all': message = 'Menampilkan SEMUA konten (termasuk yang belum waktunya)'; break;
-        case '2025': message = 'Menampilkan konten tahun 2025 saja'; break;
-        case '2026': message = 'Menampilkan konten tahun 2026 saja'; break;
-        case 'idulFitri': message = 'Pratayang: Idul Fitri 2026'; break;
+        case 'auto': messageKey = 'toastAuto'; break;
+        case 'all': messageKey = 'toastAll'; break;
+        case '2025': messageKey = 'toast2025'; break;
+        case '2026': messageKey = 'toast2026'; break;
+        case 'idulFitri': messageKey = 'toastIdul'; break;
       }
       
-      showToast('🔄 ' + message, 'success');
-      
-      // Render ulang dengan filter yang baru
+      showToast('🔄 ' + translations[currentLang][messageKey], 'success');
       filterGallery(currentFilter, document.querySelector('.filter-btn.active'));
     }
 
@@ -844,17 +1015,23 @@
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       if (btn) btn.classList.add('active');
       currentFilter = category;
-      
-      // Render dengan filter kategori dan mode release
       renderGallery(greetingData);
     }
 
     // ===== SHARE FUNCTION =====
     function shareGreeting(title, link) {
       if (navigator.share) {
-        navigator.share({ title: title, text: `Lihat ucapan "${title}" dari SMAN 1 Cluring`, url: link }).catch(console.error);
+        navigator.share({ 
+          title: title, 
+          text: currentLang === 'id' 
+            ? `Lihat ucapan "${title}" dari SMAN 1 Cluring` 
+            : `Check out "${title}" from SMAN 1 Cluring`, 
+          url: link 
+        }).catch(console.error);
       } else {
-        navigator.clipboard.writeText(link).then(() => showToast('📋 Link berhasil disalin!', 'success')).catch(() => alert('Link: ' + link));
+        navigator.clipboard.writeText(link)
+          .then(() => showToast(translations[currentLang].toastCopied, 'success'))
+          .catch(() => alert('Link: ' + link));
       }
     }
 
@@ -873,8 +1050,7 @@
 
     // ===== CLOSE MOBILE MENU WHEN CLICK LINK =====
     function setupMobileMenuClose() {
-      const navLinks = document.querySelectorAll('#navMenu a');
-      navLinks.forEach(link => {
+      document.querySelectorAll('#navMenu a').forEach(link => {
         link.addEventListener('click', () => {
           document.getElementById('navMenu').classList.remove('active');
         });
@@ -886,9 +1062,7 @@
       const currentPage = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
       document.querySelectorAll('#navMenu a[data-page]').forEach(link => {
         link.classList.remove('active');
-        if (link.dataset.page === currentPage) {
-          link.classList.add('active');
-        }
+        if (link.dataset.page === currentPage) link.classList.add('active');
       });
     }
 
@@ -920,10 +1094,21 @@
     // ===== REALTIME CLOCK =====
     function updateClock() {
       const now = new Date();
-      document.getElementById('footerTime').textContent = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
-      const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
-      const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-      document.getElementById('footerDate').textContent = `${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
+      document.getElementById('footerTime').textContent = 
+        `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+      
+      const daysId = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+      const daysEn = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      const monthsId = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+      const monthsEn = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      
+      if (currentLang === 'id') {
+        document.getElementById('footerDate').textContent = 
+          `${daysId[now.getDay()]}, ${now.getDate()} ${monthsId[now.getMonth()]} ${now.getFullYear()}`;
+      } else {
+        document.getElementById('footerDate').textContent = 
+          `${daysEn[now.getDay()]}, ${monthsEn[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+      }
     }
     setInterval(updateClock, 1000); 
     updateClock();
@@ -943,15 +1128,16 @@
           sessionStorage.setItem('greeting_visitor_counted', 'true'); 
         } 
       }
-      document.getElementById('footerVisitorCount').textContent = `${count.toLocaleString('id-ID')} Pengunjung`;
+      document.getElementById('footerVisitorCount').textContent = 
+        `${count.toLocaleString(currentLang === 'id' ? 'id-ID' : 'en-US')} ${currentLang === 'id' ? 'Pengunjung' : 'Visitors'}`;
     }
 
     // ===== INIT =====
     document.addEventListener('DOMContentLoaded', () => {
-      // Tampilkan panel admin (untuk demo, bisa dihapus jika tidak ingin publik melihatnya)
-      document.getElementById('adminControls').style.display = 'block';
+      // Initialize with Indonesian
+      switchLanguage('id');
       
-      // Render awal
+      // Render gallery
       renderGallery(greetingData);
       setActiveNav(); 
       setupMobileMenuClose();
