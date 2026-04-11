@@ -8,7 +8,7 @@
   <!-- SEO -->
   <meta name="description" content="Kumpulan ucapan selamat hari raya, hari besar nasional, dan event khusus dari SMAN 1 Cluring." />
   <meta name="author" content="SMAN 1 Cluring" />
-  <meta name="keywords" content="ucapan selamat, hari raya, imlek, puasa, natal, tahun baru, SMAN 1 Cluring" />
+  <meta name="keywords" content="ucapan selamat, hari raya, imlek, puasa, natal, tahun baru, jumat agung, SMAN 1 Cluring" />
   
   <!-- Open Graph -->
   <meta property="og:title" content="Galeri Ucapan - SMAN 1 Cluring" />
@@ -845,6 +845,18 @@
         link: "https://ibb.co.com/vCzBWhvs"
       },
       
+      // ✨ BARU: JUMAT AGUNG 2026 - 3 APRIL 2026 ✨
+      { 
+        id: 13, 
+        titleId: "Selamat Hari Jumat Agung 2026",
+        titleEn: "Happy Good Friday 2026",
+        category: "agama", 
+        year: 2026, 
+        date: "2026-04-03", 
+        image: "https://i.ibb.co.com/67vfQKLJ/JUMAT-AGUNG.jpg", 
+        link: "https://ibb.co.com/XryvHnMk"
+      },
+      
       // KONTEN MENDATANG (2026)
       { 
         id: 8, 
@@ -942,6 +954,7 @@
         return;
       }
       
+      // ✅ PENGURUTAN OTOMATIS BERDASARKAN TANGGAL (YYYY-MM-DD)
       finalData.sort((a, b) => new Date(a.date) - new Date(b.date));
       
       finalData.forEach((item, index) => {
