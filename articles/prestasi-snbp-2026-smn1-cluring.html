@@ -4,12 +4,11 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>57 Siswa SMAN 1 Cluring Lolos SNBP 2026 | Prestasi Akademik</title>
-<!-- DNS Preconnect for Speed -->
+<!-- DNS Preconnect -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 <link rel="preconnect" href="https://unpkg.com">
-<link rel="preconnect" href="https://www.youtube.com">
 <link rel="preconnect" href="https://i.ibb.co">
 <!-- SEO -->
 <meta name="description" content="57 siswa SMAN 1 Cluring berhasil lolos Seleksi Nasional Berdasarkan Prestasi (SNBP) 2026 ke berbagai perguruan tinggi negeri favorit." />
@@ -20,7 +19,7 @@
 <meta property="og:description" content="Kabar membanggakan! 57 siswa SMAN 1 Cluring diterima di PTN favorit melalui jalur SNBP 2026." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://sman1cluring.sch.id/artikel/snbp-2026.html" />
-<meta property="og:image" content="https://i.ibb.co.com/5WppLwkd/57-snbp-4x4.png" />
+<meta property="og:image" content="https://i.ibb.co.com/F4WXJYh8/57-snbp.png" />
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <!-- Font Awesome -->
@@ -28,7 +27,7 @@
 <!-- AOS Animation -->
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 <style>
-/* ===== CORE VARIABLES (SAMA DENGAN RUJUKAN) ===== */
+/* ===== CORE VARIABLES ===== */
 :root {
   --primary: #0a2a5e;
   --primary-light: #1e3a7a;
@@ -71,7 +70,6 @@
   --chat-user: #1e3a8a;
   --chat-bot: #2d3748;
 }
-/* ===== RESET & BASE ===== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -86,7 +84,7 @@ h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700;
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; height: auto; display: block; }
 
-/* ===== PRELOADER ===== */
+/* PRELOADER */
 #preloader {
   position: fixed; top: 0; left: 0; width: 100%; height: 100%;
   background: var(--primary); display: flex; justify-content: center; align-items: center;
@@ -103,7 +101,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-/* ===== WHATSAPP FLOAT ===== */
+/* WHATSAPP FLOAT */
 .whatsapp-float {
   position: fixed; bottom: 100px; right: 30px;
   background: linear-gradient(135deg, var(--whatsapp) 0%, var(--whatsapp-dark) 100%);
@@ -115,10 +113,10 @@ img { max-width: 100%; height: auto; display: block; }
   font-weight: 600;
 }
 .whatsapp-float i { font-size: 28px; animation: pulse 2s infinite; }
-.whatsapp-float:hover { transform: translateY(-8px) scale(1.05); box-shadow: 0 20px 35px rgba(37, 211, 102, 0.4); }
+.whatsapp-float:hover { transform: translateY(-8px) scale(1.05); }
 @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
 
-/* ===== CHAT SYSTEM (sama dengan rujukan) ===== */
+/* CHAT SYSTEM */
 .chat-button {
   position: fixed; bottom: 30px; right: 30px;
   background: linear-gradient(135deg, var(--chat-primary) 0%, var(--primary-light) 100%);
@@ -215,7 +213,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .quick-reply:hover { background: var(--secondary); color: white; }
 
-/* ===== HEADER (dari rujukan) ===== */
+/* HEADER */
 header {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   position: sticky; top: 0; z-index: 1000;
@@ -259,7 +257,7 @@ nav ul li a.active::after { width: 100%; background: var(--secondary); }
 .dark-mode-toggle:hover, .bilingual-toggle:hover { background: var(--secondary); border-color: var(--secondary); transform: scale(1.05); }
 .menu-toggle { display: none; font-size: 28px; color: var(--white); cursor: pointer; }
 
-/* ===== ARTICLE HERO KHUSUS ===== */
+/* ARTICLE HERO */
 .article-hero {
   background: linear-gradient(135deg, rgba(10,42,94,0.97), rgba(5,26,59,0.99)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="40" cy="80" r="2.5" fill="rgba(255,255,255,0.06)"/></svg>');
   color: var(--white); padding: 70px 20px 60px; text-align: center;
@@ -298,7 +296,7 @@ nav ul li a.active::after { width: 100%; background: var(--secondary); }
 }
 .meta-info span { display: flex; align-items: center; gap: 0.6rem; }
 
-/* ===== MAIN CONTENT ARTIKEL ===== */
+/* MAIN CONTENT */
 main {
   max-width: 1100px; margin: -40px auto 60px;
   background: var(--white); padding: 45px;
@@ -357,7 +355,7 @@ main {
 }
 .university-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-left-color: var(--secondary); }
 
-/* ===== FOOTER (SAMA DENGAN RUJUKAN) ===== */
+/* FOOTER */
 footer {
   background: linear-gradient(145deg, var(--primary-dark) 0%, var(--primary) 100%);
   color: var(--white); padding: 70px 32px 30px;
@@ -410,7 +408,7 @@ footer::before {
 }
 .footer-bottom { text-align: center; margin-top: 30px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.95rem; opacity: 0.8; }
 
-/* ===== RESPONSIVE ===== */
+/* RESPONSIVE */
 @media (max-width: 1024px) {
   nav ul { gap: 20px; }
   .article-hero h1 { font-size: 2.2rem; }
@@ -456,7 +454,7 @@ footer::before {
 <!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/6282319712420?text=Halo%20saya%20ingin%20bertanya%20tentang%20SMAN%201%20Cluring" class="whatsapp-float" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i><span>Chat Admin</span></a>
 
-<!-- CHAT BOX (sama dengan rujukan) -->
+<!-- CHAT BOX -->
 <div class="chat-button" id="chatButton"><i class="fas fa-comment-dots"></i><span class="notification-badge">1</span></div>
 <div class="chat-box" id="chatBox">
   <div class="chat-header"><div class="chat-header-avatar"><i class="fas fa-robot"></i></div><div class="chat-header-info"><h4>Asisten Virtual SMAN 1 Cluring</h4><p><i class="fas fa-circle"></i> Online - Siap membantu</p></div><div class="chat-close" id="chatClose"><i class="fas fa-times"></i></div></div>
@@ -465,28 +463,30 @@ footer::before {
   <div class="chat-input-area"><input type="text" class="chat-input" id="chatInput" placeholder="Ketik pesan..." /><button class="chat-send" id="chatSend"><i class="fas fa-paper-plane"></i></button></div>
 </div>
 
-<!-- HEADER (dari rujukan, dengan menu terhubung ke beranda) -->
+<!-- HEADER (SEMUA TAUTAN INTERNAL MENGGUNAKAN ROOT PATH "/") -->
 <header data-aos="fade-down">
   <div class="nav-container">
-    <a href="index.html" class="brand"><img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring" width="52" height="52" /><span>SMAN 1 CLURING</span></a>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <a href="/" class="brand"><img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring" width="52" height="52" /><span>SMAN 1 CLURING</span></a>
+    <div class="menu-toggle" id="menuToggle">☰</div>
     <div class="nav-right">
-      <nav><ul id="navMenu">
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="profil.html">Profil</a></li>
-        <li><a href="akademik.html">Akademik</a></li>
-        <li><a href="kesiswaan.html">Kesiswaan</a></li>
-        <li><a href="sarpras.html">Sarpras</a></li>
-        <li><a href="humas.html">Humas</a></li>
-        <li><a href="mitra.html">Mitra</a></li>
-        <li><a href="alumni.html">Alumni</a></li>
-        <li><a href="artikel.html" class="active">Artikel</a></li>
-        <li><a href="#kontak">Kontak</a></li>
-        <li style="display: flex; align-items: center; gap: 8px;">
-          <button class="bilingual-toggle" id="bilingualToggle" aria-label="Switch language">ID</button>
-          <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i><i class="fas fa-sun sun" style="display:none"></i></button>
-        </li>
-      </ul></nav>
+      <nav>
+        <ul id="navMenu">
+          <li><a href="/">Beranda</a></li>
+          <li><a href="/profil.html">Profil</a></li>
+          <li><a href="/akademik.html">Akademik</a></li>
+          <li><a href="/kesiswaan.html">Kesiswaan</a></li>
+          <li><a href="/sarpras.html">Sarpras</a></li>
+          <li><a href="/humas.html">Humas</a></li>
+          <li><a href="/mitra.html">Mitra</a></li>
+          <li><a href="/alumni.html">Alumni</a></li>
+          <li><a href="/artikel.html" class="active">Artikel</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+          <li style="display: flex; align-items: center; gap: 8px;">
+            <button class="bilingual-toggle" id="bilingualToggle" aria-label="Switch language">ID</button>
+            <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i><i class="fas fa-sun sun" style="display:none"></i></button>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
 </header>
@@ -502,11 +502,11 @@ footer::before {
   </div>
 </section>
 
-<!-- MAIN KONTEN ARTIKEL -->
+<!-- MAIN KONTEN -->
 <main data-aos="fade-up">
   <article>
     <div class="featured-image">
-      <img src="https://i.ibb.co.com/F4WXJYh8/57-snbp.png" alt="57 Siswa SMAN 1 Cluring Lolos SNBP 2026">
+      <img src="https://i.ibb.co.com/5WppLwkd/57-snbp-4x4.png" alt="57 Siswa SMAN 1 Cluring Lolos SNBP 2026">
       <p class="image-caption">🎉 Dokumentasi keberhasilan 57 siswa SMAN 1 Cluring yang lolos SNBP 2026</p>
     </div>
     <div class="article-content">
@@ -559,7 +559,7 @@ footer::before {
   </article>
 </main>
 
-<!-- FOOTER (IDENTIK DENGAN RUJUKAN) -->
+<!-- FOOTER -->
 <footer data-aos="fade-up" id="kontak">
   <div class="footer-content">
     <div class="footer-section"><h3><i class="fas fa-map-marker-alt"></i> Kontak</h3><p>Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, Jawa Timur</p><p><i class="fas fa-phone"></i> <a href="tel:+6282319712420">0823-1971-2420</a></p><p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6282319712420" target="_blank">0823-1971-2420 (WA)</a></p></div>
@@ -573,14 +573,13 @@ footer::before {
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-// ===== INISIALISASI =====
 document.addEventListener('DOMContentLoaded', () => {
   // Preloader
   setTimeout(() => { document.getElementById('preloader').classList.add('fade-out'); }, 600);
   // AOS
   AOS.init({ duration: 800, once: true, easing: 'ease-out-cubic' });
 
-  // Dark Mode (sederhana, sesuai rujukan)
+  // Dark Mode
   const darkToggle = document.getElementById('darkModeToggle');
   const body = document.body;
   if (localStorage.getItem('darkMode') === 'true') body.classList.add('dark-mode');
@@ -589,7 +588,7 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
   });
 
-  // Bilingual Toggle (sekedar contoh interaksi, tidak menerjemahkan seluruh konten)
+  // Bilingual Toggle (sederhana)
   const bilingualBtn = document.getElementById('bilingualToggle');
   let currentLang = localStorage.getItem('language') || 'id';
   bilingualBtn.textContent = currentLang.toUpperCase();
@@ -600,20 +599,35 @@ document.addEventListener('DOMContentLoaded', () => {
     alert(currentLang === 'id' ? 'Bahasa diubah ke Indonesia' : 'Language changed to English');
   });
 
-  // Mobile Menu Toggle
-  window.toggleMenu = function() {
-    document.getElementById("navMenu").classList.toggle("active");
-  };
-  // Tutup menu saat klik di luar
-  document.addEventListener('click', function(e) {
-    const navMenu = document.getElementById('navMenu');
-    const toggle = document.querySelector('.menu-toggle');
-    if (!navMenu.contains(e.target) && !toggle.contains(e.target)) {
-      navMenu.classList.remove('active');
+  // Mobile Menu Toggle & close after click link
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+  
+  function closeMenu() {
+    navMenu.classList.remove('active');
+    // optional: reset icon if needed
+  }
+  
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    navMenu.classList.toggle('active');
+  });
+  
+  // Tutup menu ketika link di klik (agar navigasi nyaman)
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+  
+  // Tutup menu jika klik di luar
+  document.addEventListener('click', (e) => {
+    if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+      closeMenu();
     }
   });
 
-  // Real-time Clock & Visitor Counter (sama persis dengan rujukan)
+  // Real-time Clock & Visitor Counter
   function updateClock() {
     const now = new Date();
     const timeString = now.toLocaleTimeString('id-ID');
@@ -634,7 +648,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   updateVisitorCounter();
 
-  // Chat System (fungsional minimal)
+  // Chat System (fungsional)
   const chatButton = document.getElementById('chatButton');
   const chatBox = document.getElementById('chatBox');
   const chatClose = document.getElementById('chatClose');
@@ -642,8 +656,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const chatSend = document.getElementById('chatSend');
   const chatMessages = document.getElementById('chatMessages');
   const quickReplies = document.querySelectorAll('.quick-reply');
-  chatButton.addEventListener('click', () => { chatBox.classList.toggle('active'); if (chatBox.classList.contains('active')) document.querySelector('.notification-badge').style.display = 'none'; });
+  const notifBadge = document.querySelector('.notification-badge');
+  
+  chatButton.addEventListener('click', () => {
+    chatBox.classList.toggle('active');
+    if (chatBox.classList.contains('active')) notifBadge.style.display = 'none';
+  });
   chatClose.addEventListener('click', () => chatBox.classList.remove('active'));
+  
   function addMessage(text, sender) {
     const msgDiv = document.createElement('div'); msgDiv.className = `message ${sender}`;
     const time = new Date().toLocaleTimeString('id-ID', { hour:'2-digit', minute:'2-digit' });
