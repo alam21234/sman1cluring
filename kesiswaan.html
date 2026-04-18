@@ -92,7 +92,7 @@ font-family: 'Plus Jakarta Sans', sans-serif;
 font-weight: 700;
 letter-spacing: -0.02em;
 }
-/* ===== PRELOADER (SUPER FAST - 100ms) ===== */
+/* ===== PRELOADER (INSTANT - 0ms) ===== */
 #preloader {
 position: fixed;
 top: 0;
@@ -105,7 +105,7 @@ justify-content: center;
 align-items: center;
 z-index: 9999;
 opacity: 1;
-transition: opacity 0.2s ease, visibility 0.2s ease;
+transition: opacity 0.15s ease, visibility 0.15s ease;
 }
 #preloader.fade-out {
 opacity: 0;
@@ -1364,6 +1364,14 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <p><span class="lang-id">Seni bela diri tradisional Indonesia untuk melatih disiplin, ketangkasan, dan melestarikan budaya bangsa.</span><span class="lang-en">Traditional Indonesian martial art to train discipline, agility, and preserve national culture.</span></p>
 </div>
 </div>
+<!-- FOTO BARU: PAPI (Putra-Putri SMAN 1 Cluring) -->
+<div class="org-card" data-aos="zoom-in" data-aos-delay="1200">
+<img src="https://i.ibb.co.com/nM1ndLFH/PAPI-1.jpg" alt="PAPI" class="org-card-image" loading="lazy">
+<div class="org-card-content">
+<h3>PAPI</h3>
+<p><span class="lang-id">Perpaduan antara kepercayaan diri, kecerdasan, serta kemampuan menampilkan karakter diri secara elegan dan berkelas di atas panggung.</span><span class="lang-en">Flag hoisting and Nature Lovers: combination of marching discipline and love for the great outdoors.</span></p>
+</div>
+</div>
 </div>
 </div>
 <div class="cultural-divider" data-aos="fade-in"></div>
@@ -1371,8 +1379,8 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <div class="section" id="prestasi" data-aos="fade-up">
 <h2><i class="fas fa-trophy"></i> <span class="lang-id">Prestasi Siswa</span><span class="lang-en">Student Achievements</span></h2>
 <p data-aos="fade-right" style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
-<span class="lang-id">Siswa SMAN 1 Cluring secara aktif mengikuti dan meraih prestasi dalam berbagai kompetisi di tingkat kabupaten, provinsi, hingga nasional. Berikut adalah prestasi terbaru dari ekstrakurikuler Taekwondo.</span>
-<span class="lang-en">Students of SMAN 1 Cluring actively participate and achieve in various competitions at the district, provincial, and national levels. Here are the latest achievements from the Taekwondo extracurricular.</span>
+<span class="lang-id">Siswa SMAN 1 Cluring secara aktif mengikuti dan meraih prestasi dalam berbagai kompetisi di tingkat kabupaten, provinsi, hingga nasional. Berikut adalah prestasi terbaru dari ekstrakurikuler Taekwondo dan PAPI.</span>
+<span class="lang-en">Students of SMAN 1 Cluring actively participate and achieve in various competitions at the district, provincial, and national levels. Here are the latest achievements from the Taekwondo and PAPI extracurriculars.</span>
 </p>
 <div class="prestasi-grid">
 <!-- PRESTASI TAEKWONDO - CHEYSHA -->
@@ -1396,6 +1404,18 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <div style="margin-top: 15px; text-align: center;">
 <a href="https://ibb.co.com/0RFB0XdP" target="_blank">
 <img src="https://i.ibb.co.com/FL0sQWjG/griselda-forto-juara-3-tae-kwondo.jpg" alt="Griselda Forto Juara 3 Taekwondo" style="width: 100%; max-width: 250px; border-radius: 12px; box-shadow: var(--shadow-sm);">
+</a>
+</div>
+</div>
+<!-- PRESTASI BARU: PAPI -->
+<div class="prestasi-card gold" data-aos="fade-up" data-aos-delay="300">
+<span class="badge"><i class="fas fa-medal"></i> <span class="lang-id">Juara 1</span><span class="lang-en">1st Place</span></span>
+<h4>PAPI - Lomba Baris Berbaris dan Navigasi Darat Tingkat Provinsi 2025</h4>
+<p style="font-size: 0.9rem; margin: 5px 0; color: var(--gray);"><span class="lang-id">Tim Paskibra & Pecinta Alam</span><span class="lang-en">Flag Hoisting & Nature Lovers Team</span></p>
+<div class="date"><i class="fas fa-calendar"></i> 6 April 2026, KEJUARAAN PROVINSI I WOODBALL JAWA TIMUR</div>
+<div style="margin-top: 15px; text-align: center;">
+<a href="https://ibb.co.com/Xx530Cqh" target="_blank">
+<img src="https://i.ibb.co.com/gMbFQXQj/WOODBALL.png" alt="Woodball Juara 1" style="width: 100%; max-width: 250px; border-radius: 12px; box-shadow: var(--shadow-sm);">
 </a>
 </div>
 </div>
@@ -1510,13 +1530,14 @@ duration: 800,
 once: true,
 easing: 'ease-out-cubic'
 });
-// Preloader
-window.addEventListener('load', () => {
+
+// Preloader - INSTANT (0ms delay)
+window.addEventListener('DOMContentLoaded', () => {
 const preloader = document.getElementById('preloader');
-setTimeout(() => {
+// Hide immediately without delay
 preloader.classList.add('fade-out');
-}, 100);
 });
+
 // Dark Mode Toggle
 const darkModeToggle = document.getElementById('darkModeToggle');
 const body = document.body;
@@ -1528,10 +1549,12 @@ darkModeToggle.addEventListener('click', () => {
 body.classList.toggle('dark-mode');
 localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
 });
+
 // Mobile Menu Toggle
 function toggleMenu() {
 document.getElementById("navMenu").classList.toggle("active");
 }
+
 // Smooth scrolling for internal navigation (desktop & mobile)
 const allNavLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
 allNavLinks.forEach(anchor => {
@@ -1559,6 +1582,7 @@ link.classList.add('active');
 }
 });
 });
+
 // Update active link on scroll
 window.addEventListener('scroll', function() {
 const sections = document.querySelectorAll('.section');
@@ -1578,6 +1602,7 @@ link.classList.add('active');
 }
 });
 });
+
 // Realtime Clock
 function updateClock() {
 const now = new Date();
@@ -1595,6 +1620,7 @@ document.getElementById('footerDate').textContent = `${dayName}, ${day} ${monthN
 }
 setInterval(updateClock, 1000);
 updateClock();
+
 // Visitor Counter
 function updateVisitorCounter() {
 const visitorKey = 'sman1cluring_visitor_count';
@@ -1613,6 +1639,7 @@ sessionStorage.setItem('visitor_counted', 'true');
 document.getElementById('footerVisitorCount').textContent = `${count.toLocaleString('id-ID')} Pengunjung`;
 }
 updateVisitorCounter();
+
 // Chat System
 const chatButton = document.getElementById('chatButton');
 const chatBox = document.getElementById('chatBox');
@@ -1622,6 +1649,7 @@ const chatSend = document.getElementById('chatSend');
 const chatMessages = document.getElementById('chatMessages');
 const quickReplies = document.querySelectorAll('.quick-reply');
 const notificationBadge = document.querySelector('.notification-badge');
+
 chatButton.addEventListener('click', () => {
 chatBox.classList.toggle('active');
 if (chatBox.classList.contains('active')) {
@@ -1629,9 +1657,11 @@ notificationBadge.style.display = 'none';
 chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 });
+
 chatClose.addEventListener('click', () => {
 chatBox.classList.remove('active');
 });
+
 function sendMessage() {
 const message = chatInput.value.trim();
 if (message === '') return;
@@ -1646,6 +1676,7 @@ chatMessages.scrollTop = chatMessages.scrollHeight;
 }, 1000);
 chatMessages.scrollTop = chatMessages.scrollHeight;
 }
+
 function addMessage(text, sender) {
 const messageDiv = document.createElement('div');
 messageDiv.className = `message ${sender}`;
@@ -1662,24 +1693,29 @@ messageDiv.innerHTML = `
 `;
 chatMessages.appendChild(messageDiv);
 }
+
 function getBotResponse(message) {
 const lowerMsg = message.toLowerCase();
 if (lowerMsg.includes('ekskul') || lowerMsg.includes('ekstrakurikuler') || lowerMsg.includes('extracurricular')) {
-return "SMAN 1 Cluring memiliki berbagai ekstrakurikuler: Pramuka, Paskibra, PMR, Basket, Futsal, Seni Tari, Paduan Suara, KIR, Rohis, Bulu Tangkis, Tae Kwon Do, Pencak Silat, dan Kewirausahaan!";
+return "SMAN 1 Cluring memiliki berbagai ekstrakurikuler: Pramuka, Paskibra, PMR, Basket, Futsal, Seni Tari, Paduan Suara, KIR, Rohis, Bulu Tangkis, Tae Kwon Do, Pencak Silat, PAPI, dan Kewirausahaan!";
 } else if (lowerMsg.includes('osis')) {
 return "OSIS SMAN 1 Cluring aktif mengadakan berbagai kegiatan seperti Bakti Sosial, Pentas Seni, dan Program Literasi. Hubungi pembina OSIS untuk info lebih lanjut.";
 } else if (lowerMsg.includes('prestasi') || lowerMsg.includes('achievement')) {
-return "Siswa SMAN 1 Cluring meraih berbagai prestasi di Olimpiade Sains, Lomba Tari, Basket, dan Debat Bahasa Inggris. Lihat detailnya di halaman Prestasi.";
+return "Siswa SMAN 1 Cluring meraih berbagai prestasi di Olimpiade Sains, Lomba Tari, Basket, Debat Bahasa Inggris, dan PAPI (Baris Berbaris & Navigasi). Lihat detailnya di halaman Prestasi.";
 } else if (lowerMsg.includes('pramuka') || lowerMsg.includes('scout')) {
 return "Pramuka SMAN 1 Cluring aktif dalam kegiatan perkemahan, bakti sosial, dan lomba tingkat kabupaten. Pendaftaran terbuka untuk semua siswa.";
+} else if (lowerMsg.includes('papi')) {
+return "PAPI (Putra-Putri SMAN 1 Cluring) Perpaduan antara kepercayaan diri, kecerdasan, serta kemampuan menampilkan karakter diri secara elegan dan berkelas di atas panggung. Prestasi terbaru: Juara 1 Tingkat Provinsi 2026!";
 } else {
 return "Terima kasih atas pertanyaannya. Untuk informasi lebih lanjut, silakan hubungi admin melalui WhatsApp atau telepon ke nomor 0823-1971-2420.";
 }
 }
+
 chatSend.addEventListener('click', sendMessage);
 chatInput.addEventListener('keypress', (e) => {
 if (e.key === 'Enter') sendMessage();
 });
+
 quickReplies.forEach(reply => {
 reply.addEventListener('click', () => {
 const message = reply.getAttribute('data-message');
@@ -1687,6 +1723,7 @@ chatInput.value = message;
 sendMessage();
 });
 });
+
 document.addEventListener('click', (e) => {
 if (!chatBox.contains(e.target) && !chatButton.contains(e.target) && chatBox.classList.contains('active')) {
 chatBox.classList.remove('active');
