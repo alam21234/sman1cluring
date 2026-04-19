@@ -1379,8 +1379,8 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <div class="section" id="prestasi" data-aos="fade-up">
 <h2><i class="fas fa-trophy"></i> <span class="lang-id">Prestasi Siswa</span><span class="lang-en">Student Achievements</span></h2>
 <p data-aos="fade-right" style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
-<span class="lang-id">Siswa SMAN 1 Cluring secara aktif mengikuti dan meraih prestasi dalam berbagai kompetisi di tingkat kabupaten, provinsi, hingga nasional. Berikut adalah prestasi terbaru dari ekstrakurikuler Taekwondo dan PAPI.</span>
-<span class="lang-en">Students of SMAN 1 Cluring actively participate and achieve in various competitions at the district, provincial, and national levels. Here are the latest achievements from the Taekwondo and PAPI extracurriculars.</span>
+<span class="lang-id">Siswa SMAN 1 Cluring secara aktif mengikuti dan meraih prestasi dalam berbagai kompetisi di tingkat kabupaten, provinsi, hingga nasional. Berikut adalah prestasi terbaru dari ekstrakurikuler Taekwondo, PAPI, Woodball, dan E-Sports.</span>
+<span class="lang-en">Students of SMAN 1 Cluring actively participate and achieve in various competitions at the district, provincial, and national levels. Here are the latest achievements from Taekwondo, PAPI, Woodball, and E-Sports extracurriculars.</span>
 </p>
 <div class="prestasi-grid">
 <!-- PRESTASI TAEKWONDO - CHEYSHA -->
@@ -1411,11 +1411,23 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <div class="prestasi-card gold" data-aos="fade-up" data-aos-delay="300">
 <span class="badge"><i class="fas fa-medal"></i> <span class="lang-id">Juara 1</span><span class="lang-en">1st Place</span></span>
 <h4>Kejuaraan Provinsi I Woodball Jawa Timur 2026</h4>
-<p style="font-size: 0.9rem; margin: 5px 0; color: var(--gray);"><span class="lang-id">Tim Woodball SMAN 1 Cluring</span><span class="lang-en">Flag Hoisting & Nature Lovers Team</span></p>
+<p style="font-size: 0.9rem; margin: 5px 0; color: var(--gray);"><span class="lang-id">Tim Woodball SMAN 1 Cluring</span><span class="lang-en">SMAN 1 Cluring Woodball Team</span></p>
 <div class="date"><i class="fas fa-calendar"></i> 6 April 2026, Kejuaraan Provinsi I Woodball Jawa Timur</div>
 <div style="margin-top: 15px; text-align: center;">
 <a href="https://ibb.co.com/Xx530Cqh" target="_blank">
 <img src="https://i.ibb.co.com/FLz2sJJk/WOODBALL-NOVA-LOURENSIA2.jpg" alt="Woodball Juara 1" style="width: 100%; max-width: 450px; border-radius: 12px; box-shadow: var(--shadow-sm);">
+</a>
+</div>
+</div>
+<!-- PRESTASI BARU: MOBILE LEGEND CHAMPIONSHIP 2026 -->
+<div class="prestasi-card bronze" data-aos="fade-up" data-aos-delay="400">
+<span class="badge"><i class="fas fa-medal"></i> <span class="lang-id">Juara 3</span><span class="lang-en">3rd Place</span></span>
+<h4>Mobile Legend Championship 2026</h4>
+<p style="font-size: 0.9rem; margin: 5px 0; color: var(--gray);"><span class="lang-id">Tim E-Sports SMAN 1 Cluring</span><span class="lang-en">SMAN 1 Cluring E-Sports Team</span></p>
+<div class="date"><i class="fas fa-calendar"></i> 2026, Dinas Pemuda dan Olahraga</div>
+<div style="margin-top: 15px; text-align: center;">
+<a href="https://ibb.co.com/HTFNxJf1" target="_blank">
+<img src="https://i.ibb.co.com/HTFNxJf1/Juara-3-dalam-Mobile-Legend-Championship-2026-yang-diselenggarakan-oleh-Dinas-Pemuda-dan-Olahraga-Pe.png" alt="Mobile Legend Championship 2026 - Juara 3" style="width: 100%; max-width: 450px; border-radius: 12px; box-shadow: var(--shadow-sm);">
 </a>
 </div>
 </div>
@@ -1701,11 +1713,13 @@ return "SMAN 1 Cluring memiliki berbagai ekstrakurikuler: Pramuka, Paskibra, PMR
 } else if (lowerMsg.includes('osis')) {
 return "OSIS SMAN 1 Cluring aktif mengadakan berbagai kegiatan seperti Bakti Sosial, Pentas Seni, dan Program Literasi. Hubungi pembina OSIS untuk info lebih lanjut.";
 } else if (lowerMsg.includes('prestasi') || lowerMsg.includes('achievement')) {
-return "Siswa SMAN 1 Cluring meraih berbagai prestasi di Olimpiade Sains, Lomba Tari, Basket, Debat Bahasa Inggris, dan PAPI (Baris Berbaris & Navigasi). Lihat detailnya di halaman Prestasi.";
+return "Siswa SMAN 1 Cluring meraih berbagai prestasi di Olimpiade Sains, Lomba Tari, Basket, Debat Bahasa Inggris, PAPI (Baris Berbaris & Navigasi), Woodball, dan E-Sports Mobile Legends. Lihat detailnya di halaman Prestasi.";
 } else if (lowerMsg.includes('pramuka') || lowerMsg.includes('scout')) {
 return "Pramuka SMAN 1 Cluring aktif dalam kegiatan perkemahan, bakti sosial, dan lomba tingkat kabupaten. Pendaftaran terbuka untuk semua siswa.";
 } else if (lowerMsg.includes('papi')) {
 return "PAPI (Putra-Putri SMAN 1 Cluring) Perpaduan antara kepercayaan diri, kecerdasan, serta kemampuan menampilkan karakter diri secara elegan dan berkelas di atas panggung. Prestasi terbaru: Juara 1 Tingkat Provinsi 2026!";
+} else if (lowerMsg.includes('mobile legend') || lowerMsg.includes('e-sports')) {
+return "Tim E-Sports SMAN 1 Cluring meraih Juara 3 dalam Mobile Legend Championship 2026 yang diselenggarakan oleh Dinas Pemuda dan Olahraga. Prestasi yang membanggakan di bidang gaming!";
 } else {
 return "Terima kasih atas pertanyaannya. Untuk informasi lebih lanjut, silakan hubungi admin melalui WhatsApp atau telepon ke nomor 0823-1971-2420.";
 }
