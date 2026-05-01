@@ -8,7 +8,7 @@
   <!-- SEO -->
   <meta name="description" content="Kumpulan ucapan selamat hari raya, hari besar nasional, dan event khusus dari SMAN 1 Cluring." />
   <meta name="author" content="SMAN 1 Cluring" />
-  <meta name="keywords" content="ucapan selamat, hari raya, imlek, puasa, natal, tahun baru, jumat agung, kartini, SMAN 1 Cluring" />
+  <meta name="keywords" content="ucapan selamat, hari raya, imlek, puasa, natal, tahun baru, jumat agung, kartini, buruh, pendidikan, SMAN 1 Cluring" />
   
   <!-- Open Graph -->
   <meta property="og:title" content="Galeri Ucapan - SMAN 1 Cluring" />
@@ -70,30 +70,15 @@
     
     /* LANGUAGE SWITCHER */
     .lang-switcher {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      margin-right: 10px;
+      display: flex; align-items: center; gap: 5px; margin-right: 10px;
     }
     .lang-btn {
-      background: var(--glass);
-      border: 1px solid var(--glass-border);
-      color: var(--white);
-      padding: 6px 12px;
-      border-radius: 30px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
+      background: var(--glass); border: 1px solid var(--glass-border);
+      color: var(--white); padding: 6px 12px; border-radius: 30px;
+      font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: var(--transition);
     }
-    .lang-btn.active {
-      background: var(--secondary);
-      border-color: var(--secondary);
-    }
-    .lang-btn:hover {
-      background: var(--secondary);
-      transform: translateY(-2px);
-    }
+    .lang-btn.active { background: var(--secondary); border-color: var(--secondary); }
+    .lang-btn:hover { background: var(--secondary); transform: translateY(-2px); }
     
     /* WHATSAPP FLOAT */
     .whatsapp-float {
@@ -109,60 +94,21 @@
     
     /* ADMIN CONTROLS */
     .admin-controls {
-      background: var(--white);
-      padding: 20px;
-      border-radius: var(--border-radius);
-      margin-bottom: 30px;
-      box-shadow: var(--shadow-sm);
-      border: 2px solid var(--secondary);
+      background: var(--white); padding: 20px; border-radius: var(--border-radius);
+      margin-bottom: 30px; box-shadow: var(--shadow-sm); border: 2px solid var(--secondary);
     }
     .admin-title {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--primary);
-      margin-bottom: 15px;
+      display: flex; align-items: center; gap: 10px; color: var(--primary); margin-bottom: 15px;
     }
-    .admin-title i {
-      color: var(--secondary);
-      font-size: 1.5rem;
-    }
-    .release-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+    .admin-title i { color: var(--secondary); font-size: 1.5rem; }
+    .release-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
     .release-btn {
-      padding: 8px 16px;
-      border: 2px solid var(--primary);
-      background: transparent;
-      color: var(--primary);
-      border-radius: 30px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: var(--transition);
-      font-size: 0.9rem;
+      padding: 8px 16px; border: 2px solid var(--primary); background: transparent;
+      color: var(--primary); border-radius: 30px; cursor: pointer; font-weight: 600;
+      transition: var(--transition); font-size: 0.9rem;
     }
-    .release-btn:hover {
-      background: var(--primary);
-      color: var(--white);
-    }
-    .release-btn.active {
-      background: var(--secondary);
-      border-color: var(--secondary);
-      color: var(--white);
-    }
-    .status-badge {
-      display: inline-block;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin-left: 10px;
-    }
-    .status-scheduled { background: #fef3c7; color: #92400e; }
-    .status-live { background: #d1fae5; color: #065f46; }
-    .status-past { background: #e5e7eb; color: #374151; }
+    .release-btn:hover { background: var(--primary); color: var(--white); }
+    .release-btn.active { background: var(--secondary); border-color: var(--secondary); color: var(--white); }
     
     /* HEADER */
     header {
@@ -271,18 +217,10 @@
     
     /* Card Status Indicator */
     .card-status {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      z-index: 10;
-      padding: 6px 12px;
-      border-radius: 30px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      background: var(--white);
-      box-shadow: var(--shadow-sm);
+      position: absolute; top: 15px; right: 15px; z-index: 10;
+      padding: 6px 12px; border-radius: 30px; font-size: 0.7rem;
+      font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+      background: var(--white); box-shadow: var(--shadow-sm);
     }
     .card-status.scheduled { background: #fef3c7; color: #92400e; border-left: 4px solid #f59e0b; }
     .card-status.live { background: #d1fae5; color: #065f46; border-left: 4px solid #10b981; }
@@ -577,127 +515,58 @@
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     // ===== BILINGUAL CONFIGURATION =====
-    let currentLang = 'id'; // Default: Indonesian
+    let currentLang = 'id';
     
-    // Translation dictionary
     const translations = {
       id: {
-        // Hero Section
         heroTitle: 'Galeri Ucapan & Perayaan',
         heroDesc: 'Kumpulan desain ucapan selamat hari raya, hari besar nasional, dan momen spesial dari keluarga besar SMAN 1 Cluring Banyuwangi.',
-        
-        // Admin Panel
         adminTitle: 'Panel Kontrol Admin - Rilis Konten',
         adminInfo: 'Mode Otomatis: Hanya menampilkan konten yang sudah mencapai tanggalnya. Mode lainnya akan memaksa konten tertentu untuk tampil.',
-        
-        // Release Modes
-        modeAuto: 'Otomatis (Sesuai Jadwal)',
-        modeAll: 'Rilis Semua Konten',
-        mode2025: 'Rilis 2025 Saja',
-        mode2026: 'Rilis 2026 Saja',
-        modeIdul: 'Rilis Idul Fitri 2026',
-        
-        // Filters
-        filterAll: 'Semua',
-        filterAgama: 'Hari Raya Agama',
-        filterNasional: 'Hari Nasional',
-        filterInternasional: 'Internasional',
-        filterSekolah: 'Event Sekolah',
-        
-        // Card Status
-        statusScheduled: 'Jadwal',
-        statusPast: 'Arsip',
-        statusLive: 'TAYANG HARI INI',
-        willAir: 'Akan tayang',
-        
-        // Empty State
-        emptyTitle: 'Belum Ada Ucapan',
-        emptyAuto: 'Belum ada ucapan untuk saat ini. Silakan cek lagi nanti atau gunakan panel admin untuk pratayang.',
+        modeAuto: 'Otomatis (Sesuai Jadwal)', modeAll: 'Rilis Semua Konten',
+        mode2025: 'Rilis 2025 Saja', mode2026: 'Rilis 2026 Saja', modeIdul: 'Rilis Idul Fitri 2026',
+        filterAll: 'Semua', filterAgama: 'Hari Raya Agama', filterNasional: 'Hari Nasional',
+        filterInternasional: 'Internasional', filterSekolah: 'Event Sekolah',
+        statusScheduled: 'Jadwal', statusPast: 'Arsip', statusLive: 'TAYANG HARI INI', willAir: 'Akan tayang',
+        emptyTitle: 'Belum Ada Ucapan', emptyAuto: 'Belum ada ucapan untuk saat ini. Silakan cek lagi nanti atau gunakan panel admin untuk pratayang.',
         emptyFilter: 'Tidak ada konten dengan filter yang dipilih.',
-        
-        // Toast Messages
         toastAuto: 'Mode otomatis: Hanya menampilkan konten yang sudah waktunya tayang',
         toastAll: 'Menampilkan SEMUA konten (termasuk yang belum waktunya)',
-        toast2025: 'Menampilkan konten tahun 2025 saja',
-        toast2026: 'Menampilkan konten tahun 2026 saja',
-        toastIdul: 'Pratayang: Idul Fitri 2026',
-        toastCopied: '📋 Link berhasil disalin!',
-        
-        // Navigation
-        backText: 'Artikel',
-        whatsappText: 'Chat Admin',
-        
-        // Footer
-        footerContact: 'Kontak',
-        footerLinks: 'Link Penting',
-        footerSocial: 'Media Sosial',
+        toast2025: 'Menampilkan konten tahun 2025 saja', toast2026: 'Menampilkan konten tahun 2026 saja',
+        toastIdul: 'Pratayang: Idul Fitri 2026', toastCopied: '📋 Link berhasil disalin!',
+        backText: 'Artikel', whatsappText: 'Chat Admin',
+        footerContact: 'Kontak', footerLinks: 'Link Penting', footerSocial: 'Media Sosial',
         footerArticles: 'Artikel & Berita',
         footerText: '© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan'
       },
       en: {
-        // Hero Section
         heroTitle: 'Greetings & Celebrations Gallery',
         heroDesc: 'Collection of greeting designs for religious holidays, national days, and special moments from the SMAN 1 Cluring Banyuwangi family.',
-        
-        // Admin Panel
         adminTitle: 'Admin Control Panel - Content Release',
         adminInfo: 'Automatic Mode: Only shows content that has reached its date. Other modes will force specific content to appear.',
-        
-        // Release Modes
-        modeAuto: 'Automatic (Scheduled)',
-        modeAll: 'Release All Content',
-        mode2025: 'Release 2025 Only',
-        mode2026: 'Release 2026 Only',
-        modeIdul: 'Release Eid 2026',
-        
-        // Filters
-        filterAll: 'All',
-        filterAgama: 'Religious Holidays',
-        filterNasional: 'National Days',
-        filterInternasional: 'International',
-        filterSekolah: 'School Events',
-        
-        // Card Status
-        statusScheduled: 'Scheduled',
-        statusPast: 'Archive',
-        statusLive: 'AIRING TODAY',
-        willAir: 'Will air on',
-        
-        // Empty State
-        emptyTitle: 'No Greetings Yet',
-        emptyAuto: 'No greetings available at this time. Please check again later or use the admin panel for preview.',
+        modeAuto: 'Automatic (Scheduled)', modeAll: 'Release All Content',
+        mode2025: 'Release 2025 Only', mode2026: 'Release 2026 Only', modeIdul: 'Release Eid 2026',
+        filterAll: 'All', filterAgama: 'Religious Holidays', filterNasional: 'National Days',
+        filterInternasional: 'International', filterSekolah: 'School Events',
+        statusScheduled: 'Scheduled', statusPast: 'Archive', statusLive: 'AIRING TODAY', willAir: 'Will air on',
+        emptyTitle: 'No Greetings Yet', emptyAuto: 'No greetings available at this time. Please check again later or use the admin panel for preview.',
         emptyFilter: 'No content with the selected filter.',
-        
-        // Toast Messages
         toastAuto: 'Automatic mode: Only showing content that is due to air',
         toastAll: 'Showing ALL content (including those not yet due)',
-        toast2025: 'Showing 2025 content only',
-        toast2026: 'Showing 2026 content only',
-        toastIdul: 'Preview: Eid al-Fitr 2026',
-        toastCopied: '📋 Link copied successfully!',
-        
-        // Navigation
-        backText: 'Articles',
-        whatsappText: 'Chat Admin',
-        
-        // Footer
-        footerContact: 'Contact',
-        footerLinks: 'Important Links',
-        footerSocial: 'Social Media',
+        toast2025: 'Showing 2025 content only', toast2026: 'Showing 2026 content only',
+        toastIdul: 'Preview: Eid al-Fitr 2026', toastCopied: '📋 Link copied successfully!',
+        backText: 'Articles', whatsappText: 'Chat Admin',
+        footerContact: 'Contact', footerLinks: 'Important Links', footerSocial: 'Social Media',
         footerArticles: 'Articles & News',
         footerText: '© 2026 SMAN 1 Cluring — Inspiring Pancasila Generation from Bumi Blambangan'
       }
     };
 
-    // ===== LANGUAGE SWITCHER =====
     function switchLanguage(lang) {
       currentLang = lang;
-      
-      // Update active class on language buttons
       document.getElementById('langId').classList.toggle('active', lang === 'id');
       document.getElementById('langEn').classList.toggle('active', lang === 'en');
       
-      // Update all translatable elements
       document.querySelectorAll('[data-id]').forEach(el => {
         const idText = el.getAttribute('data-id');
         const enText = el.getAttribute('data-en');
@@ -706,20 +575,17 @@
         }
       });
       
-      // Update elements with specific IDs
       document.getElementById('heroTitle').innerHTML = `<i class="fas fa-gift"></i> ${translations[lang].heroTitle}`;
       document.getElementById('heroDesc').textContent = translations[lang].heroDesc;
       document.getElementById('adminTitle').textContent = translations[lang].adminTitle;
       document.getElementById('adminInfo').innerHTML = `<i class="fas fa-info-circle"></i> ${translations[lang].adminInfo}`;
       
-      // Update release mode buttons text
       document.querySelector('#modeAuto span').textContent = translations[lang].modeAuto;
       document.querySelector('#modeAll span').textContent = translations[lang].modeAll;
       document.querySelector('#mode2025 span').textContent = translations[lang].mode2025;
       document.querySelector('#mode2026 span').textContent = translations[lang].mode2026;
       document.querySelector('#modeIdul span').textContent = translations[lang].modeIdul;
       
-      // Update filter buttons
       const filterBtns = document.querySelectorAll('.filter-btn span');
       if (filterBtns.length >= 5) {
         filterBtns[0].textContent = translations[lang].filterAll;
@@ -729,11 +595,9 @@
         filterBtns[4].textContent = translations[lang].filterSekolah;
       }
       
-      // Update navigation
       document.querySelector('.back-text').textContent = translations[lang].backText;
       document.querySelector('.whatsapp-text').textContent = translations[lang].whatsappText;
       
-      // Update footer
       document.querySelectorAll('.footer-section h3 span').forEach((el, index) => {
         if (index === 0) el.textContent = translations[lang].footerContact;
         else if (index === 1) el.textContent = translations[lang].footerLinks;
@@ -743,222 +607,80 @@
       document.querySelector('.footer-section ul li:last-child a span').textContent = translations[lang].footerArticles;
       document.getElementById('footerText').textContent = translations[lang].footerText;
       
-      // Re-render gallery to update status texts
       renderGallery(greetingData);
     }
 
-    // ===== DATA UCAPAN DENGAN STATUS JADWAL - DIURUTKAN BERDASARKAN KELOMPOK & TANGGAL =====
+    // ===== DATA UCAPAN - DIURUTKAN: KELOMPOK → TANGGAL =====
     const greetingData = [
       // ==================== KELOMPOK AGAMA ====================
-      { 
-        id: 1, 
-        titleId: "Selamat Tahun Baru Imlek 2577",
-        titleEn: "Happy Chinese New Year 2577",
-        category: "agama", 
-        year: 2026, 
-        date: "2026-01-29", 
-        image: "https://i.ibb.co.com/W4xkCJL0/imlek.jpg", 
-        link: "https://ibb.co.com/39rpKZnv"
-      },
-      { 
-        id: 11, 
-        titleId: "Selamat Hari Raya Nyepi 2026",
-        titleEn: "Happy Nyepi Day 2026",
-        category: "agama", 
-        year: 2026, 
-        date: "2026-03-18", 
-        image: "https://i.ibb.co.com/0VsXwy4h/nyepi.jpg", 
-        link: "https://ibb.co.com/Z12JZz4W"
-      },
-      { 
-        id: 12, 
-        titleId: "Hari Raya Idul Fitri 1447 H",
-        titleEn: "Eid al-Fitr 1447 H",
-        category: "agama", 
-        year: 2026, 
-        date: "2026-03-21",
-        image: "https://i.ibb.co.com/LDpPyrhQ/hari-raya-idul-fitri-1447-H.jpg", 
-        link: "https://ibb.co.com/vCzBWhvs"
-      },
-      { 
-        id: 13, 
-        titleId: "Selamat Hari Jumat Agung 2026",
-        titleEn: "Happy Good Friday 2026",
-        category: "agama", 
-        year: 2026, 
-        date: "2026-04-03", 
-        image: "https://i.ibb.co.com/67vfQKLJ/JUMAT-AGUNG.jpg", 
-        link: "https://ibb.co.com/XryvHnMk"
-      },
-      { 
-        id: 6, 
-        titleId: "Selamat Natal & Tahun Baru 2026",
-        titleEn: "Merry Christmas & Happy New Year 2026",
-        category: "agama", 
-        year: 2025, 
-        date: "2025-12-25", 
-        image: "https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&fit=crop&q=80&w=600", 
-        link: "#"
-      },
-      
-      // ==================== KELOMPOK NASIONAL ====================
-      { 
-        id: 8, 
-        titleId: "Selamat Hari Kartini 2026",
-        titleEn: "Happy Kartini Day 2026",
-        category: "nasional", 
-        year: 2026, 
-        date: "2026-04-21", 
-        image: "https://i.ibb.co.com/CSxFst4/kartini.jpg", 
-        link: "https://ibb.co.com/xrVQ8sw"
-      },
-      { 
-        id: 7, 
-        titleId: "Selamat Hari Pendidikan Nasional",
-        titleEn: "Happy National Education Day",
-        category: "nasional", 
-        year: 2026, 
-        date: "2026-05-02", 
-        image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600", 
-        link: "#"
-      },
-      { 
-        id: 5, 
-        titleId: "Selamat Hari Kemerdekaan RI ke-81",
-        titleEn: "Happy 81st Independence Day of Indonesia",
-        category: "nasional", 
-        year: 2026, 
-        date: "2026-08-17", 
-        image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&q=80&w=600", 
-        link: "#"
-      },
+      { id: 6, titleId: "Selamat Natal & Tahun Baru 2026", titleEn: "Merry Christmas & Happy New Year 2026", category: "agama", year: 2025, date: "2025-12-25", image: "https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&fit=crop&q=80&w=600", link: "#" },
+      { id: 1, titleId: "Selamat Tahun Baru Imlek 2577", titleEn: "Happy Chinese New Year 2577", category: "agama", year: 2026, date: "2026-01-29", image: "https://i.ibb.co.com/W4xkCJL0/imlek.jpg", link: "https://ibb.co.com/39rpKZnv" },
+      { id: 11, titleId: "Selamat Hari Raya Nyepi 2026", titleEn: "Happy Nyepi Day 2026", category: "agama", year: 2026, date: "2026-03-18", image: "https://i.ibb.co.com/0VsXwy4h/nyepi.jpg", link: "https://ibb.co.com/Z12JZz4W" },
+      { id: 12, titleId: "Hari Raya Idul Fitri 1447 H", titleEn: "Eid al-Fitr 1447 H", category: "agama", year: 2026, date: "2026-03-21", image: "https://i.ibb.co.com/LDpPyrhQ/hari-raya-idul-fitri-1447-H.jpg", link: "https://ibb.co.com/vCzBWhvs" },
+      { id: 13, titleId: "Selamat Hari Jumat Agung 2026", titleEn: "Happy Good Friday 2026", category: "agama", year: 2026, date: "2026-04-03", image: "https://i.ibb.co.com/67vfQKLJ/JUMAT-AGUNG.jpg", link: "https://ibb.co.com/XryvHnMk" },
       
       // ==================== KELOMPOK INTERNASIONAL ====================
-      { 
-        id: 9, 
-        titleId: "Selamat Hari Anak Nasional 2025",
-        titleEn: "Happy National Children's Day 2025",
-        category: "internasional", 
-        year: 2025, 
-        date: "2025-07-23", 
-        image: "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&q=80&w=600", 
-        link: "#"
-      },
+      { id: 9, titleId: "Selamat Hari Anak Nasional 2025", titleEn: "Happy National Children's Day 2025", category: "internasional", year: 2025, date: "2025-07-23", image: "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&q=80&w=600", link: "#" },
+      
+      // ==================== KELOMPOK NASIONAL ====================
+      { id: 8, titleId: "Selamat Hari Kartini 2026", titleEn: "Happy Kartini Day 2026", category: "nasional", year: 2026, date: "2026-04-21", image: "https://i.ibb.co.com/CSxFst4/kartini.jpg", link: "https://ibb.co.com/xrVQ8sw" },
+      { id: 14, titleId: "Selamat Hari Buruh 2026", titleEn: "Happy Labor Day 2026", category: "nasional", year: 2026, date: "2026-05-01", image: "https://i.ibb.co.com/VpN2wPnL/hari-buruh.jpg", link: "https://ibb.co.com/h1MDYtQg" },
+      { id: 7, titleId: "Selamat Hari Pendidikan Nasional", titleEn: "Happy National Education Day", category: "nasional", year: 2026, date: "2026-05-02", image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600", link: "#" },
+      { id: 5, titleId: "Selamat Hari Kemerdekaan RI ke-81", titleEn: "Happy 81st Independence Day of Indonesia", category: "nasional", year: 2026, date: "2026-08-17", image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&q=80&w=600", link: "#" },
       
       // ==================== KELOMPOK SEKOLAH ====================
-      { 
-        id: 2, 
-        titleId: "Selamat Menunaikan Ibadah Puasa 1447 H",
-        titleEn: "Blessed Ramadan 1447 H",
-        category: "sekolah", 
-        year: 2026, 
-        date: "2026-02-20", 
-        image: "https://i.ibb.co.com/ZR322tPt/puasa.jpg", 
-        link: "https://ibb.co.com/Y4600YMY"
-      },
-      { 
-        id: 4, 
-        titleId: "Kampanye Kurangi Sampah Plastik",
-        titleEn: "Reduce Plastic Waste Campaign",
-        category: "sekolah", 
-        year: 2026, 
-        date: "2026-02-21", 
-        image: "https://i.ibb.co.com/xKJC3qrh/flayer-sampah-plastik.jpg", 
-        link: "https://ibb.co.com/Fkgxn4d6"
-      },
-      { 
-        id: 3, 
-        titleId: "Pondok Ramadan 2026",
-        titleEn: "Ramadan Islamic Boarding 2026",
-        category: "sekolah", 
-        year: 2026, 
-        date: "2026-02-23", 
-        image: "https://i.ibb.co.com/vvscHcKY/brosur-pondok-romadhon.jpg", 
-        link: "https://ibb.co.com/FqshKhjV"
-      },
-      { 
-        id: 10, 
-        titleId: "Program Siswa Asuh Sebaya 2026",
-        titleEn: "Peer Tutoring Program 2026",
-        category: "sekolah", 
-        year: 2026, 
-        date: "2026-02-23", 
-        image: "https://i.ibb.co.com/90M2JhH/siswa-asuh-sebaya.jpg", 
-        link: "https://ibb.co.com/QV5nZkv"
-      }
+      { id: 2, titleId: "Selamat Menunaikan Ibadah Puasa 1447 H", titleEn: "Blessed Ramadan 1447 H", category: "sekolah", year: 2026, date: "2026-02-20", image: "https://i.ibb.co.com/ZR322tPt/puasa.jpg", link: "https://ibb.co.com/Y4600YMY" },
+      { id: 4, titleId: "Kampanye Kurangi Sampah Plastik", titleEn: "Reduce Plastic Waste Campaign", category: "sekolah", year: 2026, date: "2026-02-21", image: "https://i.ibb.co.com/xKJC3qrh/flayer-sampah-plastik.jpg", link: "https://ibb.co.com/Fkgxn4d6" },
+      { id: 3, titleId: "Pondok Ramadan 2026", titleEn: "Ramadan Islamic Boarding 2026", category: "sekolah", year: 2026, date: "2026-02-23", image: "https://i.ibb.co.com/vvscHcKY/brosur-pondok-romadhon.jpg", link: "https://ibb.co.com/FqshKhjV" },
+      { id: 10, titleId: "Program Siswa Asuh Sebaya 2026", titleEn: "Peer Tutoring Program 2026", category: "sekolah", year: 2026, date: "2026-02-23", image: "https://i.ibb.co.com/90M2JhH/siswa-asuh-sebaya.jpg", link: "https://ibb.co.com/QV5nZkv" }
     ];
     
     const galleryGrid = document.getElementById('galleryGrid');
     let currentFilter = 'all';
     let releaseMode = 'auto';
     
-    // ===== CEK TANGGAL HARI INI =====
     function getTodayDate() {
       const today = new Date();
       return today.toISOString().split('T')[0];
     }
     
-    // ===== FILTER KONTEN BERDASARKAN MODE RELEASE =====
     function filterByReleaseMode(data) {
       const today = getTodayDate();
-      
       switch(releaseMode) {
-        case 'all':
-          return data;
-        case '2025':
-          return data.filter(item => item.year === 2025);
-        case '2026':
-          return data.filter(item => item.year === 2026);
-        case 'idulFitri':
-          return data.filter(item => item.id === 12);
+        case 'all': return data;
+        case '2025': return data.filter(item => item.year === 2025);
+        case '2026': return data.filter(item => item.year === 2026);
+        case 'idulFitri': return data.filter(item => item.id === 12);
         case 'auto':
-        default:
-          return data.filter(item => item.date <= today);
+        default: return data.filter(item => item.date <= today);
       }
     }
     
-    // ===== FORMAT DATE =====
     function formatDate(dateString) {
-      return new Date(dateString).toLocaleDateString(currentLang === 'id' ? 'id-ID' : 'en-US', 
-        { year: 'numeric', month: 'long', day: 'numeric' });
+      return new Date(dateString).toLocaleDateString(currentLang === 'id' ? 'id-ID' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' });
     }
 
-    // ===== GET CATEGORY LABEL =====
     function getCategoryLabel(category) {
       const labelsId = { 'agama': 'Hari Raya', 'nasional': 'Nasional', 'internasional': 'Internasional', 'sekolah': 'Event Sekolah' };
       const labelsEn = { 'agama': 'Religious', 'nasional': 'National', 'internasional': 'International', 'sekolah': 'School Event' };
       return currentLang === 'id' ? (labelsId[category] || 'Umum') : (labelsEn[category] || 'General');
     }
 
-    // ===== RENDER GALLERY =====
     function renderGallery(data) {
       let filteredByRelease = filterByReleaseMode(data);
-      let finalData = currentFilter === 'all' 
-        ? filteredByRelease 
-        : filteredByRelease.filter(item => item.category === currentFilter);
+      let finalData = currentFilter === 'all' ? filteredByRelease : filteredByRelease.filter(item => item.category === currentFilter);
       
       galleryGrid.innerHTML = '';
       
       if (finalData.length === 0) {
-        let message = releaseMode === 'auto' 
-          ? translations[currentLang].emptyAuto 
-          : translations[currentLang].emptyFilter;
-        
-        galleryGrid.innerHTML = `<div class="empty-state" data-aos="zoom-in">
-          <i class="fas fa-images"></i>
-          <h3>${translations[currentLang].emptyTitle}</h3>
-          <p>${message}</p>
-        </div>`;
+        let message = releaseMode === 'auto' ? translations[currentLang].emptyAuto : translations[currentLang].emptyFilter;
+        galleryGrid.innerHTML = `<div class="empty-state" data-aos="zoom-in"><i class="fas fa-images"></i><h3>${translations[currentLang].emptyTitle}</h3><p>${message}</p></div>`;
         return;
       }
       
-      // ✅ PENGURUTAN BERDASARKAN KELOMPOK (KATEGORI) DAN TANGGAL (BULAN, HARI, TAHUN)
+      // ✅ PENGURUTAN: KELOMPOK → TANGGAL
       finalData.sort((a, b) => {
-        // Pertama urutkan berdasarkan kategori
-        if (a.category !== b.category) {
-          return a.category.localeCompare(b.category);
-        }
-        // Jika kategori sama, urutkan berdasarkan tanggal
+        if (a.category !== b.category) return a.category.localeCompare(b.category);
         return new Date(a.date) - new Date(b.date);
       });
       
@@ -1004,10 +726,8 @@
       });
     }
 
-    // ===== SET RELEASE MODE =====
     function setReleaseMode(mode) {
       releaseMode = mode;
-      
       document.querySelectorAll('.release-btn').forEach(btn => btn.classList.remove('active'));
       if (mode === 'auto') document.getElementById('modeAuto').classList.add('active');
       if (mode === 'all') document.getElementById('modeAll').classList.add('active');
@@ -1023,12 +743,10 @@
         case '2026': messageKey = 'toast2026'; break;
         case 'idulFitri': messageKey = 'toastIdul'; break;
       }
-      
       showToast('🔄 ' + translations[currentLang][messageKey], 'success');
       filterGallery(currentFilter, document.querySelector('.filter-btn.active'));
     }
 
-    // ===== FILTER FUNCTION =====
     function filterGallery(category, btn) {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       if (btn) btn.classList.add('active');
@@ -1036,14 +754,11 @@
       renderGallery(greetingData);
     }
 
-    // ===== SHARE FUNCTION =====
     function shareGreeting(title, link) {
       if (navigator.share) {
         navigator.share({ 
           title: title, 
-          text: currentLang === 'id' 
-            ? `Lihat ucapan "${title}" dari SMAN 1 Cluring` 
-            : `Check out "${title}" from SMAN 1 Cluring`, 
+          text: currentLang === 'id' ? `Lihat ucapan "${title}" dari SMAN 1 Cluring` : `Check out "${title}" from SMAN 1 Cluring`, 
           url: link 
         }).catch(console.error);
       } else {
@@ -1053,7 +768,6 @@
       }
     }
 
-    // ===== TOAST NOTIFICATION =====
     function showToast(message, type = 'success') {
       const toast = document.getElementById('toast');
       document.getElementById('toastMessage').textContent = message;
@@ -1061,21 +775,12 @@
       setTimeout(() => toast.classList.remove('show'), 4000);
     }
 
-    // ===== MOBILE MENU =====
-    function toggleMenu() { 
-      document.getElementById('navMenu').classList.toggle('active'); 
-    }
-
-    // ===== CLOSE MOBILE MENU WHEN CLICK LINK =====
+    function toggleMenu() { document.getElementById('navMenu').classList.toggle('active'); }
     function setupMobileMenuClose() {
       document.querySelectorAll('#navMenu a').forEach(link => {
-        link.addEventListener('click', () => {
-          document.getElementById('navMenu').classList.remove('active');
-        });
+        link.addEventListener('click', () => document.getElementById('navMenu').classList.remove('active'));
       });
     }
-
-    // ===== NAVIGATION ACTIVE CLASS =====
     function setActiveNav() {
       const currentPage = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
       document.querySelectorAll('#navMenu a[data-page]').forEach(link => {
@@ -1084,93 +789,65 @@
       });
     }
 
-    // ===== DARK MODE =====
+    // Dark Mode
     const darkModeToggle = document.getElementById('darkModeToggle');
     const body = document.body;
     const moonIcon = darkModeToggle.querySelector('.fa-moon');
     const sunIcon = darkModeToggle.querySelector('.fa-sun');
-
     if (localStorage.getItem('darkMode') === 'enabled') {
       body.classList.add('dark-mode');
-      moonIcon.style.display = 'none';
-      sunIcon.style.display = 'block';
+      moonIcon.style.display = 'none'; sunIcon.style.display = 'block';
     }
-
     darkModeToggle.addEventListener('click', () => {
       body.classList.toggle('dark-mode');
       if (body.classList.contains('dark-mode')) {
-        moonIcon.style.display = 'none';
-        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none'; sunIcon.style.display = 'block';
         localStorage.setItem('darkMode', 'enabled');
       } else {
-        moonIcon.style.display = 'block';
-        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block'; sunIcon.style.display = 'none';
         localStorage.setItem('darkMode', 'disabled');
       }
     });
 
-    // ===== REALTIME CLOCK =====
+    // Realtime Clock
     function updateClock() {
       const now = new Date();
-      document.getElementById('footerTime').textContent = 
-        `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
-      
-      const daysId = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
-      const daysEn = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-      const monthsId = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-      const monthsEn = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-      
+      document.getElementById('footerTime').textContent = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
+      const daysId = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+      const daysEn = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+      const monthsId = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+      const monthsEn = ['January','February','March','April','May','June','July','August','September','October','November','December'];
       if (currentLang === 'id') {
-        document.getElementById('footerDate').textContent = 
-          `${daysId[now.getDay()]}, ${now.getDate()} ${monthsId[now.getMonth()]} ${now.getFullYear()}`;
+        document.getElementById('footerDate').textContent = `${daysId[now.getDay()]}, ${now.getDate()} ${monthsId[now.getMonth()]} ${now.getFullYear()}`;
       } else {
-        document.getElementById('footerDate').textContent = 
-          `${daysEn[now.getDay()]}, ${monthsEn[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+        document.getElementById('footerDate').textContent = `${daysEn[now.getDay()]}, ${monthsEn[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
       }
     }
-    setInterval(updateClock, 1000); 
-    updateClock();
+    setInterval(updateClock, 1000); updateClock();
 
-    // ===== VISITOR COUNTER =====
+    // Visitor Counter
     function updateVisitorCounter() {
       const visitorKey = 'sman1cluring_greeting_visitor_count';
       let count = localStorage.getItem(visitorKey);
-      if (!count) { 
-        count = 1; 
-        localStorage.setItem(visitorKey, count); 
-      } else { 
-        count = parseInt(count); 
-        if (!sessionStorage.getItem('greeting_visitor_counted')) { 
-          count++; 
-          localStorage.setItem(visitorKey, count); 
-          sessionStorage.setItem('greeting_visitor_counted', 'true'); 
-        } 
-      }
-      document.getElementById('footerVisitorCount').textContent = 
-        `${count.toLocaleString(currentLang === 'id' ? 'id-ID' : 'en-US')} ${currentLang === 'id' ? 'Pengunjung' : 'Visitors'}`;
+      if (!count) { count = 1; localStorage.setItem(visitorKey, count); }
+      else { count = parseInt(count); if (!sessionStorage.getItem('greeting_visitor_counted')) { count++; localStorage.setItem(visitorKey, count); sessionStorage.setItem('greeting_visitor_counted', 'true'); } }
+      document.getElementById('footerVisitorCount').textContent = `${count.toLocaleString(currentLang === 'id' ? 'id-ID' : 'en-US')} ${currentLang === 'id' ? 'Pengunjung' : 'Visitors'}`;
     }
 
-    // ===== INIT =====
+    // INIT
     document.addEventListener('DOMContentLoaded', () => {
-      // Initialize with Indonesian
       switchLanguage('id');
-      
-      // Render gallery
       renderGallery(greetingData);
-      setActiveNav(); 
-      setupMobileMenuClose();
+      setActiveNav(); setupMobileMenuClose();
       setTimeout(() => document.getElementById('preloader').classList.add('fade-out'), 600);
       AOS.init({ duration: 600, once: true, offset: 50 });
       updateVisitorCounter();
     });
 
-    // ===== CLICK OUTSIDE TO CLOSE MOBILE MENU =====
     document.addEventListener('click', function(event) {
       const navMenu = document.getElementById('navMenu');
       const menuToggle = document.querySelector('.menu-toggle');
-      if (navMenu.classList.contains('active') && 
-          !navMenu.contains(event.target) && 
-          !menuToggle.contains(event.target)) {
+      if (navMenu.classList.contains('active') && !navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
         navMenu.classList.remove('active');
       }
     });
