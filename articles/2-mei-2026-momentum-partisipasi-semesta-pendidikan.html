@@ -2,206 +2,663 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>2 Mei 2026: Momentum Menguatkan Partisipasi Semesta dalam Dunia Pendidikan</title>
+    
+    <!-- DNS Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://i.ibb.co">
+    
+    <!-- SEO -->
+    <meta name="description" content="Hardiknas 2026 menjadi momentum untuk menggerakkan partisipasi semesta dalam ekosistem pendidikan melalui kolaborasi pemerintah, swasta, komunitas, dan seluruh elemen masyarakat.">
+    <meta name="author" content="SMAN 1 Cluring">
+    <meta name="keywords" content="Hardiknas 2026, Hari Pendidikan Nasional, partisipasi semesta, pendidikan Indonesia, SMAN 1 Cluring">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="2 Mei 2026: Momentum Menguatkan Partisipasi Semesta dalam Dunia Pendidikan">
+    <meta property="og:description" content="Hardiknas 2026 mengajak seluruh elemen masyarakat untuk terlibat aktif dalam membangun ekosistem pendidikan yang inklusif dan berkelanjutan.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://sman1cluring.sch.id/artikel/hardiknas-2026-partisipasi-semesta.html">
+    <meta property="og:image" content="https://i.ibb.co.com/WWspP48r/hari-pendidikan.jpg">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* ===== CORE VARIABLES (KONSISTEN DENGAN INDEX) ===== */
+        :root {
+            --primary: #0a2a5e; --primary-light: #1e3a7a; --primary-dark: #051a3b;
+            --secondary: #9e7b4b; --secondary-light: #c1a06e; --accent: #c7a854;
+            --cultural-accent: #b13e3e; --ijen-green: #2d6a4f;
+            --light: #f5f7fa; --dark: #1e2b37; --gray: #4b5c6b; --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.1); --glass-border: rgba(255, 255, 255, 0.2);
+            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 8px 30px rgba(0, 20, 50, 0.12);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            --border-radius: 24px; --border-radius-sm: 16px;
+            --whatsapp: #25D366; --whatsapp-dark: #128C7E;
+        }
+        .dark-mode {
+            --primary: #1e3a8a; --primary-light: #3b5ba5; --secondary: #d4af37;
+            --light: #0f1825; --dark: #edf2f7; --gray: #a0b3c6; --white: #1a2533;
+            --glass: rgba(0, 0, 0, 0.25); --glass-border: rgba(255, 255, 255, 0.08);
         }
         
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.8;
-            color: #333;
-            background-color: #f5f5f5;
-            padding: 20px;
+            font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--light); color: var(--dark);
+            line-height: 1.8; transition: background-color 0.4s ease, color 0.4s ease;
+            overflow-x: hidden;
         }
+        h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        img { max-width: 100%; height: auto; display: block; }
         
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        /* PRELOADER */
+        #preloader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--primary); display: flex; justify-content: center; align-items: center;
+            z-index: 9999; opacity: 1; transition: opacity 0.4s ease;
         }
-        
-        .image-container {
-            text-align: center;
-            margin: 30px 0;
+        #preloader.fade-out { opacity: 0; visibility: hidden; }
+        .spinner {
+            width: 45px; height: 45px;
+            border: 4px solid rgba(255,255,255,0.15);
+            border-top: 4px solid var(--secondary); border-radius: 50%;
+            animation: spin 0.9s linear infinite;
         }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
         
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        /* WHATSAPP FLOAT */
+        .whatsapp-float {
+            position: fixed; bottom: 100px; right: 30px;
+            background: linear-gradient(135deg, var(--whatsapp), var(--whatsapp-dark));
+            color: white; display: flex; align-items: center; gap: 10px;
+            padding: 12px 24px; border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(37,211,102,0.3);
+            z-index: 998; transition: var(--transition);
+            font-weight: 600; backdrop-filter: blur(5px);
         }
+        .whatsapp-float:hover { transform: translateY(-5px); }
+        .whatsapp-float i { font-size: 24px; }
         
-        .image-caption {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 10px;
-            font-style: italic;
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            position: sticky; top: 0; z-index: 1000;
+            box-shadow: var(--shadow-md);
         }
-        
-        .image-row {
-            display: flex;
-            gap: 20px;
-            margin: 30px 0;
-            flex-wrap: wrap;
+        .nav-container {
+            max-width: 1400px; margin: auto; padding: 12px 32px;
+            display: flex; justify-content: space-between; align-items: center; gap: 20px;
         }
-        
-        .image-col {
-            flex: 1;
-            min-width: 250px;
-            text-align: center;
+        .brand {
+            display: flex; align-items: center; gap: 16px;
+            color: var(--white); font-weight: 800; font-size: 1.5rem;
         }
+        .brand img { width: 52px; border-radius: 12px; box-shadow: var(--shadow-sm); }
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        nav ul { list-style: none; display: flex; gap: 28px; align-items: center; }
+        nav ul li a {
+            color: var(--white); font-weight: 500; font-size: 1rem;
+            position: relative; opacity: 0.9; padding: 8px 0;
+        }
+        nav ul li a::after {
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 0; height: 2px; background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        nav ul li a:hover, nav ul li a.active { opacity: 1; color: var(--accent); }
+        nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
+        .dark-mode-toggle {
+            background: var(--glass); border: 1px solid var(--glass-border);
+            width: 44px; height: 44px; border-radius: 50%;
+            color: var(--white); cursor: pointer; transition: var(--transition);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .dark-mode-toggle:hover { background: var(--secondary); transform: rotate(30deg); }
+        .dark-mode .dark-mode-toggle .fa-moon { display: none; }
+        .dark-mode .dark-mode-toggle .fa-sun { display: block; }
+        .dark-mode-toggle .fa-sun { display: none; }
+        .menu-toggle { display: none; font-size: 28px; color: var(--white); cursor: pointer; }
         
-        .image-col img {
+        /* HERO SECTION */
+        .article-hero {
+            background: linear-gradient(135deg, rgba(10,42,94,0.92), rgba(5,26,59,0.96)), 
+                        url('https://i.ibb.co.com/WWspP48r/hari-pendidikan.jpg') center/cover no-repeat;
+            color: var(--white); padding: 60px 20px 50px; text-align: center;
+            position: relative; overflow: hidden;
+        }
+        .article-hero::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(10,42,94,0.5), rgba(10,42,94,0.8));
+        }
+        .article-hero > * { position: relative; z-index: 2; }
+        .article-hero h1 {
+            font-size: 2.5rem; margin-bottom: 20px; line-height: 1.3;
+            max-width: 900px; margin-left: auto; margin-right: auto;
+        }
+        .breadcrumb {
+            color: var(--secondary); font-size: 0.9rem; margin-bottom: 15px;
+        }
+        .breadcrumb a { color: var(--secondary); }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .article-meta {
+            display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+            font-size: 0.95rem; opacity: 0.9; margin-bottom: 25px;
+        }
+        .article-meta span { display: flex; align-items: center; gap: 6px; }
+        
+        /* MAIN CONTENT */
+        .article-wrapper {
+            max-width: 1100px; margin: -30px auto 60px;
+            background: var(--white); border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md); padding: 40px;
+            position: relative; z-index: 10;
+        }
+        .article-content { font-size: 1.05rem; line-height: 1.9; text-align: justify; }
+        .article-content p { margin-bottom: 22px; }
+        .article-content strong { color: var(--primary); font-weight: 600; }
+        
+        /* IMAGE GALLERY */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 35px 0;
+        }
+        .image-item {
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        .image-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .image-item img {
             width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            height: 280px;
+            object-fit: cover;
+            object-position: center;
         }
-        
-        h1 {
-            color: #1a5490;
-            font-size: 2.2em;
-            margin-bottom: 25px;
-            line-height: 1.3;
-            border-bottom: 3px solid #1a5490;
-            padding-bottom: 15px;
-        }
-        
-        h2 {
-            color: #1a5490;
-            font-size: 1.5em;
-            margin-top: 35px;
-            margin-bottom: 20px;
-        }
-        
-        p {
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-        
-        ol {
-            margin-left: 30px;
-            margin-bottom: 25px;
-        }
-        
-        li {
-            margin-bottom: 20px;
-        }
-        
-        strong {
-            color: #1a5490;
-            font-weight: 600;
-        }
-        
-        em {
+        .image-caption {
+            padding: 15px;
+            background: var(--light);
+            font-size: 0.9rem;
+            color: var(--gray);
             font-style: italic;
-            color: #555;
+            text-align: center;
         }
         
-        .highlight {
-            background-color: #fff3cd;
-            padding: 2px 5px;
-            border-radius: 3px;
+        /* HIGHLIGHT & INFO BOXES */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(158,123,75,0.12), rgba(199,168,84,0.05));
+            border-left: 5px solid var(--secondary);
+            padding: 25px 30px; border-radius: 0 12px 12px 0;
+            margin: 35px 0;
+        }
+        .highlight-box h3 {
+            display: flex; align-items: center; gap: 12px;
+            color: var(--primary); margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        .quote-box {
+            background: linear-gradient(145deg, rgba(255,243,205,0.95), rgba(255,255,255,0.98));
+            border-left: 5px solid var(--accent);
+            padding: 30px 35px; border-radius: 0 20px 20px 0;
+            margin: 35px 0; font-style: italic; color: #856404;
+            position: relative;
+        }
+        .quote-box::before {
+            content: '\201C';
+            font-size: 4rem;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            color: var(--accent);
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+        .quote-author {
+            display: block;
+            margin-top: 15px;
+            font-weight: 700;
+            color: var(--primary);
+            font-style: normal;
+        }
+        .info-section {
+            background: linear-gradient(145deg, rgba(158,123,75,0.08), rgba(199,168,84,0.02));
+            border: 1px solid rgba(158,123,75,0.2);
+            border-radius: 24px; padding: 35px; margin: 40px 0;
+        }
+        .info-section h2 {
+            color: var(--primary); margin-bottom: 25px; font-size: 1.6rem;
+            display: flex; align-items: center; gap: 12px;
         }
         
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
+        /* PILLARS GRID */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        .pillar-card {
+            background: var(--white);
+            padding: 28px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            border-top: 4px solid var(--primary);
+            transition: var(--transition);
+        }
+        .pillar-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-top-color: var(--secondary);
+        }
+        .pillar-card h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .pillar-card p {
+            margin-bottom: 0;
+            font-size: 0.98rem;
+            line-height: 1.7;
+        }
+        .pillar-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        
+        /* BACK BUTTON */
+        .back-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--secondary); font-weight: 600; margin-bottom: 25px;
+            padding: 10px 22px; background: rgba(158,123,75,0.1);
+            border-radius: 50px; transition: var(--transition);
+        }
+        .back-btn:hover { background: var(--secondary); color: white; transform: translateX(-3px); }
+        
+        /* FOOTER */
+        footer {
+            background: linear-gradient(145deg, var(--primary-dark), var(--primary));
+            color: var(--white); padding: 70px 32px 30px;
+            position: relative; margin-top: 60px;
+        }
+        footer::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent), var(--secondary));
+        }
+        .footer-content {
+            max-width: 1300px; margin: auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 40px;
+        }
+        .footer-section h3 {
+            font-size: 1.3rem; margin-bottom: 22px; font-weight: 600;
+            display: flex; align-items: center; gap: 10px; color: var(--secondary);
+        }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 12px; }
+        .footer-section a {
+            color: rgba(255,255,255,0.85); display: flex; align-items: center; gap: 10px;
+        }
+        .footer-section a:hover { color: var(--secondary); transform: translateX(5px); }
+        .social-links { display: flex; gap: 15px; margin-top: 18px; }
+        .social-links a {
+            width: 42px; height: 42px; border-radius: 50%;
+            background: var(--glass); color: var(--white);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; transition: var(--transition);
+            border: 1px solid var(--glass-border);
+        }
+        .social-links a:hover { background: var(--secondary); transform: translateY(-5px); color: var(--primary-dark); }
+        .footer-info-panel {
+            display: flex; align-items: center; justify-content: space-between;
+            flex-wrap: wrap; gap: 20px;
+            background: rgba(0,0,0,0.2); padding: 18px 28px;
+            border-radius: 50px; margin: 35px auto 15px;
+            max-width: 1000px; border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(8px);
+        }
+        .footer-clock { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+        .footer-time {
+            font-size: 1.8rem; font-weight: 700; font-family: monospace;
+            background: rgba(0,0,0,0.25); padding: 5px 16px; border-radius: 40px;
+        }
+        .footer-date { font-size: 0.95rem; opacity: 0.9; display: flex; align-items: center; gap: 7px; }
+        .footer-visitor {
+            display: flex; align-items: center; gap: 10px;
+            background: var(--secondary); color: var(--primary-dark);
+            padding: 9px 22px; border-radius: 40px;
+            font-weight: 600; font-size: 1rem;
+        }
+        .footer-bottom {
+            text-align: center; margin-top: 25px; padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.12);
+            font-size: 0.93rem; opacity: 0.85;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 880px) {
+            .menu-toggle { display: block; order: 3; }
+            .nav-right { order: 2; }
+            nav ul {
+                position: absolute; top: 76px; left: 0; right: 0;
+                background: var(--primary); flex-direction: column;
+                padding: 25px 0; display: none; z-index: 100;
+                border-top: 1px solid rgba(255,255,255,0.1);
+                backdrop-filter: blur(12px); gap: 16px;
             }
-            
-            h1 {
-                font-size: 1.6em;
-            }
-            
-            .image-row {
-                flex-direction: column;
-            }
+            nav ul.active { display: flex; }
+            nav ul li { text-align: center; }
+            .article-hero h1 { font-size: 2rem; }
+            .article-wrapper { margin: -30px 15px 40px; padding: 30px 25px; }
+            .footer-info-panel { flex-direction: column; text-align: center; }
+            .footer-clock { flex-direction: column; gap: 10px; width: 100%; }
+            .whatsapp-float { bottom: 20px; right: 20px; padding: 10px 18px; }
+            .whatsapp-float span { display: none; }
+            .whatsapp-float i { font-size: 28px; }
+            .pillars-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .brand span { display: none; }
+            .brand img { width: 44px; }
+            .article-hero h1 { font-size: 1.6rem; }
+            .article-wrapper { padding: 25px 18px; }
+            .info-section h2 { font-size: 1.3rem; }
+            .image-gallery { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="image-container">
-            <a href="https://ibb.co.com/d07JLwCN">
-                <img src="https://i.ibb.co.com/WWspP48r/hari-pendidikan.jpg" alt="hari-pendidikan" border="0">
+    <!-- PRELOADER -->
+    <div id="preloader"><div class="spinner"></div></div>
+    
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/6282319712420?text=Halo%20saya%20ingin%20bertanya%20tentang%20SMAN%201%20Cluring"
+       class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i><span>Chat Admin</span>
+    </a>
+    
+    <!-- HEADER -->
+    <header data-aos="fade-down">
+        <div class="nav-container">
+            <a href="../index.html" class="brand">
+                <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring" width="52" height="52" loading="eager">
+                <span>SMAN 1 CLURING</span>
             </a>
-            <div class="image-caption">Hari Pendidikan Nasional 2026</div>
+            <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+            <div class="nav-right">
+                <nav>
+                    <ul id="navMenu">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../profil.html">Profil</a></li>
+                        <li><a href="../akademik.html">Akademik</a></li>
+                        <li><a href="../kesiswaan.html">Kesiswaan</a></li>
+                        <li><a href="../sarpras.html">Sarpras</a></li>
+                        <li><a href="../humas.html">Humas</a></li>
+                        <li><a href="../mitra.html">Mitra</a></li>
+                        <li><a href="../alumni.html">Alumni</a></li>
+                        <li><a href="../artikel.html" class="active">Artikel</a></li>
+                        <li><a href="../index.html#kontak">Kontak</a></li>
+                        <li style="display:flex;align-items:center;">
+                            <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+                                <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        
+    </header>
+    
+    <!-- HERO SECTION -->
+    <section class="article-hero" data-aos="fade-in">
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a> / <a href="../artikel.html">Artikel</a> / Hardiknas 2026
+        </div>
         <h1>2 Mei 2026: Momentum Menguatkan Partisipasi Semesta dalam Dunia Pendidikan</h1>
+        <div class="article-meta">
+            <span><i class="far fa-calendar"></i> Sabtu, 2 Mei 2026</span>
+            <span><i class="fas fa-user-edit"></i> Redaksi</span>
+            <span><i class="fas fa-eye"></i> 1,567 views</span>
+        </div>
+    </section>
+    
+    <!-- MAIN CONTENT -->
+    <article class="article-wrapper" data-aos="fade-up">
+        <a href="../artikel.html" class="back-btn"><i class="fas fa-arrow-left"></i> Kembali ke Artikel</a>
         
-        <p>Setiap tanggal 2 Mei, Indonesia kembali menyapa Hari Pendidikan Nasional (Hardiknas). Pada tahun 2026, peringatan ini hadir dengan makna yang lebih mendesak dan kontekstual. Bukan sekadar refleksi atas jasa pahlawan pendidikan atau seremonial belaka, Hardiknas tahun ini menjadi titik tolak untuk menggerakkan sebuah paradigma baru: <strong>partisipasi semesta</strong> dalam ekosistem pendidikan.</p>
-        
-        <p>Enam tahun terakhir telah membawa percepatan transformasi digital, integrasi kecerdasan buatan dalam pembelajaran, serta penataan ulang kurikulum yang lebih berpusat pada kompetensi. Namun, di balik capaian tersebut, realitas di lapangan masih menunjukkan pekerjaan rumah yang kompleks. Kesenjangan akses antara kota dan daerah terpencil, beban administrasi guru yang belum optimal, keterbatasan infrastruktur di wilayah 3T, serta partisipasi masyarakat yang masih bersifat parsial dan insidental menjadi pengingat bahwa pendidikan tidak dapat diselesaikan oleh satu aktor saja.</p>
-        
-        <div class="image-container">
-            <a href="https://ibb.co.com/F4Q2NGf3">
-                <img src="https://i.ibb.co.com/N205QwkC/PERPISAHAN.jpg" alt="PERPISAHAN" border="0">
-            </a>
-            <div class="image-caption">Momen perpisahan sebagai bagian dari perjalanan pendidikan yang bermakna</div>
+        <div class="article-content">
+            <p><strong>Cluring, 2 Mei 2026</strong> — Setiap tanggal 2 Mei, Indonesia kembali memperingati <strong>Hari Pendidikan Nasional (Hardiknas)</strong>. Pada tahun 2026, peringatan ini hadir dengan makna yang lebih mendesak dan kontekstual. Bukan sekadar refleksi atas jasa pahlawan pendidikan atau seremonial belaka, Hardiknas tahun ini menjadi titik tolak untuk menggerakkan sebuah paradigma baru: <strong>partisipasi semesta</strong> dalam ekosistem pendidikan.</p>
+            
+            <p>Enam tahun terakhir telah membawa percepatan transformasi digital, integrasi kecerdasan buatan dalam pembelajaran, serta penataan ulang kurikulum yang lebih berpusat pada kompetensi. Namun, di balik capaian tersebut, realitas di lapangan masih menunjukkan pekerjaan rumah yang kompleks. Kesenjangan akses antara kota dan daerah terpencil, beban administrasi guru yang belum optimal, keterbatasan infrastruktur di wilayah 3T (Terdepan, Terluar, Tertinggal), serta partisipasi masyarakat yang masih bersifat parsial dan insidental menjadi pengingat bahwa pendidikan tidak dapat diselesaikan oleh satu aktor saja.</p>
         </div>
         
-        <p>Di sinilah konsep partisipasi semesta menemukan relevansinya. Partisipasi semesta bukan sekadar ajakan untuk "turut membantu", melainkan sebuah kerangka kolaborasi sistemik di mana pemerintah, swasta, komunitas, orang tua, akademisi, media, dan siswa sendiri bergerak dalam satu irama. Pendidikan digeser dari narasi <em>"untuk masyarakat"</em> menjadi <em>"oleh, bersama, dan demi masyarakat"</em>. Dalam model ini, sekolah tidak lagi menjadi menara gading yang tertutup, melainkan simpul hidup yang terhubung dengan dinam sosial, ekonomi, dan kultural di sekitarnya.</p>
-        
-        <h2>Pilar-Pilar Strategis Partisipasi Semesta</h2>
-        
-        <p>Beberapa pilar strategis dapat menjadi penopang momentum ini di tahun 2026:</p>
-        
-        <ol>
-            <li><strong>Kemitraan Strategis Pemerintah-Swasta-Masyarakat</strong><br>
-            Kontribusi korporasi perlu dialihkan dari sekadar filantropi menuju keterlibatan struktural: penyelarasan kurikulum dengan kebutuhan masa depan, program magang bermakna, pendampingan guru, serta investasi pada riset pendidikan berbasis data.</li>
-            
-            <li><strong>Penguatan Peran Keluarga dan Komunitas Lokal</strong><br>
-            Orang tua dan tokoh masyarakat adalah mitra utama, bukan sekadar penonton. Program sekolah ramah keluarga, pos pembelajaran desa, dan ruang dialog rutin antara guru-warga dapat membangun ekosistem pendukung yang berkelanjutan, terutama bagi anak-anak yang membutuhkan pendampingan ekstra.</li>
-            
-            <li><strong>Teknologi yang Memeratakan, Bukan Memisahkan</strong><br>
-            Digitalisasi harus diiringi dengan kebijakan inklusif: akses gawai dan internet terjangkau, literasi digital bagi guru dan orang tua, serta kerangka etika yang melindungi privasi dan mencegah kesenjangan algoritmik. Teknologi adalah alat pemersatu ketika dikelola dengan prinsip keadilan.</li>
-        </ol>
-        
-        <div class="image-container">
-            <a href="https://ibb.co.com/hRdQdqM8">
-                <img src="https://i.ibb.co.com/1fXyXSn2/coding3.jpg" alt="coding3" border="0">
-            </a>
-            <div class="image-caption">Pembelajaran coding dan teknologi sebagai bagian dari literasi digital masa depan</div>
+        <!-- IMAGE GALLERY -->
+        <div class="image-gallery">
+            <div class="image-item" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://ibb.co.com/F4Q2NGf3" target="_blank">
+                    <img src="https://i.ibb.co.com/N205QwkC/PERPISAHAN.jpg" alt="Momen perpisahan sebagai bagian dari perjalanan pendidikan yang bermakna" loading="lazy">
+                </a>
+                <div class="image-caption">Momen perpisahan sebagai bagian dari perjalanan pendidikan yang bermakna</div>
+            </div>
+            <div class="image-item" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://ibb.co.com/hRdQdqM8" target="_blank">
+                    <img src="https://i.ibb.co.com/1fXyXSn2/coding3.jpg" alt="Pembelajaran coding dan teknologi sebagai bagian dari literasi digital masa depan" loading="lazy">
+                </a>
+                <div class="image-caption">Pembelajaran coding dan teknologi sebagai bagian dari literasi digital masa depan</div>
+            </div>
         </div>
         
-        <ol start="4">
-            <li><strong>Guru sebagai Arsitek Pembelajaran & Inovator Sosial</strong><br>
-            Partisipasi semesta hanya akan berjalan jika guru didukung secara profesional dan manusiawi. Pengurangan beban administratif, peningkatan kesejahteraan, ruang kreatif untuk inovasi pedagogik, serta pengakuan terhadap peran guru sebagai agen perubahan komunitas adalah investasi strategis yang tidak bisa ditawar.</li>
-            
-            <li><strong>Siswa sebagai Subjek, Bukan Objek</strong><br>
-            Pendidikan partisipatif menempatkan siswa sebagai <em>co-creator</em>. Melalui pembelajaran berbasis proyek, forum pelajar, dan keterlibatan dalam pemecahan masalah lokal, siswa tidak hanya menguasai materi, tetapi juga melatih empati, kepemimpinan, dan tanggung jawab sosial sejak dini.</li>
-        </ol>
+        <div class="article-content">
+            <p>Di sinilah konsep <strong>partisipasi semesta</strong> menemukan relevansinya. Partisipasi semesta bukan sekadar ajakan untuk "turut membantu", melainkan sebuah kerangka kolaborasi sistemik di mana pemerintah, swasta, komunitas, orang tua, akademisi, media, dan siswa sendiri bergerak dalam satu irama. Pendidikan digeser dari narasi <em>"untuk masyarakat"</em> menjadi <em>"oleh, bersama, dan demi masyarakat"</em>. Dalam model ini, sekolah tidak lagi menjadi menara gading yang tertutup, melainkan simpul hidup yang terhubung dengan dinamika sosial, ekonomi, dan kultural di sekitarnya.</p>
+        </div>
         
-        <div class="image-row">
-            <div class="image-col">
-                <a href="https://ibb.co.com/QFJNx6RY">
-                    <img src="https://i.ibb.co.com/Kxt9b0M9/X-7-PROSES-PEMBELAJARAN-800x600.webp" alt="X-8-PROSES-PEMBELAJARAN-800x600" border="0">
+        <!-- PILLARS SECTION -->
+        <div class="info-section" data-aos="fade-up">
+            <h2><i class="fas fa-columns"></i> Lima Pilar Strategis Partisipasi Semesta</h2>
+            <p>Beberapa pilar strategis menjadi penopang momentum ini di tahun 2026:</p>
+            
+            <div class="pillars-grid">
+                <div class="pillar-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3><span class="pillar-number">1</span> Kemitraan Strategis Pemerintah-Swasta-Masyarakat</h3>
+                    <p>Kontribusi korporasi perlu dialihkan dari sekadar filantropi menuju keterlibatan struktural: penyelarasan kurikulum dengan kebutuhan masa depan, program magang bermakna, pendampingan guru, serta investasi pada riset pendidikan berbasis data.</p>
+                </div>
+                
+                <div class="pillar-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3><span class="pillar-number">2</span> Penguatan Peran Keluarga dan Komunitas Lokal</h3>
+                    <p>Orang tua dan tokoh masyarakat adalah mitra utama, bukan sekadar penonton. Program sekolah ramah keluarga, pos pembelajaran desa, dan ruang dialog rutin antara guru-warga dapat membangun ekosistem pendukung yang berkelanjutan, terutama bagi anak-anak yang membutuhkan pendampingan ekstra.</p>
+                </div>
+                
+                <div class="pillar-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3><span class="pillar-number">3</span> Teknologi yang Memeratakan, Bukan Memisahkan</h3>
+                    <p>Digitalisasi harus diiringi dengan kebijakan inklusif: akses gawai dan internet terjangkau, literasi digital bagi guru dan orang tua, serta kerangka etika yang melindungi privasi dan mencegah kesenjangan algoritmik. Teknologi adalah alat pemersatu ketika dikelola dengan prinsip keadilan.</p>
+                </div>
+                
+                <div class="pillar-card" data-aos="fade-up" data-aos-delay="400">
+                    <h3><span class="pillar-number">4</span> Guru sebagai Arsitek Pembelajaran & Inovator Sosial</h3>
+                    <p>Partisipasi semesta hanya akan berjalan jika guru didukung secara profesional dan manusiawi. Pengurangan beban administratif, peningkatan kesejahteraan, ruang kreatif untuk inovasi pedagogik, serta pengakuan terhadap peran guru sebagai agen perubahan komunitas adalah investasi strategis yang tidak bisa ditawar.</p>
+                </div>
+                
+                <div class="pillar-card" data-aos="fade-up" data-aos-delay="500">
+                    <h3><span class="pillar-number">5</span> Siswa sebagai Subjek, Bukan Objek</h3>
+                    <p>Pendidikan partisipatif menempatkan siswa sebagai <em>co-creator</em>. Melalui pembelajaran berbasis proyek, forum pelajar, dan keterlibatan dalam pemecahan masalah lokal, siswa tidak hanya menguasai materi, tetapi juga melatih empati, kepemimpinan, dan tanggung jawab sosial sejak dini.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- IMAGE GALLERY 2 -->
+        <div class="image-gallery">
+            <div class="image-item" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://ibb.co.com/QFJNx6RY" target="_blank">
+                    <img src="https://i.ibb.co.com/Kxt9b0M9/X-7-PROSES-PEMBELAJARAN-800x600.webp" alt="Proses pembelajaran kolaboratif di ruang kelas" loading="lazy">
                 </a>
                 <div class="image-caption">Proses pembelajaran kolaboratif di ruang kelas</div>
             </div>
-            <div class="image-col">
-                <a href="https://ibb.co.com/F4Q2NGf3">
-                    <img src="https://i.ibb.co.com/ycV2h9Cc/PEMBIASAN-PAGI.jpg" alt="PEMBIASAAN PAGI" border="0">
+            <div class="image-item" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://ibb.co.com/F4Q2NGf3" target="_blank">
+                    <img src="https://i.ibb.co.com/ycV2h9Cc/PEMBIASAN-PAGI.jpg" alt="Pembiasaan pagi dalam perjalanan pendidikan" loading="lazy">
                 </a>
                 <div class="image-caption">Pembiasaan pagi dalam perjalanan pendidikan</div>
             </div>
         </div>
         
-        <h2>Penutup: Dari Momentum Menuju Gerakan</h2>
+        <!-- QUOTE BOX -->
+        <div class="quote-box" data-aos="fade-up">
+            <p>Kualitas pendidikan suatu bangsa tidak diukur dari jumlah gedung atau perangkat canggih semata, melainkan dari sejauh mana seluruh komponen masyarakat merasa memiliki dan terlibat dalam prosesnya.</p>
+            <span class="quote-author">— Refleksi Hardiknas 2026</span>
+        </div>
         
-        <p>Hardiknas 2026 adalah pengingat bahwa kualitas pendidikan suatu bangsa tidak diukur dari jumlah gedung atau perangkat canggih semata, melainkan dari sejauh mana seluruh komponen masyarakat merasa memiliki dan terlibat dalam prosesnya. Momentum ini akan kehilangan arti jika hanya berhenti pada pidato, spanduk, atau dokumen kebijakan. Ia harus menetes ke ruang kelas, ke musyawarah desa, ke layar gawai yang menjangkau pelosok, dan ke hati setiap orang yang yakin bahwa masa depan Indonesia ditentukan oleh cara kita merawat potensi setiap anak.</p>
+        <!-- CLOSING SECTION -->
+        <div class="highlight-box" data-aos="fade-up" style="background: linear-gradient(135deg, rgba(10,42,94,0.1), rgba(30,58,122,0.05)); border-left-color: var(--primary);">
+            <h3><i class="fas fa-lightbulb" style="color:var(--accent)"></i> Dari Momentum Menuju Gerakan</h3>
+            <p>Hardiknas 2026 adalah pengingat bahwa momentum ini akan kehilangan arti jika hanya berhenti pada pidato, spanduk, atau dokumen kebijakan. Ia harus menetes ke ruang kelas, ke musyawarah desa, ke layar gawai yang menjangkau pelosok, dan ke hati setiap orang yang yakin bahwa masa depan Indonesia ditentukan oleh cara kita merawat potensi setiap anak.</p>
+            <p style="margin-top: 1rem; margin-bottom: 0;"><strong>Partisipasi semesta</strong> bukan wacana idealis. Ia adalah keniscayaan praktis. Ketika semua pihak bergerak sebagai satu organisme, pendidikan berubah dari hak istimewa menjadi napas bersama. Mari jadikan 2 Mei 2026 sebagai awal dari gerakan kolektif yang nyata, terukur, dan berkelanjutan. Karena ketika seluruh semesta terlibat, tidak ada mimpi yang terlalu jauh untuk dikejar, dan tidak ada anak yang pantas tertinggal.</p>
+        </div>
         
-        <p>Partisipasi semesta bukan wacana idealis. Ia adalah keniscayaan praktis. Ketika semua pihak bergerak sebagai satu organisme, pendidikan berubah dari hak istimewa menjadi napas bersama. Mari jadikan 2 Mei 2026 sebagai awal dari gerakan kolektif yang nyata, terukur, dan berkelanjutan. Karena ketika seluruh semesta terlibat, tidak ada mimpi yang terlalu jauh untuk dikejar, dan tidak ada anak yang pantas tertinggal.</p>
-    </div>
+        <!-- Share buttons -->
+        <div style="text-align:center;margin-top:45px;padding-top:30px;border-top:1px solid rgba(0,0,0,0.08);">
+            <p style="margin-bottom:15px;color:var(--gray);">Bagikan artikel ini:</p>
+            <div style="display:flex;justify-content:center;gap:15px;flex-wrap:wrap;">
+                <a href="https://wa.me/?text=2%20Mei%202026:%20Momentum%20Menguatkan%20Partisipasi%20Semesta%20dalam%20Dunia%20Pendidikan%20https://sman1cluring.sch.id/artikel/hardiknas-2026-partisipasi-semesta.html" target="_blank" style="padding:12px 25px;background:#25D366;color:white;border-radius:40px;font-weight:600;display:inline-flex;align-items:center;gap:10px;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://sman1cluring.sch.id/artikel/hardiknas-2026-partisipasi-semesta.html" target="_blank" style="padding:12px 25px;background:#1877F2;color:white;border-radius:40px;font-weight:600;display:inline-flex;align-items:center;gap:10px;"><i class="fab fa-facebook-f"></i> Facebook</a>
+            </div>
+        </div>
+    </article>
+    
+    <!-- FOOTER -->
+    <footer data-aos="fade-up" id="kontak">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-map-marker-alt"></i> Kontak</h3>
+                <p>Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, Jawa Timur</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+62333713297">0333-713297</a></p>
+                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6282319712420" target="_blank">0823-1971-2420 (WA)</a></p>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-link"></i> Link Penting</h3>
+                <ul>
+                    <li><a href="https://sma.kemendikdasmen.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
+                    <li><a href="https://dindik.jatimprov.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
+                    <li><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas Banyuwangi</a></li>
+                    <li><a href="https://alam21234.github.io/Smaring-interactive-learning-comunity" target="_blank"><i class="fas fa-external-link-alt"></i> Smaring</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-flask"></i> Lab Virtual</h3>
+                <ul>
+                    <li><a href="https://quran.nu.or.id" target="_blank"><i class="fas fa-book-quran"></i> Al-Qur'an Digital</a></li>
+                    <li><a href="https://virtualbiologylab.org" target="_blank"><i class="fas fa-dna"></i> Virtual Biology Lab</a></li>
+                    <li><a href="https://www.myphysicslab.com" target="_blank"><i class="fas fa-atom"></i> MyPhysicsLab</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-share-alt"></i> Media Sosial</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/Sman1Cluring" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/sman1_cluring" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/6282319712420" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-info-panel">
+            <div class="footer-clock">
+                <span class="footer-time" id="footerTime">00:00:00</span>
+                <span class="footer-date" id="footerDate">Sabtu, 1 Januari 2026</span>
+            </div>
+            <div class="footer-visitor">
+                <i class="fas fa-eye"></i><span id="footerVisitorCount">Loading...</span>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
+        </div>
+    </footer>
+    
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 600, once: true, easing: 'ease-out-cubic' });
+            
+            // Preloader
+            setTimeout(() => {
+                document.getElementById('preloader')?.classList.add('fade-out');
+            }, 400);
+            
+            // Dark Mode
+            const darkToggle = document.getElementById('darkModeToggle');
+            const body = document.body;
+            if(localStorage.getItem('darkMode') === 'true') body.classList.add('dark-mode');
+            darkToggle?.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+            });
+            
+            // Mobile Menu Toggle
+            window.toggleMenu = () => {
+                document.getElementById('navMenu')?.classList.toggle('active');
+            };
+            
+            // Tutup menu saat klik link
+            document.querySelectorAll('#navMenu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    document.getElementById('navMenu')?.classList.remove('active');
+                });
+            });
+            
+            // Realtime Clock
+            function updateClock() {
+                const now = new Date();
+                document.getElementById('footerTime').textContent = 
+                    `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
+                const days = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+                const months = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+                document.getElementById('footerDate').textContent = 
+                    `${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
+            }
+            setInterval(updateClock, 1000); updateClock();
+            
+            // Visitor Counter
+            function updateVisitor() {
+                const key = 'sman1cluring_visitor';
+                let count = localStorage.getItem(key);
+                if(!count) { count = 1; localStorage.setItem(key, count); }
+                else if(!sessionStorage.getItem('v_counted')) {
+                    count = parseInt(count) + 1;
+                    localStorage.setItem(key, count);
+                    sessionStorage.setItem('v_counted', 'true');
+                }
+                document.getElementById('footerVisitorCount').textContent = `${count.toLocaleString('id-ID')} Pengunjung`;
+            }
+            updateVisitor();
+        });
+    </script>
 </body>
 </html>
