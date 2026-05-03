@@ -75,7 +75,7 @@
 --primary-light: #1e293b;
 --secondary: #d4af37;
 --secondary-light: #3f3f46;
---bg-body: #0f172a;
+--bg-body: #0f1825;
 --bg-card: #1e293b;
 --bg-glass: rgba(30, 41, 59, 0.85);
 --text-primary: #f1f5f9;
@@ -109,7 +109,7 @@ transition: background-color var(--transition-normal), color var(--transition-no
 overflow-x: hidden;
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
-padding-bottom: var(--bottom-nav-height); /* Space for bottom nav on mobile */
+padding-bottom: var(--bottom-nav-height);
 }
 /* ===== TYPOGRAPHY ===== */
 h1, h2, h3, h4, h5, h6 {
@@ -286,6 +286,18 @@ nav ul li a:hover::after,
 nav ul li a.active::after {
 width: 100%;
 }
+
+/* ===== CSS SPMB HOVER EFFECT (UNTUK KONSISTENSI VISUAL) ===== */
+nav a[href*="spmb"]:hover {
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
+  box-shadow: 0 4px 15px rgba(158,123,75,.4);
+  color: #fff;
+}
+.nav-m a[href*="spmb"]:hover {
+  background: rgba(255,255,255,.15);
+  color: var(--accent);
+}
+
 /* ===== DARK MODE TOGGLE ===== */
 .dark-mode-toggle {
 background: rgba(255, 255, 255, 0.15);
@@ -468,7 +480,6 @@ transform: translateX(-50%) scaleX(1);
 color: var(--secondary);
 background: rgba(212, 175, 55, 0.15);
 }
-
 /* ===== MOBILE BOTTOM NAVIGATION - LIKE APP ===== */
 .mobile-bottom-nav {
 display: none;
@@ -533,7 +544,6 @@ color: var(--secondary);
 .mobile-bottom-nav a.active {
 color: var(--secondary);
 }
-
 /* ===== CONTENT SECTIONS ===== */
 .section {
 opacity: 0;
@@ -953,7 +963,6 @@ background: linear-gradient(135deg, var(--whatsapp-hover) 0%, var(--whatsapp) 10
 0%, 100% { transform: scale(1); }
 50% { transform: scale(1.12); }
 }
-
 /* ===== RESPONSIVE BREAKPOINTS ===== */
 /* Tablet & Small Desktop */
 @media (max-width: 1024px) {
@@ -962,7 +971,6 @@ background: linear-gradient(135deg, var(--whatsapp-hover) 0%, var(--whatsapp) 10
 --nav-sticky-offset: 84px;
 }
 }
-
 /* Mobile - Bottom Navigation LIKE APP */
 @media (max-width: 768px) {
 :root {
@@ -970,22 +978,18 @@ background: linear-gradient(135deg, var(--whatsapp-hover) 0%, var(--whatsapp) 10
 --nav-sticky-offset: 80px;
 --bottom-nav-height: 72px;
 }
-
 /* Hide desktop internal nav on mobile */
 .internal-nav {
 display: none;
 }
-
 /* Show mobile bottom nav */
 .mobile-bottom-nav {
 display: block;
 }
-
 /* Adjust body padding for bottom nav */
 body {
 padding-bottom: var(--bottom-nav-height);
 }
-
 /* Page header adjustments */
 .page-header {
 padding: clamp(3rem, 12vw, 5rem) 1rem clamp(2rem, 8vw, 3rem);
@@ -994,7 +998,6 @@ min-height: 260px;
 .page-header h1 {
 font-size: clamp(1.6rem, 5vw, 2.2rem);
 }
-
 /* Section adjustments - NO OVERLAPPING */
 .section {
 padding: clamp(1.5rem, 4vw, 2.25rem);
@@ -1003,23 +1006,19 @@ scroll-margin-top: 100px;
 .section h2 {
 font-size: clamp(1.4rem, 4vw, 1.9rem);
 }
-
 /* School image */
 .school-image {
 max-height: clamp(180px, 30vw, 250px);
 }
-
 /* Vision box */
 .vision-box {
 font-size: clamp(0.95rem, 2.5vw, 1.1rem);
 padding: clamp(1rem, 2.5vw, 1.25rem);
 }
-
 /* Mission card */
 .mission-card h4 {
 font-size: clamp(1rem, 2.5vw, 1.2rem);
 }
-
 /* Structure table */
 .structure-table th,
 .structure-table td {
@@ -1029,7 +1028,6 @@ font-size: clamp(0.85rem, 2vw, 0.9rem);
 .structure-table th {
 white-space: normal;
 }
-
 /* WhatsApp button - above bottom nav */
 .whatsapp-float {
 bottom: calc(var(--bottom-nav-height) + 0.75rem);
@@ -1050,7 +1048,6 @@ border-radius: var(--radius-full);
 font-size: clamp(1.5rem, 4vw, 1.8rem);
 animation: none;
 }
-
 /* Dark mode toggle position */
 .dark-mode-toggle {
 position: fixed;
@@ -1059,7 +1056,6 @@ right: 10px;
 z-index: 1001;
 margin: 0;
 }
-
 /* Menu toggle */
 .menu-toggle {
 display: flex;
@@ -1107,7 +1103,6 @@ nav ul li a.active {
 background: rgba(255, 255, 255, 0.12);
 }
 }
-
 /* Small Mobile */
 @media (max-width: 480px) {
 :root {
@@ -1164,7 +1159,6 @@ font-size: 0.6rem;
 font-size: 1.2rem;
 }
 }
-
 /* Ultra Small Mobile */
 @media (max-width: 360px) {
 .section h2 {
@@ -1175,13 +1169,12 @@ font-size: 3rem;
 top: -5px;
 }
 .mobile-bottom-nav a span {
-display: none; /* Hide text, show only icons on very small screens */
+display: none;
 }
 .mobile-bottom-nav a {
 padding: 0.6rem 0.5rem;
 }
 }
-
 /* ===== MOBILE PERFORMANCE OPTIMIZATION ===== */
 @media (max-width: 768px) {
 .section {
@@ -1210,7 +1203,6 @@ scroll-behavior: auto;
 box-shadow: var(--shadow-sm) !important;
 }
 }
-
 /* ===== ACCESSIBILITY ===== */
 @media (prefers-reduced-motion: reduce) {
 *, *::before, *::after {
@@ -1220,7 +1212,6 @@ transition-duration: 0.01ms !important;
 }
 html { scroll-behavior: auto; }
 }
-
 /* High Contrast Mode Support */
 @media (prefers-contrast: high) {
 :root {
@@ -1231,7 +1222,6 @@ html { scroll-behavior: auto; }
 --border-color: rgba(255, 255, 255, 0.5);
 }
 }
-
 /* Focus States for Keyboard Navigation */
 a:focus-visible,
 button:focus-visible,
@@ -1241,7 +1231,6 @@ outline: 3px solid var(--accent);
 outline-offset: 3px;
 border-radius: var(--radius-sm);
 }
-
 /* Print Styles */
 @media print {
 header, footer, .whatsapp-float, .internal-nav, .mobile-bottom-nav, .back-home {
@@ -1290,8 +1279,9 @@ aria-label="Chat dengan Admin via WhatsApp">
 <div class="nav-right">
 <nav>
 <ul id="navMenu" role="menubar">
-<li role="none"><a href="index.html" role="menuitem">Home</a></li>
+<li role="none"><a href="index.html" role="menuitem">Beranda</a></li>
 <li role="none"><a href="profil.html" role="menuitem" class="active">Profil</a></li>
+<li role="none"><a href="spmb.html" role="menuitem"><i class="fas fa-user-plus"></i> SPMB</a></li>
 <li role="none"><a href="akademik.html" role="menuitem">Akademik</a></li>
 <li role="none"><a href="kesiswaan.html" role="menuitem">Kesiswaan</a></li>
 <li role="none"><a href="sarpras.html" role="menuitem">Sarpras</a></li>
