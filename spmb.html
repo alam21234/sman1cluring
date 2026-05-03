@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPMB 2026 | SMAN 1 Cluring</title>
+  
+  <!-- DNS Preconnect for Speed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://www.youtube.com">
+  <link rel="preconnect" href="https://i.ibb.co">
+  
+  <!-- SEO -->
+  <meta name="description" content="Informasi Sistem Penerimaan Murid Baru (SPMB) SMAN 1 Cluring Banyuwangi Tahun Ajaran 2026/2027. Jadwal, persyaratan, dan panduan pendaftaran." />
+  <meta name="author" content="SMAN 1 Cluring" />
+  <meta name="keywords" content="SPMB, PPDB, SMAN 1 Cluring, pendaftaran siswa baru, Banyuwangi, seleksi masuk SMA" />
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="SPMB 2026 | SMAN 1 Cluring" />
+  <meta property="og:description" content="Informasi lengkap pendaftaran siswa baru SMAN 1 Cluring Tahun Ajaran 2026/2027." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sman1cluring.sch.id/spmb.html" />
+  <meta property="og:image" content="https://i.ibb.co.com/20QKCzvw/Whats-App-Image-2026-04-30-at-07-06-50.jpg" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  
+  <style>
+    /* ===== CORE VARIABLES (SAMA DENGAN INDEX) ===== */
+    :root {
+      --primary: #0a2a5e;
+      --primary-light: #1e3a7a;
+      --primary-dark: #051a3b;
+      --secondary: #9e7b4b;
+      --secondary-light: #c1a06e;
+      --accent: #c7a854;
+      --cultural-accent: #b13e3e;
+      --ijen-green: #2d6a4f;
+      --light: #f5f7fa;
+      --dark: #1e2b37;
+      --gray: #4b5c6b;
+      --white: #ffffff;
+      --glass: rgba(255, 255, 255, 0.1);
+      --glass-border: rgba(255, 255, 255, 0.2);
+      --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 8px 30px rgba(0, 20, 50, 0.12);
+      --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+      --border-radius: 24px;
+      --border-radius-sm: 16px;
+      --whatsapp: #25D366;
+      --whatsapp-dark: #128C7E;
+      --chat-primary: #0a2a5e;
+      --chat-secondary: #9e7b4b;
+      --chat-user: #e3f2fd;
+      --chat-bot: #f5f5f5;
+    }
+    .dark-mode {
+      --primary: #1e3a8a;
+      --primary-light: #3b5ba5;
+      --secondary: #d4af37;
+      --light: #0f1825;
+      --dark: #edf2f7;
+      --gray: #a0b3c6;
+      --white: #1a2533;
+      --glass: rgba(0, 0, 0, 0.25);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --chat-user: #1e3a8a;
+      --chat-bot: #2d3748;
+    }
+    
+    /* ===== RESET & BASE ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      transition: background-color 0.4s ease, color 0.4s ease;
+      overflow-x: hidden;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+    }
+    h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+    
+    /* ===== PRELOADER ===== */
+    #preloader {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: var(--primary); display: flex; justify-content: center; align-items: center;
+      z-index: 9999; opacity: 1; transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    #preloader.fade-out { opacity: 0; visibility: hidden; }
+    .spinner {
+      width: 50px; height: 50px;
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      border-top: 4px solid var(--secondary);
+      border-right: 4px solid var(--secondary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    
+    /* ===== WHATSAPP FLOAT ===== */
+    .whatsapp-float {
+      position: fixed; bottom: 100px; right: 30px;
+      background: linear-gradient(135deg, var(--whatsapp) 0%, var(--whatsapp-dark) 100%);
+      color: white; display: flex; align-items: center; gap: 12px;
+      padding: 14px 28px; border-radius: 60px;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+      z-index: 998; transition: var(--transition);
+      backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);
+      font-weight: 600; text-decoration: none;
+    }
+    .whatsapp-float i { font-size: 28px; animation: pulse 2s infinite; }
+    .whatsapp-float:hover { transform: translateY(-8px) scale(1.05); box-shadow: 0 20px 35px rgba(37, 211, 102, 0.4); }
+    .whatsapp-float::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      border-radius: 60px; border: 2px solid rgba(255, 255, 255, 0.3);
+      animation: ripple 1.5s infinite;
+    }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+    @keyframes ripple { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(1.3); opacity: 0; } }
+    
+    /* ===== CHAT SYSTEM ===== */
+    .chat-button {
+      position: fixed; bottom: 30px; right: 30px;
+      background: linear-gradient(135deg, var(--chat-primary) 0%, var(--primary-light) 100%);
+      width: 65px; height: 65px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 28px; cursor: pointer;
+      box-shadow: var(--shadow-lg); z-index: 999;
+      transition: var(--transition); border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    .chat-button:hover { transform: scale(1.1) rotate(10deg); background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%); }
+    .chat-button .notification-badge {
+      position: absolute; top: -5px; right: -5px;
+      background: var(--cultural-accent); color: white;
+      font-size: 12px; width: 22px; height: 22px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-weight: bold; border: 2px solid white;
+    }
+    .chat-box {
+      position: fixed; bottom: 110px; right: 30px;
+      width: 380px; height: 500px;
+      background: var(--white); border-radius: 24px;
+      box-shadow: var(--shadow-lg); display: none;
+      z-index: 1000; overflow: hidden;
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(10px); flex-direction: column;
+    }
+    .chat-box.active { display: flex; }
+    .chat-header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white; padding: 20px; display: flex; align-items: center; gap: 12px;
+      border-bottom: 2px solid var(--secondary);
+    }
+    .chat-header-avatar {
+      width: 45px; height: 45px; border-radius: 50%;
+      background: var(--secondary); display: flex; align-items: center; justify-content: center;
+      font-size: 24px; color: white; border: 2px solid white;
+    }
+    .chat-header-info { flex: 1; }
+    .chat-header-info h4 { font-size: 1.1rem; margin-bottom: 4px; }
+    .chat-header-info p { font-size: 0.8rem; opacity: 0.9; display: flex; align-items: center; gap: 5px; }
+    .chat-header-info p i { font-size: 0.6rem; color: #4caf50; }
+    .chat-close {
+      width: 35px; height: 35px; border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: var(--transition);
+    }
+    .chat-close:hover { background: rgba(255, 255, 255, 0.3); transform: rotate(90deg); }
+    .chat-messages {
+      flex: 1; padding: 20px; overflow-y: auto;
+      background: var(--light); display: flex; flex-direction: column; gap: 15px;
+    }
+    .message { display: flex; align-items: flex-start; gap: 10px; max-width: 80%; }
+    .message.bot { align-self: flex-start; }
+    .message.user { align-self: flex-end; flex-direction: row-reverse; }
+    .message-avatar {
+      width: 35px; height: 35px; border-radius: 50%;
+      background: var(--secondary); display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 16px; flex-shrink: 0;
+    }
+    .message.user .message-avatar { background: var(--primary); }
+    .message-content {
+      background: var(--chat-bot); padding: 12px 16px;
+      border-radius: 18px; border-top-left-radius: 4px;
+      color: var(--dark); font-size: 0.95rem; box-shadow: var(--shadow-sm);
+    }
+    .message.user .message-content {
+      background: var(--chat-user); color: var(--dark);
+      border-top-left-radius: 18px; border-top-right-radius: 4px;
+    }
+    .message-time { font-size: 0.7rem; opacity: 0.6; margin-top: 4px; text-align: right; }
+    .chat-input-area {
+      padding: 20px; background: var(--white);
+      border-top: 1px solid var(--glass-border);
+      display: flex; gap: 10px;
+    }
+    .chat-input {
+      flex: 1; padding: 12px 18px; border: 1px solid var(--glass-border);
+      border-radius: 30px; font-family: inherit; font-size: 0.95rem;
+      background: var(--light); color: var(--dark); outline: none; transition: var(--transition);
+    }
+    .chat-input:focus { border-color: var(--secondary); box-shadow: 0 0 0 3px rgba(158, 123, 75, 0.2); }
+    .chat-send {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+      color: white; border: none; cursor: pointer;
+      transition: var(--transition); display: flex; align-items: center; justify-content: center; font-size: 20px;
+    }
+    .chat-send:hover { transform: scale(1.1); background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); }
+    .chat-send:disabled { opacity: 0.5; cursor: not-allowed; }
+    .quick-replies { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 20px 0; background: var(--white); }
+    .quick-reply {
+      background: var(--light); border: 1px solid var(--secondary);
+      color: var(--secondary); padding: 8px 15px; border-radius: 20px;
+      font-size: 0.85rem; cursor: pointer; transition: var(--transition);
+    }
+    .quick-reply:hover { background: var(--secondary); color: white; }
+    
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      position: sticky; top: 0; z-index: 1000;
+      box-shadow: var(--shadow-md);
+    }
+    .nav-container {
+      max-width: 1400px; margin: auto; padding: 12px 32px;
+      display: flex; justify-content: space-between; align-items: center; gap: 20px;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 16px;
+      color: var(--white); font-weight: 800; font-size: 1.5rem;
+      letter-spacing: -0.5px;
+    }
+    .brand img { width: 52px; height: auto; border-radius: 12px; box-shadow: var(--shadow-sm); }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    nav ul { list-style: none; display: flex; gap: 32px; align-items: center; }
+    nav ul li a {
+      color: var(--white); text-decoration: none; font-weight: 500;
+      font-size: 1rem; transition: var(--transition); padding: 8px 0;
+      position: relative; opacity: 0.9; white-space: nowrap;
+    }
+    nav ul li a::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 0; height: 2px; background: var(--secondary);
+      transition: width 0.3s ease;
+    }
+    nav ul li a:hover { opacity: 1; }
+    nav ul li a:hover::after { width: 100%; }
+    nav ul li a.active { opacity: 1; }
+    nav ul li a.active::after { width: 100%; }
+    .dark-mode-toggle {
+      background: var(--glass); border: 1px solid var(--glass-border);
+      width: 44px; height: 44px; border-radius: 60px;
+      color: var(--white); font-size: 1.2rem; cursor: pointer;
+      transition: var(--transition); display: flex; align-items: center; justify-content: center;
+      backdrop-filter: blur(8px); margin-left: 8px;
+    }
+    .dark-mode-toggle:hover { background: var(--secondary); border-color: var(--secondary); transform: rotate(30deg) scale(1.05); }
+    .dark-mode .dark-mode-toggle i { display: none; }
+    .dark-mode .dark-mode-toggle i.sun { display: block; }
+    .menu-toggle { display: none; font-size: 28px; color: var(--white); cursor: pointer; }
+    
+    /* ===== BILINGUAL TOGGLE BUTTON ===== */
+    .bilingual-toggle {
+      background: var(--glass); border: 1px solid var(--glass-border);
+      width: 44px; height: 44px; border-radius: 60px;
+      color: var(--white); font-size: 1rem; font-weight: 600; cursor: pointer;
+      transition: var(--transition); display: flex; align-items: center; justify-content: center;
+      backdrop-filter: blur(8px); text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .bilingual-toggle:hover { background: var(--secondary); border-color: var(--secondary); transform: scale(1.05); }
+    .bilingual-toggle:active { transform: scale(0.95); }
+    .dark-mode .bilingual-toggle { background: var(--glass); border-color: var(--glass-border); }
+    
+    /* ===== PAGE HERO ===== */
+    .page-hero {
+      background: linear-gradient(145deg, rgba(10,42,94,0.9) 0%, rgba(5,26,59,0.95) 100%);
+      color: var(--white);
+      padding: 80px 32px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(158,123,75,0.1)" stroke-width="0.5"/></svg>') repeat;
+      opacity: 0.3;
+    }
+    .page-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 16px;
+      font-weight: 800;
+      position: relative;
+      z-index: 2;
+    }
+    .page-hero p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto 24px;
+      position: relative;
+      z-index: 2;
+    }
+    .page-hero-badge {
+      display: inline-block;
+      background: var(--secondary);
+      color: white;
+      padding: 8px 24px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* ===== SECTION ===== */
+    .section { max-width: 1300px; margin: auto; padding: 80px 32px; }
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .section-header h2 {
+      color: var(--primary);
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .section-header h2 span {
+      display: block;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 8px;
+    }
+    .section-header h2::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 5px;
+      background: linear-gradient(90deg, var(--secondary) 0%, var(--accent) 100%);
+      margin: 16px auto 0;
+      border-radius: 4px;
+    }
+    
+    /* ===== SPMB CARDS ===== */
+    .spmb-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .spmb-card {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      border: 1px solid rgba(158,123,75,0.1);
+      text-align: center;
+    }
+    .spmb-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--secondary);
+    }
+    .spmb-card-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: white;
+      font-size: 28px;
+    }
+    .spmb-card h3 {
+      color: var(--primary);
+      margin-bottom: 12px;
+      font-size: 1.4rem;
+    }
+    .spmb-card p {
+      color: var(--gray);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    
+    /* ===== TIMELINE ===== */
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .timeline-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 24px;
+      border-left: 5px solid var(--secondary);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .timeline-card:hover {
+      transform: translateX(5px);
+      box-shadow: var(--shadow-md);
+      border-left-color: var(--accent);
+    }
+    .timeline-card h4 {
+      color: var(--primary);
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+    .timeline-card .date {
+      display: inline-block;
+      background: rgba(158,123,75,0.1);
+      color: var(--secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .timeline-card p {
+      color: var(--gray);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    
+    /* ===== CTA BOX ===== */
+    .cta-box {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white;
+      border-radius: 24px;
+      padding: 40px;
+      text-align: center;
+      margin: 40px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(158,123,75,0.2) 0%, transparent 70%);
+      animation: pulse 4s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+    .cta-box h3 {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 2;
+    }
+    .cta-box p {
+      opacity: 0.9;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 2;
+    }
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--secondary);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: var(--transition);
+      border: 2px solid transparent;
+      position: relative;
+      z-index: 2;
+    }
+    .cta-button:hover {
+      background: transparent;
+      border-color: var(--secondary);
+      color: var(--secondary);
+      transform: translateY(-3px);
+    }
+    
+    /* ===== CONTACT LIST ===== */
+    .contact-list {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: var(--shadow-sm);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .contact-list ul {
+      list-style: none;
+      display: grid;
+      gap: 16px;
+    }
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px;
+      background: var(--light);
+      border-radius: 16px;
+      transition: var(--transition);
+    }
+    .contact-list li:hover {
+      background: rgba(158,123,75,0.05);
+      transform: translateX(5px);
+    }
+    .contact-list li i {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--secondary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-list .name {
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .contact-list .phone {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+    
+    /* ===== INFO BOX ===== */
+    .info-box {
+      background: linear-gradient(145deg, rgba(158,123,75,0.08) 0%, rgba(199,168,84,0.02) 100%);
+      border-left: 6px solid var(--secondary);
+      padding: 24px;
+      border-radius: 0 20px 20px 0;
+      margin: 30px 0;
+    }
+    .info-box h4 {
+      color: var(--primary);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .info-box ul {
+      list-style: none;
+      padding-left: 24px;
+    }
+    .info-box li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      color: var(--gray);
+    }
+    .info-box li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--secondary);
+      font-weight: bold;
+    }
+    
+    /* ===== FOOTER (SAMA DENGAN INDEX) ===== */
+    .cultural-divider {
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 30%, var(--cultural-accent) 50%, var(--secondary) 70%, var(--primary) 100%);
+      margin: 70px auto;
+      border-radius: 4px;
+      max-width: 1300px;
+      opacity: 0.6;
+    }
+    footer {
+      background: linear-gradient(145deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: var(--white);
+      padding: 70px 32px 30px;
+      font-size: 1rem;
+      position: relative;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 4px;
+      background: linear-gradient(90deg, var(--secondary), var(--accent), var(--secondary));
+    }
+    .footer-content {
+      max-width: 1300px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 50px;
+    }
+    .footer-section h3 {
+      font-size: 1.4rem;
+      margin-bottom: 25px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--secondary);
+    }
+    .footer-section ul { list-style: none; }
+    .footer-section ul li { margin-bottom: 14px; }
+    .footer-section a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-section a:hover { color: var(--secondary); transform: translateX(6px); }
+    .social-links { display: flex; gap: 18px; margin-top: 20px; }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 60px;
+      background: var(--glass);
+      color: var(--white);
+      font-size: 1.2rem;
+      transition: var(--transition);
+      border: 1px solid var(--glass-border);
+    }
+    .social-links a:hover {
+      background: var(--secondary);
+      transform: translateY(-6px) scale(1.1);
+      color: var(--primary-dark);
+    }
+    .footer-info-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 20px 30px;
+      border-radius: 60px;
+      margin: 40px auto 20px;
+      max-width: 1000px;
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
+    }
+    .footer-clock { display: flex; align-items: center; gap: 20px; color: var(--white); flex-wrap: wrap; }
+    .footer-time {
+      font-size: 2rem;
+      font-weight: 700;
+      font-family: 'Plus Jakarta Sans', monospace;
+      background: rgba(0,0,0,0.3);
+      padding: 6px 18px;
+      border-radius: 50px;
+      letter-spacing: 2px;
+    }
+    .footer-date { font-size: 1rem; opacity: 0.9; display: flex; align-items: center; gap: 8px; }
+    .footer-visitor {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--secondary);
+      color: var(--primary-dark);
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+    }
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+    
+    /* ===== DARK MODE ADJUSTMENTS ===== */
+    .dark-mode .spmb-card,
+    .dark-mode .timeline-card,
+    .dark-mode .contact-list,
+    .dark-mode .info-box {
+      background: var(--light);
+      border-color: rgba(255,255,255,0.05);
+    }
+    .dark-mode .footer-info-panel { background: rgba(0, 0, 0, 0.4); }
+    .dark-mode .chat-box { background: var(--light); }
+    .dark-mode .message-content { background: var(--white); }
+    
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      nav ul { gap: 20px; }
+      .nav-container { padding: 12px 20px; }
+      .page-hero h1 { font-size: 2.5rem; }
+    }
+    @media (max-width: 880px) {
+      .menu-toggle { display: block; order: 3; }
+      .nav-right { order: 2; }
+      nav ul {
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: var(--primary);
+        flex-direction: column;
+        padding: 25px 0;
+        display: none;
+        z-index: 100;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        backdrop-filter: blur(12px);
+        gap: 16px;
+      }
+      nav ul.active { display: flex; }
+      nav ul li { text-align: center; }
+      nav ul li a { font-size: 1.1rem; white-space: normal; }
+      .dark-mode-toggle { margin: 10px auto 0; }
+      .bilingual-toggle { margin: 10px auto 0; width: 50px; height: 50px; font-size: 0.9rem; }
+      .page-hero { padding: 60px 20px 40px; }
+      .page-hero h1 { font-size: 2rem; }
+      .whatsapp-float { bottom: 20px; right: 20px; padding: 12px 20px; }
+      .whatsapp-float span { display: none; }
+      .whatsapp-float i { font-size: 32px; margin: 0; }
+      .chat-button { bottom: 100px; right: 20px; width: 55px; height: 55px; font-size: 24px; }
+      .chat-box { width: 320px; height: 450px; right: 20px; bottom: 170px; }
+    }
+    @media (max-width: 768px) {
+      .section { padding: 60px 20px; }
+      .section-header h2 { font-size: 2rem; }
+      .cta-box { padding: 30px 20px; }
+      .cta-box h3 { font-size: 1.5rem; }
+      .footer-info-panel {
+        flex-direction: column;
+        text-align: center;
+        border-radius: 40px;
+        padding: 20px;
+      }
+      .footer-clock { flex-direction: column; gap: 12px; width: 100%; }
+      .footer-time { font-size: 1.8rem; width: 100%; }
+    }
+    @media (max-width: 480px) {
+      .brand span { display: none; }
+      .brand img { width: 44px; }
+      .page-hero h1 { font-size: 1.6rem; }
+      .page-hero p { font-size: 1rem; }
+      .whatsapp-float { bottom: 15px; right: 15px; padding: 8px; width: 45px; height: 45px; border-radius: 50%; justify-content: center; }
+      .whatsapp-float i { font-size: 24px; }
+      .chat-button { bottom: 80px; right: 15px; width: 50px; height: 50px; font-size: 22px; }
+      .chat-box { width: 300px; height: 400px; right: 15px; bottom: 140px; }
+      .chat-header { padding: 15px; }
+      .chat-header-avatar { width: 35px; height: 35px; font-size: 18px; }
+      .chat-header-info h4 { font-size: 0.9rem; }
+      .footer-time { font-size: 1.5rem; }
+      .footer-visitor { padding: 8px 16px; font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- WHATSAPP FLOAT BUTTON -->
+  <a href="https://wa.me/6282319712420?text=Halo%20saya%20ingin%20bertanya%20tentang%20SPMB%20SMAN%201%20Cluring"
+     class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+    <span data-i18n="whatsapp_text">Chat Admin</span>
+  </a>
+
+  <!-- CHAT BUTTON & BOX -->
+  <div class="chat-button" id="chatButton">
+    <i class="fas fa-comment-dots"></i>
+    <span class="notification-badge">1</span>
+  </div>
+  <div class="chat-box" id="chatBox">
+    <div class="chat-header">
+      <div class="chat-header-avatar"><i class="fas fa-robot"></i></div>
+      <div class="chat-header-info">
+        <h4 data-i18n="chat_title">Asisten Virtual SMAN 1 Cluring</h4>
+        <p data-i18n="chat_status"><i class="fas fa-circle"></i> Online - Siap membantu</p>
+      </div>
+      <div class="chat-close" id="chatClose"><i class="fas fa-times"></i></div>
+    </div>
+    <div class="quick-replies">
+      <span class="quick-reply" data-message="Info SPMB" data-i18n="quick_spmb">📋 Info SPMB</span>
+      <span class="quick-reply" data-message="Persyaratan" data-i18n="quick_requirements">📄 Persyaratan</span>
+      <span class="quick-reply" data-message="Jadwal Pendaftaran" data-i18n="quick_schedule">📅 Jadwal</span>
+      <span class="quick-reply" data-message="Kontak Panitia" data-i18n="quick_contact">📞 Kontak Panitia</span>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="message bot">
+        <div class="message-avatar"><i class="fas fa-robot"></i></div>
+        <div class="message-content">
+          <p data-i18n="chat_welcome_spmb">Halo! Selamat datang di halaman SPMB SMAN 1 Cluring. Ada yang bisa saya bantu terkait pendaftaran?</p>
+          <div class="message-time" data-i18n="chat_time">Baru saja</div>
+        </div>
+      </div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" class="chat-input" id="chatInput" data-i18n-placeholder="chat_placeholder" placeholder="Ketik pesan..." />
+      <button class="chat-send" id="chatSend"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <!-- HEADER (SAMA DENGAN INDEX) -->
+  <header data-aos="fade-down">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring" width="52" height="52" />
+        <span data-i18n="school_name">SMAN 1 CLURING</span>
+      </a>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <div class="nav-right">
+        <nav>
+          <ul id="navMenu">
+            <li><a href="index.html" data-i18n="nav_home">Beranda</a></li>
+            <li><a href="profil.html" data-i18n="nav_profile">Profil</a></li>
+            <li><a href="spmb.html" data-i18n="nav_spmb" class="active">SPMB</a></li>
+            <li><a href="akademik.html" data-i18n="nav_academic">Akademik</a></li>
+            <li><a href="kesiswaan.html" data-i18n="nav_student">Kesiswaan</a></li>
+            <li><a href="sarpras.html" data-i18n="nav_facilities">Sarpras</a></li>
+            <li><a href="humas.html" data-i18n="nav_public">Humas</a></li>
+            <li><a href="mitra.html" data-i18n="nav_partner">Mitra</a></li>
+            <li><a href="alumni.html" data-i18n="nav_alumni">Alumni</a></li>
+            <li><a href="artikel.html" data-i18n="nav_article">Artikel</a></li>
+            <li><a href="index.html#kontak" data-i18n="nav_contact">Kontak</a></li>
+            <li style="display: flex; align-items: center; gap: 8px;">
+              <button class="bilingual-toggle" id="bilingualToggle" aria-label="Switch language">ID</button>
+              <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun sun"></i>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" data-aos="fade-down">
+    <span class="page-hero-badge" data-i18n="spmb_badge">🎓 PPDB 2026/2027</span>
+    <h1 data-i18n="spmb_title">Sistem Penerimaan Murid Baru<br>SMAN 1 Cluring</h1>
+    <p data-i18n="spmb_subtitle">Daftar sekarang dan jadilah bagian dari generasi unggul Blambangan. Proses seleksi transparan, adil, dan berbasis prestasi.</p>
+  </section>
+
+  <!-- INFORMASI SPMB -->
+  <section class="section">
+    <div class="section-header" data-aos="fade-up">
+      <h2><span data-i18n="info_section">Informasi</span><span data-i18n="spmb_section_title">Pendaftaran</span></h2>
+    </div>
+    
+    <div class="spmb-grid">
+      <div class="spmb-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="spmb-card-icon"><i class="fas fa-file-alt"></i></div>
+        <h3 data-i18n="card_pathways_title">Jalur Pendaftaran</h3>
+        <p data-i18n="card_pathways_desc">Domisili, Afirmasi, Prestasi Akademik, dan Prestasi Non-Akademik dengan kuota sesuai ketentuan Dinas Pendidikan.</p>
+      </div>
+      <div class="spmb-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="spmb-card-icon"><i class="fas fa-clipboard-list"></i></div>
+        <h3 data-i18n="card_requirements_title">Persyaratan</h3>
+        <p data-i18n="card_requirements_desc">Ijazah/SKL SMP, KK, Akta Kelahiran, Pas Foto, dan dokumen pendukung sesuai jalur pendaftaran.</p>
+      </div>
+      <div class="spmb-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="spmb-card-icon"><i class="fas fa-globe"></i></div>
+        <h3 data-i18n="card_online_title">Pendaftaran Online</h3>
+        <p data-i18n="card_online_desc">Seluruh proses pendaftaran dilakukan melalui portal resmi <strong>spmbjatim.net</strong> dengan panduan lengkap.</p>
+      </div>
+    </div>
+
+    <!-- CTA BOX -->
+    <div class="cta-box" data-aos="zoom-in">
+      <h3 data-i18n="cta_title">Siap Mendaftar?</h3>
+      <p data-i18n="cta_desc">Kunjungi portal resmi PPDB Jawa Timur untuk memulai proses pendaftaran Anda.</p>
+      <a href="https://spmbjatim.net" class="cta-button" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-external-link-alt"></i>
+        <span data-i18n="cta_button">Daftar Sekarang di spmbjatim.net</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section" style="background: rgba(158,123,75,0.03);">
+    <div class="section-header" data-aos="fade-up">
+      <h2><span data-i18n="timeline_section">Jadwal</span><span data-i18n="timeline_title">Tahapan SPMB 2026</span></h2>
+    </div>
+    
+    <div class="timeline">
+      <div class="timeline-card" data-aos="fade-right">
+        <h4 data-i18n="step1_title">Entry Nilai Rapor</h4>
+        <span class="date">11–19 Mei 2026</span>
+        <p data-i18n="step1_desc">Input nilai rapor semester 1-5 melalui akun sekolah.</p>
+      </div>
+      <div class="timeline-card" data-aos="fade-right" data-aos-delay="100">
+        <h4 data-i18n="step2_title">Verifikasi Nilai</h4>
+        <span class="date">18–21 Mei 2026</span>
+        <p data-i18n="step2_desc">Pemeriksaan kelengkapan dan keabsahan dokumen oleh panitia.</p>
+      </div>
+      <div class="timeline-card" data-aos="fade-right" data-aos-delay="200">
+        <h4 data-i18n="step3_title">Pembetulan Nilai</h4>
+        <span class="date">21–26 Mei 2026</span>
+        <p data-i18n="step3_desc">Perbaikan data jika ditemukan ketidaksesuaian.</p>
+      </div>
+      <div class="timeline-card" data-aos="fade-right" data-aos-delay="300">
+        <h4 data-i18n="step4_title">Pengambilan PIN</h4>
+        <span class="date">28 Mei–9 Juni 2026</span>
+        <p data-i18n="step4_desc">Calon peserta mengambil PIN pendaftaran di sekolah tujuan.</p>
+      </div>
+      <div class="timeline-card" data-aos="fade-right" data-aos-delay="400">
+        <h4 data-i18n="step5_title">Latihan Pendaftaran</h4>
+        <span class="date">8–9 Juni 2026</span>
+        <p data-i18n="step5_desc">Simulasi penggunaan sistem untuk memastikan pemahaman.</p>
+      </div>
+      <div class="timeline-card" data-aos="fade-right" data-aos-delay="500">
+        <h4 data-i18n="step6_title">Jalur Domisili</h4>
+        <span class="date">11–12 Juni 2026</span>
+        <p data-i18n="step6_desc">Pendaftaran untuk calon peserta berdasarkan jarak tempat tinggal.</p>
+      </div>
+      <div class="timeline-card" data-aos="fade-right" data-aos-delay="600">
+        <h4 data-i18n="step7_title">Afirmasi & Prestasi</h4>
+        <span class="date">17–18 Juni 2026</span>
+        <p data-i18n="step7_desc">Pendaftaran jalur afirmasi dan prestasi non-akademik.</p>
+      </div>
+      <div class="timeline-card" data-aos="fade-right" data-aos-delay="700">
+        <h4 data-i18n="step8_title">Prestasi Akademik</h4>
+        <span class="date">24–25 Juni 2026</span>
+        <p data-i18n="step8_desc">Pendaftaran jalur prestasi berdasarkan nilai akademik.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSYARATAN -->
+  <section class="section">
+    <div class="section-header" data-aos="fade-up">
+      <h2><span data-i18n="requirements_section">Syarat</span><span data-i18n="requirements_title">Pendaftaran</span></h2>
+    </div>
+    
+    <div class="info-box" data-aos="fade-up">
+      <h4><i class="fas fa-check-circle"></i> <span data-i18n="requirements_general">Persyaratan Umum</span></h4>
+      <ul>
+        <li data-i18n="req1">Lulus SMP/MTs atau bentuk lain yang sederajat</li>
+        <li data-i18n="req2">Usia maksimal 21 tahun pada tanggal 1 Juli 2026</li>
+        <li data-i18n="req3">Memiliki NISN yang valid</li>
+        <li data-i18n="req4">Tidak sedang terdaftar sebagai peserta didik di SMA/SMK</li>
+      </ul>
+    </div>
+    
+    <div class="info-box" data-aos="fade-up" data-aos-delay="100">
+      <h4><i class="fas fa-folder-open"></i> <span data-i18n="requirements_documents">Dokumen yang Diperlukan</span></h4>
+      <ul>
+        <li data-i18n="doc1">Scan Ijazah/SKL SMP/MTs (asli)</li>
+        <li data-i18n="doc2">Scan Kartu Keluarga (KK)</li>
+        <li data-i18n="doc3">Scan Akta Kelahiran</li>
+        <li data-i18n="doc4">Pas foto berwarna 3x4 (latar merah)</li>
+        <li data-i18n="doc5">Surat keterangan prestasi (khusus jalur prestasi)</li>
+        <li data-i18n="doc6">Surat keterangan domisili (khusus jalur domisili)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT PERSON -->
+  <section class="section" style="background: rgba(10,42,94,0.03);">
+    <div class="section-header" data-aos="fade-up">
+      <h2><span data-i18n="contact_section">Hubungi</span><span data-i18n="contact_title">Panitia SPMB</span></h2>
+    </div>
+    
+    <div class="contact-list" data-aos="fade-up">
+      <ul>
+        <li>
+          <i class="fas fa-user-graduate"></i>
+          <div>
+            <div class="name">Kristin Setyowati, S.Kom</div>
+            <div class="phone"><i class="fas fa-phone"></i> 0852-3851-3282</div>
+          </div>
+        </li>
+        <li>
+          <i class="fas fa-user-graduate"></i>
+          <div>
+            <div class="name">Cahya Mahardika, S.Pd</div>
+            <div class="phone"><i class="fas fa-phone"></i> 0821-4210-7300</div>
+          </div>
+        </li>
+        <li>
+          <i class="fas fa-user-graduate"></i>
+          <div>
+            <div class="name">Siswo Hariningsih, S.Pd</div>
+            <div class="phone"><i class="fas fa-phone"></i> 0856-0860-2343</div>
+          </div>
+        </li>
+        <li>
+          <i class="fas fa-user-graduate"></i>
+          <div>
+            <div class="name">Moh Suharso, S.Pd</div>
+            <div class="phone"><i class="fas fa-phone"></i> 0823-1971-2420</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ALAMAT SEKOLAH -->
+  <section class="section">
+    <div class="section-header" data-aos="fade-up">
+      <h2><span data-i18n="address_section">Lokasi</span><span data-i18n="address_title">Sekolah</span></h2>
+    </div>
+    
+    <div style="text-align: center; max-width: 700px; margin: 0 auto;" data-aos="fade-up">
+      <div style="background: var(--white); border-radius: 24px; padding: 30px; box-shadow: var(--shadow-sm); margin-bottom: 30px;">
+        <i class="fas fa-map-marker-alt" style="font-size: 2rem; color: var(--secondary); margin-bottom: 16px;"></i>
+        <p style="font-size: 1.1rem; line-height: 1.8;" data-i18n="school_address">
+          Jalan H. Husaini, Benculuk, Kecamatan Cluring,<br>
+          Kabupaten Banyuwangi, Jawa Timur 68482
+        </p>
+      </div>
+      
+      <!-- Embed Google Maps (Placeholder) -->
+      <div style="border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-md);">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3948.123456789!2d114.123456!3d-8.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMDcnMjQuNCJTIDExNMKwMDcnMjQuNCJF!5e0!3m2!1sid!2sid!4v1234567890" 
+          width="100%" 
+          height="300" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Lokasi SMAN 1 Cluring">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <div class="cultural-divider" data-aos="fade-in"></div>
+
+  <!-- FOOTER (SAMA DENGAN INDEX) -->
+  <footer data-aos="fade-up" id="kontak">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 data-i18n="footer_contact"><i class="fas fa-map-marker-alt"></i> Kontak</h3>
+        <p data-i18n="footer_address">Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, Jawa Timur</p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+6282319712420">0823-1971-2420</a></p>
+        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6282319712420" target="_blank">0823-1971-2420 (WA)</a></p>
+      </div>
+      <div class="footer-section">
+        <h3 data-i18n="footer_links"><i class="fas fa-link"></i> Link Penting</h3>
+        <ul>
+          <li><a href="https://sma.kemendikdasmen.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
+          <li><a href="https://dindik.jatimprov.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
+          <li><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas Banyuwangi</a></li>
+          <li><a href="https://spmbjatim.net" target="_blank"><i class="fas fa-external-link-alt"></i> Portal PPDB Jatim</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3 data-i18n="footer_lab"><i class="fas fa-flask"></i> Lab Virtual</h3>
+        <ul>
+          <li><a href="https://quran.nu.or.id" target="_blank"><i class="fas fa-book-quran"></i> Al-Qur'an Digital</a></li>
+          <li><a href="https://virtualbiologylab.org" target="_blank"><i class="fas fa-dna"></i> Virtual Biology Lab</a></li>
+          <li><a href="https://www.myphysicslab.com" target="_blank"><i class="fas fa-atom"></i> MyPhysicsLab</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3 data-i18n="footer_social"><i class="fas fa-share-alt"></i> Media Sosial</h3>
+        <div class="social-links">
+          <a href="https://www.facebook.com/Sman1Cluring" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/sman1_cluring" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://wa.me/6282319712420" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-info-panel">
+      <div class="footer-clock">
+        <span class="footer-time" id="footerTime">00:00:00</span>
+        <span class="footer-date" id="footerDate">Sabtu, 1 Januari 2026</span>
+      </div>
+      <div class="footer-visitor">
+        <i class="fas fa-eye"></i>
+        <span id="footerVisitorCount" data-i18n="visitor_label">Loading...</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer_copyright">© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
+    </div>
+  </footer>
+
+  <!-- AOS & Custom JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+      // ===== TRANSLATION DATABASE (SPMB EDITION) =====
+      const translations = {
+          id: {
+              school_name: "SMAN 1 CLURING",
+              nav_home: "Beranda",
+              nav_profile: "Profil",
+              nav_spmb: "SPMB",
+              nav_academic: "Akademik",
+              nav_student: "Kesiswaan",
+              nav_facilities: "Sarpras",
+              nav_public: "Humas",
+              nav_partner: "Mitra",
+              nav_alumni: "Alumni",
+              nav_article: "Artikel",
+              nav_contact: "Kontak",
+              spmb_badge: "🎓 PPDB 2026/2027",
+              spmb_title: "Sistem Penerimaan Murid Baru<br>SMAN 1 Cluring",
+              spmb_subtitle: "Daftar sekarang dan jadilah bagian dari generasi unggul Blambangan. Proses seleksi transparan, adil, dan berbasis prestasi.",
+              info_section: "Informasi",
+              spmb_section_title: "Pendaftaran",
+              card_pathways_title: "Jalur Pendaftaran",
+              card_pathways_desc: "Domisili, Afirmasi, Prestasi Akademik, dan Prestasi Non-Akademik dengan kuota sesuai ketentuan Dinas Pendidikan.",
+              card_requirements_title: "Persyaratan",
+              card_requirements_desc: "Ijazah/SKL SMP, KK, Akta Kelahiran, Pas Foto, dan dokumen pendukung sesuai jalur pendaftaran.",
+              card_online_title: "Pendaftaran Online",
+              card_online_desc: "Seluruh proses pendaftaran dilakukan melalui portal resmi <strong>spmbjatim.net</strong> dengan panduan lengkap.",
+              cta_title: "Siap Mendaftar?",
+              cta_desc: "Kunjungi portal resmi PPDB Jawa Timur untuk memulai proses pendaftaran Anda.",
+              cta_button: "Daftar Sekarang di spmbjatim.net",
+              timeline_section: "Jadwal",
+              timeline_title: "Tahapan SPMB 2026",
+              step1_title: "Entry Nilai Rapor",
+              step1_desc: "Input nilai rapor semester 1-5 melalui akun sekolah.",
+              step2_title: "Verifikasi Nilai",
+              step2_desc: "Pemeriksaan kelengkapan dan keabsahan dokumen oleh panitia.",
+              step3_title: "Pembetulan Nilai",
+              step3_desc: "Perbaikan data jika ditemukan ketidaksesuaian.",
+              step4_title: "Pengambilan PIN",
+              step4_desc: "Calon peserta mengambil PIN pendaftaran di sekolah tujuan.",
+              step5_title: "Latihan Pendaftaran",
+              step5_desc: "Simulasi penggunaan sistem untuk memastikan pemahaman.",
+              step6_title: "Jalur Domisili",
+              step6_desc: "Pendaftaran untuk calon peserta berdasarkan jarak tempat tinggal.",
+              step7_title: "Afirmasi & Prestasi",
+              step7_desc: "Pendaftaran jalur afirmasi dan prestasi non-akademik.",
+              step8_title: "Prestasi Akademik",
+              step8_desc: "Pendaftaran jalur prestasi berdasarkan nilai akademik.",
+              requirements_section: "Syarat",
+              requirements_title: "Pendaftaran",
+              requirements_general: "Persyaratan Umum",
+              req1: "Lulus SMP/MTs atau bentuk lain yang sederajat",
+              req2: "Usia maksimal 21 tahun pada tanggal 1 Juli 2026",
+              req3: "Memiliki NISN yang valid",
+              req4: "Tidak sedang terdaftar sebagai peserta didik di SMA/SMK",
+              requirements_documents: "Dokumen yang Diperlukan",
+              doc1: "Scan Ijazah/SKL SMP/MTs (asli)",
+              doc2: "Scan Kartu Keluarga (KK)",
+              doc3: "Scan Akta Kelahiran",
+              doc4: "Pas foto berwarna 3x4 (latar merah)",
+              doc5: "Surat keterangan prestasi (khusus jalur prestasi)",
+              doc6: "Surat keterangan domisili (khusus jalur domisili)",
+              contact_section: "Hubungi",
+              contact_title: "Panitia SPMB",
+              address_section: "Lokasi",
+              address_title: "Sekolah",
+              school_address: "Jalan H. Husaini, Benculuk, Kecamatan Cluring,<br>Kabupaten Banyuwangi, Jawa Timur 68482",
+              footer_contact: "<i class='fas fa-map-marker-alt'></i> Kontak",
+              footer_address: "Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, Jawa Timur",
+              footer_links: "<i class='fas fa-link'></i> Link Penting",
+              footer_lab: "<i class='fas fa-flask'></i> Lab Virtual",
+              footer_social: "<i class='fas fa-share-alt'></i> Media Sosial",
+              footer_copyright: "© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan",
+              visitor_label: "Pengunjung",
+              chat_title: "Asisten Virtual SMAN 1 Cluring",
+              chat_status: "<i class='fas fa-circle'></i> Online - Siap membantu",
+              chat_welcome_spmb: "Halo! Selamat datang di halaman SPMB SMAN 1 Cluring. Ada yang bisa saya bantu terkait pendaftaran?",
+              chat_time: "Baru saja",
+              chat_placeholder: "Ketik pesan...",
+              quick_spmb: "📋 Info SPMB",
+              quick_requirements: "📄 Persyaratan",
+              quick_schedule: "📅 Jadwal",
+              quick_contact: "📞 Kontak Panitia",
+              whatsapp_text: "Chat Admin"
+          },
+          en: {
+              school_name: "SMAN 1 CLURING",
+              nav_home: "Home",
+              nav_profile: "Profile",
+              nav_spmb: "Admissions",
+              nav_academic: "Academic",
+              nav_student: "Students",
+              nav_facilities: "Facilities",
+              nav_public: "Public Relations",
+              nav_partner: "Partners",
+              nav_alumni: "Alumni",
+              nav_article: "Articles",
+              nav_contact: "Contact",
+              spmb_badge: "🎓 Admissions 2026/2027",
+              spmb_title: "New Student Admission System<br>SMAN 1 Cluring",
+              spmb_subtitle: "Register now and become part of Blambangan's excellent generation. Transparent, fair, and achievement-based selection process.",
+              info_section: "Information",
+              spmb_section_title: "Registration",
+              card_pathways_title: "Admission Pathways",
+              card_pathways_desc: "Domicile, Affirmation, Academic Achievement, and Non-Academic Achievement with quotas according to Education Office regulations.",
+              card_requirements_title: "Requirements",
+              card_requirements_desc: "Junior High School diploma, Family Card, Birth Certificate, Photo, and supporting documents according to registration pathway.",
+              card_online_title: "Online Registration",
+              card_online_desc: "All registration processes are conducted through the official portal <strong>spmbjatim.net</strong> with complete guidance.",
+              cta_title: "Ready to Register?",
+              cta_desc: "Visit the official East Java PPDB portal to start your registration process.",
+              cta_button: "Register Now at spmbjatim.net",
+              timeline_section: "Schedule",
+              timeline_title: "Admission Stages 2026",
+              step1_title: "Report Card Entry",
+              step1_desc: "Input semester 1-5 report card values through school account.",
+              step2_title: "Value Verification",
+              step2_desc: "Checking completeness and validity of documents by the committee.",
+              step3_title: "Value Correction",
+              step3_desc: "Data correction if discrepancies are found.",
+              step4_title: "PIN Collection",
+              step4_desc: "Prospective students collect registration PIN at target school.",
+              step5_title: "Registration Practice",
+              step5_desc: "System usage simulation to ensure understanding.",
+              step6_title: "Domicile Pathway",
+              step6_desc: "Registration for prospective students based on residence distance.",
+              step7_title: "Affirmation & Achievement",
+              step7_desc: "Registration for affirmation and non-academic achievement pathways.",
+              step8_title: "Academic Achievement",
+              step8_desc: "Registration for achievement pathway based on academic values.",
+              requirements_section: "Requirements",
+              requirements_title: "Registration",
+              requirements_general: "General Requirements",
+              req1: "Graduated from Junior High School or equivalent",
+              req2: "Maximum age 21 years as of July 1, 2026",
+              req3: "Have a valid NISN",
+              req4: "Not currently registered as a student in Senior High School/Vocational School",
+              requirements_documents: "Required Documents",
+              doc1: "Scan of Junior High School Diploma/SKL (original)",
+              doc2: "Scan of Family Card (KK)",
+              doc3: "Scan of Birth Certificate",
+              doc4: "Color photo 3x4 (red background)",
+              doc5: "Achievement certificate (for achievement pathway)",
+              doc6: "Domicile certificate (for domicile pathway)",
+              contact_section: "Contact",
+              contact_title: "Admission Committee",
+              address_section: "Location",
+              address_title: "School",
+              school_address: "Jalan H. Husaini, Benculuk, Cluring District,<br>Banyuwangi Regency, East Java 68482",
+              footer_contact: "<i class='fas fa-map-marker-alt'></i> Contact",
+              footer_address: "Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, East Java",
+              footer_links: "<i class='fas fa-link'></i> Important Links",
+              footer_lab: "<i class='fas fa-flask'></i> Virtual Lab",
+              footer_social: "<i class='fas fa-share-alt'></i> Social Media",
+              footer_copyright: "© 2026 SMAN 1 Cluring — Inspiring Pancasila Generation from Blambangan Land",
+              visitor_label: "Visitors",
+              chat_title: "SMAN 1 Cluring Virtual Assistant",
+              chat_status: "<i class='fas fa-circle'></i> Online - Ready to help",
+              chat_welcome_spmb: "Hello! Welcome to SMAN 1 Cluring admission page. How can I help you with registration?",
+              chat_time: "Just now",
+              chat_placeholder: "Type a message...",
+              quick_spmb: "📋 Admission Info",
+              quick_requirements: "📄 Requirements",
+              quick_schedule: "📅 Schedule",
+              quick_contact: "📞 Committee Contact",
+              whatsapp_text: "Chat Admin"
+          }
+      };
+
+      // ===== BILINGUAL SYSTEM =====
+      const bilingualToggle = document.getElementById('bilingualToggle');
+      let currentLang = localStorage.getItem('language') || 'id';
+      
+      applyLanguage(currentLang);
+      updateToggleButton(currentLang);
+
+      bilingualToggle.addEventListener('click', () => {
+          currentLang = currentLang === 'id' ? 'en' : 'id';
+          localStorage.setItem('language', currentLang);
+          applyLanguage(currentLang);
+          updateToggleButton(currentLang);
+          bilingualToggle.style.transform = 'scale(0.9)';
+          setTimeout(() => { bilingualToggle.style.transform = 'scale(1)'; }, 150);
+      });
+
+      function applyLanguage(lang) {
+          document.querySelectorAll('[data-i18n]').forEach(element => {
+              const key = element.getAttribute('data-i18n');
+              if (translations[lang][key]) {
+                  element.innerHTML = translations[lang][key];
+              }
+          });
+          document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+              const key = element.getAttribute('data-i18n-placeholder');
+              if (translations[lang][key]) {
+                  element.placeholder = translations[lang][key];
+              }
+          });
+          document.documentElement.lang = lang;
+          updateClock();
+          updateVisitorCounter();
+      }
+
+      function updateToggleButton(lang) {
+          bilingualToggle.textContent = lang.toUpperCase();
+          bilingualToggle.setAttribute('aria-label', lang === 'id' ? 'Ganti ke Bahasa Inggris' : 'Switch to Indonesian');
+      }
+
+      // ===== PRELOADER =====
+      const preloader = document.getElementById('preloader');
+      setTimeout(() => { preloader.classList.add('fade-out'); }, 600);
+
+      // ===== DARK MODE =====
+      const darkModeToggle = document.getElementById('darkModeToggle');
+      const body = document.body;
+      if (localStorage.getItem('darkMode') === 'true') body.classList.add('dark-mode');
+      darkModeToggle.addEventListener('click', () => {
+          body.classList.toggle('dark-mode');
+          localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+      });
+
+      // ===== MOBILE MENU =====
+      window.toggleMenu = () => {
+          document.getElementById("navMenu").classList.toggle("active");
+      };
+
+      // ===== SMOOTH SCROLLING =====
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+              const href = this.getAttribute('href');
+              if (href !== '#' && href !== 'index.html#kontak') {
+                  e.preventDefault();
+                  const target = document.querySelector(href);
+                  if (target) {
+                      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      document.getElementById("navMenu").classList.remove("active");
+                  }
+              }
+          });
+      });
+
+      // ===== REALTIME CLOCK =====
+      function updateClock() {
+          const now = new Date();
+          const timeString = now.toLocaleTimeString(currentLang === 'id' ? 'id-ID' : 'en-US');
+          const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+          const dateString = now.toLocaleDateString(currentLang === 'id' ? 'id-ID' : 'en-US', options);
+          document.getElementById('footerTime').textContent = timeString;
+          document.getElementById('footerDate').textContent = dateString;
+      }
+      setInterval(updateClock, 1000);
+      updateClock();
+
+      // ===== VISITOR COUNTER =====
+      function updateVisitorCounter() {
+          const visitorKey = 'sman1cluring_spmb_visitor_count';
+          let count = localStorage.getItem(visitorKey);
+          if (!count) { count = 1; localStorage.setItem(visitorKey, count); }
+          else {
+              count = parseInt(count);
+              if (!sessionStorage.getItem('spmb_visitor_counted')) {
+                  count++;
+                  localStorage.setItem(visitorKey, count);
+                  sessionStorage.setItem('spmb_visitor_counted', 'true');
+              }
+          }
+          const label = currentLang === 'id' ? 'Pengunjung' : 'Visitors';
+          document.getElementById('footerVisitorCount').textContent = `${count.toLocaleString(currentLang === 'id' ? 'id-ID' : 'en-US')} ${label}`;
+      }
+      updateVisitorCounter();
+
+      // ===== CHAT SYSTEM (SPMB OPTIMIZED) =====
+      const chatButton = document.getElementById('chatButton');
+      const chatBox = document.getElementById('chatBox');
+      const chatClose = document.getElementById('chatClose');
+      const chatInput = document.getElementById('chatInput');
+      const chatSend = document.getElementById('chatSend');
+      const chatMessages = document.getElementById('chatMessages');
+      const quickReplies = document.querySelectorAll('.quick-reply');
+      const notificationBadge = document.querySelector('.notification-badge');
+
+      chatButton.addEventListener('click', () => {
+          chatBox.classList.toggle('active');
+          if (chatBox.classList.contains('active')) {
+              notificationBadge.style.display = 'none';
+              chatMessages.scrollTop = chatMessages.scrollHeight;
+          }
+      });
+      chatClose.addEventListener('click', () => chatBox.classList.remove('active'));
+
+      function sendMessage() {
+          const message = chatInput.value.trim();
+          if (message === '') return;
+          addMessage(message, 'user');
+          chatInput.value = '';
+          chatSend.disabled = true;
+          setTimeout(() => {
+              addMessage(getBotResponse(message), 'bot');
+              chatSend.disabled = false;
+              chatMessages.scrollTop = chatMessages.scrollHeight;
+          }, 800);
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      function addMessage(text, sender) {
+          const messageDiv = document.createElement('div');
+          messageDiv.className = `message ${sender}`;
+          const timeString = new Date().toLocaleTimeString(currentLang === 'id' ? 'id-ID' : 'en-US', { hour: '2-digit', minute: '2-digit' });
+          messageDiv.innerHTML = `
+              <div class="message-avatar"><i class="fas ${sender === 'bot' ? 'fa-robot' : 'fa-user'}"></i></div>
+              <div class="message-content"><p>${text}</p><div class="message-time">${timeString}</div></div>`;
+          chatMessages.appendChild(messageDiv);
+      }
+
+      function getBotResponse(message) {
+          const lowerMsg = message.toLowerCase();
+          const isEN = currentLang === 'en';
+          
+          if (lowerMsg.includes('spmb') || lowerMsg.includes('ppdb') || lowerMsg.includes('pendaftaran') || lowerMsg.includes('admission') || lowerMsg.includes('registration')) 
+              return isEN ? "SPMB/PPDB registration for SMAN 1 Cluring opens May-June 2026. Visit spmbjatim.net for registration or click the 'Register Now' button above." 
+              : "Pendaftaran SPMB/PPDB SMAN 1 Cluring dibuka Mei-Juni 2026. Kunjungi spmbjatim.net untuk mendaftar atau klik tombol 'Daftar Sekarang' di atas.";
+          
+          if (lowerMsg.includes('syarat') || lowerMsg.includes('persyaratan') || lowerMsg.includes('requirement')) 
+              return isEN ? "General requirements: Junior High graduate, max age 21, valid NISN. Documents: Diploma, Family Card, Birth Certificate, Photo. See full list on this page." 
+              : "Syarat umum: Lulus SMP, usia maksimal 21 tahun, NISN valid. Dokumen: Ijazah, KK, Akta Kelahiran, Pas Foto. Lihat daftar lengkap di halaman ini.";
+          
+          if (lowerMsg.includes('jadwal') || lowerMsg.includes('schedule') || lowerMsg.includes('timeline')) 
+              return isEN ? "Key dates: Report Entry (May 11-19), PIN Collection (May 28-Jun 9), Domicile (Jun 11-12), Achievement (Jun 17-25). See full timeline above." 
+              : "Tanggal penting: Entry Nilai (11-19 Mei), Ambil PIN (28 Mei-9 Jun), Domisili (11-12 Jun), Prestasi (17-25 Jun). Lihat jadwal lengkap di atas.";
+          
+          if (lowerMsg.includes('kontak') || lowerMsg.includes('panitia') || lowerMsg.includes('contact') || lowerMsg.includes('committee')) 
+              return isEN ? "Contact committee: Kristin (0852-3851-3282), Cahya (0821-4210-7300), Siswo (0856-0860-2343), Suharso (0823-1971-2420)." 
+              : "Kontak panitia: Kristin (0852-3851-3282), Cahya (0821-4210-7300), Siswo (0856-0860-2343), Suharso (0823-1971-2420).";
+          
+          if (lowerMsg.includes('jalur') || lowerMsg.includes('pathway')) 
+              return isEN ? "Available pathways: Domicile (distance-based), Affirmation (underprivileged), Academic Achievement, Non-Academic Achievement. Each has specific quotas." 
+              : "Jalur tersedia: Domisili (berdasarkan jarak), Afirmasi (kurang mampu), Prestasi Akademik, Prestasi Non-Akademik. Masing-masing memiliki kuota khusus.";
+          
+          if (lowerMsg.includes('terima kasih') || lowerMsg.includes('thanks')) 
+              return isEN ? "You're welcome! Good luck with your application. Contact us anytime if you need help." 
+              : "Sama-sama! Semoga sukses dengan pendaftarannya. Hubungi kami kapan saja jika butuh bantuan.";
+          
+          return isEN ? "Thank you for your question. For detailed information, please visit spmbjatim.net or contact our committee via WhatsApp: 0823-1971-2420." 
+              : "Terima kasih atas pertanyaannya. Untuk informasi detail, silakan kunjungi spmbjatim.net atau hubungi panitia kami via WhatsApp: 0823-1971-2420.";
+      }
+
+      chatSend.addEventListener('click', sendMessage);
+      chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
+      
+      quickReplies.forEach(reply => {
+          reply.addEventListener('click', () => {
+              chatInput.value = reply.getAttribute('data-message');
+              sendMessage();
+          });
+      });
+
+      document.addEventListener('click', (e) => {
+          if (!chatBox.contains(e.target) && !chatButton.contains(e.target) && chatBox.classList.contains('active')) {
+              chatBox.classList.remove('active');
+          }
+      });
+
+      // ===== AOS INITIALIZATION =====
+      AOS.init({ duration: 800, once: true, easing: 'ease-out-cubic' });
+  });
+  </script>
+</body>
+</html>
