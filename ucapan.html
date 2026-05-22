@@ -53,7 +53,7 @@
     h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; }
     a { text-decoration: none; color: inherit; }
     
-    /* PRELOADER */
+    /* ===== PRELOADER ===== */
     #preloader {
       position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       background: var(--primary); z-index: 9999;
@@ -68,7 +68,7 @@
     }
     @keyframes spin { 100% { transform: rotate(360deg); } }
     
-    /* LANGUAGE SWITCHER */
+    /* ===== LANGUAGE SWITCHER ===== */
     .lang-switcher {
       display: flex; align-items: center; gap: 5px; margin-right: 10px;
     }
@@ -80,7 +80,7 @@
     .lang-btn.active { background: var(--secondary); border-color: var(--secondary); }
     .lang-btn:hover { background: var(--secondary); transform: translateY(-2px); }
     
-    /* WHATSAPP FLOAT */
+    /* ===== WHATSAPP FLOAT ===== */
     .whatsapp-float {
       position: fixed; bottom: 30px; right: 30px;
       background: linear-gradient(135deg, var(--whatsapp), var(--whatsapp-dark));
@@ -92,7 +92,7 @@
     .whatsapp-float:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4); }
     .whatsapp-float i { font-size: 24px; }
     
-    /* ADMIN CONTROLS */
+    /* ===== ADMIN CONTROLS ===== */
     .admin-controls {
       background: var(--white); padding: 20px; border-radius: var(--border-radius);
       margin-bottom: 30px; box-shadow: var(--shadow-sm); border: 2px solid var(--secondary);
@@ -110,7 +110,7 @@
     .release-btn:hover { background: var(--primary); color: var(--white); }
     .release-btn.active { background: var(--secondary); border-color: var(--secondary); color: var(--white); }
     
-    /* HEADER */
+    /* ===== HEADER ===== */
     header {
       background: linear-gradient(135deg, var(--primary), var(--primary-light));
       position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow-md);
@@ -144,14 +144,8 @@
       display: flex; align-items: center; justify-content: center; cursor: pointer; border: none;
     }
     .dark-mode-toggle i { font-size: 1.1rem; }
-    .back-btn {
-      color: var(--white); background: rgba(255,255,255,0.1);
-      padding: 8px 16px; border-radius: 50px; font-size: 0.9rem;
-      transition: var(--transition); display: flex; align-items: center; gap: 8px; white-space: nowrap;
-    }
-    .back-btn:hover { background: var(--secondary); }
     
-    /* HERO */
+    /* ===== HERO ===== */
     .hero-greeting {
       text-align: center; color: var(--white); padding: 100px 20px 80px;
       background: linear-gradient(rgba(10,42,94,0.85), rgba(5,26,59,0.9)), 
@@ -174,7 +168,7 @@
       text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
     }
     
-    /* MAIN CONTENT */
+    /* ===== MAIN CONTENT ===== */
     .container { max-width: 1400px; margin: auto; padding: 60px 20px; }
     
     /* Filter Group */
@@ -264,7 +258,7 @@
     .empty-state h3 { font-size: 1.5rem; margin-bottom: 10px; color: var(--primary); }
     .empty-state p { font-size: 1rem; }
     
-    /* FOOTER */
+    /* ===== FOOTER ===== */
     footer {
       background: linear-gradient(145deg, var(--primary-dark) 0%, var(--primary) 100%);
       color: var(--white); padding: 70px 32px 30px; font-size: 1rem;
@@ -321,7 +315,7 @@
       border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.95rem; opacity: 0.8;
     }
     
-    /* Toast Notification */
+    /* ===== TOAST NOTIFICATION ===== */
     .toast {
       position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px);
       background: var(--primary); color: white; padding: 12px 24px; border-radius: 50px;
@@ -333,7 +327,7 @@
     .toast.success { background: #10b981; }
     .toast.error { background: #ef4444; }
     
-    /* RESPONSIVE */
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 1100px) { nav ul { gap: 12px; } nav ul li a { font-size: 0.85rem; } }
     @media (max-width: 880px) {
       .menu-toggle { display: block; }
@@ -369,12 +363,11 @@
       .whatsapp-float { width: 50px; height: 50px; border-radius: 50%; justify-content: center; padding: 0; }
       .footer-time { font-size: 1.5rem; }
       .footer-visitor { padding: 8px 16px; font-size: 0.9rem; }
-      .back-btn span { display: none; }
-      .back-btn i { margin: 0; }
     }
   </style>
 </head>
 <body>
+
   <!-- PRELOADER -->
   <div id="preloader"><div class="spinner"></div></div>
 
@@ -385,42 +378,42 @@
   </a>
 
   <!-- HEADER -->
-<header data-aos="fade-down">
-  <div class="nav-container">
-    <a href="index.html" class="brand">
-      <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring" />
-      <span>SMAN 1 CLURING</span>
-    </a>
-    <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-    <div class="nav-right">
-      <div class="lang-switcher">
-        <button class="lang-btn active" onclick="switchLanguage('id')" id="langId">ID</button>
-        <button class="lang-btn" onclick="switchLanguage('en')" id="langEn">EN</button>
+  <header data-aos="fade-down">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring" />
+        <span>SMAN 1 CLURING</span>
+      </a>
+      <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+      <div class="nav-right">
+        <div class="lang-switcher">
+          <button class="lang-btn active" onclick="switchLanguage('id')" id="langId">ID</button>
+          <button class="lang-btn" onclick="switchLanguage('en')" id="langEn">EN</button>
+        </div>
+        <nav>
+          <ul id="navMenu">
+            <li><a href="index.html" data-page="index" data-id="Home" data-en="Home">Home</a></li>
+            <li><a href="profil.html" data-page="profil" data-id="Profil" data-en="Profile">Profil</a></li>
+            <li><a href="akademik.html" data-page="akademik" data-id="Akademik" data-en="Academics">Akademik</a></li>
+            <li><a href="kesiswaan.html" data-page="kesiswaan" data-id="Kesiswaan" data-en="Student Affairs">Kesiswaan</a></li>
+            <li><a href="sarpras.html" data-page="sarpras" data-id="Sarpras" data-en="Facilities">Sarpras</a></li>
+            <li><a href="humas.html" data-page="humas" data-id="Humas" data-en="Public Relations">Humas</a></li>
+            <li><a href="mitra.html" data-page="mitra" data-id="Mitra" data-en="Partners">Mitra</a></li>
+            <li><a href="alumni.html" data-page="alumni" data-id="Alumni" data-en="Alumni">Alumni</a></li>
+            <li><a href="artikel.html" data-page="artikel" data-id="Artikel" data-en="Articles">Artikel</a></li>
+            <li><a href="ucapan.html" data-page="ucapan" data-id="Ucapan" data-en="Greetings">Ucapan</a></li>
+            <li>
+              <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun" style="display: none;"></i>
+              </button>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <!-- ✅ TOMBOL "Artikel" DIHAPUS DARI SINI -->
-      <nav>
-        <ul id="navMenu">
-          <li><a href="index.html" data-page="index" data-id="Home" data-en="Home">Home</a></li>
-          <li><a href="profil.html" data-page="profil" data-id="Profil" data-en="Profile">Profil</a></li>
-          <li><a href="akademik.html" data-page="akademik" data-id="Akademik" data-en="Academics">Akademik</a></li>
-          <li><a href="kesiswaan.html" data-page="kesiswaan" data-id="Kesiswaan" data-en="Student Affairs">Kesiswaan</a></li>
-          <li><a href="sarpras.html" data-page="sarpras" data-id="Sarpras" data-en="Facilities">Sarpras</a></li>
-          <li><a href="humas.html" data-page="humas" data-id="Humas" data-en="Public Relations">Humas</a></li>
-          <li><a href="mitra.html" data-page="mitra" data-id="Mitra" data-en="Partners">Mitra</a></li>
-          <li><a href="alumni.html" data-page="alumni" data-id="Alumni" data-en="Alumni">Alumni</a></li>
-          <li><a href="artikel.html" data-page="artikel" data-id="Artikel" data-en="Articles">Artikel</a></li>
-          <li><a href="ucapan.html" data-page="ucapan" data-id="Ucapan" data-en="Greetings">Ucapan</a></li>
-          <li>
-            <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
-              <i class="fas fa-moon"></i>
-              <i class="fas fa-sun" style="display: none;"></i>
-            </button>
-          </li>
-        </ul>
-      </nav>
     </div>
-  </div>
-</header>
+  </header>
+
   <!-- HERO -->
   <section class="hero-greeting" data-aos="zoom-in">
     <h1 data-aos="fade-up" id="heroTitle"><i class="fas fa-gift"></i> Galeri Ucapan & Perayaan</h1>
@@ -431,6 +424,7 @@
 
   <!-- MAIN CONTENT -->
   <div class="container">
+    
     <!-- ADMIN CONTROLS -->
     <div class="admin-controls" data-aos="fade-up" id="adminControls">
       <div class="admin-title">
@@ -461,6 +455,7 @@
     
     <!-- GALLERY GRID -->
     <div class="greeting-grid" id="galleryGrid"></div>
+    
   </div>
 
   <!-- FOOTER -->
@@ -533,7 +528,7 @@
         toastAll: 'Menampilkan SEMUA konten (termasuk yang belum waktunya)',
         toast2025: 'Menampilkan konten tahun 2025 saja', toast2026: 'Menampilkan konten tahun 2026 saja',
         toastIdul: 'Pratayang: Idul Fitri 2026', toastCopied: '📋 Link berhasil disalin!',
-        backText: 'Artikel', whatsappText: 'Chat Admin',
+        whatsappText: 'Chat Admin',
         footerContact: 'Kontak', footerLinks: 'Link Penting', footerSocial: 'Media Sosial',
         footerArticles: 'Artikel & Berita',
         footerText: '© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan'
@@ -554,7 +549,7 @@
         toastAll: 'Showing ALL content (including those not yet due)',
         toast2025: 'Showing 2025 content only', toast2026: 'Showing 2026 content only',
         toastIdul: 'Preview: Eid al-Fitr 2026', toastCopied: '📋 Link copied successfully!',
-        backText: 'Articles', whatsappText: 'Chat Admin',
+        whatsappText: 'Chat Admin',
         footerContact: 'Contact', footerLinks: 'Important Links', footerSocial: 'Social Media',
         footerArticles: 'Articles & News',
         footerText: '© 2026 SMAN 1 Cluring — Inspiring Pancasila Generation from Bumi Blambangan'
@@ -594,7 +589,6 @@
         filterBtns[4].textContent = translations[lang].filterSekolah;
       }
       
-      document.querySelector('.back-text').textContent = translations[lang].backText;
       document.querySelector('.whatsapp-text').textContent = translations[lang].whatsappText;
       
       document.querySelectorAll('.footer-section h3 span').forEach((el, index) => {
@@ -777,11 +771,13 @@
     }
 
     function toggleMenu() { document.getElementById('navMenu').classList.toggle('active'); }
+    
     function setupMobileMenuClose() {
       document.querySelectorAll('#navMenu a').forEach(link => {
         link.addEventListener('click', () => document.getElementById('navMenu').classList.remove('active'));
       });
     }
+    
     function setActiveNav() {
       const currentPage = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
       document.querySelectorAll('#navMenu a[data-page]').forEach(link => {
@@ -839,7 +835,8 @@
     document.addEventListener('DOMContentLoaded', () => {
       switchLanguage('id');
       renderGallery(greetingData);
-      setActiveNav(); setupMobileMenuClose();
+      setActiveNav(); 
+      setupMobileMenuClose();
       setTimeout(() => document.getElementById('preloader').classList.add('fade-out'), 600);
       AOS.init({ duration: 600, once: true, offset: 50 });
       updateVisitorCounter();
