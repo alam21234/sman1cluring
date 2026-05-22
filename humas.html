@@ -2,75 +2,57 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
   <title>Humas | SMAN 1 Cluring</title>
 
-  <!-- SEO Meta Tags -->
+  <!-- SEO -->
   <meta name="description" content="Hubungan Masyarakat SMAN 1 Cluring - Pusat informasi publik, pengumuman resmi, dan layanan komunikasi sekolah." />
   <meta name="author" content="SMAN 1 Cluring" />
   <meta name="keywords" content="Humas, Hubungan Masyarakat, pengumuman, publikasi, SMAN 1 Cluring, Banyuwangi" />
 
-  <!-- Open Graph / Social Media -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Humas | SMAN 1 Cluring" />
   <meta property="og:description" content="Pusat informasi publik dan layanan komunikasi SMAN 1 Cluring." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sman1cluring.sch.id/humas.html" />
   <meta property="og:image" content="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-
-  <!-- Preconnect for Performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://i.ibb.co" />
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  
+
   <!-- AOS Animation -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
-    /* ===== CSS VARIABLES & THEME ===== */
+    /* ===== VARIABEL & RESET (MENGACU PADA RUJUKAN) ===== */
     :root {
-      /* Primary Colors */
       --primary: #0a2a5e;
       --primary-light: #1e3a7a;
       --primary-dark: #051a3b;
-      
-      /* Secondary & Accent */
       --secondary: #9e7b4b;
       --secondary-light: #c1a06e;
       --accent: #c7a854;
-      
-      /* Neutral Colors */
+      --cultural-accent: #b13e3e;
       --light: #f5f7fa;
       --dark: #1e2b37;
       --gray: #4b5c6b;
       --white: #ffffff;
-      
-      /* Effects */
-      --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      --shadow-md: 0 8px 30px rgba(0, 20, 50, 0.12);
-      --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
-      --border-radius: 24px;
-      --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
       --glass: rgba(255, 255, 255, 0.1);
       --glass-border: rgba(255, 255, 255, 0.2);
-      
-      /* Typography */
-      --font-base: 'Inter', 'Plus Jakarta Sans', sans-serif;
-      --font-heading: 'Plus Jakarta Sans', sans-serif;
-      
-      /* Spacing */
-      --container-max: 1200px;
-      --section-padding: 80px 32px;
+      --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 8px 30px rgba(0, 20, 50, 0.12);
+      --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+      --border-radius: 24px;
+      --border-radius-sm: 16px;
+      --whatsapp: #25D366;
+      --whatsapp-dark: #128C7E;
+      --mobile-nav-height: 70px;
     }
 
-    /* Dark Mode Variables */
     .dark-mode {
       --primary: #1e3a8a;
       --primary-light: #3b5ba5;
@@ -83,1117 +65,345 @@
       --glass-border: rgba(255, 255, 255, 0.08);
     }
 
-    /* ===== RESET & BASE ===== */
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    html { scroll-behavior: smooth; }
-    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: var(--font-base);
+      font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
       background-color: var(--light);
       color: var(--dark);
       line-height: 1.6;
       transition: background-color 0.4s ease, color 0.4s ease;
       overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      font-weight: 400;
+      padding-bottom: 0;
     }
 
-    h1, h2, h3, h4, h5, h6 { 
-      font-family: var(--font-heading); 
-      font-weight: 700; 
-      line-height: 1.3;
-    }
-
+    h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+    a { text-decoration: none; color: inherit; }
     img { max-width: 100%; height: auto; display: block; }
-    
-    a { text-decoration: none; color: inherit; transition: var(--transition); }
-    
-    ul { list-style: none; }
 
     /* ===== PRELOADER ===== */
     #preloader {
-      position: fixed; 
-      top: 0; left: 0; 
-      width: 100%; height: 100%;
-      background: var(--primary); 
-      z-index: 9999;
-      display: flex; 
-      justify-content: center; 
-      align-items: center;
-      transition: opacity 0.6s ease, visibility 0.6s ease;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: var(--primary); display: flex; justify-content: center; align-items: center;
+      z-index: 9999; opacity: 1; transition: opacity 0.15s ease, visibility 0.15s ease;
     }
-    #preloader.fade-out { 
-      opacity: 0; 
-      visibility: hidden; 
-      pointer-events: none;
-    }
+    #preloader.fade-out { opacity: 0; visibility: hidden; }
     .spinner {
-      width: 60px; height: 60px;
-      border: 4px solid rgba(255, 255, 255, 0.1);
-      border-top: 4px solid var(--secondary);
-      border-right: 4px solid var(--secondary);
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
+      width: 50px; height: 50px; border: 4px solid rgba(255, 255, 255, 0.15);
+      border-top: 4px solid var(--secondary); border-radius: 50%;
+      animation: spin 0.8s linear infinite;
     }
-    @keyframes spin { 
-      0% { transform: rotate(0deg); } 
-      100% { transform: rotate(360deg); } 
-    }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-    /* ===== NAVIGASI - TAMPILAN BIASA, RAPIH, TIDAK ADA YANG TURUN KE BAWAH ===== */
+    /* ===== WHATSAPP FLOAT ===== */
+    .whatsapp-float {
+      position: fixed; bottom: 100px; right: 30px;
+      background: linear-gradient(135deg, var(--whatsapp) 0%, var(--whatsapp-dark) 100%);
+      color: white; text-decoration: none; display: flex; align-items: center; gap: 12px;
+      padding: 14px 28px; border-radius: 60px; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+      z-index: 998; transition: var(--transition); backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2); font-weight: 600;
+    }
+    .whatsapp-float i { font-size: 28px; animation: pulse 2s infinite; }
+    .whatsapp-float:hover { transform: translateY(-8px) scale(1.05); box-shadow: 0 20px 35px rgba(37, 211, 102, 0.4); }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+
+    /* ===== HEADER (RUJUKAN) ===== */
     header {
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-      position: sticky; 
-      top: 0; 
-      z-index: 1000;
-      box-shadow: var(--shadow-md);
-      transition: var(--transition);
-    }
-    header.scrolled {
-      background: rgba(10, 42, 94, 0.95);
-      backdrop-filter: blur(12px);
-      padding: 8px 0;
+      position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow-md);
     }
     .nav-container {
-      max-width: var(--container-max); 
-      margin: auto; 
-      padding: 12px 32px;
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center; 
-      gap: 20px;
+      max-width: 1400px; margin: auto; padding: 12px 32px;
+      display: flex; justify-content: space-between; align-items: center; gap: 20px;
     }
     .brand {
-      display: flex; 
-      align-items: center; 
-      gap: 16px;
-      color: var(--white); 
-      text-decoration: none;
-      font-weight: 800; 
-      font-size: 1.4rem;
-      transition: var(--transition);
-      white-space: nowrap;
+      display: flex; align-items: center; gap: 16px; color: var(--white);
+      font-weight: 800; font-size: 1.5rem; text-decoration: none; letter-spacing: -0.5px;
     }
-    .brand:hover { transform: scale(1.02); }
-    .brand img { 
-      width: 52px; 
-      border-radius: 12px; 
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
-      object-fit: contain;
-    }
-    
-    /* Menu utama - horizontal, tidak ada yang geser ke bawah */
-    nav ul {
-      list-style: none; 
-      display: flex; 
-      gap: 4px; /* jarak kecil agar pas */
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    nav ul li { position: relative; }
+    .brand img { width: 52px; height: auto; border-radius: 12px; box-shadow: var(--shadow-sm); }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    nav ul { list-style: none; display: flex; gap: 32px; align-items: center; }
     nav ul li a {
-      color: var(--white); 
-      text-decoration: none;
-      font-weight: 500; 
-      font-size: 0.9rem; /* ukuran sedikit lebih kecil agar muat */
-      padding: 10px 12px; 
-      border-radius: 12px;
-      transition: var(--transition);
-      display: flex; 
-      align-items: center; 
-      gap: 6px;
-      opacity: 0.95;
-      white-space: nowrap;
+      color: var(--white); text-decoration: none; font-weight: 500; font-size: 1rem;
+      transition: var(--transition); padding: 8px 0; position: relative; opacity: 0.9; white-space: nowrap;
     }
     nav ul li a::after {
-      content: ''; 
-      position: absolute; 
-      bottom: 4px; 
-      left: 50%;
-      width: 0; 
-      height: 3px; 
-      background: var(--accent);
-      border-radius: 2px; 
-      transition: var(--transition);
-      transform: translateX(-50%);
+      content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+      background: var(--secondary); transition: width 0.3s ease;
     }
-    nav ul li a:hover, 
-    nav ul li a.active {
-      opacity: 1; 
-      background: var(--glass);
-      transform: translateY(-2px);
-    }
-    nav ul li a:hover::after, 
-    nav ul li a.active::after { 
-      width: 60%; 
-    }
-    nav ul li a.active {
-      background: var(--secondary); 
-      color: var(--white);
-      box-shadow: 0 4px 15px rgba(158, 123, 75, 0.4);
-    }
-    nav ul li a.active::after { display: none; }
-    
-    .menu-toggle {
-      display: none; 
-      color: var(--white); 
-      font-size: 24px;
-      cursor: pointer; 
-      padding: 10px; 
-      border-radius: 12px;
-      transition: var(--transition);
-      min-width: 44px;
-      min-height: 44px;
-      align-items: center;
-      justify-content: center;
-    }
-    .menu-toggle:hover { background: var(--glass); }
-    
-    .nav-actions { 
-      display: flex; 
-      align-items: center; 
-      gap: 12px; 
-    }
+    nav ul li a:hover, nav ul li a.active { opacity: 1; }
+    nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
     .dark-mode-toggle {
-      background: var(--glass); 
-      border: 1px solid var(--glass-border);
-      width: 44px; 
-      height: 44px; 
-      border-radius: 50%;
-      color: var(--white); 
-      display: flex; 
-      align-items: center;
-      justify-content: center; 
-      cursor: pointer; 
-      transition: var(--transition);
-      flex-shrink: 0;
+      background: var(--glass); border: 1px solid var(--glass-border); width: 44px; height: 44px;
+      border-radius: 60px; color: var(--white); font-size: 1.2rem; cursor: pointer;
+      transition: var(--transition); display: flex; align-items: center; justify-content: center;
+      backdrop-filter: blur(8px);
     }
-    .dark-mode-toggle:hover { 
-      background: var(--secondary); 
-      transform: rotate(15deg); 
-    }
-    .dark-mode-toggle .fa-sun { display: none; }
-    .dark-mode .dark-mode-toggle .fa-moon { display: none; }
-    .dark-mode .dark-mode-toggle .fa-sun { display: block; }
+    .dark-mode-toggle:hover { background: var(--secondary); border-color: var(--secondary); transform: rotate(30deg) scale(1.05); }
+    .dark-mode .dark-mode-toggle i.fa-sun { display: block; }
+    .dark-mode .dark-mode-toggle i.fa-moon { display: none; }
+    .menu-toggle { display: none; font-size: 28px; color: var(--white); cursor: pointer; }
 
-    /* ===== HERO SECTION ===== */
-    .hero {
-      position: relative;
-      color: var(--white);
-      text-align: center;
-      padding: 140px 20px 100px;
-      min-height: 70vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: 
-        linear-gradient(135deg, rgba(10,42,94,0.88) 0%, rgba(5,26,59,0.94) 100%),
-        url('https://i.ibb.co.com/S703DrV5/Whats-App-Image-2024-10-20-at-00-46-13.jpg') 
-        center center / cover no-repeat;
-      background-blend-mode: multiply;
+    /* ===== PAGE HEADER (HERO) ===== */
+    .page-header {
+      background: linear-gradient(145deg, rgba(10,42,94,0.7) 0%, rgba(5,26,59,0.85) 100%), url('https://i.ibb.co.com/S703DrV5/Whats-App-Image-2024-10-20-at-00-46-13.jpg') center/cover fixed;
+      color: var(--white); text-align: center; padding: 120px 20px 80px; min-height: 400px;
+      display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;
     }
-    
-    @media (max-width: 768px) {
-      .hero {
-        background-attachment: scroll !important;
-        background-position: center 30% !important;
-      }
-    }
-    
-    .hero::before {
-      content: ''; 
-      position: absolute; 
-      top: 0; left: 0; 
-      width: 100%; height: 100%;
-      background: radial-gradient(ellipse at center, transparent 0%, rgba(10,42,94,0.5) 100%);
-      pointer-events: none;
-      z-index: 1;
-    }
-    .hero > * { 
-      position: relative; 
-      z-index: 2; 
-      max-width: 100%;
-    }
-    .hero h1 {
-      font-size: clamp(1.8rem, 5vw, 3rem);
-      margin-bottom: 20px;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.4);
-      line-height: 1.3;
-      padding: 0 10px;
-    }
-    .hero p {
-      max-width: 750px; 
-      margin: 0 auto;
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      opacity: 0.98;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-      padding: 0 15px;
-    }
-    .hero-badge {
-      display: inline-flex; 
-      align-items: center; 
-      gap: 8px;
-      background: var(--secondary); 
-      color: var(--white);
-      padding: 8px 20px; 
-      border-radius: 50px;
-      font-weight: 600; 
-      font-size: 0.9rem;
-      margin-bottom: 25px; 
-      box-shadow: 0 4px 15px rgba(158,123,75,0.4);
-      flex-wrap: wrap;
-      justify-content: center;
+    .page-header h1 { font-size: 2.8rem; margin-bottom: 20px; font-weight: 800; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); }
+    .page-header .badge {
+      display: inline-flex; align-items: center; gap: 8px; background: var(--secondary);
+      padding: 6px 20px; border-radius: 50px; font-weight: 600; margin-bottom: 20px;
     }
 
-    /* ===== SECTIONS ===== */
-    .section { 
-      max-width: var(--container-max); 
-      margin: auto; 
-      padding: var(--section-padding); 
+    /* ===== KONTEN ===== */
+    .container { max-width: 1300px; margin: 50px auto; padding: 0 32px; }
+    .section {
+      background: var(--white); padding: 50px; border-radius: var(--border-radius);
+      box-shadow: var(--shadow-sm); margin-bottom: 40px; transition: var(--transition);
+      border: 1px solid rgba(158,123,75,0.1);
     }
-    .section-header {
-      text-align: center; 
-      margin-bottom: 60px;
+    .section:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--secondary); }
+    .section h2 {
+      color: var(--primary); margin-bottom: 25px; font-size: 2.2rem; position: relative; text-align: center;
     }
-    .section-header h2 {
-      color: var(--primary); 
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      position: relative; 
-      display: inline-block;
-    }
-    .section-header h2::after {
-      content: ''; 
-      display: block; 
-      width: 80px; 
-      height: 5px;
+    .section h2::after {
+      content: ''; display: block; width: 80px; height: 5px;
       background: linear-gradient(90deg, var(--secondary) 0%, var(--accent) 100%);
-      margin: 16px auto 0; 
-      border-radius: 4px;
+      margin: 16px auto 0; border-radius: 4px;
     }
-
-    /* ===== CARDS & COMPONENTS ===== */
     .info-card {
-      background: var(--white); 
-      border-radius: 24px;
-      padding: 40px; 
-      box-shadow: var(--shadow);
-      margin-bottom: 40px; 
-      border-left: 6px solid var(--secondary);
+      background: var(--white); border-radius: var(--border-radius-sm); padding: 40px;
+      box-shadow: var(--shadow-sm); margin-bottom: 40px; border-left: 6px solid var(--secondary);
       transition: var(--transition);
     }
-    .info-card:hover { 
-      transform: translateY(-5px); 
-      box-shadow: var(--shadow-md); 
-    }
-    .info-card h3 { 
-      color: var(--primary); 
-      margin-bottom: 20px; 
-      font-size: 1.8rem; 
-    }
-    .info-card p { 
-      color: var(--gray); 
-      line-height: 1.7; 
-      margin-bottom: 15px; 
-    }
-    .info-card ul {
-      padding-left: 25px; 
-      color: var(--gray); 
-      line-height: 1.8;
-    }
+    .info-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+    .info-card h3 { color: var(--primary); margin-bottom: 20px; font-size: 1.6rem; }
+    .info-card p, .info-card ul { color: var(--gray); line-height: 1.7; }
+    .info-card ul { padding-left: 25px; }
     .info-card li { margin-bottom: 8px; }
 
     .announcement {
       background: linear-gradient(135deg, rgba(158,123,75,0.08) 0%, rgba(199,168,84,0.03) 100%);
-      border-left: 6px solid var(--secondary);
-      padding: 25px 30px; 
-      border-radius: 0 20px 20px 0;
-      margin: 25px 0; 
-      transition: var(--transition);
-      border-right: 1px solid rgba(158,123,75,0.1);
+      border-left: 6px solid var(--secondary); padding: 25px 30px; border-radius: 0 20px 20px 0;
+      margin: 25px 0; transition: var(--transition);
     }
-    .announcement:hover { 
-      transform: translateX(5px); 
-      background: linear-gradient(135deg, rgba(158,123,75,0.12) 0%, rgba(199,168,84,0.06) 100%); 
-    }
-    .announcement h4 { 
-      color: var(--primary); 
-      margin-bottom: 10px; 
-      font-size: 1.3rem; 
-      display: flex; 
-      align-items: center; 
-      gap: 10px; 
-    }
-    .announcement p { 
-      color: var(--gray); 
-      line-height: 1.6; 
-      margin: 0; 
-    }
+    .announcement:hover { transform: translateX(5px); background: rgba(158,123,75,0.12); }
+    .announcement h4 { color: var(--primary); margin-bottom: 10px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+    .announcement p { color: var(--gray); }
 
     .download-list {
-      background: var(--white); 
-      padding: 30px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow); 
-      margin: 30px 0;
+      background: var(--white); padding: 30px; border-radius: var(--border-radius-sm); box-shadow: var(--shadow-sm); margin: 30px 0;
     }
     .download-item {
-      padding: 18px 20px; 
-      border-bottom: 1px solid #eee;
-      display: flex; 
-      align-items: center; 
-      gap: 18px;
-      transition: var(--transition); 
-      border-radius: 12px;
-      flex-wrap: wrap;
+      padding: 18px 20px; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 18px;
+      transition: var(--transition); border-radius: 12px; flex-wrap: wrap;
     }
-    .download-item:last-child { border-bottom: none; }
-    .download-item:hover { 
-      background: var(--light); 
-      transform: translateX(8px); 
-    }
-    .download-item i { 
-      color: var(--primary); 
-      font-size: 1.5rem; 
-      width: 24px; 
-      text-align: center; 
-      flex-shrink: 0;
-    }
-    .download-item a {
-      color: var(--primary); 
-      text-decoration: none;
-      font-weight: 600; 
-      transition: var(--transition); 
-      flex: 1;
-      min-width: 0;
-      word-break: break-word;
-    }
+    .download-item:hover { background: var(--light); transform: translateX(8px); }
+    .download-item i { color: var(--primary); font-size: 1.5rem; width: 24px; text-align: center; flex-shrink: 0; }
+    .download-item a { color: var(--primary); font-weight: 600; flex: 1; word-break: break-word; }
     .download-item a:hover { color: var(--secondary); }
-    .download-item .badge {
-      background: var(--secondary); 
-      color: white;
-      padding: 4px 12px; 
-      border-radius: 20px;
-      font-size: 0.75rem; 
-      font-weight: 600;
-      flex-shrink: 0;
-    }
+    .download-item .badge { background: var(--secondary); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; flex-shrink: 0; }
 
     .contact-grid {
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px; 
-      margin-top: 40px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px;
     }
     .contact-card {
-      background: var(--white); 
-      padding: 35px 30px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow); 
-      text-align: center;
-      transition: var(--transition);
-      border: 1px solid rgba(158,123,75,0.1);
-      position: relative; 
-      overflow: hidden;
+      background: var(--white); padding: 35px 30px; border-radius: var(--border-radius);
+      box-shadow: var(--shadow-sm); text-align: center; transition: var(--transition);
+      border: 1px solid rgba(158,123,75,0.1); position: relative; overflow: hidden;
     }
     .contact-card::before {
-      content: ''; 
-      position: absolute; 
-      top: 0; left: 0; 
-      width: 100%; height: 4px;
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
       background: linear-gradient(90deg, var(--secondary), var(--accent));
-      transform: scaleX(0); 
-      transition: transform 0.4s ease;
-      transform-origin: left;
+      transform: scaleX(0); transition: transform 0.4s;
     }
-    .contact-card:hover {
-      transform: translateY(-10px); 
-      box-shadow: var(--shadow-lg);
-      border-color: var(--secondary);
-    }
+    .contact-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); border-color: var(--secondary); }
     .contact-card:hover::before { transform: scaleX(1); }
-    .contact-card i {
-      font-size: 3.2rem; 
-      color: var(--primary);
-      margin-bottom: 20px; 
-      transition: var(--transition);
-    }
-    .contact-card:hover i { 
-      transform: scale(1.1); 
-      color: var(--secondary); 
-    }
-    .contact-card h3 { 
-      color: var(--primary); 
-      margin-bottom: 12px; 
-      font-size: 1.4rem; 
-    }
-    .contact-card p { 
-      color: var(--gray); 
-      line-height: 1.7; 
-      margin: 8px 0; 
-    }
-    .contact-card a {
-      color: var(--secondary); 
-      text-decoration: none;
-      font-weight: 600; 
-      transition: var(--transition);
-      display: inline-flex; 
-      align-items: center; 
-      gap: 8px;
-      margin-top: 15px; 
-      padding: 10px 20px;
-      border-radius: 50px; 
-      background: rgba(158,123,75,0.1);
-    }
-    .contact-card a:hover {
-      color: white; 
-      background: var(--secondary);
-      transform: translateY(-3px); 
-      box-shadow: 0 8px 20px rgba(158,123,75,0.3);
-    }
+    .contact-card i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; transition: var(--transition); }
+    .contact-card:hover i { transform: scale(1.1); color: var(--secondary); }
+    .contact-card h3 { color: var(--primary); margin-bottom: 12px; font-size: 1.4rem; }
+    .contact-card a { color: var(--secondary); font-weight: 600; display: inline-flex; align-items: center; gap: 8px; margin-top: 15px; padding: 10px 20px; border-radius: 50px; background: rgba(158,123,75,0.1); }
+    .contact-card a:hover { background: var(--secondary); color: white; }
 
-    /* ===== FOOTER ===== */
+    /* ===== MODAL (PERTAHANKAN) ===== */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(10, 42, 94, 0.95); display: flex;
+      align-items: center; justify-content: center; z-index: 2000; opacity: 0; visibility: hidden;
+      transition: var(--transition); padding: 20px;
+    }
+    .modal-overlay.active { opacity: 1; visibility: visible; }
+    .modal-contact {
+      background: var(--white); border-radius: var(--border-radius); max-width: 900px; width: 100%;
+      max-height: 90vh; overflow-y: auto; box-shadow: var(--shadow-lg); transform: translateY(20px);
+      transition: transform 0.4s;
+    }
+    .modal-overlay.active .modal-contact { transform: translateY(0); }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; border-radius: 50%;
+      background: var(--light); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    }
+    .modal-header { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white; padding: 24px; text-align: center; }
+    .modal-body { padding: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .quick-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .action-btn { display: flex; align-items: center; gap: 10px; padding: 12px; border-radius: 14px; background: var(--light); font-weight: 600; transition: var(--transition); }
+    .action-btn.whatsapp { background: rgba(37,211,102,0.1); color: #128C7E; }
+    .action-btn:hover { transform: translateY(-2px); border: 2px solid var(--secondary); }
+    .info-panel { background: var(--light); padding: 16px; border-radius: 14px; }
+    .info-panel ul li { padding: 6px 0; display: flex; gap: 8px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .contact-form { grid-column: 1/-1; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group.full { grid-column: 1/-1; }
+    .form-group input, .form-group textarea { padding: 10px 14px; border: 2px solid rgba(0,0,0,0.1); border-radius: 12px; font: inherit; background: var(--white); }
+    .submit-btn { background: linear-gradient(135deg, var(--secondary), var(--accent)); color: white; border: none; padding: 12px 24px; border-radius: 40px; font-weight: 600; cursor: pointer; }
+    .map-preview iframe { width: 100%; height: 200px; border-radius: 12px; }
+    .toast {
+      position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px);
+      background: var(--dark); color: white; padding: 12px 24px; border-radius: 40px;
+      z-index: 3000; transition: transform 0.3s; display: flex; align-items: center; gap: 10px;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+    .toast.success { background: #25D366; }
+
+    /* ===== FOOTER (RUJUKAN) ===== */
     footer {
       background: linear-gradient(145deg, var(--primary-dark) 0%, var(--primary) 100%);
-      color: var(--white); 
-      padding: 70px 32px 30px;
-      font-size: 1rem; 
-      position: relative;
+      color: var(--white); padding: 70px 32px 30px; position: relative;
     }
     footer::before {
-      content: ''; 
-      position: absolute; 
-      top: 0; left: 0; 
-      width: 100%; height: 4px;
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
       background: linear-gradient(90deg, var(--secondary), var(--accent), var(--secondary));
     }
     .footer-content {
-      max-width: var(--container-max); 
-      margin: auto;
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 50px;
+      max-width: 1300px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 50px;
     }
     .footer-section h3 {
-      font-size: 1.4rem; 
-      margin-bottom: 25px; 
-      font-weight: 600;
-      display: flex; 
-      align-items: center; 
-      gap: 10px; 
-      color: var(--secondary);
+      font-size: 1.4rem; margin-bottom: 25px; font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--secondary);
     }
     .footer-section ul { list-style: none; }
     .footer-section ul li { margin-bottom: 14px; }
     .footer-section a {
-      color: rgba(255, 255, 255, 0.85); 
-      text-decoration: none;
-      transition: var(--transition); 
-      display: flex; 
-      align-items: center; 
-      gap: 10px;
+      color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: var(--transition);
+      display: flex; align-items: center; gap: 10px;
     }
-    .footer-section a:hover { 
-      color: var(--secondary); 
-      transform: translateX(6px); 
+    .footer-section a:hover { color: var(--secondary); transform: translateX(6px); }
+    .social-links { display: flex; gap: 18px; margin-top: 20px; }
+    .social-links a {
+      display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px;
+      border-radius: 60px; background: var(--glass); color: var(--white); font-size: 1.2rem;
+      transition: var(--transition); border: 1px solid var(--glass-border);
     }
-    .footer-bottom {
-      text-align: center; 
-      margin-top: 30px; 
-      padding-top: 30px;
-      border-top: 1px solid rgba(255,255,255,0.1); 
-      font-size: 0.95rem; 
-      opacity: 0.85;
+    .social-links a:hover { background: var(--secondary); transform: translateY(-6px) scale(1.1); color: var(--primary-dark); }
+    .footer-info-panel {
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+      background: rgba(0, 0, 0, 0.2); padding: 20px 30px; border-radius: 60px; margin: 40px auto 20px;
+      max-width: 1000px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(8px);
     }
+    .footer-clock { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .footer-time {
+      font-size: 2rem; font-weight: 700; font-family: monospace;
+      background: rgba(0,0,0,0.3); padding: 6px 18px; border-radius: 50px; letter-spacing: 2px;
+    }
+    .footer-visitor {
+      display: flex; align-items: center; gap: 12px; background: var(--secondary); color: var(--primary-dark);
+      padding: 10px 24px; border-radius: 50px; font-weight: 600;
+    }
+    .footer-bottom { text-align: center; margin-top: 30px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.95rem; }
 
-    /* ===== WHATSAPP FLOAT ===== */
-    .whatsapp-float {
-      position: fixed; 
-      bottom: 30px; 
-      right: 30px;
-      background: linear-gradient(135deg, #25D366, #128C7E);
-      color: white; 
-      text-decoration: none;
-      display: flex; 
-      align-items: center; 
-      gap: 10px;
-      padding: 14px 24px; 
-      border-radius: 50px;
-      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
-      z-index: 998; 
-      transition: var(--transition);
-      font-weight: 600; 
-      font-size: 0.95rem;
-      max-width: calc(100% - 40px);
-    }
-    .whatsapp-float:hover {
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
-    }
-    .whatsapp-float i { 
-      font-size: 22px; 
-      flex-shrink: 0;
-    }
-    .whatsapp-float span {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    /* ===== MODAL STYLES ===== */
-    .modal-overlay {
-      position: fixed; 
-      top: 0; left: 0; 
-      width: 100%; height: 100%;
-      background: rgba(10, 42, 94, 0.85); 
-      display: flex;
-      align-items: center; 
-      justify-content: center; 
-      z-index: 2000;
-      opacity: 0; 
-      visibility: hidden; 
-      transition: var(--transition);
-      padding: 20px; 
-      backdrop-filter: blur(8px);
-    }
-    .modal-overlay.active { 
-      opacity: 1; 
-      visibility: visible; 
-    }
-    .modal-contact {
-      background: var(--white); 
-      border-radius: 24px; 
-      max-width: 900px;
-      width: 100%; 
-      max-height: 90vh; 
-      overflow-y: auto;
-      box-shadow: var(--shadow-lg); 
-      transform: translateY(30px);
-      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      position: relative; 
-      border: 1px solid var(--glass-border);
-    }
-    .modal-overlay.active .modal-contact { 
-      transform: translateY(0); 
-    }
-    .modal-close {
-      position: absolute; 
-      top: 20px; 
-      right: 20px; 
-      width: 40px; 
-      height: 40px;
-      border-radius: 50%; 
-      background: var(--light); 
-      border: none;
-      color: var(--dark); 
-      font-size: 1.2rem; 
-      cursor: pointer;
-      transition: var(--transition); 
-      display: flex; 
-      align-items: center;
-      justify-content: center; 
-      z-index: 10;
-      min-width: 40px;
-      min-height: 40px;
-    }
-    .modal-close:hover { 
-      background: var(--secondary); 
-      color: white; 
-      transform: rotate(90deg); 
-    }
-    .modal-header {
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
-      color: white; 
-      padding: 30px; 
-      text-align: center; 
-      position: relative; 
-      overflow: hidden;
-    }
-    .modal-header::before {
-      content: ''; 
-      position: absolute; 
-      top: -50%; left: -50%; 
-      width: 200%; height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-    }
-    .modal-header h2 { 
-      font-size: 1.8rem; 
-      margin-bottom: 8px; 
-      position: relative; 
-      z-index: 1; 
-    }
-    .modal-header p { 
-      opacity: 0.9; 
-      position: relative; 
-      z-index: 1; 
-    }
-    .modal-body { 
-      padding: 30px; 
-      display: grid; 
-      grid-template-columns: 1fr 1fr; 
-      gap: 30px; 
-    }
-    .quick-actions { 
-      display: grid; 
-      grid-template-columns: repeat(2, 1fr); 
-      gap: 15px; 
-    }
-    .action-btn {
-      display: flex; 
-      align-items: center; 
-      gap: 12px; 
-      padding: 15px 20px;
-      border-radius: 16px; 
-      background: var(--light); 
-      border: 2px solid transparent;
-      color: var(--dark); 
-      text-decoration: none; 
-      font-weight: 600;
-      transition: var(--transition); 
-      text-align: center;
-      min-height: 56px;
-    }
-    .action-btn:hover { 
-      border-color: var(--secondary); 
-      transform: translateY(-3px); 
-      box-shadow: var(--shadow-md); 
-      color: var(--secondary); 
-    }
-    .action-btn.whatsapp { background: rgba(37, 211, 102, 0.1); color: #128C7E; }
-    .action-btn.whatsapp:hover { background: #25D366; color: white; }
-    .action-btn.email { background: rgba(158, 123, 75, 0.1); }
-    .action-btn.phone { background: rgba(10, 42, 94, 0.1); }
-    .action-btn.maps { background: rgba(66, 133, 244, 0.1); color: #4285f4; }
-    .action-btn i { 
-      font-size: 1.3rem; 
-      width: 24px; 
-      text-align: center; 
-      flex-shrink: 0;
-    }
-    .info-panel { 
-      background: var(--light); 
-      padding: 20px; 
-      border-radius: 16px; 
-    }
-    .info-panel h4 { 
-      color: var(--primary); 
-      margin-bottom: 15px; 
-      display: flex; 
-      align-items: center; 
-      gap: 8px; 
-    }
-    .info-panel ul { list-style: none; }
-    .info-panel li { 
-      padding: 8px 0; 
-      border-bottom: 1px solid rgba(0,0,0,0.05); 
-      display: flex; 
-      align-items: flex-start; 
-      gap: 10px; 
-      font-size: 0.95rem; 
-    }
-    .info-panel li:last-child { border-bottom: none; }
-    .info-panel i { 
-      color: var(--secondary); 
-      margin-top: 3px; 
-      flex-shrink: 0;
-    }
-    .contact-form { grid-column: 1 / -1; }
-    .contact-form h4 { 
-      color: var(--primary); 
-      margin-bottom: 20px; 
-    }
-    .form-grid { 
-      display: grid; 
-      grid-template-columns: 1fr 1fr; 
-      gap: 15px; 
-    }
-    .form-group { 
-      display: flex; 
-      flex-direction: column; 
-      gap: 6px; 
-    }
-    .form-group.full { grid-column: 1 / -1; }
-    .form-group label { 
-      font-weight: 500; 
-      font-size: 0.9rem; 
-      color: var(--gray); 
-    }
-    .form-group input, 
-    .form-group textarea {
-      padding: 12px 16px; 
-      border: 2px solid rgba(0,0,0,0.1); 
-      border-radius: 12px;
-      font-family: inherit; 
-      font-size: 1rem; 
-      transition: var(--transition); 
-      background: var(--white);
-      min-height: 48px;
-    }
-    .form-group input:focus, 
-    .form-group textarea:focus {
-      outline: none; 
-      border-color: var(--secondary);
-      box-shadow: 0 0 0 4px rgba(158, 123, 75, 0.15);
-    }
-    .form-group textarea { 
-      min-height: 100px; 
-      resize: vertical; 
-    }
-    .submit-btn {
-      background: linear-gradient(135deg, var(--secondary), var(--accent));
-      color: white; 
-      border: none; 
-      padding: 14px 30px; 
-      border-radius: 50px;
-      font-weight: 600; 
-      font-size: 1rem; 
-      cursor: pointer; 
-      transition: var(--transition);
-      display: inline-flex; 
-      align-items: center; 
-      gap: 8px; 
-      margin-top: 10px;
-      min-height: 50px;
-    }
-    .submit-btn:hover { 
-      transform: translateY(-2px); 
-      box-shadow: var(--shadow-md); 
-    }
-    .submit-btn:disabled { 
-      opacity: 0.7; 
-      cursor: not-allowed; 
-      transform: none; 
-    }
-    .map-preview { 
-      grid-column: 1 / -1; 
-      background: var(--light); 
-      border-radius: 16px; 
-      overflow: hidden; 
-      border: 2px solid rgba(0,0,0,0.05); 
-    }
-    .map-preview iframe { 
-      width: 100%; 
-      height: 250px; 
-      border: 0; 
-    }
-    .map-link {
-      display: block; 
-      text-align: center; 
-      padding: 12px; 
-      background: var(--primary);
-      color: white; 
-      text-decoration: none; 
-      font-weight: 500; 
-      transition: var(--transition);
-    }
-    .map-link:hover { background: var(--primary-light); }
-    
-    .toast {
-      position: fixed; 
-      bottom: 30px; 
-      left: 50%; 
-      transform: translateX(-50%) translateY(100px);
-      background: var(--dark); 
-      color: white; 
-      padding: 15px 25px; 
-      border-radius: 12px;
-      box-shadow: var(--shadow-lg); 
-      z-index: 3000; 
-      transition: transform 0.3s ease;
-      display: flex; 
-      align-items: center; 
-      gap: 10px;
-      max-width: calc(100% - 40px);
-      text-align: center;
-    }
-    .toast.show { transform: translateX(-50%) translateY(0); }
-    .toast.success { background: #25D366; }
-    .toast.error { background: #e74c3c; }
-
-    /* ===== ANIMATIONS ===== */
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    .floating { animation: float 3s ease-in-out infinite; }
-
-    /* ===== RESPONSIVE BREAKPOINTS ===== */
-    
-    /* Tablet & Mobile */
-    @media (max-width: 992px) {
-      nav ul { display: none; } /* Sembunyikan menu desktop */
-      .menu-toggle { display: flex; } /* Tampilkan hamburger */
-      
-      .nav-mobile {
-        position: absolute; 
-        top: 100%; 
-        left: 0; right: 0;
-        background: var(--primary); 
-        padding: 20px;
-        display: none; 
-        flex-direction: column; 
-        gap: 8px;
-        border-top: 1px solid var(--glass-border);
-        backdrop-filter: blur(12px);
-        z-index: 999;
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 880px) {
+      .menu-toggle { display: block; order: 3; }
+      .nav-right { order: 2; }
+      nav ul {
+        position: absolute; top: 76px; left: 0; right: 0; background: var(--primary);
+        flex-direction: column; padding: 25px 0; display: none; z-index: 100;
+        border-top: 1px solid rgba(255,255,255,0.1); gap: 16px;
       }
-      .nav-mobile.active { display: flex; }
-      .nav-mobile a {
-        color: var(--white); 
-        padding: 14px 20px;
-        border-radius: 12px; 
-        transition: var(--transition);
-        min-height: 48px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-      .nav-mobile a:hover, 
-      .nav-mobile a.active {
-        background: var(--glass); 
-        color: var(--accent);
-      }
-      
-      .modal-body { 
-        grid-template-columns: 1fr; 
-        padding: 20px; 
-      }
-      .quick-actions { 
-        grid-template-columns: 1fr; 
-      }
-      .form-grid { 
-        grid-template-columns: 1fr; 
-      }
-    }
-
-    /* Mobile Devices */
-    @media (max-width: 768px) {
-      :root {
-        --section-padding: 60px 20px;
-      }
-      
-      .hero { 
-        padding: 100px 15px 60px; 
-        min-height: 55vh; 
-      }
-      .hero h1 { font-size: clamp(1.6rem, 6vw, 2rem); }
-      .hero p { font-size: clamp(0.95rem, 3vw, 1.05rem); }
-      
-      .section { padding: var(--section-padding); }
-      .info-card, 
-      .announcement, 
-      .download-list { 
-        padding: 25px 20px; 
-      }
-      .contact-card { 
-        padding: 30px 20px; 
-      }
-      
-      .whatsapp-float { 
-        bottom: 20px; 
-        right: 20px; 
-        padding: 12px 16px; 
-        font-size: 0.9rem;
-      }
+      nav ul.active { display: flex; }
+      nav ul li { text-align: center; }
+      nav ul li a { white-space: normal; }
+      .page-header h1 { font-size: 2.2rem; }
+      .container { padding: 0 20px; }
+      .section { padding: 35px 25px; scroll-margin-top: 90px; }
+      .whatsapp-float { bottom: 90px; right: 20px; padding: 12px 20px; }
       .whatsapp-float span { display: none; }
-      .whatsapp-float i { font-size: 24px; }
-      
-      .nav-container { padding: 10px 20px; }
-      .brand img { width: 44px; }
-      .brand span { display: none; }
-      
-      .footer-content { 
-        grid-template-columns: 1fr; 
-        gap: 35px; 
-      }
-      
-      .modal-header h2 { font-size: 1.5rem; }
-      .modal-header p { font-size: 0.95rem; }
+      .whatsapp-float i { font-size: 32px; }
+      .footer-info-panel { flex-direction: column; text-align: center; }
+      .modal-body { grid-template-columns: 1fr; }
     }
-
-    /* Small Mobile */
+    @media (max-width: 768px) {
+      .page-header { padding: 80px 20px 60px; min-height: 350px; }
+      .section h2 { font-size: 1.8rem; }
+    }
     @media (max-width: 480px) {
-      .hero { 
-        padding: 90px 12px 50px; 
-        min-height: 50vh; 
-      }
-      .hero h1 { font-size: clamp(1.5rem, 7vw, 1.8rem); }
-      
-      .section-header h2 { font-size: clamp(1.6rem, 5vw, 2rem); }
-      
-      .download-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-      .download-item .badge {
-        align-self: flex-start;
-      }
-      
-      .contact-card a {
-        width: 100%;
-        justify-content: center;
-      }
-      
-      .form-group input,
-      .form-group textarea {
-        font-size: 16px;
-      }
-      
-      .action-btn {
-        justify-content: center;
-      }
-    }
-
-    /* High DPI / Retina Displays */
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-      .brand img {
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-      }
-    }
-
-    /* Print Styles */
-    @media print {
-      .whatsapp-float, 
-      .menu-toggle, 
-      .nav-mobile,
-      .dark-mode-toggle,
-      #preloader {
-        display: none !important;
-      }
-      body {
-        background: white !important;
-        color: black !important;
-      }
-      .hero {
-        background: var(--primary) !important;
-        color: white !important;
-        min-height: auto !important;
-        padding: 40px 20px !important;
-      }
-    }
-
-    /* Accessibility: Focus States */
-    a:focus, 
-    button:focus, 
-    input:focus, 
-    textarea:focus {
-      outline: 3px solid var(--accent);
-      outline-offset: 2px;
-    }
-    
-    /* Reduced Motion Preference */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-      html { scroll-behavior: auto; }
+      .brand span { display: none; }
+      .page-header h1 { font-size: 1.8rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Preloader -->
-  <div id="preloader" role="status" aria-label="Loading">
-    <div class="spinner"></div>
-  </div>
+<!-- PRELOADER -->
+<div id="preloader"><div class="spinner"></div></div>
 
-  <!-- WhatsApp Float Button -->
-  <a href="https://wa.me/6285238513282?text=Halo%20saya%20ingin%20bertanya%20tentang%20PPDB%20SMAN%201%20Cluring"
-     class="whatsapp-float" 
-     target="_blank" 
-     rel="noopener noreferrer"
-     aria-label="Chat dengan Panitia PPDB via WhatsApp">
-    <i class="fab fa-whatsapp" aria-hidden="true"></i>
-    <span>Chat PPDB</span>
-  </a>
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/6285238513282?text=Halo%20saya%20ingin%20bertanya%20tentang%20Humas%20SMAN%201%20Cluring" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-whatsapp"></i>
+  <span>Chat Humas</span>
+</a>
 
-  <!-- ===== HEADER NAVIGATION - DESKTOP ===== -->
-<header id="mainHeader">
+<!-- ===== HEADER (RUJUKAN) ===== -->
+<header>
   <div class="nav-container">
     <a href="index.html" class="brand">
-      <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" 
-           alt="Logo SMAN 1 Cluring" 
-           width="52" 
-           height="52"
-           loading="eager">
+      <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring">
       <span>SMAN 1 CLURING</span>
     </a>
-    
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-      <i class="fas fa-bars" aria-hidden="true"></i>
-    </button>
-    
-    <nav aria-label="Main navigation">
-      <ul id="navMenu">
-        <li><a href="index.html"><i class="fas fa-home" aria-hidden="true"></i> Beranda</a></li>
-        <li><a href="profil.html"><i class="fas fa-school" aria-hidden="true"></i> Profil</a></li>
-        <li><a href="spmb.html"><i class="fas fa-user-plus" aria-hidden="true"></i> SPMB</a></li>
-        <li><a href="akademik.html"><i class="fas fa-book" aria-hidden="true"></i> Akademik</a></li>
-        <li><a href="kesiswaan.html"><i class="fas fa-users" aria-hidden="true"></i> Kesiswaan</a></li>
-        <li><a href="sarpras.html"><i class="fas fa-building" aria-hidden="true"></i> Sarpras</a></li>
-        <li><a href="humas.html" class="active" aria-current="page"><i class="fas fa-bullhorn" aria-hidden="true"></i> Humas</a></li>
-        <li><a href="mitra.html"><i class="fas fa-handshake" aria-hidden="true"></i> Mitra</a></li>
-        <li><a href="alumni.html"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Alumni</a></li>
-        <li><a href="artikel.html"><i class="fas fa-newspaper" aria-hidden="true"></i> Artikel</a></li>
-        <li><a href="#" onclick="openContactModal(); return false;"><i class="fas fa-envelope" aria-hidden="true"></i> Kontak</a></li>
-      </ul>
-    </nav>
-    
-    <div class="nav-actions">
-      <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
-        <i class="fas fa-moon" aria-hidden="true"></i>
-        <i class="fas fa-sun" aria-hidden="true"></i>
-      </button>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="nav-right">
+      <nav>
+        <ul id="navMenu">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="spmb.html">SPMB</a></li>
+          <li><a href="akademik.html">Akademik</a></li>
+          <li><a href="kesiswaan.html">Kesiswaan</a></li>
+          <li><a href="sarpras.html">Sarpras</a></li>
+          <li><a href="humas.html" class="active">Humas</a></li>
+          <li><a href="mitra.html">Mitra</a></li>
+          <li><a href="alumni.html">Alumni</a></li>
+          <li><a href="artikel.html">Artikel</a></li>
+          <li><a href="#" onclick="openContactModal();return false">Kontak</a></li>
+          <li style="display: flex; align-items: center;">
+            <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+              <i class="fas fa-moon"></i><i class="fas fa-sun sun"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
     </div>
-  </div>
-  
-  <!-- ===== MOBILE NAVIGATION (REVISI JUGA) ===== -->
-  <div class="nav-mobile" id="navMobile" role="dialog" aria-label="Mobile menu">
-    <a href="index.html"><i class="fas fa-home" aria-hidden="true"></i> Beranda</a>
-    <a href="profil.html"><i class="fas fa-school" aria-hidden="true"></i> Profil</a>
-    <a href="spmb.html"><i class="fas fa-user-plus" aria-hidden="true"></i> SPMB</a>
-    <a href="akademik.html"><i class="fas fa-book" aria-hidden="true"></i> Akademik</a>
-    <a href="kesiswaan.html"><i class="fas fa-users" aria-hidden="true"></i> Kesiswaan</a>
-    <a href="sarpras.html"><i class="fas fa-building" aria-hidden="true"></i> Sarpras</a>
-    <a href="humas.html" class="active" aria-current="page"><i class="fas fa-bullhorn" aria-hidden="true"></i> Humas</a>
-    <a href="mitra.html"><i class="fas fa-handshake" aria-hidden="true"></i> Mitra</a>
-    <a href="alumni.html"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Alumni</a>
-    <a href="artikel.html"><i class="fas fa-newspaper" aria-hidden="true"></i> Artikel</a>
-    <a href="#" onclick="openContactModal(); closeMobileMenu(); return false;"><i class="fas fa-envelope" aria-hidden="true"></i> Kontak</a>
   </div>
 </header>
 
-  <!-- Hero Section -->
-  <section class="hero" data-aos="fade-in">
-    <div class="hero-badge" data-aos="zoom-in">
-      <i class="fas fa-shield-alt" aria-hidden="true"></i>
-      Transparan • Akuntabel • Responsif
-    </div>
-    <h1 data-aos="fade-up" data-aos-delay="100">
-      <i class="fas fa-bullhorn" style="margin-right: 12px;" aria-hidden="true"></i>
-      Hubungan Masyarakat
-    </h1>
-    <p data-aos="fade-up" data-aos-delay="200">
-      Pusat informasi publik, pengumuman resmi, dan layanan komunikasi 
-      <strong>SMAN 1 Cluring Banyuwangi</strong> untuk masyarakat, orang tua, dan stakeholders.
-    </p>
-  </section>
+<!-- PAGE HEADER (HERO) -->
+<section class="page-header" data-aos="zoom-in">
+  <div class="badge" data-aos="zoom-in"><i class="fas fa-shield-alt"></i> Transparan • Akuntabel • Responsif</div>
+  <h1 data-aos="fade-up"><i class="fas fa-bullhorn"></i> Hubungan Masyarakat</h1>
+  <p data-aos="fade-up" data-aos-delay="100">Pusat informasi publik, pengumuman resmi, dan layanan komunikasi SMAN 1 Cluring Banyuwangi untuk masyarakat, orang tua, dan stakeholders.</p>
+</section>
 
-  <!-- Main Content -->
-  <main>
-    <section class="section">
-      <!-- Profil Humas -->
-      <div class="section-header" data-aos="fade-up">
-        <h2>Profil Humas</h2>
-      </div>
+<!-- KONTEN UTAMA -->
+<main>
+  <div class="container">
 
-      <article class="info-card" data-aos="fade-up">
-        <h3><i class="fas fa-info-circle" style="margin-right: 10px;" aria-hidden="true"></i>Visi & Misi</h3>
+    <!-- Profil Humas -->
+    <div class="section" data-aos="fade-up">
+      <h2>Profil Humas</h2>
+      <div class="info-card">
+        <h3><i class="fas fa-info-circle"></i> Visi & Misi</h3>
         <p><strong>Visi:</strong> Menjadi pusat informasi yang transparan, akuntabel, dan responsif dalam menjembatani komunikasi antara sekolah dengan masyarakat.</p>
         <p style="margin-top: 15px;"><strong>Misi:</strong></p>
         <ul>
@@ -1202,437 +412,246 @@
           <li>Mengelola publikasi dan dokumentasi kegiatan sekolah</li>
           <li>Meningkatkan citra positif SMAN 1 Cluring di masyarakat</li>
         </ul>
-      </article>
-
-      <!-- Pengumuman -->
-      <div class="section-header" data-aos="fade-up">
-        <h2>Pengumuman Resmi</h2>
       </div>
+    </div>
 
-      <article class="announcement" data-aos="fade-right">
-        <h4><i class="fas fa-bell" aria-hidden="true"></i> SPMB Tahun Ajaran 2026/2027</h4>
-        <p>Sistem Penerimaan Murid Baru (SPMB) SMAN 1 Cluring Tahun Ajaran 2026/2027 akan dilaksanakan secara bertahap mulai tanggal <strong>8 Juni 2026</strong> (latihan pendaftaran) hingga <strong>25 Juni 2026</strong> (tahap 3). Informasi selengkapnya dapat diakses melalui website <strong><a href="https://spmbjatim.net" target="_blank" rel="noopener" style="color: var(--secondary); text-decoration: underline;">spmbjatim.net</a></strong> atau menghubungi narahubung <strong>Bu. Kristin Setyowati, S.Kom</strong> di nomor <strong><a href="tel:+6285238513282" style="color: var(--secondary); text-decoration: underline;">+62 852-3851-3282</a></strong>.</p>
-      </article>
-
-      <article class="announcement" data-aos="fade-right" data-aos-delay="100">
-        <h4><i class="fas fa-calendar-alt" aria-hidden="true"></i> Jadwal Libur Semester Genap 2025/2026</h4>
+    <!-- Pengumuman Resmi -->
+    <div class="section" data-aos="fade-up">
+      <h2>Pengumuman Resmi</h2>
+      <div class="announcement" data-aos="fade-right">
+        <h4><i class="fas fa-bell"></i> SPMB Tahun Ajaran 2026/2027</h4>
+        <p>Sistem Penerimaan Murid Baru (SPMB) SMAN 1 Cluring Tahun Ajaran 2026/2027 akan dilaksanakan secara bertahap mulai tanggal <strong>8 Juni 2026</strong> (latihan pendaftaran) hingga <strong>25 Juni 2026</strong> (tahap 3). Informasi selengkapnya dapat diakses melalui website <strong><a href="https://spmbjatim.net" target="_blank" style="color: var(--secondary); text-decoration: underline;">spmbjatim.net</a></strong> atau menghubungi narahubung <strong>Bu. Kristin Setyowati, S.Kom</strong> di nomor <strong><a href="tel:+6285238513282" style="color: var(--secondary); text-decoration: underline;">+62 852-3851-3282</a></strong>.</p>
+      </div>
+      <div class="announcement" data-aos="fade-right" data-aos-delay="100">
+        <h4><i class="fas fa-calendar-alt"></i> Jadwal Libur Semester Genap 2025/2026</h4>
         <p>Libur semester genap tahun ajaran 2025/2026 akan berlangsung mulai tanggal <strong>20 Juni 2026 s.d. 12 Juli 2026</strong>. Kegiatan Pembelajaran Semester Ganjil 2026/2027 dimulai pada tanggal 13 Juli 2026.</p>
-      </article>
-
-      <article class="announcement" data-aos="fade-right" data-aos-delay="200">
-        <h4><i class="fas fa-trophy" aria-hidden="true"></i> Penghargaan IGA 2025</h4>
+      </div>
+      <div class="announcement" data-aos="fade-right" data-aos-delay="200">
+        <h4><i class="fas fa-trophy"></i> Penghargaan IGA 2025</h4>
         <p>SMAN 1 Cluring berhasil meraih <strong>Innovative Government Award (IGA) 2025</strong> atas inovasi program BUKIT BATARI (Budaya Kita Batik dan Tari). Selamat kepada seluruh civitas akademika! 🎉</p>
-      </article>
-
-      <!-- Dokumen Publik -->
-      <div class="section-header" data-aos="fade-up">
-        <h2>Dokumen Publik</h2>
       </div>
+    </div>
 
-      <div class="download-list" data-aos="fade-up">
-        <div class="download-item">
-          <i class="fas fa-file-pdf" aria-hidden="true"></i>
-          <a href="#" target="_blank" rel="noopener">Kurikulum Merdeka SMAN 1 Cluring 2025/2026</a>
-          <span class="badge">PDF</span>
-        </div>
-        <div class="download-item">
-          <i class="fas fa-file-pdf" aria-hidden="true"></i>
-          <a href="#" target="_blank" rel="noopener">Tata Tertib Siswa SMAN 1 Cluring</a>
-          <span class="badge">PDF</span>
-        </div>
-        <div class="download-item">
-          <i class="fas fa-file-pdf" aria-hidden="true"></i>
-          <a href="#" target="_blank" rel="noopener">Kalender Pendidikan 2025/2026</a>
-          <span class="badge">PDF</span>
-        </div>
-        <div class="download-item">
-          <i class="fas fa-file-pdf" aria-hidden="true"></i>
-          <a href="#" target="_blank" rel="noopener">SOP Pelayanan Publik SMAN 1 Cluring</a>
-          <span class="badge">PDF</span>
-        </div>
-        <div class="download-item">
-          <i class="fas fa-file-pdf" aria-hidden="true"></i>
-          <a href="#" target="_blank" rel="noopener">Laporan Tahunan 2025</a>
-          <span class="badge">Baru</span>
-        </div>
+    <!-- Dokumen Publik -->
+    <div class="section" data-aos="fade-up">
+      <h2>Dokumen Publik</h2>
+      <div class="download-list">
+        <div class="download-item"><i class="fas fa-file-pdf"></i><a href="#">Kurikulum Merdeka SMAN 1 Cluring 2025/2026</a><span class="badge">PDF</span></div>
+        <div class="download-item"><i class="fas fa-file-pdf"></i><a href="#">Tata Tertib Siswa SMAN 1 Cluring</a><span class="badge">PDF</span></div>
+        <div class="download-item"><i class="fas fa-file-pdf"></i><a href="#">Kalender Pendidikan 2025/2026</a><span class="badge">PDF</span></div>
+        <div class="download-item"><i class="fas fa-file-pdf"></i><a href="#">SOP Pelayanan Publik SMAN 1 Cluring</a><span class="badge">PDF</span></div>
+        <div class="download-item"><i class="fas fa-file-pdf"></i><a href="#">Laporan Tahunan 2025</a><span class="badge">Baru</span></div>
       </div>
+    </div>
 
-      <!-- Kontak -->
-      <div class="section-header" data-aos="fade-up">
-        <h2>Kontak Humas</h2>
-      </div>
-
+    <!-- Kontak Humas -->
+    <div class="section" data-aos="fade-up">
+      <h2>Kontak Humas</h2>
       <div class="contact-grid">
-        <article class="contact-card" data-aos="zoom-in">
-          <i class="fas fa-user-tie floating" aria-hidden="true"></i>
+        <div class="contact-card" data-aos="zoom-in">
+          <i class="fas fa-user-tie floating"></i>
           <h3>Koordinator Humas</h3>
           <p><strong>Moh. Suharso, S.Pd</strong></p>
           <p>Wakil Kepala Bidang Humas</p>
-          <a href="tel:+6282319712420" aria-label="Telepon Moh. Suharso">
-            <i class="fas fa-phone" aria-hidden="true"></i> 0823-1971-2420
-          </a>
-        </article>
-        
-        <article class="contact-card" data-aos="zoom-in" data-aos-delay="100">
-          <i class="fas fa-envelope floating" aria-hidden="true"></i>
+          <a href="tel:+6282319712420"><i class="fas fa-phone"></i> 0823-1971-2420</a>
+        </div>
+        <div class="contact-card" data-aos="zoom-in" data-aos-delay="100">
+          <i class="fas fa-envelope floating"></i>
           <h3>Email Resmi</h3>
           <p>humas@sman1cluring.sch.id</p>
           <p>info@sman1cluring.sch.id</p>
-          <a href="mailto:humas@sman1cluring.sch.id" aria-label="Kirim email ke Humas">
-            <i class="fas fa-paper-plane" aria-hidden="true"></i> Kirim Email
-          </a>
-        </article>
-        
-        <article class="contact-card" data-aos="zoom-in" data-aos-delay="200">
-          <i class="fab fa-whatsapp floating" aria-hidden="true"></i>
+          <a href="mailto:humas@sman1cluring.sch.id"><i class="fas fa-paper-plane"></i> Kirim Email</a>
+        </div>
+        <div class="contact-card" data-aos="zoom-in" data-aos-delay="200">
+          <i class="fab fa-whatsapp floating"></i>
           <h3>WhatsApp SPMB</h3>
           <p>Hubungi Bu. Kristin untuk informasi SPMB</p>
-          <a href="https://wa.me/6285238513282" target="_blank" rel="noopener" aria-label="Chat WhatsApp dengan Panitia PPDB">
-            <i class="fab fa-whatsapp" aria-hidden="true"></i> Chat Sekarang
-          </a>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Kontak</h3>
-        <address>
-          Jl. Huzaini, Benculuk, Cluring<br>
-          Banyuwangi, Jawa Timur
-        </address>
-        <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+62333713297">0333-397306</a></p>
-        <p><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/6285238513282" target="_blank" rel="noopener">0852-3851-3282</a></p>
-      </div>
-      
-      <div class="footer-section">
-        <h3><i class="fas fa-link" aria-hidden="true"></i> Link Penting</h3>
-        <ul>
-          <li><a href="https://sma.kemendikdasmen.go.id" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Kemendikbud</a></li>
-          <li><a href="https://dindik.jatimprov.go.id" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Dindik Jatim</a></li>
-          <li><a href="https://banyuwangicab.dindikjatim.id" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Cabang Dinas Banyuwangi</a></li>
-          <li><a href="https://alam21234.github.io/Smaring-interactive-learning-comunity" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Smaring Learning</a></li>
-          <li><a href="https://spmbjatim.net" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" aria-hidden="true"></i> PPDB Jatim</a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-section">
-        <h3><i class="fas fa-flask" aria-hidden="true"></i> Lab Virtual</h3>
-        <ul>
-          <li><a href="https://quran.nu.or.id" target="_blank" rel="noopener"><i class="fas fa-book-quran" aria-hidden="true"></i> Al-Qur'an Digital</a></li>
-          <li><a href="https://virtualbiologylab.org" target="_blank" rel="noopener"><i class="fas fa-dna" aria-hidden="true"></i> Virtual Biology Lab</a></li>
-          <li><a href="https://www.myphysicslab.com" target="_blank" rel="noopener"><i class="fas fa-atom" aria-hidden="true"></i> MyPhysicsLab</a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-section">
-        <h3><i class="fas fa-share-alt" aria-hidden="true"></i> Media Sosial</h3>
-        <div style="display: flex; gap: 15px; margin-top: 15px;">
-          <a href="https://www.facebook.com/Sman1Cluring" target="_blank" rel="noopener" 
-             style="color: white; font-size: 1.5rem; transition: var(--transition);" 
-             aria-label="Facebook SMAN 1 Cluring"
-             onmouseover="this.style.transform='translateY(-3px)'" 
-             onmouseout="this.style.transform=''">
-            <i class="fab fa-facebook" aria-hidden="true"></i>
-          </a>
-          <a href="https://www.instagram.com/sman1_cluring" target="_blank" rel="noopener" 
-             style="color: white; font-size: 1.5rem; transition: var(--transition);" 
-             aria-label="Instagram SMAN 1 Cluring"
-             onmouseover="this.style.transform='translateY(-3px)'" 
-             onmouseout="this.style.transform=''">
-            <i class="fab fa-instagram" aria-hidden="true"></i>
-          </a>
-          <a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank" rel="noopener" 
-             style="color: white; font-size: 1.5rem; transition: var(--transition);" 
-             aria-label="YouTube SMAN 1 Cluring"
-             onmouseover="this.style.transform='translateY(-3px)'" 
-             onmouseout="this.style.transform=''">
-            <i class="fab fa-youtube" aria-hidden="true"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="footer-bottom">
-      <p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
-      <p style="margin-top: 8px; font-size: 0.9rem; opacity: 0.8;">Website Resmi SMAN 1 Cluring Banyuwangi</p>
-    </div>
-  </footer>
-
-  <!-- Contact Modal -->
-  <div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
-    <div class="modal-contact">
-      <button class="modal-close" onclick="closeContactModal()" aria-label="Tutup modal">
-        <i class="fas fa-times" aria-hidden="true"></i>
-      </button>
-      <div class="modal-header">
-        <h2 id="modalTitle"><i class="fas fa-headset" aria-hidden="true"></i> Hubungi Kami</h2>
-        <p>SMAN 1 Cluring - Siap Melayani Anda</p>
-      </div>
-      <div class="modal-body">
-        <div class="quick-actions">
-          <a href="https://wa.me/6285238513282" target="_blank" rel="noopener" class="action-btn whatsapp">
-            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp PPDB
-          </a>
-          <a href="mailto:4l4m79@gmail.com" class="action-btn email">
-            <i class="fas fa-envelope" aria-hidden="true"></i> Email
-          </a>
-          <a href="tel:+62333397306" class="action-btn phone">
-            <i class="fas fa-phone" aria-hidden="true"></i> Telepon
-          </a>
-          <a href="https://maps.google.com/?q=SMAN+1+Cluring+Banyuwangi" target="_blank" rel="noopener" class="action-btn maps">
-            <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Lokasi
-          </a>
-        </div>
-        
-        <div class="info-panel">
-          <h4><i class="fas fa-info-circle" aria-hidden="true"></i> Informasi Sekolah</h4>
-          <ul>
-            <li><i class="fas fa-map-pin" aria-hidden="true"></i> Jl. Huzaini, Benculuk, Cluring, Banyuwangi</li>
-            <li><i class="fas fa-clock" aria-hidden="true"></i> Senin-Jumat: 07.00 - 15.30 WIB</li>
-            <li><i class="fas fa-building" aria-hidden="true"></i> SMAN 1 Cluring - NPSN: 20525862</li>
-          </ul>
-        </div>
-        
-        <div class="contact-form">
-          <h4><i class="fas fa-paper-plane" aria-hidden="true"></i> Kirim Pesan</h4>
-          <form id="contactForm" onsubmit="handleContactSubmit(event)" novalidate>
-            <div class="form-grid">
-              <div class="form-group">
-                <label for="nama">Nama Lengkap *</label>
-                <input type="text" id="nama" name="nama" required placeholder="Masukkan nama Anda" autocomplete="name">
-              </div>
-              <div class="form-group">
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email" required placeholder="email@contoh.com" autocomplete="email">
-              </div>
-              <div class="form-group full">
-                <label for="subjek">Subjek *</label>
-                <input type="text" id="subjek" name="subjek" required placeholder="Tulis subjek pesan">
-              </div>
-              <div class="form-group full">
-                <label for="pesan">Pesan *</label>
-                <textarea id="pesan" name="pesan" required placeholder="Tulis pesan Anda di sini..."></textarea>
-              </div>
-            </div>
-            <button type="submit" class="submit-btn" id="submitBtn">
-              <i class="fas fa-paper-plane" aria-hidden="true"></i> Kirim Pesan
-            </button>
-          </form>
-        </div>
-        
-        <div class="map-preview">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.5!2d114.2!3d-8.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMzAnMDAuMCJTIDExNMKwMTInMDAuMCJF!5e0!3m2!1sid!2sid!4v1234567890" 
-            loading="lazy" 
-            title="Lokasi SMAN 1 Cluring" 
-            allowfullscreen
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-          <a href="https://maps.google.com/?q=SMAN+1+Cluring+Banyuwangi" target="_blank" rel="noopener" class="map-link">
-            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Buka di Google Maps
-          </a>
+          <a href="https://wa.me/6285238513282" target="_blank"><i class="fab fa-whatsapp"></i> Chat Sekarang</a>
         </div>
       </div>
     </div>
   </div>
-  
-  <!-- Toast Notification -->
-  <div class="toast" id="toast" role="alert" aria-live="polite">
-    <i class="fas fa-check-circle" aria-hidden="true"></i>
-    <span id="toastMessage">Pesan berhasil dikirim!</span>
+</main>
+
+<!-- ===== FOOTER (RUJUKAN) ===== -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3><i class="fas fa-map-marker-alt"></i> Kontak</h3>
+      <p>Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, Jawa Timur</p>
+      <p><i class="fas fa-phone"></i> <a href="tel:+62333397306">0333-397306</a></p>
+      <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6285238513282">0852-3851-3282</a></p>
+      <p><i class="fas fa-building"></i> NPSN: 20525862</p>
+    </div>
+    <div class="footer-section">
+      <h3><i class="fas fa-link"></i> Link Penting</h3>
+      <ul>
+        <li><a href="https://sma.kemendikdasmen.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
+        <li><a href="https://dindik.jatimprov.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
+        <li><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas Banyuwangi</a></li>
+        <li><a href="https://alam21234.github.io/Smaring-interactive-learning-comunity" target="_blank"><i class="fas fa-external-link-alt"></i> Smaring Learning</a></li>
+        <li><a href="https://spmbjatim.net" target="_blank"><i class="fas fa-external-link-alt"></i> PPDB Jatim</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3><i class="fas fa-flask"></i> Lab Virtual</h3>
+      <ul>
+        <li><a href="https://quran.nu.or.id" target="_blank"><i class="fas fa-book-quran"></i> Al-Qur'an Digital</a></li>
+        <li><a href="https://virtualbiologylab.org" target="_blank"><i class="fas fa-dna"></i> Virtual Biology Lab</a></li>
+        <li><a href="https://www.myphysicslab.com" target="_blank"><i class="fas fa-atom"></i> MyPhysicsLab</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3><i class="fas fa-share-alt"></i> Media Sosial</h3>
+      <div class="social-links">
+        <a href="https://www.facebook.com/Sman1Cluring" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/sman1_cluring" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/6285238513282" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
   </div>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    (function() {
-      // ===== MODULE: Initialization =====
-      const App = {
-        init() {
-          this.initPreloader();
-          this.initAOS();
-          this.initDarkMode();
-          this.initHeaderScroll();
-          this.initMobileMenu();
-          this.initModal();
-          this.initForm();
-          this.initAccessibility();
-        },
+  <div class="footer-info-panel">
+    <div class="footer-clock">
+      <span class="footer-time" id="footerTime">00:00:00</span>
+      <span class="footer-date" id="footerDate">Sabtu, 1 Januari 2026</span>
+    </div>
+    <div class="footer-visitor">
+      <i class="fas fa-eye"></i>
+      <span id="footerVisitorCount">Loading...</span>
+    </div>
+  </div>
 
-        initPreloader() {
-          const preloader = document.getElementById('preloader');
-          if (!preloader) return;
-          const hide = () => preloader.classList.add('fade-out');
-          window.addEventListener('load', () => setTimeout(hide, 600));
-          setTimeout(hide, 3000);
-        },
+  <div class="footer-bottom">
+    <p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
+  </div>
+</footer>
 
-        initAOS() {
-          if (typeof AOS !== 'undefined') {
-            AOS.init({ duration: 800, once: true, offset: 100 });
-          }
-        },
+<!-- MODAL KONTAK -->
+<div class="modal-overlay" id="contactModal">
+  <div class="modal-contact">
+    <button class="modal-close" onclick="closeContactModal()"><i class="fas fa-times"></i></button>
+    <div class="modal-header"><h2><i class="fas fa-headset"></i> Hubungi Kami</h2><p>SMAN 1 Cluring - Siap Melayani Anda</p></div>
+    <div class="modal-body">
+      <div class="quick-actions">
+        <a href="https://wa.me/6285238513282" target="_blank" class="action-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp PPDB</a>
+        <a href="mailto:humas@sman1cluring.sch.id" class="action-btn"><i class="fas fa-envelope"></i> Email</a>
+        <a href="tel:+62333397306" class="action-btn"><i class="fas fa-phone"></i> Telepon</a>
+        <a href="https://maps.google.com/?q=SMAN+1+Cluring+Banyuwangi" target="_blank" class="action-btn"><i class="fas fa-map-marker-alt"></i> Lokasi</a>
+      </div>
+      <div class="info-panel">
+        <h4><i class="fas fa-info-circle"></i> Informasi Sekolah</h4>
+        <ul>
+          <li><i class="fas fa-map-pin"></i> Jl. Huzaini, Benculuk, Cluring, Banyuwangi</li>
+          <li><i class="fas fa-clock"></i> Senin-Jumat: 07.00 - 15.30 WIB</li>
+          <li><i class="fas fa-building"></i> SMAN 1 Cluring - NPSN: 20525862</li>
+        </ul>
+      </div>
+      <div class="contact-form">
+        <h4><i class="fas fa-paper-plane"></i> Kirim Pesan</h4>
+        <form id="contactForm" onsubmit="handleContactSubmit(event)">
+          <div class="form-grid">
+            <div class="form-group"><label>Nama *</label><input type="text" id="nama" required></div>
+            <div class="form-group"><label>Email *</label><input type="email" id="email" required></div>
+            <div class="form-group full"><label>Subjek *</label><input type="text" id="subjek" required></div>
+            <div class="form-group full"><label>Pesan *</label><textarea id="pesan" required></textarea></div>
+          </div>
+          <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Kirim Pesan</button>
+        </form>
+      </div>
+      <div class="map-preview">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.5!2d114.2!3d-8.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMzAnMDAuMCJTIDExNMKwMTInMDAuMCJF!5e0!3m2!1sid!2sid!4v1234567890" loading="lazy"></iframe>
+        <a href="https://maps.google.com/?q=SMAN+1+Cluring+Banyuwangi" target="_blank">Buka Google Maps</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-        initDarkMode() {
-          const toggle = document.getElementById('darkModeToggle');
-          const body = document.body;
-          if (!toggle) return;
-          if (localStorage.getItem('darkMode') === 'true') body.classList.add('dark-mode');
-          toggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
-          });
-        },
+<div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="toastMessage">Pesan terkirim!</span></div>
 
-        initHeaderScroll() {
-          const header = document.getElementById('mainHeader');
-          if (!header) return;
-          const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 50);
-          window.addEventListener('scroll', () => requestAnimationFrame(onScroll));
-          onScroll();
-        },
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  // ========== INISIALISASI (RUJUKAN) ==========
+  document.addEventListener('DOMContentLoaded', () => {
+    // Preloader cepat
+    setTimeout(() => document.getElementById('preloader').classList.add('fade-out'), 200);
+    AOS.init({ duration: 800, once: true, easing: 'ease-out-cubic' });
 
-        initMobileMenu() {
-          const toggle = document.getElementById('menuToggle');
-          const menu = document.getElementById('navMobile');
-          if (!toggle || !menu) return;
+    // Dark mode
+    const darkToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    if (localStorage.getItem('darkMode') === 'true') body.classList.add('dark-mode');
+    darkToggle?.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+    });
 
-          const close = () => {
-            menu.classList.remove('active');
-            toggle.setAttribute('aria-expanded', 'false');
-            toggle.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
+    // Jam & Visitor Counter (seperti rujukan)
+    function updateClock() {
+      const now = new Date();
+      document.getElementById('footerTime').textContent = now.toLocaleTimeString('id-ID');
+      const days = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+      const months = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+      document.getElementById('footerDate').textContent = `${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
+    }
+    setInterval(updateClock, 1000); updateClock();
+
+    function visitorCounter() {
+      let count = localStorage.getItem('sman1cluring_visitor_count');
+      if (!count) { count = 1; localStorage.setItem('sman1cluring_visitor_count', count); }
+      else { count = parseInt(count); if (!sessionStorage.getItem('counted')) { count++; localStorage.setItem('sman1cluring_visitor_count', count); sessionStorage.setItem('counted','true'); } }
+      document.getElementById('footerVisitorCount').innerHTML = `${count.toLocaleString('id-ID')} Pengunjung`;
+    }
+    visitorCounter();
+
+    // Modal & Form
+    window.openContactModal = () => {
+      document.getElementById('contactModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+    window.closeContactModal = () => {
+      document.getElementById('contactModal').classList.remove('active');
+      document.body.style.overflow = '';
+    };
+    document.getElementById('contactModal')?.addEventListener('click', e => { if (e.target === document.getElementById('contactModal')) closeContactModal(); });
+    window.handleContactSubmit = (e) => {
+      e.preventDefault();
+      const btn = e.target.querySelector('.submit-btn');
+      if (btn.disabled) return;
+      btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+      setTimeout(() => {
+        try {
+          const msg = {
+            nama: document.getElementById('nama').value,
+            email: document.getElementById('email').value,
+            subjek: document.getElementById('subjek').value,
+            pesan: document.getElementById('pesan').value,
+            ts: new Date().toISOString()
           };
-          const open = () => {
-            menu.classList.add('active');
-            toggle.setAttribute('aria-expanded', 'true');
-            toggle.innerHTML = '<i class="fas fa-times" aria-hidden="true"></i>';
-          };
+          let arr = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
+          arr.push(msg); localStorage.setItem('contactSubmissions', JSON.stringify(arr));
+          toast('✅ Pesan terkirim!', 'success');
+          document.getElementById('contactForm').reset();
+          setTimeout(closeContactModal, 1500);
+        } catch (err) { toast('❌ Gagal mengirim', 'error'); }
+        finally { btn.disabled = false; btn.innerHTML = '<i class="fas fa-paper-plane"></i> Kirim Pesan'; }
+      }, 800);
+    };
+    window.toast = (msg, type) => {
+      const t = document.getElementById('toast'), m = document.getElementById('toastMessage');
+      m.textContent = msg; t.className = `toast ${type} show`;
+      setTimeout(() => t.classList.remove('show'), 3000);
+    };
+  });
 
-          toggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            menu.classList.contains('active') ? close() : open();
-          });
-
-          document.addEventListener('click', (e) => {
-            if (menu.classList.contains('active') && !menu.contains(e.target) && !toggle.contains(e.target)) close();
-          });
-
-          menu.querySelectorAll('a').forEach(link => link.addEventListener('click', close));
-          window.closeMobileMenu = close;
-        },
-
-        initModal() {
-          const modal = document.getElementById('contactModal');
-          if (!modal) return;
-
-          window.openContactModal = () => {
-            modal.classList.add('active');
-            modal.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden';
-            window.closeMobileMenu?.();
-            setTimeout(() => modal.querySelector('.modal-close')?.focus(), 300);
-          };
-
-          window.closeContactModal = () => {
-            modal.classList.remove('active');
-            modal.setAttribute('aria-hidden', 'true');
-            document.body.style.overflow = '';
-          };
-
-          modal.addEventListener('click', (e) => e.target === modal && closeContactModal());
-          document.addEventListener('keydown', (e) => e.key === 'Escape' && modal.classList.contains('active') && closeContactModal());
-        },
-
-        initForm() {
-          const form = document.getElementById('contactForm');
-          if (!form) return;
-
-          form.querySelectorAll('input[required], textarea[required]').forEach(f => {
-            f.addEventListener('blur', function() {
-              if (this.required && !this.value.trim()) {
-                this.style.borderColor = '#e74c3c';
-                this.setAttribute('aria-invalid', 'true');
-              } else {
-                this.style.borderColor = '';
-                this.setAttribute('aria-invalid', 'false');
-              }
-            });
-            f.addEventListener('input', function() {
-              this.style.borderColor = '';
-              this.setAttribute('aria-invalid', 'false');
-            });
-          });
-
-          window.handleContactSubmit = (e) => {
-            e.preventDefault();
-            const btn = document.getElementById('submitBtn');
-            if (!btn || btn.disabled) return;
-            if (!form.checkValidity()) { form.reportValidity(); return; }
-
-            const original = btn.innerHTML;
-            btn.disabled = true;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
-
-            setTimeout(() => {
-              try {
-                const data = {
-                  nama: document.getElementById('nama')?.value || '',
-                  email: document.getElementById('email')?.value || '',
-                  subjek: document.getElementById('subjek')?.value || '',
-                  pesan: document.getElementById('pesan')?.value || '',
-                  timestamp: new Date().toISOString()
-                };
-                const subs = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
-                subs.push(data);
-                localStorage.setItem('contactSubmissions', JSON.stringify(subs));
-
-                App.showToast('✅ Pesan berhasil dikirim! Kami akan segera menghubungi Anda.', 'success');
-                form.reset();
-                setTimeout(() => closeContactModal?.(), 2000);
-              } catch (err) {
-                App.showToast('❌ Terjadi kesalahan. Silakan coba lagi.', 'error');
-              } finally {
-                btn.disabled = false;
-                btn.innerHTML = original;
-              }
-            }, 1500);
-          };
-        },
-
-        showToast(message, type = 'success') {
-          const toast = document.getElementById('toast');
-          const msgEl = document.getElementById('toastMessage');
-          if (!toast || !msgEl) return;
-          msgEl.textContent = message;
-          toast.className = `toast ${type} show`;
-          setTimeout(() => toast.classList.remove('show'), 4000);
-        },
-
-        initAccessibility() {
-          const skip = document.createElement('a');
-          skip.href = '#main-content';
-          skip.className = 'skip-link';
-          skip.style.cssText = 'position:absolute;left:-9999px;top:0;background:var(--secondary);color:white;padding:12px 24px;z-index:10000;border-radius:0 0 8px 0;';
-          skip.textContent = 'Lewati ke konten';
-          skip.addEventListener('focus', () => skip.style.left = '0');
-          skip.addEventListener('blur', () => skip.style.left = '-9999px');
-          document.body.insertBefore(skip, document.body.firstChild);
-
-          const main = document.querySelector('main');
-          if (main && !main.id) main.id = 'main-content';
-        }
-      };
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => App.init());
-      } else {
-        App.init();
-      }
-    })();
-  </script>
+  // Mobile menu toggle (sama seperti rujukan)
+  function toggleMenu() { document.getElementById('navMenu').classList.toggle('active'); }
+  document.querySelectorAll('#navMenu a').forEach(link => {
+    link.addEventListener('click', () => document.getElementById('navMenu')?.classList.remove('active'));
+  });
+  // floating animation manual
+  document.querySelectorAll('.floating').forEach(el => el.style.animation = 'float 3s ease-in-out infinite');
+</script>
 </body>
 </html>
