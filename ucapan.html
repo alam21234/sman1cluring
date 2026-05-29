@@ -193,23 +193,6 @@
       display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 35px;
     }
     
-    /* Group Section Header */
-    .group-header {
-      grid-column: 1 / -1;
-      padding: 15px 20px;
-      margin: 25px 0 15px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
-      border-radius: 12px;
-      color: var(--white);
-      font-weight: 700;
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: var(--shadow-md);
-    }
-    .group-header i { font-size: 1.3rem; color: var(--secondary); }
-    
     /* Greeting Card */
     .greeting-card {
       background: var(--white); border-radius: var(--border-radius); overflow: hidden;
@@ -548,9 +531,7 @@
         whatsappText: 'Chat Admin',
         footerContact: 'Kontak', footerLinks: 'Link Penting', footerSocial: 'Media Sosial',
         footerArticles: 'Artikel & Berita',
-        footerText: '© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan',
-        groupAgama: '🕌 Hari Raya Agama', groupNasional: '🇮🇩 Hari Nasional', 
-        groupInternasional: '🌍 Internasional', groupSekolah: '🎓 Event Sekolah'
+        footerText: '© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan'
       },
       en: {
         heroTitle: 'Greetings & Celebrations Gallery',
@@ -571,9 +552,7 @@
         whatsappText: 'Chat Admin',
         footerContact: 'Contact', footerLinks: 'Important Links', footerSocial: 'Social Media',
         footerArticles: 'Articles & News',
-        footerText: '© 2026 SMAN 1 Cluring — Inspiring Pancasila Generation from Bumi Blambangan',
-        groupAgama: '🕌 Religious Holidays', groupNasional: '🇮🇩 National Days',
-        groupInternasional: '🌍 International', groupSekolah: '🎓 School Events'
+        footerText: '© 2026 SMAN 1 Cluring — Inspiring Pancasila Generation from Bumi Blambangan'
       }
     };
 
@@ -633,16 +612,9 @@
       { id: 12, titleId: "Hari Raya Idul Fitri 1447 H", titleEn: "Eid al-Fitr 1447 H", category: "agama", year: 2026, date: "2026-03-21", image: "https://i.ibb.co.com/LDpPyrhQ/hari-raya-idul-fitri-1447-H.jpg", link: "https://ibb.co.com/vCzBWhvs" },
       { id: 13, titleId: "Selamat Hari Jumat Agung 2026", titleEn: "Happy Good Friday 2026", category: "agama", year: 2026, date: "2026-04-03", image: "https://i.ibb.co.com/67vfQKLJ/JUMAT-AGUNG.jpg", link: "https://ibb.co.com/XryvHnMk" },
       { id: 15, titleId: "Selamat Hari Kenaikan Yesus Kristus 2026", titleEn: "Happy Ascension of Jesus Christ 2026", category: "agama", year: 2026, date: "2026-05-14", image: "https://i.ibb.co.com/ycdYxhtV/kenaikan-yesus-kristus-14-mei-2026.jpg", link: "https://ibb.co.com/nN6nK39R" },
-      { id: 20, titleId: "Selamat Hari Raya Waisak 2570 BE", titleEn: "Happy Vesak Day 2570 BE", category: "agama", year: 2026, date: "2026-05-31", image: "https://i.ibb.co.com/kLmNpQr/waisak.jpg", link: "#" },
-      { id: 21, titleId: "Selamat Hari Raya Idul Adha 1447 H", titleEn: "Happy Eid al-Adha 1447 H", category: "agama", year: 2026, date: "2026-06-27", image: "https://i.ibb.co.com/xPzKmNq/idul-adha.jpg", link: "#" },
-      { id: 22, titleId: "Selamat Tahun Baru Islam 1448 H", titleEn: "Happy Islamic New Year 1448 H", category: "agama", year: 2026, date: "2026-06-27", image: "https://i.ibb.co.com/yHnKpLr/tahun-baru-islam.jpg", link: "#" },
-      { id: 23, titleId: "Selamat Hari Raya Galungan & Kuningan", titleEn: "Happy Galungan & Kuningan Day", category: "agama", year: 2026, date: "2026-09-09", image: "https://i.ibb.co.com/mQxNpKr/galungan.jpg", link: "#" },
       
       // ==================== KELOMPOK INTERNASIONAL ====================
       { id: 9, titleId: "Selamat Hari Anak Nasional 2025", titleEn: "Happy National Children's Day 2025", category: "internasional", year: 2025, date: "2025-07-23", image: "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&q=80&w=600", link: "#" },
-      { id: 30, titleId: "Selamat Hari Perempuan Internasional", titleEn: "Happy International Women's Day", category: "internasional", year: 2026, date: "2026-03-08", image: "https://i.ibb.co.com/pLmNqKr/womens-day.jpg", link: "#" },
-      { id: 31, titleId: "Selamat Hari Bumi 2026", titleEn: "Happy Earth Day 2026", category: "internasional", year: 2026, date: "2026-04-22", image: "https://i.ibb.co.com/qMnKpLr/earth-day.jpg", link: "#" },
-      { id: 32, titleId: "Selamat Hari Pendidikan Internasional", titleEn: "Happy International Day of Education", category: "internasional", year: 2026, date: "2026-01-24", image: "https://i.ibb.co.com/rNpKqMr/edu-day.jpg", link: "#" },
       
       // ==================== KELOMPOK NASIONAL ====================
       { id: 8, titleId: "Selamat Hari Kartini 2026", titleEn: "Happy Kartini Day 2026", category: "nasional", year: 2026, date: "2026-04-21", image: "https://i.ibb.co.com/CSxFst4/kartini.jpg", link: "https://ibb.co.com/xrVQ8sw" },
@@ -650,19 +622,12 @@
       { id: 7, titleId: "Selamat Hari Pendidikan Nasional", titleEn: "Happy National Education Day", category: "nasional", year: 2026, date: "2026-05-02", image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600", link: "#" },
       { id: 16, titleId: "Selamat Hari Kebangkitan Nasional 2026", titleEn: "Happy National Awakening Day 2026", category: "nasional", year: 2026, date: "2026-05-20", image: "https://i.ibb.co.com/F4VsbJqv/20-MEI-2026-HARI-KEBANKITAN-NASIONAL.jpg", link: "https://ibb.co.com/KxwNj7zZ" },
       { id: 5, titleId: "Selamat Hari Kemerdekaan RI ke-81", titleEn: "Happy 81st Independence Day of Indonesia", category: "nasional", year: 2026, date: "2026-08-17", image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&q=80&w=600", link: "#" },
-      { id: 40, titleId: "Selamat Hari Sumpah Pemuda", titleEn: "Happy Youth Pledge Day", category: "nasional", year: 2026, date: "2026-10-28", image: "https://i.ibb.co.com/sLmNqKr/sumpah-pemuda.jpg", link: "#" },
-      { id: 41, titleId: "Selamat Hari Pahlawan", titleEn: "Happy Heroes' Day", category: "nasional", year: 2026, date: "2026-11-10", image: "https://i.ibb.co.com/tNpKqMr/hari-pahlawan.jpg", link: "#" },
-      { id: 42, titleId: "Selamat Hari Pancasila", titleEn: "Happy Pancasila Day", category: "nasional", year: 2026, date: "2026-06-01", image: "https://i.ibb.co.com/uQxNpKr/pancasila.jpg", link: "#" },
       
       // ==================== KELOMPOK SEKOLAH ====================
       { id: 2, titleId: "Selamat Menunaikan Ibadah Puasa 1447 H", titleEn: "Blessed Ramadan 1447 H", category: "sekolah", year: 2026, date: "2026-02-20", image: "https://i.ibb.co.com/ZR322tPt/puasa.jpg", link: "https://ibb.co.com/Y4600YMY" },
       { id: 4, titleId: "Kampanye Kurangi Sampah Plastik", titleEn: "Reduce Plastic Waste Campaign", category: "sekolah", year: 2026, date: "2026-02-21", image: "https://i.ibb.co.com/xKJC3qrh/flayer-sampah-plastik.jpg", link: "https://ibb.co.com/Fkgxn4d6" },
       { id: 3, titleId: "Pondok Ramadan 2026", titleEn: "Ramadan Islamic Boarding 2026", category: "sekolah", year: 2026, date: "2026-02-23", image: "https://i.ibb.co.com/vvscHcKY/brosur-pondok-romadhon.jpg", link: "https://ibb.co.com/FqshKhjV" },
-      { id: 10, titleId: "Program Siswa Asuh Sebaya 2026", titleEn: "Peer Tutoring Program 2026", category: "sekolah", year: 2026, date: "2026-02-23", image: "https://i.ibb.co.com/90M2JhH/siswa-asuh-sebaya.jpg", link: "https://ibb.co.com/QV5nZkv" },
-      { id: 50, titleId: "Selamat Tahun Ajaran Baru 2026/2027", titleEn: "Happy New Academic Year 2026/2027", category: "sekolah", year: 2026, date: "2026-07-15", image: "https://i.ibb.co.com/vLmNqKr/tahun-ajaran.jpg", link: "#" },
-      { id: 51, titleId: "Selamat MOS / MPLS 2026", titleEn: "Happy School Orientation 2026", category: "sekolah", year: 2026, date: "2026-07-17", image: "https://i.ibb.co.com/wNpKqMr/mpls.jpg", link: "#" },
-      { id: 52, titleId: "Selamat Ujian Sekolah 2026", titleEn: "Good Luck School Exam 2026", category: "sekolah", year: 2026, date: "2026-04-10", image: "https://i.ibb.co.com/xQxNpKr/ujian-sekolah.jpg", link: "#" },
-      { id: 53, titleId: "Selamat Wisuda & Perpisahan 2026", titleEn: "Happy Graduation 2026", category: "sekolah", year: 2026, date: "2026-06-15", image: "https://i.ibb.co.com/yLmNqKr/wisuda.jpg", link: "#" }
+      { id: 10, titleId: "Program Siswa Asuh Sebaya 2026", titleEn: "Peer Tutoring Program 2026", category: "sekolah", year: 2026, date: "2026-02-23", image: "https://i.ibb.co.com/90M2JhH/siswa-asuh-sebaya.jpg", link: "https://ibb.co.com/QV5nZkv" }
     ];
     
     const galleryGrid = document.getElementById('galleryGrid');
@@ -695,11 +660,6 @@
       const labelsEn = { 'agama': 'Religious', 'nasional': 'National', 'internasional': 'International', 'sekolah': 'School Event' };
       return currentLang === 'id' ? (labelsId[category] || 'Umum') : (labelsEn[category] || 'General');
     }
-    
-    function getGroupIcon(category) {
-      const icons = { 'agama': '🕌', 'nasional': '🇮🇩', 'internasional': '🌍', 'sekolah': '🎓' };
-      return icons[category] || '📌';
-    }
 
     function renderGallery(data) {
       let filteredByRelease = filterByReleaseMode(data);
@@ -719,19 +679,7 @@
         return new Date(a.date) - new Date(b.date);
       });
       
-      // Render with group headers
-      let currentGroup = null;
       finalData.forEach((item, index) => {
-        // Add group header when category changes
-        if (item.category !== currentGroup) {
-          currentGroup = item.category;
-          const groupHeader = document.createElement('div');
-          groupHeader.className = 'group-header';
-          groupHeader.setAttribute('data-aos', 'fade-right');
-          groupHeader.innerHTML = `<i class="fas fa-folder-open"></i> ${translations[currentLang]['group' + currentGroup.charAt(0).toUpperCase() + currentGroup.slice(1)]}`;
-          galleryGrid.appendChild(groupHeader);
-        }
-        
         const today = getTodayDate();
         const title = currentLang === 'id' ? item.titleId : item.titleEn;
         
