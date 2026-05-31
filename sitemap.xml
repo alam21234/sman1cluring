@@ -1,52 +1,226 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- ===== HALAMAN UTAMA & MENU ===== -->
   <url>
     <loc>https://www.sman1cluring.sch.id/</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
   </url>
-
   <url>
     <loc>https://www.sman1cluring.sch.id/akademik.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://www.sman1cluring.sch.id/alumni.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://www.sman1cluring.sch.id/artikel.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://www.sman1cluring.sch.id/guru.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://www.sman1cluring.sch.id/humas.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://www.sman1cluring.sch.id/kesiswaan.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://www.sman1cluring.sch.id/mitra.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://www.sman1cluring.sch.id/profil.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://www.sman1cluring.sch.id/sarpras.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://www.sman1cluring.sch.id/spmb.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://www.sman1cluring.sch.id/ucapan.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ===== ARTIKEL & BERITA (URUTAN TERBARU → TERLAMA) ===== -->
+  
+  <!-- Mei 2026 -->
+  <url>
+    <loc>https://www.sman1cluring.sch.id/articles/pendaftaran-siswa-baru-2026.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.sman1cluring.sch.id/articles/hari-kebangkitan-nasional-2026.html</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sman1cluring.sch.id/articles/o2sn-2026-banyuwangi.html</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sman1cluring.sch.id/articles/servis-gratis-sumber-jaya-mei-2026.html</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sman1cluring.sch.id/articles/2-mei-2026-momentum-partisipasi-semesta-pendidikan.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- April 2026 -->
+  <url>
+    <loc>https://www.sman1cluring.sch.id/articles/fls3n-2026-banyuwangi.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sman1cluring.sch.id/articles/hari-kartini-2026.html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sman1cluring.sch.id/articles/prestasi-woodball-sman1-cluring.html</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sman1cluring.sch.id/articles/prestasi-snbp-2026-smn1-cluring.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Februari 2026 -->
+  <url>
+    <loc>https://www.sman1cluring.sch.id/articles/pondok-ramadan-kelas-x-2026.html</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sman1cluring.sch.id/articles/februari-bukit-batari-2026.html</loc>
+    <lastmod>2026-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sman1cluring.sch.id/articles/jumat-senada-2026.html</loc>
+    <lastmod>2026-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Januari 2026 -->
+  <url>
+    <loc>https://www.sman1cluring.sch.id/articles/program-sikap.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sman1cluring.sch.id/articles/smaring-expo-2026.html</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Oktober 2025 -->
+  <url>
+    <loc>https://www.sman1cluring.sch.id/articles/pergantian-takmir-masjid.html</loc>
+    <lastmod>2025-10-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sman1cluring.sch.id/articles/serah-terima-pelantikan-dewan-ambalan.html</loc>
+    <lastmod>2025-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sman1cluring.sch.id/articles/hari-kesaktian-pancasila.html</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Agustus - Juli 2025 -->
+  <url>
+    <loc>https://www.sman1cluring.sch.id/articles/nova-lourensia-wood-ball-2025.html</loc>
+    <lastmod>2025-08-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sman1cluring.sch.id/articles/peringatan-hari-anak-nasional-2025.html</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sman1cluring.sch.id/articles/bukit-batari-budaya-2025.html</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Maret - Januari 2025 -->
+  <url>
+    <loc>https://www.sman1cluring.sch.id/articles/pelatihan-kurikulum-merdeka.html</loc>
+    <lastmod>2025-03-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sman1cluring.sch.id/articles/festival-tari-gandrung.html</loc>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 
 </urlset>
