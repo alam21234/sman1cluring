@@ -247,7 +247,15 @@
             color: var(--white); font-weight: 800; font-size: 1.5rem;
             letter-spacing: -0.5px;
         }
-        .brand img { width: 52px; height: auto; border-radius: 12px; box-shadow: var(--shadow-sm); }
+        /* ===== LOGO RESPONSIF ===== */
+        .brand img {
+            width: clamp(40px, 5vw, 52px);
+            height: auto;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            display: block;
+            flex-shrink: 0;
+        }
         .nav-right { display: flex; align-items: center; gap: 20px; }
         nav ul { list-style: none; display: flex; gap: 32px; align-items: center; }
         nav ul li a {
@@ -559,8 +567,8 @@
             .footer-time { font-size: 1.8rem; width: 100%; }
         }
         @media (max-width: 480px) {
+            /* Logo sudah diatur dengan clamp, tidak perlu override lagi */
             .brand span { display: none; }
-            .brand img { width: 44px; }
             .hero h1 { font-size: 1.9rem; }
             .hero-image { max-width: 220px; }
             .whatsapp-float { bottom: 15px; right: 15px; padding: 8px; width: 45px; height: 45px; border-radius: 50%; justify-content: center; }
@@ -629,7 +637,7 @@
     <header data-aos="fade-down">
         <div class="nav-container">
             <a href="index.html" class="brand">
-                <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring" width="52" height="52" />
+                <img src="https://i.ibb.co/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring" width="52" height="52" loading="lazy" decoding="async" />
                 <span data-i18n="school_name">SMAN 1 CLURING</span>
             </a>
             <div class="menu-toggle" onclick="toggleMenu()">☰</div>
