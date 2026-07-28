@@ -27,7 +27,7 @@
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
 <style>
-/* ===== VARIABEL & RESET (MENGACU PADA RUJUKAN) ===== */
+/* ===== VARIABEL & RESET ===== */
 :root {
   --primary: #0a2a5e;
   --primary-light: #1e3a7a;
@@ -109,7 +109,7 @@ img { max-width: 100%; height: auto; display: block; }
 .whatsapp-float:hover { transform: translateY(-8px) scale(1.05); box-shadow: 0 20px 35px rgba(37, 211, 102, 0.4); }
 @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
 
-/* ===== HEADER (RUJUKAN) ===== */
+/* ===== HEADER ===== */
 header {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow-md);
@@ -277,7 +277,7 @@ nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
 .toast.show { transform: translateX(-50%) translateY(0); }
 .toast.success { background: #25D366; }
 
-/* ===== FOOTER (RUJUKAN) ===== */
+/* ===== FOOTER ===== */
 footer {
   background: linear-gradient(145deg, var(--primary-dark) 0%, var(--primary) 100%);
   color: var(--white); padding: 70px 32px 30px; position: relative; margin-top: 80px;
@@ -375,7 +375,7 @@ footer::before {
   <span>Chat Admin</span>
 </a>
 
-<!-- ===== HEADER (RUJUKAN) ===== -->
+<!-- ===== HEADER ===== -->
 <header>
   <div class="nav-container">
     <a href="index.html" class="brand">
@@ -462,7 +462,7 @@ footer::before {
   </div>
 </main>
 
-<!-- ===== FOOTER (RUJUKAN) ===== -->
+<!-- ===== FOOTER ===== -->
 <footer>
   <div class="footer-content">
     <div class="footer-section">
@@ -560,9 +560,8 @@ footer::before {
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-// ===== DATA ARTIKEL (DITAMBAHKAN ARTIKEL MPLS RAMAH 2026) =====
+// ===== DATA ARTIKEL (SUDAH DIPERBAIKI SINTAKSNYA) =====
 const articlesData = [
-  const articlesData = [
   { 
     id: 28, 
     title: "SMAN 1 Cluring Berikan Apresiasi kepada Murid Berprestasi dan Guru Pembimbing", 
@@ -572,12 +571,6 @@ const articlesData = [
     desc: "SMAN 1 Cluring memberikan apresiasi kepada murid berprestasi dan guru pembimbing atas pencapaian di OSN, FLS3N, dan Lomba Pesona Keroncong Se-Banyuwangi 2026. Kepala Sekolah Helmi, S.Pd., M.Si. menyampaikan penghargaan setinggi-tingginya atas dedikasi dan kerja keras.", 
     link: "articles/apresiasi-murid-berprestasi-2026.html" 
   },
-  { 
-    id: 27, 
-    title: "MPLS RAMAH 2026: Awal Perjalanan Baru yang Aman, Ramah, dan Bermakna di SMAN 1 Cluring", 
-    category: "kegiatan", 
-    date: "2026-07-13", 
-    // ... artikel lainnya tetap sama
   { 
     id: 27, 
     title: "MPLS RAMAH 2026: Awal Perjalanan Baru yang Aman, Ramah, dan Bermakna di SMAN 1 Cluring", 
@@ -623,26 +616,186 @@ const articlesData = [
     desc: "Peringatan Hari Lahir Pancasila 1 Juni 2026 di SMAN 1 Cluring dengan tema 'Pancasila Pemersatu Bangsa, Fondasi Perdamaian Dunia'. Nilai-nilai Pancasila tetap menjadi perekat persatuan di tengah tantangan global.", 
     link: "articles/hari-lahir-pancasila-2026.html" 
   },
-  { id: 22, title: "Layanan SPMB SMAN 1 Cluring Resmi Dibuka, Antusiasme Calon Murid dan Orang Tua Tinggi", category: "berita", date: "2026-05-28", image: "https://i.ibb.co.com/DdxgnQt/28-mei-2026-pembukaan-spmb-smaring.png", desc: "SMAN 1 Cluring resmi membuka layanan SPMB Tahun Ajaran 2026/2027. Antusiasme tinggi dari calon murid dan orang tua pada hari pertama pendaftaran.", link: "articles/pendaftaran-siswa-baru-2026.html" },
-  { id: 21, title: "Selamat Memperingati Hari Kebangkitan Nasional ke-118 Tahun 2026", category: "nasional", date: "2026-05-20", image: "https://i.ibb.co.com/F4VsbJqv/20-MEI-2026-HARI-KEBANKITAN-NASIONAL.jpg", desc: "Memperingati Hari Kebangkitan Nasional ke-118 dengan tema 'Jaga Tunas Bangsa Demi Kedaulatan Negara'. Mari bangkit bersama menuju Indonesia yang kuat dan berdaulat.", link: "articles/hari-kebangkitan-nasional-2026.html" },
-  { id: 19, title: "Prestasi Membanggakan SMAN 1 Cluring di Ajang O2SN 2026 Tingkat Kabupaten Banyuwangi", category: "prestasi", date: "2026-05-11", image: "https://i.ibb.co.com/pv97SN16/11-mei-2026-Rafi-Achmad-Sukristianto-memperoleh-Juara-3-pada-O2-SN-Tingkat-Kabupaten-Banyuwangi-di-Ca.jpg", desc: "Rafi Achmad Sukristianto (Bulutangkis) dan Mochammad Ammar Ihsani Huda (Panjat Tebing) berhasil meraih Juara 3 dalam ajang O2SN 2026 tingkat Kabupaten Banyuwangi.", link: "articles/o2sn-2026-banyuwangi.html" },
-  { id: 20, title: "Dealer Sumber Jaya Maha Sakti Purwoharjo Gelar Servis Gratis di SMAN 1 Cluring", category: "kegiatan", date: "2026-05-08", image: "https://i.ibb.co.com/whyLYLn4/8-MEI-2026-FOTO1-SERVIS-GRATIS-OLEH-SUMBER-JAYA-MAHA-SAKTI-PURWOHARJO.jpg", desc: "Dealer Sumber Jaya Maha Sakti Purwoharjo bekerja sama dengan SMAN 1 Cluring mengadakan kegiatan servis gratis sepeda motor bagi guru, tenaga kependidikan, dan peserta didik.", link: "articles/servis-gratis-sumber-jaya-mei-2026.html" },
-  { id: 18, title: "2 Mei 2026: Momentum Menguatkan Partisipasi Semesta dalam Dunia Pendidikan", category: "berita", date: "2026-05-02", image: "https://i.ibb.co.com/WWspP48r/hari-pendidikan.jpg", desc: "Hardiknas 2026 menjadi momentum untuk menggerakkan partisipasi semesta dalam ekosistem pendidikan melalui kolaborasi pemerintah, swasta, komunitas, dan seluruh elemen masyarakat.", link: "articles/2-mei-2026-momentum-partisipasi-semesta-pendidikan.html" },
-  { id: 17, title: "Prestasi Gemilang SMAN 1 Cluring di FLS3N 2026 Tingkat Kabupaten Banyuwangi", category: "prestasi", date: "2026-04-27", image: "https://i.ibb.co.com/6JsL9L8V/lomba-menulis-cerpen-Kirana-Ayu-Maharani-Juara-3-FLS3-N.png", desc: "SMAN 1 Cluring meraih juara 3 di tiga cabang lomba FLS3N 2026: cerpen (Kirana Ayu Maharani), jurnalistik (Nadine Damara C.L), dan tari kreasi (Tim Tari Sahwitta).", link: "articles/fls3n-2026-banyuwangi.html" },
-  { id: 1, title: "Upacara Peringatan Hari Kartini 2026 di SMAN 1 Cluring Berlangsung Khidmat", category: "budaya", date: "2026-04-21", image: "https://i.ibb.co.com/hxY5B9G2/kartini-21-april-26-1.png", desc: "Dalam rangka memperingati perjuangan Raden Ajeng Kartini, SMAN 1 Cluring melaksanakan Upacara Peringatan Hari Kartini dengan penuh khidmat. Para peserta tampil mengenakan busana adat yang mencerminkan keberagaman budaya Indonesia.", link: "articles/hari-kartini-2026.html" },
-  { id: 3, title: "Atlet Woodball SMAN 1 Cluring Raih Medali Emas Kejuaraan Nasional 2026", category: "prestasi", date: "2026-04-06", image: "https://i.ibb.co.com/27FtB8sF/nova-beranda.png", desc: "Tim Woodball SMAN 1 Cluring berhasil menyabet medali emas dalam Kejuaraan Woodball Nasional 2026, mengharumkan nama Banyuwangi di kancah nasional.", link: "articles/prestasi-woodball-sman1-cluring.html" },
-  { id: 2, title: "Prestasi Gemilang! 57 Siswa SMAN 1 Cluring Diterima di PTN Favorit Jalur SNBP 2026", category: "prestasi", date: "2026-04-01", image: "https://i.ibb.co.com/rG88HN3g/57-snbp-4x4.png", desc: "SMAN 1 Cluring mencatatkan sejarah baru dengan 57 siswa lolos Seleksi Nasional Berdasarkan Prestasi (SNBP) 2026 menuju berbagai perguruan tinggi negeri ternama.", link: "articles/prestasi-snbp-2026-smn1-cluring.html" },
-  { id: 5, title: "Pondok Ramadan Kelas X: Sinergi Sekolah dan Pesantren untuk Generasi Berkarakter", category: "keagamaan", date: "2026-02-23", image: "https://i.ibb.co.com/5hvX29ms/1-pembukaan-oleh-Gus-Ulin-Nuha-Ali-Mansur.jpg", desc: "Kegiatan Pondok Ramadan 23-25 Februari 2026 di PP Baitussalam Simbar untuk penguatan karakter religius peserta didik.", link: "articles/pondok-ramadan-kelas-x-2026.html" },
-  { id: 4, title: "SMAN 1 Cluring Raih Innovative Government Award (IGA) 2025", category: "prestasi", date: "2026-02-13", image: "https://i.ibb.co.com/FbffbPWG/IGA-2026-1.jpg", desc: "Penghargaan dari Dinas Pendidikan Jawa Timur atas inovasi BUKIT BATARI – Budaya Kita Batik dan Tari.", link: "articles/februari-bukit-batari-2026.html" },
-  { id: 6, title: "Jumat SENADA Warnai Pagi Sehat di SMAN 1 Cluring", category: "kegiatan", date: "2026-02-13", image: "https://i.ibb.co.com/N67GLqHb/SENADA-2.jpg", desc: "Gerakan Bugar – Senam Asyik dan Gembira untuk seluruh warga sekolah.", link: "articles/jumat-senada-2026.html" },
-  { id: 7, title: "SMAN 1 Cluring Perkuat Ketahanan Pangan melalui Program SIKAP", category: "berita", date: "2026-01-25", image: "https://i.ibb.co/zHSfC2Qz/JENIS-TANAMAN.jpg", desc: "Sekolah Inovasi Ketahanan Pangan untuk menciptakan generasi yang peduli lingkungan.", link: "articles/program-sikap.html" },
-  { id: 8, title: "Smaring Expo Campus dan Talkshow 2026", category: "kegiatan", date: "2026-01-15", image: "https://i.ibb.co/TBfc9QcK/KS-LAUNCING-EXSPO.jpg", desc: "SMAN 1 Cluring Gelar Smaring Expo Campus dan Talkshow 2026 untuk membuka wawasan siswa.", link: "articles/smaring-expo-2026.html" },
-  { id: 14, title: "Pergantian Kepengurusan Takmir Masjid Baitul Muttaqin", category: "keagamaan", date: "2025-10-19", image: "https://i.ibb.co.com/Fk521mwR/takmir-1.jpg", desc: "Prosesi pergantian kepengurusan takmir masjid sebagai wadah pembinaan karakter keagamaan siswa.", link: "articles/pergantian-takmir-masjid.html" },
-  { id: 13, title: "Serah Terima Jabatan dan Pelantikan Dewan Ambalan", category: "kegiatan", date: "2025-10-17", image: "https://i.ibb.co.com/8nyH2Bbd/da3.jpg", desc: "Upacara serah terima jabatan dan pelantikan pengurus dewan ambalan sebagai wadah kepemimpinan siswa.", link: "articles/serah-terima-pelantikan-dewan-ambalan.html" },
-  { id: 15, title: "Hari Kesaktian Pancasila", category: "pancasila", date: "2025-10-01", image: "https://i.ibb.co/Kz2SXCCz/pembawa-acara-upacara.jpg", desc: "Upacara khidmat dalam rangka Hari Kesaktian Pancasila 2025 untuk menanamkan nilai-nilai Pancasila.", link: "articles/hari-kesaktian-pancasila.html" },
-  { id: 10, title: "Nova Lourensia Sabet Emas Wood Ball 2025", category: "prestasi", date: "2025-08-11", image: "https://i.ibb.co.com/G3C981Gn/Wood-Ball-2025.jpg", desc: "Nova Lourensia berhasil meraih medali emas dalam ajang Kejuaraan Wood Ball 2025 tingkat nasional.", link: "articles/nova-lourensia-wood-ball-2025.html" },
-  { id: 11, title: "Peringatan Hari Anak Nasional 2025", category: "kegiatan", date: "2025-07-23", image: "https://i.ibb.co.com/35vrSj5F/hari-anak-3.jpg", desc: "Siswa tampil memukau dalam Peringatan Hari Anak Nasional 2025 dengan berbagai kegiatan edukatif.", link: "articles/peringatan-hari-anak-nasional-2025.html" },
-  { id: 12, title: "SMAN 1 Cluring Lestarikan Budaya Lewat Program BUKIT BATARI", category: "budaya", date: "2025-07-14", image: "https://i.ibb.co.com/q3kW1kxG/BATARI-1.jpg", desc: "Budaya Kita: Batik dan Tari untuk melestarikan kearifan lokal Banyuwangi.", link: "articles/bukit-batari-budaya-2025.html" },
+  { 
+    id: 22, 
+    title: "Layanan SPMB SMAN 1 Cluring Resmi Dibuka, Antusiasme Calon Murid dan Orang Tua Tinggi", 
+    category: "berita", 
+    date: "2026-05-28", 
+    image: "https://i.ibb.co.com/DdxgnQt/28-mei-2026-pembukaan-spmb-smaring.png", 
+    desc: "SMAN 1 Cluring resmi membuka layanan SPMB Tahun Ajaran 2026/2027. Antusiasme tinggi dari calon murid dan orang tua pada hari pertama pendaftaran.", 
+    link: "articles/pendaftaran-siswa-baru-2026.html" 
+  },
+  { 
+    id: 21, 
+    title: "Selamat Memperingati Hari Kebangkitan Nasional ke-118 Tahun 2026", 
+    category: "nasional", 
+    date: "2026-05-20", 
+    image: "https://i.ibb.co.com/F4VsbJqv/20-MEI-2026-HARI-KEBANKITAN-NASIONAL.jpg", 
+    desc: "Memperingati Hari Kebangkitan Nasional ke-118 dengan tema 'Jaga Tunas Bangsa Demi Kedaulatan Negara'. Mari bangkit bersama menuju Indonesia yang kuat dan berdaulat.", 
+    link: "articles/hari-kebangkitan-nasional-2026.html" 
+  },
+  { 
+    id: 19, 
+    title: "Prestasi Membanggakan SMAN 1 Cluring di Ajang O2SN 2026 Tingkat Kabupaten Banyuwangi", 
+    category: "prestasi", 
+    date: "2026-05-11", 
+    image: "https://i.ibb.co.com/pv97SN16/11-mei-2026-Rafi-Achmad-Sukristianto-memperoleh-Juara-3-pada-O2-SN-Tingkat-Kabupaten-Banyuwangi-di-Ca.jpg", 
+    desc: "Rafi Achmad Sukristianto (Bulutangkis) dan Mochammad Ammar Ihsani Huda (Panjat Tebing) berhasil meraih Juara 3 dalam ajang O2SN 2026 tingkat Kabupaten Banyuwangi.", 
+    link: "articles/o2sn-2026-banyuwangi.html" 
+  },
+  { 
+    id: 20, 
+    title: "Dealer Sumber Jaya Maha Sakti Purwoharjo Gelar Servis Gratis di SMAN 1 Cluring", 
+    category: "kegiatan", 
+    date: "2026-05-08", 
+    image: "https://i.ibb.co.com/whyLYLn4/8-MEI-2026-FOTO1-SERVIS-GRATIS-OLEH-SUMBER-JAYA-MAHA-SAKTI-PURWOHARJO.jpg", 
+    desc: "Dealer Sumber Jaya Maha Sakti Purwoharjo bekerja sama dengan SMAN 1 Cluring mengadakan kegiatan servis gratis sepeda motor bagi guru, tenaga kependidikan, dan peserta didik.", 
+    link: "articles/servis-gratis-sumber-jaya-mei-2026.html" 
+  },
+  { 
+    id: 18, 
+    title: "2 Mei 2026: Momentum Menguatkan Partisipasi Semesta dalam Dunia Pendidikan", 
+    category: "berita", 
+    date: "2026-05-02", 
+    image: "https://i.ibb.co.com/WWspP48r/hari-pendidikan.jpg", 
+    desc: "Hardiknas 2026 menjadi momentum untuk menggerakkan partisipasi semesta dalam ekosistem pendidikan melalui kolaborasi pemerintah, swasta, komunitas, dan seluruh elemen masyarakat.", 
+    link: "articles/2-mei-2026-momentum-partisipasi-semesta-pendidikan.html" 
+  },
+  { 
+    id: 17, 
+    title: "Prestasi Gemilang SMAN 1 Cluring di FLS3N 2026 Tingkat Kabupaten Banyuwangi", 
+    category: "prestasi", 
+    date: "2026-04-27", 
+    image: "https://i.ibb.co.com/6JsL9L8V/lomba-menulis-cerpen-Kirana-Ayu-Maharani-Juara-3-FLS3-N.png", 
+    desc: "SMAN 1 Cluring meraih juara 3 di tiga cabang lomba FLS3N 2026: cerpen (Kirana Ayu Maharani), jurnalistik (Nadine Damara C.L), dan tari kreasi (Tim Tari Sahwitta).", 
+    link: "articles/fls3n-2026-banyuwangi.html" 
+  },
+  { 
+    id: 1, 
+    title: "Upacara Peringatan Hari Kartini 2026 di SMAN 1 Cluring Berlangsung Khidmat", 
+    category: "budaya", 
+    date: "2026-04-21", 
+    image: "https://i.ibb.co.com/hxY5B9G2/kartini-21-april-26-1.png", 
+    desc: "Dalam rangka memperingati perjuangan Raden Ajeng Kartini, SMAN 1 Cluring melaksanakan Upacara Peringatan Hari Kartini dengan penuh khidmat. Para peserta tampil mengenakan busana adat yang mencerminkan keberagaman budaya Indonesia.", 
+    link: "articles/hari-kartini-2026.html" 
+  },
+  { 
+    id: 3, 
+    title: "Atlet Woodball SMAN 1 Cluring Raih Medali Emas Kejuaraan Nasional 2026", 
+    category: "prestasi", 
+    date: "2026-04-06", 
+    image: "https://i.ibb.co.com/27FtB8sF/nova-beranda.png", 
+    desc: "Tim Woodball SMAN 1 Cluring berhasil menyabet medali emas dalam Kejuaraan Woodball Nasional 2026, mengharumkan nama Banyuwangi di kancah nasional.", 
+    link: "articles/prestasi-woodball-sman1-cluring.html" 
+  },
+  { 
+    id: 2, 
+    title: "Prestasi Gemilang! 57 Siswa SMAN 1 Cluring Diterima di PTN Favorit Jalur SNBP 2026", 
+    category: "prestasi", 
+    date: "2026-04-01", 
+    image: "https://i.ibb.co.com/rG88HN3g/57-snbp-4x4.png", 
+    desc: "SMAN 1 Cluring mencatatkan sejarah baru dengan 57 siswa lolos Seleksi Nasional Berdasarkan Prestasi (SNBP) 2026 menuju berbagai perguruan tinggi negeri ternama.", 
+    link: "articles/prestasi-snbp-2026-smn1-cluring.html" 
+  },
+  { 
+    id: 5, 
+    title: "Pondok Ramadan Kelas X: Sinergi Sekolah dan Pesantren untuk Generasi Berkarakter", 
+    category: "keagamaan", 
+    date: "2026-02-23", 
+    image: "https://i.ibb.co.com/5hvX29ms/1-pembukaan-oleh-Gus-Ulin-Nuha-Ali-Mansur.jpg", 
+    desc: "Kegiatan Pondok Ramadan 23-25 Februari 2026 di PP Baitussalam Simbar untuk penguatan karakter religius peserta didik.", 
+    link: "articles/pondok-ramadan-kelas-x-2026.html" 
+  },
+  { 
+    id: 4, 
+    title: "SMAN 1 Cluring Raih Innovative Government Award (IGA) 2025", 
+    category: "prestasi", 
+    date: "2026-02-13", 
+    image: "https://i.ibb.co.com/FbffbPWG/IGA-2026-1.jpg", 
+    desc: "Penghargaan dari Dinas Pendidikan Jawa Timur atas inovasi BUKIT BATARI – Budaya Kita Batik dan Tari.", 
+    link: "articles/februari-bukit-batari-2026.html" 
+  },
+  { 
+    id: 6, 
+    title: "Jumat SENADA Warnai Pagi Sehat di SMAN 1 Cluring", 
+    category: "kegiatan", 
+    date: "2026-02-13", 
+    image: "https://i.ibb.co.com/N67GLqHb/SENADA-2.jpg", 
+    desc: "Gerakan Bugar – Senam Asyik dan Gembira untuk seluruh warga sekolah.", 
+    link: "articles/jumat-senada-2026.html" 
+  },
+  { 
+    id: 7, 
+    title: "SMAN 1 Cluring Perkuat Ketahanan Pangan melalui Program SIKAP", 
+    category: "berita", 
+    date: "2026-01-25", 
+    image: "https://i.ibb.co/zHSfC2Qz/JENIS-TANAMAN.jpg", 
+    desc: "Sekolah Inovasi Ketahanan Pangan untuk menciptakan generasi yang peduli lingkungan.", 
+    link: "articles/program-sikap.html" 
+  },
+  { 
+    id: 8, 
+    title: "Smaring Expo Campus dan Talkshow 2026", 
+    category: "kegiatan", 
+    date: "2026-01-15", 
+    image: "https://i.ibb.co/TBfc9QcK/KS-LAUNCING-EXSPO.jpg", 
+    desc: "SMAN 1 Cluring Gelar Smaring Expo Campus dan Talkshow 2026 untuk membuka wawasan siswa.", 
+    link: "articles/smaring-expo-2026.html" 
+  },
+  { 
+    id: 14, 
+    title: "Pergantian Kepengurusan Takmir Masjid Baitul Muttaqin", 
+    category: "keagamaan", 
+    date: "2025-10-19", 
+    image: "https://i.ibb.co.com/Fk521mwR/takmir-1.jpg", 
+    desc: "Prosesi pergantian kepengurusan takmir masjid sebagai wadah pembinaan karakter keagamaan siswa.", 
+    link: "articles/pergantian-takmir-masjid.html" 
+  },
+  { 
+    id: 13, 
+    title: "Serah Terima Jabatan dan Pelantikan Dewan Ambalan", 
+    category: "kegiatan", 
+    date: "2025-10-17", 
+    image: "https://i.ibb.co.com/8nyH2Bbd/da3.jpg", 
+    desc: "Upacara serah terima jabatan dan pelantikan pengurus dewan ambalan sebagai wadah kepemimpinan siswa.", 
+    link: "articles/serah-terima-pelantikan-dewan-ambalan.html" 
+  },
+  { 
+    id: 15, 
+    title: "Hari Kesaktian Pancasila", 
+    category: "pancasila", 
+    date: "2025-10-01", 
+    image: "https://i.ibb.co/Kz2SXCCz/pembawa-acara-upacara.jpg", 
+    desc: "Upacara khidmat dalam rangka Hari Kesaktian Pancasila 2025 untuk menanamkan nilai-nilai Pancasila.", 
+    link: "articles/hari-kesaktian-pancasila.html" 
+  },
+  { 
+    id: 10, 
+    title: "Nova Lourensia Sabet Emas Wood Ball 2025", 
+    category: "prestasi", 
+    date: "2025-08-11", 
+    image: "https://i.ibb.co.com/G3C981Gn/Wood-Ball-2025.jpg", 
+    desc: "Nova Lourensia berhasil meraih medali emas dalam ajang Kejuaraan Wood Ball 2025 tingkat nasional.", 
+    link: "articles/nova-lourensia-wood-ball-2025.html" 
+  },
+  { 
+    id: 11, 
+    title: "Peringatan Hari Anak Nasional 2025", 
+    category: "kegiatan", 
+    date: "2025-07-23", 
+    image: "https://i.ibb.co.com/35vrSj5F/hari-anak-3.jpg", 
+    desc: "Siswa tampil memukau dalam Peringatan Hari Anak Nasional 2025 dengan berbagai kegiatan edukatif.", 
+    link: "articles/peringatan-hari-anak-nasional-2025.html" 
+  },
+  { 
+    id: 12, 
+    title: "SMAN 1 Cluring Lestarikan Budaya Lewat Program BUKIT BATARI", 
+    category: "budaya", 
+    date: "2025-07-14", 
+    image: "https://i.ibb.co.com/q3kW1kxG/BATARI-1.jpg", 
+    desc: "Budaya Kita: Batik dan Tari untuk melestarikan kearifan lokal Banyuwangi.", 
+    link: "articles/bukit-batari-budaya-2025.html" 
+  }
 ];
 
 // ===== FUNGSI =====
