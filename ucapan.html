@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
   <title>Galeri Ucapan & Perayaan - SMAN 1 Cluring</title>
   
   <!-- SEO -->
@@ -18,26 +18,29 @@
   <meta property="og:image" content="https://i.ibb.co.com/21TnnCcG/SMAN1-Cluring-emblem.png" />
   
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   
-  <!-- Font Awesome Icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   
-  <!-- AOS Animation Library -->
+  <!-- AOS Animation -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   
   <style>
+    /* ===== VARIABEL & RESET (SAMA PERSIS DENGAN artikel.html) ===== */
     :root {
       --primary: #0a2a5e; --primary-light: #1e3a7a; --primary-dark: #051a3b;
-      --secondary: #9e7b4b; --accent: #c7a854; --light: #f5f7fa;
-      --dark: #1e2b37; --gray: #4b5c6b; --white: #ffffff;
-      --glass: rgba(255, 255, 255, 0.1); --glass-border: rgba(255, 255, 255, 0.2);
+      --secondary: #9e7b4b; --secondary-light: #c1a06e; --accent: #c7a854;
+      --cultural-accent: #b13e3e; --light: #f5f7fa; --dark: #1e2b37;
+      --gray: #4b5c6b; --white: #ffffff; --glass: rgba(255, 255, 255, 0.1);
+      --glass-border: rgba(255, 255, 255, 0.2);
       --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.05);
       --shadow-md: 0 8px 30px rgba(0, 20, 50, 0.12);
       --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
-      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-      --border-radius: 16px;
+      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+      --border-radius: 24px; --border-radius-sm: 16px;
       --whatsapp: #25D366; --whatsapp-dark: #128C7E;
+      --mobile-nav-height: 70px;
     }
     .dark-mode {
       --primary: #1e3a8a; --primary-light: #3b5ba5; --secondary: #d4af37;
@@ -46,223 +49,261 @@
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Inter', sans-serif; background-color: var(--light);
-      color: var(--dark); line-height: 1.6; transition: background-color 0.3s ease, color 0.3s ease;
-      overflow-x: hidden;
+      font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--light); color: var(--dark);
+      line-height: 1.6; transition: background-color 0.4s ease, color 0.4s ease;
+      overflow-x: hidden; font-weight: 400;
     }
-    h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; }
-    a { text-decoration: none; color: inherit; }
+    h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+    a { text-decoration: none; color: inherit; transition: var(--transition); }
+    img { max-width: 100%; height: auto; display: block; }
     
-    /* ===== PRELOADER ===== */
+    /* ===== PRELOADER & WHATSAPP FLOAT (SAMA) ===== */
     #preloader {
       position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: var(--primary); z-index: 9999;
-      display: flex; justify-content: center; align-items: center;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
+      background: var(--primary); display: flex; justify-content: center; align-items: center;
+      z-index: 9999; opacity: 1; transition: opacity 0.15s ease, visibility 0.15s ease;
     }
     #preloader.fade-out { opacity: 0; visibility: hidden; }
     .spinner {
-      width: 50px; height: 50px; border: 4px solid rgba(255,255,255,0.1);
+      width: 50px; height: 50px; border: 4px solid rgba(255, 255, 255, 0.15);
       border-top: 4px solid var(--secondary); border-radius: 50%;
-      animation: spin 1s linear infinite;
+      animation: spin 0.8s linear infinite;
     }
-    @keyframes spin { 100% { transform: rotate(360deg); } }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     
-    /* ===== LANGUAGE SWITCHER ===== */
-    .lang-switcher {
-      display: flex; align-items: center; gap: 5px; margin-right: 10px;
-    }
-    .lang-btn {
-      background: var(--glass); border: 1px solid var(--glass-border);
-      color: var(--white); padding: 6px 12px; border-radius: 30px;
-      font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: var(--transition);
-    }
-    .lang-btn.active { background: var(--secondary); border-color: var(--secondary); }
-    .lang-btn:hover { background: var(--secondary); transform: translateY(-2px); }
-    
-    /* ===== WHATSAPP FLOAT ===== */
     .whatsapp-float {
-      position: fixed; bottom: 30px; right: 30px;
-      background: linear-gradient(135deg, var(--whatsapp), var(--whatsapp-dark));
-      color: white; text-decoration: none; display: flex; align-items: center; gap: 10px;
-      padding: 12px 24px; border-radius: 50px;
-      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-      z-index: 998; transition: var(--transition); font-weight: 600;
+      position: fixed; bottom: 100px; right: 30px;
+      background: linear-gradient(135deg, var(--whatsapp) 0%, var(--whatsapp-dark) 100%);
+      color: white; text-decoration: none; display: flex; align-items: center; gap: 12px;
+      padding: 14px 28px; border-radius: 60px; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+      z-index: 998; transition: var(--transition); backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2); font-weight: 600;
     }
-    .whatsapp-float:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4); }
-    .whatsapp-float i { font-size: 24px; }
+    .whatsapp-float i { font-size: 28px; animation: pulse 2s infinite; }
+    .whatsapp-float:hover { transform: translateY(-8px) scale(1.05); box-shadow: 0 20px 35px rgba(37, 211, 102, 0.4); }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
     
-    /* ===== ADMIN CONTROLS ===== */
-    .admin-controls {
-      background: var(--white); padding: 20px; border-radius: var(--border-radius);
-      margin-bottom: 30px; box-shadow: var(--shadow-sm); border: 2px solid var(--secondary);
-    }
-    .admin-title {
-      display: flex; align-items: center; gap: 10px; color: var(--primary); margin-bottom: 15px;
-    }
-    .admin-title i { color: var(--secondary); font-size: 1.5rem; }
-    .release-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
-    .release-btn {
-      padding: 8px 16px; border: 2px solid var(--primary); background: transparent;
-      color: var(--primary); border-radius: 30px; cursor: pointer; font-weight: 600;
-      transition: var(--transition); font-size: 0.9rem;
-    }
-    .release-btn:hover { background: var(--primary); color: var(--white); }
-    .release-btn.active { background: var(--secondary); border-color: var(--secondary); color: var(--white); }
-    
-    /* ===== HEADER ===== */
+    /* ===== HEADER (SAMA PERSIS) ===== */
     header {
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
       position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow-md);
     }
     .nav-container {
-      max-width: 1400px; margin: auto; padding: 15px 20px;
-      display: flex; justify-content: space-between; align-items: center;
+      max-width: 1400px; margin: auto; padding: 12px 32px;
+      display: flex; justify-content: space-between; align-items: center; gap: 20px;
     }
     .brand {
-      display: flex; align-items: center; gap: 12px;
-      color: var(--white); font-weight: 800; font-size: 1.2rem;
+      display: flex; align-items: center; gap: 16px; color: var(--white);
+      font-weight: 800; font-size: 1.5rem; text-decoration: none; letter-spacing: -0.5px;
     }
-    .brand img { width: 45px; border-radius: 8px; }
-    .nav-right { display: flex; align-items: center; gap: 15px; }
-    nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
+    .brand img { width: 52px; height: auto; border-radius: 12px; box-shadow: var(--shadow-sm); }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    nav ul { list-style: none; display: flex; gap: 32px; align-items: center; }
     nav ul li a {
-      color: var(--white); text-decoration: none; font-weight: 500;
-      font-size: 0.95rem; transition: var(--transition); opacity: 0.9;
-      position: relative; padding: 5px 0; white-space: nowrap;
+      color: var(--white); text-decoration: none; font-weight: 500; font-size: 1rem;
+      transition: var(--transition); padding: 8px 0; position: relative; opacity: 0.9; white-space: nowrap;
     }
     nav ul li a::after {
       content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
-      background: var(--accent); transition: var(--transition);
+      background: var(--secondary); transition: width 0.3s ease;
     }
+    nav ul li a:hover, nav ul li a.active { opacity: 1; }
     nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
-    nav ul li a:hover, nav ul li a.active { opacity: 1; color: var(--accent); }
-    .menu-toggle { display: none; color: var(--white); font-size: 24px; cursor: pointer; }
     .dark-mode-toggle {
-      background: var(--glass); border: 1px solid var(--glass-border);
-      width: 40px; height: 40px; border-radius: 50%; color: var(--white);
-      display: flex; align-items: center; justify-content: center; cursor: pointer; border: none;
+      background: var(--glass); border: 1px solid var(--glass-border); width: 44px; height: 44px;
+      border-radius: 60px; color: var(--white); font-size: 1.2rem; cursor: pointer;
+      transition: var(--transition); display: flex; align-items: center; justify-content: center;
+      backdrop-filter: blur(8px);
     }
-    .dark-mode-toggle i { font-size: 1.1rem; }
+    .dark-mode-toggle:hover { background: var(--secondary); border-color: var(--secondary); transform: rotate(30deg) scale(1.05); }
+    .menu-toggle { display: none; font-size: 28px; color: var(--white); cursor: pointer; }
     
-    /* ===== HERO ===== */
-    .hero-greeting {
-      text-align: center; color: var(--white); padding: 100px 20px 80px;
-      background: linear-gradient(rgba(10,42,94,0.85), rgba(5,26,59,0.9)), 
+    /* ===== HERO SECTION (DISESUAIKAN) ===== */
+    .page-header {
+      background: linear-gradient(145deg, rgba(10,42,94,0.7) 0%, rgba(5,26,59,0.85) 100%), 
       url('https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=1920') center/cover fixed;
-      position: relative; overflow: hidden;
+      color: var(--white); text-align: center; padding: 120px 20px 80px; min-height: 400px;
+      display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;
     }
-    .hero-greeting::before {
-      content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
-      animation: rotate 20s linear infinite;
+    .page-header::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);
+      animation: float 20s ease-in-out infinite;
     }
-    @keyframes rotate { 100% { transform: rotate(360deg); } }
-    .hero-greeting h1 {
-      font-size: 2.8rem; margin-bottom: 15px; position: relative; z-index: 1;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .page-header h1 {
+      font-size: 2.8rem; margin-bottom: 20px; font-weight: 800;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); position: relative; z-index: 2;
     }
-    .hero-greeting p {
-      font-size: 1.15rem; max-width: 650px; margin: 0 auto;
-      position: relative; z-index: 1; opacity: 0.95;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    .page-header p {
+      font-size: 1.2rem; max-width: 700px; position: relative; z-index: 2;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5); opacity: 0.95;
     }
     
-    /* ===== MAIN CONTENT ===== */
-    .container { max-width: 1400px; margin: auto; padding: 60px 20px; }
+    /* ===== ADMIN CONTROLS (DISEDERHANAKAN) ===== */
+    .admin-panel {
+      background: var(--white); border-radius: var(--border-radius-sm);
+      padding: 20px 24px; margin: -30px auto 40px; max-width: 1400px;
+      box-shadow: var(--shadow-md); border: 1px solid rgba(0,0,0,0.05);
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 15px;
+    }
+    .admin-title {
+      display: flex; align-items: center; gap: 10px; color: var(--primary); font-weight: 600;
+    }
+    .admin-title i { color: var(--secondary); font-size: 1.3rem; }
+    .release-group { display: flex; flex-wrap: wrap; gap: 8px; }
+    .release-btn {
+      padding: 8px 16px; background: var(--light); border: 2px solid var(--secondary);
+      color: var(--secondary); border-radius: 50px; cursor: pointer; font-weight: 600;
+      font-size: 0.85rem; transition: var(--transition);
+    }
+    .release-btn:hover, .release-btn.active {
+      background: var(--secondary); color: var(--white); transform: translateY(-2px);
+    }
     
-    /* Filter Group */
-    .filter-group {
-      display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
-      margin-bottom: 30px; background: var(--white); padding: 25px;
-      border-radius: var(--border-radius); box-shadow: var(--shadow-sm);
-      border: 1px solid rgba(0,0,0,0.05);
+    /* ===== FILTER & SEARCH ===== */
+    .controls-container {
+      display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px;
+      background: var(--white); padding: 24px; border-radius: var(--border-radius-sm);
+      box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.05);
+    }
+    .search-box {
+      display: flex; gap: 10px; max-width: 500px; margin: 0 auto;
+    }
+    .search-box input {
+      flex: 1; padding: 12px 20px; border: 2px solid var(--secondary);
+      border-radius: 50px; outline: none; font-family: inherit;
+      background: var(--white); color: var(--dark);
+    }
+    .search-box button {
+      padding: 0 25px; background: var(--secondary); color: white;
+      border: none; border-radius: 50px; cursor: pointer; transition: var(--transition);
+    }
+    .search-box button:hover { background: var(--primary); }
+    .filters {
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
     }
     .filter-btn {
-      padding: 10px 24px; border: 2px solid var(--secondary); background: transparent;
-      color: var(--secondary); border-radius: 50px; cursor: pointer; font-weight: 600;
-      transition: var(--transition); font-size: 0.95rem;
+      padding: 8px 20px; background: var(--white); border: 2px solid var(--secondary);
+      color: var(--secondary); border-radius: 50px; cursor: pointer;
+      font-size: 0.9rem; font-weight: 600; transition: var(--transition);
     }
     .filter-btn.active, .filter-btn:hover {
       background: var(--secondary); color: var(--white); transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
     }
     
-    /* Gallery Grid */
-    .greeting-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 35px;
+    /* ===== GALLERY GRID (MENYESUAIKAN ARTICLE GRID) ===== */
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;
     }
-    
-    /* Greeting Card */
     .greeting-card {
-      background: var(--white); border-radius: var(--border-radius); overflow: hidden;
-      box-shadow: var(--shadow-sm); transition: var(--transition); position: relative;
-      border: 1px solid rgba(0,0,0,0.05);
+      background: var(--white); border-radius: var(--border-radius-sm); overflow: hidden;
+      box-shadow: var(--shadow-sm); transition: var(--transition);
+      text-decoration: none; color: inherit; display: flex; flex-direction: column;
+      border: 1px solid rgba(0,0,0,0.05); position: relative;
     }
     .greeting-card:hover {
-      transform: translateY(-10px); box-shadow: var(--shadow-lg); border-color: var(--secondary);
+      transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--secondary);
     }
-    .card-image-wrapper { position: relative; padding-top: 140%; overflow: hidden; background: #f0f0f0; }
+    .card-image-wrapper {
+      position: relative; padding-top: 140%; overflow: hidden; background: #f0f0f0;
+    }
     .card-image-wrapper img {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      object-fit: cover; transition: transform 0.6s ease;
+      object-fit: cover; transition: transform 0.5s ease;
     }
-    .greeting-card:hover img { transform: scale(1.08); }
+    .greeting-card:hover img { transform: scale(1.05); }
     
-    /* Card Status Indicator */
+    /* Status Badge */
     .card-status {
       position: absolute; top: 15px; right: 15px; z-index: 10;
-      padding: 6px 12px; border-radius: 30px; font-size: 0.7rem;
+      padding: 5px 12px; border-radius: 30px; font-size: 0.7rem;
       font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
       background: var(--white); box-shadow: var(--shadow-sm);
     }
-    .card-status.scheduled { background: #fef3c7; color: #92400e; border-left: 4px solid #f59e0b; }
-    .card-status.live { background: #d1fae5; color: #065f46; border-left: 4px solid #10b981; }
-    .card-status.past { background: #e5e7eb; color: #374151; border-left: 4px solid #6b7280; }
+    .card-status.scheduled { background: #fef3c7; color: #92400e; border-left: 3px solid #f59e0b; }
+    .card-status.live { background: #d1fae5; color: #065f46; border-left: 3px solid #10b981; }
+    .card-status.past { background: #e5e7eb; color: #374151; border-left: 3px solid #6b7280; }
     
-    /* Card Overlay Actions */
+    /* Overlay Actions */
     .card-overlay {
       position: absolute; bottom: 0; left: 0; right: 0;
-      background: linear-gradient(to top, rgba(10,42,94,0.9), transparent);
-      padding: 20px; opacity: 0; transition: var(--transition);
-      display: flex; justify-content: center; gap: 12px;
+      background: linear-gradient(to top, rgba(10,42,94,0.85), transparent);
+      padding: 16px 20px; opacity: 0; transition: var(--transition);
+      display: flex; justify-content: center; gap: 10px;
     }
     .greeting-card:hover .card-overlay { opacity: 1; }
-    .action-icon {
-      width: 42px; height: 42px; border-radius: 50%; background: var(--white);
+    .action-btn {
+      width: 38px; height: 38px; border-radius: 50%; background: var(--white);
       color: var(--primary); display: flex; align-items: center; justify-content: center;
-      cursor: pointer; transition: var(--transition); font-size: 1rem;
+      cursor: pointer; transition: var(--transition); font-size: 0.9rem;
+      border: 2px solid transparent;
     }
-    .action-icon:hover {
-      background: var(--secondary); color: var(--white); transform: scale(1.15) rotate(5deg);
+    .action-btn:hover {
+      background: var(--secondary); color: var(--white); transform: scale(1.1);
+      border-color: var(--white);
     }
     
-    /* Card Info */
-    .card-info { padding: 20px; }
+    /* Card Content */
+    .card-content { padding: 20px; flex: 1; display: flex; flex-direction: column; }
     .card-tag {
       font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-      color: var(--secondary); letter-spacing: 1.2px; margin-bottom: 8px;
-      display: inline-block; background: rgba(158, 123, 75, 0.1);
-      padding: 4px 12px; border-radius: 20px;
+      color: var(--secondary); letter-spacing: 1px; margin-bottom: 10px;
+      display: inline-flex; align-items: center; gap: 5px;
+      background: rgba(158, 123, 75, 0.1); padding: 4px 12px; border-radius: 20px;
     }
     .card-title {
       font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 8px;
       line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2;
       -webkit-box-orient: vertical; overflow: hidden;
     }
-    .card-date { font-size: 0.85rem; color: var(--gray); display: flex; align-items: center; gap: 6px; }
+    .card-date {
+      font-size: 0.85rem; color: var(--gray); display: flex; align-items: center; gap: 6px;
+      margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .card-actions {
+      display: flex; gap: 8px; margin-top: auto; padding-top: 12px;
+    }
+    .card-link {
+      flex: 1; text-align: center; padding: 8px 12px; border-radius: 8px;
+      font-size: 0.85rem; font-weight: 600; color: var(--secondary);
+      border: 2px solid var(--secondary); transition: var(--transition);
+    }
+    .card-link:hover { background: var(--secondary); color: var(--white); }
     
     /* Empty State */
-    .empty-state { grid-column: 1 / -1; text-align: center; padding: 80px 20px; color: var(--gray); }
+    .empty-state {
+      grid-column: 1 / -1; text-align: center; padding: 80px 20px; color: var(--gray);
+    }
     .empty-state i { font-size: 4rem; margin-bottom: 20px; opacity: 0.3; color: var(--secondary); }
     .empty-state h3 { font-size: 1.5rem; margin-bottom: 10px; color: var(--primary); }
-    .empty-state p { font-size: 1rem; }
     
-    /* ===== FOOTER ===== */
+    /* ===== SIDEBAR (OPTIONAL - SAMA DENGAN ARTIKEL) ===== */
+    .main-wrapper { display: grid; grid-template-columns: 1fr 300px; gap: 40px; align-items: start; }
+    .sidebar { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 20px; }
+    .sidebar-card {
+      background: var(--white); border-radius: var(--border-radius-sm); overflow: hidden;
+      box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.05); transition: var(--transition);
+    }
+    .sidebar-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--secondary); }
+    .sidebar-widget { padding: 20px; text-align: center; }
+    .sidebar-widget h4 {
+      color: var(--primary); margin-bottom: 10px; font-size: 1.05rem;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .sidebar-widget p { color: var(--gray); font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px; }
+    .sidebar-btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px;
+      background: var(--secondary); color: white; border-radius: 50px;
+      text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: var(--transition);
+    }
+    .sidebar-btn:hover { background: var(--primary); transform: translateY(-2px); }
+    
+    /* ===== FOOTER (SAMA PERSIS) ===== */
     footer {
       background: linear-gradient(145deg, var(--primary-dark) 0%, var(--primary) 100%);
-      color: var(--white); padding: 70px 32px 30px; font-size: 1rem;
-      position: relative; margin-top: 80px;
+      color: var(--white); padding: 70px 32px 30px; position: relative; margin-top: 80px;
     }
     footer::before {
       content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
@@ -279,589 +320,608 @@
     .footer-section ul { list-style: none; }
     .footer-section ul li { margin-bottom: 14px; }
     .footer-section a {
-      color: rgba(255, 255, 255, 0.8); text-decoration: none;
-      transition: var(--transition); display: flex; align-items: center; gap: 10px;
+      color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: var(--transition);
+      display: flex; align-items: center; gap: 10px;
     }
     .footer-section a:hover { color: var(--secondary); transform: translateX(6px); }
     .social-links { display: flex; gap: 18px; margin-top: 20px; }
     .social-links a {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 44px; height: 44px; border-radius: 60px;
-      background: var(--glass); color: var(--white); font-size: 1.2rem;
+      display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px;
+      border-radius: 60px; background: var(--glass); color: var(--white); font-size: 1.2rem;
       transition: var(--transition); border: 1px solid var(--glass-border);
     }
     .social-links a:hover {
       background: var(--secondary); transform: translateY(-6px) scale(1.1); color: var(--primary-dark);
     }
     .footer-info-panel {
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 20px; background: rgba(0, 0, 0, 0.2);
-      padding: 20px 30px; border-radius: 60px; margin: 40px auto 20px;
-      max-width: 1000px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+      background: rgba(0, 0, 0, 0.2); padding: 20px 30px; border-radius: 60px;
+      margin: 40px auto 20px; max-width: 1000px; border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
     }
-    .footer-clock { display: flex; align-items: center; gap: 20px; color: var(--white); flex-wrap: wrap; }
+    .footer-clock { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
     .footer-time {
-      font-size: 2rem; font-weight: 700; font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 2rem; font-weight: 700; font-family: monospace;
       background: rgba(0,0,0,0.3); padding: 6px 18px; border-radius: 50px; letter-spacing: 2px;
     }
-    .footer-date { font-size: 1rem; opacity: 0.9; display: flex; align-items: center; gap: 8px; }
     .footer-visitor {
       display: flex; align-items: center; gap: 12px; background: var(--secondary);
-      color: var(--primary-dark); padding: 10px 24px; border-radius: 50px;
-      font-weight: 600; font-size: 1.1rem; box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+      color: var(--primary-dark); padding: 10px 24px; border-radius: 50px; font-weight: 600;
     }
     .footer-bottom {
       text-align: center; margin-top: 30px; padding-top: 30px;
-      border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.95rem; opacity: 0.8;
+      border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.95rem;
     }
     
-    /* ===== TOAST NOTIFICATION ===== */
+    /* ===== MODAL & TOAST (SAMA) ===== */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(10, 42, 94, 0.95);
+      display: flex; align-items: center; justify-content: center; z-index: 2000;
+      opacity: 0; visibility: hidden; transition: var(--transition); padding: 20px;
+    }
+    .modal-overlay.active { opacity: 1; visibility: visible; }
+    .modal-contact {
+      background: var(--white); border-radius: var(--border-radius); max-width: 900px;
+      width: 100%; max-height: 90vh; overflow-y: auto; box-shadow: var(--shadow-lg);
+      transform: translateY(20px); transition: transform 0.4s;
+    }
+    .modal-overlay.active .modal-contact { transform: translateY(0); }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px; width: 36px; height: 36px;
+      border-radius: 50%; background: var(--light); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .modal-header {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: white; padding: 24px; text-align: center;
+    }
+    .modal-body { padding: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .quick-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .action-btn-modal {
+      display: flex; align-items: center; gap: 10px; padding: 12px;
+      border-radius: 14px; background: var(--light); font-weight: 600; transition: var(--transition);
+    }
+    .action-btn-modal.whatsapp { background: rgba(37,211,102,0.1); color: #128C7E; }
+    .action-btn-modal:hover { transform: translateY(-2px); border: 2px solid var(--secondary); }
+    .info-panel { background: var(--light); padding: 16px; border-radius: 14px; }
+    .info-panel ul li { padding: 6px 0; display: flex; gap: 8px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .contact-form { grid-column: 1/-1; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group.full { grid-column: 1/-1; }
+    .form-group input, .form-group textarea {
+      padding: 10px 14px; border: 2px solid rgba(0,0,0,0.1);
+      border-radius: 12px; font: inherit; background: var(--white);
+    }
+    .submit-btn {
+      background: linear-gradient(135deg, var(--secondary), var(--accent));
+      color: white; border: none; padding: 12px 24px; border-radius: 40px;
+      font-weight: 600; cursor: pointer;
+    }
+    .map-preview iframe { width: 100%; height: 200px; border-radius: 12px; }
     .toast {
       position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px);
-      background: var(--primary); color: white; padding: 12px 24px; border-radius: 50px;
-      box-shadow: var(--shadow-lg); z-index: 9999; display: flex; align-items: center; gap: 10px;
-      transition: transform 0.3s ease; opacity: 0; visibility: hidden;
+      background: var(--dark); color: white; padding: 12px 24px; border-radius: 40px;
+      z-index: 3000; transition: transform 0.3s; display: flex; align-items: center; gap: 10px;
     }
-    .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; visibility: visible; }
-    .toast i { font-size: 1.2rem; }
-    .toast.success { background: #10b981; }
-    .toast.error { background: #ef4444; }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+    .toast.success { background: #25D366; }
     
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 1100px) { nav ul { gap: 12px; } nav ul li a { font-size: 0.85rem; } }
+    /* ===== RESPONSIVE (SAMA) ===== */
+    @media (max-width: 1100px) {
+      .main-wrapper { grid-template-columns: 1fr; }
+      .sidebar { position: static; flex-direction: row; flex-wrap: wrap; justify-content: center; }
+      .sidebar-card { max-width: 280px; flex: 0 0 auto; }
+    }
     @media (max-width: 880px) {
-      .menu-toggle { display: block; }
+      .menu-toggle { display: block; order: 3; }
+      .nav-right { order: 2; }
       nav ul {
         position: absolute; top: 76px; left: 0; right: 0; background: var(--primary);
         flex-direction: column; padding: 25px 0; display: none; z-index: 100;
-        border-top: 1px solid rgba(255,255,255,0.1);
+        border-top: 1px solid rgba(255,255,255,0.1); gap: 16px;
       }
       nav ul.active { display: flex; }
       nav ul li { text-align: center; }
-      nav ul li a { font-size: 1rem; white-space: normal; }
-      .nav-right { gap: 10px; }
-      .hero-greeting h1 { font-size: 2.2rem; }
-      .greeting-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+      nav ul li a { white-space: normal; }
+      .page-header h1 { font-size: 2.2rem; }
+      .container { padding: 0 20px; }
+      .whatsapp-float { bottom: 90px; right: 20px; padding: 12px 20px; }
       .whatsapp-float span { display: none; }
-      .whatsapp-float { bottom: 20px; right: 20px; padding: 12px; }
+      .whatsapp-float i { font-size: 32px; }
+      .footer-info-panel { flex-direction: column; text-align: center; }
+      .modal-body { grid-template-columns: 1fr; }
+      .sidebar { flex-direction: column; align-items: center; }
+      .admin-panel { flex-direction: column; text-align: center; }
+      .release-group { justify-content: center; }
     }
     @media (max-width: 768px) {
-      .hero-greeting { padding: 80px 20px 60px; }
-      .hero-greeting h1 { font-size: 2rem; }
-      .hero-greeting p { font-size: 1rem; }
-      .container { padding: 40px 20px; }
-      .filter-group { padding: 20px; }
-      .footer-info-panel { flex-direction: column; text-align: center; border-radius: 40px; padding: 20px; }
+      .page-header { padding: 80px 20px 60px; min-height: 350px; }
+      .page-header h1 { font-size: 2rem; }
+      .footer-info-panel { border-radius: 40px; padding: 20px; }
       .footer-clock { flex-direction: column; gap: 12px; width: 100%; }
-      .footer-time { font-size: 1.8rem; width: 100%; }
+      .footer-time { font-size: 1.8rem; }
     }
     @media (max-width: 480px) {
       .brand span { display: none; }
       .brand img { width: 44px; }
-      .hero-greeting h1 { font-size: 1.8rem; }
-      .greeting-grid { grid-template-columns: 1fr; }
-      .whatsapp-float { width: 50px; height: 50px; border-radius: 50%; justify-content: center; padding: 0; }
-      .footer-time { font-size: 1.5rem; }
-      .footer-visitor { padding: 8px 16px; font-size: 0.9rem; }
+      .page-header h1 { font-size: 1.8rem; }
+      .whatsapp-float { bottom: 15px; right: 15px; padding: 8px; width: 45px; height: 45px; border-radius: 50%; justify-content: center; }
+      .whatsapp-float i { font-size: 24px; }
+      .gallery-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- PRELOADER -->
-  <div id="preloader"><div class="spinner"></div></div>
+<!-- PRELOADER -->
+<div id="preloader"><div class="spinner"></div></div>
 
-  <!-- WHATSAPP FLOAT -->
-  <a href="https://wa.me/6282319712420?text=Halo%20saya%20ingin%20bertanya%20tentang%20Galeri%20Ucapan%20SMAN%201%20Cluring"
-     class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-    <i class="fab fa-whatsapp"></i><span class="whatsapp-text">Chat Admin</span>
-  </a>
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/6282319712420?text=Halo%20saya%20ingin%20bertanya%20tentang%20Galeri%20Ucapan%20SMAN%201%20Cluring"
+   class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-whatsapp"></i><span>Chat Admin</span>
+</a>
 
-  <!-- HEADER -->
-  <header data-aos="fade-down">
-    <div class="nav-container">
-      <a href="index.html" class="brand">
-        <img src="https://i.ibb.co.com/21TnnCcG/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring" />
-        <span>SMAN 1 CLURING</span>
-      </a>
-      <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-      <div class="nav-right">
-        <div class="lang-switcher">
-          <button class="lang-btn active" onclick="switchLanguage('id')" id="langId">ID</button>
-          <button class="lang-btn" onclick="switchLanguage('en')" id="langEn">EN</button>
-        </div>
-        <nav>
-          <ul id="navMenu">
-            <li><a href="index.html" data-page="index" data-id="Home" data-en="Home">Home</a></li>
-            <li><a href="profil.html" data-page="profil" data-id="Profil" data-en="Profile">Profil</a></li>
-            <li><a href="akademik.html" data-page="akademik" data-id="Akademik" data-en="Academics">Akademik</a></li>
-            <li><a href="kesiswaan.html" data-page="kesiswaan" data-id="Kesiswaan" data-en="Student Affairs">Kesiswaan</a></li>
-            <li><a href="sarpras.html" data-page="sarpras" data-id="Sarpras" data-en="Facilities">Sarpras</a></li>
-            <li><a href="humas.html" data-page="humas" data-id="Humas" data-en="Public Relations">Humas</a></li>
-            <li><a href="mitra.html" data-page="mitra" data-id="Mitra" data-en="Partners">Mitra</a></li>
-            <li><a href="alumni.html" data-page="alumni" data-id="Alumni" data-en="Alumni">Alumni</a></li>
-            <li><a href="artikel.html" data-page="artikel" data-id="Artikel" data-en="Articles">Artikel</a></li>
-            <li><a href="ucapan.html" data-page="ucapan" data-id="Ucapan" data-en="Greetings">Ucapan</a></li>
-            <li>
-              <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon"></i>
-                <i class="fas fa-sun" style="display: none;"></i>
-              </button>
-            </li>
-          </ul>
-        </nav>
+<!-- HEADER (SAMA PERSIS) -->
+<header>
+  <div class="nav-container">
+    <a href="index.html" class="brand">
+      <img src="https://i.ibb.co.com/21TnnCcG/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring">
+      <span>SMAN 1 CLURING</span>
+    </a>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="nav-right">
+      <div class="lang-switcher" style="display:flex;align-items:center;gap:5px;margin-right:10px;">
+        <button class="dark-mode-toggle" style="width:36px;height:36px;font-size:1rem;" onclick="switchLanguage('id')" id="langId">ID</button>
+        <button class="dark-mode-toggle" style="width:36px;height:36px;font-size:1rem;" onclick="switchLanguage('en')" id="langEn">EN</button>
       </div>
+      <nav>
+        <ul id="navMenu">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="spmb.html">SPMB</a></li>
+          <li><a href="akademik.html">Akademik</a></li>
+          <li><a href="kesiswaan.html">Kesiswaan</a></li>
+          <li><a href="sarpras.html">Sarpras</a></li>
+          <li><a href="humas.html">Humas</a></li>
+          <li><a href="mitra.html">Mitra</a></li>
+          <li><a href="alumni.html">Alumni</a></li>
+          <li><a href="artikel.html">Artikel</a></li>
+          <li><a href="ucapan.html" class="active">Ucapan</a></li>
+          <li><a href="#" onclick="openContactModal();return false">Kontak</a></li>
+          <li style="display: flex; align-items: center;">
+            <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+              <i class="fas fa-moon"></i><i class="fas fa-sun" style="display:none;"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <section class="hero-greeting" data-aos="zoom-in">
-    <h1 data-aos="fade-up" id="heroTitle"><i class="fas fa-gift"></i> Galeri Ucapan & Perayaan</h1>
-    <p data-aos="fade-up" data-aos-delay="100" id="heroDesc">
-      Kumpulan desain ucapan selamat hari raya, hari besar nasional, dan momen spesial dari keluarga besar SMAN 1 Cluring Banyuwangi.
-    </p>
-  </section>
+<!-- PAGE HEADER (HERO) -->
+<section class="page-header" data-aos="zoom-in">
+  <h1 data-aos="fade-up"><i class="fas fa-gift"></i> Galeri Ucapan & Perayaan</h1>
+  <p data-aos="fade-up" data-aos-delay="100" id="heroDesc">
+    Kumpulan desain ucapan selamat hari raya, hari besar nasional, dan momen spesial dari keluarga besar SMAN 1 Cluring Banyuwangi.
+  </p>
+</section>
 
-  <!-- MAIN CONTENT -->
-  <div class="container">
-    
-    <!-- ADMIN CONTROLS -->
-    <div class="admin-controls" data-aos="fade-up" id="adminControls">
-      <div class="admin-title">
-        <i class="fas fa-crown"></i>
-        <h3 id="adminTitle">Panel Kontrol Admin - Rilis Konten</h3>
-      </div>
-      <div class="release-buttons">
-        <button class="release-btn active" onclick="setReleaseMode('auto')" id="modeAuto">🎯 <span data-id="Otomatis (Sesuai Jadwal)" data-en="Automatic (Scheduled)">Otomatis (Sesuai Jadwal)</span></button>
-        <button class="release-btn" onclick="setReleaseMode('all')" id="modeAll">📢 <span data-id="Rilis Semua Konten" data-en="Release All Content">Rilis Semua Konten</span></button>
-        <button class="release-btn" onclick="setReleaseMode('2025')" id="mode2025">📅 <span data-id="Rilis 2025 Saja" data-en="Release 2025 Only">Rilis 2025 Saja</span></button>
-        <button class="release-btn" onclick="setReleaseMode('2026')" id="mode2026">⏳ <span data-id="Rilis 2026 Saja" data-en="Release 2026 Only">Rilis 2026 Saja</span></button>
-        <button class="release-btn" onclick="setReleaseMode('idulFitri')" id="modeIdul">🌙 <span data-id="Rilis Idul Fitri 2026" data-en="Release Eid 2026">Rilis Idul Fitri 2026</span></button>
-      </div>
-      <p style="margin-top: 15px; font-size: 0.9rem; color: var(--gray);" id="adminInfo">
-        <i class="fas fa-info-circle"></i> Mode <strong>Otomatis</strong>: Hanya menampilkan konten yang sudah mencapai tanggalnya.
-        Mode lainnya akan memaksa konten tertentu untuk tampil.
-      </p>
+<!-- MAIN CONTENT -->
+<div class="container">
+  
+  <!-- ADMIN CONTROLS (DISEDERHANAKAN) -->
+  <div class="admin-panel" data-aos="fade-up">
+    <div class="admin-title">
+      <i class="fas fa-crown"></i>
+      <span id="adminTitle">Panel Admin - Rilis Konten</span>
     </div>
-
-    <!-- FILTERS -->
-    <div class="filter-group" data-aos="fade-up">
-      <button class="filter-btn active" onclick="filterGallery('all', this)"><i class="fas fa-th"></i> <span data-id="Semua" data-en="All">Semua</span></button>
-      <button class="filter-btn" onclick="filterGallery('agama', this)"><i class="fas fa-mosque"></i> <span data-id="Hari Raya Agama" data-en="Religious Holidays">Hari Raya Agama</span></button>
-      <button class="filter-btn" onclick="filterGallery('nasional', this)"><i class="fas fa-flag"></i> <span data-id="Hari Nasional" data-en="National Days">Hari Nasional</span></button>
-      <button class="filter-btn" onclick="filterGallery('internasional', this)"><i class="fas fa-globe"></i> <span data-id="Internasional" data-en="International">Internasional</span></button>
-      <button class="filter-btn" onclick="filterGallery('sekolah', this)"><i class="fas fa-school"></i> <span data-id="Event Sekolah" data-en="School Events">Event Sekolah</span></button>
+    <div class="release-group">
+      <button class="release-btn active" onclick="setReleaseMode('auto')" id="modeAuto">🎯 Otomatis</button>
+      <button class="release-btn" onclick="setReleaseMode('all')" id="modeAll">📢 Semua</button>
+      <button class="release-btn" onclick="setReleaseMode('2025')" id="mode2025">📅 2025</button>
+      <button class="release-btn" onclick="setReleaseMode('2026')" id="mode2026">⏳ 2026</button>
+      <button class="release-btn" onclick="setReleaseMode('idulFitri')" id="modeIdul">🌙 Idul Fitri</button>
     </div>
-    
-    <!-- GALLERY GRID -->
-    <div class="greeting-grid" id="galleryGrid"></div>
-    
   </div>
 
-  <!-- FOOTER -->
-  <footer data-aos="fade-up">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3><i class="fas fa-map-marker-alt"></i> <span data-id="Kontak" data-en="Contact">Kontak</span></h3>
-        <p>Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, Jawa Timur</p>
-        <p><i class="fas fa-phone"></i> <a href="tel:+62333713297">0333-713297</a></p>
-        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6282319712420" target="_blank">0823-1971-2420 (WA)</a></p>
-      </div>
-      <div class="footer-section">
-        <h3><i class="fas fa-link"></i> <span data-id="Link Penting" data-en="Important Links">Link Penting</span></h3>
-        <ul>
-          <li><a href="https://sma.kemendikdasmen.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
-          <li><a href="https://dindik.jatimprov.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
-          <li><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas Banyuwangi</a></li>
-          <li><a href="artikel.html"><i class="fas fa-newspaper"></i> <span data-id="Artikel & Berita" data-en="Articles & News">Artikel & Berita</span></a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3><i class="fas fa-share-alt"></i> <span data-id="Media Sosial" data-en="Social Media">Media Sosial</span></h3>
-        <div class="social-links">
-          <a href="https://www.facebook.com/Sman1Cluring" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/sman1_cluring" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="https://wa.me/6282319712420" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <div class="main-wrapper">
+    <div class="gallery-wrapper">
+      
+      <!-- FILTER & SEARCH -->
+      <div class="controls-container" data-aos="fade-up">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Cari ucapan..." onkeyup="filterGallery()">
+          <button onclick="filterGallery()"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="filters">
+          <button class="filter-btn active" onclick="setCategory('all', this)">Semua</button>
+          <button class="filter-btn" onclick="setCategory('agama', this)">Agama</button>
+          <button class="filter-btn" onclick="setCategory('nasional', this)">Nasional</button>
+          <button class="filter-btn" onclick="setCategory('internasional', this)">Internasional</button>
+          <button class="filter-btn" onclick="setCategory('sekolah', this)">Sekolah</button>
         </div>
       </div>
+      
+      <!-- GALLERY GRID -->
+      <div class="gallery-grid" id="galleryGrid"></div>
+      
     </div>
     
-    <!-- CLOCK & VISITOR PANEL -->
-    <div class="footer-info-panel">
-      <div class="footer-clock">
-        <span class="footer-time" id="footerTime">00:00:00</span>
-        <span class="footer-date" id="footerDate">Sabtu, 1 Januari 2026</span>
+    <!-- SIDEBAR (SAMA DENGAN ARTIKEL) -->
+    <aside class="sidebar" data-aos="fade-left" data-aos-delay="200">
+      <div class="sidebar-card">
+        <div class="sidebar-widget">
+          <h4><i class="fas fa-newspaper"></i> Berita Terbaru</h4>
+          <p>Lihat artikel dan berita terkini dari SMAN 1 Cluring.</p>
+          <a href="artikel.html" class="sidebar-btn"><i class="fas fa-arrow-right"></i> Baca Artikel</a>
+        </div>
       </div>
-      <div class="footer-visitor">
-        <i class="fas fa-eye"></i><span id="footerVisitorCount">Loading...</span>
+      <div class="sidebar-card">
+        <div class="sidebar-widget">
+          <h4><i class="fas fa-link"></i> Akses Cepat</h4>
+          <ul style="list-style:none;text-align:left;padding:0 10px;">
+            <li style="margin:8px 0;"><a href="https://sma.kemendikdasmen.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
+            <li style="margin:8px 0;"><a href="https://dindik.jatimprov.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
+            <li style="margin:8px 0;"><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas</a></li>
+            <li style="margin:8px 0;"><a href="https://alam21234.github.io/Smaring-interactive-learning-comunity" target="_blank"><i class="fas fa-external-link-alt"></i> Smaring</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+    
+  </div>
+</div>
+
+<!-- FOOTER (SAMA PERSIS) -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3><i class="fas fa-map-marker-alt"></i> Kontak</h3>
+      <p>Jl. Huzaini, Benculuk, Cluring<br>Banyuwangi, Jawa Timur</p>
+      <p><i class="fas fa-phone"></i> <a href="tel:+62333397306">0333-397306</a></p>
+      <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6282319712420">0823-1971-2420 (WA)</a></p>
+    </div>
+    <div class="footer-section">
+      <h3><i class="fas fa-link"></i> Link Penting</h3>
+      <ul>
+        <li><a href="https://sma.kemendikdasmen.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Kemendikbud</a></li>
+        <li><a href="https://dindik.jatimprov.go.id" target="_blank"><i class="fas fa-external-link-alt"></i> Dindik Jatim</a></li>
+        <li><a href="https://banyuwangicab.dindikjatim.id" target="_blank"><i class="fas fa-external-link-alt"></i> Cabang Dinas Banyuwangi</a></li>
+        <li><a href="https://alam21234.github.io/Smaring-interactive-learning-comunity" target="_blank"><i class="fas fa-external-link-alt"></i> Smaring Learning Community</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3><i class="fas fa-flask"></i> Lab Virtual</h3>
+      <ul>
+        <li><a href="https://quran.nu.or.id" target="_blank"><i class="fas fa-book-quran"></i> Al-Qur'an Digital</a></li>
+        <li><a href="https://virtualbiologylab.org" target="_blank"><i class="fas fa-dna"></i> Virtual Biology Lab</a></li>
+        <li><a href="https://www.myphysicslab.com" target="_blank"><i class="fas fa-atom"></i> MyPhysicsLab</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3><i class="fas fa-share-alt"></i> Media Sosial</h3>
+      <div class="social-links">
+        <a href="https://www.facebook.com/Sman1Cluring" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/sman1_cluring" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/watch?v=5ZgkVKZuFiM" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/6282319712420" target="_blank"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p id="footerText">© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
+  </div>
+  <div class="footer-info-panel">
+    <div class="footer-clock">
+      <span class="footer-time" id="footerTime">00:00:00</span>
+      <span class="footer-date" id="footerDate">Sabtu, 1 Januari 2026</span>
     </div>
-  </footer>
+    <div class="footer-visitor">
+      <i class="fas fa-eye"></i>
+      <span id="footerVisitorCount">Loading...</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan</p>
+  </div>
+</footer>
 
-  <!-- Toast Notification -->
-  <div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="toastMessage">Berhasil!</span></div>
-
-  <!-- JAVASCRIPT LOGIC -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    // ===== BILINGUAL CONFIGURATION =====
-    let currentLang = 'id';
-    
-    const translations = {
-      id: {
-        heroTitle: 'Galeri Ucapan & Perayaan',
-        heroDesc: 'Kumpulan desain ucapan selamat hari raya, hari besar nasional, dan momen spesial dari keluarga besar SMAN 1 Cluring Banyuwangi.',
-        adminTitle: 'Panel Kontrol Admin - Rilis Konten',
-        adminInfo: 'Mode Otomatis: Hanya menampilkan konten yang sudah mencapai tanggalnya. Mode lainnya akan memaksa konten tertentu untuk tampil.',
-        modeAuto: 'Otomatis (Sesuai Jadwal)', modeAll: 'Rilis Semua Konten',
-        mode2025: 'Rilis 2025 Saja', mode2026: 'Rilis 2026 Saja', modeIdul: 'Rilis Idul Fitri 2026',
-        filterAll: 'Semua', filterAgama: 'Hari Raya Agama', filterNasional: 'Hari Nasional',
-        filterInternasional: 'Internasional', filterSekolah: 'Event Sekolah',
-        statusScheduled: 'Jadwal', statusPast: 'Arsip', statusLive: 'TAYANG HARI INI', willAir: 'Akan tayang',
-        emptyTitle: 'Belum Ada Ucapan', emptyAuto: 'Belum ada ucapan untuk saat ini. Silakan cek lagi nanti atau gunakan panel admin untuk pratayang.',
-        emptyFilter: 'Tidak ada konten dengan filter yang dipilih.',
-        toastAuto: 'Mode otomatis: Hanya menampilkan konten yang sudah waktunya tayang',
-        toastAll: 'Menampilkan SEMUA konten (termasuk yang belum waktunya)',
-        toast2025: 'Menampilkan konten tahun 2025 saja', toast2026: 'Menampilkan konten tahun 2026 saja',
-        toastIdul: 'Pratayang: Idul Fitri 2026', toastCopied: '📋 Link berhasil disalin!',
-        whatsappText: 'Chat Admin',
-        footerContact: 'Kontak', footerLinks: 'Link Penting', footerSocial: 'Media Sosial',
-        footerArticles: 'Artikel & Berita',
-        footerText: '© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan'
-      },
-      en: {
-        heroTitle: 'Greetings & Celebrations Gallery',
-        heroDesc: 'Collection of greeting designs for religious holidays, national days, and special moments from the SMAN 1 Cluring Banyuwangi family.',
-        adminTitle: 'Admin Control Panel - Content Release',
-        adminInfo: 'Automatic Mode: Only shows content that has reached its date. Other modes will force specific content to appear.',
-        modeAuto: 'Automatic (Scheduled)', modeAll: 'Release All Content',
-        mode2025: 'Release 2025 Only', mode2026: 'Release 2026 Only', modeIdul: 'Release Eid 2026',
-        filterAll: 'All', filterAgama: 'Religious Holidays', filterNasional: 'National Days',
-        filterInternasional: 'International', filterSekolah: 'School Events',
-        statusScheduled: 'Scheduled', statusPast: 'Archive', statusLive: 'AIRING TODAY', willAir: 'Will air on',
-        emptyTitle: 'No Greetings Yet', emptyAuto: 'No greetings available at this time. Please check again later or use the admin panel for preview.',
-        emptyFilter: 'No content with the selected filter.',
-        toastAuto: 'Automatic mode: Only showing content that is due to air',
-        toastAll: 'Showing ALL content (including those not yet due)',
-        toast2025: 'Showing 2025 content only', toast2026: 'Showing 2026 content only',
-        toastIdul: 'Preview: Eid al-Fitr 2026', toastCopied: '📋 Link copied successfully!',
-        whatsappText: 'Chat Admin',
-        footerContact: 'Contact', footerLinks: 'Important Links', footerSocial: 'Social Media',
-        footerArticles: 'Articles & News',
-        footerText: '© 2026 SMAN 1 Cluring — Inspiring Pancasila Generation from Bumi Blambangan'
-      }
-    };
-
-    function switchLanguage(lang) {
-      currentLang = lang;
-      document.getElementById('langId').classList.toggle('active', lang === 'id');
-      document.getElementById('langEn').classList.toggle('active', lang === 'en');
-      
-      document.querySelectorAll('[data-id]').forEach(el => {
-        const idText = el.getAttribute('data-id');
-        const enText = el.getAttribute('data-en');
-        if (el.tagName === 'SPAN' || el.tagName === 'A' || (el.tagName === 'BUTTON' && !el.classList.contains('lang-btn'))) {
-          el.textContent = lang === 'id' ? idText : enText;
-        }
-      });
-      
-      document.getElementById('heroTitle').innerHTML = `<i class="fas fa-gift"></i> ${translations[lang].heroTitle}`;
-      document.getElementById('heroDesc').textContent = translations[lang].heroDesc;
-      document.getElementById('adminTitle').textContent = translations[lang].adminTitle;
-      document.getElementById('adminInfo').innerHTML = `<i class="fas fa-info-circle"></i> ${translations[lang].adminInfo}`;
-      
-      document.querySelector('#modeAuto span').textContent = translations[lang].modeAuto;
-      document.querySelector('#modeAll span').textContent = translations[lang].modeAll;
-      document.querySelector('#mode2025 span').textContent = translations[lang].mode2025;
-      document.querySelector('#mode2026 span').textContent = translations[lang].mode2026;
-      document.querySelector('#modeIdul span').textContent = translations[lang].modeIdul;
-      
-      const filterBtns = document.querySelectorAll('.filter-btn span');
-      if (filterBtns.length >= 5) {
-        filterBtns[0].textContent = translations[lang].filterAll;
-        filterBtns[1].textContent = translations[lang].filterAgama;
-        filterBtns[2].textContent = translations[lang].filterNasional;
-        filterBtns[3].textContent = translations[lang].filterInternasional;
-        filterBtns[4].textContent = translations[lang].filterSekolah;
-      }
-      
-      document.querySelector('.whatsapp-text').textContent = translations[lang].whatsappText;
-      
-      document.querySelectorAll('.footer-section h3 span').forEach((el, index) => {
-        if (index === 0) el.textContent = translations[lang].footerContact;
-        else if (index === 1) el.textContent = translations[lang].footerLinks;
-        else if (index === 2) el.textContent = translations[lang].footerSocial;
-      });
-      
-      document.querySelector('.footer-section ul li:last-child a span').textContent = translations[lang].footerArticles;
-      document.getElementById('footerText').textContent = translations[lang].footerText;
-      
-      renderGallery(greetingData);
-    }
-
-    // ===== DATA UCAPAN - DIURUTKAN: KELOMPOK → TANGGAL =====
-    const greetingData = [
-      // ==================== KELOMPOK AGAMA ====================
-      { id: 6, titleId: "Selamat Natal & Tahun Baru 2026", titleEn: "Merry Christmas & Happy New Year 2026", category: "agama", year: 2025, date: "2025-12-25", image: "https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&fit=crop&q=80&w=600", link: "#" },
-      { id: 1, titleId: "Selamat Tahun Baru Imlek 2577", titleEn: "Happy Chinese New Year 2577", category: "agama", year: 2026, date: "2026-01-29", image: "https://i.ibb.co.com/W4xkCJL0/imlek.jpg", link: "https://ibb.co.com/39rpKZnv" },
-      { id: 11, titleId: "Selamat Hari Raya Nyepi 2026", titleEn: "Happy Nyepi Day 2026", category: "agama", year: 2026, date: "2026-03-18", image: "https://i.ibb.co.com/0VsXwy4h/nyepi.jpg", link: "https://ibb.co.com/Z12JZz4W" },
-      { id: 12, titleId: "Hari Raya Idul Fitri 1447 H", titleEn: "Eid al-Fitr 1447 H", category: "agama", year: 2026, date: "2026-03-21", image: "https://i.ibb.co.com/LDpPyrhQ/hari-raya-idul-fitri-1447-H.jpg", link: "https://ibb.co.com/vCzBWhvs" },
-      { id: 13, titleId: "Selamat Hari Jumat Agung 2026", titleEn: "Happy Good Friday 2026", category: "agama", year: 2026, date: "2026-04-03", image: "https://i.ibb.co.com/67vfQKLJ/JUMAT-AGUNG.jpg", link: "https://ibb.co.com/XryvHnMk" },
-      { id: 15, titleId: "Selamat Hari Kenaikan Yesus Kristus 2026", titleEn: "Happy Ascension of Jesus Christ 2026", category: "agama", year: 2026, date: "2026-05-14", image: "https://i.ibb.co.com/ycdYxhtV/kenaikan-yesus-kristus-14-mei-2026.jpg", link: "https://ibb.co.com/nN6nK39R" },
-      { id: 17, titleId: "Selamat Hari Raya Idul Adha 1447 H", titleEn: "Eid al-Adha 1447 H", category: "agama", year: 2026, date: "2026-05-27", image: "https://i.ibb.co.com/yFkr78gG/27-mei-2026-ucapan-idul-adha-1447-hijriyah.jpg", link: "https://ibb.co.com/hFdSwK2h" },
-      { id: 18, titleId: "Selamat Hari Raya Waisak 2026", titleEn: "Happy Vesak Day 2026", category: "agama", year: 2026, date: "2026-05-31", image: "https://i.ibb.co.com/hJj6LQy1/31-mei-2026-hari-raya-waisak.jpg", link: "https://ibb.co.com/nNvG6db8" },
-      { id: 19, titleId: "Selamat Tahun Baru Islam 1448 H", titleEn: "Happy Islamic New Year 1448 H", category: "agama", year: 2026, date: "2026-06-16", image: "https://i.ibb.co.com/ccmnYtRY/1-muharom-1448-h.jpg", link: "https://ibb.co.com/N64BTpfT" },
-      { id: 20, titleId: "Selamat Hari Raya Galungan 2026", titleEn: "Happy Galungan Day 2026", category: "agama", year: 2026, date: "2026-06-17", image: "https://i.ibb.co.com/chywT3Fr/17-JUNI-2026-HARI-RAYA-GALUNGAN.jpg", link: "https://ibb.co.com/XxWDJLsC" },
-      
-      // ==================== KELOMPOK INTERNASIONAL ====================
-      { id: 9, titleId: "Selamat Hari Anak Nasional 2025", titleEn: "Happy National Children's Day 2025", category: "internasional", year: 2025, date: "2025-07-23", image: "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&q=80&w=600", link: "#" },
-      
-      // ==================== KELOMPOK NASIONAL ====================
-      { id: 8, titleId: "Selamat Hari Kartini 2026", titleEn: "Happy Kartini Day 2026", category: "nasional", year: 2026, date: "2026-04-21", image: "https://i.ibb.co.com/CSxFst4/kartini.jpg", link: "https://ibb.co.com/xrVQ8sw" },
-      { id: 14, titleId: "Selamat Hari Buruh 2026", titleEn: "Happy Labor Day 2026", category: "nasional", year: 2026, date: "2026-05-01", image: "https://i.ibb.co.com/VpN2wPnL/hari-buruh.jpg", link: "https://ibb.co.com/h1MDYtQg" },
-      { id: 7, titleId: "Selamat Hari Pendidikan Nasional", titleEn: "Happy National Education Day", category: "nasional", year: 2026, date: "2026-05-02", image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600", link: "#" },
-      { id: 16, titleId: "Selamat Hari Kebangkitan Nasional 2026", titleEn: "Happy National Awakening Day 2026", category: "nasional", year: 2026, date: "2026-05-20", image: "https://i.ibb.co.com/F4VsbJqv/20-MEI-2026-HARI-KEBANKITAN-NASIONAL.jpg", link: "https://ibb.co.com/KxwNj7zZ" },
-      { 
-        id: 5, 
-        titleId: "Selamat Hari Kemerdekaan RI ke-81", 
-        titleEn: "Happy 81st Independence Day of Indonesia", 
-        category: "nasional", 
-        year: 2026, 
-        date: "2026-08-17", 
-        image: "https://i.ibb.co.com/HL9vd9xd/HUT-RI-KE-81-17-AGUSTUS-2026.jpg", 
-        link: "https://ibb.co.com/dsH9gHLg" 
-      },
-      
-      // ==================== KELOMPOK SEKOLAH ====================
-      { id: 2, titleId: "Selamat Menunaikan Ibadah Puasa 1447 H", titleEn: "Blessed Ramadan 1447 H", category: "sekolah", year: 2026, date: "2026-02-20", image: "https://i.ibb.co.com/ZR322tPt/puasa.jpg", link: "https://ibb.co.com/Y4600YMY" },
-      { id: 4, titleId: "Kampanye Kurangi Sampah Plastik", titleEn: "Reduce Plastic Waste Campaign", category: "sekolah", year: 2026, date: "2026-02-21", image: "https://i.ibb.co.com/xKJC3qrh/flayer-sampah-plastik.jpg", link: "https://ibb.co.com/Fkgxn4d6" },
-      { id: 3, titleId: "Pondok Ramadan 2026", titleEn: "Ramadan Islamic Boarding 2026", category: "sekolah", year: 2026, date: "2026-02-23", image: "https://i.ibb.co.com/vvscHcKY/brosur-pondok-romadhon.jpg", link: "https://ibb.co.com/FqshKhjV" },
-      { id: 10, titleId: "Program Siswa Asuh Sebaya 2026", titleEn: "Peer Tutoring Program 2026", category: "sekolah", year: 2026, date: "2026-02-23", image: "https://i.ibb.co.com/90M2JhH/siswa-asuh-sebaya.jpg", link: "https://ibb.co.com/QV5nZkv" }
-    ];
-    
-    const galleryGrid = document.getElementById('galleryGrid');
-    let currentFilter = 'all';
-    let releaseMode = 'auto';
-    
-    function getTodayDate() {
-      const today = new Date();
-      return today.toISOString().split('T')[0];
-    }
-    
-    function filterByReleaseMode(data) {
-      const today = getTodayDate();
-      switch(releaseMode) {
-        case 'all': return data;
-        case '2025': return data.filter(item => item.year === 2025);
-        case '2026': return data.filter(item => item.year === 2026);
-        case 'idulFitri': return data.filter(item => item.id === 12);
-        case 'auto':
-        default: return data.filter(item => item.date <= today);
-      }
-    }
-    
-    function formatDate(dateString) {
-      return new Date(dateString).toLocaleDateString(currentLang === 'id' ? 'id-ID' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-    }
-
-    function getCategoryLabel(category) {
-      const labelsId = { 'agama': 'Hari Raya', 'nasional': 'Nasional', 'internasional': 'Internasional', 'sekolah': 'Event Sekolah' };
-      const labelsEn = { 'agama': 'Religious', 'nasional': 'National', 'internasional': 'International', 'sekolah': 'School Event' };
-      return currentLang === 'id' ? (labelsId[category] || 'Umum') : (labelsEn[category] || 'General');
-    }
-
-    function renderGallery(data) {
-      let filteredByRelease = filterByReleaseMode(data);
-      let finalData = currentFilter === 'all' ? filteredByRelease : filteredByRelease.filter(item => item.category === currentFilter);
-      
-      galleryGrid.innerHTML = '';
-      
-      if (finalData.length === 0) {
-        let message = releaseMode === 'auto' ? translations[currentLang].emptyAuto : translations[currentLang].emptyFilter;
-        galleryGrid.innerHTML = `<div class="empty-state" data-aos="zoom-in"><i class="fas fa-images"></i><h3>${translations[currentLang].emptyTitle}</h3><p>${message}</p></div>`;
-        return;
-      }
-      
-      // ✅ PENGURUTAN: KELOMPOK → TANGGAL
-      finalData.sort((a, b) => {
-        if (a.category !== b.category) return a.category.localeCompare(b.category);
-        return new Date(a.date) - new Date(b.date);
-      });
-      
-      finalData.forEach((item, index) => {
-        const today = getTodayDate();
-        const title = currentLang === 'id' ? item.titleId : item.titleEn;
-        
-        const card = document.createElement('div');
-        card.className = 'greeting-card';
-        card.setAttribute('data-aos', 'fade-up');
-        card.setAttribute('data-aos-delay', (index % 4) * 50);
-        
-        let statusBadge = '';
-        if (item.date > today) {
-          statusBadge = `<div class="card-status scheduled"><i class="far fa-clock"></i> ${translations[currentLang].statusScheduled}: ${formatDate(item.date)}</div>`;
-        } else if (item.date < today) {
-          statusBadge = `<div class="card-status past"><i class="fas fa-archive"></i> ${translations[currentLang].statusPast}</div>`;
-        } else {
-          statusBadge = `<div class="card-status live"><i class="fas fa-broadcast-tower"></i> ${translations[currentLang].statusLive}</div>`;
-        }
-        
-        card.innerHTML = `
-          <div class="card-image-wrapper">
-            ${statusBadge}
-            <a href="${item.link}" target="_blank" rel="noopener">
-              <img src="${item.image}" alt="${title}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x560?text=SMAN+1+Cluring'">
-            </a>
-            <div class="card-overlay">
-              <a href="${item.link}" target="_blank" class="action-icon" title="${currentLang === 'id' ? 'Lihat Full Size' : 'View Full Size'}"><i class="fas fa-expand"></i></a>
-              <a href="#" onclick="shareGreeting('${title.replace(/'/g, "\\'")}', '${item.link}'); return false;" class="action-icon" title="${currentLang === 'id' ? 'Bagikan' : 'Share'}"><i class="fas fa-share-alt"></i></a>
-              <a href="${item.image}" download="${title}.jpg" class="action-icon" title="${currentLang === 'id' ? 'Download' : 'Download'}"><i class="fas fa-download"></i></a>
-            </div>
+<!-- MODAL KONTAK (SAMA) -->
+<div class="modal-overlay" id="contactModal">
+  <div class="modal-contact">
+    <button class="modal-close" onclick="closeContactModal()"><i class="fas fa-times"></i></button>
+    <div class="modal-header"><h2><i class="fas fa-headset"></i> Hubungi Kami</h2><p>SMAN 1 Cluring - Siap Melayani Anda</p></div>
+    <div class="modal-body">
+      <div class="quick-actions">
+        <a href="https://wa.me/6282319712420" target="_blank" class="action-btn-modal whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="mailto:alamsah@guru.sma.belajar.id" class="action-btn-modal"><i class="fas fa-envelope"></i> Email</a>
+        <a href="tel:+62333397306" class="action-btn-modal"><i class="fas fa-phone"></i> Telepon</a>
+        <a href="https://maps.google.com/?q=SMAN+1+Cluring+Banyuwangi" target="_blank" class="action-btn-modal"><i class="fas fa-map-marker-alt"></i> Lokasi</a>
+      </div>
+      <div class="info-panel">
+        <h4><i class="fas fa-info-circle"></i> Informasi Sekolah</h4>
+        <ul>
+          <li><i class="fas fa-map-pin"></i> Jl. Huzaini, Benculuk, Cluring, Banyuwangi, Jawa Timur</li>
+          <li><i class="fas fa-clock"></i> Senin-Jumat: 07.00 - 15.30 WIB</li>
+          <li><i class="fas fa-building"></i> SMAN 1 Cluring - NPSN: 20525862</li>
+          <li><i class="fas fa-globe"></i> sman1cluring.sch.id</li>
+        </ul>
+      </div>
+      <div class="contact-form">
+        <h4><i class="fas fa-paper-plane"></i> Kirim Pesan</h4>
+        <form id="contactForm" onsubmit="handleContactSubmit(event)">
+          <div class="form-grid">
+            <div class="form-group"><label>Nama *</label><input type="text" id="nama" required></div>
+            <div class="form-group"><label>Email *</label><input type="email" id="email" required></div>
+            <div class="form-group full"><label>Subjek *</label><input type="text" id="subjek" required></div>
+            <div class="form-group full"><label>Pesan *</label><textarea id="pesan" required></textarea></div>
           </div>
-          <div class="card-info">
-            <span class="card-tag">${getCategoryLabel(item.category)} • ${item.year}</span>
-            <h3 class="card-title">${title}</h3>
-            <p class="card-date"><i class="far fa-calendar"></i> ${formatDate(item.date)}</p>
-            <p style="font-size: 0.8rem; margin-top: 5px; color: var(--secondary);">
-              ${item.date > today ? `<i class="far fa-hourglass"></i> ${translations[currentLang].willAir} ${formatDate(item.date)}` : ''}
-            </p>
-          </div>`;
-        galleryGrid.appendChild(card);
-      });
-    }
+          <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Kirim Pesan</button>
+        </form>
+      </div>
+      <div class="map-preview">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.5!2d114.2!3d-8.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMzAnMDAuMCJTIDExNMKwMTInMDAuMCJF!5e0!3m2!1sid!2sid!4v1234567890" loading="lazy"></iframe>
+        <a href="https://maps.google.com/?q=SMAN+1+Cluring+Banyuwangi" target="_blank">Buka Google Maps</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-    function setReleaseMode(mode) {
-      releaseMode = mode;
-      document.querySelectorAll('.release-btn').forEach(btn => btn.classList.remove('active'));
-      if (mode === 'auto') document.getElementById('modeAuto').classList.add('active');
-      if (mode === 'all') document.getElementById('modeAll').classList.add('active');
-      if (mode === '2025') document.getElementById('mode2025').classList.add('active');
-      if (mode === '2026') document.getElementById('mode2026').classList.add('active');
-      if (mode === 'idulFitri') document.getElementById('modeIdul').classList.add('active');
-      
-      let messageKey = '';
-      switch(mode) {
-        case 'auto': messageKey = 'toastAuto'; break;
-        case 'all': messageKey = 'toastAll'; break;
-        case '2025': messageKey = 'toast2025'; break;
-        case '2026': messageKey = 'toast2026'; break;
-        case 'idulFitri': messageKey = 'toastIdul'; break;
-      }
-      showToast('🔄 ' + translations[currentLang][messageKey], 'success');
-      filterGallery(currentFilter, document.querySelector('.filter-btn.active'));
-    }
+<div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="toastMessage">Berhasil!</span></div>
 
-    function filterGallery(category, btn) {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-      currentFilter = category;
-      renderGallery(greetingData);
-    }
+<!-- JAVASCRIPT -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+// ===== BILINGUAL CONFIG =====
+let currentLang = 'id';
+const translations = {
+  id: {
+    heroDesc: 'Kumpulan desain ucapan selamat hari raya, hari besar nasional, dan momen spesial dari keluarga besar SMAN 1 Cluring Banyuwangi.',
+    adminTitle: 'Panel Admin - Rilis Konten',
+    filterAll: 'Semua', filterAgama: 'Agama', filterNasional: 'Nasional',
+    filterInternasional: 'Internasional', filterSekolah: 'Sekolah',
+    statusScheduled: 'Jadwal', statusPast: 'Arsip', statusLive: 'TAYANG HARI INI', willAir: 'Akan tayang',
+    emptyTitle: 'Belum Ada Ucapan', emptyAuto: 'Belum ada ucapan untuk saat ini. Silakan cek lagi nanti.',
+    emptyFilter: 'Tidak ada konten dengan filter yang dipilih.',
+    toastAuto: 'Mode otomatis: Hanya menampilkan konten yang sudah waktunya',
+    toastAll: 'Menampilkan SEMUA konten', toast2025: 'Konten tahun 2025', toast2026: 'Konten tahun 2026',
+    toastIdul: 'Pratayang: Idul Fitri 2026', toastCopied: '📋 Link berhasil disalin!',
+    viewFull: 'Lihat Full', share: 'Bagikan', download: 'Unduh',
+    footerText: '© 2026 SMAN 1 Cluring — Menginspirasi Generasi Pancasila dari Bumi Blambangan'
+  },
+  en: {
+    heroDesc: 'Collection of greeting designs for religious holidays, national days, and special moments from the SMAN 1 Cluring Banyuwangi family.',
+    adminTitle: 'Admin Panel - Content Release',
+    filterAll: 'All', filterAgama: 'Religious', filterNasional: 'National',
+    filterInternasional: 'International', filterSekolah: 'School',
+    statusScheduled: 'Scheduled', statusPast: 'Archive', statusLive: 'AIRING TODAY', willAir: 'Will air on',
+    emptyTitle: 'No Greetings Yet', emptyAuto: 'No greetings available at this time. Please check again later.',
+    emptyFilter: 'No content with the selected filter.',
+    toastAuto: 'Automatic mode: Only showing content that is due',
+    toastAll: 'Showing ALL content', toast2025: '2025 content only', toast2026: '2026 content only',
+    toastIdul: 'Preview: Eid al-Fitr 2026', toastCopied: '📋 Link copied!',
+    viewFull: 'View Full', share: 'Share', download: 'Download',
+    footerText: '© 2026 SMAN 1 Cluring — Inspiring Pancasila Generation from Bumi Blambangan'
+  }
+};
 
-    function shareGreeting(title, link) {
-      if (navigator.share) {
-        navigator.share({ 
-          title: title, 
-          text: currentLang === 'id' ? `Lihat ucapan "${title}" dari SMAN 1 Cluring` : `Check out "${title}" from SMAN 1 Cluring`, 
-          url: link 
-        }).catch(console.error);
-      } else {
-        navigator.clipboard.writeText(link)
-          .then(() => showToast(translations[currentLang].toastCopied, 'success'))
-          .catch(() => alert('Link: ' + link));
-      }
-    }
+function switchLanguage(lang) {
+  currentLang = lang;
+  document.getElementById('langId').style.background = lang === 'id' ? 'var(--secondary)' : 'transparent';
+  document.getElementById('langEn').style.background = lang === 'en' ? 'var(--secondary)' : 'transparent';
+  document.getElementById('heroDesc').textContent = translations[lang].heroDesc;
+  document.getElementById('adminTitle').textContent = translations[lang].adminTitle;
+  
+  const btns = document.querySelectorAll('.filter-btn');
+  const labels = [translations[lang].filterAll, translations[lang].filterAgama, translations[lang].filterNasional, translations[lang].filterInternasional, translations[lang].filterSekolah];
+  btns.forEach((btn, i) => { if (btn.querySelector('span')) btn.querySelector('span').textContent = labels[i]; else btn.textContent = labels[i]; });
+  
+  document.querySelector('.footer-bottom p').textContent = translations[lang].footerText;
+  renderGallery(greetingData);
+}
 
-    function showToast(message, type = 'success') {
-      const toast = document.getElementById('toast');
-      document.getElementById('toastMessage').textContent = message;
-      toast.className = `toast ${type} show`;
-      setTimeout(() => toast.classList.remove('show'), 4000);
-    }
+// ===== DATA UCAPAN =====
+const greetingData = [
+  { id: 6, titleId: "Selamat Natal & Tahun Baru 2026", titleEn: "Merry Christmas & Happy New Year 2026", category: "agama", year: 2025, date: "2025-12-25", image: "https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&fit=crop&q=80&w=600", link: "#" },
+  { id: 1, titleId: "Selamat Tahun Baru Imlek 2577", titleEn: "Happy Chinese New Year 2577", category: "agama", year: 2026, date: "2026-01-29", image: "https://i.ibb.co.com/W4xkCJL0/imlek.jpg", link: "https://ibb.co.com/39rpKZnv" },
+  { id: 11, titleId: "Selamat Hari Raya Nyepi 2026", titleEn: "Happy Nyepi Day 2026", category: "agama", year: 2026, date: "2026-03-18", image: "https://i.ibb.co.com/0VsXwy4h/nyepi.jpg", link: "https://ibb.co.com/Z12JZz4W" },
+  { id: 12, titleId: "Hari Raya Idul Fitri 1447 H", titleEn: "Eid al-Fitr 1447 H", category: "agama", year: 2026, date: "2026-03-21", image: "https://i.ibb.co.com/LDpPyrhQ/hari-raya-idul-fitri-1447-H.jpg", link: "https://ibb.co.com/vCzBWhvs" },
+  { id: 13, titleId: "Selamat Hari Jumat Agung 2026", titleEn: "Happy Good Friday 2026", category: "agama", year: 2026, date: "2026-04-03", image: "https://i.ibb.co.com/67vfQKLJ/JUMAT-AGUNG.jpg", link: "https://ibb.co.com/XryvHnMk" },
+  { id: 15, titleId: "Selamat Hari Kenaikan Yesus Kristus 2026", titleEn: "Happy Ascension of Jesus Christ 2026", category: "agama", year: 2026, date: "2026-05-14", image: "https://i.ibb.co.com/ycdYxhtV/kenaikan-yesus-kristus-14-mei-2026.jpg", link: "https://ibb.co.com/nN6nK39R" },
+  { id: 17, titleId: "Selamat Hari Raya Idul Adha 1447 H", titleEn: "Eid al-Adha 1447 H", category: "agama", year: 2026, date: "2026-05-27", image: "https://i.ibb.co.com/yFkr78gG/27-mei-2026-ucapan-idul-adha-1447-hijriyah.jpg", link: "https://ibb.co.com/hFdSwK2h" },
+  { id: 18, titleId: "Selamat Hari Raya Waisak 2026", titleEn: "Happy Vesak Day 2026", category: "agama", year: 2026, date: "2026-05-31", image: "https://i.ibb.co.com/hJj6LQy1/31-mei-2026-hari-raya-waisak.jpg", link: "https://ibb.co.com/nNvG6db8" },
+  { id: 19, titleId: "Selamat Tahun Baru Islam 1448 H", titleEn: "Happy Islamic New Year 1448 H", category: "agama", year: 2026, date: "2026-06-16", image: "https://i.ibb.co.com/ccmnYtRY/1-muharom-1448-h.jpg", link: "https://ibb.co.com/N64BTpfT" },
+  { id: 20, titleId: "Selamat Hari Raya Galungan 2026", titleEn: "Happy Galungan Day 2026", category: "agama", year: 2026, date: "2026-06-17", image: "https://i.ibb.co.com/chywT3Fr/17-JUNI-2026-HARI-RAYA-GALUNGAN.jpg", link: "https://ibb.co.com/XxWDJLsC" },
+  { id: 9, titleId: "Selamat Hari Anak Nasional 2025", titleEn: "Happy National Children's Day 2025", category: "internasional", year: 2025, date: "2025-07-23", image: "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&q=80&w=600", link: "#" },
+  { id: 8, titleId: "Selamat Hari Kartini 2026", titleEn: "Happy Kartini Day 2026", category: "nasional", year: 2026, date: "2026-04-21", image: "https://i.ibb.co.com/CSxFst4/kartini.jpg", link: "https://ibb.co.com/xrVQ8sw" },
+  { id: 14, titleId: "Selamat Hari Buruh 2026", titleEn: "Happy Labor Day 2026", category: "nasional", year: 2026, date: "2026-05-01", image: "https://i.ibb.co.com/VpN2wPnL/hari-buruh.jpg", link: "https://ibb.co.com/h1MDYtQg" },
+  { id: 7, titleId: "Selamat Hari Pendidikan Nasional", titleEn: "Happy National Education Day", category: "nasional", year: 2026, date: "2026-05-02", image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600", link: "#" },
+  { id: 16, titleId: "Selamat Hari Kebangkitan Nasional 2026", titleEn: "Happy National Awakening Day 2026", category: "nasional", year: 2026, date: "2026-05-20", image: "https://i.ibb.co.com/F4VsbJqv/20-MEI-2026-HARI-KEBANKITAN-NASIONAL.jpg", link: "https://ibb.co.com/KxwNj7zZ" },
+  { id: 5, titleId: "Selamat Hari Kemerdekaan RI ke-81", titleEn: "Happy 81st Independence Day of Indonesia", category: "nasional", year: 2026, date: "2026-08-17", image: "https://i.ibb.co.com/HL9vd9xd/HUT-RI-KE-81-17-AGUSTUS-2026.jpg", link: "https://ibb.co.com/dsH9gHLg" },
+  { id: 2, titleId: "Selamat Menunaikan Ibadah Puasa 1447 H", titleEn: "Blessed Ramadan 1447 H", category: "sekolah", year: 2026, date: "2026-02-20", image: "https://i.ibb.co.com/ZR322tPt/puasa.jpg", link: "https://ibb.co.com/Y4600YMY" },
+  { id: 4, titleId: "Kampanye Kurangi Sampah Plastik", titleEn: "Reduce Plastic Waste Campaign", category: "sekolah", year: 2026, date: "2026-02-21", image: "https://i.ibb.co.com/xKJC3qrh/flayer-sampah-plastik.jpg", link: "https://ibb.co.com/Fkgxn4d6" },
+  { id: 3, titleId: "Pondok Ramadan 2026", titleEn: "Ramadan Islamic Boarding 2026", category: "sekolah", year: 2026, date: "2026-02-23", image: "https://i.ibb.co.com/vvscHcKY/brosur-pondok-romadhon.jpg", link: "https://ibb.co.com/FqshKhjV" },
+  { id: 10, titleId: "Program Siswa Asuh Sebaya 2026", titleEn: "Peer Tutoring Program 2026", category: "sekolah", year: 2026, date: "2026-02-23", image: "https://i.ibb.co.com/90M2JhH/siswa-asuh-sebaya.jpg", link: "https://ibb.co.com/QV5nZkv" }
+];
 
-    function toggleMenu() { document.getElementById('navMenu').classList.toggle('active'); }
+// ===== FUNGSI =====
+function getTodayDate() { return new Date().toISOString().split('T')[0]; }
+function formatDate(dateString) {
+  return new Date(dateString).toLocaleDateString(currentLang === 'id' ? 'id-ID' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+function getCategoryLabel(cat) {
+  const labels = { 'agama': 'Agama', 'nasional': 'Nasional', 'internasional': 'Internasional', 'sekolah': 'Sekolah' };
+  return labels[cat] || 'Umum';
+}
+
+let currentCategory = 'all';
+let releaseMode = 'auto';
+const galleryGrid = document.getElementById('galleryGrid');
+
+function filterByReleaseMode(data) {
+  const today = getTodayDate();
+  switch(releaseMode) {
+    case 'all': return data;
+    case '2025': return data.filter(i => i.year === 2025);
+    case '2026': return data.filter(i => i.year === 2026);
+    case 'idulFitri': return data.filter(i => i.id === 12);
+    case 'auto': default: return data.filter(i => i.date <= today);
+  }
+}
+
+function renderGallery(data) {
+  let filtered = filterByReleaseMode(data);
+  if (currentCategory !== 'all') filtered = filtered.filter(i => i.category === currentCategory);
+  const search = document.getElementById('searchInput')?.value.toLowerCase() || '';
+  if (search) filtered = filtered.filter(i => {
+    const title = currentLang === 'id' ? i.titleId : i.titleEn;
+    return title.toLowerCase().includes(search) || getCategoryLabel(i.category).toLowerCase().includes(search);
+  });
+  
+  galleryGrid.innerHTML = '';
+  if (filtered.length === 0) {
+    galleryGrid.innerHTML = `<div class="empty-state" data-aos="zoom-in"><i class="fas fa-images"></i><h3>${translations[currentLang].emptyTitle}</h3><p>${releaseMode === 'auto' ? translations[currentLang].emptyAuto : translations[currentLang].emptyFilter}</p></div>`;
+    return;
+  }
+  
+  // Sort: category → date
+  filtered.sort((a,b) => a.category !== b.category ? a.category.localeCompare(b.category) : new Date(a.date) - new Date(b.date));
+  
+  filtered.forEach((item, idx) => {
+    const today = getTodayDate();
+    const title = currentLang === 'id' ? item.titleId : item.titleEn;
+    const card = document.createElement('div');
+    card.className = 'greeting-card';
+    card.setAttribute('data-aos', 'fade-up');
+    card.setAttribute('data-aos-delay', (idx % 4) * 50);
     
-    function setupMobileMenuClose() {
-      document.querySelectorAll('#navMenu a').forEach(link => {
-        link.addEventListener('click', () => document.getElementById('navMenu').classList.remove('active'));
-      });
-    }
+    let status = '';
+    if (item.date > today) status = `<div class="card-status scheduled"><i class="far fa-clock"></i> ${translations[currentLang].statusScheduled}</div>`;
+    else if (item.date < today) status = `<div class="card-status past"><i class="fas fa-archive"></i> ${translations[currentLang].statusPast}</div>`;
+    else status = `<div class="card-status live"><i class="fas fa-broadcast-tower"></i> ${translations[currentLang].statusLive}</div>`;
     
-    function setActiveNav() {
-      const currentPage = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
-      document.querySelectorAll('#navMenu a[data-page]').forEach(link => {
-        link.classList.remove('active');
-        if (link.dataset.page === currentPage) link.classList.add('active');
-      });
-    }
+    card.innerHTML = `
+      <div class="card-image-wrapper">
+        ${status}
+        <img src="${item.image}" alt="${title}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x560?text=SMAN+1+Cluring'">
+        <div class="card-overlay">
+          <a href="${item.link}" target="_blank" class="action-btn" title="${translations[currentLang].viewFull}"><i class="fas fa-expand"></i></a>
+          <button class="action-btn" onclick="shareGreeting('${title.replace(/'/g,"\\'")}')" title="${translations[currentLang].share}"><i class="fas fa-share-alt"></i></button>
+          <a href="${item.image}" download="${title}.jpg" class="action-btn" title="${translations[currentLang].download}"><i class="fas fa-download"></i></a>
+        </div>
+      </div>
+      <div class="card-content">
+        <span class="card-tag"><i class="fas fa-tag"></i> ${getCategoryLabel(item.category)} • ${item.year}</span>
+        <h3 class="card-title">${title}</h3>
+        <p class="card-date"><i class="far fa-calendar"></i> ${formatDate(item.date)}</p>
+        ${item.date > today ? `<p style="font-size:0.8rem;color:var(--secondary);margin-top:5px;"><i class="far fa-hourglass"></i> ${translations[currentLang].willAir} ${formatDate(item.date)}</p>` : ''}
+        <div class="card-actions">
+          <a href="${item.link}" target="_blank" class="card-link">${translations[currentLang].viewFull} <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>`;
+    galleryGrid.appendChild(card);
+  });
+}
 
-    // Dark Mode
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const body = document.body;
-    const moonIcon = darkModeToggle.querySelector('.fa-moon');
-    const sunIcon = darkModeToggle.querySelector('.fa-sun');
-    if (localStorage.getItem('darkMode') === 'enabled') {
-      body.classList.add('dark-mode');
-      moonIcon.style.display = 'none'; sunIcon.style.display = 'block';
-    }
-    darkModeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      if (body.classList.contains('dark-mode')) {
-        moonIcon.style.display = 'none'; sunIcon.style.display = 'block';
-        localStorage.setItem('darkMode', 'enabled');
-      } else {
-        moonIcon.style.display = 'block'; sunIcon.style.display = 'none';
-        localStorage.setItem('darkMode', 'disabled');
-      }
-    });
+function setCategory(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  currentCategory = cat;
+  renderGallery(greetingData);
+}
 
-    // Realtime Clock
-    function updateClock() {
-      const now = new Date();
-      document.getElementById('footerTime').textContent = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
-      const daysId = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
-      const daysEn = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-      const monthsId = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
-      const monthsEn = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-      if (currentLang === 'id') {
-        document.getElementById('footerDate').textContent = `${daysId[now.getDay()]}, ${now.getDate()} ${monthsId[now.getMonth()]} ${now.getFullYear()}`;
-      } else {
-        document.getElementById('footerDate').textContent = `${daysEn[now.getDay()]}, ${monthsEn[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
-      }
-    }
-    setInterval(updateClock, 1000); updateClock();
+function setReleaseMode(mode) {
+  releaseMode = mode;
+  document.querySelectorAll('.release-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('mode'+(mode==='auto'?'Auto':mode==='all'?'All':mode==='2025'?'2025':mode==='2026'?'2026':'Idul')).classList.add('active');
+  const msg = {auto:'toastAuto',all:'toastAll',2025:'toast2025',2026:'toast2026',idulFitri:'toastIdul'}[mode];
+  showToast('🔄 ' + translations[currentLang][msg], 'success');
+  renderGallery(greetingData);
+}
 
-    // Visitor Counter
-    function updateVisitorCounter() {
-      const visitorKey = 'sman1cluring_greeting_visitor_count';
-      let count = localStorage.getItem(visitorKey);
-      if (!count) { count = 1; localStorage.setItem(visitorKey, count); }
-      else { count = parseInt(count); if (!sessionStorage.getItem('greeting_visitor_counted')) { count++; localStorage.setItem(visitorKey, count); sessionStorage.setItem('greeting_visitor_counted', 'true'); } }
-      document.getElementById('footerVisitorCount').textContent = `${count.toLocaleString(currentLang === 'id' ? 'id-ID' : 'en-US')} ${currentLang === 'id' ? 'Pengunjung' : 'Visitors'}`;
-    }
+function filterGallery() { renderGallery(greetingData); }
 
-    // INIT
-    document.addEventListener('DOMContentLoaded', () => {
-      switchLanguage('id');
-      renderGallery(greetingData);
-      setActiveNav(); 
-      setupMobileMenuClose();
-      setTimeout(() => document.getElementById('preloader').classList.add('fade-out'), 600);
-      AOS.init({ duration: 600, once: true, offset: 50 });
-      updateVisitorCounter();
-    });
+function shareGreeting(title) {
+  if (navigator.share) {
+    navigator.share({ title, text: `"${title}" - SMAN 1 Cluring`, url: window.location.href }).catch(()=>{});
+  } else {
+    navigator.clipboard.writeText(window.location.href);
+    showToast(translations[currentLang].toastCopied, 'success');
+  }
+}
 
-    document.addEventListener('click', function(event) {
-      const navMenu = document.getElementById('navMenu');
-      const menuToggle = document.querySelector('.menu-toggle');
-      if (navMenu.classList.contains('active') && !navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
-        navMenu.classList.remove('active');
-      }
-    });
-  </script>
+function showToast(msg, type='success') {
+  const t = document.getElementById('toast');
+  document.getElementById('toastMessage').textContent = msg;
+  t.className = `toast ${type} show`;
+  setTimeout(()=>t.classList.remove('show'), 3000);
+}
+
+// ===== INIT =====
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(()=>document.getElementById('preloader')?.classList.add('fade-out'), 200);
+  AOS.init({duration:800, once:true, easing:'ease-out-cubic'});
+  switchLanguage('id');
+  renderGallery(greetingData);
+  
+  // Dark mode
+  const toggle = document.getElementById('darkModeToggle');
+  const body = document.body;
+  const moon = toggle.querySelector('.fa-moon'), sun = toggle.querySelector('.fa-sun');
+  if (localStorage.getItem('darkMode') === 'true') { body.classList.add('dark-mode'); moon.style.display='none'; sun.style.display='block'; }
+  toggle.addEventListener('click', ()=>{
+    body.classList.toggle('dark-mode');
+    if(body.classList.contains('dark-mode')){ moon.style.display='none'; sun.style.display='block'; localStorage.setItem('darkMode','true'); }
+    else { moon.style.display='block'; sun.style.display='none'; localStorage.setItem('darkMode','false'); }
+  });
+  
+  // Clock & Visitor
+  function updateClock(){
+    const n=new Date();
+    document.getElementById('footerTime').textContent=n.toLocaleTimeString('id-ID');
+    const d=['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'], m=['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+    document.getElementById('footerDate').textContent=`${d[n.getDay()]}, ${n.getDate()} ${m[n.getMonth()]} ${n.getFullYear()}`;
+  }
+  setInterval(updateClock,1000); updateClock();
+  
+  function visitorCounter(){
+    let c=localStorage.getItem('sman1cluring_greeting_visitor');
+    if(!c){c=1;localStorage.setItem('sman1cluring_greeting_visitor',c);}
+    else{c=parseInt(c);if(!sessionStorage.getItem('g_counted')){c++;localStorage.setItem('sman1cluring_greeting_visitor',c);sessionStorage.setItem('g_counted','true');}}
+    document.getElementById('footerVisitorCount').textContent=`${c.toLocaleString('id-ID')} Pengunjung`;
+  }
+  visitorCounter();
+  
+  // Modal
+  window.openContactModal=()=>{document.getElementById('contactModal').classList.add('active');document.body.style.overflow='hidden';};
+  window.closeContactModal=()=>{document.getElementById('contactModal').classList.remove('active');document.body.style.overflow='';};
+  document.getElementById('contactModal')?.addEventListener('click',e=>{if(e.target===document.getElementById('contactModal'))closeContactModal();});
+  window.handleContactSubmit=(e)=>{
+    e.preventDefault();
+    const btn=e.target.querySelector('.submit-btn');
+    if(btn.disabled)return;
+    btn.disabled=true;btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+    setTimeout(()=>{
+      try{
+        const msg={nama:document.getElementById('nama').value,email:document.getElementById('email').value,subjek:document.getElementById('subjek').value,pesan:document.getElementById('pesan').value,ts:new Date().toISOString()};
+        let arr=JSON.parse(localStorage.getItem('ucapanMsg')||'[]');arr.push(msg);localStorage.setItem('ucapanMsg',JSON.stringify(arr));
+        const toast=document.getElementById('toast');const toastMsg=document.getElementById('toastMessage');
+        toastMsg.textContent='✅ Pesan terkirim!';toast.className='toast success show';
+        setTimeout(()=>toast.classList.remove('show'),3000);
+        document.getElementById('contactForm').reset();
+        setTimeout(closeContactModal,1500);
+      }catch(err){
+        const toast=document.getElementById('toast');const toastMsg=document.getElementById('toastMessage');
+        toastMsg.textContent='❌ Gagal mengirim';toast.className='toast error show';
+        setTimeout(()=>toast.classList.remove('show'),3000);
+      }finally{btn.disabled=false;btn.innerHTML='<i class="fas fa-paper-plane"></i> Kirim Pesan';}
+    },800);
+  };
+});
+
+// Mobile menu
+function toggleMenu(){document.getElementById('navMenu').classList.toggle('active');}
+document.querySelectorAll('#navMenu a').forEach(link=>{link.addEventListener('click',()=>document.getElementById('navMenu')?.classList.remove('active'));});
+</script>
 </body>
 </html>
