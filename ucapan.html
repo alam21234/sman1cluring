@@ -742,7 +742,12 @@ const greetingData = [
   { id: 20, titleId: "Selamat Hari Raya Galungan 2026", titleEn: "Happy Galungan Day 2026", category: "agama", year: 2026, date: "2026-06-17", image: "https://i.ibb.co.com/chywT3Fr/17-JUNI-2026-HARI-RAYA-GALUNGAN.jpg", link: "https://ibb.co.com/XxWDJLsC" },
   { id: 9, titleId: "Selamat Hari Anak Nasional 2025", titleEn: "Happy National Children's Day 2025", category: "internasional", year: 2025, date: "2025-07-23", image: "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&q=80&w=600", link: "#" },
   { id: 5, titleId: "Selamat Hari Kemerdekaan RI ke-81", titleEn: "Happy 81st Independence Day of Indonesia", category: "nasional", year: 2026, date: "2026-08-17", image: "https://i.ibb.co.com/HL9vd9xd/HUT-RI-KE-81-17-AGUSTUS-2026.jpg", link: "https://ibb.co.com/dsH9gHLg" },
-  { id: 21, titleId: "Selamat Maulid Nabi Muhammad SAW 1448 H", titleEn: "Happy Mawlid al-Nabi 1448 H", category: "agama", year: 2026, date: "2026-08-25", image: "https://i.ibb.co.com/tT85Fqmk/25-AGUSTUS-2026-MAULID-NABI-SAW.jpg", link: "https://ibb.co.com/q3kwVNyX" }
+  { id: 21, titleId: "Selamat Maulid Nabi Muhammad SAW 1448 H", titleEn: "Happy Mawlid al-Nabi 1448 H", category: "agama", year: 2026, date: "2026-08-25", image: "https://i.ibb.co.com/tT85Fqmk/25-AGUSTUS-2026-MAULID-NABI-SAW.jpg", link: "https://ibb.co.com/q3kwVNyX" },
+  
+  // === BARU DITAMBAHKAN: DIURUTKAN BERDASARKAN TANGGAL BULAN TAHUN ===
+  { id: 22, titleId: "Selamat Hari Kesaktian Pancasila 2026", titleEn: "Happy Pancasila Sanctity Day 2026", category: "nasional", year: 2026, date: "2026-10-01", image: "https://i.ibb.co.com/Nns85Zny/1-OKTOBER-2026-HARI-KESAKTIAN-PANCASILA.jpg", link: "https://ibb.co.com/M5sYrM5C" },
+  { id: 23, titleId: "Selamat Hari Batik Nasional 2026", titleEn: "Happy National Batik Day 2026", category: "nasional", year: 2026, date: "2026-10-02", image: "https://i.ibb.co.com/kVLWtLth/2-OKTOBER-2026-HARI-BATIK-NASIONAL.jpg", link: "https://ibb.co.com/DPBSZBZ7" },
+  { id: 24, titleId: "Selamat Hari TNI 2026", titleEn: "Happy Indonesian National Armed Forces Day 2026", category: "nasional", year: 2026, date: "2026-10-05", image: "https://i.ibb.co.com/xtMnxKWd/5-oktober-2026-hari-TNI.jpg", link: "https://ibb.co.com/RkCXRGfd" }
 ];
 
 // ===== FUNGSI =====
@@ -785,7 +790,7 @@ function renderGallery(data) {
     return;
   }
   
-  // Sort: category → date
+  // Sort: category → date (Tanggal, Bulan, Tahun)
   filtered.sort((a,b) => a.category !== b.category ? a.category.localeCompare(b.category) : new Date(a.date) - new Date(b.date));
   
   filtered.forEach((item, idx) => {
