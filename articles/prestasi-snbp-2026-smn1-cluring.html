@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://unpkg.com">
-    <link rel="preconnect" href="https://i.ibb.co">
     
     <!-- SEO -->
     <meta name="description" content="96 siswa SMAN 1 Cluring berhasil lolos SNPMB 2026 - 57 melalui SNBP dan 39 melalui SNBT ke berbagai perguruan tinggi negeri favorit.">
@@ -22,7 +21,8 @@
     <meta property="og:description" content="Prestasi gemilang! 96 siswa SMAN 1 Cluring diterima di PTN favorit melalui SNBP dan SNBT 2026.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://sman1cluring.sch.id/artikel/snbp-2026.html">
-    <meta property="og:image" content="https://i.ibb.co.com/5WppLwkd/57-snbp-4x4.png">
+    <!-- Ganti ini nanti jika gambar sudah di GitHub: content="../snbp57-4x4.jpeg" -->
+    <meta property="og:image" content="https://i.ibb.co.com/5WppLwkd/57-snbp-4x4.png"> 
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -34,7 +34,7 @@
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     
     <style>
-        /* ===== CORE VARIABLES (KONSISTEN DENGAN INDEX) ===== */
+        /* ===== CORE VARIABLES ===== */
         :root {
             --primary: #0a2a5e; --primary-light: #1e3a7a; --primary-dark: #051a3b;
             --secondary: #9e7b4b; --secondary-light: #c1a06e; --accent: #c7a854;
@@ -93,7 +93,7 @@
         .whatsapp-float:hover { transform: translateY(-5px); }
         .whatsapp-float i { font-size: 24px; }
         
-        /* HEADER (dengan path relatif seperti pondok ramadhan) */
+        /* HEADER */
         header {
             background: linear-gradient(135deg, var(--primary), var(--primary-light));
             position: sticky; top: 0; z-index: 1000;
@@ -133,7 +133,7 @@
         .dark-mode-toggle .fa-sun { display: none; }
         .menu-toggle { display: none; font-size: 28px; color: var(--white); cursor: pointer; }
         
-        /* HERO SECTION dengan background foto perpisahan */
+        /* HERO SECTION */
         .article-hero {
             background: linear-gradient(135deg, rgba(10,42,94,0.92), rgba(5,26,59,0.96)), 
                         url('https://i.ibb.co.com/N205QwkC/PERPISAHAN.jpg') center/cover no-repeat;
@@ -176,29 +176,12 @@
             box-shadow: var(--shadow-md);
             transition: var(--transition);
         }
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-        .stat-card.snbp {
-            background: linear-gradient(135deg, #10b981, #059669);
-        }
-        .stat-card.snbt {
-            background: linear-gradient(135deg, #f59e0b, #d97706);
-        }
-        .stat-card.total {
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
-        }
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-            display: block;
-        }
-        .stat-label {
-            font-size: 0.95rem;
-            opacity: 0.95;
-        }
+        .stat-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .stat-card.snbp { background: linear-gradient(135deg, #10b981, #059669); }
+        .stat-card.snbt { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .stat-card.total { background: linear-gradient(135deg, var(--secondary), var(--accent)); }
+        .stat-number { font-size: 2.5rem; font-weight: 800; margin-bottom: 8px; display: block; }
+        .stat-label { font-size: 0.95rem; opacity: 0.95; }
         
         /* MAIN CONTENT */
         .article-wrapper {
@@ -251,7 +234,7 @@
         }
         .back-btn:hover { background: var(--secondary); color: white; transform: translateX(-3px); }
         
-        /* FOOTER (sama dengan pondok ramadhan) */
+        /* FOOTER */
         footer {
             background: linear-gradient(145deg, var(--primary-dark), var(--primary));
             color: var(--white); padding: 70px 32px 30px;
@@ -354,11 +337,12 @@
         <i class="fab fa-whatsapp"></i><span>Chat Admin</span>
     </a>
     
-    <!-- HEADER (dengan path relatif ../ seperti pondok ramadhan) -->
+    <!-- HEADER -->
     <header data-aos="fade-down">
         <div class="nav-container">
             <a href="../index.html" class="brand">
-                <img src="https://i.ibb.co.com/21TnnCcG/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring" width="52" height="52" loading="eager">
+                <!-- PERBAIKAN 1: PATH LOGO DIUBAH KE LOKAL -->
+                <img src="../SMAN1Cluring-emblem.png" alt="Logo SMAN 1 Cluring" width="52" height="52" loading="eager">
                 <span>SMAN 1 CLURING</span>
             </a>
             <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
@@ -386,7 +370,7 @@
         </div>
     </header>
     
-    <!-- HERO dengan background foto perpisahan -->
+    <!-- HERO -->
     <section class="article-hero" data-aos="fade-in">
         <div class="breadcrumb">
             <a href="../index.html">Home</a> / <a href="../artikel.html">Artikel</a> / 96 Siswa Lolos SNPMB 2026
@@ -404,12 +388,11 @@
         <a href="../artikel.html" class="back-btn"><i class="fas fa-arrow-left"></i> Kembali ke Artikel</a>
         
         <div class="featured-image" style="text-align:center;margin:25px 0 35px;">
-            <img src="snbp57-4x4.jpeg" alt="snbp57" width="100%"> 
-                 alt="96 Siswa SMAN 1 Cluring Lolos SNPMB 2026" 
-                 style="max-width:100%;border-radius:20px;box-shadow:var(--shadow-md);" loading="lazy">
+            <!-- PERBAIKAN 2: TAG IMG DISATUKAN DAN DIPERBAIKI SYNTAX-NYA -->
+            <img src="snbp57-4x4.jpeg" alt="96 Siswa SMAN 1 Cluring Lolos SNPMB 2026" width="100%" style="max-width:100%; border-radius:20px; box-shadow:var(--shadow-md);" loading="lazy">
             <div style="margin-top:12px;font-size:0.95rem;color:var(--gray);font-style:italic;">
                 🎉 Dokumentasi keberhasilan 96 siswa SMAN 1 Cluring yang lolos SNPMB 2026
-            </div>
+            </div is>
         </div>
         
         <!-- STATS CARDS -->
@@ -557,12 +540,10 @@
         document.addEventListener('DOMContentLoaded', () => {
             AOS.init({ duration: 600, once: true, easing: 'ease-out-cubic' });
             
-            // Preloader
             setTimeout(() => {
                 document.getElementById('preloader')?.classList.add('fade-out');
             }, 400);
             
-            // Dark Mode
             const darkToggle = document.getElementById('darkModeToggle');
             const body = document.body;
             if(localStorage.getItem('darkMode') === 'true') body.classList.add('dark-mode');
@@ -571,19 +552,16 @@
                 localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
             });
             
-            // Mobile Menu Toggle
             window.toggleMenu = () => {
                 document.getElementById('navMenu')?.classList.toggle('active');
             };
             
-            // Tutup menu saat klik link (opsional, agar nyaman)
             document.querySelectorAll('#navMenu a').forEach(link => {
                 link.addEventListener('click', () => {
                     document.getElementById('navMenu')?.classList.remove('active');
                 });
             });
             
-            // Realtime Clock
             function updateClock() {
                 const now = new Date();
                 document.getElementById('footerTime').textContent = 
@@ -595,7 +573,6 @@
             }
             setInterval(updateClock, 1000); updateClock();
             
-            // Visitor Counter
             function updateVisitor() {
                 const key = 'sman1cluring_visitor';
                 let count = localStorage.getItem(key);
