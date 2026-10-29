@@ -29,55 +29,26 @@
 <style>
 /* ===== VARIABEL & RESET ===== */
 :root {
-  --primary: #0a2a5e;
-  --primary-light: #1e3a7a;
-  --primary-dark: #051a3b;
-  --secondary: #9e7b4b;
-  --secondary-light: #c1a06e;
-  --accent: #c7a854;
-  --cultural-accent: #b13e3e;
-  --light: #f5f7fa;
-  --dark: #1e2b37;
-  --gray: #4b5c6b;
-  --white: #ffffff;
-  --glass: rgba(255, 255, 255, 0.1);
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 8px 30px rgba(0, 20, 50, 0.12);
-  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
-  --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-  --border-radius: 24px;
-  --border-radius-sm: 16px;
-  --whatsapp: #25D366;
-  --whatsapp-dark: #128C7E;
-  --mobile-nav-height: 70px;
+  --primary: #0a2a5e; --primary-light: #1e3a7a; --primary-dark: #051a3b;
+  --secondary: #9e7b4b; --secondary-light: #c1a06e; --accent: #c7a854;
+  --cultural-accent: #b13e3e; --light: #f5f7fa; --dark: #1e2b37; --gray: #4b5c6b; --white: #ffffff;
+  --glass: rgba(255, 255, 255, 0.1); --glass-border: rgba(255, 255, 255, 0.2);
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.05); --shadow-md: 0 8px 30px rgba(0, 20, 50, 0.12);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15); --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  --border-radius: 24px; --border-radius-sm: 16px;
+  --whatsapp: #25D366; --whatsapp-dark: #128C7E;
 }
-
 .dark-mode {
-  --primary: #1e3a8a;
-  --primary-light: #3b5ba5;
-  --secondary: #d4af37;
-  --light: #0f1825;
-  --dark: #edf2f7;
-  --gray: #a0b3c6;
-  --white: #1a2533;
-  --glass: rgba(0, 0, 0, 0.25);
-  --glass-border: rgba(255, 255, 255, 0.08);
+  --primary: #1e3a8a; --primary-light: #3b5ba5; --secondary: #d4af37;
+  --light: #0f1825; --dark: #edf2f7; --gray: #a0b3c6; --white: #1a2533;
+  --glass: rgba(0, 0, 0, 0.25); --glass-border: rgba(255, 255, 255, 0.08);
 }
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
 body {
-  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
-  background-color: var(--light);
-  color: var(--dark);
-  line-height: 1.6;
-  transition: background-color 0.4s ease, color 0.4s ease;
-  overflow-x: hidden;
-  font-weight: 400;
-  padding-bottom: 0;
+  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif; background-color: var(--light);
+  color: var(--dark); line-height: 1.6; transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden; font-weight: 400;
 }
-
 h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; height: auto; display: block; }
@@ -86,13 +57,12 @@ img { max-width: 100%; height: auto; display: block; }
 #preloader {
   position: fixed; top: 0; left: 0; width: 100%; height: 100%;
   background: var(--primary); display: flex; justify-content: center; align-items: center;
-  z-index: 9999; opacity: 1; transition: opacity 0.15s ease, visibility 0.15s ease;
+  z-index: 9999; opacity: 1; transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-#preloader.fade-out { opacity: 0; visibility: hidden; }
+#preloader.fade-out { opacity: 0; visibility: hidden; pointer-events: none; }
 .spinner {
   width: 50px; height: 50px; border: 4px solid rgba(255, 255, 255, 0.15);
-  border-top: 4px solid var(--secondary); border-radius: 50%;
-  animation: spin 0.8s linear infinite;
+  border-top: 4px solid var(--secondary); border-radius: 50%; animation: spin 0.8s linear infinite;
 }
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
@@ -106,7 +76,7 @@ img { max-width: 100%; height: auto; display: block; }
   border: 1px solid rgba(255, 255, 255, 0.2); font-weight: 600;
 }
 .whatsapp-float i { font-size: 28px; animation: pulse 2s infinite; }
-.whatsapp-float:hover { transform: translateY(-8px) scale(1.05); box-shadow: 0 20px 35px rgba(37, 211, 102, 0.4); }
+.whatsapp-float:hover { transform: translateY(-8px) scale(1.05); }
 @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
 
 /* ===== HEADER ===== */
@@ -144,11 +114,12 @@ nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
 .dark-mode-toggle:hover { background: var(--secondary); border-color: var(--secondary); transform: rotate(30deg) scale(1.05); }
 .dark-mode .dark-mode-toggle i.fa-sun { display: block; }
 .dark-mode .dark-mode-toggle i.fa-moon { display: none; }
+.dark-mode-toggle i.fa-sun { display: none; }
 .menu-toggle { display: none; font-size: 28px; color: var(--white); cursor: pointer; }
 
 /* ===== PAGE HEADER (HERO) ===== */
 .page-header {
-  background: linear-gradient(145deg, rgba(10,42,94,0.7) 0%, rgba(5,26,59,0.85) 100%), url('https://i.ibb.co.com/FbZZw0w7/KASAT-PENANAMAN-SIKAP.jpg') center/cover fixed;
+  background: linear-gradient(145deg, rgba(10,42,94,0.85) 0%, rgba(5,26,59,0.9) 100%), url('https://i.ibb.co.com/FbZZw0w7/KASAT-PENANAMAN-SIKAP.jpg') center/cover fixed;
   color: var(--white); text-align: center; padding: 120px 20px 80px; min-height: 400px;
   display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;
 }
@@ -161,40 +132,34 @@ nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
 
 /* Search & Filter */
 .controls-container { display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px; }
-.search-box { display: flex; gap: 10px; max-width: 600px; margin: 0 auto; }
+.search-box { display: flex; gap: 10px; max-width: 600px; margin: 0 auto; width: 100%; }
 .search-box input {
   flex: 1; padding: 12px 20px; border: 2px solid var(--secondary);
   border-radius: 50px; outline: none; font-family: inherit; background: var(--white); color: var(--dark);
 }
 .search-box button {
-  padding: 0 25px; background: var(--secondary); color: white;
-  border: none; border-radius: 50px; cursor: pointer;
+  padding: 0 25px; background: var(--secondary); color: white; border: none; border-radius: 50px; cursor: pointer;
 }
 .filters { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
 .filter-btn {
   padding: 8px 20px; background: var(--white); border: 1px solid var(--secondary);
-  color: var(--secondary); border-radius: 50px; cursor: pointer;
-  font-size: 0.9rem; transition: var(--transition);
+  color: var(--secondary); border-radius: 50px; cursor: pointer; font-size: 0.9rem; transition: var(--transition);
 }
 .filter-btn.active, .filter-btn:hover { background: var(--secondary); color: var(--white); }
 
 /* ARTIKEL GRID */
-.articles-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;
-}
+.articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
 .article-card {
   background: var(--white); border-radius: var(--border-radius-sm); overflow: hidden;
-  box-shadow: var(--shadow-sm); transition: var(--transition);
-  text-decoration: none; color: inherit; display: flex; flex-direction: column;
-  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: var(--shadow-sm); transition: var(--transition); text-decoration: none; color: inherit;
+  display: flex; flex-direction: column; border: 1px solid rgba(0,0,0,0.05);
 }
 .article-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--secondary); }
 .article-card img { width: 100%; height: 240px; object-fit: cover; object-position: center 20%; transition: transform 0.5s ease; }
 .article-card:hover img { transform: scale(1.05); }
 .article-content { padding: 20px; flex: 1; display: flex; flex-direction: column; }
 .article-meta {
-  font-size: 0.85rem; color: var(--gray); margin-bottom: 10px;
-  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  font-size: 0.85rem; color: var(--gray); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
   border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 10px;
 }
 .meta-badge {
@@ -246,21 +211,21 @@ nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
 .modal-overlay.active { opacity: 1; visibility: visible; }
 .modal-contact {
   background: var(--white); border-radius: var(--border-radius); max-width: 900px; width: 100%;
-  max-height: 90vh; overflow-y: auto; box-shadow: var(--shadow-lg); transform: translateY(20px);
-  transition: transform 0.4s;
+  max-height: 90vh; overflow-y: auto; box-shadow: var(--shadow-lg); transform: translateY(20px); transition: transform 0.4s; position: relative;
 }
 .modal-overlay.active .modal-contact { transform: translateY(0); }
 .modal-close {
   position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; border-radius: 50%;
-  background: var(--light); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  background: var(--light); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10;
 }
 .modal-header { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white; padding: 24px; text-align: center; }
 .modal-body { padding: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .quick-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.action-btn { display: flex; align-items: center; gap: 10px; padding: 12px; border-radius: 14px; background: var(--light); font-weight: 600; transition: var(--transition); }
+.action-btn { display: flex; align-items: center; gap: 10px; padding: 12px; border-radius: 14px; background: var(--light); font-weight: 600; transition: var(--transition); text-decoration: none; color: var(--dark); }
 .action-btn.whatsapp { background: rgba(37,211,102,0.1); color: #128C7E; }
 .action-btn:hover { transform: translateY(-2px); border: 2px solid var(--secondary); }
 .info-panel { background: var(--light); padding: 16px; border-radius: 14px; }
+.info-panel ul { list-style: none; }
 .info-panel ul li { padding: 6px 0; display: flex; gap: 8px; border-bottom: 1px solid rgba(0,0,0,0.05); }
 .contact-form { grid-column: 1/-1; }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -268,7 +233,7 @@ nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
 .form-group.full { grid-column: 1/-1; }
 .form-group input, .form-group textarea { padding: 10px 14px; border: 2px solid rgba(0,0,0,0.1); border-radius: 12px; font: inherit; background: var(--white); }
 .submit-btn { background: linear-gradient(135deg, var(--secondary), var(--accent)); color: white; border: none; padding: 12px 24px; border-radius: 40px; font-weight: 600; cursor: pointer; }
-.map-preview iframe { width: 100%; height: 200px; border-radius: 12px; }
+.map-preview iframe { width: 100%; height: 200px; border-radius: 12px; border: none; }
 .toast {
   position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px);
   background: var(--dark); color: white; padding: 12px 24px; border-radius: 40px;
@@ -379,7 +344,8 @@ footer::before {
 <header>
   <div class="nav-container">
     <a href="index.html" class="brand">
-      <img src="https://i.ibb.co.com/21TnnCcG/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring">
+      <!-- PERBAIKAN: Logo menggunakan file lokal GitHub -->
+      <img src="SMAN1Cluring-emblem.png" alt="Logo SMAN 1 Cluring">
       <span>SMAN 1 CLURING</span>
     </a>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -399,7 +365,7 @@ footer::before {
           <li><a href="#" onclick="openContactModal();return false">Kontak</a></li>
           <li style="display: flex; align-items: center;">
             <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
-              <i class="fas fa-moon"></i><i class="fas fa-sun sun"></i>
+              <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
             </button>
           </li>
         </ul>
@@ -550,7 +516,8 @@ footer::before {
       </div>
       <div class="map-preview">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.5!2d114.2!3d-8.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMzAnMDAuMCJTIDExNMKwMTInMDAuMCJF!5e0!3m2!1sid!2sid!4v1234567890" loading="lazy"></iframe>
-        <a href="https://maps.google.com/?q=SMAN+1+Cluring+Banyuwangi" target="_blank">Buka Google Maps</a>
+        <br><br>
+        <a href="https://maps.google.com/?q=SMAN+1+Cluring+Banyuwangi" target="_blank" style="color: var(--secondary); font-weight: 600;">Buka di Google Maps</a>
       </div>
     </div>
   </div>
@@ -563,263 +530,177 @@ footer::before {
 // ===== DATA ARTIKEL =====
 const articlesData = [
   { 
-    id: 31, 
-    title: "Pemilihan Ketua dan Wakil Ketua OSIS SMAN 1 Cluring Digelar Meriah, Siswa Gunakan Hak Suara", 
-    category: "kegiatan", 
-    date: "2026-08-26", 
-    image: "https://i.ibb.co.com/jZTQ0wJF/PILIHAN-OSIS-OLEH-GURU.jpg", 
-    desc: "SMAN 1 Cluring menyelenggarakan Pemilihan Ketua dan Wakil Ketua OSIS Tahun 2026. Kegiatan berlangsung demokratis dengan prinsip LUBER JURDIL dan melibatkan seluruh siswa, guru, serta staf.", 
+    id: 31, title: "Pemilihan Ketua dan Wakil Ketua OSIS SMAN 1 Cluring Digelar Meriah, Siswa Gunakan Hak Suara", 
+    category: "kegiatan", date: "2026-08-26", image: "https://i.ibb.co.com/jZTQ0wJF/PILIHAN-OSIS-OLEH-GURU.jpg", 
+    desc: "SMAN 1 Cluring menyelenggarakan Pemilihan Ketua dan Wakil Ketua OSIS Tahun 2026. Kegiatan berlangsung demokratis dengan prinsip LUBER JURDIL.", 
     link: "articles/pemilihan-ketua-wakil-osis-2026.html" 
   },
   { 
-    id: 30, 
-    title: "Dari Upacara Menuju Aksi: Memaknai Kemerdekaan Bersama SMAN 1 Cluring", 
-    category: "nasional", 
-    date: "2026-08-17", 
-    image: "https://i.ibb.co.com/8Dnr3vRk/FOTO-UPACARA-1-DI-LAPANGAN-CLURING-PERINGATAN-HUT-81-17-AGUSTUS-2026.jpg", 
-    desc: "Refleksi mendalam peringatan HUT RI ke-81 di Lapangan Cluring. Bagaimana SMAN 1 Cluring menerjemahkan semangat kemerdekaan dari upacara menjadi aksi nyata dalam pendidikan dan kehidupan sehari-hari.", 
+    id: 30, title: "Dari Upacara Menuju Aksi: Memaknai Kemerdekaan Bersama SMAN 1 Cluring", 
+    category: "nasional", date: "2026-08-17", image: "https://i.ibb.co.com/8Dnr3vRk/FOTO-UPACARA-1-DI-LAPANGAN-CLURING-PERINGATAN-HUT-81-17-AGUSTUS-2026.jpg", 
+    desc: "Refleksi mendalam peringatan HUT RI ke-81 di Lapangan Cluring. Bagaimana SMAN 1 Cluring menerjemahkan semangat kemerdekaan.", 
     link: "articles/dari-upacara-menuju-aksi-memaknai-kemerdekaan-2026.html" 
   },
   { 
-    id: 29, 
-    title: "SMAN 1 Cluring Gelar Vokaforia: Langkah Strategis Persiapan Pasca Lulus Murid Kelas XII", 
-    category: "kegiatan", 
-    date: "2026-08-18", 
-    image: "https://i.ibb.co.com/3mKDkPFG/BLK-MUNCAR-BARISTA.jpg", 
-    desc: "SMAN 1 Cluring melaksanakan Vokaforia bersama BPVP Banyuwangi di Muncar sebagai langkah strategis persiapan pasca lulus bagi murid Kelas XII, memperkenalkan keterampilan vokasi Barista dan Kuliner.", 
+    id: 29, title: "SMAN 1 Cluring Gelar Vokaforia: Langkah Strategis Persiapan Pasca Lulus Murid Kelas XII", 
+    category: "kegiatan", date: "2026-08-18", image: "https://i.ibb.co.com/3mKDkPFG/BLK-MUNCAR-BARISTA.jpg", 
+    desc: "SMAN 1 Cluring melaksanakan Vokaforia bersama BPVP Banyuwangi di Muncar sebagai langkah strategis persiapan pasca lulus.", 
     link: "articles/vokaforia-persiapan-pasca-lulus-kelas-xii-2026.html" 
   },
   { 
-    id: 28, 
-    title: "SMAN 1 Cluring Berikan Apresiasi kepada Murid Berprestasi dan Guru Pembimbing", 
-    category: "berita", 
-    date: "2026-07-27", 
-    image: "https://i.ibb.co.com/C35rpSwk/SMAN-1-Cluring-Berikan-Apresiasi-kepada-Murid-Berprestasi-dan-Guru-Pembimbing.jpg", 
-    desc: "SMAN 1 Cluring memberikan apresiasi kepada murid berprestasi dan guru pembimbing atas pencapaian di OSN, FLS3N, dan Lomba Pesona Keroncong Se-Banyuwangi 2026. Kepala Sekolah Helmi, S.Pd., M.Si. menyampaikan penghargaan setinggi-tingginya atas dedikasi dan kerja keras.", 
+    id: 28, title: "SMAN 1 Cluring Berikan Apresiasi kepada Murid Berprestasi dan Guru Pembimbing", 
+    category: "berita", date: "2026-07-27", image: "https://i.ibb.co.com/C35rpSwk/SMAN-1-Cluring-Berikan-Apresiasi-kepada-Murid-Berprestasi-dan-Guru-Pembimbing.jpg", 
+    desc: "Apresiasi kepada murid berprestasi dan guru pembimbing atas pencapaian di OSN, FLS3N, dan Lomba Pesona Keroncong Se-Banyuwangi 2026.", 
     link: "articles/apresiasi-murid-berprestasi-2026.html" 
   },
   { 
-    id: 27, 
-    title: "MPLS RAMAH 2026: Awal Perjalanan Baru yang Aman, Ramah, dan Bermakna di SMAN 1 Cluring", 
-    category: "kegiatan", 
-    date: "2026-07-13", 
-    image: "https://i.ibb.co.com/RJz4Zhw/PESERTA-MPLS-3-13-JULI-2025.jpg", 
-    desc: "SMA Negeri 1 Cluring menggelar kegiatan MPLS RAMAH 2026 pada 13-14 Juli 2026. Kegiatan pengenalan sekolah yang aman, ramah, dan bermakna bagi siswa baru dengan berbagai deklarasi penting untuk menciptakan lingkungan belajar yang positif.", 
+    id: 27, title: "MPLS RAMAH 2026: Awal Perjalanan Baru yang Aman, Ramah, dan Bermakna di SMAN 1 Cluring", 
+    category: "kegiatan", date: "2026-07-13", image: "https://i.ibb.co.com/RJz4Zhw/PESERTA-MPLS-3-13-JULI-2025.jpg", 
+    desc: "Kegiatan pengenalan sekolah yang aman, ramah, dan bermakna bagi siswa baru dengan berbagai deklarasi penting.", 
     link: "articles/mpls-ramah-2026.html" 
   },
   { 
-    id: 26, 
-    title: "SMAN 1 Cluring Kembali Torehkan Prestasi, Lingga Dwi Ramadaningtyas Putri Raih Juara II Turnamen Pencak Silat Universitas Airlangga", 
-    category: "prestasi", 
-    date: "2026-07-12", 
-    image: "https://i.ibb.co.com/xKxBY5Mz/12-Juli-2026-Ramadaningtyas-Putri-Raih-Juara-II-Turnamen-Pencak-Silat.jpg", 
-    desc: "Lingga Dwi Ramadaningtyas Putri berhasil meraih Juara II Tanding Kelas F Putri Remaja Kategori Prestasi pada Turnamen Pencak Silat yang diselenggarakan oleh UKM PSHT Universitas Airlangga. Prestasi ini menjadi bukti keunggulan siswa SMAN 1 Cluring di bidang olahraga bela diri.", 
+    id: 26, title: "SMAN 1 Cluring Kembali Torehkan Prestasi, Lingga Dwi Ramadaningtyas Putri Raih Juara II Turnamen Pencak Silat", 
+    category: "prestasi", date: "2026-07-12", image: "https://i.ibb.co.com/xKxBY5Mz/12-Juli-2026-Ramadaningtyas-Putri-Raih-Juara-II-Turnamen-Pencak-Silat.jpg", 
+    desc: "Lingga Dwi Ramadaningtyas Putri berhasil meraih Juara II Tanding Kelas F Putri Remaja pada Turnamen Pencak Silat Universitas Airlangga.", 
     link: "articles/12-juli-2026-lingga-juara-pencak-silat-unair.html" 
   },
   { 
-    id: 25, 
-    title: "Lima Siswa SMAN 1 Cluring Lolos OSN-P 2026 Tingkat Provinsi Jawa Timur", 
-    category: "prestasi", 
-    date: "2026-07-04", 
-    image: "https://i.ibb.co.com/jkkMfD6C/OSK-4-JULI-2026.jpg", 
-    desc: "Lima siswa terbaik SMAN 1 Cluring berhasil lolos ke Olimpiade Sains Nasional tingkat Provinsi (OSN-P) 2026 Jawa Timur. Prestasi ini menjadi kebanggaan sekolah dan bukti konsistensi pembinaan akademik.", 
+    id: 25, title: "Lima Siswa SMAN 1 Cluring Lolos OSN-P 2026 Tingkat Provinsi Jawa Timur", 
+    category: "prestasi", date: "2026-07-04", image: "https://i.ibb.co.com/jkkMfD6C/OSK-4-JULI-2026.jpg", 
+    desc: "Lima siswa terbaik SMAN 1 Cluring berhasil lolos ke Olimpiade Sains Nasional tingkat Provinsi (OSN-P) 2026 Jawa Timur.", 
     link: "articles/lima-siswa-lolos-osn-p-2026.html" 
   },
   { 
-    id: 24, 
-    title: "Kemah Besar Gugus Depan SMAN 1 Cluring 2026: Membentuk Karakter Kepemimpinan dan Semangat Kepramukaan", 
-    category: "kegiatan", 
-    date: "2026-06-13", 
-    image: "https://i.ibb.co.com/p7BbWrF/13-Juni-2026-KEMAH-BESAR.jpg", 
-    desc: "SMAN 1 Cluring menggelar Kemah Besar Gugus Depan dengan berbagai kegiatan kepramukaan, outbond, api unggun, dan pentas seni untuk membentuk karakter kepemimpinan, kedisiplinan, dan kerja sama tim siswa.", 
+    id: 24, title: "Kemah Besar Gugus Depan SMAN 1 Cluring 2026: Membentuk Karakter Kepemimpinan", 
+    category: "kegiatan", date: "2026-06-13", image: "https://i.ibb.co.com/p7BbWrF/13-Juni-2026-KEMAH-BESAR.jpg", 
+    desc: "Kemah Besar Gugus Depan dengan berbagai kegiatan kepramukaan, outbond, api unggun, dan pentas seni.", 
     link: "articles/13-juni-2026-kemah-besar.html" 
   },
   { 
-    id: 23, 
-    title: "Pancasila Pemersatu Bangsa, Fondasi Perdamaian Dunia", 
-    category: "pancasila", 
-    date: "2026-06-01", 
-    image: "https://i.ibb.co.com/sp2nQ5Pp/1-pengibaran-bendera-1-juni-2026-hari-lahir-pancasila.jpg", 
-    desc: "Peringatan Hari Lahir Pancasila 1 Juni 2026 di SMAN 1 Cluring dengan tema 'Pancasila Pemersatu Bangsa, Fondasi Perdamaian Dunia'. Nilai-nilai Pancasila tetap menjadi perekat persatuan di tengah tantangan global.", 
+    id: 23, title: "Pancasila Pemersatu Bangsa, Fondasi Perdamaian Dunia", 
+    category: "pancasila", date: "2026-06-01", image: "https://i.ibb.co.com/sp2nQ5Pp/1-pengibaran-bendera-1-juni-2026-hari-lahir-pancasila.jpg", 
+    desc: "Peringatan Hari Lahir Pancasila 1 Juni 2026 di SMAN 1 Cluring dengan tema 'Pancasila Pemersatu Bangsa'.", 
     link: "articles/hari-lahir-pancasila-2026.html" 
   },
   { 
-    id: 22, 
-    title: "Layanan SPMB SMAN 1 Cluring Resmi Dibuka, Antusiasme Calon Murid dan Orang Tua Tinggi", 
-    category: "berita", 
-    date: "2026-05-28", 
-    image: "https://i.ibb.co.com/DdxgnQt/28-mei-2026-pembukaan-spmb-smaring.png", 
-    desc: "SMAN 1 Cluring resmi membuka layanan SPMB Tahun Ajaran 2026/2027. Antusiasme tinggi dari calon murid dan orang tua pada hari pertama pendaftaran.", 
+    id: 22, title: "Layanan SPMB SMAN 1 Cluring Resmi Dibuka, Antusiasme Calon Murid dan Orang Tua Tinggi", 
+    category: "berita", date: "2026-05-28", image: "https://i.ibb.co.com/DdxgnQt/28-mei-2026-pembukaan-spmb-smaring.png", 
+    desc: "SMAN 1 Cluring resmi membuka layanan SPMB Tahun Ajaran 2026/2027 dengan antusiasme tinggi.", 
     link: "articles/pendaftaran-siswa-baru-2026.html" 
   },
   { 
-    id: 21, 
-    title: "Selamat Memperingati Hari Kebangkitan Nasional ke-118 Tahun 2026", 
-    category: "nasional", 
-    date: "2026-05-20", 
-    image: "https://i.ibb.co.com/F4VsbJqv/20-MEI-2026-HARI-KEBANKITAN-NASIONAL.jpg", 
-    desc: "Memperingati Hari Kebangkitan Nasional ke-118 dengan tema 'Jaga Tunas Bangsa Demi Kedaulatan Negara'. Mari bangkit bersama menuju Indonesia yang kuat dan berdaulat.", 
+    id: 21, title: "Selamat Memperingati Hari Kebangkitan Nasional ke-118 Tahun 2026", 
+    category: "nasional", date: "2026-05-20", image: "https://i.ibb.co.com/F4VsbJqv/20-MEI-2026-HARI-KEBANKITAN-NASIONAL.jpg", 
+    desc: "Memperingati Hari Kebangkitan Nasional ke-118 dengan tema 'Jaga Tunas Bangsa Demi Kedaulatan Negara'.", 
     link: "articles/hari-kebangkitan-nasional-2026.html" 
   },
   { 
-    id: 19, 
-    title: "Prestasi Membanggakan SMAN 1 Cluring di Ajang O2SN 2026 Tingkat Kabupaten Banyuwangi", 
-    category: "prestasi", 
-    date: "2026-05-11", 
-    image: "https://i.ibb.co.com/pv97SN16/11-mei-2026-Rafi-Achmad-Sukristianto-memperoleh-Juara-3-pada-O2-SN-Tingkat-Kabupaten-Banyuwangi-di-Ca.jpg", 
-    desc: "Rafi Achmad Sukristianto (Bulutangkis) dan Mochammad Ammar Ihsani Huda (Panjat Tebing) berhasil meraih Juara 3 dalam ajang O2SN 2026 tingkat Kabupaten Banyuwangi.", 
+    id: 19, title: "Prestasi Membanggakan SMAN 1 Cluring di Ajang O2SN 2026 Tingkat Kabupaten Banyuwangi", 
+    category: "prestasi", date: "2026-05-11", image: "https://i.ibb.co.com/pv97SN16/11-mei-2026-Rafi-Achmad-Sukristianto-memperoleh-Juara-3-pada-O2-SN-Tingkat-Kabupaten-Banyuwangi-di-Ca.jpg", 
+    desc: "Rafi Achmad Sukristianto (Bulutangkis) dan Mochammad Ammar Ihsani Huda (Panjat Tebing) meraih Juara 3.", 
     link: "articles/o2sn-2026-banyuwangi.html" 
   },
   { 
-    id: 20, 
-    title: "Dealer Sumber Jaya Maha Sakti Purwoharjo Gelar Servis Gratis di SMAN 1 Cluring", 
-    category: "kegiatan", 
-    date: "2026-05-08", 
-    image: "https://i.ibb.co.com/whyLYLn4/8-MEI-2026-FOTO1-SERVIS-GRATIS-OLEH-SUMBER-JAYA-MAHA-SAKTI-PURWOHARJO.jpg", 
-    desc: "Dealer Sumber Jaya Maha Sakti Purwoharjo bekerja sama dengan SMAN 1 Cluring mengadakan kegiatan servis gratis sepeda motor bagi guru, tenaga kependidikan, dan peserta didik.", 
+    id: 20, title: "Dealer Sumber Jaya Maha Sakti Purwoharjo Gelar Servis Gratis di SMAN 1 Cluring", 
+    category: "kegiatan", date: "2026-05-08", image: "https://i.ibb.co.com/whyLYLn4/8-MEI-2026-FOTO1-SERVIS-GRATIS-OLEH-SUMBER-JAYA-MAHA-SAKTI-PURWOHARJO.jpg", 
+    desc: "Kegiatan servis gratis sepeda motor bagi guru, tenaga kependidikan, dan peserta didik.", 
     link: "articles/servis-gratis-sumber-jaya-mei-2026.html" 
   },
   { 
-    id: 18, 
-    title: "2 Mei 2026: Momentum Menguatkan Partisipasi Semesta dalam Dunia Pendidikan", 
-    category: "berita", 
-    date: "2026-05-02", 
-    image: "https://i.ibb.co.com/WWspP48r/hari-pendidikan.jpg", 
-    desc: "Hardiknas 2026 menjadi momentum untuk menggerakkan partisipasi semesta dalam ekosistem pendidikan melalui kolaborasi pemerintah, swasta, komunitas, dan seluruh elemen masyarakat.", 
+    id: 18, title: "2 Mei 2026: Momentum Menguatkan Partisipasi Semesta dalam Dunia Pendidikan", 
+    category: "berita", date: "2026-05-02", image: "https://i.ibb.co.com/WWspP48r/hari-pendidikan.jpg", 
+    desc: "Hardiknas 2026 menjadi momentum untuk menggerakkan partisipasi semesta dalam ekosistem pendidikan.", 
     link: "articles/2-mei-2026-momentum-partisipasi-semesta-pendidikan.html" 
   },
   { 
-    id: 17, 
-    title: "Prestasi Gemilang SMAN 1 Cluring di FLS3N 2026 Tingkat Kabupaten Banyuwangi", 
-    category: "prestasi", 
-    date: "2026-04-27", 
-    image: "https://i.ibb.co.com/6JsL9L8V/lomba-menulis-cerpen-Kirana-Ayu-Maharani-Juara-3-FLS3-N.png", 
-    desc: "SMAN 1 Cluring meraih juara 3 di tiga cabang lomba FLS3N 2026: cerpen (Kirana Ayu Maharani), jurnalistik (Nadine Damara C.L), dan tari kreasi (Tim Tari Sahwitta).", 
+    id: 17, title: "Prestasi Gemilang SMAN 1 Cluring di FLS3N 2026 Tingkat Kabupaten Banyuwangi", 
+    category: "prestasi", date: "2026-04-27", image: "https://i.ibb.co.com/6JsL9L8V/lomba-menulis-cerpen-Kirana-Ayu-Maharani-Juara-3-FLS3-N.png", 
+    desc: "SMAN 1 Cluring meraih juara 3 di tiga cabang lomba FLS3N 2026: cerpen, jurnalistik, dan tari kreasi.", 
     link: "articles/fls3n-2026-banyuwangi.html" 
   },
   { 
-    id: 1, 
-    title: "Upacara Peringatan Hari Kartini 2026 di SMAN 1 Cluring Berlangsung Khidmat", 
-    category: "budaya", 
-    date: "2026-04-21", 
-    image: "https://i.ibb.co.com/hxY5B9G2/kartini-21-april-26-1.png", 
-    desc: "Dalam rangka memperingati perjuangan Raden Ajeng Kartini, SMAN 1 Cluring melaksanakan Upacara Peringatan Hari Kartini dengan penuh khidmat. Para peserta tampil mengenakan busana adat yang mencerminkan keberagaman budaya Indonesia.", 
+    id: 1, title: "Upacara Peringatan Hari Kartini 2026 di SMAN 1 Cluring Berlangsung Khidmat", 
+    category: "budaya", date: "2026-04-21", image: "https://i.ibb.co.com/hxY5B9G2/kartini-21-april-26-1.png", 
+    desc: "Upacara Peringatan Hari Kartini dengan penuh khidmat. Para peserta tampil mengenakan busana adat.", 
     link: "articles/hari-kartini-2026.html" 
   },
   { 
-    id: 3, 
-    title: "Atlet Woodball SMAN 1 Cluring Raih Medali Emas Kejuaraan Nasional 2026", 
-    category: "prestasi", 
-    date: "2026-04-06", 
-    image: "https://i.ibb.co.com/27FtB8sF/nova-beranda.png", 
-    desc: "Tim Woodball SMAN 1 Cluring berhasil menyabet medali emas dalam Kejuaraan Woodball Nasional 2026, mengharumkan nama Banyuwangi di kancah nasional.", 
+    id: 3, title: "Atlet Woodball SMAN 1 Cluring Raih Medali Emas Kejuaraan Nasional 2026", 
+    category: "prestasi", date: "2026-04-06", image: "https://i.ibb.co.com/27FtB8sF/nova-beranda.png", 
+    desc: "Tim Woodball SMAN 1 Cluring berhasil menyabet medali emas dalam Kejuaraan Woodball Nasional 2026.", 
     link: "articles/prestasi-woodball-sman1-cluring.html" 
   },
   { 
-    id: 2, 
-    title: "Prestasi Gemilang! 57 Siswa SMAN 1 Cluring Diterima di PTN Favorit Jalur SNBP 2026", 
-    category: "prestasi", 
-    date: "2026-04-01", 
-    image: "articles/snbp57-4x4.jpeg" 
-    desc: "SMAN 1 Cluring mencatatkan sejarah baru dengan 57 siswa lolos Seleksi Nasional Berdasarkan Prestasi (SNBP) 2026 menuju berbagai perguruan tinggi negeri ternama.", 
+    id: 2, title: "Prestasi Gemilang! 57 Siswa SMAN 1 Cluring Diterima di PTN Favorit Jalur SNBP 2026", 
+    category: "prestasi", date: "2026-04-01", 
+    image: "articles/snbp57-4x4.jpeg", 
+    desc: "SMAN 1 Cluring mencatatkan sejarah baru dengan 57 siswa lolos Seleksi Nasional Berdasarkan Prestasi (SNBP) 2026.", 
     link: "articles/prestasi-snbp-2026-smn1-cluring.html" 
   },
   { 
-    id: 5, 
-    title: "Pondok Ramadan Kelas X: Sinergi Sekolah dan Pesantren untuk Generasi Berkarakter", 
-    category: "keagamaan", 
-    date: "2026-02-23", 
-    image: "https://i.ibb.co.com/5hvX29ms/1-pembukaan-oleh-Gus-Ulin-Nuha-Ali-Mansur.jpg", 
-    desc: "Kegiatan Pondok Ramadan 23-25 Februari 2026 di PP Baitussalam Simbar untuk penguatan karakter religius peserta didik.", 
+    id: 5, title: "Pondok Ramadan Kelas X: Sinergi Sekolah dan Pesantren untuk Generasi Berkarakter", 
+    category: "keagamaan", date: "2026-02-23", image: "https://i.ibb.co.com/5hvX29ms/1-pembukaan-oleh-Gus-Ulin-Nuha-Ali-Mansur.jpg", 
+    desc: "Kegiatan Pondok Ramadan 23-25 Februari 2026 di PP Baitussalam Simbar untuk penguatan karakter religius.", 
     link: "articles/pondok-ramadan-kelas-x-2026.html" 
   },
   { 
-    id: 4, 
-    title: "SMAN 1 Cluring Raih Innovative Government Award (IGA) 2025", 
-    category: "prestasi", 
-    date: "2026-02-13", 
-    image: "https://i.ibb.co.com/FbffbPWG/IGA-2026-1.jpg", 
+    id: 4, title: "SMAN 1 Cluring Raih Innovative Government Award (IGA) 2025", 
+    category: "prestasi", date: "2026-02-13", image: "https://i.ibb.co.com/FbffbPWG/IGA-2026-1.jpg", 
     desc: "Penghargaan dari Dinas Pendidikan Jawa Timur atas inovasi BUKIT BATARI – Budaya Kita Batik dan Tari.", 
     link: "articles/februari-bukit-batari-2026.html" 
   },
   { 
-    id: 6, 
-    title: "Jumat SENADA Warnai Pagi Sehat di SMAN 1 Cluring", 
-    category: "kegiatan", 
-    date: "2026-02-13", 
-    image: "https://i.ibb.co.com/N67GLqHb/SENADA-2.jpg", 
+    id: 6, title: "Jumat SENADA Warnai Pagi Sehat di SMAN 1 Cluring", 
+    category: "kegiatan", date: "2026-02-13", image: "https://i.ibb.co.com/N67GLqHb/SENADA-2.jpg", 
     desc: "Gerakan Bugar – Senam Asyik dan Gembira untuk seluruh warga sekolah.", 
     link: "articles/jumat-senada-2026.html" 
   },
   { 
-    id: 7, 
-    title: "SMAN 1 Cluring Perkuat Ketahanan Pangan melalui Program SIKAP", 
-    category: "berita", 
-    date: "2026-01-25", 
-    image: "https://i.ibb.co/zHSfC2Qz/JENIS-TANAMAN.jpg", 
+    id: 7, title: "SMAN 1 Cluring Perkuat Ketahanan Pangan melalui Program SIKAP", 
+    category: "berita", date: "2026-01-25", image: "https://i.ibb.co/zHSfC2Qz/JENIS-TANAMAN.jpg", 
     desc: "Sekolah Inovasi Ketahanan Pangan untuk menciptakan generasi yang peduli lingkungan.", 
     link: "articles/program-sikap.html" 
   },
   { 
-    id: 8, 
-    title: "Smaring Expo Campus dan Talkshow 2026", 
-    category: "kegiatan", 
-    date: "2026-01-15", 
-    image: "https://i.ibb.co/TBfc9QcK/KS-LAUNCING-EXSPO.jpg", 
+    id: 8, title: "Smaring Expo Campus dan Talkshow 2026", 
+    category: "kegiatan", date: "2026-01-15", image: "https://i.ibb.co/TBfc9QcK/KS-LAUNCING-EXSPO.jpg", 
     desc: "SMAN 1 Cluring Gelar Smaring Expo Campus dan Talkshow 2026 untuk membuka wawasan siswa.", 
     link: "articles/smaring-expo-2026.html" 
   },
   { 
-    id: 14, 
-    title: "Pergantian Kepengurusan Takmir Masjid Baitul Muttaqin", 
-    category: "keagamaan", 
-    date: "2025-10-19", 
-    image: "https://i.ibb.co.com/Fk521mwR/takmir-1.jpg", 
+    id: 14, title: "Pergantian Kepengurusan Takmir Masjid Baitul Muttaqin", 
+    category: "keagamaan", date: "2025-10-19", image: "https://i.ibb.co.com/Fk521mwR/takmir-1.jpg", 
     desc: "Prosesi pergantian kepengurusan takmir masjid sebagai wadah pembinaan karakter keagamaan siswa.", 
     link: "articles/pergantian-takmir-masjid.html" 
   },
   { 
-    id: 13, 
-    title: "Serah Terima Jabatan dan Pelantikan Dewan Ambalan", 
-    category: "kegiatan", 
-    date: "2025-10-17", 
-    image: "https://i.ibb.co.com/8nyH2Bbd/da3.jpg", 
+    id: 13, title: "Serah Terima Jabatan dan Pelantikan Dewan Ambalan", 
+    category: "kegiatan", date: "2025-10-17", image: "https://i.ibb.co.com/8nyH2Bbd/da3.jpg", 
     desc: "Upacara serah terima jabatan dan pelantikan pengurus dewan ambalan sebagai wadah kepemimpinan siswa.", 
     link: "articles/serah-terima-pelantikan-dewan-ambalan.html" 
   },
   { 
-    id: 15, 
-    title: "Hari Kesaktian Pancasila", 
-    category: "pancasila", 
-    date: "2025-10-01", 
-    image: "https://i.ibb.co/Kz2SXCCz/pembawa-acara-upacara.jpg", 
+    id: 15, title: "Hari Kesaktian Pancasila", 
+    category: "pancasila", date: "2025-10-01", image: "https://i.ibb.co/Kz2SXCCz/pembawa-acara-upacara.jpg", 
     desc: "Upacara khidmat dalam rangka Hari Kesaktian Pancasila 2025 untuk menanamkan nilai-nilai Pancasila.", 
     link: "articles/hari-kesaktian-pancasila.html" 
   },
   { 
-    id: 10, 
-    title: "Nova Lourensia Sabet Emas Wood Ball 2025", 
-    category: "prestasi", 
-    date: "2025-08-11", 
-    image: "https://i.ibb.co.com/G3C981Gn/Wood-Ball-2025.jpg", 
+    id: 10, title: "Nova Lourensia Sabet Emas Wood Ball 2025", 
+    category: "prestasi", date: "2025-08-11", image: "https://i.ibb.co.com/G3C981Gn/Wood-Ball-2025.jpg", 
     desc: "Nova Lourensia berhasil meraih medali emas dalam ajang Kejuaraan Wood Ball 2025 tingkat nasional.", 
     link: "articles/nova-lourensia-wood-ball-2025.html" 
   },
   { 
-    id: 11, 
-    title: "Peringatan Hari Anak Nasional 2025", 
-    category: "kegiatan", 
-    date: "2025-07-23", 
-    image: "https://i.ibb.co.com/35vrSj5F/hari-anak-3.jpg", 
+    id: 11, title: "Peringatan Hari Anak Nasional 2025", 
+    category: "kegiatan", date: "2025-07-23", image: "https://i.ibb.co.com/35vrSj5F/hari-anak-3.jpg", 
     desc: "Siswa tampil memukau dalam Peringatan Hari Anak Nasional 2025 dengan berbagai kegiatan edukatif.", 
     link: "articles/peringatan-hari-anak-nasional-2025.html" 
   },
   { 
-    id: 12, 
-    title: "SMAN 1 Cluring Lestarikan Budaya Lewat Program BUKIT BATARI", 
-    category: "budaya", 
-    date: "2025-07-14", 
-    image: "https://i.ibb.co.com/q3kW1kxG/BATARI-1.jpg", 
+    id: 12, title: "SMAN 1 Cluring Lestarikan Budaya Lewat Program BUKIT BATARI", 
+    category: "budaya", date: "2025-07-14", image: "https://i.ibb.co.com/q3kW1kxG/BATARI-1.jpg", 
     desc: "Budaya Kita: Batik dan Tari untuk melestarikan kearifan lokal Banyuwangi.", 
     link: "articles/bukit-batari-budaya-2025.html" 
   }
@@ -841,7 +722,7 @@ function renderArticles(data) {
   articlesGrid.innerHTML = '';
   const sortedData = sortByDate(data, 'desc');
   if (sortedData.length === 0) {
-    articlesGrid.innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:20px;">Tidak ada artikel ditemukan.</p>';
+    articlesGrid.innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:40px;color:var(--gray);">Tidak ada artikel ditemukan.</p>';
     return;
   }
   sortedData.forEach((item, index) => {
@@ -885,11 +766,19 @@ function filterByCategory(category, btn) {
 
 // ===== INISIALISASI =====
 document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => document.getElementById('preloader')?.classList.add('fade-out'), 200);
+  // 1. Matikan Preloader (Loading)
+  setTimeout(() => {
+    const preloader = document.getElementById('preloader');
+    if(preloader) preloader.classList.add('fade-out');
+  }, 300);
+
+  // 2. Inisialisasi AOS
   AOS.init({ duration: 800, once: true, easing: 'ease-out-cubic' });
+  
+  // 3. Render Artikel
   renderArticles(articlesData);
 
-  // Dark mode
+  // 4. Dark mode
   const darkToggle = document.getElementById('darkModeToggle');
   const body = document.body;
   if (localStorage.getItem('darkMode') === 'true') body.classList.add('dark-mode');
@@ -898,7 +787,7 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
   });
 
-  // Jam & Visitor
+  // 5. Jam & Visitor
   function updateClock() {
     const now = new Date();
     document.getElementById('footerTime').textContent = now.toLocaleTimeString('id-ID');
@@ -911,15 +800,29 @@ document.addEventListener('DOMContentLoaded', () => {
   function visitorCounter() {
     let count = localStorage.getItem('sman1cluring_visitor_count');
     if (!count) { count = 1; localStorage.setItem('sman1cluring_visitor_count', count); }
-    else { count = parseInt(count); if (!sessionStorage.getItem('counted')) { count++; localStorage.setItem('sman1cluring_visitor_count', count); sessionStorage.setItem('counted','true'); } }
+    else { 
+      count = parseInt(count); 
+      if (!sessionStorage.getItem('counted')) { 
+        count++; localStorage.setItem('sman1cluring_visitor_count', count); sessionStorage.setItem('counted','true'); 
+      } 
+    }
     document.getElementById('footerVisitorCount').innerHTML = `${count.toLocaleString('id-ID')} Pengunjung`;
   }
   visitorCounter();
 
-  // Modal
-  window.openContactModal = () => { document.getElementById('contactModal').classList.add('active'); document.body.style.overflow = 'hidden'; };
-  window.closeContactModal = () => { document.getElementById('contactModal').classList.remove('active'); document.body.style.overflow = ''; };
-  document.getElementById('contactModal')?.addEventListener('click', e => { if (e.target === document.getElementById('contactModal')) closeContactModal(); });
+  // 6. Modal Functions
+  window.openContactModal = () => { 
+    document.getElementById('contactModal').classList.add('active'); 
+    document.body.style.overflow = 'hidden'; 
+  };
+  window.closeContactModal = () => { 
+    document.getElementById('contactModal').classList.remove('active'); 
+    document.body.style.overflow = ''; 
+  };
+  document.getElementById('contactModal')?.addEventListener('click', e => { 
+    if (e.target === document.getElementById('contactModal')) closeContactModal(); 
+  });
+  
   window.handleContactSubmit = (e) => {
     e.preventDefault();
     const btn = e.target.querySelector('.submit-btn');
@@ -936,16 +839,18 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         let arr = JSON.parse(localStorage.getItem('artikelMsg') || '[]');
         arr.push(msg); localStorage.setItem('artikelMsg', JSON.stringify(arr));
+        
         const toast = document.getElementById('toast');
-        const toastMsg = document.getElementById('toastMessage');
-        toastMsg.textContent = '✅ Pesan terkirim!'; toast.className = 'toast success show';
+        document.getElementById('toastMessage').textContent = '✅ Pesan terkirim!'; 
+        toast.className = 'toast success show';
         setTimeout(() => toast.classList.remove('show'), 3000);
+        
         document.getElementById('contactForm').reset();
         setTimeout(closeContactModal, 1500);
       } catch (err) {
         const toast = document.getElementById('toast');
-        const toastMsg = document.getElementById('toastMessage');
-        toastMsg.textContent = '❌ Gagal mengirim'; toast.className = 'toast error show';
+        document.getElementById('toastMessage').textContent = '❌ Gagal mengirim'; 
+        toast.className = 'toast show';
         setTimeout(() => toast.classList.remove('show'), 3000);
       } finally {
         btn.disabled = false; btn.innerHTML = '<i class="fas fa-paper-plane"></i> Kirim Pesan';
