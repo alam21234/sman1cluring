@@ -100,7 +100,6 @@ header {
   display: flex; align-items: center; gap: 12px;
   color: var(--white); font-weight: 800; font-size: 1.2rem;
 }
-/* Logo disempurnakan dengan dimensi tetap untuk mencegah layout shift */
 .brand img { width: 45px; height: 45px; object-fit: contain; border-radius: 8px; }
 .nav-right { display: flex; align-items: center; gap: 15px; }
 nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
@@ -359,7 +358,6 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <header data-aos="fade-down">
   <div class="nav-container">
     <a href="index.html" class="brand">
-      <!-- Logo disempurnakan dengan atribut width, height, dan decoding untuk performa -->
       <img src="../image/SMAN1Cluring-emblem.png" alt="Logo SMAN 1 Cluring" width="45" height="45" loading="eager" decoding="async" />
       <span>SMAN 1 CLURING</span>
     </a>
@@ -463,7 +461,7 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer">
 <!-- JAVASCRIPT LOGIC -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
 <script>
-// ===== DATA UCAPAN (Ditambahkan Hari Santri & Sumpah Pemuda 2026) =====
+// ===== DATA UCAPAN =====
 const greetingData = [
   {id:1, title:"Selamat Tahun Baru Imlek 2577", category:"agama", year:2026, date:"2026-01-29", image:"https://i.ibb.co.com/W4xkCJL0/imlek.jpg", link:"https://ibb.co.com/39rpKZnv"},
   {id:2, title:"Selamat Menunaikan Ibadah Puasa 1447 H", category:"agama", year:2026, date:"2026-02-20", image:"https://i.ibb.co.com/ZR322tPt/puasa.jpg", link:"https://ibb.co.com/Y4600YMY"},
@@ -472,25 +470,63 @@ const greetingData = [
   {id:5, title:"Selamat Natal & Tahun Baru 2026", category:"agama", year:2025, date:"2025-12-25", image:"https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&fit=crop&q=80&w=600", link:"#"},
   {id:6, title:"Selamat Hari Pendidikan Nasional", category:"nasional", year:2026, date:"2026-05-02", image:"https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600", link:"#"},
   {id:7, title:"Selamat Hari Anak Nasional 2025", category:"internasional", year:2025, date:"2025-07-23", image:"https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&q=80&w=600", link:"#"},
+  {id: 8, title: "Selamat Hari Santri Nasional 2026", category: "nasional", year: 2026, date: "2026-10-22", image: "../image/22-oktober-2026-hari-santri.jpeg", link: "../image/22-oktober-2026-hari-santri.jpeg"},
+  {id: 9, title: "Selamat Hari Sumpah Pemuda 2026", category: "nasional", year: 2026, date: "2026-10-28", image: "../image/28-oktober-2026-hari-sumpah-pemuda.jpeg", link: "../image/28-oktober-2026-hari-sumpah-pemuda.jpeg"},
   
-  // --- DATA BARU DITAMBAHKAN DI SINI ---
+  // --- FOTO BARU DITAMBAHKAN (Disesuaikan dengan Kategori & Tanggal) ---
   {
-    id: 8, 
-    title: "Selamat Hari Santri Nasional 2026", 
-    category: "nasional", 
-    year: 2026, 
-    date: "2026-10-22", 
-    image: "../image/22-oktober-2026-hari-santri.jpeg", 
-    link: "../image/22-oktober-2026-hari-santri.jpeg"
+    id: 10,
+    title: "Selamat Tahun Baru Islam 1 Muharram 1448 H",
+    category: "agama",
+    year: 2026,
+    date: "2026-06-16",
+    image: "../image/16-juni-2026-1-muharom-1448-h-80kb.jpg",
+    link: "../image/16-juni-2026-1-muharom-1448-h-80kb.jpg"
   },
   {
-    id: 9, 
-    title: "Selamat Hari Sumpah Pemuda 2026", 
-    category: "nasional", 
-    year: 2026, 
-    date: "2026-10-28", 
-    image: "../image/28-oktober-2026-hari-sumpah-pemuda.jpeg", 
-    link: "../image/28-oktober-2026-hari-sumpah-pemuda.jpeg"
+    id: 11,
+    title: "Selamat Hari Raya Galungan",
+    category: "agama",
+    year: 2026,
+    date: "2026-06-17",
+    image: "../image/17-juni-2026-hari-raya-galungan-80kb.jpg",
+    link: "../image/17-juni-2026-hari-raya-galungan-80kb.jpg"
+  },
+  {
+    id: 12,
+    title: "Selamat HUT RI ke-81",
+    category: "nasional",
+    year: 2026,
+    date: "2026-08-17",
+    image: "../image/hut-ri-ke-81-17-agustus-2026-80kb.jpg",
+    link: "../image/hut-ri-ke-81-17-agustus-2026-80kb.jpg"
+  },
+  {
+    id: 13,
+    title: "Kampanye Sekolah Bebas Sampah Plastik",
+    category: "sekolah",
+    year: 2026,
+    date: "2026-06-05", // Disesuaikan dengan Hari Lingkungan Hidup Sedunia
+    image: "../image/flayer-sampah-plastik-80kb.jpg",
+    link: "../image/flayer-sampah-plastik-80kb.jpg"
+  },
+  {
+    id: 14,
+    title: "Program Siswa Asuh Sebaya",
+    category: "sekolah",
+    year: 2026,
+    date: "2026-07-15", // Tanggal perkiraan program sekolah
+    image: "../image/siswa-asuh-sebaya-80kb.jpg",
+    link: "../image/siswa-asuh-sebaya-80kb.jpg"
+  },
+  {
+    id: 15,
+    title: "Selamat Maulid Nabi Muhammad SAW",
+    category: "agama",
+    year: 2026,
+    date: "2026-08-25", // Sesuai nama file
+    image: "../image/25-agustus-2026-maulid-nabi-saw-80kb.jpg",
+    link: "../image/25-agustus-2026-maulid-nabi-saw-80kb.jpg"
   }
 ];
 
