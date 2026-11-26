@@ -1,1 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+<title>Prestasi Siswa | SMAN 1 Cluring</title>
 
+<!-- SEO & Open Graph -->
+<meta name="description" content="Daftar lengkap prestasi siswa SMAN 1 Cluring Banyuwangi di bidang akademik, olahraga, seni, dan teknologi." />
+<meta property="og:title" content="Prestasi Siswa | SMAN 1 Cluring" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://sman1cluring.sch.id/prestasi.html" />
+
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+<style>
+/* Gunakan variabel CSS yang sama persis dengan kesiswaan.html */
+:root {
+  --primary: #0a2a5e; --primary-light: #1e3a7a; --primary-dark: #051a3b;
+  --secondary: #9e7b4b; --secondary-light: #c1a06e; --accent: #c7a854;
+  --cultural-accent: #b13e3e; --light: #f5f7fa; --dark: #1e2b37; --gray: #4b5c6b; --white: #ffffff;
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.05); --shadow-md: 0 8px 30px rgba(0, 20, 50, 0.12);
+  --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1); --border-radius: 24px;
+}
+.dark-mode {
+  --primary: #1e3a8a; --primary-light: #3b5ba5; --secondary: #d4af37;
+  --light: #0f1825; --dark: #edf2f7; --gray: #a0b3c6; --white: #1a2533;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', 'Plus Jakarta Sans', sans-serif; background-color: var(--light); color: var(--dark); line-height: 1.6; transition: background-color 0.4s ease, color 0.4s ease; overflow-x: hidden; padding-bottom: 50px; }
+h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* HEADER SEDERHANA */
+header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-md); position: sticky; top: 0; z-index: 1000; }
+.brand { display: flex; align-items: center; gap: 16px; color: var(--white); font-weight: 800; font-size: 1.3rem; }
+.brand img { width: 45px; height: auto; border-radius: 10px; }
+.back-link { color: var(--white); font-weight: 600; display: flex; align-items: center; gap: 8px; transition: var(--transition); }
+.back-link:hover { color: var(--accent); transform: translateX(-5px); }
+
+/* PAGE HEADER */
+.page-header { background: linear-gradient(145deg, rgba(10,42,94,0.8) 0%, rgba(5,26,59,0.9) 100%), url('https://i.ibb.co.com/Z3qMPXz/PENYERAHAN-PRESTASI.jpg') center/cover; color: var(--white); text-align: center; padding: 80px 20px 60px; }
+.page-header h1 { font-size: 2.5rem; margin-bottom: 15px; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); }
+
+/* CONTAINER & GRID */
+.container { max-width: 1300px; margin: 40px auto; padding: 0 32px; }
+.prestasi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+.prestasi-card {
+  background: linear-gradient(145deg, rgba(158,123,75,0.08) 0%, rgba(199,168,84,0.02) 100%);
+  border-left: 5px solid var(--secondary); padding: 25px; border-radius: 16px; transition: var(--transition);
+}
+.dark-mode .prestasi-card { background: linear-gradient(145deg, rgba(212,175,55,0.1) 0%, rgba(199,168,84,0.05) 100%); }
+.prestasi-card:hover { transform: translateX(10px); box-shadow: var(--shadow-sm); }
+.prestasi-card .badge { display: inline-block; padding: 6px 16px; color: white; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 12px; }
+.prestasi-card.gold .badge { background: linear-gradient(135deg, #ffd700, #ffaa00); }
+.prestasi-card.silver .badge { background: linear-gradient(135deg, #c0c0c0, #a0a0a0); }
+.prestasi-card.bronze .badge { background: linear-gradient(135deg, #cd7f32, #b87333); }
+.prestasi-card h4 { color: var(--primary); margin-bottom: 8px; font-size: 1.1rem; }
+.dark-mode .prestasi-card h4 { color: var(--secondary); }
+.prestasi-card .date { color: var(--gray); font-size: 0.9rem; display: flex; align-items: center; gap: 8px; margin-top: 10px; }
+.prestasi-card img { width: 100%; max-width: 450px; border-radius: 12px; box-shadow: var(--shadow-sm); margin-top: 15px; transition: var(--transition); }
+.prestasi-card img:hover { transform: scale(1.02); }
+
+/* BILINGUAL */
+.lang-id, .lang-en { display: inline; }
+.lang-en { display: none; }
+body[lang="en"] .lang-id { display: none; }
+body[lang="en"] .lang-en { display: inline; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .page-header h1 { font-size: 1.8rem; }
+  .container { padding: 0 20px; }
+  .prestasi-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body lang="id">
+
+<!-- HEADER -->
+<header>
+  <a href="index.html" class="brand">
+    <img src="SMAN1Cluring-emblem.png" alt="Logo">
+    <span>SMAN 1 CLURING</span>
+  </a>
+  <a href="kesiswaan.html#prestasi" class="back-link"><i class="fas fa-arrow-left"></i> <span class="lang-id">Kembali</span><span class="lang-en">Back</span></a>
+</header>
+
+<!-- PAGE HEADER -->
+<section class="page-header" data-aos="fade-down">
+  <h1><span class="lang-id">Galeri Prestasi Siswa</span><span class="lang-en">Student Achievements Gallery</span></h1>
+  <p><span class="lang-id">Dokumentasi lengkap pencapaian membanggakan siswa-siswi SMAN 1 Cluring.</span><span class="lang-en">Complete documentation of proud achievements of SMAN 1 Cluring students.</span></p>
+</section>
+
+<!-- CONTENT -->
+<div class="container">
+  <div class="prestasi-grid">
+
+    <!-- CHEYSHA - TAEKWONDO -->
+    <div class="prestasi-card silver" data-aos="fade-up">
+      <span class="badge"><i class="fas fa-medal"></i> <span class="lang-id">Juara 2</span><span class="lang-en">2nd Place</span></span>
+      <h4>Cheysha - Taekwondo Indonesia Antar Pelajar Jatim 2025</h4>
+      <p style="font-size: 0.9rem; margin: 5px 0; color: var(--gray);"><span class="lang-id">Kelas Putri</span><span class="lang-en">Girls Class</span></p>
+      <div class="date"><i class="fas fa-calendar"></i> 25–28 September 2025, GOR Ken Arok, Malang</div>
+      <a href="https://ibb.co.com/nM6BxS7p" target="_blank"><img src="https://i.ibb.co.com/yFdpHJ62/cheysha-foto-juara-2-tae-kwondo.jpg" alt="Cheysha Juara 2"></a>
+    </div>
+
+    <!-- GRISELDA - TAEKWONDO -->
+    <div class="prestasi-card bronze" data-aos="fade-up">
+      <span class="badge"><i class="fas fa-medal"></i> <span class="lang-id">Juara 3</span><span class="lang-en">3rd Place</span></span>
+      <h4>Griselda Forto - Taekwondo Indonesia Antar Pelajar Jatim 2025</h4>
+      <p style="font-size: 0.9rem; margin: 5px 0; color: var(--gray);"><span class="lang-id">Kelas Putri</span><span class="lang-en">Girls Class</span></p>
+      <div class="date"><i class="fas fa-calendar"></i> 25–28 September 2025, GOR Ken Arok, Malang</div>
+      <a href="https://ibb.co.com/0RFB0XdP" target="_blank"><img src="https://i.ibb.co.com/FL0sQWjG/griselda-forto-juara-3-tae-kwondo.jpg" alt="Griselda Juara 3"></a>
+    </div>
+
+    <!-- WOODBALL -->
+    <div class="prestasi-card gold" data-aos="fade-up">
+      <span class="badge"><i class="fas fa-medal"></i> <span class="lang-id">Juara 1</span><span class="lang-en">1st Place</span></span>
+      <h4>Kejuaraan Provinsi I Woodball Jawa Timur 2026</h4>
+      <p style="font-size: 0.9rem; margin: 5px 0; color: var(--gray);"><span class="lang-id">Tim Woodball SMAN 1 Cluring</span><span class="lang-en">SMAN 1 Cluring Woodball Team</span></p>
+      <div class="date"><i class="fas fa-calendar"></i> 6 April 2026</div>
+      <a href="https://ibb.co.com/Xx530Cqh" target="_blank"><img src="https://i.ibb.co.com/FLz2sJJk/WOODBALL-NOVA-LOURENSIA2.jpg" alt="Woodball Juara 1"></a>
+    </div>
+
+    <!-- MOBILE LEGENDS -->
+    <div class="prestasi-card bronze" data-aos="fade-up">
+      <span class="badge"><i class="fas fa-medal"></i> <span class="lang-id">Juara 3</span><span class="lang-en">3rd Place</span></span>
+      <h4>Mobile Legend Championship 2026</h4>
+      <p style="font-size: 0.9rem; margin: 5px 0; color: var(--gray);"><span class="lang-id">Tim E-Sports SMAN 1 Cluring</span><span class="lang-en">SMAN 1 Cluring E-Sports Team</span></p>
+      <div class="date"><i class="fas fa-calendar"></i> 2026, Dinas Pemuda dan Olahraga</div>
+      <a href="https://ibb.co.com/HTFNxJf1" target="_blank"><img src="https://i.ibb.co.com/HTFNxJf1/Juara-3-dalam-Mobile-Legend-Championship-2026-yang-diselenggarakan-oleh-Dinas-Pemuda-dan-Olahraga-Pe.png" alt="MLBB Juara 3"></a>
+    </div>
+
+    <!-- FLS2N: Tari Kreasi -->
+    <div class="prestasi-card bronze" data-aos="fade-up">
+      <span class="badge"><i class="fas fa-medal"></i> <span class="lang-id">Juara 1</span><span class="lang-en">1st Place</span></span>
+      <h4>FLS2N: Lomba Tari Kreasi</h4>
+      <p style="font-size: 0.9rem; margin: 5px 0; color: var(--gray);"><span class="lang-id">Tim Tari Sahwitta: Denisa & Saraswati</span><span class="lang-en">Sahwitta Dance Team</span></p>
+      <div class="date"><i class="fas fa-calendar"></i> 27 April 2026, FLS2N Tingkat Kabupaten</div>
+      <a href="https://ibb.co.com/bpHztSm" target="_blank"><img src="https://i.ibb.co.com/77g2hwC/Tim-Tari-Sahwitta-Denisa-Meta-Nurviyati-dan-Saraswati-Khoirunisa-Juara-1-pada-lomba-tari-kreasi-FL.png" alt="FLS2N Tari"></a>
+    </div>
+
+    <!-- FLS2N: Menulis Cerpen -->
+    <div class="prestasi-card bronze" data-aos="fade-up">
+      <span class="badge"><i class="fas fa-medal"></i> <span class="lang-id">Juara 3</span><span class="lang-en">3rd Place</span></span>
+      <h4>FLS2N: Lomba Menulis Cerpen</h4>
+      <p style="font-size: 0.9rem; margin: 5px 0; color: var(--gray);"><span class="lang-id">Kirana Ayu Maharani</span><span class="lang-en">Kirana Ayu Maharani</span></p>
+      <div class="date"><i class="fas fa-calendar"></i> 27 April 2026, FLS2N Tingkat Kabupaten</div>
+      <a href="https://ibb.co.com/2YKHVHSm" target="_blank"><img src="https://i.ibb.co.com/6JsL9L8V/lomba-menulis-cerpen-Kirana-Ayu-Maharani-Juara-3-FLS3-N.png" alt="FLS2N Cerpen"></a>
+    </div>
+
+    <!-- FLS2N: Jurnalistik -->
+    <div class="prestasi-card bronze" data-aos="fade-up">
+      <span class="badge"><i class="fas fa-medal"></i> <span class="lang-id">Juara 3</span><span class="lang-en">3rd Place</span></span>
+      <h4>FLS2N: Lomba Jurnalistik</h4>
+      <p style="font-size: 0.9rem; margin: 5px 0; color: var(--gray);"><span class="lang-id">Nadine Damara C.L.</span><span class="lang-en">Nadine Damara C.L.</span></p>
+      <div class="date"><i class="fas fa-calendar"></i> 27 April 2026, FLS2N Tingkat Kabupaten</div>
+      <a href="https://ibb.co.com/jP9xb7dp" target="_blank"><img src="https://i.ibb.co.com/G4f1ngXh/lomba-jurnalistik-Nadine-Damara-C-L-Juara-3-FLS3-N.png" alt="FLS2N Jurnalistik"></a>
+    </div>
+
+    <!-- NADIFA RISKA - TAEKWONDO -->
+    <div class="prestasi-card bronze" data-aos="fade-up">
+      <span class="badge"><i class="fas fa-medal"></i> <span class="lang-id">Juara 3</span><span class="lang-en">3rd Place</span></span>
+      <h4>Kejuaraan Taekwondo Tingkat Kabupaten Banyuwangi 2026</h4>
+      <p style="font-size: 0.9rem; margin: 5px 0; color: var(--gray);"><span class="lang-id">Nadifa Riska (X3) - Gyeorugi Junior U-55 Putri</span><span class="lang-en">Nadifa Riska (X3) - Gyeorugi Junior U-55 Girls</span></p>
+      <div class="date"><i class="fas fa-calendar"></i> 10 Mei 2026</div>
+      <a href="https://imgbb.com/" target="_blank"><img src="https://i.ibb.co.com/rGs4wG6P/NADIFA-RISKA-X3-Juara-3-Gyeorugi-Junior-U-55-Putri-Kejuaraan-Taekwondo-Tingkat-Kabupaten-Banyuwan.png" alt="Nadifa Riska"></a>
+    </div>
+
+    <!-- RAFI ACHMAD - Bulutangkis -->
+    <div class="prestasi-card bronze" data-aos="fade-up">
+      <span class="badge"><i class="fas fa-medal"></i> <span class="lang-id">Juara 3</span><span class="lang-en">3rd Place</span></span>
+      <h4>O2SN: Bulutangkis Tunggal Putra</h4>
+      <p style="font-size: 0.9rem; margin: 5px 0; color: var(--gray);"><span class="lang-id">Rafi Achmad Sukristianto</span><span class="lang-en">Rafi Achmad Sukristianto</span></p>
+      <div class="date"><i class="fas fa-calendar"></i> 11 Mei 2026, O2SN Tingkat Kabupaten</div>
+      <a href="https://imgbb.com/" target="_blank"><img src="https://i.ibb.co.com/kV3BfQkw/RAFI-ACHMAD-SUKRISTIANTO-JUARA-3-BULUTANGKIS-TUNGGAL-PUTRA-O2-SN-TINGKAT-KABUPATEN-BANYUWANGI.png" alt="Rafi Achmad"></a>
+    </div>
+
+    <!-- MOCHAMMAD AMMAR - Panjat Tebing -->
+    <div class="prestasi-card bronze" data-aos="fade-up">
+      <span class="badge"><i class="fas fa-medal"></i> <span class="lang-id">Juara 3</span><span class="lang-en">3rd Place</span></span>
+      <h4>O2SN: Panjat Tebing Putra</h4>
+      <p style="font-size: 0.9rem; margin: 5px 0; color: var(--gray);"><span class="lang-id">Mochammad Ammar Ihsani Huda</span><span class="lang-en">Mochammad Ammar Ihsani Huda</span></p>
+      <div class="date"><i class="fas fa-calendar"></i> 11 Mei 2026, O2SN Tingkat Kabupaten</div>
+      <a href="https://imgbb.com/" target="_blank"><img src="../image/Mochammad-ammar-ihsani-huda.jpeg" alt="Mochammad Ammar"></a>
+    </div>
+
+    <!-- RAMADANINGTYAS PUTRI - Pencak Silat -->
+    <div class="prestasi-card silver" data-aos="fade-up">
+      <span class="badge"><i class="fas fa-medal"></i> <span class="lang-id">Juara 2</span><span class="lang-en">2nd Place</span></span>
+      <h4>Turnamen Pencak Silat</h4>
+      <p style="font-size: 0.9rem; margin: 5px 0; color: var(--gray);"><span class="lang-id">Ramadaningtyas Putri</span><span class="lang-en">Ramadaningtyas Putri</span></p>
+      <div class="date"><i class="fas fa-calendar"></i> 12 Juli 2026</div>
+      <a href="../image/Ramadaningtyas-Putri-Raih-Juara-II.jpg" target="_blank"><img src="../image/Ramadaningtyas-Putri-Raih-Juara-II.jpg" alt="Ramadaningtyas Putri"></a>
+    </div>
+
+    <!-- HAPSARI PUTRI & AURA DISTIFA -->
+    <div class="prestasi-card silver" data-aos="fade-up">
+      <span class="badge"><i class="fas fa-medal"></i> <span class="lang-id">Juara 2 & 3</span><span class="lang-en">2nd & 3rd Place</span></span>
+      <h4>Kompetisi Tingkat Kabupaten Banyuwangi 2026</h4>
+      <p style="font-size: 0.9rem; margin: 5px 0; color: var(--gray);"><span class="lang-id">Hapsari Putri (XII-9) & Aura Distifa (XII-9)</span><span class="lang-en">Hapsari Putri (XII-9) & Aura Distifa (XII-9)</span></p>
+      <div class="date"><i class="fas fa-calendar"></i> 24 Juli 2026</div>
+      <a href="https://ibb.co.com/7t15cm3r" target="_blank"><img src="https://i.ibb.co.com/7t15cm3r/Hapsari-Putri-XII-9-Juara-2-Tingkat-Kabupaten-Aura-Distifa-XII-9-Juara-3-Tingkat-Kabupaten.png" alt="Hapsari & Aura"></a>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 600, once: true });
+  // Simple Language Toggle (opsional, jika ingin tombol ganti bahasa di halaman ini)
+  if (localStorage.getItem('language')) document.body.lang = localStorage.getItem('language');
+</script>
+</body>
+</html>
